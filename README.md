@@ -16,7 +16,7 @@ This site showcases my projects, skills, and work experience.
 
 ---
 
-## Projects
+<!-- ## Projects
 
 Each project includes:
 
@@ -24,7 +24,7 @@ Each project includes:
 - Technologies used
 - Screenshots or live demos
 
----
+--- -->
 
 ## About Me
 
@@ -41,7 +41,7 @@ I am a full-stack developer with experience in:
 You can reach me via:
 
 - [LinkedIn](https://www.linkedin.com/in/dgutensohn/)
-- [Email](mailto:your-email@example.com)
+- [Email](mailto:dgutensohn@icloud.com)
 
 ---
 
