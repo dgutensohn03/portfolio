@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+/* -------------------- */
+/* Theme Variables      */
+/* -------------------- */
+:root {
+  --color-theme: #0ea5e9;          /* Clean cyan */
+  --color-theme-hover: #0284c7;    /* Hover */
+  --color-button-text: #ffffff;
+  --color-bg: #f8fafc;             /* Very light gray background */
+  --color-bg-alt: rgba(255, 255, 255, 0.85);
+  --color-text: #1e3a5f;           /* Dark blue-gray text */
+  --color-shadow: rgba(0,0,0,0.08);
+  --color-popup-bg: rgba(255,255,255,0.95);
+}
+
+.project-thumbnail {
+  filter: grayscale(70%) brightness(85%) contrast(100%);
+  transition: filter 0.4s ease, transform 0.3s ease;
+}
+
+.project-thumbnail:hover {
+  filter: grayscale(0%) brightness(100%) contrast(105%);
+  transform: scale(1.03);
+}
+
+
+
+
+/* -------------------- */
+/* Text Colors          */
+/* -------------------- */
+.theme-text { color: var(--color-theme) !important; }
+.theme-text-hover:hover { color: var(--color-theme-hover) !important; }
+
+/* -------------------- */
+/* Background Colors    */
+/* -------------------- */
+.bg-theme { background-color: var(--color-theme) !important; }
+.bg-theme-hover:hover { background-color: var(--color-theme-hover) !important; }
+.text-button { color: var(--color-button-text) !important; }
+.bg-alt { background-color: var(--color-bg-alt) !important; backdrop-filter: blur(10px); }
+
+/* -------------------- */
+/* Buttons & Links      */
+/* -------------------- */
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: all 0.25s;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+button.bg-theme:hover {
+  background-color: var(--color-theme-hover);
+}
+
+/* -------------------- */
+/* Body & Layout        */
+/* -------------------- */
+body {
+  margin: 0;
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  display: flex;
+  flex-direction: column;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+  font-family: inherit;
+  font-weight: 700;
+}
+
+a {
+  font-weight: 500;
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--color-theme-hover);
+}
+
+/* -------------------- */
+/* Cards & Popups       */
+/* -------------------- */
+.card, .popup {
+  background-color: var(--color-popup-bg);
+  box-shadow: 0 4px 12px var(--color-shadow);
+  border-radius: 12px;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.card:hover, .popup:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px var(--color-shadow);
+}
+
+/* -------------------- */
+/* Skill popup z-index  */
+.popup { z-index: 50; }
+
+/* -------------------- */
+/* Experience bullets   */
+.experience-bullet {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.experience-bullet svg {
+  flex-shrink: 0;
+  width: 1rem;
+  height: 1rem;
+  color: var(--color-theme);
+  margin-top: 0.25rem;
+}
