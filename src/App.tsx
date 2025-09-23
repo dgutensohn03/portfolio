@@ -1,5 +1,14 @@
 import { useState } from 'react';
+import ContactCard from './components/ContactCard';
+import DocumentModal from './components/DocumentModal';
+// import { FaFilePdf } from 'react-icons/fa';
+// import ResumeIcon from './components/ResumeIcon';
+import Skills from './components/Skills';
+import SkillsModal from './components/SkillsModal';
+import Header from './components/Header';
 
+// import Modal from './components/Modal';
+import ProjectModal from './components/ProjectModal';
 import {
   ArrowTopRightOnSquareIcon,
   CodeBracketIcon,
@@ -10,10 +19,9 @@ import {
 } from '@heroicons/react/24/solid';
 import './index.css';
 
-import ProfileImage from './assets/IMG_7606.jpeg';
-
 import Project1Image from './assets/project-1-vcert.png';
 import Project2Image from './assets/project-1-vcert.png';
+import Footer from './components/Footer';
 
 interface Project {
   title: string;
@@ -69,15 +77,70 @@ const projects: Project[] = [
 ];
 
 const skills = [
-  { name: 'React', description: 'Front-end library for building UI components.' },
-  { name: 'Node.js', description: 'Back-end runtime environment using JavaScript.' },
-  { name: 'SCORM/xAPI', description: 'Standards for e-learning content tracking.' },
-  { name: 'Docker', description: 'Containerization and deployment of apps.' },
-  { name: 'Adobe Suite', description: 'Photoshop, Illustrator, Animate CC, After Effects, Premiere Pro.' },
-  { name: 'Storyline/Rise/Captivate', description: 'eLearning authoring tools for interactive training.' },
-  { name: 'Google Cloud / AWS / Azure', description: 'Cloud development and deployment.' },
-  { name: 'PostgreSQL / SQL / JSON', description: 'Database and data management technologies.' },
+  {
+    name: 'React',
+    description: 'Front-end library for building UI components.',
+    level: 'Advanced',
+    icon: '⚛️',
+    links: [
+      { label: 'Official Docs', url: 'https://reactjs.org/' },
+      { label: 'VCert Project', url: 'https://lhtclients.com/Projects/Valvoline/VCert/2024/dev/' },
+    ],
+  },
+  {
+    name: 'Node.js',
+    description: 'Back-end runtime environment using JavaScript.',
+    level: 'Advanced',
+    icon: '🟢',
+    links: [
+      { label: 'Official Docs', url: 'https://nodejs.org/' },
+    ],
+  },
+  {
+    name: 'SCORM/xAPI',
+    description: 'Standards for e-learning content tracking and reporting.',
+    level: 'Advanced',
+    icon: '📚',
+    links: [
+      { label: 'xAPI Reference', url: 'https://xapi.com/' },
+      { label: 'SCORM Guide', url: 'https://scorm.com/' },
+    ],
+  },
+  {
+    name: 'Docker',
+    description: 'Containerization and deployment of applications.',
+    level: 'Intermediate',
+    icon: '🐳',
+    links: [
+      { label: 'Docker Docs', url: 'https://docs.docker.com/' },
+    ],
+  },
+  {
+    name: 'Adobe Suite',
+    description: 'Photoshop, Illustrator, Animate CC, After Effects, Premiere Pro.',
+    level: 'Advanced',
+    icon: '🎨',
+  },
+  {
+    name: 'Storyline/Rise/Captivate',
+    description: 'eLearning authoring tools for interactive training modules.',
+    level: 'Advanced',
+    icon: '📖',
+  },
+  {
+    name: 'Google Cloud / AWS / Azure',
+    description: 'Cloud development, deployment, and serverless solutions.',
+    level: 'Intermediate',
+    icon: '☁️',
+  },
+  {
+    name: 'PostgreSQL / SQL / JSON',
+    description: 'Database management and structured/unstructured data handling.',
+    level: 'Advanced',
+    icon: '🗄️',
+  },
 ];
+
 
 const experience: Experience[] = [
   {
@@ -117,58 +180,26 @@ const education = [
 ];
 
 export default function App() {
-  const [skillPopup, setSkillPopup] = useState<string | null>(null);
+  const [activeSkill, setActiveSkill] = useState<Skill | null>(null);
   const [modalProject, setModalProject] = useState<Project | null>(null);
-
+  const [modalOpen, setModalOpen] = useState(false);
   return (
-    <div className="min-h-screen p-6 md:p-12 max-w-7xl mx-auto">
+    <div className="">
       {/* Header */}
-      <header className="text-center mb-12">
-        <div className="mx-auto w-32 h-32 rounded-full border-4 border-theme overflow-hidden mb-4 shadow-lg">
-          <img
-            src={ProfileImage}
-            alt="Profile"
-            className="w-32 h-32 object-cover"
-          />
-        </div>
-        <h1 className="text-4xl md:text-5xl font-bold mb-2 theme-text">Daniel Gutensohn</h1>
-        <p className="flex justify-center items-center gap-2"><PhoneIcon className="w-5 h-5" /> 330-617-6756</p>
-        <p className="flex justify-center items-center gap-2"><EnvelopeIcon className="w-5 h-5" /> dgutensohn@icloud.com</p>
-        <p className="mt-4 max-w-xl mx-auto text-gray-700">
-          Creative, adaptable full-stack developer with an eye for design and a passion for solving complex problems.
-        </p>
-        <a
-          href="https://docs.google.com/document/d/1pNjtAP6pkoGphC8RW4Vq3Z41L-wc9hr3PGGzFL8p4J0/export?format=pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 mt-4 px-6 py-3 bg-theme hover:bg-theme-hover text-button rounded font-semibold shadow-md"
-        >
-          <ArrowDownTrayIcon className="w-5 h-5" /> Download Resume
-        </a>
-      </header>
+<Header />
 
-      {/* Skills */}
-      <section className="bg-alt shadow rounded-lg p-6 mb-12">
-        <h2 className="text-2xl mb-4 border-b pb-2 theme-text font-semibold">Skills</h2>
-        <div className="flex flex-wrap gap-4">
-          {skills.map(skill => (
-            <div key={skill.name} className="relative">
-              <button
-                onClick={() => setSkillPopup(skillPopup === skill.name ? null : skill.name)}
-                className="bg-theme text-button px-4 py-2 rounded hover:bg-theme-hover flex items-center gap-1 font-medium shadow transition"
-                aria-label={skill.name}
-              >
-                {skill.name}
-              </button>
-              {skillPopup === skill.name && (
-                <div className="popup absolute top-full mt-2 w-64 bg-popup-bg text-gray-800 text-sm rounded p-3 shadow-lg border border-gray-200 animate-fadeIn">
-                  {skill.description}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      </section>
+<div className="min-h-screen p-6 md:p-12 max-w-7xl mx-auto">
+{/* Skills */}
+
+<Skills skills={skills} onSkillClick={(skill) => setActiveSkill(skill)} />
+
+<SkillsModal
+  skill={activeSkill}
+  isOpen={!!activeSkill}
+  onClose={() => setActiveSkill(null)}
+/>
+
+
 
       {/* Experience */}
       <section className="mb-12">
@@ -248,45 +279,15 @@ export default function App() {
       </section>
 
       {/* Project Modal */}
-      {modalProject && (
-        <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
-          <div className="bg-alt rounded-lg p-6 max-w-lg w-full relative shadow-lg animate-fadeIn overflow-y-auto max-h-[90vh]">
-            <button
-              type="button"
-              className="absolute top-3 right-3 text-gray-600 hover:text-gray-900"
-              onClick={() => setModalProject(null)}
-              aria-label="Close modal"
-            >
-              <XMarkIcon className="w-6 h-6" />
-            </button>
-            <h3 className="text-xl font-bold mb-2">{modalProject.title}</h3>
-            <img
-              src={modalProject.thumbnail}
-              alt={modalProject.title}
-              className="w-full h-48 object-cover"
-            />
-            <div className="mb-4">{modalProject.fullDescription}</div>
-            <div className="flex justify-between">
-              <a
-                href={modalProject.repoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-theme hover:bg-theme-hover text-button px-4 py-2 rounded font-semibold"
-              >
-                <CodeBracketIcon className="w-5 h-5" /> Repo
-              </a>
-              <a
-                href={modalProject.liveDemoLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 bg-theme hover:bg-theme-hover text-button px-4 py-2 rounded font-semibold"
-              >
-                <ArrowTopRightOnSquareIcon className="w-5 h-5" /> Demo
-              </a>
-            </div>
-          </div>
-        </div>
-      )}
+      <ProjectModal
+  project={modalProject}
+  isOpen={!!modalProject}
+  onClose={() => setModalProject(null)}
+/>
+
+
+
+
 
       {/* Contact Form */}
       <section className="mb-12 bg-alt shadow rounded-lg p-6">
@@ -314,6 +315,9 @@ export default function App() {
           </button>
         </form>
       </section>
-    </div>
+      <Footer />
+<div id="modal-root"></div>
+</div></div>
+    
   );
 }
