@@ -1,9 +1,10 @@
-import React, { FC, useState } from 'react';
+import type { FC } from 'react';
+import { useState } from 'react';
+
 import { Typewriter } from 'react-simple-typewriter';
 import ProfileImage from '../assets/IMG_7606.jpeg';
 import ContactCard from './ContactCard';
 import DocumentModal from './DocumentModal';
-import { ArrowDownTrayIcon } from '@heroicons/react/24/solid';
 
 const Header: FC = () => {
   const [modalOpen, setModalOpen] = useState(false);

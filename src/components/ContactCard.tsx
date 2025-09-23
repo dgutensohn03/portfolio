@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { MdEmail, MdPhone } from 'react-icons/md';
 import { FaGithub, FaLinkedin, FaFileAlt } from 'react-icons/fa';
 import DocumentModal from './DocumentModal';
@@ -89,6 +89,7 @@ const ContactRow = () => {
       {/* Modal */}
       {modalOpen && (
         <DocumentModal
+        isOpen={true}
           title="My Resume"
           embedSrc="https://docs.google.com/document/d/1pNjtAP6pkoGphC8RW4Vq3Z41L-wc9hr3PGGzFL8p4J0/preview"
           downloadSrc="https://docs.google.com/document/d/1pNjtAP6pkoGphC8RW4Vq3Z41L-wc9hr3PGGzFL8p4J0/export?format=pdf"

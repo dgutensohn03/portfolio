@@ -34,6 +34,7 @@ const ResumeIcon: React.FC = () => {
       {/* Modal */}
       {modalOpen && (
         <DocumentModal
+        isOpen={modalOpen}
           title="My Resume"
           embedSrc="https://docs.google.com/document/d/1pNjtAP6pkoGphC8RW4Vq3Z41L-wc9hr3PGGzFL8p4J0/preview"
           downloadSrc="https://docs.google.com/document/d/1pNjtAP6pkoGphC8RW4Vq3Z41L-wc9hr3PGGzFL8p4J0/export?format=pdf"

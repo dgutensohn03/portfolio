@@ -1,4 +1,6 @@
-import { FC, useEffect } from 'react';
+import type { FC } from 'react';
+import { useEffect } from 'react';
+
 import Modal from './Modal';
 import { ArrowTopRightOnSquareIcon, CodeBracketIcon, XMarkIcon } from '@heroicons/react/24/solid';
 
@@ -43,6 +45,7 @@ const ProjectModal: FC<ProjectModalProps> = ({ project, isOpen, onClose }) => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-black/30 to-transparent pointer-events-none"></div>
         <button
+        aria-label="Close"
           onClick={onClose}
           className="absolute top-3 right-3 bg-white/90 hover:bg-white text-gray-900 rounded-full p-2 shadow-lg transition transform hover:scale-110"
         >

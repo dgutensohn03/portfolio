@@ -52,6 +52,7 @@ const DocumentModal: React.FC<DocumentModalProps> = ({
       <div className="bg-white dark:bg-gray-800 w-11/12 md:w-3/4 h-5/6 p-6 relative rounded-2xl shadow-2xl flex flex-col">
         {/* Close button */}
         <button
+        aria-label="Close"
           onClick={onClose}
           className="absolute top-4 right-4 bg-white/90 hover:bg-white text-gray-900 rounded-full p-2 transition transform hover:scale-110"
         >
