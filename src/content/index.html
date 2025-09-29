@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valvoline VCert Performance+: A Technical Case Study</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+/* Define Theme Colors */
+:root {
+    --cs-header-bg: #f4f4f4;          /* Lighter off-white, warmer for header */
+    --cs-primary-text: #212529;       /* Darker, near-black for main text */
+    --cs-accent-neutral: #00A3A3;     /* Brand teal accent for interactive items */
+    --cs-dark-footer: #1c1c1c;        /* Slightly warmer dark footer */
+    --cs-light-bg: #ffffff;           /* Main background stays white */
+}
+
+/* Base Styling & Layout */
+body {
+    background-color: var(--cs-light-bg);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--cs-primary-text);
+}
+.text-primary { color: var(--cs-accent-neutral) !important; }
+.case-study-meta strong { color: var(--cs-primary-text); }
+.popover-header { background-color: var(--cs-accent-neutral); }
+.app-footer { background-color: var(--cs-dark-footer); }
+
+        .container { 
+            max-width: 900px; 
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+        
+        .lead { color: var(--cs-primary-text); } /* Ensure lead text is dark */
+        .text-primary { color: var(--cs-accent-neutral) !important; } /* Accent color remains */
+        .card-title { font-weight: 700; }
+        .blockquote-footer { color: var(--cs-primary-text); } /* Footer text is dark */
+        
+        /* Style for the video summary box (Accent border) */
+        .video-summary-box {
+            background-color: var(--bs-light);
+            border-left: 5px solid var(--cs-accent-neutral);
+        }
+
+        /* Header Typography and Typewriter Animation */
+        .case-study-header h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.1;
+        }
+        .typewriter-text {
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 3px solid var(--cs-accent-neutral);
+            animation: typing 3s steps(40, end) 1s 1 forwards, 
+                       blink 0.7s step-end 4s 4; 
+        }
+        @keyframes typing { from { width: 0 } to { width: 100% } }
+        @keyframes blink { 0%,100% { border-color: transparent; } 50% { border-color: var(--cs-accent-neutral); } }
+
+        /* FIX: Ensure the animated box has adequate padding on mobile */
+        .video-summary-box {
+            padding: 1.5rem !important; /* Smaller padding for mobile screens */
+            margin-left: 0.5rem !important;
+            margin-right: 0.5rem !important;
+        }
+        @media (min-width: 768px) {
+            .video-summary-box {
+                padding: 2.5rem !important; /* Standard padding on desktop */
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+            }
+        }
+        .typewriter-finished {
+            white-space: normal !important; /* Allow text to wrap normally */
+            border-right: none !important; /* Remove the cursor border entirely */
+        }
+        
+        /* --- HEADER STYLING (Full-Width Background) --- */
+        .case-study-header-wrapper {
+            background-color: var(--cs-header-bg); 
+            color: var(--cs-primary-text);
+            width: 100%;
+            padding: 3rem 0.5rem; /* Added horizontal padding for mobile margin */
+            margin-bottom: 3rem; 
+        }
+        .case-study-header {
+            color: var(--cs-primary-text);
+        }
+        .case-study-meta {
+            font-size: 0.95rem;
+            font-weight: 300;
+            padding-bottom: 1.5rem;
+            padding-top: 1.5rem; /* Add top padding to correctly place the line */
+        }
+        /* Refined Metadata Labels */
+        .case-study-meta > div {
+            font-weight: 400; /* Standard weight */
+            letter-spacing: 0.5px;
+        }
+        .case-study-meta strong {
+            display: block;
+            font-weight: 700; /* Value remains bold */
+            color: var(--cs-primary-text);
+            margin-top: 5px;
+        }
+
+        /* Conclusion Styling */
+        .conclusion-section h2 {
+            font-weight: 700;
+            color: var(--cs-primary-text);
+            margin-bottom: 0.5rem;
+        }
+        .conclusion-section p {
+            font-size: 1.1rem;
+            color: var(--cs-primary-text); /* Ensure conclusion body text is dark */
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* --- INTERACTIVE DATA STYLING --- */
+        .interactive-data {
+            color: var(--cs-accent-neutral);
+            font-weight: 600;
+            border-bottom: 2px dashed var(--cs-accent-neutral);
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .interactive-data:hover {
+            color: #555; /* Slightly darker neutral on hover */
+            text-decoration: none;
+        }
+        .popover {
+            max-width: 300px;
+            font-size: 0.85rem;
+            border: 2px solid var(--cs-accent-neutral);
+        }
+        .popover-header {
+            background-color: var(--cs-accent-neutral);
+            color: white;
+            font-weight: 600;
+        }
+
+        /* --- CARD STYLING --- */
+        .card { border: 1px solid var(--bs-border-color-translucent); }
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid var(--bs-secondary-bg); 
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1) !important;
+        }
+        
+        /* --- FOOTER STYLING --- */
+        .app-footer {
+            background-color: var(--cs-dark-footer);
+            color: #ffffff;
+            padding: 2rem 0; /* Increased padding */
+            margin-top: 4rem; /* Ensure clean separation from main content */
+            font-size: 0.85rem;
+        }
+        .app-footer a {
+            color: var(--cs-accent-neutral);
+            text-decoration: none;
+        }
+        
+        /* --- ACCENT STYLING (Neutral for Icons) --- */
+        .list-unstyled .bi, .card-body .bi {
+            color: var(--cs-accent-neutral) !important;
+        }
+        .image-caption {
+            color: var(--cs-primary-text) !important; /* Ensure image captions are dark */
+        }
+        
+        /* --- ANIMATION/IMAGE STYLING --- */
+        .glow-pulse { animation: glow 3s infinite alternate; }
+        @keyframes glow {
+            from { box-shadow: 0 0 10px rgba(108, 117, 125, 0.2); }
+            to { box-shadow: 0 0 20px rgba(108, 117, 125, 0.5); }
+        }
+        @keyframes fadeInSlideUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-on-load { animation: fadeInSlideUp 0.8s ease-out forwards; }
+        .clickable-image { cursor: zoom-in; transition: transform 0.2s; }
+        .clickable-image:hover { opacity: 0.9; }
+        .image-item { margin-bottom: 2rem; padding-bottom: 1rem; border-bottom: 1px dashed #eee; }
+        .image-item:last-child { border-bottom: none; }
+    </style>
+</head>
+<body>
+    
+    <div class="case-study-header-wrapper shadow-sm">
+        <div class="container">
+            <header class="case-study-header text-center">
+                <p class="h6 text-uppercase fw-light">Client: VALVOLINE</p>
+                <h1 class="fw-bold mb-3">VCert Performance+</h1>
+                <p class="lead fw-light mb-4"><span id="subtitle-text" class="typewriter-text">A Technical Case Study in Gamified E-Learning</span></p>
+                
+                <div class="case-study-divider"></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<h1 id="headline">Animate Me</h1>
+
+<script>
+  gsap.from("#headline", {
+    duration: 2,
+    x: -200,
+    opacity: 0,
+    ease: "bounce"
+  });
+</script>
+
+
+                <div class="row justify-content-center case-study-meta">
+                    <div class="col-6 col-md-3">Technology: <strong>NoSQL/RWA, OAuth 2.0</strong></div>
+                    <div class="col-6 col-md-3">Outcome: <strong>Retention Goal (75%)</strong></div>
+                    <div class="col-6 col-md-3 mt-3 mt-md-0">Industry: <strong>Automotive</strong></div>
+                    <div class="col-6 col-md-3 mt-3 mt-md-0">Development: <strong>Full-Stack</strong></div>
+                </div>
+            </header>
+        </div>
+    </div>
+    <div class="container">
+        <main>
+            <section class="mb-5 rounded video-summary-box shadow-sm animate-on-load glow-pulse">
+                <h2 class="h4 fw-bold mb-3 text-primary">Project Overview & My Role</h2>
+                
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mb-4 small">
+                            This project was a high-stakes, **Full-Stack Development** effort in the **Automotive Industry**, designed to build a scalable platform using a 
+                            <span 
+                                class="interactive-data" 
+                                data-bs-toggle="popover" 
+                                data-bs-placement="top" 
+                                data-bs-trigger="focus" 
+                                data-bs-title="Architecture: NoSQL / RWA" 
+                                data-bs-content="My expertise involved designing the database schema (NoSQL) for high-velocity scoring and utilizing Responsive Web Application (RWA) principles to ensure performance across all mobile devices in challenging field environments."
+                                tabindex="0"
+                            >
+                                **NoSQL / RWA Architecture**
+                            </span>. 
+                            Security was paramount, necessitating strict 
+                            <span 
+                                class="interactive-data" 
+                                data-bs-toggle="popover" 
+                                data-bs-placement="top" 
+                                data-bs-trigger="focus" 
+                                data-bs-title="Security: OAuth 2.0 Integration" 
+                                data-bs-content="I implemented token-based authentication via OAuth 2.0, providing robust security, enabling single sign-on (SSO), and ensuring secure session management for every user interaction."
+                                tabindex="0"
+                            >
+                                **OAuth 2.0 Integration**
+                            </span>.
+                            
+                            <br><br>
+                            The core development was designed for massive scalability and is classified by its 
+                            <span 
+                                class="interactive-data" 
+                                data-bs-toggle="popover" 
+                                data-bs-placement="top" 
+                                data-bs-trigger="focus" 
+                                data-bs-title="Architecture: NoSQL / RWA" 
+                                data-bs-content="My expertise involved designing the database schema (NoSQL) for high-velocity scoring and utilizing Responsive Web Application (RWA) principles to ensure performance across all mobile devices in challenging field environments."
+                                tabindex="0"
+                            >
+                                **NoSQL / RWA Architecture**
+                            </span>. 
+                            Security was paramount, necessitating strict 
+                            <span 
+                                class="interactive-data" 
+                                data-bs-toggle="popover" 
+                                data-bs-placement="top" 
+                                data-bs-trigger="focus" 
+                                data-bs-title="Security: OAuth 2.0 Integration" 
+                                data-bs-content="I implemented token-based authentication via OAuth 2.0, providing robust security, enabling single sign-on (SSO), and ensuring secure session management for every user interaction."
+                                tabindex="0"
+                            >
+                                **OAuth 2.0 Integration**
+                            </span>.
+                            
+                            <br><br>
+                            The core business constraints included a 
+                            <span 
+                                class="interactive-data" 
+                                data-bs-toggle="popover" 
+                                data-bs-placement="top" 
+                                data-bs-trigger="focus" 
+                                data-bs-title="Metrics: Content Refresh Cycle" 
+                                data-bs-content="The 14-day cycle required architecting a CMS and API that could push new content and game logic frequently without requiring app updates."
+                                tabindex="0"
+                            >
+                                **14-day content refresh cycle**
+                            </span> and aiming for a **75% retention improvement** by leveraging competitive point scoring up to **80 pts** per challenge.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-7 mb-4 mb-lg-0">
+                        <h5 class="fw-semibold">The Gamified Solution:</h5>
+                        <ul class="list-unstyled small">
+                            <li class="d-flex align-items-start mb-1"><i class="bi bi-clock-history me-2 flex-shrink-0"></i> <span class="flex-grow-1">**Microlearning:** Challenges take **5 minutes or less** to complete.</span></li>
+                            <li class="d-flex align-items-start mb-1"><i class="bi bi-arrow-repeat me-2 flex-shrink-0"></i> <span class="flex-grow-1">**Spaced Repetition:** New challenges are pushed every **14 days** to reinforce learning.</span></li>
+                            <li class="d-flex align-items-start mb-1"><i class="bi bi-person-fill-up me-2 flex-shrink-0"></i> <span class="flex-grow-1">**Incentivized Competition:** Users earn **points** and compete for prizes ("Valvoline gear") via **real-time leaderboards**.</span></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="col-lg-5 border-start ps-lg-4">
+                        <h5 class="fw-semibold">Program Structure (as per video) 🛠️</h5>
+                        <ol class="small mb-3 fw-bold">
+                            <li>Complete a VCert 2-day training program to qualify.</li>
+                            <li>Enroll in a VCert Performance+ program track.</li>
+                            <li>Pass each challenge to earn points and qualify for a chance to earn Valvoline gear.</li>
+                        </ol>
+                        <p class="small text-muted mb-0">Tracks include: **Heavy Duty**, **Light Duty**, and **Valvoline Professional Series (VPS)**.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="mb-5">
+                <h2 class="h3 fw-bold mb-3">The Challenge: Engaging a Global Workforce</h2>
+                <p>Valvoline, a worldwide leader in automotive solutions, faced a common problem: turning mandatory product training into a highly **engaging** and **effective** experience for technicians and sales personnel. Traditional training methods struggled to provide the real-time feedback and accessibility required for a field-based workforce.</p>
+                <p><strong>Our mandate was clear:</strong> build a digital certification platform that was secure, scalable, and fully functional on any mobile device—from a desktop in the office to a smartphone in a service bay.</p>
+
+                <div class="row mb-4">
+                    <div class="col-md-6 mb-3">
+                        <div class="card shadow-sm h-100 border-secondary card-hover">
+                            <div class="card-body">
+                                <h5 class="card-title">Key Project Focus</h5>
+                                <ul class="list-unstyled">
+                                    <li class="d-flex align-items-start mb-1"><i class="bi bi-gear-fill me-2 flex-shrink-0"></i> <span class="flex-grow-1">**Architecture:** Real-Time NoSQL Database, Responsive Web App (RWA)</span></li>
+                                    <li class="d-flex align-items-start mb-1"><i class="bi bi-shield-lock-fill me-2 flex-shrink-0"></i> <span class="flex-grow-1">**Security:** OAuth 2.0 Integration, Token-Based Authorization</span></li>
+                                    <li class="d-flex align-items-start mb-1"><i class="bi bi-trophy-fill me-2 flex-shrink-0"></i> <span class="flex-grow-1">**Outcome:** Increased Partner Product Knowledge & Certification</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <div class="card shadow-sm h-100 border-secondary card-hover">
+                            <div class="card-body d-flex flex-column justify-content-center align-items-center text-center">
+                                <h5 class="card-title text-primary">The Core Philosophy</h5>
+                                <blockquote class="blockquote mb-0">
+                                    <p class="fw-bold">"LEARN. SELL. EARN."</p>
+                                    <footer class="blockquote-footer">VCert Performance+</footer>
+                                </blockquote>
+                                <p class="text-muted small mt-2">This philosophy guided the development of a competitive, points-based certification structure.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="mb-5">
+                <h2 class="h3 fw-bold mb-4">Technical Deep Dive: Back-End Engineering</h2>
+                <p>The platform's high-octane gamification demanded a powerful, low-latency back-end—a perfect fit for a **Serverless/NoSQL** architecture.</p>
+
+                <h4 class="h5 fw-bold text-primary mt-4">Real-Time Data Synchronization (NoSQL)</h4>
+                <p>We chose a NoSQL structure (simulated as Firebase/Cloud Firestore) to manage user data, challenge status, and scores. This was critical for powering the competition, requiring immediate, atomic transactions for points and rankings.</p>
+                
+                <div class="row my-5 justify-content-center">
+                    <h5 class="fw-semibold text-center mb-4">Visual Evidence: Scoring and Real-Time Rankings</h5>
+                    
+                    <div class="col-12 col-md-8 image-item">
+                        <img src="screencapture-127-0-0-1-5503-index-html-2025-09-26-11_51_02.png" class="img-fluid rounded shadow-lg clickable-image d-block mx-auto" alt="VCert Challenge Quiz with 80 points total" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="screencapture-127-0-0-1-5503-index-html-2025-09-26-11_51_02.png" data-bs-caption="Challenge Scoring Interface: Displays the question and immediate point value, requiring atomic transaction integrity for score updates.">
+                        <p class="image-caption text-center small text-muted mt-3">**Challenge Scoring Interface:** Displays the question and immediate point value, requiring atomic transaction integrity for score updates. (Click to enlarge)</p>
+                    </div>
+                    
+                    <div class="col-12 col-md-8 image-item">
+                        <img src="screencapture-127-0-0-1-5503-index-html-2025-09-26-11_35_12.png" class="img-fluid rounded shadow-lg clickable-image d-block mx-auto" alt="VCert All Rankings Leaderboard" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="screencapture-127-0-0-1-5503-index-html-2025-09-26-11_35_12.png" data-bs-caption="Real-Time Global Rankings: Segmented leaderboards updated instantly, proving high-frequency read capability under load.">
+                        <p class="image-caption text-center small text-muted mt-3">**Real-Time Global Rankings:** Segmented leaderboards updated instantly, proving high-frequency read capability under load. (Click to enlarge)</p>
+                    </div>
+                </div>
+
+                <h4 class="h5 fw-bold text-primary mt-4">Security and Access Management</h4>
+                <p>For enterprise access, we implemented security best practices using token-based authorization via an inferred **OAuth 2.0 / SSO** integration to minimize credential exposure.</p>
+                
+                <div class="row my-5 justify-content-center">
+                    <h5 class="fw-semibold text-center mb-4">Visual Evidence: Secure Login and Personalization</h5>
+                    
+                    <div class="col-12 col-md-8 image-item">
+                        <img src="screencapture-127-0-0-1-5503-index-html-2025-09-26-11_24_19 (1).png" class="img-fluid rounded shadow-lg clickable-image d-block mx-auto" alt="VCert User Login Screen" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="screencapture-127-0-0-1-5503-index-html-2025-09-26-11_24_19 (1).png" data-bs-caption="Frictionless, Secure Login Interface: The gateway requiring OAuth/SSO integration for robust credential handling.">
+                        <p class="image-caption text-center small text-muted mt-3">**Frictionless, Secure Login Interface:** The gateway requiring OAuth/SSO integration for robust credential handling. (Click to enlarge)</p>
+                    </div>
+                    
+                    <div class="col-12 col-md-8 image-item">
+                        <img src="screencapture-127-0-0-1-5503-index-html-2025-09-26-11_39_36.png" class="img-fluid rounded shadow-lg clickable-image d-block mx-auto" alt="VCert ZEREX Approvals Screen with HELLO, DANIEL!" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="screencapture-127-0-0-1-5503-index-html-2025-09-26-11_39_36.png" data-bs-caption="Token-Validated Access: The personalized greeting confirms successful token exchange and authorized data retrieval.">
+                        <p class="image-caption text-center small text-muted mt-3">**Token-Validated Access:** The personalized greeting confirms successful token exchange and authorized data retrieval. (Click to enlarge)</p>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="mb-5">
+                <h2 class="h3 fw-bold mb-4">Front-End Excellence: Responsive Web Design</h2>
+                <p>A primary focus was ensuring the platform functioned flawlessly on a technician’s mobile device. This required a **mobile-first, Responsive Web Application (RWA)** approach using a component-based JavaScript framework.</p>
+
+                <ul>
+                    <li>**Touch-Optimized UX:** The large, high-contrast buttons and targets are critical for use in challenging, field-based environments.</li>
+                    <li>**Adaptive Content:** Efficiently loads diverse content—from embedded videos to complex **"Reveal Info"** interactive product hot-spots.</li>
+                </ul>
+
+                <div class="row my-5 justify-content-center">
+                    <h5 class="fw-semibold text-center mb-4">Visual Evidence: Mobile-First Interaction</h5>
+                    
+                    <div class="col-12 col-md-8 image-item">
+                        <img src="screencapture-127-0-0-1-5503-index-html-2025-09-26-11_38_29.png" class="img-fluid rounded shadow-lg clickable-image d-block mx-auto" alt="VCert Question 1 Multiple Choice" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="screencapture-127-0-0-1-5503-index-html-2025-09-26-11_38_29.png" data-bs-caption="Touch-Optimized Quiz Layout: Ensures usability and clear targets even in a high-contrast mobile environment.">
+                        <p class="image-caption text-center small text-muted mt-3">**Touch-Optimized Quiz Layout:** Ensures usability and clear targets even in a high-contrast mobile environment. (Click to enlarge)</p>
+                    </div>
+                    
+                    <div class="col-12 col-md-8 image-item">
+                        <img src="screencapture-127-0-0-1-5503-index-html-2025-09-26-11_48_33.png" class="img-fluid rounded shadow-lg clickable-image d-block mx-auto" alt="VCert Reveal Info Valvoline Premium Blue Can" data-bs-toggle="modal" data-bs-target="#imageModal" data-bs-image="screencapture-127-0-0-1-5503-index-html-2025-09-26-11_48_33.png" data-bs-caption="Interactive Product Module: Demonstrates responsive design for complex, image-heavy content.">
+                        <p class="image-caption text-center small text-muted mt-3">**Interactive Product Module:** Demonstrates responsive design for complex, image-heavy content. (Click to enlarge)</p>
+                    </div>
+                </div>
+            </section>
+
+            <hr>
+
+            <section class="mb-5 text-center conclusion-section">
+                <h2 class="h3 fw-bold mb-3">Conclusion</h2>
+                <p class="fs-5">The VCert Performance+ platform is a **full-stack success story**. It demonstrates how engineering secure user authentication, managing **real-time data** for a competitive environment, and delivering a **highly polished, responsive UX** can transform corporate training from a burden into a powerful tool for driving engagement and operational readiness.</p>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageModalLabel">Screenshot Details</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="modalImage" src="" class="img-fluid" alt="Enlarged Screenshot">
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <p class="mb-0 small" id="modalCaption"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="app-footer">
+        <div class="container text-center text-md-start">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <p class="fw-bold mb-1">Valvoline VCert Performance+ Case Study</p>
+                    <p class="mb-0">Designed and Developed using Bootstrap 5.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p class="mb-1">Contact for Development Inquiries:</p>
+                    <a href="#" class="text-primary">developer@example.com</a> | <a href="#" class="text-primary">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    // JAVASCRIPT TO HANDLE MODAL CONTENT SWITCHING AND INITIALIZE POPOVERS
+
+    // 1. Lightbox Initialization
+    const imageModal = document.getElementById('imageModal');
+    if(imageModal){
+        imageModal.addEventListener('show.bs.modal', event => {
+            const button = event.relatedTarget;
+            const imageURL = button.getAttribute('data-bs-image');
+            const caption = button.getAttribute('data-bs-caption');
+            const modalImage = imageModal.querySelector('#modalImage');
+            const modalCaption = imageModal.querySelector('#modalCaption');
+            modalImage.src = imageURL;
+            modalCaption.textContent = caption;
+        });
+    }
+
+    // 2. Popover Initialization
+    function enablePopovers() {
+        const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+        [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl, {
+            html: true,
+            container: 'body',
+            trigger: 'focus'
+        }));
+    }
+
+    // Initialize popovers when the document is ready
+    document.addEventListener('DOMContentLoaded', enablePopovers);
+
+    // 3. Typewriter Animation Cleanup
+    // This function removes the animation classes after the typing and blinking sequence is complete,
+    // allowing the text to wrap normally and the cursor to disappear.
+    function removeTypewriterClasses() {
+        const subtitleSpan = document.getElementById('subtitle-text');
+        if (subtitleSpan) {
+            // Apply the final class which handles wrapping and cursor removal
+            subtitleSpan.classList.add('typewriter-finished');
+        }
+    }
+
+    // Calculate total animation time (Typing: 3s + Delay: 1s + Blinking: 0.7s * 4 steps = 6.8s)
+    const totalAnimationDuration = 6800; // 6.8 seconds
+    
+    // Set a timeout to apply the cleanup class right after the animation finishes
+    setTimeout(removeTypewriterClasses, totalAnimationDuration);
+
+</script>
+</body>
+</html>

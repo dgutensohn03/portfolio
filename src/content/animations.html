@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Text Motion APIs & Animation Libraries</title>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<!-- Anime.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<!-- Prism.js for syntax highlighting -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-js.min.js"></script>
+
+<style>
+:root {
+  --accent: #ff5722;
+  --dark: #222;
+  --light: #fafafa;
+  --card: #fff;
+}
+body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  margin:0; background:var(--light); color:var(--dark);
+}
+header { 
+  background: linear-gradient(135deg,#ffcc80,#ff5722); 
+  color:white; text-align:center; padding:60px 20px;
+}
+header h1 { font-size:2.8rem; margin:0 0 10px 0; }
+header p { margin:0; font-size:1.2rem; }
+
+main { max-width: 1000px; margin:0 auto; padding:40px 20px; }
+article h2 { margin-top:60px; font-size:2rem; border-bottom:2px solid var(--accent); padding-bottom:5px; }
+.demo-block { display:flex; flex-wrap:wrap; gap:20px; margin:30px 0; padding:25px; border-radius:12px; background:var(--card); box-shadow:0 4px 12px rgba(0,0,0,0.08);}
+.demo-text { font-size:1.8rem; font-weight:bold; text-align:center; margin:0 auto; min-height:2.5em; flex:1; display:flex; align-items:center; justify-content:center; }
+.demo-code { flex:1; display:flex; flex-direction:column; }
+textarea { width:100%; height:120px; font-family:monospace; font-size:0.9rem; margin-bottom:6px; }
+.btn { display:inline-block; background:var(--accent); color:#fff; padding:8px 14px; margin:6px 4px; border-radius:6px; cursor:pointer; font-size:0.9rem; border:none; }
+details { margin-top:6px; }
+pre { margin:0; border-radius:6px; overflow-x:auto; }
+
+/* Typewriter */
+.typewriter { overflow:hidden; border-right:.15em solid var(--accent); white-space:nowrap; margin:0 auto; letter-spacing:.1em; width:fit-content; }
+@keyframes typing { from {width:0;} to {width:100%;} }
+@keyframes blink-caret { from,to {border-color:transparent;} 50% {border-color:var(--accent);} }
+
+/* Glitch */
+.glitch { position:relative; color:#ff0055; font-size:2rem; font-weight:bold; }
+.glitch::before, .glitch::after { content:attr(data-text); position:absolute; left:0; width:100%; overflow:hidden; clip:rect(0,900px,0,0);}
+.glitch::before { animation:glitchTop 2s infinite linear alternate-reverse; color:#00f2ff; }
+.glitch::after { animation:glitchBot 1.5s infinite linear alternate-reverse; color:#ff00e6; }
+@keyframes glitchTop {0%{clip:rect(0,900px,0,0);}20%{clip:rect(0,900px,50px,0);transform:translate(-5px,-5px);}40%{clip:rect(0,900px,0,0);}60%{clip:rect(0,900px,30px,0);transform:translate(5px,5px);}100%{clip:rect(0,900px,0,0);}}
+@keyframes glitchBot {0%{clip:rect(0,900px,0,0);}25%{clip:rect(10px,900px,80px,0);transform:translate(5px,-5px);}50%{clip:rect(0,900px,0,0);}75%{clip:rect(20px,900px,90px,0);transform:translate(-5px,5px);}100%{clip:rect(0,900px,0,0);}}
+
+/* Bouncing Letters */
+.letters span { display:inline-block; animation:bounce 1s ease infinite alternate; }
+.letters span:nth-child(even) { animation-delay:.2s; }
+@keyframes bounce { from{transform:translateY(0);} to{transform:translateY(-10px);} }
+
+canvas { border:1px solid #ccc; display:block; margin:0 auto; }
+</style>
+</head>
+
+<body>
+<header>
+<h1>Text Motion APIs & Animation Libraries</h1>
+<p>By Daniel Gutensohn · Portfolio Blog Post</p>
+</header>
+
+<main>
+<article>
+<p>Animating text can bring websites, eLearning content, and UI to life. Each demo shows the animation, implementation code, and replay button.</p>
+
+<!-- Demo template function -->
+<script>
+function makeDemo(id, replayFn, codeDesc) {
+  const codeArea = document.getElementById(id + '-code');
+  const btnRun = document.getElementById(id + '-run');
+  const pre = document.getElementById(id + '-pre');
+  if(btnRun && codeArea && pre){
+    btnRun.onclick = () => {
+      eval(codeArea.value);
+      replayFn();
+    };
+  }
+}
+</script>
+
+<!-- Web Animations API - Horizontal Slide -->
+<h2>Web Animations API</h2>
+<div class="demo-block">
+  <div class="demo-text" id="wa-slide">Slide Me</div>
+  <div class="demo-code">
+    <p><strong>Implementation:</strong> Use `element.animate()` with keyframes and timing options.</p>
+    <button class="btn" onclick="replayWASlide()">Replay</button>
+    <details><summary>Show Code</summary>
+      <textarea id="wa-slide-code">document.getElementById('wa-slide').animate([
+{ transform: 'translateX(0px)', opacity:1 },
+{ transform: 'translateX(200px)', opacity:0.3 },
+{ transform: 'translateX(0px)', opacity:1 }
+], { duration:2000, iterations:1 });</textarea>
+      <button class="btn" id="wa-slide-run">Run Code</button>
+      <pre><code id="wa-slide-pre" class="language-js">document.getElementById('wa-slide').animate([
+{ transform: 'translateX(0px)', opacity:1 },
+{ transform: 'translateX(200px)', opacity:0.3 },
+{ transform: 'translateX(0px)', opacity:1 }
+], { duration:2000, iterations:1 });</code></pre>
+    </details>
+  </div>
+</div>
+
+<!-- You can repeat this block for each animation (bounce, GSAP, Anime.js, typewriter, glitch, letters, canvas) -->
+<!-- GSAP -->
+<h2>GSAP</h2>
+<div class="demo-block">
+  <div class="demo-text" id="gsap-bounce">Bounce In</div>
+  <div class="demo-code">
+    <p><strong>Implementation:</strong> Use `gsap.from()` with easing for bounce effects.</p>
+    <button class="btn" onclick="replayGSAPBounce()">Replay</button>
+    <details><summary>Show Code</summary>
+      <textarea id="gsap-bounce-code">gsap.from("#gsap-bounce",{duration:1.5,y:-100,opacity:0,ease:"bounce"});</textarea>
+      <button class="btn" id="gsap-bounce-run">Run Code</button>
+      <pre><code id="gsap-bounce-pre" class="language-js">gsap.from("#gsap-bounce",{duration:1.5,y:-100,opacity:0,ease:"bounce"});</code></pre>
+    </details>
+  </div>
+</div>
+
+<!-- Continue adding Anime.js, Typewriter, Glitch, Letters, Canvas blocks in same pattern -->
+
+</article>
+</main>
+
+<script>
+// Replay functions
+function replayWASlide() {
+  document.getElementById('wa-slide').animate([
+    { transform:'translateX(0px)', opacity:1 },
+    { transform:'translateX(200px)', opacity:0.3 },
+    { transform:'translateX(0px)', opacity:1 }
+  ], { duration:2000, iterations:1 });
+}
+
+function replayGSAPBounce() {
+  gsap.from("#gsap-bounce",{duration:1.5,y:-100,opacity:0,ease:"bounce"});
+}
+
+// Initialize run buttons
+makeDemo('wa-slide', replayWASlide);
+makeDemo('gsap-bounce', replayGSAPBounce);
+</script>
+</body>
+</html>
