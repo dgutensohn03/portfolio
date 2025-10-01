@@ -1,0 +1,15 @@
+﻿#volume-container:hover #volume-slider-container {
+	display: block;
+}
+
+#volume-slider-container {
+	display: none;
+	position: absolute; 
+	top: -146px; 
+	left: 6px; 
+}
+
+#volume-container .k-slider-vertical {
+	height: 100px;
+	margin: 18px 12px;
+}

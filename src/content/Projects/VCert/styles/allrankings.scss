@@ -1,0 +1,851 @@
+$primaryColor : grey;
+$HeaderColor: lightgrey;
+$footerColor: #303030;
+$HeaderFontColor: black;
+$FooterFontColor: white;
+$valvLightBlue: #0082CA;
+$valvDarkBlue: #13216A;
+$valvRed: #E1261C;
+$dullRed: #940f0A;
+$dullGreen: #305B14;
+$dullYellow: #C6731A;
+$textColor:#6E6E6E;
+
+#userLBPage_Body1
+{
+    margin-bottom:100px;
+}
+
+.mapLink:hover
+{
+    text-decoration: none;
+}
+
+.smBack {
+    background: url(../images/challenge/Back_bttn_UP.png) left center no-repeat;
+    color: #E1261C;
+    font-family: Oswald;
+    width: 140px;
+    font-size: 40px;
+    left: 41px;
+    z-index: 1;
+    cursor: pointer;
+    text-align: right;
+    position: relative;
+    top: 30px;
+}
+
+.smBack:hover {
+    background: url('../images/challenge/Back_bttn_DWN.png')left center no-repeat;
+}
+
+.portalHeader3 {
+    width: 100%;
+    height: 300px;
+    position: relative;
+    background-image: url('../images/8-Leaderboard Hero.png');
+    background-size: cover;
+    margin-top: 0px;
+    color: white;
+    font-size: 96px;
+    font-family: Oswald;
+    font-weight: 500;
+    padding-top: 70px;
+    text-align: center;
+}
+
+.portalHeader3 {
+    background-image: none;
+    color: black;
+}
+
+#leaderboardPage .sectionHeaderTitle
+{
+    font-family: Roboto;
+    color: #0082CA;
+    font-size: 22pt;
+    font-weight: bold;
+    left: calc(50% - 50px);
+    top: 72px;
+    position: absolute;
+}
+
+#leaderboardPage #sectionHeaderPicture1, #leaderboardPage #sectionHeaderPicture2, #leaderboardPage #sectionHeaderPicture3, #leaderboardPage #sectionHeaderPicture4, #leaderboardPage #sectionHeaderPicture5
+{
+    left: calc(50% - 200px);
+}
+
+.LBCatchUp > div
+{
+    background-image:url('../images/All Rankings_Box.png');
+    width:389px;
+    height:258px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top:10px;
+}
+
+.boxTitle
+{
+    font-size: 28px;
+    font-weight: 500;
+    font-family:Oswald;
+    position:relative;
+    top:-18px;
+}
+
+.earnMore
+{
+    font-size:24pt;
+    font-weight:bold;
+}
+
+.catchUpText
+{
+    text-align:left;
+    left: calc(50% - 140px);
+    position:relative;
+}
+
+.ARBullet
+{
+    background-image: url('../images/All Rankings_Bullet.png');
+    width: 17px;
+    height: 16px;
+    position: relative;
+    display: inline-block;
+    top: 2px;
+    margin-right: 15px;
+}
+
+.catchUpLine
+{
+    margin-bottom:8px;
+    font-weight:bold;
+}
+
+#leaderboardPage .sectionHorizontalLine
+{
+    top:190px;
+}
+
+.LBStats
+{
+    top:190px;
+    position:relative;
+    margin:50px 0px;
+}
+
+.LBPointsText
+{
+    text-align:left;
+}
+
+.pointsReadout
+{
+    max-width:155px;
+    min-width:155px;
+    position:relative;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:30px;
+    left:-20px;
+}
+
+.LBCircle
+{
+    display:flex;
+    font-family:Roboto;
+    font-weight:bold;
+    text-align:left;
+    margin-bottom:30px;
+}
+
+.LBCircle > div
+{
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    display:flex;
+}
+
+.pointsTotal
+{
+    font-family: Oswald;
+    font-size: 42px;
+    font-weight:400;
+    line-height:100%;
+}
+
+.pointsTerm {
+    position: relative;
+    top: -12px;
+    left: 2px;
+    font-size: 12px;
+    text-transform: uppercase;
+    color:$valvRed;
+    font-family:Oswald;
+}
+
+.pointsLine
+{
+    background-color:#AAA;
+    height:1px;
+    width:100%;
+    position:relative;
+    margin-top:2px;
+}
+
+.itsMe
+{
+    border:5px solid $valvRed;
+}
+
+.itsMe .sellerPlace
+{
+    top:-7px;
+    left:15px;
+    color:$valvRed;
+}
+
+.itsMe .sellerName
+{
+    top:-7px;
+    left:115px;
+    color:$valvRed;
+}
+
+.itsMe .scoreText
+{
+    top:-7px;
+    right:35px;
+    color:$valvRed;
+}
+
+#leaderboardPage .expandedSection
+{
+    width: calc(100% - 20px);
+    left: 10px;
+    margin-bottom:30px;
+}
+
+.expandedSection
+{
+    position:relative;
+    width:calc(100% - 4px);
+    top:190px;
+}
+
+.sectionHorizontalLineFirst
+{
+    height:2px;
+    width:calc(100% - 24px);
+    left:12px;
+    position:relative;
+    background-color:#303030;
+}
+
+.sectionHorizontalLine
+{
+    height:2px;
+    width:calc(100% - 24px);
+    left:12px;
+    position:relative;
+    background-color:#AAA;
+}
+#ADWidget .sectionHorizontalLineLast
+{
+    height: 6px;
+    max-width: 1014px;
+    width:calc(100% - 28px);
+    position: absolute;
+    background-color: $valvRed;
+    bottom: -3px;
+    left: 10px;
+}
+
+#HDWidget .sectionHorizontalLineLast
+{
+    height: 6px;
+    max-width: 1014px;
+    width:calc(100% - 28px);
+    position: absolute;
+    background-color: $valvRed;
+    bottom: -3px;
+    left: 10px;
+}
+#LDWidget .sectionHorizontalLineLast
+{
+    height: 6px;
+    max-width: 1014px;
+    width:calc(100% - 28px);
+    position: absolute;
+    background-color: $valvDarkBlue;
+    bottom: -3px;
+    left: 10px;
+}
+#VPSWidget .sectionHorizontalLineLast
+{
+    height: 6px;
+    max-width: 1014px;
+    width:calc(100% - 28px);
+    position: absolute;
+    background-color: $valvLightBlue;
+    bottom: -3px;
+    left: 10px;
+}
+#OHWWidget .sectionHorizontalLineLast
+{
+    height: 6px;
+    max-width: 1014px;
+    width:calc(100% - 28px);
+    position: absolute;
+    background-color: $valvLightBlue;
+    bottom: -3px;
+    left: 10px;
+}
+
+#ADWidget .sectionWidget, #ADLeader .sectionWidget
+{
+    border:2px solid $valvRed;
+    max-width:1038px;
+    width:calc(100% - 50px);
+    height:192px;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    margin-top:50px;
+    display:none;
+}
+
+#HDWidget .sectionWidget, #HDLeader .sectionWidget
+{
+    border:2px solid $valvRed;
+    max-width:1038px;
+    width:calc(100% - 50px);
+    height:192px;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    margin-top:50px;
+    display:none;
+}
+#LDWidget .sectionWidget, #LDLeader .sectionWidget
+{
+    border:2px solid $valvDarkBlue;
+    max-width:1038px;
+    width:calc(100% - 50px);
+    height:192px;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    margin-top:50px;
+    display:none;
+}
+#VPSWidget .sectionWidget, #VPSLeader .sectionWidget
+{
+    border:2px solid $valvLightBlue;
+    max-width:1038px;
+    width:calc(100% - 50px);
+    height:192px;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    margin-top:50px;
+    display:none;
+}
+#OHWWidget .sectionWidget, #OHWLeader .sectionWidget
+{
+    border:2px solid $valvLightBlue;
+    max-width:1038px;
+    width:calc(100% - 50px);
+    height:192px;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    margin-top:50px;
+    display:none;
+}
+#ADWidget .sectionWidget.expanded, #OHWWidget .sectionWidget.expanded,#HDWidget .sectionWidget.expanded, #LDWidget .sectionWidget.expanded, #VPSWidget .sectionWidget.expanded, #ADLeader .sectionWidget.expanded, #OHWLeader .sectionWidget.expanded, #HDLeader .sectionWidget.expanded, #LDLeader .sectionWidget.expanded, #VPSLeader .sectionWidget.expanded
+{
+    max-width:1038px;
+    width:calc(100% - 50px);
+    height:auto;
+    margin-left:auto;
+    margin-right:auto;
+    position:relative;
+    margin-top:50px;
+    padding-bottom: 200px;
+}
+
+.firstRow {
+    background-color: #951009;
+    height: 60px;
+    margin-bottom: 5px;
+    color: #FFF;
+    position: relative;
+}
+
+.secondRow {
+    background-color: $valvRed;
+    height: 60px;
+    margin: 5px 0px;
+    color: #FFF;
+    position: relative;
+}
+
+.thirdRow {
+    background-color: #F0F5F8;
+    height: 60px;
+    margin-top: 5px;
+    color: #000;
+    position: relative;
+}
+
+.userRow:nth-child(even) {
+    background-color: #FFF;
+    height: 60px;
+    margin-top: 5px;
+    color: #000;
+    position: relative;
+}
+
+.userRow:nth-child(odd) {
+    background-color: #EFF4F7;
+    height: 60px;
+    margin-top: 5px;
+    color: #000;
+    position: relative;
+}
+
+.sellerPlace {
+    text-transform: uppercase;
+    font-family: Oswald;
+    font-size: 42px;
+    position: absolute;
+    top: -3px;
+    left: 20px;
+}
+
+.sellerName {
+    text-transform: uppercase;
+    font-family: Oswald;
+    font-size: 42px;
+    position: absolute;
+    top: -3px;
+    left: 120px;
+    width:calc(100% - 300px);
+    overflow:hidden;
+    white-space: nowrap;
+    text-align:left;
+}
+
+.scoreText {
+    position: absolute;
+    right: 40px;
+    top: -2px;
+    font-family: Oswald;
+    font-size: 42px;
+}
+
+.pointsText 
+{
+    position:relative;
+    top: -12px;
+    left: 2px;
+    font-size:12px;
+}
+#ADLeader .sectionHorizontalLineLast
+{
+    height: 6px;
+    max-width: 1014px;
+    width:calc(100% - 28px);
+    position: absolute;
+    background-color: $valvRed;
+    bottom: -3px;
+    left: 10px;
+}
+
+#HDLeader .sectionHorizontalLineLast
+{
+    height: 6px;
+    max-width: 1014px;
+    width:calc(100% - 28px);
+    position: absolute;
+    background-color: $valvRed;
+    bottom: -3px;
+    left: 10px;
+}
+#LDLeader .sectionHorizontalLineLast
+{
+    height: 6px;
+    max-width: 1014px;
+    width:calc(100% - 28px);
+    position: absolute;
+    background-color: $valvDarkBlue;
+    bottom: -3px;
+    left: 10px;
+}
+#VPSLeader .sectionHorizontalLineLast
+{
+    height: 6px;
+    max-width: 1014px;
+    width:calc(100% - 28px);
+    position: absolute;
+    background-color: $valvLightBlue;
+    bottom: -3px;
+    left: 10px;
+}
+#OHWLeader .sectionHorizontalLineLast
+{
+    height: 6px;
+    max-width: 1014px;
+    width:calc(100% - 28px);
+    position: absolute;
+    background-color: $valvLightBlue;
+    bottom: -3px;
+    left: 10px;
+}
+#sectionHeaderPicture1
+{
+    height:110px;
+    width:110px;
+    top:40px;
+    left:40px;
+    position:absolute;
+    background-image:url('../images/8-Truck Icon.png');
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+#sectionHeaderPicture2
+{
+    height:110px;
+    width:110px;
+    top:40px;
+    left:40px;
+    position:absolute;
+    background-image:url('../images/8-Car Icon.png');
+    background-repeat:no-repeat;
+    background-position:center;
+}
+
+#sectionHeaderPicture3
+{
+    height:110px;
+    width:110px;
+    top:40px;
+    left:40px;
+    position:absolute;
+    background-image:url('../images/8-VPS Icon.png');
+    background-repeat:no-repeat;
+    background-position:center;
+}
+#sectionHeaderPicture4
+{
+    height:103px;
+    width:103px;
+    top:40px;
+    left:40px;
+    position:absolute;
+    background-image:url('../images/8-AutoDealer Icon.png');
+    background-repeat:no-repeat;
+    background-position:center;
+}
+#sectionHeaderPicture5
+{
+    height:103px;
+    width:103px;
+    top:40px;
+    left:40px;
+    position:absolute;
+    background-image:url('../images/8-Off-Highway Icon.png');
+    background-repeat:no-repeat;
+    background-position:center;
+}
+canvas
+{
+    display:inline-block;
+    width:260px;
+    height:260px;
+    margin:20px 0px 0px 0px;
+    cursor:pointer;
+}
+
+@media only screen and (max-width:997.98px)
+{
+    .pointsReadout
+    {
+        left:0px;
+        margin-bottom:40px;
+    }
+
+    .LBStats
+    {
+        margin-top:10px;
+    }
+}
+
+@media only screen and (max-width:767.98px)
+{
+    .smBack {
+        font-size: 28px;
+        left: 20px;
+        top: 30px;
+        height:50px;
+        width:120px;
+        padding-top:2px;
+    }
+
+    .itsMe .sellerPlace
+    {
+        top:1px;
+        left:5px;
+    }
+
+    .itsMe .sellerName
+    {
+        top:1px;
+        left:65px;
+    }
+
+    .itsMe .scoreText
+    {
+        top:1px;
+        right:5px;
+    }
+
+    .welcomeVerticalLine {
+        top: 0px;
+        margin-right: 40px;
+        position: relative;
+        height:100px;
+    }
+
+    .privacyTitle
+    {
+        font-size:48pt !important;
+        top:-47px !important;
+    }
+
+    .privacyBG#learnMoreBG, .privacyBG#privacyBG
+    {
+        background-image:url('../images/Rules_Popup_BG.png');
+        width:356px;
+        height:575.5px;
+        background-size:100%;
+        left: calc(50% - 173px);
+        top: calc(50% - 287.75px);
+    }
+
+    .privacyBG#learnMoreBG .privacyText, .privacyBG#privacyBG .privacyText
+    {
+        width: 316px;
+        height: 450px;
+        left: 20px;
+        top: 55px;
+    }
+
+    .portalHeader
+    {
+        font-size:48px;
+        height:200px;
+        padding-top:50px;
+    }
+
+    .portalHeader2, .portalHeader3
+    {
+        font-size:48px;
+        height:200px;
+        padding-top:60px;
+    }
+
+    #SectionBlockRow
+    {
+        margin-top:50px;
+    }
+
+    #OHWWidget .sectionWidget, #ADWidget .sectionWidget, #OHWLeader .sectionWidget, #ADLeader .sectionWidget, #HDWidget .sectionWidget, #HDLeader .sectionWidget, #LDWidget .sectionWidget, #LDLeader .sectionWidget,#VPSWidget .sectionWidget, #VPSLeader .sectionWidget
+    {
+        height:130px;
+    }
+
+    #OHWWidget .sectionWidget.expanded, #ADWidget .sectionWidget.expanded, #HDWidget .sectionWidget.expanded, #LDWidget .sectionWidget.expanded, #VPSWidget .sectionWidget.expanded, #OHWLeader .sectionWidget.expanded, #ADLeader .sectionWidget.expanded, #HDLeader .sectionWidget.expanded, #LDLeader .sectionWidget.expanded, #VPSLeader .sectionWidget.expanded
+    {
+        padding-bottom:130px;
+    }
+
+    #sectionHeaderPicture1, #sectionHeaderPicture2, #sectionHeaderPicture3, #sectionHeaderPicture4, #sectionHeaderPicture5
+    {
+        height:55px;
+        width:55px;
+        top:30px;
+        left:30px;
+        background-size:100%;
+    }
+
+    .sectionHeaderTitle
+    {
+        font-size:16pt;
+        left:120px;
+        top:45px;
+    }
+
+    .sectionDropArrow
+    {
+        width:27.75px;
+        height:54px;
+        top:35px;
+        background-size:100%;
+    }
+
+    .expandedSection
+    {
+        top:120px;
+    }
+
+    .sectionConvoIcon
+    {
+        width:46.5px;
+        height:31px;
+        background-size:100%;
+    }
+
+    .sectionVidIcon
+    {
+        width:46.5px;
+        height:36.5px;
+        background-size:100%;
+    }
+
+    .sectionGameIcon
+    {
+        width:47.5px;
+        height:35px;
+        background-size:100%;
+    }
+
+    .sectionProductIcon
+    {
+        width:32.5px;
+        height:43px;
+        background-size:100%;
+    }
+
+    .activityText
+    {
+        left:90px;
+        width:calc(100% - 110px);
+        padding-bottom:100px;
+    }
+
+    .activityDate
+    {
+        font-size:10pt;
+    }
+
+    .startActivityButton
+    {
+        position:relative;
+        top:-60px;
+        padding-top:10px;
+        right:unset;
+    }
+
+    .daysLeft
+    {
+        position:relative;
+        top:-40px;
+        right:unset;
+        margin-left:auto;
+        margin-right:auto;
+    }
+
+    .challengeCleared
+    {
+        position: relative;
+        right: 0px;
+        top: -50px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .challengeFailed
+    {
+        position: relative;
+        right: 0px;
+        top: -50px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+    }
+
+    .clearFlag {
+        position: absolute;
+        top: -5px;
+        left: calc(50% - 100px);
+    }
+
+    .firstRow, .secondRow, .thirdRow
+    {
+        height:44px;
+    }
+
+    .sellerPlace
+    {
+        font-size:28px;
+        top:1px;
+        left:10px;
+    }
+
+    .sellerName
+    {
+        font-size:28px;
+        top:1px;
+        left:70px;
+        width:calc(100% - 135px);
+    }
+
+    .scoreText
+    {
+        right:10px;
+        top:1px;
+        font-size:28px;
+    }
+
+    .pointsText
+    {
+        display:none;
+    }
+
+    .LBStats
+    {
+        margin-bottom:100px;
+    }
+
+    #leaderboardPage #sectionHeaderPicture1, #leaderboardPage #sectionHeaderPicture2, #leaderboardPage #sectionHeaderPicture3, #leaderboardPage #sectionHeaderPicture4, #leaderboardPage #sectionHeaderPicture5
+    {
+        left: calc(50% - 140px);
+        top:65px;
+    }
+
+    #OHWWidget .sectionWidget.expanded, #ADWidget .sectionWidget.expanded, #HDWidget .sectionWidget.expanded, #LDWidget .sectionWidget.expanded, #VPSWidget .sectionWidget.expanded, #OHWLeader .sectionWidget.expanded, #ADLeader .sectionWidget.expanded, #HDLeader .sectionWidget.expanded, #LDLeader .sectionWidget.expanded, #VPSLeader .sectionWidget.expanded
+    {
+        width:calc(100% - 20px);
+    }
+
+    .boxTitle
+    {
+        font-size:22px;
+        top:-15px;
+    }
+
+    .LBCatchUp > div {
+        background-image: none;
+        margin-left: auto;
+        margin-right: auto;
+        width:calc(100% - 10px);
+        margin-top: 10px;
+    }
+}

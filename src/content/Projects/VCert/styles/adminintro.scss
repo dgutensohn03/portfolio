@@ -1,0 +1,115 @@
+$primaryColor : grey;
+$HeaderColor: lightgrey;
+$footerColor: #303030;
+$HeaderFontColor: black;
+$FooterFontColor: white;
+$valvLightBlue: #0082CA;
+$valvDarkBlue: #13216A;
+$valvRed: #E1261C;
+$dullRed: #940f0A;
+$dullGreen: #305B14;
+$dullYellow: #C6731A;
+$textColor:#6E6E6E;
+
+#bigRegister {
+    font-size: 14pt;
+    background-image: url('../images/Large Bttn_UP.png');
+    height: 174px;
+    width: 629px;
+    position: relative;
+    text-align: left;
+    padding-top: 52px;
+    padding-left: 45px;
+    color: white;
+    cursor: pointer;
+    margin: 0 auto 0 auto;
+    font-family: Oswald;
+    font-size: 42px;
+}
+
+#userLoginPage_Body1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 829px;
+}
+
+#bigRegister:hover {
+    background-image: url('../images/Large Bttn_DWN.png');
+    color: $valvRed;
+}
+
+#userLoginPage_Body1 a:hover
+{
+    text-decoration:none;
+}
+
+#infoBox {
+    background-image: url('../images/3-Info_BG.png');
+    width: 961px;
+    height: 267px;
+    position: relative;
+    margin: -100px auto 150px auto;
+}
+
+#infoheader {
+    font-size: 96px;
+    font-weight: 500;
+    font-family: Oswald;
+    position: relative;
+    top: -70px;
+    text-align: center;
+}
+
+.adminIntroButton {
+    background-color: $valvRed;
+    height: 40px;
+    width: 180px;
+    position: relative;
+    text-align: center;
+    border-radius: 7px;
+    bottom: 20px;
+    padding-top: 7px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.4s;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+.adminIntroButton:hover {
+    background-color: $dullRed;
+}
+
+@media only screen and (max-width:767.98px)
+{
+    #bigRegister {
+        height: 87px;
+        width: 314px;
+        background-size: 100%;
+        padding-top: 20px;
+        padding-left: 23px;
+        font-size: 30px;
+    }
+    
+    #infoBox {
+        background-image: url('../images/Info_Popup_BG.png');
+        width:356px;
+        height:390.5px;
+        background-size:100%;
+        position: relative;
+        margin:-90px auto 50px auto;
+    }
+
+    .adminIntroButton
+    {
+        margin-bottom:25px;
+    }
+
+    .headerBlack
+    {
+        margin-top:20px;
+    }
+}

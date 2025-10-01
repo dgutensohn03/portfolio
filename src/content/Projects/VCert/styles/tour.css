@@ -1,0 +1,1252 @@
+#rulesPopup {
+  overflow: hidden;
+  padding: 0 !important;
+  margin: auto;
+}
+
+#rulesPopup .modal-dialog {
+  overflow: visible;
+  max-width: 1116px;
+}
+
+.modal-body {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 7% 10%;
+  font-size: calc(12px + .5vw);
+}
+
+#rulesPopup .modal-content {
+  background-color: transparent;
+  border: none;
+}
+
+.modal-popout-bg {
+  background-image: url("../images/Registered_Pop_up.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat !important;
+  width: 100%;
+}
+
+.modal-dialog {
+  max-width: 1116px !important;
+  max-height: 563px !important;
+  top: 98px;
+  margin: auto;
+}
+
+#popup-header {
+  font-size: 5vw;
+  font-weight: 500;
+  font-family: Oswald;
+  line-height: 20px;
+  color: #E1261D;
+  width: 100%;
+  top: 10px;
+  position: relative;
+  text-align: center;
+  z-index: 9;
+}
+
+#rulesPopup .exitButton {
+  background: url("../images/challenge/ExitBtn_UP.png") no-repeat;
+  width: 52px;
+  height: 52px;
+  border: 0;
+  background-position: center;
+  position: absolute;
+  top: 40px;
+  right: 40px;
+}
+
+#rulesPopup .exitButton:hover {
+  background: url("../images/challenge/ExitBtn_DWN.png") no-repeat;
+}
+
+.modal-body .col {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-body .header {
+  font-size: calc(32px + .5vw);
+  line-height: calc(32px + .5vw);
+  font-family: Roboto-Medium;
+  text-align: center;
+  padding-bottom: 50px;
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.center-img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  min-width: 93px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.modal-body .col .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.modal-body .row {
+  padding-bottom: 15%;
+}
+
+.modal-body .row:last-of-type {
+  padding-bottom: 20px !important;
+}
+
+.modal-body .right {
+  margin-left: 40px;
+}
+
+.right img {
+  display: block !important;
+}
+
+.block-container > img {
+  margin-left: 40px;
+}
+
+.info-box {
+  border: 2px solid lightgray;
+  position: absolute;
+  background-color: white;
+  border-radius: 15px;
+  top: -30px;
+  left: 0;
+  padding: 15px;
+  color: #6D6D6D;
+  font-family: Roboto-Medium;
+  z-index: 999;
+  position: absolute;
+  right: auto;
+  display: none;
+}
+
+.more-info-3, .more-info-4 {
+  top: -60px;
+}
+
+.x-btn {
+  float: right;
+  cursor: pointer;
+}
+
+.x-btn:hover {
+  content: url("../images/challenge/Exit_DWN.png");
+}
+
+.more-info-img {
+  cursor: pointer;
+}
+
+.more-info-img:hover {
+  content: url("../images/challenge/More_Icon_DWN.png");
+}
+
+.info-box-header {
+  border-bottom: 2px solid #E1261C;
+  height: 30px;
+  margin-bottom: 5px;
+}
+
+@media only screen and (max-width: 705px) {
+  .modal-body .col {
+    padding-bottom: 10%;
+  }
+  .modal-body .row {
+    padding-bottom: 0;
+  }
+  .modal-dialog {
+    top: 20px;
+  }
+}
+
+#box5,
+#box6 {
+  background: url("../images/challenge/Answer_BG.png") no-repeat center center;
+  background-size: cover;
+  max-width: 1920px;
+  position: absolute;
+}
+
+#box3 {
+  background: url("../images/Tour/3_Tour_BG.png") no-repeat center center;
+  background-size: cover;
+  max-width: 1920px;
+  position: absolute;
+}
+
+#box7 {
+  background: url("../images/Tour/7_Tour_BG.png") no-repeat right center;
+  background-size: cover;
+}
+
+.qbg-attempt-1 {
+  background: url("../images/challenge/FirstAttmpt_BG.png") no-repeat center center;
+  background-size: cover;
+  max-width: 1920px;
+  position: absolute;
+}
+
+.qbg-attempt-2 {
+  background: url("../images/challenge/ScndAttmpt_BG.png") no-repeat center center;
+  background-size: cover;
+  max-width: 1920px;
+  position: absolute;
+}
+
+.qbg-attempt-3 {
+  background: url("../images/challenge/ThrdAttmpt_BG.png") no-repeat center center;
+  background-size: cover;
+  max-width: 1920px;
+  position: absolute;
+}
+
+#progress-bar {
+  position: absolute;
+  bottom: 45px;
+  height: 28px;
+  right: 50px;
+  z-index: 999;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 20px;
+  font-family: Oswald;
+  color: white;
+  line-height: 1.2;
+}
+
+.pin {
+  height: 28px;
+  width: 28px;
+  background-color: #bbb;
+  border-radius: 50%;
+  float: right;
+  margin: 0 5px;
+  z-index: 1;
+}
+
+.intro {
+  background: url("../images/challenge/Intro_DWN.png") center center no-repeat;
+}
+
+.intro-down {
+  background: none;
+  background: url("../images/challenge/Intro_UP.png") center center no-repeat;
+}
+
+.conclusion {
+  background: url("../images/challenge/Conclude_UP.png") center center no-repeat;
+}
+
+.conclusion-down {
+  background: none;
+  background: url("../images/challenge/Conclude_DWN.png") center center no-repeat;
+}
+
+.scene {
+  background: url("../images/challenge/Scene_UP.png") center center no-repeat;
+}
+
+.scene-down {
+  background: none;
+  background: url("../images/challenge/Scene_DWN.png") center center no-repeat;
+}
+
+.vid {
+  background: url("../images/challenge/Vid_UP.png") center center no-repeat;
+}
+
+.vid-down {
+  background: none;
+  background: url("../images/challenge/Vid_DWN.png") center center no-repeat;
+}
+
+.quest {
+  background: url("../images/challenge/Question_bttn_UP.png") center center no-repeat;
+}
+
+.quest-down {
+  background: none;
+  background: url("../images/challenge/Question_bttn_DWN.png") center center no-repeat;
+}
+
+.quest-retry {
+  background: none;
+  background: url("../images/challenge/Question_bttn_Rtry.png") center center no-repeat;
+}
+
+.line {
+  width: 90%;
+  height: 1px;
+  background-color: white;
+  display: inline-block;
+  position: absolute;
+}
+
+.q-points {
+  color: white;
+  top: -10px;
+  position: absolute;
+  text-align: center;
+  width: 28px;
+}
+
+.score {
+  border: 2px solid white;
+  background-color: #E1261C;
+  z-index: 2;
+  width: 75px;
+  text-align: center;
+  padding-bottom: 2px;
+}
+
+.back-btn {
+  background: url("../images/challenge/Back_bttn_UP.png") left center no-repeat;
+  color: #E1261C;
+  font-family: Oswald;
+  width: 140px;
+  font-size: 40px;
+  top: 50px;
+  left: 50px;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  text-align: right;
+}
+
+.back-btn:hover {
+  background: url("../images/challenge/Back_bttn_DWN.png") left center no-repeat;
+}
+
+.attempt-1 {
+  background: url("../images/challenge/FirstAttmpt_Bttn.png") center center no-repeat;
+  /* color: #E1261C; */
+  color: #ffffff;
+  font-family: Oswald;
+  height: 63px;
+  width: 162px;
+  /* padding-left: 49px; */
+  font-size: 15px;
+  right: 300px;
+  position: absolute;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.attempt-2 {
+  background: url("../images/challenge/ScndAttmpt_Bttn.png") center center no-repeat;
+  /* color: #E1261C; */
+  color: #ffffff;
+  font-family: Oswald;
+  height: 61px;
+  width: 160px;
+  /* padding-left: 49px; */
+  font-size: 15px;
+  right: 300px;
+  position: absolute;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.attempt-3 {
+  background: url("../images/challenge/ThrdAttmpt_Bttn.png") center center no-repeat;
+  color: #E1261C;
+  font-family: Oswald;
+  height: 63px;
+  width: 172px;
+  /* padding-left: 49px; */
+  font-size: 15px;
+  right: 100px;
+  position: absolute;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.warn-sel-ans {
+  opacity: 0;
+  color: #E1261C;
+}
+
+#loginheader {
+  font-size: 96px;
+  font-weight: 500;
+  font-family: Oswald;
+  position: relative;
+  top: -70px;
+}
+
+button:focus, video:focus {
+  outline: 0;
+}
+
+html {
+  overflow-x: hidden;
+  min-height: 800px;
+}
+
+body {
+  max-width: 1920px;
+  min-height: 800px;
+  background-color: transparent;
+}
+
+header {
+  display: none;
+  position: absolute;
+  width: 100%;
+  max-width: 1920px;
+}
+
+.container-fluid {
+  overflow: hidden !important;
+  max-width: 1920px;
+}
+
+.container-fluid .nav-item {
+  z-index: 1005;
+}
+
+footer {
+  background-color: #E1261C;
+  color: #95100B;
+  border-top: none;
+  font-family: Oswald;
+  font-weight: 500;
+  font-size: calc(60px + 0.5vw);
+  width: 100%;
+  height: 98px;
+  max-width: 1920px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  pointer-events: none;
+  min-height: 98px;
+  z-index: 5;
+  background-image: url("");
+}
+
+footer div {
+  position: relative;
+  bottom: -18px;
+  left: 20px;
+}
+
+#container {
+  position: absolute;
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+  min-height: 800px;
+  max-width: 1920px;
+}
+
+.box {
+  position: absolute;
+  width: 100%;
+  max-width: 1920px;
+  height: 100%;
+  min-height: 800px;
+  text-align: center;
+  left: 150%;
+  margin-left: -50%;
+  overflow: hidden;
+}
+
+.box .row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+#box1 {
+  left: 50%;
+  background: url("../images/Tour/1_Tour_BG.png") no-repeat center bottom;
+}
+
+#box2, #box4, #box6 {
+  background: url("../images/Tour/2_Tour_BG.png") no-repeat center bottom;
+  background-size: cover;
+}
+
+#box5 {
+  background: url("../images/Tour/5_Tour_BG.png") no-repeat left center;
+  background-size: cover;
+}
+
+.question-bg {
+  background: url("../images/challenge_2/images/Question_BG_UP.png") no-repeat center center;
+  background-size: cover;
+  max-width: 1920px;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#header-image {
+  background: url("../images/challenge_2/images/Challenge_Heading.png") no-repeat;
+  background-size: 100%;
+  max-width: 1649px;
+  max-height: 97px;
+  margin-left: 10%;
+  margin-right: 10%;
+  background-position: center;
+  position: absolute;
+  left: 0;
+  width: 80%;
+  height: 97px;
+  z-index: 9;
+}
+
+.nav-item {
+  z-index: 9999;
+}
+
+header {
+  max-height: 57px;
+  overflow: hidden;
+}
+
+#retry-btn {
+  display: none;
+}
+
+.continue-btn-center {
+  background: url("../images/challenge_5/Cont-btn_UP.png") no-repeat;
+  background-size: contain;
+  width: 439px;
+  height: 175px;
+  border: 0;
+  background-position: center;
+  color: white;
+  font-family: Oswald;
+  font-size: 40px;
+  line-height: 40px;
+  font-weight: normal;
+  text-align: left;
+  padding: 0px 45px;
+  cursor: pointer;
+}
+
+.continue-btn-center:hover {
+  background: url("../images/challenge_5/Cont-btn_DWN.png") no-repeat;
+  color: #E1261C;
+}
+
+#start-btn:hover {
+  background-image: url("../images/Large Bttn_DWN.png");
+  color: #E1261C;
+}
+
+#content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: calc(100% - 200px);
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+#content-sm {
+  height: 41%;
+  padding-top: 4%;
+  overflow: hidden;
+}
+
+.center-text-box {
+  text-align: left;
+}
+
+#play-btn {
+  width: 156px;
+  height: 157px;
+  background: url("../images/challenge_2/images/Video_Play_Bttn_DWN.png") no-repeat;
+  float: left;
+  cursor: pointer;
+}
+
+.divider {
+  width: 9px;
+  height: 201px;
+  background: url("../images/challenge_2/images/Divided_Line.png") no-repeat;
+}
+
+#video-container {
+  display: none;
+  height: calc(100% - 3.4%);
+  background-color: black;
+  overflow: hidden;
+}
+
+#player1, #player2, #player3 {
+  right: 0;
+  max-width: 100%;
+  max-height: 90%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  margin-bottom: 7.9%;
+}
+
+label {
+  display: table;
+}
+
+#video-popup-1, #video-popup-2, #video-popup-3 {
+  position: absolute;
+  width: 725px;
+  height: 296px;
+  background: url("../images/challenge_2/images/ContinueBox.png") no-repeat;
+  font-family: Oswald;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: normal;
+  color: white;
+  left: 50%;
+  top: 40%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+#yes-btn {
+  position: absolute;
+  left: 30%;
+  top: 60%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 204px;
+  height: 50px;
+  background: url("../images/challenge_2/images/Small_Bttn_UP.png") no-repeat;
+  padding-top: 15px;
+  cursor: pointer;
+}
+
+#replay-btn {
+  position: absolute;
+  left: 70%;
+  top: 60%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 204px;
+  height: 50px;
+  background: url("../images/challenge_2/images/Small_Bttn_UP.png") no-repeat;
+  padding-top: 15px;
+  cursor: pointer;
+}
+
+.answer {
+  background: url("../images/challenge_2/images/Question_bttn_UP.png") no-repeat;
+  height: 20px;
+  float: left;
+  width: 20px;
+  /* padding: 20px; */
+  margin-top: 2px;
+  margin-right: 20px;
+  cursor: pointer;
+}
+
+.answer-on {
+  background: url("../images/challenge_2/images/Question_bttn_DWN.png") no-repeat;
+  height: 20px;
+  float: left;
+  width: 20px;
+  /* padding: 20px; */
+  margin-top: 2px;
+  margin-right: 20px;
+  cursor: auto;
+}
+
+.answer span, .answer-on span {
+  padding-left: 40px;
+  position: relative;
+  top: -3px;
+}
+
+[type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.reveal-btn {
+  background: url("../images/challenge_2/images/Arrow_UP.png") no-repeat;
+  width: 600px;
+  height: 71px;
+  cursor: pointer;
+}
+
+.remediation {
+  width: 600px;
+  display: none;
+}
+
+.remediation-continue {
+  background: url("../images/challenge_2/images/Small_Bttn_UP.png") no-repeat;
+  width: 206px;
+  height: 52px;
+  cursor: pointer;
+  font-family: Oswald;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: normal;
+  color: #FFFFFF;
+  padding-top: 15px;
+  cursor: pointer;
+}
+
+.remediation-retry {
+  background: url("../images/challenge_2/images/Small_Bttn_UP.png") no-repeat;
+  width: 206px;
+  height: 52px;
+  cursor: pointer;
+  font-family: Oswald;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: normal;
+  color: #FFFFFF;
+  padding-top: 15px;
+  cursor: pointer;
+}
+
+.remediation-retry div {
+  font-family: Oswald;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: normal;
+  color: #FFFFFF;
+  padding-top: 25px;
+  white-space: nowrap;
+}
+
+.remediation-retry:hover, .remediation-continue:hover {
+  background: url("../images/challenge_2/images/Small_Bttn_DWN.png") no-repeat;
+  color: #E1261C;
+}
+
+.remediation-txt {
+  padding: 40px 0;
+  text-align: left;
+}
+
+.remediation-icon {
+  width: 129px;
+  height: 100px;
+  background-repeat: no-repeat;
+}
+
+.remediation-reveal {
+  width: 50px;
+  height: 29px;
+  margin-left: -27px;
+  margin-top: -3px;
+  margin-right: 17px;
+  position: aboslute;
+  float: left;
+}
+
+#result-incorrect, #result-correct {
+  display: none;
+}
+
+.instructions {
+  font-family: Roboto-Black;
+  font-size: 18px;
+  color: #0082CA;
+}
+
+/* IMAGE STYLES */
+/* [type=radio] + div {	
+cursor: pointer;	
+background: url('images/challenge_2/images/Question_bttn_UP.png') no-repeat;	
+} */
+/* CHECKED STYLES */
+/* [type=radio]:checked + div {	
+outline: 2px solid #f00;	
+background: url('images/challenge_2/images/Question_bttn_DWN.png') no-repeat;	
+} */
+.multipleResponse {
+  display: block;
+  padding-top: 50px;
+}
+
+.multipleResponse .reveal-btn {
+  margin-bottom: 25px;
+}
+
+.reveal-btn.mr {
+  color: #941009 !important;
+  background: url(../images/challenge_2/images/Arrow_DWN.png) no-repeat;
+}
+
+.topCenterText {
+  padding-left: 30px;
+}
+
+.black-txt {
+  color: #212529;
+}
+
+.white-txt {
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 1030px) {
+  footer div {
+    font-size: 20px;
+    position: fixed;
+    position: fixed;
+    bottom: -5px;
+  }
+}
+
+@media only screen and (max-width: 928px) {
+  #continue-btn {
+    width: 314px;
+    background-size: 100%;
+    bottom: 110px;
+    padding: 42.5px;
+    font-size: 30px;
+  }
+  .topCenterText {
+    height: 65%;
+    padding-top: 100px;
+    padding-bottom: 20px;
+  }
+  /* .rev-text {
+	float:right;
+	} */
+}
+
+@media only screen and (max-width: 630px) {
+  #progress-bar {
+    width: 80%;
+  }
+  #progress-bar, .pin {
+    overflow: visible;
+    width: 80%;
+  }
+  .continue-btn {
+    bottom: 110px;
+  }
+}
+
+#zerexPic {
+  max-height: 75%;
+  top: 12.5%;
+  position: absolute;
+  left: 0px;
+}
+
+#flashcardContainer {
+  height: 75%;
+  width: 100%;
+  max-height: 70vmin;
+  right: -10vmin;
+  position: relative;
+  top: calc(100% - 70vmin);
+}
+
+.fullHeight {
+  height: 100%;
+}
+
+.flashcardButton {
+  background-image: url("../images/challenge_5/Flashcard_Bttn_UP.png");
+  height: 12.3vmin;
+  width: 65vmin;
+  max-width: 901px;
+  position: absolute;
+  background-size: 100%;
+  color: #FFF;
+  font-size: 2.2vmin;
+  font-family: Roboto;
+  text-transform: uppercase;
+  text-align: left;
+  padding-top: 4.6vmin;
+  padding-left: 20px;
+  right: 2vmin;
+  cursor: pointer;
+}
+
+.flashcardButton:hover {
+  background-image: url("../images/challenge_5/Flashcard_Bttn_HVR.png");
+}
+
+.flashcardRevealed {
+  background-image: url("../images/challenge_5/Flashcard_Bttn_DWN.png");
+  display: none;
+  height: 12.3vmin;
+  width: 65vmin;
+  max-width: 901px;
+  font-size: 2vmin;
+  font-family: Roboto;
+  position: absolute;
+  text-align: left;
+  background-size: 100%;
+  right: 2vmin;
+  padding: 10px 7vmin 0px 10px;
+}
+
+#flashcard1, #flashcardR1 {
+  top: 0vw;
+}
+
+#flashcard2, #flashcardR2 {
+  top: 13vh;
+}
+
+#flashcard3, #flashcardR3 {
+  top: 26vh;
+}
+
+#flashcard4, #flashcardR4 {
+  top: 39vh;
+}
+
+.pageHeader {
+  top: 110px;
+  left: 50px;
+  position: absolute;
+}
+
+#contentB {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+#continue-btn-1 {
+  right: 100px;
+  bottom: 100px;
+  position: absolute;
+}
+
+#continue-btn-2 {
+  left: 100px;
+  top: calc(50% - 87.5px);
+  position: absolute;
+}
+
+#contents-activity {
+  width: 100%;
+  height: 100%;
+  border: 0px;
+  position: absolute;
+  top: 0;
+  max-width: 1920px;
+  min-width: 1250px;
+  margin-top: 0;
+  overflow-y: hidden;
+  display: block;
+  z-index: 1;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-color: white;
+  overflow-y: auto;
+}
+
+.welcomeText {
+  color: #E1261C;
+  font-size: 64pt;
+  font-weight: 500;
+  font-family: Oswald;
+  line-height: 100%;
+}
+
+.subheader {
+  color: #0082CA;
+  font-weight: bold;
+  font-size: 24pt;
+}
+
+.learnMoreButton {
+  background-color: #E1261C;
+  height: 40px;
+  width: 180px;
+  position: absolute;
+  text-align: center;
+  border-radius: 7px;
+  bottom: 0px;
+  padding-top: 7px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.learnMoreButton:hover {
+  background-color: #940f0A;
+}
+
+.box1image {
+  bottom: -120px;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  max-width: 561px;
+}
+
+.box2image {
+  position: absolute;
+  right: 30px;
+  width: 100%;
+  max-width: 361px;
+}
+
+.box3image {
+  position: absolute;
+  left: 0px;
+  width: 140%;
+  top: 20%;
+  max-width: 569px;
+}
+
+.box4image {
+  position: absolute;
+  left: 0px;
+  width: 140%;
+  top: 20%;
+  max-width: 547px;
+}
+
+.image5Text {
+  font-family: Oswald;
+  font-size: 2vw;
+  position: relative;
+  width: 400px;
+  left: calc(33% - 200px);
+  top: 25%;
+  text-align: center;
+}
+
+.threePeatStreakText {
+  font-family: Segoe UI;
+  font-size: 3vw;
+  position: relative;
+  width: 400px;
+  font-weight: bold;
+  color: #0082CA;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.box5image {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  top: 20%;
+  max-width: 680px;
+}
+
+.box6image {
+  position: absolute;
+  left: 0px;
+  width: 140%;
+  top: 10%;
+  max-width: 761px;
+}
+
+.box7image {
+  position: absolute;
+  right: 10%;
+  width: 120%;
+  top: 10%;
+  max-width: 615px;
+}
+
+a.red {
+  color: #E1261C !important;
+  text-decoration: underline !important;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.hotword {
+  background-color: #E0E0E0;
+  width: 300px;
+  color: #6F6F6F;
+  border-radius: 20px;
+  padding: 20px 40px 20px 20px;
+  font-weight: bold;
+  text-align: left;
+  position: fixed;
+  display: none;
+  z-index: 100;
+}
+
+.hot2, .hot6, .hot7 {
+  top: calc(50% - 100px);
+  left: calc(50% - 150px);
+}
+
+.hot4, .hot5 {
+  top: calc(50% - 200px);
+  left: calc(50% - 150px);
+}
+
+.hExit {
+  background-image: url("../images/challenge_5/Clck_to_Rvl_Bttn_UP.png");
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  width: 49px;
+  height: 50px;
+  right: -25px;
+  top: -25px;
+  position: absolute;
+  cursor: pointer;
+}
+
+.hExit:hover {
+  background-image: url("../images/challenge_5/Clck_to_Rvl_Bttn_HVR.png");
+}
+
+.progressContainer {
+  background-color: #F0F5F7;
+  width: 100%;
+  height: 46px;
+  position: fixed;
+  z-index: 1000;
+  left: 0px;
+}
+
+.progressBar {
+  background-image: url("../images/Tour/Tour_Progress Timeline.png");
+  width: 197px;
+  height: 16px;
+  position: fixed;
+  z-index: 1000;
+  top: 12px;
+  left: calc(50% - 98px);
+}
+
+.progressMarker {
+  background-image: url("../images/Tour/Tour_Progress Marker.png");
+  width: 8px;
+  height: 8px;
+  position: relative;
+  z-index: 1001;
+  top: 4px;
+  left: calc(50% - 95px);
+}
+
+.skipText {
+  text-decoration: underline;
+  color: #E1261C;
+  font-weight: bold;
+  position: fixed;
+  right: 15px;
+  top: 7px;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+@media only screen and (max-width: 997.98px) {
+  .welcomeText {
+    font-size: 48pt;
+  }
+}
+
+@media only screen and (max-width: 767.98px) {
+  .welcomeText {
+    font-size: 36pt;
+  }
+  .oneLeft {
+    height: 270px;
+  }
+  .box1image {
+    position: relative;
+    bottom: unset;
+  }
+  .box2image {
+    max-width: 290px;
+    position: relative;
+  }
+  .learnMoreButton {
+    position: relative;
+    margin-top: 15px;
+  }
+  .threeLeft {
+    height: 310px;
+  }
+  .box3image, .box4image, .box6image, .box7image {
+    position: relative;
+    left: 0px;
+    width: calc(100% - 30px);
+    top: unset;
+  }
+  .box5image {
+    position: relative;
+  }
+  .hotword {
+    font-size: 15px;
+  }
+  .image5Text {
+    font-size: 3vw;
+    top: 25%;
+  }
+  .threePeatStreakText {
+    font-size: 5vw;
+  }
+}
+/*# sourceMappingURL=tour.css.map */

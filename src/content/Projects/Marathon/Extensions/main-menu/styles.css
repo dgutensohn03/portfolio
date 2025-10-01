@@ -1,0 +1,19 @@
+﻿#main-menu {
+	box-sizing: border-box;
+	height: 100%;
+	color: white;
+	padding: 6px;
+}
+
+#menu-items {
+	border: none;
+	margin-top: 12px;
+}
+
+.menu-item {
+	color: black;
+	cursor: pointer;
+	width: 45%;
+	padding: 12px;
+	margin-bottom: 12px;
+}

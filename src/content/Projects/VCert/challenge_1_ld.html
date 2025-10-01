@@ -1,0 +1,1571 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/challenge.css">
+    <style>
+
+
+
+
+        #box3 {
+            background: url('./images/challenge_1_ld/Pg3_BG.png')no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            max-width: 1920px;
+            position: absolute;
+        }
+
+        #box4 {
+            /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#aebcbf+0,6e7774+29,0a0e0a+78,0a0809+100 */
+background: rgb(174,188,191); /* Old browsers */
+background: -moz-linear-gradient(top,  rgba(174,188,191,1) 0%, rgba(110,119,116,1) 29%, rgba(10,14,10,1) 78%, rgba(10,8,9,1) 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(top,  rgba(174,188,191,1) 0%,rgba(110,119,116,1) 29%,rgba(10,14,10,1) 78%,rgba(10,8,9,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to bottom,  rgba(174,188,191,1) 0%,rgba(110,119,116,1) 29%,rgba(10,14,10,1) 78%,rgba(10,8,9,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aebcbf', endColorstr='#0a0809',GradientType=0 ); /* IE6-9 */
+
+        }
+        .col-xl-4 {
+            padding: 50px;
+        }
+
+#box2 .plus-1, #box2 .plus-2, #box2 .plus-3{
+    width: auto;
+    top: 0;
+
+    display: flex;
+justify-content: center;
+}
+
+#box2 .plus-1 div:nth-child(2) {
+    z-index: 1;
+    top: 0;
+}
+#box2 .plus-2 div:nth-child(2) {
+    z-index: 1;
+    top: 0;
+}
+#box2 .plus-3 div:nth-child(2) {
+    z-index: 1;
+    top: 0;
+}
+/* #box2 .plus-2 div:nth-child(2) {
+    left: 67%;
+    top: 60%;
+	z-index: 1;
+}
+#box2 .plus-3 div:nth-child(2) {
+    left: 5%;
+    top: 31%;
+	z-index: 4;
+}
+#box2 .plus-4 div:nth-child(2) {
+    left: 67%;
+    top: 87%;
+	z-index: 4;
+}
+
+#box2 .plus-5 div:nth-child(2) {
+    left: 5%;
+    top: 86%;
+	z-index: 4;
+} */
+
+.challenge-1-vps #box2 .content-box-1 {
+
+    top: 20px;
+ 
+    z-index: 5;
+    min-width: 100%;
+}
+
+.challenge-1-vps #box2 .content-box-2 {
+
+    top: 20px;
+
+    z-index: 5;
+    min-width: 100%;
+}
+
+.challenge-1-vps #box2 .content-box-3 {
+
+    top: 20px;
+
+    z-index: 5;
+    min-width: 100%;
+}
+
+.bottle-img > img {
+    max-height: 30vh;
+    min-height: auto;
+    max-width: 30vw;
+    width: auto;
+    height: auto;
+}
+
+
+/* .challenge-9 #box2 .content-box-2 {
+    right: 19%;
+    bottom: 35%;
+    min-width: 460px;
+    z-index: 5;
+}
+.challenge-9 #box2 .content-box-3 {
+    left: 19%;
+    top: 35%;
+    min-width: 460px;
+    z-index: 5;
+}
+.challenge-9 #box2 .content-box-4 {
+    right: 20%;
+    bottom: 9%;
+    min-width: 460px;
+    z-index: 5;
+}
+.challenge-9 #box2 .content-box-5 {
+    left: 16%;
+    bottom: 10%;
+    min-width: 460px;
+    z-index: 4;
+}
+.challenge-9 #box8 #content {
+height: 70% !important;
+} */
+
+
+#box2 .btl-plus-container > .bottle-img, #box2 .btl-img-container > .bottle-img {
+    min-width: 200px;
+    max-height: 80vh;
+    min-height: auto;
+    max-width: 200px;
+    padding: 0 !important;
+}
+
+#box2 .btl-plus-container > .bottle-img > img, #box2 .btl-img-container > .bottle-img > img {
+    padding: 0 !important;
+}
+.hotspot-continue {
+    z-index: 3 !important;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.reveal-arrow-left {
+    max-width: 500px;
+    min-width: 450px;
+    height: 71px;
+    padding-left: 140px;
+    padding-right: 140px;
+    cursor: auto;
+    background: url(./images/challenge_2/images/Arrow_UP.png) no-repeat;
+}
+.flex-container{
+min-height:100px;
+display:flex;
+align-items:center;
+}
+.flex-container:after{
+content:'';
+min-height:inherit;
+font-size:0;
+}
+
+.flex-box {
+    display:flex;
+    justify-content: space-between;
+
+}
+
+.bottle-img {
+    width:290px;
+}
+
+.flex-box .spacer{ width: 50px; background-color: pink;}
+
+.clk-reveal-plus {
+
+    top:0;
+}
+
+.clk-reveal-plus:hover {
+
+    top:0;
+}
+
+#box1 > #content {
+    height: 95% !important;
+}
+
+#box2 .bottle-img > img {
+    padding-top: 10%;
+}
+
+
+@media only screen and (max-width: 1290px) {
+    .reveal-arrow-left {
+        height: 71px;
+    color: #fff !important;
+    background: none;
+    padding-left: 140px !important;
+    padding-right: 140px !important;
+    max-width: 500px !important;
+    min-width: 450px !important;
+    background: url(../images/challenge_2/images/Arrow_UP.png) no-repeat;
+}
+}
+@media only screen and (max-width: 999px){
+	.hotspot-continue > button, .flashCard-continue > button {
+		min-width: 200px !important;
+	}
+	.center-content {
+		padding: 35px 35px !important;
+	}
+    .spacer {
+  flex-basis: 100%;
+  height: 0;
+}
+
+.hotspot-continue > button, .flashCard-continue > button {
+    min-width: 230px !important;
+}
+
+
+}
+@media only screen and (max-width: 1039px) {
+.reveal-arrow-left {
+    height: auto;
+    color: black !important;
+    background: none;
+    min-width: 220px !important;
+}
+}
+@media only screen and (max-width: 550px) {
+.top-text {
+    top: -80px;
+}
+.center-content {
+    padding: 7% 5% !important;
+}
+.content-box {
+width: 80%;
+    min-width: 275px !important;
+}
+
+.clk-reveal-plus, .clk-reveal-plus:hover, .clk-reveal-x, .clk-reveal-x:hover, .clk-reveal-complete-plus, .clk-reveal-complete-plus:hover, .clk-reveal-complete-x, .clk-reveal-complete-x:hover {
+    background-size: 8vw;
+}
+
+
+}
+@media only screen and (max-width: 999px) {
+
+    #box1 > #content {
+        height: unset !important;
+    }
+
+    .challenge-1-vps #box3 {
+        background: none;
+    }
+}
+@media only screen and (max-width: 1790px) {
+    .hotspot-continue {
+    min-width: 750px;
+    -webkit-box-pack: center;
+    justify-content: center;
+    position: relative !important;
+}
+}
+
+table {
+			border-collapse: collapse;
+			border-spacing: 0;
+			width: 100%;
+		}
+
+		table td {
+			padding: 10px 20px;
+		}
+
+		table .headerBlue {
+			font-size: 18px;
+			display: inline;
+			white-space: nowrap;
+		}
+
+		@media only screen and (max-width: 1290px) {
+			.col-lg-12-custom {
+				min-width: auto;
+				max-width: 612px;
+				margin: auto;
+			}
+
+			table .headerBlue,
+			table td {
+				font-size: calc(1.5vw + 5px);
+			}
+
+		}
+
+
+    </style>
+    <title>Vcert Project</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="container-fluid challenge-1-vps">
+        <div class="box " id="box1">
+            <div class="row" id="content">
+                <div class="col topCenterText ">
+                    <div class='center-text-box'>
+                        <h1>Let’s consider the number 14.</h1>
+                        <p>
+                            <font class="emphasisBold"></font>Why? Because installers can increase premium oil change services
+                            by 14% and add preventative chemical service sales with the Valvoline SPARK program.
+                        </p>
+                        <p>
+                            How? Why? And the benefits for everyone involved are the subject of this Performance+ challenge.
+                        </p>
+        
+                        <p>
+                        <div class="headerBlue">SELECT START.</div>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col topCenterText m-margin-bottom">
+                    <div>
+                        <button class="next" id="start-btn" type="submit">START</button>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center"><font class="emphasisBold">VALVOLINE SPARK</font> execution helps installers achieve an average <font class="emphasisBold">14%</font> increase in premium oil change services over their business prior to <font class="emphasisBold">VALVOLINE SPARK</font>.</p>
+        </div>
+          			<!--1.2 Product Overview-->
+                      <div class="box" id="box2">
+                          <div style="width: 100%; height: 100px;">
+                        <div class='back-btn'>
+                            <img src="">BACK
+                        </div>      </div> 
+                        <div class="row align-middle center-content full-box-height flex-container" id="content" style="align-items: flex-start !important; height: calc(100% - 100px) !important; padding-top: 0 !important;">                    
+                        <div class='row' style='display:block; float: left; text-align: left; padding: 0 0 0 0; width: 100%; '>
+                                <div class="col-md-12">
+                                    <h1>Presenting Valvoline SPARK</h1>
+                                    <p style="margin-bottom: 0;">Select each<img src="images/challenge_4/Clck_to_Rvl_Bttn_UP.png" style="transform: scale(.5);">to learn more.</p>
+                            </div>
+                            </div>
+                            <div class="row flex-box" >
+                                <div class="col-xl-4">
+                                <div class='bottle-img' style="margin: auto;">
+                                    <img src='images/challenge_1_ld/VPS_1_Pg2_Icon 1.png'>
+                                <div class='plus-1' >
+                                    <div class='content-box content-box-1'>
+                                        <h2>What It Is</h2>
+                                        Valvoline SPARK is a proven approach to increase consumer purchases of premium oil change services. SPARK gives installers an efficient way to present premium services to their customers, resulting in customers selecting premium service at greater rates. Selling more premium oil change services is a win-win because consumers get enhanced vehicle protection, and installers grow sales and margins.
+                                        <br />
+                                        Think of this. A consumer enters a shop with a specific goal—to get their vehicle to “run better.” They believe that an oil change alone will do that. Most customers are unaware of premium oil changes and how chemical services can be used to maximize performance and protect their engine. Valvoline SPARK helps bridge that knowledge gap.
+                                        </div>
+                                   
+                                    <div style="" class="clk-reveal-plus"></div>
+                                </div>
+                                </div>
+</div>
+<div class="col-xl-4">
+                                <div class='bottle-img' style="margin: auto;">
+                                    <img src='images/challenge_1_ld/VPS_1_Pg2_Icon 2.png'>
+                                <div class='plus-2' >
+                                    <div class='content-box content-box-2'>
+                                        <h2>How It Works</h2>
+                                        SPARK builds on the traditional tiered-approach to engine oil options by integrating chemical services. Not only do these service treatments provide customers with an added layer of protection and performance, but they also make a visible impact on the installer's bottom line. The business-friendly SPARK approach allows installers to grow revenue and margin without having to implement a complicated program.
+                                        </div>
+                                   
+                                    <div style="" class="clk-reveal-plus"></div>
+                                </div>
+                                </div>
+                            </div>
+                                <div class="col-xl-4">
+                                <div class='bottle-img' style="margin: auto;">
+                                    <img src='images/challenge_1_ld/VPS_1_Pg2_Icon 3.png'>
+                                <div class='plus-3' >
+                                    <div class='content-box content-box-3'>
+                                        <h2>A Plan for Installer Success</h2>
+                                        Valvoline SPARK fits installer goals by letting them choose from options that work best for their specific goals and operations. SPARK equips participating locations with selling materials that help simplify consumer purchasing decisions and increase engagement. Optimized menus help consumers make quicker, more informed decisions that reinforce that they have made a great choice in maintaining the life of their engine.
+                                        </div>
+                                   
+                                    <div style="" class="clk-reveal-plus"></div>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+                            <div class="col hotspot-continue hidden">
+                                <button class="next continue-btn hs-continue box2-continue continue-small-m" style="display: inline-block;">CONTINUE</button>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="box" id="box3">
+                            <div class='back-btn'>
+                                <img src="">BACK
+                            </div>
+                            <div class="row full-box-height back-padding" id="content">
+                                <div class="col-lg-5 col-md-6 col-sm-6 col-xs-10" style="text-align: left;">
+                                    <h1>Sharing Program Benefits</h1>
+                                    <div>
+                                        <p>
+                                            Many consumers will be unaware of the benefits of a Fuel System Treatment. The SPARK Counter Mat is used to help them understand the different options, but the Service Writer will need to translate each tier and benefit to the consumer’s specific situation.
+                                        </p>
+                                        <p>To do that successfully, the Service Writer should be knowledgeable about:
+                                        <ul>
+                                            <li>What Valvoline™ motor oil options are available to customers in their shop</li>
+                                            <li>What VPS additives are included in each service package or option</li>
+                                            <li>What is the price for each service package available to customers</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-7 col-md-6 col-sm-6 col-xs-2" style="text-align: left;">
+                                </div>
+                                <div class="row continue-anchor" style="padding: 0;">
+                                    <div class="desktop-br mobile-center">
+                                        <button class="next continue-btn continue-small-m"
+                                            style="display: inline-block;">CONTINUE</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            <!-- QUESTION 1 -->
+        
+            <div id="box4" class="box">
+                <div class='back-btn'>
+					<img src="">BACK
+				</div>
+                <div id="video-container" style="">
+                    <video id="player1" controls onplay=""
+                        onended="$(this).parent().fadeOut(); $('#video-popup-1-mask').css('display','flex').hide().fadeIn(); $('#box4').css('overflow', 'auto'); $('#box4 #content').css('display', 'flex');">
+                        <source src="images/challenge_1_vps/video/US_Spark_GoodYear_V4.mp4">
+                    </video>
+                </div>
+                <div id="content" class="row align-middle">
+                    <div class="col topCenterText">
+                        <div class="padding-50">
+                            <div id="play-btn" onclick="playVideo_1() "></div>
+                            <h1 class='white-txt video-text m-scale-text'>View Video</h1>
+                        </div>
+                    </div><div class="col m-none" style="flex-grow: 1;display: flex;align-items: center;justify-content: center;">
+                        <div class="divider"></div>
+                    </div>
+                    
+                    <div class="col topCenterText m-padding">
+                        <div class='center-text-box'>
+                            <h4 class='white-txt m-scale-text' style="margin-bottom: 20px;">VIDEO</h4>
+                            <h1 class='white-txt m-scale-text'>
+                                The key to SPARK is successfully articulating its benefits. This includes the product benefits as well as the performance benefits the consumer and their vehicle will receive. In this video, you’ll see how this is done in a simulated SPARK conversation between an installer counterperson and a customer.
+                            </h1>
+                        </div>
+                    </div>
+                    <div id='video-popup-1-mask' class="video-popup">
+                        <div class="video-dialog">
+                            <div class="video-border">
+                            <div id="video-popup-header">
+                                <div class="flex-c-sb">
+                                    <div class="red-dot"></div>CONTINUE?<div class="red-dot"></div>
+                                </div>
+                            </div>
+                                <div class="row video-body">
+                                    <div class="col flex-middle">
+                                    <div id="yes-btn" class="next" onclick="">Yes</div>
+                                </div>
+                                <div class="col flex-middle">
+                                    <div id="replay-btn" onclick="playVideo_1()">Replay</div>
+                                </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box" id="box5">
+                <div style="width: 100%; height: 100px;">
+					<div class='back-btn'>
+						<img src="">BACK
+					</div>
+				</div>
+				<div class="row align-middle center-content full-box-height flex-container" id="content"
+					style="align-items: flex-start !important; height: calc(100% - 100px) !important;  text-align: left;">
+					<div class='row' style='width: 100%; padding: 0;'>
+						<div class="col-xl-4 col-lg-12 col-sm-12 m-bottom-padding" style="padding: 0;">
+						    <h1>But wait, there's more!</h1>
+                        <div>
+                            <p>
+                                In addition to the benefits that were shared with the customer in the video, SPARK also brings customers peace of mind with the Valvoline™ Service Plus Limited Lifetime Guarantee. This program gives consumers up to $4,000 of coverage on components serviced. Recommending an oil change service package that’s backed up by the Limited Lifetime Guarantee will also increase premium percentages for your installers.
+                            </p>
+                        </div>
+						</div>
+						<div class="col-xl-2"></div>
+						<div class="col-xl-6 col-lg-12 col-sm-12 m-bottom-padding" style="padding: 0;">
+							<table>
+                                <th colspan="3" style="text-align: center;"><h1>EXPANDED COVERAGE</h1></th>
+								<tr style="background-color: #99CDEA;">
+									<td>
+										<div class="headerBlue">LEVEL 1</div>
+									</td>
+									<td>Coverage up to <div class="headerBlue">$4,000</div>
+									</td>
+									<td>First Service Before <div class="headerBlue">50,000 MILES</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="headerBlue">LEVEL 2</div>
+									</td>
+									<td>Coverage up to <div class="headerBlue">$2,000</div>
+									</td>
+									<td>First Service Before <div class="headerBlue">100,000 MILES</div>
+									</td>
+								</tr>
+								<tr style="background-color: #99CDEA;">
+									<td>
+										<div class="headerBlue">LEVEL 3</div>
+									</td>
+									<td>Coverage up to <div class="headerBlue">$1,000</div>
+									</td>
+									<td>First Service Before <div class="headerBlue">125,000 MILES</div>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div class="headerBlue">LEVEL 4</div>
+									</td>
+									<td>Coverage up to <div class="headerBlue">$500</div>
+									</td>
+									<td>First Service Before <div class="headerBlue">150,000 MILES</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+					<!-- <div class='row m-bottom-padding' style='width: 100%; padding: 0;'>
+						<div class="col-xl-5 col-lg-12 col-sm-12" style="padding: 0; margin: auto;"> -->
+							<!--Right Column-->
+							<!-- <img style="max-width:100%; max-height:100%;"
+								src="images/challenge_3_vps/VPS_3_Pg5_BG_v2.png"> -->
+
+							
+						<!-- </div>
+						<div class="col-xl-2"></div>
+						<div class="col-xl-5 col-lg-12 col-sm-12" style="padding: 0; margin: auto;"></div>
+					</div> -->
+
+					<!-- <div class='row m-bottom-padding' style='width: 100%; padding: 0;'>
+						<div class="col-xl-5 col-lg-12" style="padding: 0;">
+							<h1></h1>
+						</div>
+						<div class="col-xl-1 col-lg-12 col-sm-12"
+							style="flex-grow: 1; display: flex;align-items: center; justify-content: center;">
+						</div>
+						<div class="col-xl-5 col-lg-12" style="padding: 0;">
+
+						</div>
+					</div> -->
+					<div class="col float-box" style="min-width: auto;">
+						<button class="next continue-btn hs-continue box2-continue continue-small-m"
+							style="display: inline-block; margin-bottom: 0;">CONTINUE</button>
+					</div>
+                </div>
+                
+
+
+            </div>
+            <!-- QUESTION 1 -->
+            <div id="box6" class="box question-bg-box">
+                <div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+						<div class='center-text-box question-1'>
+							<h1 id="question-num"></h1>
+							<div class='question-text'></div>
+							<div class='answer-container'></div>
+						</div>
+					</div>
+					<div class="col topCenterText m-RightCol-question">
+						<div class="reveal-btn text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="reveal-btn-m text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+
+						<div class="remediation">
+							<div class="remediation-icon"></div>
+							<div class="remediation-txt"></div>
+							<div class="remediation-continue next">
+								Continue
+							</div>
+							<div class="remediation-retry">
+								Try Again
+								<div class='warn-sel-ans'>
+									Choose an answer and select "Try Again."
+								</div>
+							</div>
+							<div class="attempt-container row">
+								<div class="attempt-1">
+									FIRST ATTEMPT
+								</div>
+								<div class="attempt-2">
+									SECOND ATTEMPT
+								</div>
+								<div class="attempt-3">
+									RETRY IN 7 DAYS
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+            <!-- QUESTION 2 -->
+            <div id="box7" class="box question-bg-box">
+                <div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+						<div class='center-text-box question-2'>
+							<h1 id="question-num"></h1>
+							<div class='question-text'></div>
+							<div class='answer-container'></div>
+						</div>
+					</div>
+					<div class="col topCenterText m-RightCol-question">
+						<div class="reveal-btn text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="reveal-btn-m text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+
+						<div class="remediation">
+							<div class="remediation-icon"></div>
+							<div class="remediation-txt"></div>
+							<div class="remediation-continue next">
+								Continue
+							</div>
+							<div class="remediation-retry">
+								Try Again
+								<div class='warn-sel-ans'>
+									Choose an answer and select "Try Again."
+								</div>
+							</div>
+							<div class="attempt-container row">
+								<div class="attempt-1">
+									FIRST ATTEMPT
+								</div>
+								<div class="attempt-2">
+									SECOND ATTEMPT
+								</div>
+								<div class="attempt-3">
+									RETRY IN 7 DAYS
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+            <!-- QUESTION 3 -->
+            <div id="box8" class="box question-bg-box">
+                <div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+						<div class='center-text-box question-3'>
+							<h1 id="question-num"></h1>
+							<div class='question-text'></div>
+							<div class='answer-container'></div>
+						</div>
+					</div>
+					<div class="col topCenterText m-RightCol-question">
+						<div class="reveal-btn text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="reveal-btn-m text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+
+						<div class="remediation">
+							<div class="remediation-icon"></div>
+							<div class="remediation-txt"></div>
+							<div class="remediation-continue next">
+								Continue
+							</div>
+							<div class="remediation-retry">
+								Try Again
+								<div class='warn-sel-ans'>
+									Choose an answer and select "Try Again."
+								</div>
+							</div>
+							<div class="attempt-container row">
+								<div class="attempt-1">
+									FIRST ATTEMPT
+								</div>
+								<div class="attempt-2">
+									SECOND ATTEMPT
+								</div>
+								<div class="attempt-3">
+									RETRY IN 7 DAYS
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+            </div>
+                        <!-- QUESTION 4 -->
+                        <div id="box9" class="box question-bg-box">
+                            <div class='back-btn'>
+                                <img src="">BACK
+                            </div>
+                            <div class="row align-middle full-box-height" id="content">
+                                <div class="col topCenterText m-LeftCol-question back-btn-padding">
+                                    <div class='center-text-box question-4'>
+                                        <h1 id="question-num"></h1>
+                                        <div class='question-text'></div>
+                                        <div class='answer-container'></div>
+                                    </div>
+                                </div>
+                                <div class="col topCenterText m-RightCol-question">
+                                    <div class="reveal-btn text-white">
+                                        <h3>REVEAL ANSWER</h3>
+                                    </div>
+                                    <div class="reveal-btn-m text-white">
+                                        <h3>REVEAL ANSWER</h3>
+                                    </div>
+            
+                                    <div class="remediation">
+                                        <div class="remediation-icon"></div>
+                                        <div class="remediation-txt"></div>
+                                        <div class="remediation-continue next">
+                                            Continue
+                                        </div>
+                                        <div class="remediation-retry">
+                                            Try Again
+                                            <div class='warn-sel-ans'>
+                                                Choose an answer and select "Try Again."
+                                            </div>
+                                        </div>
+                                        <div class="attempt-container row">
+                                            <div class="attempt-1">
+                                                FIRST ATTEMPT
+                                            </div>
+                                            <div class="attempt-2">
+                                                SECOND ATTEMPT
+                                            </div>
+                                            <div class="attempt-3">
+                                                RETRY IN 7 DAYS
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+            <div id="box10" class="box">
+                <div class="mask-img" style="position:absolute; top:0; overflow: visible;"><img id="learn-screen-img"
+                    src="images/Conclsn-Photo_LD.png" style="justify-content: center;"></div>
+            <div class="row align-middle learn-box" id="content" style="height: 55% !important;">
+                <div class="col-md-12 col-xl-6" style="text-align: left">
+                    <div>
+                        <h1>What Did We Learn Today?</h1>
+                        <div>
+                            <p>14%. That’s the increase an installer can see in premium oil change services  with SPARK.</p>
+                            <p>SPARK can help an installer boost sales and build consumer satisfaction  by providing them with high-quality services that provide superior protection and enhanced performance. Guaranteed.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xl-6 learned-continue" style="min-height: 150px;">
+                    <button class="next continue-btn-center" id="continue-btn-7">CONTINUE</button>
+                </div>
+            </div>
+            </div>
+            <div id="box11" class="box">
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText">
+						<div class='center-text-box'>
+                            <h1>Challenge Complete!</h1>
+                            <div id='result-incorrect'>
+                                <p>It was a good try, but to successfully complete a challenge, you need a score of 80% or higher on the challenge questions.</p>
+                                <p>You earned 0 points this time.</p>
+                                <p>You do have the opportunity to retake this challenge and earn some points!</p>
+                                <p>Better luck next time!</p>
+                            </div>
+                            <div id='result-closed'>
+                                <p>Looks like you still have some work to do with this topic. You did not earn a
+                                passing score and no additional points will be added to your total.</p>
+                                <p>While you wait for the next challenge to hit your inbox, you might want to return to your class materials and review some of the information around this specific topic.</p>
+                                <p>This challenge will remain open so you can put that review to the test by taking the challenge again. (No points can be earned any longer for this challenge.)</p>
+                                <p>A new challenge will be coming soon. Better luck next time!</p>
+                            </div>
+                            <div id='result-three'>
+                                <p>You’ve completed this challenge review. If you would like to review this topic in
+                                    greater depth, you may want to return to your class materials and review some of the
+                                    information presented there.</p>
+                                <p>As a reminder, no points will be earned for completing a challenge review.</p>
+                            </div>
+                            <div id='result-correct'>
+                                <p>Great work!</p>
+                                <p>You just earned yourself <span id="score">10</span> points.</p>
+                                <p>Remember, you can’t earn any additional points from this challenge, but you can use
+                                    it as reference.</p>
+                                <p>Look for your next challenge soon.</p>
+                            </div>
+                            <!-- <div>For more information on this topic, check out some additional resources <a
+                                    id="additional-resource" href="" target="_blank">here</a>.</div> -->
+                        </div>
+                    </div>
+                    <div class="col topCenterText col-sm">
+                        <div>
+                            <button id="gameover-btn" type="submit">CONTINUE</button>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+
+    <div id='progress-bar'>
+        <div class='line'></div>
+        <div class='pin intro'></div>
+        <div class='pin quest'></div>
+        <div class='pin quest'></div>
+        <div class='pin vid'></div>
+        <div class='pin quest'></div>
+        <div class='pin quest'>
+            <div class='q-points'></div>
+        </div>
+        <div class='pin quest'>
+            <div class='q-points'></div>
+        </div>
+        <div class='pin quest'>
+            <div class='q-points'></div>
+        </div>
+        <div class='pin quest'>
+            <div class='q-points'></div>
+        </div>
+        <div class='pin quest'></div>
+        <div class='pin conclusion'></div>
+        <div class='score'>0</div>
+    </div>
+
+	<footer><div>CHALLENGE #1</div></footer>
+    <!-- <script src="../../bin/footerChallenge.js"></script> -->
+    <script src="scripts/polyfill.min.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="scripts/jquery-3.4.1.js"></script>
+    <script src="scripts/popper.js/dist/umd/popper.min.js"></script>
+    <script src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script> -->
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script> -->
+    <!-- <script defer src="src/fb-core-js.js"></script> -->
+    <script defer src="bin/fb-auth.js"></script>
+    <script src="bin/rules_popup_c1_ld.js"></script>
+    <script>
+
+        //console.log(cc.thisChallengNumber)
+        var ifrm = window.frameElement; // reference to iframe element container
+        var doc = ifrm; // reference to container's document
+console.log(window)
+        console.log(doc)
+        var thisClass = function () {
+            if (ifrm.src.includes("hd")) {
+                return "HD";
+            } else if (ifrm.src.includes("ld")) {
+                return "LD";
+            } else if (ifrm.src.includes("vps")) {
+                return "VPS";
+            }
+        }
+
+        
+        $('#challenge-btn', window.parent.document).html('SPARK');
+        var thisChallengNumber = 1;
+        $('#additional-resource').attr('href', 'https://valvoline.widencollective.com/portals/szzrwd5k/MyPortalOct15,2020');
+        parent.setBookmarking("LD", thisChallengNumber, .2);
+        parent.retrieveAttempt(thisChallengNumber, "LD");
+        //QUIZ
+
+        
+        var hsArray = [0, 0, 0];
+	       var hsString = '1,1,1';
+	       var hscheckProg = function (num) {
+	           hsArray[num] = 1;
+	           if (hsArray.toString() == hsString) {
+	               $('.hs-continue').parent().removeClass("hidden").hide().fadeIn();
+	           }
+	       };
+	       var revealPlus = function () {
+			   if ($(this).css("opacity") == "1"){
+	           var elIndex = $(this).parent().attr("class").trim().slice(-1);
+	           $('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x').addClass('clk-reveal-complete-plus');
+			   $('.clk-reveal-plus').css({"opacity": ".5", "pointer-events": "none"});
+			   $('.clk-reveal-complete-plus').css({"opacity": ".5", "pointer-events": "none"});
+			   $(this).css({"opacity": "1", "pointer-events": "auto"});
+	           $(this).addClass('clk-reveal-complete-x')
+	           $('.clk-reveal-x').addClass('clk-reveal-plus');
+	           $('.clk-reveal-x').removeClass('clk-reveal-x');
+	           $(this).unbind();
+	           $(this).bind('click', revealX);
+	           $(this).removeClass('clk-reveal-plus');
+	           $(this).addClass('clk-reveal-x');
+	           $(this).parent().parent().find('.content-box').hide();
+	           $('.clk-reveal-plus').unbind();
+	           $('.clk-reveal-plus').bind('click', revealPlus);
+	           $('.content-box-' + elIndex).fadeIn();
+               hscheckProg(elIndex-1)
+               console.log(elIndex)
+               console.log($('.content-box-' + elIndex))
+}
+	       }
+
+	       var revealX = function () {
+	           $('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x');
+	           $(this).addClass('clk-reveal-complete-plus');
+			   $('.clk-reveal-plus').css({"opacity": "1", "pointer-events": "auto"});
+			   $('.clk-reveal-complete-plus').css({"opacity": "1", "pointer-events": "auto"});
+	           $('.clk-reveal-x').addClass('clk-reveal-plus');
+	           $('.clk-reveal-x').removeClass('clk-reveal-x');
+	           $(this).unbind();
+	           $(this).bind('click', revealPlus);
+	           $(this).removeClass('clk-reveal-x')
+	           $(this).addClass('clk-reveal-plus');
+	           $('.clk-reveal-plus').unbind();
+	           $('.clk-reveal-plus').bind('click', revealPlus);
+	           $('.content-box').hide();
+	       }
+        //console.log(thisClass())
+        ////////console.log(parent.activities)
+        // $(doc).find('header').css('border-bottom', 'none');
+        ifrm.style.top = '-118px';
+        ifrm.style.position = 'absolute';
+        ifrm.style.height = '100%';
+        ifrm.style.zIndex = '1005';
+
+        var quiz = [{
+            // Q1
+            question: '<p>SPARK integrates ___________ with Valvoline™ Premium motor oil services.</p>',
+            type: 'MC',
+            answers: [
+                'tire tread reviews',
+                'oil services',
+                'coupons',
+                'chemical services'
+            ],
+            choices: [],
+            correct: 4,
+            correct_rem: '<p>That’s right! SPARK builds on the traditional, tiered-approach to engine oil options by integrating chemical services. VPS low-touch treatment additives are the perfect partner for Valvoline™ Premium motor oils.</p>',
+            incorrect_rem: '<p>That’s not the answer. Try again.</p>',
+            fail_rem: '<p>That’s not correct. SPARK builds on the traditional, tiered-approach to engine oil options by integrating chemical services. VPS additives are the perfect partner for Valvoline™ Premium motor oils.</p><p>You will not receive any points for this question.</p>'
+        }, {
+            // Q2
+            question: '<p>Which is NOT a goal of SPARK?</p>',
+            type: 'MC',
+            answers: [
+                'Keep Installer’s active',
+                'Increase Additive Sales',
+                'Improve Customer Retention',
+                'Increase Premium Sales'
+            ],
+            choices: [],
+            correct: 1,
+            correct_rem: '<p>That’s right! The goals of SPARK are to Increase Premium Sales, Increase Additive Sales, and Improve Customer Retention.</p>',
+            incorrect_rem: '<p>That’s not the answer. Try again.</p>',
+            fail_rem: '<p>That’s not correct. The goals of SPARK are to Increase Premium Sales, Increase Additive Sales, and Improve Customer Retention.</p><p>You will not receive any points for this question.</p>'
+        }, {
+            // Q3
+            question: '<p>When consumers choose an oil change service that includes a VPS treatment, which of the following is a key benefit for consumers?</p>',
+            type: 'MC',
+            answers: [
+                'A discount on their next oil change',
+                'Increased miles between changes',
+                'Quicker in and out times',
+                'Limited Lifetime Guarantee'
+            ],
+            choices: [],
+            correct: 4,
+            correct_rem: '<p>That’s right! SPARK will give consumers up to $4,000 of coverage on components serviced. The guarantee gives consumers peace of mind when purchasing a Valvoline™ oil change and maintenance service.</p>',
+            incorrect_rem: '<p>That’s not the answer. Try again.</p>',
+            fail_rem: '<p>That’s not correct. SPARK will give consumers up to $4,000 of coverage on components serviced. The guarantee gives consumers peace of mind when purchasing a Valvoline™ oil change and maintenance service.</p><p>You will not receive any points for this question.</p>'
+        }, {
+            // Q4
+            question: '<p>Why is SPARK a good program for installers?</p>',
+            type: 'MC',
+            answers: [
+                'Proven to build sales and margin',
+                'Flexible approach to fit installer goals',
+                'Offers all the tools installers need to be successful',
+                'All of the above'
+            ],
+            choices: [],
+            correct: 4,
+            correct_rem: '<p>That’s right! SPARK is a program that is proven to increase sales margins, provides a flexible approach to achieve installers’ goals, and offers all of the tools that installers need to be successful.</p>',
+            incorrect_rem: '<p>That’s not the answer. Try again.</p>',
+            fail_rem: '<p>That’s not correct. SPARK is a program that is proven to increase sales margins, provides a flexible approach to achieve installers’ goals, and offers all of the tools that installers need to be successful.</p><p>You will not receive any points for this question.</p>'
+        }];
+
+        var passed = true;
+        var questionPointsPossible = 80;
+        var points = [20, 20, 20, 20]
+        var attemptsLeft = [2, 2, 2, 2];
+        var passPercent = 80;
+        var boxLocation = 0;
+        var attemptCount = 0;
+
+        var totalPoints = function () {
+            var sum = 0;
+            for (var i = 0; i < points.length; i++) {
+                sum += points[i]
+            }
+            return sum;
+
+        }();
+
+        var q = function () {
+            return quiz[qIndex];
+        }
+
+        var currentAnswer;
+
+        function RenderQuestion() {
+            $('.clk-reveal-plus').bind('click', revealPlus);
+				for (var qIndex = 0; qIndex < quiz.length; qIndex++) {
+					$('.question-' + (qIndex + 1) + ' #question-num').html('Question ' + (qIndex + 1));
+					$('.question-' + (qIndex + 1) + ' .question-text').html(quiz[qIndex].question);
+					for (var i = 0; i < quiz[qIndex].answers.length; i++) {
+						quiz[qIndex].choices.push(i + 1)
+						var div = document.createElement('div')
+						$(div).append('<input id="button' + (i + 1) + '" type="radio" name="quiz" value="' + (i + 1) +
+							'" /><div id="answer' + (i + 1) + '"class="answer pointer"><\/div>');
+						$(div).append('<label for="button' + (i + 1) + '">' + quiz[qIndex].answers[i] + '<\/label>');
+						$('.question-' + (qIndex + 1) + ' .answer-container').append(div);
+					}
+				}
+				var radioCheck = function () {
+					$('.remediation-retry').unbind('click', runCheck);
+					$('.reveal-btn-m').unbind('click', runCheck);
+					$('.reveal-btn-m').bind('click', runCheck);
+					currentAnswer = $(this).attr('id').slice(-1);
+					currentQuestion = $(this).parent().parent().parent().attr('class').slice(-1);
+					console.log('currentQuestion:' + currentQuestion)
+					console.log(quiz[currentQuestion - 1].choices)
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] != 0 && attemptsLeft[currentQuestion - 1] < 2) {
+						$('.remediation-retry').bind('click', runCheck);
+						$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+					} else {
+						$('.remediation-retry').unbind('click', runCheck);
+						$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+					}
+					
+					if (attemptsLeft[currentQuestion - 1] == 0) {
+						$('.reveal-btn').unbind('click', runCheck);
+					} else {
+						$('.reveal-btn').unbind('click', runCheck);
+						$('.reveal-btn').bind('click', runCheck);
+					}
+
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+						$('.reveal-btn-m').bind('click', runCheck);
+					}
+
+					if (quiz[currentQuestion - 1].type == "MC") {
+						$('.answer-on').removeClass('answer-on').addClass('pointer');
+						$(this).addClass("answer-on").removeClass('pointer');
+					} else if (quiz[currentQuestion - 1].type == "MR") {
+						$('.answer-on').removeClass('answer-on').addClass('pointer');
+						$(this).addClass("answer-on").removeClass('pointer');
+					}
+				}
+
+				$('.answer').bind('click', radioCheck);
+				$('.remediation-retry').on('click', function () {
+					//console.log($(this))
+					$('.remediation-retry').unbind('click', runCheck);
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+						if ($(window).width() < 999) {
+							$('.attempt-1').hide();
+							$('.attempt-2').hide();
+							$(this).parent().addClass("m-hide")
+							$(this).parent().parent().parent().parent().find('.attempt-container').addClass("m-hide");
+						} else {
+							$(this).parent().parent().parent().parent().find('.attempt-container').removeClass("m-hide")
+							$(this).parent().removeClass("m-hide");
+							$('.remediation-retry .warn-sel-ans').css('opacity', '1');
+						}
+					}
+				})
+
+				$('.remediation-continue').on('click', function () {
+					$('.reveal-btn').unbind('click', runCheck);
+					$('.reveal-btn-m').unbind('click', runCheck);
+
+					if (currentQuestion >= quiz.length - 1) {
+						var userPoints = 0;
+						for (var i = 0; i < points.length; i++) {
+							userPoints += points[i]
+						}
+						scorePercent = parseInt((userPoints / totalPoints) * 100);
+						var attempt = parent.intAttempt;
+                        console.log('Check score: ' + scorePercent >= passPercent)
+						if (scorePercent >= passPercent && attempt < 4) {
+							$('#result-correct').show();
+							$('#gameover-btn').show();
+							$('#result-incorrect').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-retry').hide();
+							$('#retry-btn').hide();
+							console.log('Passed in first 3 attempts')
+						} else if (scorePercent < passPercent && attempt < 4) {
+							passed = false;
+							$('#result-incorrect').show();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Failed in one of the first 3 attempts')
+						} else if (attempt == 5) {
+							passed = false;
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').show();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Challenge Closed. Reviewing. No Points awarded.')
+						} else if (attempt == 4) {
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').show();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Just reviewing. Good Job!')
+						}
+					}
+				})
+
+				//Returns array of selected answers from a MR question
+				function getAnswers() {
+					var returnAnswers = [];
+					$(".answer").each(function () {
+						if ($(this).hasClass('answer-on')) {
+							returnAnswers.push(Number($(this).attr('id').slice(-1)));
+						}
+					});
+					return returnAnswers;
+				}
+
+				function arraysEqual(_arr1, _arr2) {
+					if (!Array.isArray(_arr1) || !Array.isArray(_arr2) || _arr1.length !== _arr2.length)
+						return false;
+					var arr1 = _arr1.concat().sort();
+					var arr2 = _arr2.concat().sort();
+					for (var i = 0; i < arr1.length; i++) {
+						if (arr1[i] !== arr2[i])
+							return false;
+					}
+					return true;
+				}
+
+				var runCheck = function () {
+                    console.log("run check")
+                    console.log(currentQuestion)
+					if (currentQuestion != undefined) {
+						$('.remediation-retry').unbind('click', runCheck);
+							if (attemptsLeft[currentQuestion - 1] >= 0) {
+								var correctAnswer = quiz[currentQuestion - 1].correct;
+								var thisQuestionAttemptsLeft = attemptsLeft[currentQuestion - 1];
+								if (quiz[currentQuestion - 1].type == "MC") {
+									$('.reveal-btn').unbind('click', runCheck);
+									quiz[currentQuestion - 1].choices[currentAnswer - 1] = 0;
+									for (var i = 0; i < quiz[currentQuestion - 1].choices.length; i++) {
+										if (quiz[currentQuestion - 1].correct == currentAnswer) {
+											//correct answer
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+												"pointer");
+										} else if (quiz[currentQuestion - 1].choices[i] == 0) {
+											//incorrect answer
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+												"pointer answer");
+										} else if (attemptsLeft[currentQuestion - 1] == 0) {
+											//failed question
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+												"pointer");
+										} else {
+											//rebind answers
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind();
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).bind('click', radioCheck).addClass("pointer");
+										}
+									}
+
+									if (quiz[currentQuestion - 1].correct == currentAnswer) {
+										$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3');
+										$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation:eq(' + (currentQuestion - 1) + ')').removeClass('m-hide')
+										$('.attempt-container:eq(' + (currentQuestion - 1) + ')').removeClass("m-hide")
+										$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-correct');
+										$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+										$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+										$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].correct_rem);
+										$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+											"url(images/challenge_2/images/Correct_Icon.png)");
+										$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+											"url(images/challenge_2/images/Correct.png)").addClass('remediation-reveal')
+											.removeClass("pointer answer");
+										$('.question-' + currentQuestion + ' .answer').css('cursor', 'auto');
+
+										$('.attempt-1').hide();
+										$('.attempt-2').hide();
+									} else {
+										$('.answer-on').removeClass('answer-on');
+										$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').addClass('white-txt').html(quiz[currentQuestion - 1].incorrect_rem);
+										$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+											"url(images/challenge_2/images/Incorrect_Icon.png)");
+										$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+											"url(images/challenge_2/images/Incorrect.png)").addClass('remediation-reveal')
+											.removeClass("pointer answer");
+                                            if (attemptsLeft[currentQuestion - 1] >= 0 && points[currentQuestion - 1] > 0) {
+											//console.log("INCORRECT RESPONSE: " + attemptsLeft[currentQuestion - 1])
+											points[currentQuestion - 1] = points[currentQuestion - 1] - 5;
+										}
+										if (attemptsLeft[currentQuestion - 1] == 2) {
+											$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-1');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-1');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+											$('.attempt-1').css('display', 'flex');
+										} else if (attemptsLeft[currentQuestion - 1] == 1) {
+											$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-2');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').removeClass('m-hide')
+											$('.attempt-container:eq(' + (currentQuestion - 1) + ')').removeClass("m-hide")
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-2');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+											$('.attempt-1').hide();
+											$('.attempt-2').css('display', 'flex');
+										} else if (attemptsLeft[currentQuestion - 1] == 0) {
+											$('.attempt-1').hide();
+											$('.attempt-2').hide();
+											$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').removeClass('m-hide')
+											$('.attempt-container:eq(' + (currentQuestion - 1) + ')').removeClass("m-hide")
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-3');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+											$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+											$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+											$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].fail_rem);
+											$('#progress-bar .quest .q-points').eq(currentQuestion - 1).parent().addClass('quest-retry');
+											$('.question-' + currentQuestion + ' .answer-container div').each(function (index, elem) {
+												$('.question-' + currentQuestion + ' .answer').unbind().css('cursor', 'auto');
+											});
+										}
+										attemptsLeft[currentQuestion - 1]--;
+										updateProgressTracker();
+									}
+								}
+							} // end of runCheck
+					}
+					$('.reveal-btn').bind('click', runCheck);
+					$('.reveal-btn-m').bind('click', runCheck);
+				}
+            }
+            
+        (function () {
+            $('#header-image', window.parent.document).fadeIn();
+            $('.next').click(function (box) {
+
+                var curLocation = boxLocation + 1;
+                var nextLocation = boxLocation + 2;
+                var currentBox = $('#box' + curLocation)
+                var nextBox = $('#box' + nextLocation)
+                $(currentBox).animate({
+                    left: '-50%'
+                }, 500, function () {
+                    $(currentBox).css('left', '150%');
+                    $(currentBox).appendTo('#container');
+                });
+                $(nextBox).animate({
+                    left: '50%'
+                }, 500);
+
+                if (curLocation == 4) { $('#box3 #video-popup-1-mask').fadeOut(); }
+                boxLocation++;
+                nextAction(curLocation);
+                updateProgressTracker()
+            });
+
+            $('.back-btn').click(function () {
+                var preLocation = boxLocation;
+                var curLocation = boxLocation + 1;
+                var currentBox = $('#box' + curLocation)
+                var prevBox = $('#box' + preLocation)
+                console.log(curLocation)
+                $(currentBox).animate({
+                    left: '150%'
+                }, 500, function () {
+                    $(prevBox).css('left', ' ');
+                    $(prevBox).prependTo('#container');
+                });
+                $(prevBox).css('left', '-150%').animate({
+                    left: '50%'
+                }, 500);
+
+                if (curLocation == 3 || curLocation == 5) {
+                    $('video').each(function() {
+    $(this).get(0).pause();
+
+    $('#box3 #video-container').hide()
+
+            // $('video')[0].pause();
+});
+
+                }
+                boxLocation--;
+                updateProgressTracker()
+                backAction(boxLocation)
+            });
+
+
+            $('#gameover-btn').on('click', function (e) {
+                parent.exitChallenge();
+				if (passed && parent.intAttempt != 4) {
+					challengeComplete(thisClass(), thisChallengNumber, score, true);
+				} else if (parent.intAttempt != 4) {
+					challengeComplete(thisClass(), thisChallengNumber, score, false);
+				} else {
+					parent.navigateIframe("portal.html");
+				}
+				$('#gameover-btn').unbind("click");
+	        })
+
+            var $video = $('video'),
+                $window = $('#video-container');
+                $footer = $('footer')
+
+            $(window).resize(function () {
+                var footerHeightStr = $('footer').css('height');
+                var footerHeight = (footerHeightStr.substring(0, footerHeightStr.length - 2) - 1);
+                var height = $window.height();
+                $video.css('height', height);
+                var videoWidth = $video.width(),
+                    windowWidth = $window.width(),
+                    marginLeftAdjust = (windowWidth - videoWidth) / 2;
+                $video.css({
+                    'height': height
+                });
+            }).resize();
+
+        })();
+
+        function nextBox(el) {
+            $('#box5 #video-popup-1-mask').fadeOut();
+            var curLocation = boxLocation + 1;
+            var currentBox = $('#box' + curLocation)
+            $(currentBox).animate({
+                left: '-50%'
+            }, 500, function () {
+                $(currentBox).css('left', '150%');
+                $(currentBox).appendTo('#container');
+            });
+            $(currentBox).next().animate({
+                left: '50%'
+            }, 500);
+            boxLocation++;
+            nextAction(curLocation);
+            updateProgressTracker()
+        }
+
+        function playVideo_1() {
+            $('#box4 #video-container').fadeIn();
+            $('#box4 #video-popup-1-mask').fadeOut();
+            $('#box4 video')[0].play();
+            $('#box4').parent().css('overflow', 'hidden !important');
+            $('#box4 #content').css('display', 'none');
+        }
+
+        function nextAction(groupIndex) {
+            //console.log('next action switch: ' + groupIndex + " " + typeof (groupIndex))
+            switch (groupIndex) {
+                case "0":
+
+                    break;
+                case "1":
+
+                    break;
+                case "2":
+
+                    break;
+                case "3":
+
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case "calcComplete":
+
+                    break;
+                case 5:
+
+                    break;
+                case 9:
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function backAction(groupIndex) {
+            //console.log('back action switch: ' + groupIndex + " " + typeof (groupIndex))
+            switch (groupIndex) {
+                case "0":
+
+                    break;
+                case "1":
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 5:
+
+                    break;
+                case "4":
+
+                    break;
+                case 9:
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
+        function updateProgressTracker() {
+            var userPoints = 0
+            for (var i = 0; i < points.length; i++) {
+                userPoints += points[i]
+            }
+            score = (userPoints);
+            $('.score').html(score + " POINTS")
+            $('#score').html(score)
+            $('#progress-bar .quest .q-points').each(function (i, obj) {
+                $('#progress-bar .quest .q-points').eq(i).html(points[i])
+            })
+console.log(boxLocation)
+            switch (boxLocation) {
+
+                case 0:
+                console.log("0")
+                $('#progress-bar .pin').eq(boxLocation).addClass('intro')
+                $('#progress-bar .pin').eq(boxLocation).removeClass('intro-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                break;
+                case 1:
+                console.log("1")
+                    $('#progress-bar .pin').eq(boxLocation - 1).addClass('intro-down')
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('intro');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 2:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('vid-down');
+                    break;
+                case 3:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('vid-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 4:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('vid-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 5:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 6:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 7:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('conclusion-down');
+                    break;
+                    case 8:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('conclusion-down');
+                    break;
+                    case 9:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('conclusion-down');
+                    break;
+                case  10:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('conclusion-down');
+                    break;
+                default:
+                   // $('#progress-bar .pin').eq(0).removeClass('intro-down');
+                    //$('#progress-bar .pin').eq(1).removeClass('scene-down');
+                    break;
+            }
+        };
+        updateProgressTracker();
+        RenderQuestion();
+    </script>
+</body>
+
+</html>

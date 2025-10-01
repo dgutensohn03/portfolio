@@ -1,0 +1,1744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=yes" name="viewport"><!-- Bootstrap CSS -->
+	<link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="styles/style.css" rel="stylesheet">
+	<link href="styles/challenge.css" rel="stylesheet">
+	<script src="scripts/easeljs/easeljs-NEXT.js">
+	</script>
+	<style>
+		.box {
+			overflow-y: auto !important;
+			overflow-x: hidden;
+		}
+
+		.content-box {
+			background-color: #F0F5F7;
+			padding: 30px;
+			border-radius: 20px;
+			position: absolute;
+			display: none;
+			text-align: left;
+			color: rgb(20, 20, 20);
+		}
+
+		.hs-video {
+			padding-top: 10px;
+		}
+
+		.content-box-top-right {
+			right: -24px;
+			top: 24px;
+		}
+
+		.content-box-top-left {
+			left: 24px;
+			top: 24px;
+		}
+
+		.content-box-btm {
+			right: -24px;
+			bottom: -24px;
+		}
+
+		.col-sm {
+			min-width: 500px;
+			padding: 20px !important;
+		}
+
+		.btl-plus-container {
+			max-width: 587px !important;
+		}
+
+		.sm-btl-img-container {
+			-webkit-box-pack: start;
+			justify-content: flex-start;
+			padding-left: 0px;
+			padding-right: 0px;
+			-webkit-box-flex: 0 !important;
+			flex-grow: 0 !important;
+			min-width: 700px;
+		}
+
+		.icon-text {
+			color: #6D6D6D;
+			font-family: Roboto-Medium;
+			padding: 0;
+			padding-left: 10px;
+			padding-right: 10px;
+		}
+
+		.col-sm {
+			min-width: 500px;
+			padding: 20px !important;
+		}
+
+		.center-icon {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			min-width: 60px;
+			flex-wrap: wrap;
+		}
+
+		.icon-row {
+			min-height: 85px;
+			align-items: center;
+			justify-content: center;
+		}
+
+		.bullet-list li {
+			padding-bottom: 10px;
+			color: #6D6D6D;
+			font-family: Roboto-Medium;
+		}
+
+		.remediation {
+			max-width: 500px;
+			min-width: 500px;
+		}
+
+		.plus-1 {
+			position: absolute;
+			left: 0;
+			top: -30px;
+		}
+
+		.plus-2 {
+			position: absolute;
+			left: 0;
+			top: -30px;
+		}
+
+		#contents-activity {
+			background: rgb(43, 43, 43);
+			background: linear-gradient(360deg, rgba(43, 43, 43, 1) 0%, rgba(55, 55, 55, 1) 60%, rgba(225, 225, 225, 1) 100%, rgba(48, 48, 48, 1) 100%);
+		}
+
+		#animation-container {
+			background-color: transparent !important;
+		}
+	</style>
+</head>
+<body>
+	<div class="container-fluid challenge-3">
+			<div class="box " id="box1">
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText ">
+						<div class='center-text-box'>
+							<h1>Protecting the Engine</h1>
+							<p>The advantages of Valvoline™ Premium Blue™ Motor Oil can help you win over customers.
+								What you know about those advantages can help you win the challenge.</p>
+							<p>
+								The key to success in this challenge will be your ability to answer questions about
+								Valvoline™ Premium Blue™ Motor Oil.<br>
+							</p>
+							<p>
+								First, a quick review.
+							</p>
+							<p>
+								<div class="headerBlue">SELECT START.</div>
+							</p>
+						</div>
+					</div>
+					<div class="col-1"></div>
+					<div class="col topCenterText m-margin-bottom">
+						<div>
+							<button class="next" id="start-btn" type="submit">START</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="box" id="box2">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText back-btn-padding size-adjust">
+						<div class='center-text-box'>
+							<h1>Protecting the Engine</h1>
+							<p>
+								<div class="emphasisBold">Valvoline™ Premium Blue™</div> has been described as a “safety
+								net” as it extends drain intervals for engines made by industry-leader <div
+									class="emphasisBold">Cummins®.</div>
+							</p>
+							<p>
+								(It also helps protect the engines of other manufacturers.)
+							</p>
+							<p>
+								If a drain interval is unintentionally extended—because a customer is short-handed on
+								maintenance technicians, a truck has one last delivery to make, a piece of equipment
+								can’t come off the job because it’s a critical time—the customer can have confidence in
+								 <div class="emphasisBold">Premium Blue™</div> protection of their engine.
+							</p>
+						</div>
+					</div>
+					<div class="col margin-top sm-btl-img-container">
+						<div class="row">
+							<div class="col-lg-6">
+								<div class='bottle-img'>
+									<img height="365" src='images/challenge_4/Bottle_Grphc.png'>
+									<div class='plus-1'>
+										<div class='content-box content-box-1 content-box-top-left'
+											style="padding:30px;">
+											<h1>The Story</h1>
+											<div class="row no-padding border-between">
+												<div class="col-lg-6 col-md-12 no-padding">
+													<div class="row icon-row no-padding">
+														<div class="center-icon img-icon-container"><img
+																src='images/challenge_3/Icon_1.png'></div>
+														<div class="col icon-text">
+															Exceptional oxidation resistance
+														</div>
+													</div>
+													<div class="row icon-row no-padding">
+														<div class="center-icon img-icon-container"><img
+																src='images/challenge_3/Icon_2.png'></div>
+														<div class="col icon-text">
+															Enhanced fuel economy potential (vs. conventional oils)
+														</div>
+													</div>
+													<div class="row icon-row no-padding">
+														<div class="center-icon img-icon-container"><img
+																src='images/challenge_3/Icon_3.png'></div>
+														<div class="col icon-text">
+															Outstanding viscosity retention
+														</div>
+													</div>
+													<div class="row icon-row no-padding">
+														<div class="center-icon img-icon-container"><img
+																src='images/challenge_3/Icon_4.png'></div>
+														<div class="col icon-text">
+															Maintains OEM warranty
+														</div>
+													</div>
+												</div>
+												<div class="col-lg-6 col-md-12 no-padding left-margin m-noMargin">
+													<div class="row icon-row no-padding">
+														<div class="center-icon img-icon-container"><img
+																src='images/challenge_3/Icon_5.png'></div>
+														<div class="col icon-text">
+															Extended service periods
+														</div>
+													</div>
+													<div class="row icon-row no-padding">
+														<div class="center-icon img-icon-container"><img
+																src='images/challenge_3/Icon_6.png'></div>
+														<div class="col icon-text">
+															Advanced soot control
+														</div>
+													</div>
+													<div class="row icon-row no-padding">
+														<div class="center-icon img-icon-container"><img
+																src='images/challenge_3/Icon_7.png'></div>
+														<div class="col icon-text">
+															Excellent all-weather performance
+														</div>
+													</div>
+													<div class="row icon-row no-padding">
+														<div class="center-icon img-icon-container"><img
+																src='images/challenge_3/Icon_8.png'></div>
+														<div class="col icon-text">
+															Deposit protection
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="clk-reveal-plus"></div>
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class='bottle-img'>
+									<img height="365" src='images/challenge_4/Bottle_Grphc.png'>
+									<div class='plus-2'>
+										<div class='content-box content-box-2 content-box-top-right'
+											style="padding:30px;">
+											<h1>The Story</h1>
+											<div class="col-xs-6 no-padding">
+
+												<ul class="bullet-list" style="margin-bottom:0;">
+													<li>
+														<div class="emphasisBold">
+															Conversation Starter
+														</div>– Developed in partnership with Cummins®.
+													</li>
+													<li>
+														<div class="emphasisBold">
+															A Maintenance Discussion Point
+														</div>– Premium Blue™ is capable of supporting extended drain
+														intervals, when working with any OEM.
+													</li>
+													<li>
+														<div class="emphasisBold">
+															A Financial Discussion Point
+														</div>– Valvoline™ Premium Blue™ 10w-30 can provide advance fuel
+														economy up to 3%.<br>
+														(Measured against 15w-40 conventional oils in on-highway
+														conditions.)
+													</li>
+													<li>
+														<div class="emphasisBold">
+															Closing Argument
+														</div>– When maintenance schedules can’t be met, Premium Blue™
+														products help protect your engine out to it’s longest drain
+														interval.
+													</li>
+												</ul>
+											</div>
+										</div>
+										<div class="clk-reveal-plus"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row m-continue-bl-bc"><button class="next continue-btn box2-continue" id="">CONTINUE</button></div>
+				</div>
+			</div>
+			<!-- QUESTION 1 -->
+			<div class="box question-bg-box " id="box3">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height hidden-important" id="content">
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+						<div class='center-text-box question-1'>
+							<h1 id="question-num"></h1>
+							<div class='question-text'></div>
+							<div class='answer-container'></div>
+						</div>
+					</div>
+					<div class="col topCenterText m-RightCol-question">
+						<div class="reveal-btn text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="reveal-btn-m text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+
+						<div class="remediation">
+							<div class="remediation-icon"></div>
+							<div class="remediation-txt"></div>
+							<div class="remediation-continue next">
+								Continue
+							</div>
+							<div class="remediation-retry">
+								Try Again
+								<div class='warn-sel-ans'>
+									Choose an answer and select "Try Again."
+								</div>
+							</div>
+							<div class="attempt-container row">
+								<div class="attempt-1">
+									FIRST ATTEMPT
+								</div>
+								<div class="attempt-2">
+									SECOND ATTEMPT
+								</div>
+								<div class="attempt-3">
+									RETRY IN 7 DAYS
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="overlay">
+					<div class="row align-middle full-box-height" id="content">
+						<div class="col topCenterText m-LeftCol m-margin-top">
+							<div class='center-text-box'>
+								<h1>Let’s play Five Card Stud.</h1>
+								<p>Play your cards right and you can earn bonus points.</p>
+								<p>You’ll see the house’s hand and then have a chance to play your own cards and answer one additional question to earn, and play, your final card.</p>
+								<p>Get the better hand and win some bonus points. </p>
+								<p>If you aren’t holding a winning hand, don’t despair. There will be other bonus opportunities in future challenges.</p>
+								<p>Good luck!</p>
+								<p>
+									<div class="headerBlue">SELECT START.</div>
+								</p>
+							</div>
+						</div>
+						<div class="col-1"></div>
+						<div class="col topCenterText m-noPadding">
+							<button class="" id="start-btn"
+								onclick="$(this).parent().parent().parent().parent().find('#content').removeClass('hidden-important'); $(this).parent().parent().parent().fadeOut();">START</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- QUESTION 2 -->
+			<div class="box question-bg-box" id="box4">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+						<div class='center-text-box question-2'>
+							<h1 id="question-num"></h1>
+							<div class='question-text'></div>
+							<div class='answer-container'></div>
+						</div>
+					</div>
+					<div class="col topCenterText m-RightCol-question">
+						<div class="reveal-btn text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="reveal-btn-m text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+	
+						<div class="remediation">
+							<div class="remediation-icon"></div>
+							<div class="remediation-txt"></div>
+							<div class="remediation-continue next">
+								Continue
+							</div>
+							<div class="remediation-retry">
+								Try Again
+								<div class='warn-sel-ans'>
+									Choose an answer and select "Try Again."
+								</div>
+							</div>
+							<div class="attempt-container row">
+								<div class="attempt-1">
+									FIRST ATTEMPT
+								</div>
+								<div class="attempt-2">
+									SECOND ATTEMPT
+								</div>
+								<div class="attempt-3">
+									RETRY IN 7 DAYS
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- QUESTION 3 -->
+			<div class="box question-bg-box" id="box5">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+						<div class='center-text-box question-3'>
+							<h1 id="question-num"></h1>
+							<div class='question-text'></div>
+							<div class='answer-container'></div>
+						</div>
+					</div>
+					<div class="col topCenterText m-RightCol-question">
+						<div class="reveal-btn text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="reveal-btn-m text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="remediation">
+							<div class="remediation-icon"></div>
+							<div class="remediation-txt"></div>
+							<div class="remediation-continue next">
+								Continue
+							</div>
+							<div class="remediation-retry">
+								Try Again
+								<div class='warn-sel-ans'>
+									Choose an answer and select "Try Again."
+								</div>
+							</div>
+							<div class="attempt-container row">
+								<div class="attempt-1">
+									FIRST ATTEMPT
+								</div>
+								<div class="attempt-2">
+									SECOND ATTEMPT
+								</div>
+								<div class="attempt-3">
+									RETRY IN 7 DAYS
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- QUESTION 4 -->
+			<div class="box question-bg-box" id="box6">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+						<div class='center-text-box question-4'>
+							<h1 id="question-num"></h1>
+							<div class='question-text'></div>
+							<div class='answer-container'></div>
+						</div>
+					</div>
+					<div class="col topCenterText m-RightCol-question">
+						<div class="reveal-btn text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="reveal-btn-m text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="remediation">
+							<div class="remediation-icon"></div>
+							<div class="remediation-txt"></div>
+							<div class="remediation-continue next">
+								Continue
+							</div>
+							<div class="remediation-retry">
+								Try Again
+								<div class='warn-sel-ans'>
+									Choose an answer and select "Try Again."
+								</div>
+							</div>
+							<div class="attempt-container row">
+								<div class="attempt-1">
+									FIRST ATTEMPT
+								</div>
+								<div class="attempt-2">
+									SECOND ATTEMPT
+								</div>
+								<div class="attempt-3">
+									RETRY IN 7 DAYS
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- QUESTION 5 -->
+			<div class="box question-bg-box" id="box7">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+						<div class='center-text-box question-5'>
+							<h1 id="question-num"></h1>
+							<div class='question-text'></div>
+							<div class='answer-container'></div>
+						</div>
+					</div>
+					<div class="col topCenterText m-RightCol-question">
+						<div class="reveal-btn text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="reveal-btn-m text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="remediation">
+							<div class="remediation-icon"></div>
+							<div class="remediation-txt"></div>
+							<div class="remediation-continue next">
+								Continue
+							</div>
+							<div class="remediation-retry">
+								Try Again
+								<div class='warn-sel-ans'>
+									Choose an answer and select "Try Again."
+								</div>
+							</div>
+							<div class="attempt-container row">
+								<div class="attempt-1">
+									FIRST ATTEMPT
+								</div>
+								<div class="attempt-2">
+									SECOND ATTEMPT
+								</div>
+								<div class="attempt-3">
+									RETRY IN 7 DAYS
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="box" id="box8">
+				<iframe id='contents-activity' name="contents-activity"
+                src='scripts/activity/challenge_3/activity_1.html'></iframe>
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="overlay" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Bonus</h1>
+                            <p>You are about to enter the bonus phase of this challenge where, if you play your cards right, you can earn some extra points. You are playing a version of poker—Oil Hold’em. You’ll be playing against the house and they are in it to win.</p>
+                            <p>On the next screen, you’ll see the house’s hand being dealt. You’ll then flip over your cards, one by one. If your hand ends up better, you win the game. And the bonus points and the glory.</p>
+                            <p>If you aren’t holding a winning hand, don’t despair. There will be plenty of other opportunities in future challenges.</p>
+                            <p>Good luck!</p>
+                            <p>
+                                <div class="headerBlue">SELECT START.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="" id="start-btn" onclick="$(this).parent().parent().parent().fadeOut(); document.getElementById('contents-activity').contentWindow.exportRoot.play();">START</button>
+                    </div>
+                </div>
+            </div>
+            <!--DID NOT EARN ENOUGH POINTS TO PLAY-->
+            <div class="overlay no-bonus" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Bonus</h1>
+                            <p>It was close, but you didn’t answer enough questions correctly to play the bonus
+                                round.</p>
+                            <p>You did still earn points for completing this challenge.</p>
+                            <p>
+                                <div class="headerBlue">SELECT CONTINUE.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="next" id="start-btn" onclick="">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <!--BONUS QUESTION-->
+            <div class="box bonus-question-container question-bg-box hidden">
+                <div class="row align-middle full-box-height " id="content">
+                    <div class="col topCenterText m-LeftCol-question back-btn-padding">
+                        <div class='center-text-box question-6'>
+                            <h1 id="question-num"></h1>
+                            <div class='question-text'></div>
+                            <div class='answer-container'></div>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-RightCol-question">
+                        <div class="reveal-btn text-white">
+                            <h3>REVEAL ANSWER</h3>
+                        </div>
+                        <div class="reveal-btn-m text-white">
+                            <h3>REVEAL ANSWER</h3>
+                        </div>
+                        <div class="remediation">
+                            <div class="remediation-icon"></div>
+                            <div class="remediation-txt"></div>
+                            <div class="remediation-continue next">
+                                Continue
+                            </div>
+                            <div class="remediation-retry">
+                                Try Again
+                                <div class='warn-sel-ans'>
+                                    Choose an answer and select "Try Again."
+                                </div>
+                            </div>
+                            <div class="attempt-container row">
+                                <div class="attempt-1">
+                                    FIRST ATTEMPT
+                                </div>
+                                <div class="attempt-2">
+                                    SECOND ATTEMPT
+                                </div>
+                                <div class="attempt-3">
+                                    RETRY IN 7 DAYS
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="overlay earn-point hidden" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Unlock Your Bonus Card</h1>
+                            <p>This is a close hand. If you get the right card, you’ll win. Before you can play that card, you’ll have to unlock it by answering this bonus question correctly.</p>
+                            <p>You’ll only get one chance to answer it. No points are on the line, but you need to answer it to unlock your last card.</p>
+                            <p>Good luck!</p>
+                            <p>
+                                <div class="headerBlue">SELECT START.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="" id="start-btn"
+                            onclick="$('.bonus-question-container').show(); $(this).parent().parent().parent().fadeOut(); ">START</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overlay miss-bonus-question hidden" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Incorrect</h1>
+                            <!-- <p>It was close, but you didn’t pick up any bonus points. You did still earn points for completing this challenge.</p> -->
+                            <p>Sorry, but that’s not a winning hand. Luck of the draw, right?</p>
+                            <p>
+                                <div class="headerBlue">SELECT CONTINUE.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="next" id="start-btn" onclick="">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="overlay win-activity hidden" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Correct</h1>
+                            <p>Congratulations! Three of a kind beats a pair. You just picked up 10 bonus points. These will be added to your total VCERT Performance+ score.</p>
+                            <p>
+                                <div class="headerBlue">SELECT CONTINUE.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="next" id="start-btn" onclick="">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay fail-activity hidden" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Incorrect</h1>
+                            <p>It was close, but you didn’t pick up any bonus points. You did still earn points for
+                                completing this challenge.</p>
+                            <p>
+                                <div class="headerBlue">SELECT CONTINUE.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="next" id="start-btn" onclick="">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+            <button class="next continue-btn activity-continue" id="">CONTINUE</button>
+			</div>
+			<!--SUMMARY-->
+			<div class="box" id="box9">
+				<div class="mask-img" style="position:absolute; top:0; overflow: visible;"><img id="learn-screen-img"
+						src="images/challenge_1/Conclsn-Photo.jpg" style="justify-content: center;"></div>
+				<div class="row align-middle learn-box" id="content" style="height: 55% !important;">
+					<div class="col-md-12 col-xl-6" style="text-align: left">
+						<div>
+							<h1>What Did We Learn Today?</h1>
+							<div>
+								<p>Valvoline™ Premium Blue™ Motor Oil has benefits that all engine manufacturers and
+									owners can experience.</p>
+								<p>While Cummins® engines from 2017 and newer can enjoy a 5,000-mile drain extension,
+									engines from other manufacturers can also see extended drain benefits and lower
+									maintenance costs. As an example, when compared to conventional oils, Valvoline™
+									Premium Blue™ 15W-40 can save a 100-truck fleet owner upwards of $20,000 in annual
+									oil maintenance costs.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-xl-6 learned-continue" style="min-height: 150px;">
+						<button class="next continue-btn-center" id="continue-btn-7">CONTINUE</button>
+					</div>
+				</div>
+			</div>
+			<!--CONCLUSION-->
+			<div class="box" id="box10">
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText">
+						<div class='center-text-box'>
+							<h1>Challenge Complete!</h1>
+							<div id='result-incorrect'>
+								<p>It was a good try, but to successfully complete a challenge, you need a score of 80% or higher on the challenge questions.</p>
+								<p>You earned 0 points this time.</p>
+								<p>You do have the opportunity to retake this challenge and earn some points!</p>
+								<p>Better luck next time!</p>
+							</div>
+							<div id='result-closed'>
+								<p>Looks like you still have some work to do with this topic. You did not earn a
+								passing score and no additional points will be added to your total.</p>
+								<p>While you wait for the next challenge to hit your inbox, you might want to return to your class materials and review some of the information around this specific topic.</p>
+								<p>This challenge will remain open so you can put that review to the test by taking the challenge again. (No points can be earned any longer for this challenge.)</p>
+								<p>A new challenge will be coming soon. Better luck next time!</p>
+							</div>
+							<div id='result-three'>
+								<p>You’ve completed this challenge review. If you would like to review this topic in
+									greater depth, you may want to return to your class materials and review some of the
+									information presented there.</p>
+								<p>As a reminder, no points will be earned for completing a challenge review.</p>
+							</div>
+							<div id='result-correct'>
+								<p>Great work!</p>
+								<p>You just earned yourself <span id="score">10</span> points.</p>
+								<p>Remember, you can’t earn any additional points from this challenge, but you can use
+									it as reference.</p>
+								<p>Look for your next challenge soon.</p>
+							</div>
+							<!-- <div>For more information on this topic, check out some additional resources <a
+									id="additional-resource" href="" target="_blank">here</a>.</div> -->
+						</div>
+					</div>
+					<div class="col topCenterText col-sm">
+						<div>
+							<button id="gameover-btn" type="submit">CONTINUE</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id='progress-bar'>
+			<div class='line'></div>
+			<div class='pin intro'></div>
+			<div class='pin quest'></div>
+			<div class='pin quest'>
+				<div class='q-points'></div>
+			</div>
+			<div class='pin quest'>
+				<div class='q-points'></div>
+			</div>
+			<div class='pin quest'>
+				<div class='q-points'></div>
+			</div>
+			<div class='pin quest'>
+				<div class='q-points'></div>
+			</div>
+			<div class='pin quest'>
+				<div class='q-points'></div>
+			</div>
+			<div class='pin quest'>
+				<div class='q-points'></div>
+			</div>
+			<div class='pin quest'></div>
+			<div class='pin conclusion'></div>
+			<div class='score'>
+				0
+			</div>
+		</div>
+		<footer>
+			<div>
+				CHALLENGE #3
+			</div>
+		</footer>
+		<script src="scripts/polyfill.min.js">
+		</script> <!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+		<script src="scripts/jquery-3.4.1.js"></script>
+		<script src="scripts/popper.js/dist/umd/popper.min.js"></script>
+		<script src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+		</script> <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+		<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js">
+		</script>
+		<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js">
+		</script>
+		<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js">
+		</script>
+		<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js">
+		</script>
+		<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js">
+		</script>
+		<script defer src="bin/fb-auth.js">
+		</script>
+		<script src="bin/rules_popup_c3_hd.js">
+		</script>
+		<script src="https://code.createjs.com/1.0.0/easeljs.min.js">
+		</script>
+		<script>
+
+
+			var fcArray = [0, 0, 0];
+			var fcString = '1,1,1';
+			var fccheckProg = function (num) {
+				fcArray[num] = 1;
+				if (fcArray.toString() == fcString) {
+					$('.fc-continue').fadeIn();
+				}
+			};
+
+			var hsArray = [0, 0];
+			var hsString = '1,1';
+			var hscheckProg = function (num) {
+				hsArray[num] = 1;
+				if (hsArray.toString() == hsString) {
+					$('.box2-continue').fadeIn();
+				}
+			};
+
+			var fc2Array = [0, 0, 0];
+			var fc2String = '1,1,1';
+			var fc2checkProg = function (num) {
+				fc2Array[num] = 1;
+				if (fc2Array.toString() == fc2String) {
+					$('.fc2-continue').fadeIn();
+				}
+			};
+
+			function flashCard_1(el) {
+				$(el).html('Approved and endorsed for <font class="emphasisBold">Cummins™<\/font> natural gas engine oil specifications <font class="emphasisBold">CES 20085<\/font> and <font class="emphasisBold">CES 20092<\/font>. This allows nearly double the oil drain interval of products meeting only <font class="emphasisBold">CES 20085<\/font>.').removeClass('flashCard-hover').addClass('flashCard-down').attr("disabled", "disabled");
+				fccheckProg(0);
+			}
+
+			function flashCard_2(el) {
+				$(el).html('Licensed and approved for API CK-4 diesel engine applications.').removeClass('flashCard-hover').addClass('flashCard-down').attr("disabled", "disabled");
+				fccheckProg(1);
+			}
+
+			function flashCard_3(el) {
+				$(el).html('Licensed and approved for API SN gasoline engine applications.').removeClass('flashCard-hover').addClass('flashCard-down').attr("disabled", "disabled");
+				fccheckProg(2);
+			}
+
+			function flashCard2_1(el) {
+				$(el).html('Customers, particularly those with mixed fleets, can utilize Valvoline™ Premium Blue One Solution™ to help eliminate misapplication concerns.').removeClass('flashCard-hover').addClass('flashCard-down').attr("disabled", "disabled");
+				fc2checkProg(0);
+			}
+
+			function flashCard2_2(el) {
+				$(el).html('Valvoline™ Premium Blue One Solution™ was designed to provide performance and protection in multiple heavy duty engines including urban bus, delivery truck, and other service fleets fueled by gasoline, natural gas, and modern, emissions treatment equipped diesel engines. ').removeClass('flashCard-hover').addClass('flashCard-down').attr("disabled", "disabled");
+				fc2checkProg(1);
+			}
+
+			function flashCard2_3(el) {
+				$(el).html('Exceptional oxidation and thermal stability controlled by a unique set of antioxidants in Valvoline™ Premium Blue One Solution™  provide superior engine performance and protection.').removeClass('flashCard-hover').addClass('flashCard-down').attr("disabled", "disabled");
+				fc2checkProg(2);
+			}
+
+
+
+			var revealPlus = function () {
+				var elIndex = $(this).parent().attr("class").trim().slice(-1);
+				$('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x').addClass('clk-reveal-complete-plus');
+				$(this).addClass('clk-reveal-complete-x')
+				$('.clk-reveal-x').addClass('clk-reveal-plus');
+				$('.clk-reveal-x').removeClass('clk-reveal-x');
+				$(this).unbind();
+				$(this).bind('click', revealX);
+				$(this).removeClass('clk-reveal-plus');
+				$(this).addClass('clk-reveal-x');
+				$('.content-box').hide();
+				$('.clk-reveal-plus').unbind();
+				$('.clk-reveal-plus').bind('click', revealPlus);
+				$('.content-box-' + elIndex).fadeIn();
+				hscheckProg(elIndex - 1)
+
+			}
+
+			var revealX = function () {
+				$('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x');
+				$(this).addClass('clk-reveal-complete-plus');
+				$('.clk-reveal-x').addClass('clk-reveal-plus');
+				$('.clk-reveal-x').removeClass('clk-reveal-x');
+				$(this).unbind();
+				$(this).bind('click', revealPlus);
+				$(this).removeClass('clk-reveal-x')
+				$(this).addClass('clk-reveal-plus');
+				$('.clk-reveal-plus').unbind();
+				$('.clk-reveal-plus').bind('click', revealPlus);
+				$('.content-box').hide();
+			}
+
+			$('#challenge-btn', window.parent.document).html('Protecting the Engine');
+			var thisChallengNumber = 3;
+			$('#additional-resource').attr('href', 'https://valvoline.widencollective.com/portals/tjwhya34/MyPortal572020');
+		   parent.setBookmarking("HD", thisChallengNumber, .2);
+		   parent.retrieveAttempt(thisChallengNumber, "HD");
+
+			//QUIZ
+			var ifrm = window.frameElement; // reference to iframe element container
+			var doc = ifrm.ownerDocument; // reference to container's document
+			var thisClass = function () {
+				if (ifrm.src.includes("hd")) {
+					return "HD";
+				} else if (ifrm.src.includes("ld")) {
+					return "LD";
+				} else if (ifrm.src.includes("vps")) {
+					return "VPS";
+				}
+			}
+
+			//console.log(thisClass())
+			////////console.log(parent.activities)
+			// $(doc).find('header').css('border-bottom', 'none');
+			ifrm.style.top = '-118px';
+			ifrm.style.position = 'absolute';
+			ifrm.style.height = '100%';
+			ifrm.style.zIndex = '1005';
+
+			var quiz = [{
+				// Q1
+				question: '<p>_______ is a characteristic of Premium Blue™ that not only exceeds FA4 and CK4 requirements, but also enables longer service intervals.</p>',
+				type: 'MC',
+				answers: [
+					'Oxidation resistance',
+					'Oxidation potential',
+					'DPF',
+					'Exhaust gas recirculation capabilities'
+				],
+				choices: [],
+				correct: 1,
+				correct_rem: '<p>That’s right!</p><p>With its superior oxidation resistance, Premium Blue™ can help an engine achieve longer service intervals.</p>',
+				incorrect_rem: '<p>No, the answer we are looking for provides protection against the oxidation of the oil.</p><p>Try again.</p>',
+				fail_rem: '<p>That’s not right.</p><p>The correct answer tells us that with its superior oxidation resistance, Premium Blue™ can help an engine achieve longer service intervals.</p><p>You will not receive any points for this question.</p>'
+			},
+			{
+				// Q2
+				question: '<p>Valvoline™ Premium Blue™ Motor Oil enables fleet owners to meet the latest requirements and specifications from all major diesel engine OEMs. This means that when using Premium Blue™ fleet owners can _______________________.</p> ',
+				type: 'MC',
+				answers: [
+					'increase driver retention',
+					'lower operations costs',
+					'maintain OEM warranty protection',
+					'avoid some local certification regulations'
+				],
+				choices: [],
+				correct: 3,
+				correct_rem: '<p>That’s right!</p><p>By using Valvoline™ Premium Blue™ Motor Oil a fleet owner can maintain their OEM warranty protection.</p>',
+				incorrect_rem: '<p>There’s a better answer.</p><p>Try again.</p>',
+				fail_rem: '<p>That’s not right.</p><p>The correct answer tells us that by using Valvoline™ Premium Blue™ Motor Oil a fleet owner can maintain their OEM warranty protection.</p><p>You will not receive any points for this question.</p>'
+			},
+			{
+				// Q3
+				question: '<p>Premium Blue™ Motor Oil was developed in a partnership between Valvoline™ and Cummins®. This created a product that has a number of benefits for __________________.</p>',
+				type: 'MC',
+				answers: [
+					'All Cummins® engines',
+					'All Cummins® HD engines made after 2017',
+					'All engines',
+					'All engines made after 2017'
+				],
+				choices: [],
+				correct: 3,
+				correct_rem: '<p>You are correct!</p><p>The benefits of the Valvoline™ Premium Blue™ Motor Oil are especially powerful in Cummins® engines, but it’s unique formulation can be enjoyed by engine manufacturers and truck owners of all types.</p><p>One of the benefits of the relationship between Cummins® and Valvoline™ is the insight it affords Valvoline™ into the challenges of protecting modern engines.</p>',
+				incorrect_rem: '<p>That’s a miss.</p><p>Consider the broad range of benefits Valvoline™ Premium Blue™ Motor Oil formulations provide.</p><p>Try again.</p>',
+				fail_rem: '<p>That’s not right.</p><p>The correct answer tells us that one of the benefits of the relationship between Cummins® and Valvoline™ is the insight it affords Valvoline™ into the challenges of protecting modern engines.</p><p>You will not receive any points for this question.</p>'
+			},
+			{
+				// Q4
+				question: '<p>Let’s make a Customer Connection.</p><p>You’re telling a customer about Valvoline™ Premium Blue™ Motor Oil. They seem...unimpressed, so you start to share some additional benefits. What should you say about dispersancy?</p>',
+				type: 'MC',
+				answers: [
+					'One benefit of Valvoline™ Premium Blue™ Motor Oil is its ability to suspend and carry away causes of engine breakdowns. This helps to protect engines and can help reduce engine wear.',
+					'Here’s the thing about Valvoline™ Premium Blue™ Motor Oil, it’s got a lot of benefits that will disperse protection across the engine.',
+					'Have you heard of dispersancy? Valvoline™ Premium Blue™ Motor Oil is big with that.',
+					'Valvoline™ Premium Blue™ Motor Oil is loaded with detergents and dispersants.'
+				],
+				choices: [],
+				correct: 1,
+				correct_rem: '<p>You’ve got it.</p><p>The special technology used in Valvoline™ Premium Blue™ Motor Oil enables soot dispersancy as well as other non-metallic causes of engine breakdowns.</p><p>It’s important to educate your customer, not just on the benefits of Valvoline™ Premium Blue™ Motor Oil, but also on what those benefits mean to their fleet and their bottom line.</p>',
+				incorrect_rem: '<p>That is not correct.</p><p>Remember the customer is looking for long-term value savings.</p><p>Try again.</p>',
+				fail_rem: '<p>That’s not right.</p><p>The correct answer tells us the special technology used in Valvoline™ Premium Blue™ Motor Oil enables soot dispersancy as well as other non-metallic causes of engine breakdowns.</p><p>It’s important to educate your customer, not just on the benefits of Valvoline™ Premium Blue™ Motor Oil, but also on what those benefits mean to their fleet and their bottom line.</p><p>You will not receive any points for this question.</p>'
+			},
+			{
+				// Q5
+				question: '<p>Valvoline™ Premium Blue™ 10w-30 doesn’t just enable a customer to extend their drain intervals up to 10,000 miles (based on manufacturer), it also provides advance fuel economy up to _________.</p>',
+				type: 'MC',
+				answers: [
+					'1%',
+					'3%',
+					'4%',
+					'5%'
+				],
+				choices: [],
+				correct: 2,
+				correct_rem: '<p>You are good. That’s correct.</p><p>When measured against 15w-40 conventional oils, in on-highway conditions, Valvoline™ Premium Blue™ 10w- 30 can increase an engine’s fuel economy by 3%. That helps the customer with their total cost of ownership savings.</p>',
+				incorrect_rem: '<p>Actually...no. Consider the question again and keep in mind that fuel economy is measured against 15w-40 conventional oils in on-highway conditions.</p><p>Try again.</p>',
+				fail_rem: '<p>That’s not right.</p><p>The correct answer tells us that when measured against 15w-40 conventional oils, in on-highway conditions, Valvoline™ Premium Blue™ 10w- 30 can increase an engine’s fuel economy by 3%. That helps the customer with their total cost of ownership savings.</p><p>You will not receive any points for this question.</p>'
+			},
+			{
+				// Q6
+				question: '<p>Valvoline™ Premium Blue™ Motor Oil can help lower maintenance costs with its ability to extend ___________. These features help the customer maximize their engines’ potential while decreasing their total cost of ownership across the fleet.</p>',
+				type: 'MC',
+				answers: [
+					'retention',
+					'drain intervals',
+					'API limits and oxidation protection',
+					'TBN retention'
+				],
+				choices: [],
+				correct: 2,
+				correct_rem: '<p>You nailed it.</p><p>With Valvoline™ Premium Blue™ Motor Oil, Cummins® engines from 2017 and newer can enjoy a 5,000 to 10,000-mile drain extension depending on engine family and duty cycle. (Review Cummins® literature for details.)</p><p>Engines from other manufacturers can also see extended drain benefits and lower maintenance costs. As an example, when compared to conventional oils, Valvoline™ Premium Blue™ 15W-40 can save a 100-truck fleet owner upwards of $20,000 in annual oil maintenance costs.</p>',
+				incorrect_rem: '<p>That is not what we were looking for.</p><p>It was close, but you didn’t pick up any bonus points. You did still earn points for completing this challenge.</p>',
+				fail_rem: '<p>That is not what we were looking for.</p><p>It was close, but you didn’t pick up any bonus points. You did still earn points for completing this challenge.</p>'
+			}
+			]
+
+
+			var passed = true;
+			var questionPointsPossible = 100;
+			var points = [20, 20, 20, 20, 20, 0]
+			var attemptsLeft = [2, 2, 2, 2, 2, 1];
+			var passPercent = 80;
+			var boxLocation = 0;
+			var attemptCount = 0;
+			
+			var cardCount = 0;
+			var bonusCard = 0;
+
+        var totalPoints = function () {
+            var sum = 0;
+            for (var i = 0; i < points.length; i++) {
+                sum += points[i]
+            }
+            return sum;
+
+        }();
+
+        var q = function () {
+            return quiz[qIndex];
+        }
+
+        var currentAnswer;
+
+        function RenderQuestion() {
+				$('.clk-reveal-plus').bind('click', revealPlus);
+				for (var qIndex = 0; qIndex < quiz.length; qIndex++) {
+					$('.question-' + (qIndex + 1) + ' #question-num').html('Question ' + (qIndex + 1));
+					$('.question-' + (qIndex + 1) + ' .question-text').html(quiz[qIndex].question);
+					for (var i = 0; i < quiz[qIndex].answers.length; i++) {
+						quiz[qIndex].choices.push(i + 1)
+						var div = document.createElement('div')
+						$(div).append('<input id="button' + (i + 1) + '" type="radio" name="quiz" value="' + (i + 1) +
+							'" /><div id="answer' + (i + 1) + '"class="answer pointer"><\/div>');
+						$(div).append('<label for="button' + (i + 1) + '">' + quiz[qIndex].answers[i] + '<\/label>');
+						$('.question-' + (qIndex + 1) + ' .answer-container').append(div);
+					}
+				}
+				var radioCheck = function () {
+					$('.remediation-retry').unbind('click', runCheck);
+					$('.reveal-btn-m').unbind('click', runCheck);
+					$('.reveal-btn-m').bind('click', runCheck);
+					currentAnswer = $(this).attr('id').slice(-1);
+					currentQuestion = $(this).parent().parent().parent().attr('class').slice(-1);
+					console.log('currentQuestion:' + currentQuestion)
+					console.log(quiz[currentQuestion - 1].choices)
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] != 0 && attemptsLeft[currentQuestion - 1] < 2) {
+						$('.remediation-retry').bind('click', runCheck);
+						$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+					} else {
+						$('.remediation-retry').unbind('click', runCheck);
+						$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+					}
+					
+					if (attemptsLeft[currentQuestion - 1] == 0) {
+						$('.reveal-btn').unbind('click', runCheck);
+					} else {
+						$('.reveal-btn').unbind('click', runCheck);
+						$('.reveal-btn').bind('click', runCheck);
+					}
+
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+						$('.reveal-btn-m').bind('click', runCheck);
+					}
+
+					if (quiz[currentQuestion - 1].type == "MC") {
+						$('.answer-on').removeClass('answer-on').addClass('pointer');
+						$(this).addClass("answer-on").removeClass('pointer');
+					} else if (quiz[currentQuestion - 1].type == "MR") {
+						$('.answer-on').removeClass('answer-on').addClass('pointer');
+						$(this).addClass("answer-on").removeClass('pointer');
+					}
+				}
+
+				$('.answer').bind('click', radioCheck);
+				$('.remediation-retry').on('click', function () {
+					console.log($(this))
+					$('.remediation-retry').unbind('click', runCheck);
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+						if ($(window).width() < 999) {
+							$('.attempt-1').hide();
+							$('.attempt-2').hide();
+							$(this).parent().addClass("m-hide")
+							$(this).parent().parent().parent().parent().find('.attempt-container').addClass("m-hide");
+						} else {
+							$(this).parent().parent().parent().parent().find('.attempt-container').removeClass("m-hide")
+							$(this).parent().removeClass("m-hide");
+							$('.remediation-retry .warn-sel-ans').css('opacity', '1');
+						}
+					}
+				})
+
+				$('.remediation-continue').on('click', function () {
+					$('.reveal-btn').unbind('click', runCheck);
+					$('.reveal-btn-m').unbind('click', runCheck);
+					// if (currentQuestion == quiz.length - 1) {
+					// 	document.getElementById('contents-activity').contentWindow.exportRoot.dealDeck();
+					// }
+					if (currentQuestion >= quiz.length - 1) {
+						var userPoints = 0;
+						for (var i = 0; i < points.length; i++) {
+							userPoints += points[i]
+						}
+						scorePercent = parseInt((userPoints / totalPoints) * 100);
+						var attempt = parent.intAttempt;
+						console.log('Check score: ' + scorePercent >= passPercent)
+						if (scorePercent >= passPercent && attempt < 4) {
+							$('#result-correct').show();
+							$('#gameover-btn').show();
+							$('#result-incorrect').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-retry').hide();
+							$('#retry-btn').hide();
+							console.log('Passed in first 3 attempts')
+						} else if (scorePercent < passPercent && attempt < 4) {
+							passed = false;
+							$('#result-incorrect').show();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Failed in one of the first 3 attempts')
+						} else if (attempt == 5) {
+							passed = false;
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').show();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Challenge Closed. Reviewing. No Points awarded.')
+						} else if (attempt == 4) {
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').show();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Just reviewing. Good Job!')
+						}
+					}
+					                    
+                    console.log('has passed: ' + passed)
+				})
+
+				//Returns array of selected answers from a MR question
+				function getAnswers() {
+					var returnAnswers = [];
+					$(".answer").each(function () {
+						if ($(this).hasClass('answer-on')) {
+							returnAnswers.push(Number($(this).attr('id').slice(-1)));
+						}
+					});
+					return returnAnswers;
+				}
+
+				function arraysEqual(_arr1, _arr2) {
+					if (!Array.isArray(_arr1) || !Array.isArray(_arr2) || _arr1.length !== _arr2.length)
+						return false;
+					var arr1 = _arr1.concat().sort();
+					var arr2 = _arr2.concat().sort();
+					for (var i = 0; i < arr1.length; i++) {
+						if (arr1[i] !== arr2[i])
+							return false;
+					}
+					return true;
+				}
+
+				var runCheck = function () {
+					console.log("run check")
+					if (currentQuestion != undefined) {
+						$('.remediation-retry').unbind('click', runCheck);
+						if (currentQuestion == 6) {
+							console.log('BONUS QUESTION')
+							if (attemptsLeft[currentQuestion - 1] >= 0) {
+								$('.reveal-btn').eq(0).unbind('click', runCheck);
+								quiz[currentQuestion - 1].choices[currentAnswer - 1] = 0;
+								for (var i = 0; i < quiz[currentQuestion - 1].choices.length; i++) {
+									if (quiz[currentQuestion - 1].correct == currentAnswer) {
+										//correct answer
+										$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+											"pointer");
+									} else if (quiz[currentQuestion - 1].choices[i] == 0) {
+										//incorrect answer
+										$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+											"pointer answer");
+									} else if (attemptsLeft[currentQuestion - 1] == 0) {
+										//failed question
+										$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+											"pointer");
+									} else {
+										//rebind answers
+										$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind();
+										$('.question-' + currentQuestion + ' #answer' + (i + 1)).bind('click', radioCheck).addClass("pointer");
+									}
+								}
+								var holder = 0;
+								if (quiz[currentQuestion - 1].correct == currentAnswer) {
+									//bonusCard++;
+									console.log("bonusCard:" + bonusCard);
+									$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+									$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3')
+									$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+									$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+									$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+									$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').unbind();
+									$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').on('click', function () {
+										$('.bonus-question-container').fadeOut();
+									})
+									$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].correct_rem);
+									$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+										"url(images/challenge_2/images/Correct_Icon.png)");
+									$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+										"url(images/challenge_2/images/Correct.png)").addClass('remediation-reveal')
+										.removeClass("pointer answer");
+									$('.question-' + currentQuestion + ' .answer').css('cursor', 'auto');
+									$('.attempt-1').hide();
+									$('.attempt-2').hide();
+                                    document.getElementById('contents-activity').contentWindow.exportRoot.unlockCard();
+									//document.getElementById('contents-activity').contentWindow.exportRoot.bonusCard();
+								} else {
+
+									$('.answer-on').removeClass('answer-on');
+									$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+									$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-1');
+									$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+									$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').hide();
+									$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').addClass('white-txt').html(quiz[currentQuestion - 1].incorrect_rem);
+									$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+										"url(images/challenge_2/images/Incorrect_Icon.png)");
+									$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+										"url(images/challenge_2/images/Incorrect.png)").addClass('remediation-reveal')
+										.removeClass("pointer answer");
+									$('.attempt-1').hide();
+									$('.attempt-2').hide();
+									$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3');
+									$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+                                    $('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+                                    $('.remediation-continue:eq(' + (currentQuestion - 1) + ')').unbind();
+									$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').on('click', function () {
+										$('.bonus-question-container').fadeOut();
+									})
+									$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].fail_rem);
+									$('#progress-bar .quest .q-points').eq(currentQuestion-1).parent().addClass('quest-retry')
+									$('.question-' + currentQuestion + ' .answer-container div').each(function (index, elem) {
+										$('.question-' + currentQuestion + ' .answer').unbind().css('cursor', 'auto');
+                                    });
+                                    document.getElementById('contents-activity').contentWindow.exportRoot.gameOver();
+								}
+								attemptsLeft[currentQuestion - 1]--;
+								updateProgressTracker();
+							}
+							//END BONUS CHECK
+						} else {
+							if (attemptsLeft[currentQuestion - 1] >= 0) {
+								var correctAnswer = quiz[currentQuestion - 1].correct;
+								var thisQuestionAttemptsLeft = attemptsLeft[currentQuestion - 1];
+								if (quiz[currentQuestion - 1].type == "MC") {
+									$('.reveal-btn').unbind('click', runCheck);
+									quiz[currentQuestion - 1].choices[currentAnswer - 1] = 0;
+									for (var i = 0; i < quiz[currentQuestion - 1].choices.length; i++) {
+										if (quiz[currentQuestion - 1].correct == currentAnswer) {
+											//correct answer
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+												"pointer");
+										} else if (quiz[currentQuestion - 1].choices[i] == 0) {
+											//incorrect answer
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+												"pointer answer");
+										} else if (attemptsLeft[currentQuestion - 1] == 0) {
+											//failed question
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+												"pointer");
+										} else {
+											//rebind answers
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind();
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).bind('click', radioCheck).addClass("pointer");
+										}
+									}
+
+									if (quiz[currentQuestion - 1].correct == currentAnswer) {
+										cardCount++;
+										if (cardCount >= 4) {
+											$(".no-bonus").hide();
+										}
+										console.log("cardCount:" + cardCount);
+										$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3');
+										$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation:eq(' + (currentQuestion - 1) + ')').removeClass('m-hide')
+										$('.attempt-container:eq(' + (currentQuestion - 1) + ')').removeClass("m-hide")
+										$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-correct');
+										$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+										$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+										$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].correct_rem);
+										$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+											"url(images/challenge_2/images/Correct_Icon.png)");
+										$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+											"url(images/challenge_2/images/Correct.png)").addClass('remediation-reveal')
+											.removeClass("pointer answer");
+										$('.question-' + currentQuestion + ' .answer').css('cursor', 'auto');
+
+										$('.attempt-1').hide();
+										$('.attempt-2').hide();
+									} else {
+										$('.answer-on').removeClass('answer-on');
+										$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').addClass('white-txt').html(quiz[currentQuestion - 1].incorrect_rem);
+										$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+											"url(images/challenge_2/images/Incorrect_Icon.png)");
+										$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+											"url(images/challenge_2/images/Incorrect.png)").addClass('remediation-reveal')
+											.removeClass("pointer answer");
+											if (attemptsLeft[currentQuestion - 1] >= 0 && points[currentQuestion - 1] > 0) {
+											//console.log("INCORRECT RESPONSE: " + attemptsLeft[currentQuestion - 1])
+											points[currentQuestion - 1] = points[currentQuestion - 1] - 5;
+										}
+										if (attemptsLeft[currentQuestion - 1] == 2) {
+											$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-1');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-1');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+											$('.attempt-1').css('display', 'flex');
+										} else if (attemptsLeft[currentQuestion - 1] == 1) {
+											$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-2');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').removeClass('m-hide')
+											$('.attempt-container:eq(' + (currentQuestion - 1) + ')').removeClass("m-hide")
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-2');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+											$('.attempt-1').hide();
+											$('.attempt-2').css('display', 'flex');
+										} else if (attemptsLeft[currentQuestion - 1] == 0) {
+											$('.attempt-1').hide();
+											$('.attempt-2').hide();
+											$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').removeClass('m-hide')
+											$('.attempt-container:eq(' + (currentQuestion - 1) + ')').removeClass("m-hide")
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-3');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+											$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+											$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+											$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].fail_rem);
+											$('#progress-bar .quest .q-points').eq(currentQuestion-1).parent().addClass('quest-retry')
+											$('.question-' + currentQuestion + ' .answer-container div').each(function (index, elem) {
+												$('.question-' + currentQuestion + ' .answer').unbind().css('cursor', 'auto');
+											});
+										}
+										attemptsLeft[currentQuestion - 1]--;
+										updateProgressTracker();
+									}
+								}
+							} // end of runCheck
+						}
+					}
+					$('.reveal-btn').bind('click', runCheck);
+					$('.reveal-btn-m').bind('click', runCheck);
+				}
+			}
+        (function () {
+            $('#header-image', window.parent.document).fadeIn();
+            $('.next').click(function (box) {
+
+                var curLocation = boxLocation + 1;
+                var nextLocation = boxLocation + 2;
+                var currentBox = $('#box' + curLocation)
+                var nextBox = $('#box' + nextLocation)
+                if (curLocation == 1) { $('#box2 #video-container').css('display', 'block'); 
+                //$('#player1').get(0).play(); 
+                }
+                $(currentBox).animate({
+                    left: '-50%'
+                }, 500, function () {
+                    $(currentBox).css('left', '150%');
+                    $(currentBox).appendTo('#container');
+                });
+                $(nextBox).animate({
+                    left: '50%'
+                }, 500);
+
+                $('video').each(function () {
+                        $(this).get(0).pause();
+                    });
+
+                boxLocation++;
+                nextAction(curLocation);
+                updateProgressTracker()
+            });
+
+            $('.back-btn').click(function () {
+                var preLocation = boxLocation;
+                var curLocation = boxLocation + 1;
+                var currentBox = $('#box' + curLocation)
+                var prevBox = $('#box' + preLocation)
+                console.log(curLocation)
+                $(currentBox).animate({
+                    left: '150%'
+                }, 500, function () {
+                    $(prevBox).css('left', ' ');
+                    $(prevBox).prependTo('#container');
+                });
+                $(prevBox).css('left', '-150%').animate({
+                    left: '50%'
+                }, 500);
+
+
+                    $('video').each(function () {
+                        $(this).get(0).pause();
+                    });
+
+                
+                boxLocation--;
+                updateProgressTracker()
+                backAction(boxLocation)
+            });
+
+
+            $('#gameover-btn').on('click', function (e) {
+                parent.exitChallenge();
+                if (passed && parent.intAttempt != 4) {
+                    challengeComplete(thisClass(), thisChallengNumber, score, true);
+                } else if (parent.intAttempt != 4) {
+                    challengeComplete(thisClass(), thisChallengNumber, score, false);
+                } else {
+                    parent.navigateIframe("portal.html");
+                }
+                $('#gameover-btn').unbind("click");
+            })
+
+            var $video = $('video'),
+                $window = $('#video-container');
+            $footer = $('footer')
+
+            $(window).resize(function () {
+                var footerHeightStr = $('footer').css('height');
+                var footerHeight = (footerHeightStr.substring(0, footerHeightStr.length - 2) - 1);
+                var height = $window.height();
+                $video.css('height', height);
+                var videoWidth = $video.width(),
+                    windowWidth = $window.width(),
+                    marginLeftAdjust = (windowWidth - videoWidth) / 2;
+                $video.css({
+                    'height': height
+                });
+            }).resize();
+
+        })();
+
+        function nextBox(el) {
+            $('#box5 #video-popup-1-mask').fadeOut();
+            var curLocation = boxLocation + 1;
+            var currentBox = $('#box' + curLocation)
+            $(currentBox).animate({
+                left: '-50%'
+            }, 500, function () {
+                $(currentBox).css('left', '150%');
+                $(currentBox).appendTo('#container');
+            });
+            $(currentBox).next().animate({
+                left: '50%'
+            }, 500);
+            boxLocation++;
+            nextAction(curLocation);
+            updateProgressTracker()
+        }
+
+			function playVideo_1() {
+				$('#box2 #video-container').fadeIn()
+				$('#box2 #video-popup-1-mask').fadeOut();
+				$('video')[0].play();
+			}
+
+			function nextAction(groupIndex) {
+            console.log('next action switch: ' + groupIndex + " " + typeof (groupIndex))
+            switch (groupIndex) {
+                case "0":
+
+                    break;
+                case "1":
+
+                    break;
+                case "2":
+
+                    break;
+                case "3":
+
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 4:
+
+                    break;
+                case 5:
+
+                    break;
+                case 9:
+
+                    break;
+                default:
+                    break;
+            }
+		}
+		
+			function activityCheck() {
+
+				if (currentQuestion >= quiz.length - 1) {
+						var userPoints = 0;
+						for (var i = 0; i < points.length; i++) {
+							userPoints += points[i]
+						}
+
+						console.log(userPoints)
+						scorePercent = parseInt((userPoints / totalPoints) * 100);
+						var attempt = parent.intAttempt;
+						console.log('Check score: ' + scorePercent >= passPercent)
+						if (scorePercent >= passPercent && attempt < 4) {
+							$('#result-correct').show();
+							$('#gameover-btn').show();
+							$('#result-incorrect').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-retry').hide();
+							$('#retry-btn').hide();
+							console.log('Passed in first 3 attempts')
+						} else if (scorePercent < passPercent && attempt < 4) {
+							passed = false;
+							$('#result-incorrect').show();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Failed in one of the first 3 attempts')
+						} else if (attempt == 5) {
+							passed = false;
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').show();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Challenge Closed. Reviewing. No Points awarded.')
+						} else if (attempt == 4) {
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').show();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Just reviewing. Good Job!')
+						}
+					}
+					                    
+                    console.log('has passed: ' + passed)
+
+				// var curLocation = 8;
+				// var nextLocation = 9;
+				// var currentBox = $('#box' + curLocation)
+				// var nextBox = $('#box' + nextLocation)
+				// $(currentBox).animate({
+				// 	left: '-50%'
+				// }, 500, function () {
+				// 	$(currentBox).css('left', '150%');
+				// 	$(currentBox).appendTo('#container');
+				// });
+				// $(nextBox).animate({
+				// 	left: '50%'
+				// }, 500);
+
+				// boxLocation++;
+				//nextAction(curLocation);
+				updateProgressTracker()
+
+			}
+			function updateProgressTracker() {
+				var userPoints = 0
+				for (var i = 0; i < points.length; i++) {
+					userPoints += points[i]
+				}
+				score = (userPoints);
+				$('.score').html(score + " POINTS")
+				$('#score').html(score)
+				$('#progress-bar .quest .q-points').each(function (i, obj) {
+					$('#progress-bar .quest .q-points').eq(i).html(points[i])
+				})
+				console.log("HERE:" + boxLocation)
+				switch (boxLocation) {
+
+					case 1:
+						$('#progress-bar .pin').eq(boxLocation - 1).addClass('intro-down');
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+						break;
+					case 2:
+
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+						break;
+					case 3:
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+						break;
+					case 4:
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+						break;
+					case 5:
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+						break;
+
+					case 6:
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+						break;
+
+					case 7:
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+						break;
+
+					case 8:
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+						break;
+
+					case 9:
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('conclusion-down');
+						break;
+					case 10:
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation).addClass('conclusion-down');
+						break;
+					default:
+						$('#progress-bar .pin').eq(0).removeClass('intro-down');
+						$('#progress-bar .pin').eq(1).removeClass('scene-down');
+						break;
+				}
+			};
+			updateProgressTracker();
+			RenderQuestion();
+		</script>
+</body>
+</html>

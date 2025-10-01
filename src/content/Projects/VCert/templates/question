@@ -1,0 +1,47 @@
+			<!-- Question 1 -->
+			<div class="box question-bg-box" id="box5">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+						<div class='center-text-box question-1'>
+							<h1 id="question-num"></h1>
+							<div class='question-text'></div>
+							<div class='answer-container'></div>
+						</div>
+					</div>
+					<div class="col topCenterText m-RightCol-question">
+						<div class="reveal-btn text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="reveal-btn-m text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="remediation">
+							<div class="remediation-icon"></div>
+							<div class="remediation-txt"></div>
+							<div class="remediation-continue next">
+								Continue
+							</div>
+							<div class="remediation-retry">
+								Try Again
+								<div class='warn-sel-ans'>
+									Choose an answer and select "Try Again."
+								</div>
+							</div>
+							<div class="attempt-container row">
+								<div class="attempt-1">
+									FIRST ATTEMPT
+								</div>
+								<div class="attempt-2">
+									SECOND ATTEMPT
+								</div>
+								<div class="attempt-3">
+									RETRY IN 7 DAYS
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>

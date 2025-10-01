@@ -1,0 +1,43 @@
+/* UI Element Sizes */
+@headerHeight: 100px;
+
+@contentAreaWidth: 960px;
+@contentAreaHeight: 540px;
+
+@statusBarHeight: 20px;
+@navBarHeight: 30px;
+@trayHeight: 120px;
+
+@smallMargin: 0px;
+
+/* Global Styles */
+
+@backgroundColor: url(../Images/Shell/stripe1.png) #0042A9;
+@primaryColor: #72c9c9;
+
+@accentColor: #cccccc;
+@accentColor2: spin(@accentColor, 180);
+
+@fontColor: black;
+@accentFont: white;
+@accent2Font: white;
+
+@xlargeFont: 30px;
+@largeFont: 20px;
+@mediumFont: 13px;
+@smallFont: 11px;
+
+/* Fonts */
+@font-face {
+    font-family: 'UniversLTStd';
+    src: url('../Fonts/UniversLTStd.woff') format('woff');
+}
+
+@fontFamily: "UniversLTStd", "Arial", "Helvetica", "sans-serif";
+
+/* Dialogs */
+@dialogBackground: white;
+
+@import 'KendoUI/web/kendo.flat.xm.less';
+@import 'Structural/shell';
+@import 'Visual/shell';

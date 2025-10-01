@@ -1,0 +1,207 @@
+%!Adobe-FontList 1.22
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Barlow-Bold
+FamilyName:Barlow
+StyleName:Bold
+FullName:Barlow Bold
+MenuName:Barlow
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\esLA\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\Barlow-Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:60820
+FileModTime:1598967680
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Barlow Bold
+NameArray:0,Win,1,Barlow
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Barlow-Medium
+FamilyName:Barlow
+StyleName:Medium
+FullName:Barlow Medium
+MenuName:Barlow Medium
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\esLA\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\Barlow-Medium.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:59304
+FileModTime:1598967680
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Barlow Medium
+NameArray:0,Win,1,Barlow Medium
+NameArray:0,Win,16,Barlow
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Barlow-Regular
+FamilyName:Barlow
+StyleName:Regular
+FullName:Barlow Regular
+MenuName:Barlow
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\esLA\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\Barlow-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:60904
+FileModTime:1598967680
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Barlow Regular
+NameArray:0,Win,1,Barlow
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Barlow-SemiBold
+FamilyName:Barlow
+StyleName:SemiBold
+FullName:Barlow SemiBold
+MenuName:Barlow SemiBold
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\esLA\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\Barlow-SemiBold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:59948
+FileModTime:1598967680
+WeightClass:600
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Barlow SemiBold
+NameArray:0,Win,1,Barlow SemiBold
+NameArray:0,Win,16,Barlow
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:DINPro-Bold
+FamilyName:DIN Pro
+StyleName:Bold
+FullName:DIN Pro Bold
+MenuName:DIN Pro
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\esLA\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\FontFont - DIN Pro Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:182796
+FileModTime:1564597775
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,DIN Pro Bold
+NameArray:0,Win,1,DIN Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:DINPro-Medium
+FamilyName:DIN Pro
+StyleName:Medium
+FullName:DIN Pro Medium
+MenuName:DIN Pro Medium
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\esLA\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\FontFont - DIN Pro Medium.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:179972
+FileModTime:1564597791
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,DIN Pro Medium
+NameArray:0,Win,1,DIN Pro Medium
+NameArray:0,Win,16,DIN Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:DINPro
+FamilyName:DIN Pro
+StyleName:Regular
+FullName:DIN Pro
+MenuName:DIN Pro
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\esLA\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\FontFont - DIN Pro.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:178308
+FileModTime:1564597795
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,DIN Pro
+NameArray:0,Win,1,DIN Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:MinionPro-Regular
+FamilyName:Minion Pro
+StyleName:Regular
+FullName:Minion Pro
+MenuName:Minion Pro
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\esLA\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\MinionPro-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:218640
+FileModTime:1576114631
+WeightClass:400
+WidthClass:5
+AngleClass:0
+DesignSize:110
+NameArray:0,Mac,4,Minion Pro
+NameArray:0,Win,1,Minion Pro
+%EndFont
+

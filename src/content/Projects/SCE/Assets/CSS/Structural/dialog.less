@@ -1,0 +1,32 @@
+@dialogWidth: 100%;
+
+.shell-dialog {
+	position: absolute;
+	top: 0px;
+
+	display: none;
+
+	width: @dialogWidth;
+	height: @contentAreaHeight;
+
+	overflow-y: auto;
+}
+
+.shell-dialog > h3 {
+	margin: 6px;
+}
+
+.shell-dialog > button {
+	cursor: pointer;
+	margin: 6px;
+}
+
+.shell-dialog > hr {
+	margin: 6px;
+	border: 0px;
+	clear: both;
+}
+
+.shell-dialog > .content {
+	margin: 6px;
+}

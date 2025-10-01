@@ -1,0 +1,3 @@
+      if(data.val()[pkey].Email != 'dgutensohn@thelhtgroup.com' && data.val()[pkey].Email != 'bpalchick@thelhtgroup.com' && data.val()[pkey].Email != 'hstoller@thelhtgroup.com' && data.val()[pkey].Email != 'jfernow@thelhtgroup.com' && data.val()[pkey].Email != 'jheiliger@thelhtgroup.com' && data.val()[pkey].Email != 'jmikelman@thelhtgroup.com' && data.val()[pkey].Email != 'mzink@thelhtgroup.com' && data.val()[pkey].Email != 'wtang@thelhtgroup.com' && data.val()[pkey].Email != 'ylarner@thelhtgroup.com' && data.val()[pkey].Email != 'dlonghouse@thelhtgroup.com' && data.val()[pkey].Email != 'okeith@thelhtgroup.com') {
+        continue;
+     }

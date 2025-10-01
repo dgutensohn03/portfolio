@@ -1,0 +1,443 @@
+	
+
+			
+
+
+
+
+			<div class="box" id="box5">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div id="bg-container">
+					<div class="red-dot-bg" style="">
+						<div class="person-3-tlk person-left" style=""> </div>
+						<div class="person-4-lst person-right" style=""></div>
+
+
+						<div class='word-bubble-btm-left' id="word-bubble-rev-3a">
+							<div class="carrot-tl"></div>
+							<div class='rev-text'>
+								Sounds like business has really taken off. Do you have any concerns about the work you
+								have lined up this year?
+							</div>
+							<div class='rev-text'>
+								Are there concerns with your current provider being able to support your work?
+							</div>
+							<div class='rev-text'>
+								What are your main challenges?
+							</div>
+							<div class='rev-text'>
+								Do you have specific pain points you currently experience with your fleet?
+							</div>
+						</div>
+
+						<div class='click-bubble bubble-left bubble-left-inside' id="clk-listen-3a">
+							<div style="left: 0;">
+								Click to Read
+							</div>
+							<div class='bubble b0'></div>
+							<div class='bubble b1'></div>
+							<div class='bubble b2'></div>
+							<div class='bubble b3'></div>
+						</div>
+
+
+					
+
+
+
+						<div class='word-bubble-btm-left' id="word-bubble-rev-4a">
+							<div class="carrot-tr"></div>
+							<div class='rev-text'>
+								Just that the equipment is up to it. You know I have a smaller fleet, so downtime is a concern.
+							</div>
+							<div class='rev-text'>
+								I would like to extend my service intervals so I can keep my trucks on the road longer and
+								have less downtime.
+							</div>
+						</div>
+						<div class='click-bubble bubble-right-inside hidden' id="clk-listen-4a">
+							<div style="right: 0;">
+								Click to Read
+							</div>
+							<div class='bubble b0'></div>
+							<div class='bubble b1'></div>
+							<div class='bubble b2'></div>
+							<div class='bubble b3'></div>
+						</div>
+
+
+						<div class="tab-container index-3a" style="bottom: -120px !important;">
+							<div class="left-arrow"></div>
+							<div class="right-arrow"></div>
+							<div class="tab-instructions" style="flex-basis: 100%;">Click to continue the conversation.
+							</div>
+						</div>
+						<div class="tab-container index-4a" style="bottom: -120px !important;">
+							<div class="left-arrow"></div>
+							<div class="right-arrow"></div>
+							<div class="tab-instructions" style="flex-basis: 100%;">Click to continue the conversation.
+							</div>
+						</div>
+					
+					</div>
+					<div class="br-bc"><button id="continue-btn-5" class="next continue-btn continue-small-m"
+							id="">CONTINUE</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Question 1 -->
+			<div class="box question-bg-box" id="box5">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+						<div class='center-text-box question-1'>
+							<h1 id="question-num"></h1>
+							<div class='question-text'></div>
+							<div class='answer-container'></div>
+						</div>
+					</div>
+					<div class="col topCenterText m-RightCol-question">
+						<div class="reveal-btn text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="reveal-btn-m text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="remediation">
+							<div class="remediation-icon"></div>
+							<div class="remediation-txt"></div>
+							<div class="remediation-continue next">
+								Continue
+							</div>
+							<div class="remediation-retry">
+								Try Again
+								<div class='warn-sel-ans'>
+									Choose an answer and select "Try Again."
+								</div>
+							</div>
+							<div class="attempt-container row">
+								<div class="attempt-1">
+									FIRST ATTEMPT
+								</div>
+								<div class="attempt-2">
+									SECOND ATTEMPT
+								</div>
+								<div class="attempt-3">
+									RETRY IN 7 DAYS
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="box" id="box6">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div id="bg-container">
+					<div class="red-dot-bg" style="">
+						<div class="person-3-tlk person-left" style=""> </div>
+						<div class="person-4-lst person-right" style=""></div>
+
+
+						<div class='word-bubble-btm-left' id="word-bubble-rev-5a">
+							<div class="carrot-tl"></div>
+							<div class='rev-text'>
+								I understand, balancing service and downtime is important. Have I ever talked to you about Valvoline™ Premium Blue™ Motor Oil?
+							</div>
+							<div class='rev-text'>
+								It was developed in partnership with Cummins® but has benefits for all engines. 
+							</div>
+							<div class='rev-text'>
+								One of those, that I think would help you specifically, is that when maintenance schedules can’t be met,...
+							</div>
+							<div class='rev-text'>
+								...Premium Blue™ products help protect your engine out to the longest drain interval.
+							</div>
+						</div>
+
+						<div class='click-bubble bubble-left bubble-left-inside' id="clk-listen-5a">
+							<div style="left: 0;">
+								Click to Read
+							</div>
+							<div class='bubble b0'></div>
+							<div class='bubble b1'></div>
+							<div class='bubble b2'></div>
+							<div class='bubble b3'></div>
+						</div>
+
+						<div class='word-bubble-btm-left' id="word-bubble-rev-6a">
+							<div class="carrot-tr"></div>
+							<div class='rev-text'>
+								Sounds good, but if I remember our last conversation, it was more expensive than what I’m currently using.
+							</div>
+						</div>
+						<div class='click-bubble bubble-right-inside hidden' id="clk-listen-6a">
+							<div style="right: 0;">
+								Click to Read
+							</div>
+							<div class='bubble b0'></div>
+							<div class='bubble b1'></div>
+							<div class='bubble b2'></div>
+							<div class='bubble b3'></div>
+						</div>
+
+
+						<div class="tab-container index-5a" style="bottom: -120px !important;">
+							<div class="left-arrow"></div>
+							<div class="right-arrow"></div>
+							<div class="tab-instructions" style="flex-basis: 100%;">Click to continue the conversation.
+							</div>
+						</div>
+					
+					</div>
+					<div class="br-bc"><button id="continue-btn-6" class="next continue-btn continue-small-m"
+							id="">CONTINUE</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Question 2 -->
+			<div class="box question-bg-box" id="box7">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+						<div class='center-text-box question-2'>
+							<h1 id="question-num"></h1>
+							<div class='question-text'></div>
+							<div class='answer-container'></div>
+						</div>
+					</div>
+					<div class="col topCenterText m-RightCol-question">
+						<div class="reveal-btn text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="reveal-btn-m text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="remediation">
+							<div class="remediation-icon"></div>
+							<div class="remediation-txt"></div>
+							<div class="remediation-continue next">
+								Continue
+							</div>
+							<div class="remediation-retry">
+								Try Again
+								<div class='warn-sel-ans'>
+									Choose an answer and select "Try Again."
+								</div>
+							</div>
+							<div class="attempt-container row">
+								<div class="attempt-1">
+									FIRST ATTEMPT
+								</div>
+								<div class="attempt-2">
+									SECOND ATTEMPT
+								</div>
+								<div class="attempt-3">
+									RETRY IN 7 DAYS
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="box" id="box8">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height " id="content" style="padding-top: 0 !important; padding-bottom: 0 !important;">
+					<div class="col-5 col-12-md topCenterText back-btn-padding m-margin-top-bottom min-wid-700">
+						<div class='center-text-box'>
+							<h1>Fact Sheet</h1><p>
+							<font class="emphasisBold">VALVOLINE™ Premium Blue™ Motor Oil</font> can provide extended
+							drain intervals for engines. Fewer oil changes means less downtime so your machinery can be
+							on the job longer.</p>
+						</div>
+					</div>
+					<div class="col-5 col-12-md topCenterText min-wid-700" style="">
+						<div class="col" style="padding: 0;">
+							<div class='chart-container'>
+								<div class='row'>
+									<div class="col flex-center m-padding-bottom">
+										<img src="images/challenge_1/FactSheet/Btn1-Cumns_DWN.png">
+									</div>
+									<div class="col-md-8">
+										<div class="emphasisBold">
+											Cummins® 2017
+										</div><br>
+										Cummins® engines, 2017 and newer, may benefit from a 5,000-mile drain extension.
+									</div>
+								</div>
+								<div class='row'>
+									<div class="col flex-center m-padding-bottom">
+										<img src="images/challenge_1/FactSheet/Btn1-Cumns_DWN.png">
+									</div>
+									<div class="col-md-8">
+										<div class="emphasisBold">
+											Cummins® Pre 2016
+										</div><br>
+											Cummins® engines, 2016 and older, may benefit from a 5,000-mile drain
+											extension.
+										</div>
+									</div>
+									<div class='row'>
+										<div class="col flex-center m-padding-bottom">
+										<img src="images/challenge_1/FactSheet/Btn3-OEM_DWN.png">
+									</div>
+									<div class="col-md-8">
+										<div class="emphasisBold">
+											Other Manufacturers
+										</div><br>
+											Using Valvoline™ Oil Analysis, drain intervals may be increased in engines
+											developed by other engine manufacturers.
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					<div class="col money-btn-container">
+						<button  id="money-btn" class="next" style="display: inline-block;">SHOW ME THE MONEY</button>
+					</div></div>
+					
+					<!-- <div class="continue-br bottom-anchor" >
+								<button id="money-btn" class="next">SHOW ME THE MONEY</button>
+							</div> -->
+				</div>
+			<div class="box" id="box9">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height " id="content" style="">
+					<div class="col-lg-5 col-sm-12 back-btn-padding m-margin-top">
+						<div class='center-text-box'>
+							<h1>Show Me the Money</h1><p>
+							This is the Valvoline™ TCO Value Calculator. It can be used to help illustrate the long-term
+							cost savings a customer can achieve when using <font class="emphasisBold">VALVOLINE™ Premium
+								Blue™ Motor Oil.</font> Let’s dive back in and review how you can use this calculator
+							with a customer.</p>
+							<p  class="d-spacer"> 
+							Select a number to learn more about that section.
+						</p>
+							<!-- <img src="images/challenge_1/divider.png"> -->
+							
+							<div class="hot-spot-content"></div>
+						</div>
+					</div>
+					<div class="col-lg-5 col-sm-12">
+						<div class="col" style="padding: 0;">
+							<div class='calc-container'>
+								
+								<div class="hs-btn-container">
+								<div class='hs hs-1'>
+									1
+								</div>
+								<div class='hs hs-2'>
+									2
+								</div>
+								<div class='hs hs-3'>
+									3
+								</div>
+								<div class='hs hs-4'>
+									4
+								</div>
+								<div class='hs hs-5'>
+									5
+								</div></div><img src='images/challenge_1/Calculator2.jpg'>
+								<div class="hl-1"></div>
+								<div class="hl-2"></div>
+								<div class="hl-3"></div>
+								<div class="hl-4"></div>
+								<div class="hl-5"></div>
+							</div>
+							<div></div>
+						</div>
+					</div>
+					
+					<!-- <button class="next continue-btn" id="continue-btn-5">CONTINUE</button>
+					<div class="col-1 d-none"></div> -->
+					<div class="col bottom-anchor br-bc" style="min-width: 320px;">
+						<button class="next continue-btn" id="continue-btn-7">CONTINUE</button>
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="box" id="box10">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div id="bg-container">
+					<div class="red-dot-bg" style="">
+						<div class="person-3-tlk person-left" style=""> </div>
+						<div class="person-4-lst person-right" style=""></div>
+
+
+						<div class='word-bubble-btm-left' id="word-bubble-rev-7a">
+							<div class="carrot-tl"></div>
+							<div class='rev-text'>
+								You can manage your downtime in a way that works for your job and equipment needs.
+							</div>
+							<div class='rev-text'>
+								Plus, the Valvoline™ Premium™ Blue™ Motor Oil formulation leads to lower maintenance / labor costs.
+							</div>
+							<div class='rev-text'>
+								The bottom line is, if you want to extend out your drain intervals, or when maintenance schedules can’t be met,...
+							</div>
+							<div class='rev-text'>
+								...Cummins® endorses Premium Blue™ to help engines last up to 5,000-miles longer than all competitors.
+							</div>
+							 
+						</div>
+
+						<div class='click-bubble bubble-left bubble-left-inside' id="clk-listen-7a">
+							<div style="left: 0;">
+								Click to Read
+							</div>
+							<div class='bubble b0'></div>
+							<div class='bubble b1'></div>
+							<div class='bubble b2'></div>
+							<div class='bubble b3'></div>
+						</div>
+
+						<div class='word-bubble-btm-left' id="word-bubble-rev-8a">
+							<div class="carrot-tr"></div>
+							<div class='rev-text'>
+								Wow! Those numbers look good, and it sounds like my concerns over downtime can be helped
+								too?
+							</div>
+						</div>
+						<div class='click-bubble bubble-right-inside hidden' id="clk-listen-8a">
+							<div style="right: 0;">
+								Click to Read
+							</div>
+							<div class='bubble b0'></div>
+							<div class='bubble b1'></div>
+							<div class='bubble b2'></div>
+							<div class='bubble b3'></div>
+						</div>
+
+
+						<div class="tab-container index-7a" style="bottom: -120px !important;">
+							<div class="left-arrow"></div>
+							<div class="right-arrow"></div>
+							<div class="tab-instructions" style="flex-basis: 100%;">Click to continue the conversation.
+							</div>
+						</div>
+					
+					</div>
+					<div class="br-bc"><button id="continue-btn-8" class="next continue-btn continue-small-m"
+							id="">CONTINUE</button>
+					</div>
+				</div>
+			</div>

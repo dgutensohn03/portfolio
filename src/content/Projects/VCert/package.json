@@ -1,0 +1,39 @@
+{
+    "name": "vcert",
+    "version": "1.0.0",
+    "scripts": {
+        "build": "babel src -d bin",
+        "start": "npx babel src --watch --out-dir bin",
+        "app": "Xcopy bin app\\www\\bin /y /i /s && Xcopy Bootstrap app\\www\\Bootstrap /y /i /s && Xcopy images app\\www\\images /y /i /s && Xcopy resources app\\www\\resources /y /i /s && Xcopy scripts app\\www\\scripts /y /i /s && Xcopy styles app\\www\\styles /y /i /s && COPY *.html app\\www\\ /y && mkdir app\\www\\node_modules && Xcopy node_modules\\bootstrap app\\www\\node_modules\\bootstrap /y /i /s && Xcopy node_modules\\popper.js app\\www\\node_modules\\popper.js /y /i /s"
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.12.1",
+        "@babel/core": "^7.12.3",
+        "@babel/preset-env": "^7.12.1",
+        "babel-watch": "^7.0.0"
+    },
+    "dependencies": {
+        "@babel/polyfill": "^7.12.1",
+        "bootstrap": "^4.5.3",
+        "cordova": "^9.0.0",
+        "core-js": "^3.7.0",
+        "deck-of-cards": "^0.1.8",
+        "fast-crc32c": "^2.0.0",
+        "firebase": "^7.24.0",
+        "firebase-admin": "^8.13.0",
+        "firebase-functions": "^3.11.0",
+        "js-datepicker": "^5.16.0",
+        "lessc": "^1.0.2",
+        "nodemailer": "^6.4.16",
+        "npm": "^6.14.8",
+        "popper.js": "^1.16.1",
+        "request": "^2.88.2",
+        "requirejs": "^2.3.6",
+        "sp-pnp-js": "^3.0.10",
+        "uniq": "^1.0.1",
+        "write-file-atomic": "^3.0.3"
+    },
+    "engines": {
+        "node": "10"
+    }
+}

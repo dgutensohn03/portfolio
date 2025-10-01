@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/allrankings.css">
+
+    <title>Vcert Project</title>
+</head>
+
+<body id="leaderboardPage">
+    <a class="mapLink" href="LandingPage.html"><div class='smBack'><img src=>BACK</div></a>
+    <div class="container-fluid">
+        <div id="userLBPage_Body1" class="row">
+            <div class="col centerText">
+                <div class="row">
+                    <div class="portalHeader3">ALL RANKINGS.</div>
+                </div>
+                <div id="OHWLeader" class="row">
+                    <div class="sectionWidget expanded">
+                        <div id="sectionHeaderPicture5"></div>
+                        <div class="sectionHeaderTitle">HEAVY DUTY OFF-HIGHWAY</div>
+                        <div class="sectionHorizontalLine"></div>
+                        <div class="row LBStats">
+                            <div class="LBCircle col-lg-4">
+                                <div>
+                                    <canvas onmousemove="onOverCanvas(event)" onmouseout="onOutCanvas(event)" id="OHWLBCanvas" width="260" height="260"></canvas>
+                                </div>
+                            </div>
+                            <div class="LBPointsText col-lg-2">
+                                <div class="pointsReadout">Total Points Possible<br /><font class="totalPointsPossible pointsTotal"></font> <font class="pointsTerm">points</font><div class="pointsLine"></div>Leader Points<br /><font class="leaderPoints pointsTotal"></font> <font class="pointsTerm">points</font><div class="pointsLine"></div>Your Points<br /><font class="yourPoints pointsTotal"></font> <font class="pointsTerm">points</font><div class="pointsLine"></div>Catch-Up Points<br /><font class="catchUpPoints pointsTotal"></font> <font class="pointsTerm">points</font></div>
+                            </div>
+                            <div class="LBCatchUp col-lg-6">
+                                <div>
+                                    <font class="boxTitle">HOW TO CATCH UP</font><br />
+                                    <font class="earnMore">Earn more points.</font><br /><br />
+                                    <div class="catchUpText">
+                                        <div class="catchUpLine">
+                                            <div class="ARBullet"></div>Complete ALL Challenges
+                                        </div>
+                                        <div class="catchUpLine">
+                                            <div class="ARBullet"></div>Earn a 3-Peat Streak
+                                        </div>
+                                        <!-- <div class="catchUpLine">
+                                            <div class="ARBullet"></div>Take advantage of bonus rounds
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expandedSection">
+                            <!--Filled in via leaderboard.js-->
+                        </div>
+                        <div class="sectionHorizontalLineLast"></div>
+                    </div>
+                </div>
+                <div id="HDLeader" class="row">
+                    <div class="sectionWidget expanded">
+                        <div id="sectionHeaderPicture1"></div>
+                        <div class="sectionHeaderTitle">HEAVY DUTY ON-HIGHWAY</div>
+                        <div class="sectionHorizontalLine"></div>
+                        <div class="row LBStats">
+                            <div class="LBCircle col-lg-4">
+                                <div>
+                                    <canvas onmousemove="onOverCanvas(event)" onmouseout="onOutCanvas(event)" id="HDLBCanvas" width="260" height="260"></canvas>
+                                </div>
+                            </div>
+                            <div class="LBPointsText col-lg-2">
+                                <div class="pointsReadout">Total Points Possible<br /><font class="totalPointsPossible pointsTotal"></font> <font class="pointsTerm">points</font><div class="pointsLine"></div>Leader Points<br /><font class="leaderPoints pointsTotal"></font> <font class="pointsTerm">points</font><div class="pointsLine"></div>Your Points<br /><font class="yourPoints pointsTotal"></font> <font class="pointsTerm">points</font><div class="pointsLine"></div>Catch-Up Points<br /><font class="catchUpPoints pointsTotal"></font> <font class="pointsTerm">points</font></div>
+                            </div>
+                            <div class="LBCatchUp col-lg-6">
+                                <div>
+                                    <font class="boxTitle">HOW TO CATCH UP</font><br />
+                                    <font class="earnMore">Earn more points.</font><br /><br />
+                                    <div class="catchUpText">
+                                        <div class="catchUpLine">
+                                            <div class="ARBullet"></div>Complete ALL Challenges
+                                        </div>
+                                        <div class="catchUpLine">
+                                            <div class="ARBullet"></div>Earn a 3-Peat Streak
+                                        </div>
+                                        <!-- <div class="catchUpLine">
+                                            <div class="ARBullet"></div>Take advantage of bonus rounds
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expandedSection">
+                            <!--Filled in via leaderboard.js-->
+                        </div>
+                        <div class="sectionHorizontalLineLast"></div>
+                    </div>
+                </div>
+                <div id="LDLeader" class="row">
+                    <div class="sectionWidget expanded">
+                        <div id="sectionHeaderPicture2"></div>
+                        <div class="sectionHeaderTitle">LIGHT DUTY</div>
+                        <div class="sectionHorizontalLine"></div>
+                        <div class="row LBStats">
+                            <div class="LBCircle col-lg-4">
+                                <div>
+                                    <canvas onmousemove="onOverCanvas(event)" onmouseout="onOutCanvas(event)" id="LDLBCanvas" width="260" height="260"></canvas>
+                                </div>
+                            </div>
+                            <div class="LBPointsText col-lg-2">
+                                <div class="pointsReadout">Total Points Possible<br /><font class="totalPointsPossible pointsTotal"></font> <font class="pointsTerm">points</font><div class="pointsLine"></div>Leader Points<br /><font class="leaderPoints pointsTotal"></font> <font class="pointsTerm">points</font><div class="pointsLine"></div>Your Points<br /><font class="yourPoints pointsTotal"></font> <font class="pointsTerm">points</font><div class="pointsLine"></div>Catch-Up Points<br /><font class="catchUpPoints pointsTotal"></font> <font class="pointsTerm">points</font></div>
+                            </div>
+                            <div class="LBCatchUp col-lg-6">
+                                <div>
+                                    <font class="boxTitle">HOW TO CATCH UP</font><br />
+                                    <font class="earnMore">Earn more points.</font><br /><br />
+                                    <div class="catchUpText">
+                                        <div class="catchUpLine">
+                                            <div class="ARBullet"></div>Complete ALL Challenges
+                                        </div>
+                                        <div class="catchUpLine">
+                                            <div class="ARBullet"></div>Earn a 3-Peat Streak
+                                        </div>
+                                        <!-- <div class="catchUpLine">
+                                            <div class="ARBullet"></div>Take advantage of bonus rounds
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expandedSection">
+                            <!--Filled in via leaderboard.js-->
+                        </div>
+                        <div class="sectionHorizontalLineLast"></div>
+                    </div>
+                </div>
+                <div id="VPSLeader" class="row">
+                    <div class="sectionWidget expanded">
+                        <div id="sectionHeaderPicture3"></div>
+                        <div class="sectionHeaderTitle">VPS</div>
+                        <div class="sectionHorizontalLine"></div>
+                        <div class="row LBStats">
+                            <div class="LBCircle col-lg-4">
+                                <div>
+                                    <canvas onmousemove="onOverCanvas(event)" onmouseout="onOutCanvas(event)" id="VPSLBCanvas" width="260" height="260"></canvas>
+                                </div>
+                            </div>
+                            <div class="LBPointsText col-lg-2">
+                                <div class="pointsReadout">Total Points Possible<br /><font class="totalPointsPossible pointsTotal"></font> <font class="pointsTerm">points</font><div class="pointsLine"></div>Leader Points<br /><font class="leaderPoints pointsTotal"></font> <font class="pointsTerm">points</font><div class="pointsLine"></div>Your Points<br /><font class="yourPoints pointsTotal"></font> <font class="pointsTerm">points</font><div class="pointsLine"></div>Catch-Up Points<br /><font class="catchUpPoints pointsTotal"></font> <font class="pointsTerm">points</font></div>
+                            </div>
+                            <div class="LBCatchUp col-lg-6">
+                                <div>
+                                    <font class="boxTitle">HOW TO CATCH UP</font><br />
+                                    <font class="earnMore">Earn more points.</font><br /><br />
+                                    <div class="catchUpText">
+                                        <div class="catchUpLine">
+                                            <div class="ARBullet"></div>Complete ALL Challenges
+                                        </div>
+                                        <div class="catchUpLine">
+                                            <div class="ARBullet"></div>Earn a 3-Peat Streak
+                                        </div>
+                                        <!-- <div class="catchUpLine">
+                                            <div class="ARBullet"></div>Take advantage of bonus rounds
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expandedSection">
+                            <!--Filled in via leaderboard.js-->
+                        </div>
+                        <div class="sectionHorizontalLineLast"></div>
+                    </div>
+                </div>
+                <div id="ADLeader" class="row">
+                    <div class="sectionWidget expanded">
+                        <div id="sectionHeaderPicture4"></div>
+                        <div class="sectionHeaderTitle">AUTO DEALER</div>
+                        <div class="sectionHorizontalLine"></div>
+                        <div class="row LBStats">
+                            <div class="LBCircle col-lg-4">
+                                <div>
+                                    <canvas onmousemove="onOverCanvas(event)" onmouseout="onOutCanvas(event)" id="ADLBCanvas" width="260" height="260"></canvas>
+                                </div>
+                            </div>
+                            <div class="LBPointsText col-lg-2">
+                                <div class="pointsReadout">Total Points Possible<br /><font class="totalPointsPossible pointsTotal"></font> <font class="pointsTerm">points</font><div class="pointsLine"></div>Leader Points<br /><font class="leaderPoints pointsTotal"></font> <font class="pointsTerm">points</font><div class="pointsLine"></div>Your Points<br /><font class="yourPoints pointsTotal"></font> <font class="pointsTerm">points</font><div class="pointsLine"></div>Catch-Up Points<br /><font class="catchUpPoints pointsTotal"></font> <font class="pointsTerm">points</font></div>
+                            </div>
+                            <div class="LBCatchUp col-lg-6">
+                                <div>
+                                    <font class="boxTitle">HOW TO CATCH UP</font><br />
+                                    <font class="earnMore">Earn more points.</font><br /><br />
+                                    <div class="catchUpText">
+                                        <div class="catchUpLine">
+                                            <div class="ARBullet"></div>Complete ALL Challenges
+                                        </div>
+                                        <div class="catchUpLine">
+                                            <div class="ARBullet"></div>Earn a 3-Peat Streak
+                                        </div>
+                                        <!-- <div class="catchUpLine">
+                                            <div class="ARBullet"></div>Take advantage of bonus rounds
+                                        </div> -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="expandedSection">
+                            <!--Filled in via leaderboard.js-->
+                        </div>
+                        <div class="sectionHorizontalLineLast"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="bin/footer.js"></script>
+    <script src="scripts/polyfill.min.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="scripts/jquery-3.4.1.js"></script>
+    <script src="scripts/popper.js/dist/umd/popper.min.js"></script>
+    <script src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script> -->
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script> -->
+    <!-- <script defer src="src/fb-core-js.js"></script> -->
+    <script defer src="bin/fb-auth.js"></script>
+    <script defer src="bin/registration_popup.js"></script>
+    <script defer src="bin/leaderboard.js"></script>
+
+</body>
+
+</html>

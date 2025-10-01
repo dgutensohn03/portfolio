@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editable JSON</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+            table-layout: auto;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-right: 10px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: auto;
+        }
+        @media (max-width: 600px) {
+            table, th, td {
+                display: block;
+            }
+            th, td {
+                text-align: left;
+                display: block;
+                width: 100%;
+            }
+            th {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr {
+                margin-bottom: 10px;
+                border: 1px solid #ddd;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit JSON</h1>
+        <table id="jsonTable"></table>
+        <button onclick="loadJSON()">Load JSON</button>
+        <button onclick="saveJSON(true)">Save JSON (Overwrite)</button>
+        <button onclick="saveJSON(false)">Save JSON (New File)</button>
+        <input type="file" id="fileInput" style="display: none;">
+        <a id="downloadLink" style="display: none;">Download</a>
+    </div>
+    <script>
+        const jsonTable = document.getElementById('jsonTable');
+        const fileInput = document.getElementById('fileInput');
+        const downloadLink = document.getElementById('downloadLink');
+        let originalFileName = 'challengeData.json';
+
+        async function loadInitialJSON() {
+            const response = await fetch('challengeData.json');
+            const jsonData = await response.json();
+            populateTable(jsonData);
+        }
+
+        function loadJSON() {
+            fileInput.click();
+        }
+
+        fileInput.addEventListener('change', (event) => {
+            const file = event.target.files[0];
+            originalFileName = file.name;
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                const jsonData = JSON.parse(e.target.result);
+                populateTable(jsonData);
+            };
+            reader.readAsText(file);
+        });
+
+        function populateTable(jsonData) {
+            jsonTable.innerHTML = '';
+            const createRow = (key, value) => {
+                const row = jsonTable.insertRow();
+                const cellKey = row.insertCell();
+                const cellValue = row.insertCell();
+                cellKey.textContent = key;
+                cellValue.contentEditable = 'true';
+                cellValue.textContent = typeof value === 'object' ? JSON.stringify(value, null, 2) : value;
+            };
+
+            const processObject = (obj, prefix) => {
+                for (const key in obj) {
+                    if (typeof obj[key] === 'object' && !Array.isArray(obj[key])) {
+                        processObject(obj[key], `${prefix}${key}.`);
+                    } else {
+                        createRow(`${prefix}${key}`, obj[key]);
+                    }
+                }
+            };
+
+            processObject(jsonData, '');
+        }
+
+        function saveJSON(overwrite) {
+            const jsonData = {};
+            for (let i = 0; i < jsonTable.rows.length; i++) {
+                const key = jsonTable.rows[i].cells[0].textContent;
+                let value = jsonTable.rows[i].cells[1].textContent;
+                try {
+                    value = JSON.parse(value);
+                } catch (e) {
+                    // Value is not a JSON object, leave it as a string
+                }
+                setNestedProperty(jsonData, key.split('.'), value);
+            }
+
+            const jsonString = JSON.stringify(jsonData, null, 2);
+            const blob = new Blob([jsonString], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            downloadLink.href = url;
+            downloadLink.download = overwrite ? originalFileName : 'edited.json';
+            downloadLink.click();
+            URL.revokeObjectURL(url);
+        }
+
+        function setNestedProperty(obj, keys, value) {
+            let lastKey = keys.pop();
+            let pointer = obj;
+            keys.forEach(key => {
+                if (!pointer[key]) pointer[key] = {};
+                pointer = pointer[key];
+            });
+            pointer[lastKey] = value;
+        }
+
+        document.addEventListener('DOMContentLoaded', loadInitialJSON);
+    </script>
+</body>
+</html>

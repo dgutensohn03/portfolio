@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <style>
+    html,
+    body {
+      height: 100%;
+    }
+
+    .container {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .conformation-message {
+      display: none;
+      text-align: center;
+    }
+
+    .select-message {
+      display: none;
+    }
+  </style>
+  <title></title>
+</head>
+
+<body>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+
+</body>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script> -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script> -->
+
+
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+
+<script>
+
+  var today = new Date();
+  var dd = today.getDate();
+  var mm = today.getMonth() + 1;
+  var yyyy = today.getFullYear();
+
+  if (dd < 10) {
+    dd = '0' + dd;
+  }
+
+  if (mm < 10) {
+    mm = '0' + mm;
+  }
+  // today = mm+'-'+dd+'-'+yyyy;
+  // console.log(today);
+  // today = mm+'/'+dd+'/'+yyyy;
+  // console.log(today);
+  // today = dd+'-'+mm+'-'+yyyy;
+  // console.log(today);
+  today = mm + '/' + dd + '/' + yyyy;
+  //console.log(today);
+
+  //$('#today').html(today)
+
+  $('body').append(`<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle">Alert</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Please enter your response for each field and select the "Print My Certificate" button.
+        </div>
+      </div>
+    </div>
+  </div>`)
+
+
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDDEvA1cZJWWQ7msdNRFytBCS65Y4ZApSM",
+    authDomain: "om-course-survey.firebaseapp.com",
+    databaseURL: "https://om-course-survey.firebaseio.com",
+    projectId: "om-course-survey",
+    storageBucket: "om-course-survey.appspot.com",
+    messagingSenderId: "604337559613",
+    appId: "1:604337559613:web:71799adb92f6da55e97254",
+    measurementId: "G-N6NGR4B95Q"
+  };
+  // Initialize Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+  const auth = firebase.auth();
+  const db = firebase.database();
+  var emailSent = false;
+  // console.log(this)
+  // console.log($(this))
+  var sendUserData = function () {
+    var player = window.top.GetPlayer();
+    var fullName = player.GetVar("TextEntry");
+    var companyName = player.GetVar("TextEntry1");
+
+    if(!emailSent && $.trim(fullName) != "" || $.trim(companyName) != ""){
+    //e.preventDefault();
+
+
+    //change val here to check if inputs have been filled
+    //if ($.trim($("input[id='full-name']").val()) == "" || $.trim($("input[id='company-name']").val()) == "") {
+   // if () {
+      //$('#exampleModalCenter', window.top).modal('show');
+    //} else {
+      //change val here disable input values on submit and print
+      //$("#survey-form :input").prop("disabled", true);
+      // var fullName = document.getElementById('full-name').value;
+      // var companyName = document.getElementById('company-name').value;
+      var todayDate = today;
+      // console.log(fullName)
+      // console.log(companyName)
+      // console.log(todayDate)
+      var userId = firebase.auth().currentUser.uid;
+      console.log(userId)
+      function getInfoAndSendEmail(fullName, companyName, todayDate) {
+        $.get("https://us-central1-om-course-survey.cloudfunctions.net/addMessage", {
+          FullName: fullName,
+          CompanyName: companyName,
+          TodayDate: todayDate
+        });
+      }
+      firebase.database().ref('Users/' + userId).set({
+        _00_FullName: fullName,
+        _01_CompanyName: companyName,
+        _02_CompletionDate: todayDate
+
+      }).then(function (success) {
+        console.log('sucess')
+        $.get("https://us-central1-om-course-survey.cloudfunctions.net/addMessage", {
+          FullName: fullName,
+          CompanyName: companyName,
+          TodayDate: todayDate
+        });
+        auth.signOut().then(function () {
+          //console.log('signOut()')
+          //console.log('user has been logged out');
+        }).then(function (success) {
+          //console.log('hide form / show conformation message')
+          //$('#signup-form').trigger("reset");
+          //$('#signup-form').hide();
+          //$('#confirmation-mess').css('display', 'flex');
+        });
+      }).catch(function (error) {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorCode);
+        console.log(errorMessage);
+      });
+    }
+  emailSent = true;
+  };
+
+
+
+  firebase.auth().signInAnonymously().then(function (user) {
+    if (user) {
+      console.log(user)
+      //$('.print-btn').on('click', function (e) {
+      sendUserData();
+      //console.log(sendUserData)
+    }
+  }).catch(function (error) {
+
+    var errorCode = error.code;
+    var errorMessage = error.message;
+
+    console.log(errorCode);
+    console.log(errorMessage);
+
+  });
+
+</script>
+
+</html>

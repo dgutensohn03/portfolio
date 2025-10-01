@@ -1,0 +1,48 @@
+.radial-menu {
+	position: relative;
+	font-size: 10px;
+	margin: 6px;
+	
+	color: #999;
+}
+
+.horizontal .radial-menu {
+	float: right;
+	margin-right: 24px;
+}
+
+.vertical .radial-menu {
+	margin-top: 36px;
+}
+
+.radial-menu li {
+	position: absolute;
+	cursor: pointer;
+}
+
+.radial-menu li > i:last-child {
+	color: black;
+}
+
+.radial-menu li > i:last-child:hover {
+	color: white;
+}
+
+.radial-menu li:nth-child(1) {
+	top: 15px;
+	left: 0px;
+}
+
+.radial-menu li:nth-child(2) {
+	left: 15px;
+}
+
+.radial-menu li:nth-child(3) {
+	left: 30px;
+	top:  15px;
+}
+
+.radial-menu li:nth-child(4) {
+	left:  15px;
+	top: 30px;
+}

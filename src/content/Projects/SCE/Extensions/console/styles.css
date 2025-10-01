@@ -1,0 +1,23 @@
+﻿#xm-console {
+	font-size: 12px !important;
+}
+
+.xm-log {
+	height: 100px;
+	background-color: black;
+	overflow-y: auto;
+	padding: 3px;
+	margin-bottom: 6px;
+}
+
+.xm-log div {
+	color: white;
+}
+
+.xm-log div.error {
+	color: red;
+}
+
+.xm-log div.warn {
+	color: yellow;
+}

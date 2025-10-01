@@ -1,0 +1,1 @@
+{"version":3,"sources":["slide-theme.less"],"names":[],"mappings":"AAEM,KAAN,KACI,OAAA,KACA,OAAA","file":"slide-theme.min.css","sourcesContent":["@import 'common';\r\n\r\nhtml, body {\r\n    height: 100%;\r\n    margin: 0;\r\n}"]}

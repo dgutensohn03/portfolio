@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Data</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" />
+
+  <style>
+    .modal-dialog {
+      max-width: 80%;
+    }
+    .table-responsive {
+      overflow-x: auto;
+    }
+    body {
+      background-image: url(assets/1-2_bg.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    #database {
+      width: 80%;
+      margin: 5em;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      -webkit-box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 10%);
+      box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 10%);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .key-label {
+      font-weight: bold;
+      display: inline;
+    }
+
+    .btn {
+      margin-top: 1.25rem;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    .expand-btn {
+      cursor: pointer;
+      text-decoration: underline;
+      color: blue;
+    }
+
+    .expand-btn:hover {
+      text-decoration: none;
+    }
+
+    .data-table {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .expanded .data-table {
+      display: table;
+    }
+    .collapse > table {
+        display: none;
+    }
+    .collapse.show > table {
+        display: table;
+    }
+    .modal-content {
+      background-color: #ffffff;
+      border-radius: 10px;
+    }
+
+    .arrow {
+      float: right;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Two buttons -->
+  <!-- <button id="openModalBtn0" class="btn btn-primary">2 Week Summary</button>
+  <button id="openModalBtn" class="btn btn-secondary">End of Session Summary</button> -->
+  <button id="openModalBtn2" class="btn btn-info">End of Year Session Summary</button>
+  <!-- Bootstrap modal -->
+  <div id="userDataModal0" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">User Data</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- User data will be inserted here -->
+          <div id="userDataTable0"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap modal -->
+  <div id="userDataModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">User Data</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- User data will be inserted here -->
+          <div id="userDataTable"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap modal 2 -->
+  <div id="userDataModal2" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">User Data with Additional Challenges Completed Info</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- User data with additional challenges completed info will be inserted here -->
+          <div id="userDataTable2"></div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JavaScript -->
+  <!-- <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script> -->
+  <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<link href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css" rel="stylesheet"/>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script> -->
+	<!-- Bootstrap core JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+
+<script src="scripts/polyfill.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx-populate/4.3.0/xlsx-populate.min.js"></script>
+
+
+  <script>
+    
+         const firebaseConfig = {
+  apiKey: "AIzaSyBV7dN8jF3nggPnJuzzWmT5MsiMjWmuz88",
+  authDomain: "vcert-9568e.firebaseapp.com",
+  databaseURL: "https://vcert-9568e.firebaseio.com",
+  projectId: "vcert-9568e",
+  storageBucket: "vcert-9568e.appspot.com",
+  messagingSenderId: "701025120825",
+  appId: "1:701025120825:web:7bf1e3dfd38637652c93e8",
+  measurementId: "G-1N0PQ39K3P"
+};
+
+   // Initialize Firebase
+   const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.database();
+    var dataArray = [];
+
+    const userDataRef = firebase.database().ref("ProductionUserGroup").orderByKey();
+
+    // Fetch data from Firebase and populate userData object
+    function fetchData() {
+      return new Promise((resolve, reject) => {
+        userDataRef.once('value', function(snapshot) {
+          const userData = {};
+          snapshot.forEach(function(childSnapshot) {
+            const userId = childSnapshot.key;
+            const user = childSnapshot.val();
+            userData[userId] = user;
+          });
+          resolve(userData);
+        }, function(error) {
+          reject(error);
+        });
+      });
+    }
+
+        // Function to populate modal with 2-week summary
+        function populate2WeekSummary(userDataObj) {
+// Clear previous modal content
+  $('#userDataTable').empty();
+
+  // Initialize objects to store user data for each class type
+  const classData = {
+    AD: {},
+    HD: {},
+    LD: {},
+    VPS: {},
+    OHW: {}
+  };
+
+  // Organize user data according to ClassCompletion dates
+  Object.keys(userDataObj).forEach(userId => {
+    const userData = userDataObj[userId];
+    ['AD', 'HD', 'LD', 'VPS', 'OHW'].forEach(classType => {
+      const classCompletionDate = userData[`ClassCompletion${classType}`];
+      if (classCompletionDate) {
+        if (!classData[classType][classCompletionDate]) {
+          classData[classType][classCompletionDate] = [];
+        }
+        classData[classType][classCompletionDate].push(userData);
+      }
+    });
+  });
+
+  // Iterate through each class type and populate modal
+  Object.keys(classData).forEach(classType => {
+    const classTypeData = classData[classType];
+    Object.keys(classTypeData).forEach(classCompletionDate => {
+      const users = classTypeData[classCompletionDate];
+      // Sort users within the class by total points and then by challenges attempted
+      users.sort((a, b) => {
+        const aChallengesAttempted = Object.keys(a[`c${classType}`]).filter(challenge => a[`c${classType}`][challenge] === 0.2).length;
+        const bChallengesAttempted = Object.keys(b[`c${classType}`]).filter(challenge => b[`c${classType}`][challenge] === 0.2).length;
+
+        if (b[`TotalPoints${classType}`] !== a[`TotalPoints${classType}`]) {
+          return b[`TotalPoints${classType}`] - a[`TotalPoints${classType}`];
+        } else {
+          return bChallengesAttempted - aChallengesAttempted;
+        }
+      });
+      const tableId = `table_${classType}_${classCompletionDate}`;
+      let tableHTML = `
+        <h4>${classType} - ${classCompletionDate}</h4>
+        <div class="table-responsive">
+        <table class="table" id="${tableId}">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Company</th>
+              <th>VCERT Class</th>
+              <th>Email Address</th>
+              <th>Number of Challenges Completed</th>
+              <th>Point Total</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+      // Iterate through each user in the class
+      users.forEach((user, index) => {
+        const rank = index + 1; // Rank starts from 1
+        const firstName = user.FirstName || '';
+        const lastName = user.LastName || '';
+        const company = user.Company || '';
+        const vcertClass = `${classType} - ` + user[`ClassCompletion${classType}`] || '';
+        const email = user.Email || '';
+        const challengesCompleted = Object.keys(user[`c${classType}`]).filter(challenge => challenge.includes('points') && !challenge.includes('three') && user[`c${classType}`][challenge] !== 0).length;
+        const totalPoints = Object.keys(user[`c${classType}`])
+  .filter(challenge => challenge.includes('points'))
+  .reduce((total, challenge) => {
+    return total + (user[`c${classType}`][challenge] || 0);
+  }, 0);
+        tableHTML += `
+          <tr>
+            <td>${rank}</td>
+            <td>${firstName}</td>
+            <td>${lastName}</td>
+            <td>${company}</td>
+            <td>${vcertClass}</td>
+            <td>${email}</td>
+            <td>${challengesCompleted}</td>
+            <td>${totalPoints}</td>
+          </tr>
+        `;
+      });
+      tableHTML += `
+          </tbody>
+        </table>
+        <button class="btn btn-primary" onclick="exportToCSV('${tableId}', 'EOSS_${classType}_${classCompletionDate}')">Download CSV</button>
+        <hr>
+        </div>
+      `;
+      $('#userDataTable0').append(tableHTML);
+    });
+  });
+}
+
+// Function to populate modal with user data including additional challenges completed info
+
+
+// Function to populate modal with user data
+function populateModal(userDataObj) {
+  // Clear previous modal content
+  $('#userDataTable').empty();
+
+  // Initialize objects to store user data for each class type
+  const classData = {
+    AD: {},
+    HD: {},
+    LD: {},
+    VPS: {},
+    OHW: {}
+  };
+
+  // Organize user data according to ClassCompletion dates
+  Object.keys(userDataObj).forEach(userId => {
+    const userData = userDataObj[userId];
+    ['AD', 'HD', 'LD', 'VPS', 'OHW'].forEach(classType => {
+      const classCompletionDate = userData[`ClassCompletion${classType}`];
+      if (classCompletionDate) {
+        if (!classData[classType][classCompletionDate]) {
+          classData[classType][classCompletionDate] = [];
+        }
+        classData[classType][classCompletionDate].push(userData);
+      }
+    });
+  });
+
+  // Iterate through each class type and populate modal
+  Object.keys(classData).forEach(classType => {
+    const classTypeData = classData[classType];
+    Object.keys(classTypeData).forEach(classCompletionDate => {
+      const users = classTypeData[classCompletionDate];
+      // Sort users within the class by total points and then by challenges attempted
+      users.sort((a, b) => {
+        const aChallengesAttempted = Object.keys(a[`c${classType}`]).filter(challenge => a[`c${classType}`][challenge] === 0.2).length;
+        const bChallengesAttempted = Object.keys(b[`c${classType}`]).filter(challenge => b[`c${classType}`][challenge] === 0.2).length;
+
+        if (b[`TotalPoints${classType}`] !== a[`TotalPoints${classType}`]) {
+          return b[`TotalPoints${classType}`] - a[`TotalPoints${classType}`];
+        } else {
+          return bChallengesAttempted - aChallengesAttempted;
+        }
+      });
+      const tableId = `table_${classType}_${classCompletionDate}`;
+      let tableHTML = `
+        <h4>${classType} - ${classCompletionDate}</h4>
+        <div class="table-responsive">
+        <table class="table" id="${tableId}">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Company</th>
+              <th>VCERT Class</th>
+              <th>Email Address</th>
+              <th>Region</th>
+              <th>Number of Challenges Completed</th>
+              <th>Number of Challenges Attempted</th>
+              <th>Number of Challenges Unfinished</th>
+              <th>Point Total</th>
+              <th>Valvoline Role</th>
+              <th>Sales Leader Contact</th>
+              <th>Sales Leader Email</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+      // Iterate through each user in the class
+      users.forEach((user, index) => {
+        const rank = index + 1; // Rank starts from 1
+        const firstName = user.FirstName || '';
+        const lastName = user.LastName || '';
+        const company = user.Company || '';
+        const vcertClass = `${classType} - ` + user[`ClassCompletion${classType}`] || '';
+        const email = user.Email || '';
+        const region = user.Region || '';
+        const pointsChallenge = 'cXpoints'; // Example string
+const regex = /c.points/; // . represents any single character
+const resultCount = regex.test(pointsChallenge);
+console.log(resultCount); 
+
+        const challengesCompleted = Object.keys(user[`c${classType}`]).filter(challenge => challenge.includes('points') && !challenge.includes('three') && user[`c${classType}`][challenge] !== 0).length;
+        const challengesAttempted = Object.keys(user[`c${classType}`]).filter(challenge => user[`c${classType}`][challenge] === 0.2).length;
+        const challengesUnfinished = Object.keys(user[`c${classType}`]).filter(challenge => user[`c${classType}`][challenge] === 0).length;
+        const totalPoints = Object.keys(user[`c${classType}`])
+  .filter(challenge => challenge.includes('points'))
+  .reduce((total, challenge) => {
+    return total + (user[`c${classType}`][challenge] || 0);
+  }, 0);
+        const valvolineRole = user[`Role`] || '';
+        const salesLeaderContact = user[`SalesContact`] || '';
+        const salesLeaderEmail = user[`SalesEmail`] || '';
+        tableHTML += `
+          <tr>
+            <td>${rank}</td>
+            <td>${firstName}</td>
+            <td>${lastName}</td>
+            <td>${company}</td>
+            <td>${vcertClass}</td>
+            <td>${email}</td>
+            <td>${region}</td>
+            <td>${challengesCompleted}</td>
+            <td>${challengesAttempted}</td>
+            <td>${challengesUnfinished}</td>
+            <td>${totalPoints}</td>
+            <td>${valvolineRole}</td>
+            <td>${salesLeaderContact}</td>
+            <td>${salesLeaderEmail}</td>
+          </tr>
+        `;
+      });
+      tableHTML += `
+          </tbody>
+        </table>
+        <button class="btn btn-primary" onclick="exportToCSV('${tableId}', 'EOSS_${classType}_${classCompletionDate}')">Download CSV</button>
+        <hr>
+        </div>
+      `;
+      $('#userDataTable').append(tableHTML);
+    });
+  });
+}
+
+// Function to populate modal with user data including additional challenges completed info
+function populateModal2(userDataObj) {
+  // Clear previous modal content
+  $('#userDataTable2').empty();
+
+  // Initialize objects to store user data for each class type
+  const classData = {
+    AD: {},
+    HD: {},
+    LD: {},
+    VPS: {},
+    OHW: {}
+  };
+
+  // Organize user data according to ClassCompletion dates
+  Object.keys(userDataObj).forEach(userId => {
+    const userData = userDataObj[userId];
+    ['AD', 'HD', 'LD', 'VPS', 'OHW'].forEach(classType => {
+      const classCompletionDate = userData[`ClassCompletion${classType}`];
+      if (classCompletionDate) {
+        if (!classData[classType][classCompletionDate]) {
+          classData[classType][classCompletionDate] = [];
+        }
+        classData[classType][classCompletionDate].push(userData);
+      }
+    });
+  });
+
+  // Iterate through each class type and populate modal
+  Object.keys(classData).forEach(classType => {
+    const classTypeData = classData[classType];
+    Object.keys(classTypeData).forEach(classCompletionDate => {
+      const users = classTypeData[classCompletionDate];
+      // Sort users within the class by total points and then by challenges attempted
+      users.sort((a, b) => {
+        const aChallengesAttempted = Object.keys(a[`c${classType}`]).filter(challenge => a[`c${classType}`][challenge] === 0.2).length;
+        const bChallengesAttempted = Object.keys(b[`c${classType}`]).filter(challenge => b[`c${classType}`][challenge] === 0.2).length;
+
+        if (b[`TotalPoints${classType}`] !== a[`TotalPoints${classType}`]) {
+          return b[`TotalPoints${classType}`] - a[`TotalPoints${classType}`];
+        } else {
+          return bChallengesAttempted - aChallengesAttempted;
+        }
+      });
+      const tableId = `table_${classType}_${classCompletionDate}_2`;
+      let tableHTML = `
+        <h4>${classType} - ${classCompletionDate}</h4>
+        <div class="table-responsive">
+        <table class="table" id="${tableId}">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Company</th>
+              <th>VCERT Class</th>
+              <th>Email Address</th>
+              <th>Region</th>
+              <th>Number of Challenges Completed</th>
+              <th>Number of Challenges Attempted</th>
+              <th>Number of Challenges Unfinished</th>
+              <th>Point Total</th>
+              <th>Valvoline Role</th>
+              <th>Sales Leader Contact</th>
+              <th>Sales Leader Email</th>
+              <th>Number of Challenges Completed (First attempt)</th>
+              <th>Number of Challenges Completed (Second attempt)</th>
+              <th>Number of Challenges Completed (3+ attempts)</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+      // Iterate through each user in the class
+      users.forEach((user, index) => {
+        const rank = index + 1; // Rank starts from 1
+        const firstName = user.FirstName || '';
+        const lastName = user.LastName || '';
+        const company = user.Company || '';
+        const vcertClass = `${classType} - ` + user[`ClassCompletion${classType}`] || '';
+        const email = user.Email || '';
+        const region = user.Region || '';
+        const challengesCompleted = Object.keys(user[`c${classType}`]).filter(challenge => challenge.includes('points') && !challenge.includes('three') && user[`c${classType}`][challenge] !== 0).length;
+        const challengesAttempted = Object.keys(user[`c${classType}`]).filter(challenge => user[`c${classType}`][challenge] === 0.2).length;
+        const challengesUnfinished = Object.keys(user[`c${classType}`]).filter(challenge => user[`c${classType}`][challenge] === 0).length;
+        const totalPoints = Object.keys(user[`c${classType}`])
+  .filter(challenge => challenge.includes('points'))
+  .reduce((total, challenge) => {
+    return total + (user[`c${classType}`][challenge] || 0);
+  }, 0);
+        const valvolineRole = user[`Role`] || '';
+        const salesLeaderContact = user[`SalesContact`] || '';
+        const salesLeaderEmail = user[`SalesEmail`] || '';
+        let firstAttemptChallengesCompleted = 0;
+let secondAttemptChallengesCompleted = 0;
+let thirdOrMoreAttemptsChallengesCompleted = 0;
+
+Object.keys(user[`c${classType}`]).forEach(challenge => {
+    if (!challenge.includes("points") && !challenge.includes("first") && !challenge.includes("second") && !challenge.includes("third")) {
+        thirdOrMoreAttemptsChallengesCompleted++;
+    } else if (challenge.includes("second")) {
+        secondAttemptChallengesCompleted++;
+    } else if (challenge.includes("first")) {
+        firstAttemptChallengesCompleted++;
+    }
+});
+        tableHTML += `
+          <tr>
+            <td>${rank}</td>
+            <td>${firstName}</td>
+            <td>${lastName}</td>
+            <td>${company}</td>
+            <td>${vcertClass}</td>
+            <td>${email}</td>
+            <td>${region}</td>
+            <td>${challengesCompleted}</td>
+            <td>${challengesAttempted}</td>
+            <td>${challengesUnfinished}</td>
+            <td>${totalPoints}</td>
+            <td>${valvolineRole}</td>
+            <td>${salesLeaderContact}</td>
+            <td>${salesLeaderEmail}</td>
+            <td>${firstAttemptChallengesCompleted}</td>
+            <td>${secondAttemptChallengesCompleted}</td>
+            <td>${thirdOrMoreAttemptsChallengesCompleted}</td>
+          </tr>
+        `;
+      });
+      tableHTML += `
+          </tbody>
+        </table>
+        <button class="btn btn-primary" onclick="exportToCSV('${tableId}', 'EOYSS_${classType}_${classCompletionDate}_2')">Download CSV</button>
+        <hr>
+        </div>
+      `;
+      $('#userDataTable2').append(tableHTML);
+    });
+  });
+}
+
+
+// Function to export table data to CSV
+function exportToCSV(tableId, fileName) {
+    const table = document.getElementById(tableId);
+    const rows = table.querySelectorAll('tr');
+    let csv = '';
+
+    // Generate CSV content - including table headers
+    const headers = Array.from(table.querySelectorAll('thead th')).map(cell => cell.textContent.trim());
+    csv += headers.join(',') + '\n';
+
+    // Generate CSV content - including table data
+    for (let i = 1; i < rows.length; i++) { // Start from index 1 to exclude row 2
+        const cells = rows[i].querySelectorAll('td');
+        cells.forEach((cell, index) => {
+            csv += cell.textContent.trim();
+            if (index < cells.length - 1) {
+                csv += ',';
+            }
+        });
+        csv += '\n';
+    }
+
+    // Download CSV file
+    const csvFile = new Blob([csv], { type: 'text/csv' });
+    const downloadLink = document.createElement('a');
+    downloadLink.download = `${fileName}.csv`;
+    downloadLink.href = window.URL.createObjectURL(csvFile);
+    downloadLink.style.display = 'none';
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+}
+
+
+    // Fetch data from Firebase and populate modal when data is available
+    $('#openModalBtn0').click(function() {
+        console.log('clicked')
+    fetchData().then(function(userData) {
+        populate2WeekSummary(userData);
+        $('#userDataModal0').modal('show');
+    }).catch(function(error) {
+        console.error("Error fetching data:", error);
+    });
+    });
+
+// Open the modal when the second button is clicked
+$('#openModalBtn').click(function() {
+    console.log('clicked')
+    fetchData().then(function(userData) {
+        populateModal(userData);
+        $('#userDataModal').modal('show');
+    }).catch(function(error) {
+        console.error("Error fetching data:", error);
+    });
+});
+
+// Open the second modal when the third button is clicked
+$('#openModalBtn2').click(function() {
+    console.log('clicked')
+    fetchData().then(function(userData) {
+        populateModal2(userData);
+        $('#userDataModal2').modal('show');
+    }).catch(function(error) {
+        console.error("Error fetching data:", error);
+    });
+});
+  </script>
+</body>
+</html>

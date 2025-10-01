@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Data</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+</head>
+<body>
+
+  <!-- Two buttons -->
+  <button id="fetchDataBtn" class="btn btn-primary">Fetch Data</button>
+  <button id="openModalBtn" class="btn btn-secondary">Open Modal</button>
+
+  <!-- Bootstrap modal -->
+  <div id="userDataModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">User Data</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <!-- User data will be inserted here -->
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="scripts/polyfill.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+
+  <script>
+
+      const firebaseConfig = {
+  apiKey: "AIzaSyBV7dN8jF3nggPnJuzzWmT5MsiMjWmuz88",
+  authDomain: "vcert-9568e.firebaseapp.com",
+  databaseURL: "https://vcert-9568e.firebaseio.com",
+  projectId: "vcert-9568e",
+  storageBucket: "vcert-9568e.appspot.com",
+  messagingSenderId: "701025120825",
+  appId: "1:701025120825:web:7bf1e3dfd38637652c93e8",
+  measurementId: "G-1N0PQ39K3P"
+};
+
+   // Initialize Firebase
+   const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.database();
+    var dataArray = [];
+
+    const userDataRef = firebase.database().ref("ProductionUserGroup").orderByKey();
+
+    // Fetch data from Firebase and populate userData object
+    function fetchData() {
+      return new Promise((resolve, reject) => {
+        userDataRef.once('value', function(snapshot) {
+          const userData = {};
+          snapshot.forEach(function(childSnapshot) {
+            const userId = childSnapshot.key;
+            const user = childSnapshot.val();
+            userData[userId] = user;
+          });
+          resolve(userData);
+        }, function(error) {
+          reject(error);
+        });
+      });
+    }
+
+// Function to populate modal with user data
+function populateModal(userDataObj) {
+  // Clear previous modal content
+  $('#userDataModal').empty();
+
+  // Initialize objects to store user data for each class type
+  const classData = {
+    HD: {},
+    LD: {},
+    VPS: {}
+  };
+
+  // Organize user data according to ClassCompletion dates
+  Object.keys(userDataObj).forEach(userId => {
+    const userData = userDataObj[userId];
+    ['HD', 'LD', 'VPS'].forEach(classType => {
+      const classCompletionDate = userData[`ClassCompletion${classType}`];
+      if (classCompletionDate) {
+        if (!classData[classType][classCompletionDate]) {
+          classData[classType][classCompletionDate] = [];
+        }
+        classData[classType][classCompletionDate].push(userData);
+      }
+    });
+  });
+
+  // Iterate through each class type and populate modal
+  Object.keys(classData).forEach(classType => {
+    const classTypeData = classData[classType];
+    Object.keys(classTypeData).forEach(classCompletionDate => {
+      const users = classTypeData[classCompletionDate];
+      const tableId = `table_${classType}_${classCompletionDate}`;
+      let tableHTML = `
+        <h4>${classType} - ${classCompletionDate}</h4>
+        <table class="table" id="${tableId}">
+          <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Challenges Completed</th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+      users.forEach(user => {
+        const firstName = user.FirstName;
+        const lastName = user.LastName;
+        const email = user.Email;
+        const challengesCompleted = user[`TotalPoints${classType}`];
+        tableHTML += `
+          <tr>
+            <td>${firstName}</td>
+            <td>${lastName}</td>
+            <td>${email}</td>
+            <td>${challengesCompleted}</td>
+          </tr>
+        `;
+      });
+      tableHTML += `
+          </tbody>
+        </table>
+        <button class="btn btn-primary" onclick="exportToCSV('${tableId}', '${classType}_${classCompletionDate}')">Download CSV</button>
+        <hr>
+      `;
+      $('#userDataModal').append(tableHTML);
+    });
+  });
+}
+
+    // Function to export table data to CSV
+    function exportToCSV(tableId, fileName) {
+        console.log(document)
+        console.log(tableId)
+      const table = document.getElementById(tableId);
+      console.log(table)
+      const rows = table.querySelectorAll('tr');
+      let csv = '';
+
+      // Generate CSV content
+      rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        cells.forEach((cell, index) => {
+          csv += cell.textContent;
+          if (index < cells.length - 1) {
+            csv += ',';
+          }
+        });
+        csv += '\n';
+      });
+
+      // Download CSV file
+      const csvFile = new Blob([csv], { type: 'text/csv' });
+      const downloadLink = document.createElement('a');
+      downloadLink.download = `${fileName}.csv`;
+      downloadLink.href = window.URL.createObjectURL(csvFile);
+      downloadLink.style.display = 'none';
+      document.body.appendChild(downloadLink);
+      downloadLink.click();
+    }
+
+    // Fetch data from Firebase and populate modal when data is available
+    $('#fetchDataBtn').click(function() {
+      fetchData().then(function(userData) {
+        populateModal(userData);
+      }).catch(function(error) {
+        console.error("Error fetching data:", error);
+      });
+    });
+
+    // Open the modal when the second button is clicked
+    $('#openModalBtn').click(function() {
+        console.log('clicked')
+      fetchData().then(function(userData) {
+        populateModal(userData);
+        $('#userDataModal').modal('show');
+      }).catch(function(error) {
+        console.error("Error fetching data:", error);
+      });
+    });
+  </script>
+
+</body>
+</html>

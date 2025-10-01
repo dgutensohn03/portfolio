@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rise Sample - Database</title>
+  <style>
+    body {
+      background-image: url(assets/1-2_bg.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    .btn {
+      margin-top: 1.25rem;
+    }
+
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+<body id="registrationPage">
+
+  <!-- Button for downloading the CSV file -->
+  <button id="downloadBtn" disabled>Download CSV</button>
+
+  <!-- Button for viewing EO Summary -->
+  <button id="viewEOSummary">View EO Summary</button>
+
+  <div id="accordion"></div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="scripts/polyfill.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx-populate/4.3.0/xlsx-populate.min.js"></script>
+
+  <script>
+    $(function() {
+      // Your Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBV7dN8jF3nggPnJuzzWmT5MsiMjWmuz88",
+        authDomain: "vcert-9568e.firebaseapp.com",
+        databaseURL: "https://vcert-9568e.firebaseio.com",
+        projectId: "vcert-9568e",
+        storageBucket: "vcert-9568e.appspot.com",
+        messagingSenderId: "701025120825",
+        appId: "1:701025120825:web:7bf1e3dfd38637652c93e8",
+        measurementId: "G-1N0PQ39K3P"
+      };
+
+      // Initialize Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.database();
+      var dataArray = [];
+
+      // Fetch data from Firebase
+      const userDataRef = firebase.database().ref("ProductionUserGroup").orderByKey();
+
+      userDataRef.once("value")
+        .then(function(snapshot) {
+          const promises = [];
+
+          snapshot.forEach(function(childSnapshot) {
+            const key = childSnapshot.key;
+            const childData = childSnapshot.val();
+
+            dataArray.push({ key: key, data: childData });
+            promises.push(Promise.resolve());
+          });
+
+          return Promise.all(promises);
+        })
+        .then(function() {
+          // Event listener for viewing EO Summary
+          $('#viewEOSummary').on('click', function() {
+            // Function to convert data to desired format
+// Function to convert JSON data to new format
+function convertJson(jsonData) {
+    const newArray = [];
+    jsonData.forEach(obj => {
+        const data = obj.data;
+        const classes = [];
+        if (data.ClassHD) {
+            classes.push({ type: "HD", date: data.ClassCompletionHD });
+        }
+        if (data.ClassLD) {
+            classes.push({ type: "LD", date: data.ClassCompletionLD });
+        }
+        if (data.ClassVPS) {
+            classes.push({ type: "VPS", date: data.ClassCompletionVPS });
+        }
+
+        classes.forEach(classData => {
+            const totalChallengesCompleted = Object.keys(data[`c${classData.type}`])
+                .filter(key => key.startsWith('c') && data[`c${classData.type}`][key] === 1)
+                .length;
+
+            const newObj = {
+                "First Name": data.FirstName || "",
+                "Last Name": data.LastName || "",
+                "Company": data.Company || "",
+                "VCERT Class": data.VCERTClass || "",
+                "Email Address": data.Email || "",
+                "Region": data.Region || "", // New field
+                "Number of Challenges Completed": totalChallengesCompleted || 0,
+                "Number of Challenges Attempted": data[`TotalAttempts${classData.type}`] || 0, // New field
+                "Number of Challenges Unfinished": data[`TotalUnfinished${classData.type}`] !== 1 ? "Yes" : "No", // New field
+                "Point Total": data[`TotalPoints${classData.type}`] || 0,
+                "Ranking": "", // Placeholder for ranking
+                "Valvoline Role": data.ValvolineRole || "", // New field
+                "Sales Leader Contact": data.SalesLeaderContact || "", // New field
+                "Sales Leader Email": data.SalesLeaderEmail || "", // New field
+                "Class Type": `Class ${classData.type} - ${classData.date}`
+            };
+            newArray.push(newObj);
+        });
+    });
+
+    // Calculate ranking based on total points
+    newArray.sort((a, b) => b["Point Total"] - a["Point Total"]); // Sort by total points
+    newArray.forEach((entry, index) => {
+        entry["Ranking"] = index + 1; // Assign ranking based on sorted order
+    });
+
+    return newArray;
+}
+
+
+            // Convert JSON data to new format
+            const convertedData = convertJson(dataArray);
+            console.log("Converted data:", convertedData);
+
+            // Group data by class type
+            const groupedData = {};
+            convertedData.forEach(entry => {
+              const classType = entry["Class Type"];
+              if (!groupedData[classType]) {
+                groupedData[classType] = [];
+              }
+              groupedData[classType].push(entry);
+            });
+
+            // Calculate ranking based on total points
+            Object.values(groupedData).forEach(classEntries => {
+              classEntries.sort((a, b) => b["Point Total"] - a["Point Total"]); // Sort by total points
+              classEntries.forEach((entry, index) => {
+                entry["Ranking"] = index + 1; // Assign ranking based on sorted order
+              });
+            });
+
+            // Generate HTML content for the accordion
+            let accordionContent = '';
+            Object.keys(groupedData).forEach((classType, index) => {
+              accordionContent += `<div class="card">`;
+              accordionContent += `<div class="card-header" id="heading-${index}">`;
+              accordionContent += `<h5 class="mb-0">`;
+              accordionContent += `<button class="btn btn-link" data-toggle="collapse" data-target="#collapse-${index}" aria-expanded="true" aria-controls="collapse-${index}">${classType}</button>`;
+              accordionContent += `</h5>`;
+              accordionContent += `</div>`;
+              accordionContent += `<div id="collapse-${index}" class="collapse" aria-labelledby="heading-${index}" data-parent="#accordion">`;
+              accordionContent += `<div class="card-body">`;
+              accordionContent += '<table class="table">';
+              // Header row
+              accordionContent += '<thead>';
+              accordionContent += '<tr>';
+              Object.keys(groupedData[classType][0]).forEach(column => {
+                accordionContent += `<th scope="col">${column}</th>`;
+              });
+              accordionContent += '</tr>';
+              accordionContent += '</thead>';
+              // Data rows
+              accordionContent += '<tbody>';
+              groupedData[classType].forEach(entry => {
+                accordionContent += '<tr>';
+                Object.values(entry).forEach(value => {
+                  accordionContent += `<td>${value}</td>`;
+                });
+                accordionContent += '</tr>';
+              });
+              accordionContent += '</tbody>';
+              accordionContent += '</table>';
+              accordionContent += `<button class="btn btn-primary download-btn" onclick="window.downloadCsv('EOSreport_${classType}', ${JSON.stringify(groupedData[classType])})">Download CSV</button>`;
+              accordionContent += `</div>`;
+              accordionContent += `</div>`;
+              accordionContent += `</div>`;
+            });
+            $('#accordion').html(accordionContent);
+          });
+        })
+        .catch(function(error) {
+          console.error("Error:", error);
+        });
+
+
+      // Function to download CSV
+      window.downloadCsv = function(filename, data) {
+        const csvContent = "data:text/csv;charset=utf-8," +
+          Object.keys(data[0]).join(",") + "\n" + // Header row
+          data.map(entry => Object.values(entry).join(",")).join("\n");
+
+        // Create a temporary anchor element
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", `${filename}.csv`);
+
+        // Append anchor to the body and trigger download
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      };
+    });
+  </script>
+</body>
+</html>

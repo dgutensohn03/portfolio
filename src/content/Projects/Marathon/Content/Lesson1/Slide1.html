@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <style>
+        html, body, #container {
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+            height: 100%;
+            background-color: #FFFFFF;
+        }
+
+        #btn-1 {
+            position: absolute;
+            left: 370px;
+            top: 195px;
+            width: 540px;
+            height: 310px;
+            background-image: url(../../Assets/Images/invisBtn.png);
+            cursor: pointer;
+            display: none;
+        }
+
+        #btn-start {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 1280px;
+            height: 720px;
+            background-image: url(../../Assets/Images/invisBtn.png);
+            cursor: pointer;
+            display: none;
+        }
+    </style>
+</head>
+<body onunload="Slide.Destroy()" onbeforeunload="Slide.Destroy()">
+    <div id="container">
+
+        <video id="player1" autoplay controls onplay="$(this).removeAttr('controls')" onended="Slide.Complete(); " width="1280" height="720">
+            <source src="Slide1.mp4">
+        </video>
+        <div id="btn-start" onclick="continuePlaying();"></div>
+        <div id="btn-1" onclick="Shell.NextSlide();"></div>
+    </div>
+    <script src="../../Source/JS/jQuery/jquery-1.11.1.js"></script>
+    <script src="../../Source/JS/Popcorn/popcorn.js"></script>
+    <script src="../../Source/XM/Events/XMEvent.js"></script>
+    <script src="../../Source/XM/Helpers.js"></script>
+    <script src="../../Source/XM/Core/TemplateBase.js"></script>
+    <script src="../../Source/XM/Slides/CustomSlide.js"></script>
+
+    <script>
+        Slide.Initialize();
+        Slide.Dispatch(XMEvent.Loaded);
+
+        var videoIndex = 0;
+
+        if (!IsInMobileSafari())
+            $('video').get(0).play();
+
+        Slide.bind(XMEvent.Paused, function () {
+            $('video').eq(videoIndex)[0].pause();
+        });
+
+        Slide.bind(XMEvent.Resumed, function () {
+            var v = $('video').eq(videoIndex)[0];
+            if (v.currentTime != v.duration)
+                v.play();
+        });
+
+        Slide.bind(XMEvent.VolumeChanged, function () {
+            $('video').each(function () {
+                this.volume = Shell.volume / 100;
+            });
+        });
+
+        var popcorn1 = Popcorn('#player1');
+
+        //popcorn1.currentTime(20);
+        popcorn1.cue(1.6, function () {
+            popcorn1.pause();
+            $('#btn-start').show();
+        });
+
+        popcorn1.cue(48, function () {
+            $('#btn-1').show();
+        });
+
+        function continuePlaying() {
+            $('video')[0].play();
+            $('#btn-start').hide();
+        }
+    </script>
+</body>
+</html>

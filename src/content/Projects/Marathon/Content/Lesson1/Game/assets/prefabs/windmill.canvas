@@ -1,0 +1,86 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "windmill",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "44c23ba2-d93e-454b-87d9-af7cd332925b",
+    "info": {
+      "editorName": "windmill",
+      "children": [{
+        "type": "spritesheet",
+        "id": "fcbab162-a8d3-4f2d-9523-b0c55322f181",
+        "asset": "0",
+        "info": {
+          "editorName": "windmill_sprite",
+          "animations": [{
+            "name": "default",
+            "frameRate": 24,
+            "loop": true,
+            "autoPlay": true,
+            "frames": [
+              "0",
+              "1",
+              "2",
+              "3",
+              "4",
+              "5",
+              "6",
+              "7",
+              "8",
+              "9",
+              "10",
+              "11",
+              "12",
+              "13",
+              "14",
+              "15",
+              "16",
+              "17",
+              "18",
+              "19",
+              "20",
+              "21"
+            ]
+          }]
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "sprites",
+    "asset": "windmill_sprite",
+    "sprite": "0"
+  }},
+  "prefab-table": {}
+}

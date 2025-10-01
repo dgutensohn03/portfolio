@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title></title>
+	<style>
+		html, body {
+			overflow: hidden;
+			margin: 0px;
+			padding: 0px;
+		}
+
+        #soundFix {
+            background: url("../../Assets/Images/Shell/playbutton.png");
+            width: 960px;
+            height: 420px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin: 0px;
+            padding: 0px;
+            display: none;
+            z-index: 100;
+        }
+	</style>
+</head>
+<body onunload="Slide.Destroy()" onbeforeunload="Slide.Destroy()">
+    <canvas id="canvas" width="960" height="420" style="background-color:#FFFFFF;"></canvas>
+    <div id="soundFix"></div>
+	<div id="domElementContainer"></div>
+
+	<script src="../../Source/JS/jQuery/jquery-1.11.1.min.js"></script>
+    <script src="../../Source/JS/CreateJS/easeljs-0.7.1.min.js"></script>
+    <script src="../../Source/JS/CreateJS/tweenjs-0.5.1.min.js"></script>
+    <script src="../../Source/JS/CreateJS/movieclip-0.7.1.min.js"></script>
+    <script src="../../Source/JS/CreateJS/preloadjs-0.4.1.min.js"></script>
+	<script src="../../Source/JS/Howler/howler.core.min.js"></script>
+    <script src="../../Source/XM/Events/XMEvent.js"></script>
+    <script src="../../Source/XM/Helpers.js"></script>
+	<script src="../../Source/XM/Core/TemplateBase.js"></script>
+    <script src="../../Source/XM/Slides/CreateJSSlide.js"></script>
+    <script>
+        $.getScript('../Lesson' + $.getUrlVar('lesson') + '/Slide' + $.getUrlVar('slide') + '.js', function () {
+            Slide.Initialize();
+        }).fail(function(data, status, error) {
+        	XMError('Error running slide script. ' + error);
+        });
+    </script>
+</body>
+</html>

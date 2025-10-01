@@ -1,0 +1,284 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Vcert Project">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="Bootstrap/css/bootstrap3.min.css">
+  <script src="scripts/jquery-3.4.1.js"></script>
+  <script src="Bootstrap/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="stylesheet" href="styles/addtohomescreen.css">
+  <!-- <script src="scripts/addtohomescreen.js"></script> -->
+  <script>
+        //console.log('here')
+        //addToHomescreen();
+  </script>
+  <!--APP Icons-->
+  <link rel="apple-touch-icon" sizes="57x57" href="images/appIcons/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="images/appIcons/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="images/appIcons/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="images/appIcons/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="images/appIcons/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="images/appIcons/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="images/appIcons/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="images/appIcons/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="images/appIcons/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="images/appIcons/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/appIcons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="images/appIcons/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/appIcons/favicon-16x16.png">
+  <link rel="shortcut icon" href="images/appIcons/apple-icon.ico" />
+  <!-- <link rel="manifest" href="manifest.json"> -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/images/appIcons/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+  <!-- <link rel="manifest" href="manifest.webmanifest"> -->
+
+  <title>Vcert Project</title>
+
+  <style>
+
+ #introPage .modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+#introPage .modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px;
+}
+
+#introPage .modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+#introPage .modal-backdrop
+{
+    opacity:0.5 !important;
+}
+#introPage .modal-header {
+  border-bottom: none;
+}
+#introPage .modal-footer {
+  border-top: none;
+}
+#introPage .modal-content {
+  border-radius: 0;
+  border: none;
+  width: 300px; 
+  margin:auto;
+}
+
+#introPage .modal-header img {
+  position: absolute;
+  top:0;
+  left:0;
+
+}
+  </style>
+  <script src="bin/header.js"></script>
+</head>
+
+<body id="introPage" style="display: none;">
+
+  <iframe id='contents' src='LandingPage.html'></iframe>
+  <!-- <button id="btn-install" class="add-button">Add</button> -->
+  <!-- <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#iosHomescreen">Open Modal</button> -->
+
+  <!-- Modal -->
+  <div class="modal" id="iosHomescreen" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <img src="images/ios-header.png" width="300px" height="70px">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body" style='text-align: center'>
+          <br>
+          <h3>Install VCert</h3>
+          <p>Install this application on your home screen for quick and easy access when you are on the go!</p>
+        </div>
+        <div class="modal-footer" style="background-color:#F7F7F7;">
+          <p style='text-align: center; font-size: 12px; margin-bottom: 0;'>Just tap &nbsp;<img src="images/ios_homscreen_icon.png" width="24" height="30" style="position:relative; top:-3px;"/>&nbsp; then "Add to Home Screen."</p>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+
+  <!-- <div class="ath-container banner-bottom-center">
+        <div class="ath-banner">
+          <div class="ath-banner-cell">
+            <img src="images/appIcons/favicon-32x32.png" alt="PWA" class="ath-prompt-logo">
+          </div>
+          <div class="ath-banner-title">
+            <p>Install 2048?</p>
+          </div>
+          <div class="ath-banner-cell">
+            <button class="btn btn-cancel btn-link">Not Now</button>
+          </div>
+          <div class="ath-banner-cell">
+            <button class="btn btn-install btn-success">Install</button>
+          </div>
+    
+        </div>
+      </div> -->
+  <script src="scripts/polyfill.min.js"></script>
+  <script src="scripts/html5lightbox.js"></script>
+  <!--<script src="scripts/fetch.umd.js"></script>-->
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <!-- <script src="./src/index.js"></script> -->
+  <script src="scripts/jquery-ui/jquery-ui.min.js"></script>
+  <!-- <script src="scripts/popper/dist/popper.min.js"></script> -->
+  <!-- <script src="dist/main.js"></script> -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js"></script>
+  <!-- <script src="node_modules\firebase-admin\lib\index.js"></script> -->
+  <!-- <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script> -->
+  <!-- 
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script> -->
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+  <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script> -->
+  <!-- <script defer src="src/fb-core-js.js"></script> -->
+
+
+  <script defer src="bin/fb-auth.js"></script>
+  <script defer src="bin/portal.js"></script>
+  <script src="bin/pages.js"></script>
+
+  <script>
+
+    // var activities = {challenge1: {firstTime: true},
+    // challenge2: {firstTime: true}}
+    // console.log('firstTime:' +activities.challenge1.firstTime)
+
+    $(".Tooltip").click(function () {
+      $(this).parent().children('.TooltipExpand').toggle("slow");
+    });
+// Initialize tooltip component
+$(function () {
+  $('[data-toggle="tooltip"]').tooltip()
+})
+
+// Initialize popover component
+$(function () {
+  $('[data-toggle="popover"]').popover()
+})
+    //Enter a challenge, hide the header and expand iframe to suit
+    function enterChallenge() {
+      $("header").css('display', 'none');
+      $("#contents").css('top', '0px');
+      $("#contents").css('margin-top', '0px');
+      $("#contents").css('height', '100%');
+    }
+
+    function exitChallenge() {
+      $("header").css('display', 'block');
+      $("#contents").css('top', '-59px');
+      $("#contents").css('margin-top', '118px');
+      $("#contents").css('height', 'calc(100% - 59px)');
+      $("#challenge-btn", window.parent.document).html("")
+    }
+
+
+    var challengeClass = ""; //Holds the class for challenges.
+
+    $(document.body).ready(function () {
+      $(document.body).fadeIn();
+
+      
+    });
+
+    var ua = window.navigator.userAgent;
+    var iOS = !!ua.match(/iPad/i) || !!ua.match(/iPhone/i);
+    var webkit = !!ua.match(/WebKit/i);
+    var iOSSafari = iOS && webkit && !ua.match(/CriOS/i);
+    var isPWAinBrowser = true;
+// replace standalone with fullscreen or minimal-ui according to your manifest
+if (matchMedia('(display-mode: standalone)').matches) {
+     // Android and iOS 11.3+
+     isPWAinBrowser = false;
+} else if ('standalone' in navigator) {
+     // useful for iOS < 11.3
+     isPWAinBrowser = !navigator.standalone;
+}
+
+    if (iOSSafari) {
+      if(navigator.standalone == false) {
+      
+      $('#iosHomescreen').modal('show');
+      }
+    }
+//alert('navigator.platform ' + navigator.platform);
+//     alert('navigator.userAgent.includes("Mac"): ' + (navigator.userAgent.includes("Mac")));
+//     alert('navigator.userAgent: ' + navigator.userAgent);
+//     alert('"ontouchend" in document: ' + ("ontouchend" in document));
+//alert('iOS(): ' + iOS);
+//alert('navigator.standalone == false: ' + (navigator.standalone == false))
+
+//alert('"ontouchend" in document: ' + ("ontouchend" in document))
+// alert('navigator.userAgent.includes("Mac") && "ontouchend" in document: ' + (navigator.userAgent.includes("Mac") && "ontouchend" in document))
+
+//     function iOS() {
+//   return [
+//     'iPad Simulator',
+//     'iPhone Simulator',
+//     'iPod Simulator',
+//     'iPad',
+//     'iPhone',
+//     'iPod',
+//     'MacIntel'
+//   ].includes(navigator.platform) && ( "ontouchend" in document)
+// }
+
+if ([
+    'iPad Simulator',
+    'iPhone Simulator',
+    'iPod Simulator',
+    'iPad',
+    'iPhone',
+    'iPod',
+    'MacIntel'
+  ].includes(navigator.platform) && ( "ontouchend" in document)) {
+      if(navigator.standalone == false) {
+      $('#iosHomescreen').modal('show');
+    }
+    }
+//alert(iOS);
+
+    if ('serviceWorker' in navigator) navigator.serviceWorker.register('homescreen.js')
+
+    window.addEventListener('beforeinstallprompt', function(e) {
+
+    });
+
+  </script>
+</body>
+
+</html>

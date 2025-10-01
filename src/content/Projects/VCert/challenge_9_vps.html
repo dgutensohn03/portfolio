@@ -1,0 +1,1641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=yes" name="viewport"><!-- Bootstrap CSS -->
+	<link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="styles/style.css" rel="stylesheet">
+	<link href="styles/challenge.css" rel="stylesheet">
+	<script src="scripts/easeljs/easeljs-NEXT.js">
+	</script>
+	<style>
+	    .box {
+			overflow-y: auto !important;
+			overflow-x: hidden;
+	    }
+
+
+		#box2 {
+            background: url('./images/challenge_9_vps/VPS_PG2_BG.png')no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            max-width: 1920px;
+            position: absolute;
+        }
+		@media only screen and (max-width: 576px) {
+
+#box2 {
+background: none;
+}
+}
+		.plus-1 .content-box {
+		z-index: 10;
+		}
+
+		.plus-2 .content-box {
+		z-index: 10;
+		}
+
+		.plus-3 .content-box {
+		z-index: 10;
+		}
+
+		.plus-4 .content-box {
+		z-index: 10;
+		}
+
+		.challenge-9_vps #box3 {
+		background: url("") no-repeat center center;
+		background-size: cover;
+		max-width: 1920px;
+		position: absolute;
+		}
+
+		/* .challenge-9_vps #box3 .content-box-1 {
+			left: 1%;
+			top: 61%;
+			right: 32%;
+			min-width: 460px;
+		}
+
+		.challenge-9_vps #box3 .content-box-2 {
+			left: 22%;
+			top: 5%;
+			min-width: 460px;
+		}
+
+		.challenge-9_vps #box3 .content-box-3 {
+			right: 31%;
+			left: 14%;
+			bottom: 54%;
+			min-width: 460px;
+		}
+
+		.challenge-9_vps #box3 .content-box-4 {			
+			left: 16%;
+			bottom: 3%;
+			min-width: 460px;
+		} */
+
+		/* #box3 .plus-1 div:nth-child(2) {
+			left: -2%;
+			top: 57%;
+			z-index: 1;
+		}
+
+		#box3 .plus-2 div:nth-child(2) {
+			left: 19%;
+			top: 1%;
+			z-index: 1;
+		}
+
+		#box3 .plus-3 div:nth-child(2) {
+			left: 76%;
+			top: 1%;
+			z-index: 5;
+		}
+
+		#box3 .plus-4 div:nth-child(2) {
+			left: 96%;
+			top: 56%;
+			z-index: 5;
+		} */
+
+		
+		.challenge-9_vps #box4 {
+		background: url("") no-repeat center center;
+		background-size: cover;
+		max-width: 1920px;
+		position: absolute;
+		}
+
+		/* .challenge-9_vps #box4 .content-box-1 {
+			left: 1%;
+			top: 61%;
+			right: 32%;
+			min-width: 460px;
+		}
+
+		.challenge-9_vps #box4 .content-box-2 {
+			left: 22%;
+			top: 5%;
+			min-width: 460px;
+		}
+
+		.challenge-9_vps #box4 .content-box-3 {
+			right: 31%;
+			left: 14%;
+			bottom: 54%;
+			min-width: 460px;
+		}
+
+		.challenge-9_vps #box4 .content-box-4 {			
+			left: 16%;
+			bottom: 3%;
+			min-width: 460px;
+		} */
+
+		#box4 .plus-1 div:nth-child(2) {
+			left: -2%;
+			top: 57%;
+			z-index: 1;
+		}
+
+		#box4 .plus-2 div:nth-child(2) {
+			left: 19%;
+			top: 1%;
+			z-index: 1;
+		}
+
+		#box4 .plus-3 div:nth-child(2) {
+			left: 76%;
+			top: 1%;
+			z-index: 5;
+		}
+
+		#box4 .plus-4 div:nth-child(2) {
+			left: 96%;
+			top: 56%;
+			z-index: 5;
+		}
+
+		#box5 .btl-plus-container > .bottle-img, #box5 .btl-img-container > .bottle-img {
+			min-width: 200px;
+			max-height: 80vh;
+			min-height: auto;
+			max-width: 200px;
+			padding: 0 !important;
+		}
+
+		#box5 .btl-plus-container > .bottle-img > img, #box5 .btl-img-container > .bottle-img > img {
+			padding: 0 !important;
+		}
+
+		.challenge-9_vps #box5 .content-box-1,.challenge-9_vps #box5 .content-box-2,.challenge-9_vps #box5 .content-box-3 {
+    top: 20px;
+    z-index: 5;
+    min-width: 170%;
+		}
+
+
+        .break {
+            flex-basis: 100%;
+            height: 0;
+        }
+
+        .reveal-arrow-left {
+            max-width: 500px;
+            min-width: 450px;
+            height: 71px;
+            padding-left: 140px;
+            padding-right: 140px;
+            cursor: auto;
+            background: url(./images/challenge_2/images/Arrow_UP.png) no-repeat;
+        }
+
+        .flex-container {
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        .flex-container:after {
+            content: '';
+            min-height: inherit;
+            font-size: 0;
+        }
+
+        .flex-box {
+            display: flex;
+            justify-content: space-between;
+
+        }
+
+        .bottle-img {
+            width: 290px;
+        }
+
+        .flex-box .spacer {
+            width: 50px;
+            background-color: pink;
+        }
+
+        .clk-reveal-plus {
+
+            top: 0;
+        }
+
+        .clk-reveal-plus:hover {
+
+            top: 0;
+        }
+
+        .divider-line {
+            width: 3px;
+            height: 150px;
+            background-color: #ffffff;
+        }
+
+        .col-lg-12-custom {}
+
+        .float-box {
+            display: flex;
+            -webkit-box-pack: end;
+            justify-content: flex-end;
+            z-index: 9;
+            position: absolute;
+            bottom: 10px;
+            right: 0px;
+        }
+
+        .m-bottom-padding {
+            padding: 0;
+        }
+
+        .plus-1,
+        .plus-2,
+        .plus-3,.plus-4 {
+            width: auto;
+            top: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .plus-1 div:nth-child(2) {
+            z-index: 1;
+			top: 0;
+        }
+
+        .plus-2 div:nth-child(2) {
+            z-index: 1;
+            top: 0;
+        }
+
+        .plus-3 div:nth-child(2) {
+            z-index: 1;
+            top: 0;
+		}
+		.plus-4 div:nth-child(2) {
+            z-index: 1;
+            top: 0;
+		}
+		.btl-plus-container {
+    padding: 0px;
+    -webkit-box-pack: start;
+    justify-content: flex-start;
+    max-height: 80vh;
+    min-height: auto;
+    max-width: 80vw;
+    width: auto;
+    height: auto;
+    -webkit-box-flex: 0;
+    flex-grow: 0;
+	flex: 0 !important;
+}
+
+.top-left-side{
+    left: 0px;
+    top: 25px;
+}
+.top-right-side {
+    right: 0px;
+    top: 25px;
+}
+.btm-right-side {
+    right: 0px;
+    bottom: -25px;
+}
+
+
+.btm-left-side {
+    left: 25px;
+    bottom: -25px;
+}
+@media only screen and (max-width: 400px) {
+.content-box {
+	min-width: 195px !important;
+}
+}
+
+@media only screen and (max-width: 550px) {
+.plus-1,.plus-2,.plus-3,.plus-4 {
+	font-size: 3vw;
+}
+.content-box-2, .content-box-3 {
+	min-width: 195px !important;
+}
+/* .top-left-side{
+	left: -5vw;
+    top: 5vw;
+}
+
+.top-right-side {
+	right: -5vw;
+    top: 5vw;
+}
+.btm-right-side {
+	right: 0;
+    bottom: -5vw;
+}
+
+.btm-left-side {
+	left: 5vw;
+    bottom: -5vw;
+} */
+	.clk-reveal-plus, .clk-reveal-plus:hover, .clk-reveal-x, .clk-reveal-x:hover, .clk-reveal-complete-plus, .clk-reveal-complete-plus:hover, .clk-reveal-complete-x, .clk-reveal-complete-x:hover {
+		background-size: 10vw;
+	}
+}
+        @media only screen and (max-width: 1199px) {
+			
+            .m-bottom-padding {
+                padding-bottom: 50px !important;
+            }
+
+            .float-box {
+                min-width: 750px;
+                -webkit-box-pack: center;
+                justify-content: center;
+                position: relative !important;
+            }
+        }
+        @media only screen and (max-width: 1790px) {
+            .hotspot-continue {
+                min-width: 750px;
+                -webkit-box-pack: center;
+                justify-content: center;
+                position: relative !important;
+            }
+        }
+		@media only screen and (max-width: 550px){
+.hotspot-continue > button, .flashCard-continue > button {
+	max-width: 180px !important;
+    min-width: 180px !important;
+}
+
+.continue-small-m {
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+		}
+
+		.content-box {
+		max-height: 65vh;
+	overflow: auto;
+}
+	</style>
+	<title>Vcert Project</title>
+	<style>
+	</style>
+</head>
+<body class="">
+	<div class="container-fluid challenge-9_vps">
+		<div id="container">
+
+			<div class="box " id="box1">
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText">
+						<div class='center-text-box'>
+							<h1>High Touch</h1>
+							<p>Dealerships have a particular relationship with their customers. Those customers could choose to have their vehicle serviced anywhere, but they return, time and again, to the dealership because they trust that they are getting the best service by the most qualified personnel. 
+								Valvoline™ has the products that can help dealerships meet those expectations while growing their bottom line.
+							</p>
+							<p><div class="headerBlue">SELECT START.</div></p>
+						</div>
+					</div>
+					<div class="col topCenterText m-margin-bottom">
+						<div>
+							<button class="next" id="start-btn" type="submit">START</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="box" id="box2">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row full-box-height back-padding" id="content">
+					<div class="col-lg-5 col-md-6 col-sm-6 col-xs-10" style="text-align: left;">
+						<!-- <h1>Transmission Fluids</h1> -->
+						<div>
+							<h1>In a High Touch Service Model:</h1>
+							<p>
+								<ul>
+									<li>Experienced mechanics can perform more complex services.</li>
+									<li>Consumers are not as concerned about the length of time their services might take.</li>
+									<li>Dealerships are willing to invest in the equipment that is used to perform Valvoline™ Professional Series Powerline Services.</li>
+								</ul>
+								<br/>
+								Let’s look at the benefits the High Touch Service Model can bring to your customers.
+							</p>
+						</div>
+					</div>
+					<div class="col-lg-7 col-md-6 col-sm-6 col-xs-2" style="text-align: left;">
+					</div>
+					<div class="row continue-anchor" style="padding: 0;">
+						<div class="desktop-br mobile-center">
+							<button class="next continue-btn continue-small-m"
+								style="display: inline-block;">CONTINUE</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+			<!--1.3 Product Overview-->
+			<!-- <div class="box" id="box1">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle center-content full-box-height" id="content">
+					<div class="col-xl-5 col-lg-12">						
+						<h1>Benefits of High Touch Services</h1>
+					</div>
+
+					<div class="col-xl-5 col-lg-12 topCenter btl-plus-container" style="padding:0;">
+						<div class='bottle-img' style="width: auto; padding:0;">
+							<img src='images/challenge_9_vps/VPS_9_Pg 3.png' style="padding:0;">
+							
+						</div>
+						<div class='plus-1' style="position:absolute; top: 54%;">
+							<div class='content-box content-box-1 btm-left-side'>
+								<b>Revenue Booster</b>
+								<br/>
+								The products offered by Valvoline™ benefit the customer and their vehicle as well as the dealership by creating new revenue streams.
+							</div>
+							<div class="clk-reveal-plus"></div>
+						</div>
+						<div class='plus-2' style="position:absolute; top: 2%; left: 20%;">
+							<div class='content-box content-box-2 top-left-side'>
+								<b>Education</b>
+								<br/>
+								Valvoline™ provides educational opportunities to mechanics and dealership team members on how to easily, and effectively, perform each service as well as how to discuss its benefits with a customer. 
+							</div>
+							<div class="clk-reveal-plus"></div>
+						</div>
+						<div class='plus-3' style="position:absolute; top: 5%; right: 25%;">
+							<div class='content-box content-box-3 top-right-side'>
+								<b>Consumer Trust</b>
+								<br/>
+								Consumers bring their vehicles to a dealership for service because they have an expectation of a high level of care. When consumers understand the benefits that Valvoline™ can bring to the performance and life of their vehicle, they’ll have an even stronger belief that their dealership has their best interests in mind. 
+							
+							</div>
+							<div class="clk-reveal-plus"></div>
+						</div>
+						<div class='plus-4' style="position:absolute; top: 55%; right: 5%;">
+							<div class='content-box content-box-4 btm-right-side'>
+								<b>Valvoline™ Service Plus Limited Lifetime Guarantee</b>
+								<br/>
+								Consumer trust is strengthened with the Valvoline™ Service Plus Limited Lifetime Guarantee. This guarantee will drive back customers to the dealership after their manufacturer’s warranty expires. With the guarantee, customers can get up to $4,000 of coverage on each component of their vehicle when serviced with Valvoline™ Professional Series products.
+							
+							</div>
+							<div class="clk-reveal-plus"></div>
+						</div>
+					</div>
+					</div>
+					<div class="col hotspot-continue hidden">
+						<button class="next continue-btn hs-continue box2-continue" style="display: inline-block;">CONTINUE</button>
+					</div>
+				</div> -->
+
+				<div class="box" id="box3">
+					<div style="width: 100%; height: 100px;">
+						<div class='back-btn'>
+							<img src="">BACK
+						</div>
+					</div>
+					<div class="row align-middle center-content full-box-height flex-container" id="content"
+					style="align-items: center !important; height: calc(100%) !important;  text-align: left; top: 0 !important;">
+						<div class="col-xl-6 col-lg-12" style="padding: 50px;">						
+							<h1>Examples of High Touch Services</h1>
+							<p>The Valvoline™ Powerline series is a premium line of automotive products that provides installers and technicians the ability to provide maintenance services on a vehicle’s critical systems.</p>
+							<p>Select each<img src="images/challenge_4/Clck_to_Rvl_Bttn_UP.png" style="transform: scale(.5);">to learn more.</p>
+						</div>
+						<div class="col-xl-6 col-lg-12 topCenter btl-plus-container" style="padding:0;">
+							<div class='bottle-img' style="width: auto; padding:0;">
+								<img src='images/challenge_9_vps/VPS_9_Pg 3.png' style="padding:0;">
+								
+							</div>
+
+								<div style="width: 100%; height: 100%; position:absolute;">
+									<div class='plus-1' style="position:absolute; top: 45%;">
+										<div class='content-box content-box-1 btm-left-side' style="border-bottom-left-radius:0; left:0;">
+											<div class="headerBlue uppercase">Revenue Booster</div>
+											
+											The products offered by Valvoline™ benefit the customer and their vehicle as well as the dealership by creating new revenue streams.
+										</div>
+										<div class="clk-reveal-plus" >
+											
+										</div>
+									</div>
+								</div>
+								<div style="width: 100%; height: 100%; position:absolute;">
+									<div class='plus-2' style="position:absolute; left: 20%; top: 0%;">
+										<div class='content-box content-box-2 top-left-side'>
+											<div class="headerBlue uppercase">Education</div>
+									
+											Valvoline™ provides educational opportunities to mechanics and dealership team members on how to easily and effectively perform each service as well as how to discuss its benefits with a customer. 
+										</div>
+										<div class="clk-reveal-plus">
+											
+										</div>
+									</div>
+								</div>
+
+								<div style="width: 100%; height: 100%; position:absolute;">
+									<div class='plus-3' style="position:absolute; top: 5%; right: 25%;">
+										<div class='content-box content-box-3 top-right-side' style="max-width: auto;">
+											<div class="headerBlue uppercase">Consumer Trust</div>
+							
+											Consumers bring their vehicles to a dealership for service because they have an expectation of a high level of care. When consumers understand the benefits that Valvoline™ can bring to the performance and life of their vehicle, they’ll have an even stronger belief that their dealership has their best interests in mind. 
+										
+										</div>
+										<div class="clk-reveal-plus"></div>
+									</div>
+								</div>
+
+								<div style="width: 100%; height: 100%; position:absolute;">
+									<div class='plus-4' style="position:absolute; top: 60%; right: 5%;">
+										<div class='content-box content-box-4 btm-right-side'>
+											<div class="headerBlue uppercase">Valvoline™ Service Plus Limited Lifetime Guarantee</div>
+									
+											Consumer trust is strengthened with the Valvoline™ Service Plus Limited Lifetime Guarantee. This guarantee will drive back customers to the dealership after their manufacturer’s warranty expires. With the guarantee, customers can get up to $4,000 of coverage on each component of their vehicle when serviced with Valvoline™ Professional Series products.
+										
+										</div>
+										<div class="clk-reveal-plus"></div>
+									</div>
+								</div>
+						</div>
+						<div class="col hotspot-continue hidden" style="padding: 0 15px;">
+							<button class="next continue-btn hs-continue box2-continue continue-small-m" style="display: inline-block;">CONTINUE</button>
+						</div>
+						
+					</div>
+				</div>
+					
+				<div class="box" id="box4">
+					<div style="width: 100%; height: 100px;">
+						<div class='back-btn'>
+							<img src="">BACK
+						</div>
+					</div>
+					<div class="row align-middle center-content full-box-height flex-container" id="content"
+					style="align-items: center !important; height: calc(100%) !important;  text-align: left; top: 0 !important;">
+						<div class="col-xl-6 col-lg-12" style="padding: 50px;">						
+							<h1>More Examples of High Touch Services</h1>
+							<p>The Valvoline™ Powerline series is a premium line of automotive products that provides installers and technicians the ability to provide maintenance services on a vehicle’s critical systems.</p>
+							<p>Select each<img src="images/challenge_4/Clck_to_Rvl_Bttn_UP.png" style="transform: scale(.5);">to learn more.</p>
+						</div>
+						<div class="col-xl-6 col-lg-12 topCenter btl-plus-container" style="padding:0;">
+							<div class='bottle-img' style="width: auto; padding:0;">
+								<img src='images/challenge_9_vps/VPS_8_Pg4.png' style="padding:0;">
+								
+							</div>
+
+								<div style="width: 100%; height: 100%; position:absolute;">
+									<div class='plus-1' style="position:absolute; top: 68%; left: 10%;">
+										<div class='content-box content-box-1 btm-left-side' style="border-bottom-left-radius:0;">
+											<div class="headerBlue uppercase">Engine Oil Services</div>
+											The Top Treat Oil System Cleaner
+											<br/>
+											<ul>
+												<li>Removes sludge, deposits, and varnish from the engine, optimizing the ability of the oil to perform and allow for better heat transfer</li>
+												<li>Protects metals from corrosion</li>
+												<li>Helps restore fuel economy, horsepower, and engine efficiency</li>
+												<li>100% Solvent free chemistry</li>
+												<li>Recommended every 15,000 miles</li>
+
+											</ul>
+										</div>
+										<div class="clk-reveal-plus" >
+											
+										</div>
+									</div>
+								</div>
+								<div style="width: 100%; height: 100%; position:absolute;">
+									<div class='plus-2' style="position:absolute; left: 30%; top: 75%;">
+										<div class='content-box content-box-2 btm-left-side'>
+											<div class="headerBlue uppercase">HVAC Systems</div>
+											The All Season Heater & A/C Odor Eliminator Kit
+											<br/>
+											<ul>
+												<li>Specifically designed to remove contaminants as well as neutralize the micro-organisms within the HVAC system</li>
+											</ul>
+										</div>
+										<div class="clk-reveal-plus">
+											
+										</div>
+									</div>
+								</div>
+
+								<div style="width: 100%; height: 100%; position:absolute;">
+									<div class='plus-3' style="position:absolute; top: 55%; right: 24%;">
+										<div class='content-box content-box-3 btm-right-side'  style="right:-25px; max-width: auto;">
+											<div class="headerBlue uppercase">Gasoline Fuel System Services</div>
+											<ul>
+												<li>Improves engine performance; specifically, fuel economy</li>
+												<li>Cleans and protects the entire fuel system in just one application</li>
+												<li>Removes stubborn combustion chamber deposits</li>
+												<li>Protects against deposit formation in GDI engines when used regularly</li>
+												<li>Is recommended every 15,000 miles </li>
+												<li>Includes a Fuel Rail attachment</li>
+											</ul>
+										</div>
+										<div class="clk-reveal-plus"></div>
+									</div>
+								</div>
+						</div>
+						<div class="col hotspot-continue hidden" style="padding: 0 15px; width: auto;">
+							<button class="next continue-btn hs-continue box2-continue continue-small-m" style="display: inline-block;">CONTINUE</button>
+						</div>
+						
+					</div>
+				</div>
+			<!--1.2 Product Overview-->
+			<div class="box" id="box5">
+				<div style="width: 100%; height: 100px;">
+			  <div class='back-btn'>
+				  <img src="">BACK
+			  </div>      </div> 
+			  <div class="row align-middle center-content full-box-height flex-container" id="content" style="align-items: flex-start !important; height: calc(100% - 100px) !important; padding-top: 0 !important;">                    
+			  <div class='row' style='display:block; float: left; text-align: left; padding: 0 0 0 0; width: 100%; '>
+					  <div class="col-md-12">
+						  <h1>Benefits of High Touch Services</h1>
+						  <p>Select each<img src="images/challenge_4/Clck_to_Rvl_Bttn_UP.png" style="transform: scale(.5);">to learn more.</p>
+				  </div>
+				  </div>
+				  <div class="row flex-box" style="padding-top:0;">
+					  <div class="col-xl-4" style="padding-top:75px; padding-bottom: 75px;">
+					  <div class='bottle-img' style="margin: auto;">
+						  <img src='images/challenge_9_vps/VPS_8_Pg5-Transmission.png'></div>
+					  <div class='plus-1' >
+						  <div class='content-box content-box-1'>
+							<div class="headerBlue uppercase">Transmission</div>
+							<p style="margin-bottom:0;">The Automatic Transmission, Protector, Conditioner & Sealer service:</p>
+							<ul>
+								<li>Conditions the entire transmission system</li>
+								<li>Helps maintain shifting characteristics</li>
+								<li>Conditions seals to prevent leaks</li>
+								<li>Compatible with all types of ATF (except CVT)</li>
+							</ul>
+							  </div>
+						 
+						  <div style="" class="clk-reveal-plus"></div>
+					  
+					  </div>
+				  </div>
+				  <div class="col-xl-4" style="padding-top:75px; padding-bottom: 75px;">
+					  <div class='bottle-img' style="margin: auto;">
+						  <img src='images/challenge_9_vps/VPS_8_Pg5-Cool.png'></div>
+					  <div class='plus-2' >
+						  <div class='content-box content-box-2'>
+							<div class="headerBlue uppercase">Cooling System</div>
+							 <ul>
+								 <li>Removes rust, scale, and oily residue from the entire cooling system</li>
+								 <li>Helps prevent engine boil-over in the summer and freeze-up in the winter</li>
+								 <li>Protects against rust and corrosion—enhancing the life of the cooling system</li>
+								 <li>Helps prevent water pump damage and minor leaks from developing</li>
+							 </ul>
+							  </div>
+						  <div style="" class="clk-reveal-plus"></div>
+					  </div>
+					  
+				  </div>
+					  <div class="col-xl-4" style="padding-top:75px; padding-bottom: 75px;">
+					  <div class='bottle-img' style="margin: auto;">
+						  <img src='images/challenge_9_vps/VPS_8_Pg5-Diff.png'></div>
+					  <div class='plus-3' >
+						  <div class='content-box content-box-3'>
+							<div class="headerBlue uppercase">Differential Services</div>
+							<p style="margin-bottom:0;">VPS Differential and Transfer Case Service</p>
+							 <ul>
+								 <li>Cleans all components of the differentials, removes dirty fluid, and adds new, clean fluid</li>
+								 <li>Use state of the art technology to deliver superior cleaning and lubrication</li>
+							 </ul>
+							  </div>
+						 
+						  <div style="" class="clk-reveal-plus"></div>
+					  </div>
+					  
+				  </div>
+				  </div>
+					<div class="col hotspot-continue hidden" style="padding: 0 15px; width: auto;">
+							<button class="next continue-btn hs-continue box2-continue continue-small-m" style="display: inline-block;">CONTINUE</button>
+						</div>
+				  </div>
+
+			  </div>
+			
+	<!-- Question 1 -->
+	<div class="box question-bg-box" id="box6">
+		<div class='back-btn'>
+			<img src="">BACK
+		</div>
+		<div class="row align-middle full-box-height" id="content">
+			<div class="col topCenterText m-LeftCol-question back-btn-padding">
+				<div class='center-text-box question-1'>
+					<h1 id="question-num"></h1>
+					<div class='question-text'></div>
+					<div class='answer-container'></div>
+				</div>
+			</div>
+			<div class="col topCenterText m-RightCol-question">
+				<div class="reveal-btn text-white">
+					<h3>REVEAL ANSWER</h3>
+				</div>
+				<div class="reveal-btn-m text-white">
+					<h3>REVEAL ANSWER</h3>
+				</div>
+				<div class="remediation">
+					<div class="remediation-icon"></div>
+					<div class="remediation-txt"></div>
+					<div class="remediation-continue next">
+						Continue
+					</div>
+					<div class="remediation-retry">
+						Try Again
+						<div class='warn-sel-ans'>
+							Choose an answer and select "Try Again."
+						</div>
+					</div>
+					<div class="attempt-container row">
+						<div class="attempt-1">
+							FIRST ATTEMPT
+						</div>
+						<div class="attempt-2">
+							SECOND ATTEMPT
+						</div>
+						<div class="attempt-3">
+							RETRY IN 7 DAYS
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+			<!-- Question 2 -->
+			<div class="box question-bg-box" id="box7">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+						<div class='center-text-box question-2'>
+							<h1 id="question-num"></h1>
+							<div class='question-text'></div>
+							<div class='answer-container'></div>
+						</div>
+					</div>
+					<div class="col topCenterText m-RightCol-question">
+						<div class="reveal-btn text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="reveal-btn-m text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="remediation">
+							<div class="remediation-icon"></div>
+							<div class="remediation-txt"></div>
+							<div class="remediation-continue next">
+								Continue
+							</div>
+							<div class="remediation-retry">
+								Try Again
+								<div class='warn-sel-ans'>
+									Choose an answer and select "Try Again."
+								</div>
+							</div>
+							<div class="attempt-container row">
+								<div class="attempt-1">
+									FIRST ATTEMPT
+								</div>
+								<div class="attempt-2">
+									SECOND ATTEMPT
+								</div>
+								<div class="attempt-3">
+									RETRY IN 7 DAYS
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+					<!-- Question 3 -->
+	<div class="box question-bg-box" id="box8">
+		<div class='back-btn'>
+			<img src="">BACK
+		</div>
+		<div class="row align-middle full-box-height" id="content">
+			<div class="col topCenterText m-LeftCol-question back-btn-padding">
+				<div class='center-text-box question-3'>
+					<h1 id="question-num"></h1>
+					<div class='question-text'></div>
+					<div class='answer-container'></div>
+				</div>
+			</div>
+			<div class="col topCenterText m-RightCol-question">
+				<div class="reveal-btn text-white">
+					<h3>REVEAL ANSWER</h3>
+				</div>
+				<div class="reveal-btn-m text-white">
+					<h3>REVEAL ANSWER</h3>
+				</div>
+				<div class="remediation">
+					<div class="remediation-icon"></div>
+					<div class="remediation-txt"></div>
+					<div class="remediation-continue next">
+						Continue
+					</div>
+					<div class="remediation-retry">
+						Try Again
+						<div class='warn-sel-ans'>
+							Choose an answer and select "Try Again."
+						</div>
+					</div>
+					<div class="attempt-container row">
+						<div class="attempt-1">
+							FIRST ATTEMPT
+						</div>
+						<div class="attempt-2">
+							SECOND ATTEMPT
+						</div>
+						<div class="attempt-3">
+							RETRY IN 7 DAYS
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+			<!--SUMMARY-->
+			<div class="box" id="box9">
+				<div class="mask-img" style="position:absolute; top:0; overflow: visible;"><img id="learn-screen-img" src="images/Conclsn-Photo_VPS.jpg" style="justify-content: center;"></div>
+				<div class="row align-middle learn-box" id="content" style="height: 55% !important;">
+					
+					<div class="col-md-12 col-xl-6" style="text-align: left">
+						<div>
+							<h1>What Did We Learn Today?</h1>
+							<div>
+								<p>Dealerships and their consumers have a distinct relationship. The Powerline series from Valvoline™ has the products and services, along with the VPS Limited Lifetime Guarantee, that a dealership can use to keep consumers coming back after their manufacturer warranty expires.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-xl-6 learned-continue" style="min-height: 150px;">
+						<button class="next continue-btn-center" id="continue-btn-7">CONTINUE</button>
+					</div>
+				</div>
+			</div>
+			<!--CONCLUSION-->
+			<div class="box" id="box10">
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText">
+						<div class='center-text-box'>
+							<h1>Challenge Complete!</h1>
+							<div id='result-incorrect'>
+								<p>It was a good try, but to successfully complete a challenge, you need a score of 80% or higher on the challenge questions.</p>
+								<p>You earned 0 points this time.</p>
+								<p>You do have the opportunity to retake this challenge and earn some points!</p>
+								<p>Better luck next time!</p>
+							</div>
+							<div id='result-closed'>
+								<p>Looks like you still have some work to do with this topic. You did not earn a
+								passing score and no additional points will be added to your total.</p>
+								<p>While you wait for the next challenge to hit your inbox, you might want to return to your class materials and review some of the information around this specific topic.</p>
+								<p>This challenge will remain open so you can put that review to the test by taking the challenge again. (No points can be earned any longer for this challenge.)</p>
+								<p>A new challenge will be coming soon. Better luck next time!</p>
+							</div>
+							<div id='result-three'>
+								<p>You’ve completed this challenge review. If you would like to review this topic in
+									greater depth, you may want to return to your class materials and review some of the
+									information presented there.</p>
+								<p>As a reminder, no points will be earned for completing a challenge review.</p>
+							</div>
+							<div id='result-correct'>
+								<p>Great work!</p>
+								<p>You just earned yourself <span id="score">10</span> points.</p>
+								<p>Remember, you can’t earn any additional points from this challenge, but you can use
+									it as reference.</p>
+								<p>Look for your next challenge soon.</p>
+							</div>
+							<!-- <div>For more information on this topic, check out some additional resources <a
+									id="additional-resource" href="" target="_blank">here</a>.</div> -->
+						</div>
+					</div>
+					<div class="col topCenterText col-sm">
+						<div>
+							<button id="gameover-btn" type="submit">CONTINUE</button>
+						</div>
+					</div>
+				</div>
+			</div>
+	</div>
+	<div id='progress-bar'>
+		<div class='line'></div>
+		<div class='pin intro'></div>
+		<div class='pin quest'></div>
+		<div class='pin quest'></div>
+		<div class='pin quest'></div>
+		<div class='pin quest'></div>
+		<div class='pin quest'>
+			<div class='q-points'></div>
+		</div>		
+		<div class='pin quest'>
+			<div class='q-points'></div>
+		</div>
+		<div class='pin quest'>
+			<div class='q-points'></div>
+		</div>
+		<div class='pin quest'></div>
+		<div class='pin conclusion'></div>
+		<div class='score'>
+			0
+		</div>
+	</div>
+	<footer>
+		<div>
+			CHALLENGE #9
+		</div>
+	</footer>
+	<script src="scripts/polyfill.min.js">
+	</script> <!-- Optional JavaScript -->
+	 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	 
+	 <script src="scripts/jquery-3.4.1.js"></script>
+	 <script src="scripts/popper.js/dist/umd/popper.min.js"></script>
+	 <script src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+	</script> <!-- The core Firebase JS SDK is always required and must be listed first -->
+	 
+	<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js">
+	</script> 
+	<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js">
+	</script> 
+	<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js">
+	</script> 
+	<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js">
+	</script> 
+	<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js">
+	</script> 
+	<script defer src="bin/fb-auth.js">
+	</script> 
+	<script src="bin/pages.js"></script>
+	<script src="bin/rules_popup_c9_vps.js">
+	</script> 
+	<script src="https://code.createjs.com/1.0.0/easeljs.min.js">
+	</script> 
+	<script>
+
+	    //    var fcArray = [0, 0, 0];
+	    //    var fcString = '1,1,1';
+	    //    var fccheckProg = function (num) {
+	    //        fcArray[num] = 1;
+	    //        if (fcArray.toString() == fcString) {
+	    //            $('#box3 .flashCard-continue').removeClass("hidden").hide().fadeIn();
+	    //        }
+	    //    };
+
+	    //    var hsArray = [0, 0, 0, 0];
+	    //    var hsString = '1,1,1,1';
+	    //    var hscheckProg = function (num) {
+	    //        hsArray[num] = 1;
+	    //        if (hsArray.toString() == hsString) {
+	    //            $('.hs-continue').parent().removeClass("hidden").hide().fadeIn();
+	    //        }
+	    //    };
+
+	    //    var fc2Array = [0, 0, 0];
+	    //    var fc2String = '1,1,1';
+	    //    var fc2checkProg = function (num) {
+	    //        fc2Array[num] = 1;
+	    //        if (fc2Array.toString() == fc2String) {
+		// 		$('#box5 .flashCard-continue').removeClass("hidden").hide().fadeIn();
+	    //        }
+		//    };
+		   
+		var hsArrayBox3 = [0, 0, 0, 0];
+		var hsStringBox3 = '1,1,1,1';
+		
+		var hsArrayBox4 = [0, 0, 0];
+		var hsStringBox4 = '1,1,1';
+		
+		var hsArrayBox5 = [0, 0, 0];
+		var hsStringBox5 = '1,1,1';
+		
+        var hscheckProg = function (box,num) {
+			if(this['hsArrayBox' + box].toString() != this['hsStringBox' + box].toString()){
+			this['hsArrayBox' + box][num] = 1;
+			// console.log(this['hsArrayBox' + box])
+			// console.log(this['hsArrayBox' + box].toString())
+			// console.log(this['hsStringBox' + box].toString())
+			// console.log($('#box' + box + ' .hs-continue'))
+
+            if (this['hsArrayBox' + box].toString() == this['hsStringBox' + box].toString()) {
+                $('#box' + box + ' .hs-continue').parent().removeClass("hidden").hide().fadeIn();
+			}
+		}
+        }; 
+	       
+		var revealPlus = function () {
+            if ($(this).css("opacity") == "1") {
+				console.log(this)
+				var box = $(this).parent().parent().parent().parent().parent();
+    			var id = box.attr('id').slice(-1);
+                var elIndex = $(this).parent().attr("class").trim().slice(-1);
+                $('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x').addClass('clk-reveal-complete-plus');
+                $('.clk-reveal-plus').css({ "opacity": ".5", "pointer-events": "none" });
+                $('.clk-reveal-complete-plus').css({ "opacity": ".5", "pointer-events": "none" });
+                $(this).css({ "opacity": "1", "pointer-events": "auto" });
+                $(this).addClass('clk-reveal-complete-x')
+                $('.clk-reveal-x').addClass('clk-reveal-plus');
+                $('.clk-reveal-x').removeClass('clk-reveal-x');
+                $(this).unbind();
+                $(this).bind('click', revealX);
+                $(this).removeClass('clk-reveal-plus');
+                $(this).addClass('clk-reveal-x');
+                $(this).parent().parent().find('.content-box').hide();
+                $('.clk-reveal-plus').unbind();
+                $('.clk-reveal-plus').bind('click', revealPlus);
+				$(this).parent().parent().find('.content-box-' + elIndex).fadeIn();
+				console.log(id)
+				hscheckProg(id, elIndex - 1)
+
+
+                console.log(elIndex)
+                console.log($('.content-box-' + elIndex))
+            }
+        }
+
+        var revealX = function () {
+            $('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x');
+            $(this).addClass('clk-reveal-complete-plus');
+            $('.clk-reveal-plus').css({ "opacity": "1", "pointer-events": "auto" });
+            $('.clk-reveal-complete-plus').css({ "opacity": "1", "pointer-events": "auto" });
+            $('.clk-reveal-x').addClass('clk-reveal-plus');
+            $('.clk-reveal-x').removeClass('clk-reveal-x');
+            $(this).unbind();
+            $(this).bind('click', revealPlus);
+            $(this).removeClass('clk-reveal-x')
+            $(this).addClass('clk-reveal-plus');
+            $('.clk-reveal-plus').unbind();
+            $('.clk-reveal-plus').bind('click', revealPlus);
+            $('.content-box').hide();
+        }
+
+
+        var hotSpotReset = function() {
+            $('.content-box').hide();
+            $('.clk-reveal-plus').css({ "opacity": "1", "pointer-events": "auto" });
+            $('.clk-reveal-complete-plus').css({ "opacity": "1", "pointer-events": "auto" });
+            $('.clk-reveal-x').addClass('clk-reveal-plus');
+            $('.clk-reveal-x').removeClass('clk-reveal-x');
+            $('.clk-reveal-complete-x').addClass('clk-reveal-complete-plus');
+            $('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x');
+            $('.clk-reveal-plus').unbind();
+            $('.clk-reveal-plus').bind('click', revealPlus);
+        }
+
+	       $('#challenge-btn', window.parent.document).html('High Touch');
+		   var thisChallengNumber = 9;
+		   $('#additional-resource').attr('href', 'https://valvoline.widencollective.com/portals/mm6erkci/MyPortalSep18,2020');
+		   parent.setBookmarking("VPS", thisChallengNumber, .2);
+		   parent.retrieveAttempt(thisChallengNumber, "VPS");
+
+	       //QUIZ
+	       var ifrm = window.frameElement; // reference to iframe element container
+	       var doc = ifrm.ownerDocument; // reference to container's document
+	       var thisClass = function () {
+	           if (ifrm.src.includes("hd")) {
+	               return "HD";
+	           } else if (ifrm.src.includes("ld")) {
+	               return "LD";
+	           } else if (ifrm.src.includes("vps")) {
+	               return "VPS";
+	           }
+	       }
+
+	       //console.log(thisClass())
+	       ////////console.log(parent.activities)
+	       // $(doc).find('header').css('border-bottom', 'none');
+	       ifrm.style.top = '-118px';
+	       ifrm.style.position = 'absolute';
+	       ifrm.style.height = '100%';
+	       ifrm.style.zIndex = '1005';
+
+	       var quiz = [{
+	           // Q1
+	           question: '<p>Which of these is not part of a High Touch Service Model?</p>',
+	           type: 'MC',
+	           answers: [
+	               'Experienced mechanics can perform more complex services.',
+				   'Consumers are not as concerned about the length of time their services might take.',
+				   'A new consumer database is run and managed by the installer.',
+				   'Dealerships are willing to invest in the equipment that is used to perform Valvoline™ Professional Series Powerline Services.'
+	           ],
+	           choices: [],
+	           correct: 3,
+			   correct_rem: '<p>That’s right! Experienced mechanics can perform more complex services. Consumers are not as concerned about the length of time their services might take. Dealerships are willing to invest in the equipment that is used to perform Valvoline™ Professional Series Powerline Services.</p>',
+			   incorrect_rem: '<p>That’s not the answer. Try again.</p>',
+			   fail_rem: '<p>That’s not correct. Experienced mechanics can perform more complex services. Consumers are not as concerned about the length of time their services might take. Dealerships are willing to invest in the equipment that is used to perform Valvoline™ Professional Series Powerline Services.</p><p>You will not receive any points for this question.</p>'
+		   },{
+	           // Q2
+	           question: '<p>Three benefits of using Valvoline™ High Touch service products are:</p>',
+	           type: 'MC',
+	           answers: [
+	               'Revenue Booster, More Sales, and Consumer Trust',
+				   'Revenue Boost, Education, and the VPS Guarantee',
+				   'Education, Consumer Trust, and Using Recycled Products',
+				   'Building Consumer Trust, Increasing Sales, Building Brand Awareness'
+	           ],
+	           choices: [],
+	           correct: 2,
+			   correct_rem: '<p>That’s right! Revenue Boost, Education, and the VPS Guarantee are three benefits of using Valvoline™ High Touch service products.</p>',
+			   incorrect_rem: '<p>That’s not the answer. Try again.</p>',
+			   fail_rem: '<p>That’s not correct. Revenue Boost, Education, and the VPS Guarantee are three benefits of using Valvoline™ High Touch service products.</p><p>You will not receive any points for this question.</p>'
+	       },{
+	           // Q3
+	           question: '<p>The Powerline series service that removes stubborn combustion chamber deposits is:</p>',
+	           type: 'MC',
+	           answers: [
+	               'Automatic Transmission, Protector, Conditioner & Sealer service',
+				   'VPS Differential and Transfer Case Service',
+				   'The All Season Heater & A/C Odor Eliminator Kit ',
+				   'Gasoline Fuel System Services'
+	           ],
+	           choices: [],
+	           correct: 4,
+			   correct_rem: '<p>That’s right! Gasoline Fuel System Services removes stubborn combustion chamber deposits, improves engine performance (specifically fuel economy), and cleans and protects the entire fuel system in just one application.</p>',
+			   incorrect_rem: '<p>That’s not the answer. Try again.</p>',
+			   fail_rem: '<p>That’s not correct. Gasoline Fuel System Services removes stubborn combustion chamber deposits, improves engine performance (specifically fuel economy), and cleans and protects the entire fuel system in just one application.</p><p>You will not receive any points for this question.</p>'
+	       }
+		]
+
+
+
+	       var passed = true;
+	       var questionPointsPossible = 60;
+	       var points = [20,20,20]
+		   var attemptsLeft = [2, 2, 2];
+	       var passPercent = 80;
+	       var boxLocation = 0;
+	       var attemptCount = 0;
+		   var totalPoints = function () {
+            var sum = 0;
+            for (var i = 0; i < points.length; i++) {
+                sum += points[i]
+            }
+            return sum;
+
+        }();
+
+        var q = function () {
+            return quiz[qIndex];
+        }
+
+        var currentAnswer;
+
+        function RenderQuestion() {
+            $('.clk-reveal-plus').bind('click', revealPlus);
+				for (var qIndex = 0; qIndex < quiz.length; qIndex++) {
+					$('.question-' + (qIndex + 1) + ' #question-num').html('Question ' + (qIndex + 1));
+					$('.question-' + (qIndex + 1) + ' .question-text').html(quiz[qIndex].question);
+					for (var i = 0; i < quiz[qIndex].answers.length; i++) {
+						quiz[qIndex].choices.push(i + 1)
+						var div = document.createElement('div')
+						$(div).append('<input id="button' + (i + 1) + '" type="radio" name="quiz" value="' + (i + 1) +
+							'" /><div id="answer' + (i + 1) + '"class="answer pointer"><\/div>');
+						$(div).append('<label for="button' + (i + 1) + '">' + quiz[qIndex].answers[i] + '<\/label>');
+						$('.question-' + (qIndex + 1) + ' .answer-container').append(div);
+					}
+				}
+				var radioCheck = function () {
+					$('.remediation-retry').unbind('click', runCheck);
+					$('.reveal-btn-m').unbind('click', runCheck);
+					$('.reveal-btn-m').bind('click', runCheck);
+					currentAnswer = $(this).attr('id').slice(-1);
+					currentQuestion = $(this).parent().parent().parent().attr('class').slice(-1);
+					console.log('currentQuestion:' + currentQuestion)
+					console.log(quiz[currentQuestion - 1].choices)
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] != 0 && attemptsLeft[currentQuestion - 1] < 2) {
+						$('.remediation-retry').bind('click', runCheck);
+						$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+					} else {
+						$('.remediation-retry').unbind('click', runCheck);
+						$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+					}
+					
+					if (attemptsLeft[currentQuestion - 1] == 0) {
+						$('.reveal-btn').unbind('click', runCheck);
+					} else {
+						$('.reveal-btn').unbind('click', runCheck);
+						$('.reveal-btn').bind('click', runCheck);
+					}
+
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+						$('.reveal-btn-m').bind('click', runCheck);
+					}
+
+					if (quiz[currentQuestion - 1].type == "MC") {
+						$('.answer-on').removeClass('answer-on').addClass('pointer');
+						$(this).addClass("answer-on").removeClass('pointer');
+					} else if (quiz[currentQuestion - 1].type == "MR") {
+						$('.answer-on').removeClass('answer-on').addClass('pointer');
+						$(this).addClass("answer-on").removeClass('pointer');
+					}
+				}
+
+				$('.answer').bind('click', radioCheck);
+				$('.remediation-retry').on('click', function () {
+					//console.log($(this))
+					$('.remediation-retry').unbind('click', runCheck);
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+						if ($(window).width() < 999) {
+							$('.attempt-1').hide();
+							$('.attempt-2').hide();
+							$(this).parent().addClass("m-hide")
+							$(this).parent().parent().parent().parent().find('.attempt-container').addClass("m-hide");
+						} else {
+							$(this).parent().parent().parent().parent().find('.attempt-container').removeClass("m-hide")
+							$(this).parent().removeClass("m-hide");
+							$('.remediation-retry .warn-sel-ans').css('opacity', '1');
+						}
+					}
+				})
+
+				$('.remediation-continue').on('click', function () {
+					$('.reveal-btn').unbind('click', runCheck);
+					$('.reveal-btn-m').unbind('click', runCheck);
+
+					if (currentQuestion >= quiz.length - 1) {
+						var userPoints = 0;
+						for (var i = 0; i < points.length; i++) {
+							userPoints += points[i]
+						}
+						scorePercent = parseInt((userPoints / totalPoints) * 100);
+						var attempt = parent.intAttempt;
+                        console.log('Check score: ' + scorePercent >= passPercent)
+						if (scorePercent >= passPercent && attempt < 4) {
+							$('#result-correct').show();
+							$('#gameover-btn').show();
+							$('#result-incorrect').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-retry').hide();
+							$('#retry-btn').hide();
+							console.log('Passed in first 3 attempts')
+						} else if (scorePercent < passPercent && attempt < 4) {
+							passed = false;
+							$('#result-incorrect').show();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Failed in one of the first 3 attempts')
+						} else if (attempt == 5) {
+							passed = false;
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').show();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Challenge Closed. Reviewing. No Points awarded.')
+						} else if (attempt == 4) {
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').show();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Just reviewing. Good Job!')
+						}
+					}
+				})
+
+				//Returns array of selected answers from a MR question
+				function getAnswers() {
+					var returnAnswers = [];
+					$(".answer").each(function () {
+						if ($(this).hasClass('answer-on')) {
+							returnAnswers.push(Number($(this).attr('id').slice(-1)));
+						}
+					});
+					return returnAnswers;
+				}
+
+				function arraysEqual(_arr1, _arr2) {
+					if (!Array.isArray(_arr1) || !Array.isArray(_arr2) || _arr1.length !== _arr2.length)
+						return false;
+					var arr1 = _arr1.concat().sort();
+					var arr2 = _arr2.concat().sort();
+					for (var i = 0; i < arr1.length; i++) {
+						if (arr1[i] !== arr2[i])
+							return false;
+					}
+					return true;
+				}
+
+				var runCheck = function () {
+				$('.remediation-retry').unbind('click', runCheck);
+				console.log(attemptsLeft[currentQuestion - 1])
+				if (attemptsLeft[currentQuestion - 1] >= 0) {
+					var correctAnswer = quiz[currentQuestion - 1].correct;
+					var thisQuestionAttemptsLeft = attemptsLeft[currentQuestion - 1];
+
+					if (quiz[currentQuestion - 1].type == "MC") {
+						$('.reveal-btn').unbind('click', runCheck);
+
+						quiz[currentQuestion - 1].choices[currentAnswer - 1] = 0;
+						for (var i = 0; i < quiz[currentQuestion - 1].choices.length; i++) {
+							if (quiz[currentQuestion - 1].correct == currentAnswer) {
+								//correct answer
+								$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+									"pointer");
+							} else if (quiz[currentQuestion - 1].choices[i] == 0) {
+								//incorrect answer
+								$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+									"pointer answer");
+							} else if (attemptsLeft[currentQuestion - 1] == 0) {
+								//failed question
+								$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+									"pointer");
+							} else {
+								//rebind answers
+								$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind();
+								$('.question-' + currentQuestion + ' #answer' + (i + 1)).bind('click', radioCheck).addClass("pointer");
+							}
+						}
+
+						var holder = 0;
+						if (quiz[currentQuestion - 1].correct == currentAnswer) {
+							$('.reveal-btn:eq(' + 0 + ')').hide();
+							$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-3');
+							$('.reveal-btn:eq(' + 0 + ')').hide();
+							$('.remediation:eq(' + 0 + ')').removeClass('m-hide')
+							$('.attempt-container:eq(' + 0 + ')').removeClass("m-hide")
+							$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-correct');
+							$('.remediation:eq(' + 0 + ')').show();
+							$('.remediation-retry:eq(' + 0 + ')').hide();
+							$('.remediation-continue:eq(' + 0 + ')').show();
+							$('.remediation-txt:eq(' + 0 + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].correct_rem);
+							$('.remediation-icon:eq(' + 0 + ')').css("background-image",
+								"url(images/challenge_2/images/Correct_Icon.png)");
+							$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+								"url(images/challenge_2/images/Correct.png)").addClass('remediation-reveal')
+								.removeClass("pointer answer");
+							$('.question-' + currentQuestion + ' .answer').css('cursor', 'auto');
+
+							$('.attempt-1').hide();
+							$('.attempt-2').hide();
+						} else {
+							$('.answer-on').removeClass('answer-on');
+							$('.reveal-btn:eq(' + 0 + ')').hide();
+							$('.remediation-continue:eq(' + 0 + ')').hide();
+							$('.remediation-txt:eq(' + 0 + ')').addClass('white-txt').html(quiz[currentQuestion - 1].incorrect_rem);
+							$('.remediation-icon:eq(' + 0 + ')').css("background-image",
+								"url(images/challenge_2/images/Incorrect_Icon.png)");
+							$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+								"url(images/challenge_2/images/Incorrect.png)").addClass('remediation-reveal')
+								.removeClass("pointer answer");
+							if (attemptsLeft[currentQuestion - 1] >= 0 && points[currentQuestion - 1] > 0) {
+								//console.log("INCORRECT RESPONSE: " + attemptsLeft[currentQuestion - 1])
+								points[currentQuestion - 1] = points[currentQuestion - 1] - 5;
+							}
+							if (attemptsLeft[currentQuestion - 1] == 2) {
+								$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-1');
+								$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-1');
+								$('.remediation:eq(' + 0 + ')').show();
+								$('.attempt-1').css('display', 'flex');
+							} else if (attemptsLeft[currentQuestion - 1] == 1) {
+								$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-2');
+								$('.remediation:eq(' + 0 + ')').removeClass('m-hide')
+								$('.attempt-container:eq(' + 0 + ')').removeClass("m-hide")
+								$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-2');
+								$('.remediation:eq(' + 0 + ')').show();
+								$('.attempt-1').hide();
+								$('.attempt-2').css('display', 'flex');
+							} else if (attemptsLeft[currentQuestion - 1] == 0) {
+								$('.attempt-1').hide();
+								$('.attempt-2').hide();
+								$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-3');
+								$('.remediation:eq(' + 0 + ')').removeClass('m-hide')
+								$('.attempt-container:eq(' + 0 + ')').removeClass("m-hide")
+								$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-3');
+								$('.remediation:eq(' + 0 + ')').show();
+								$('.remediation-retry:eq(' + 0 + ')').hide();
+								$('.remediation-continue:eq(' + 0 + ')').show();
+								$('.remediation-txt:eq(' + 0 + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].fail_rem);
+								$('#progress-bar .quest .q-points').eq(currentQuestion - 1).parent().addClass('quest-retry');
+								$('.question-' + currentQuestion + ' .answer-container div').each(function (index, elem) {
+									$('.question-' + currentQuestion + ' .answer').unbind().css('cursor', 'auto');
+								});
+							}
+							attemptsLeft[currentQuestion - 1]--;
+							updateProgressTracker();
+						}
+					}
+				}
+			} // end of runCheck
+			$('.reveal-btn').bind('click', runCheck);
+		}
+
+	       (function () {
+	           $('#header-image', window.parent.document).fadeIn();
+	           $('.next').click(function (box) {
+	               var curLocation = boxLocation + 1;
+	               var nextLocation = boxLocation + 2;
+	               var currentBox = $('#box' + curLocation)
+	               var nextBox = $('#box' + nextLocation)
+	               $(currentBox).animate({
+	                   left: '-50%'
+	               }, 500, function () {
+	                   $(currentBox).css('left', '150%');
+	                   $(currentBox).appendTo('#container');
+	               });
+	               $(nextBox).animate({
+	                   left: '50%'
+	               }, 500);
+	               if (curLocation == 2) { $('#box2 #video-popup-1-mask').fadeOut(); }
+	               boxLocation++;
+	               //nextAction(curLocation);
+	               updateProgressTracker()
+	           });
+
+	           $('.back-btn').click(function () {
+	               var preLocation = boxLocation;
+	               var curLocation = boxLocation + 1;
+	               var currentBox = $('#box' + curLocation)
+	               var prevBox = $('#box' + preLocation)
+	               console.log(curLocation)
+	               $(currentBox).animate({
+	                   left: '150%'
+	               }, 500, function () {
+	                   $(prevBox).css('left', ' ');
+	                   $(prevBox).prependTo('#container');
+	               });
+	               $(prevBox).css('left', '-150%').animate({
+	                   left: '50%'
+	               }, 500);
+	               if (curLocation == 2) {
+	                   $('video').each(function () {
+	                       $(this).get(0).pause();
+	                       $('#box2 #video-container').hide()
+	                   });
+	               }
+	               boxLocation--;
+	               updateProgressTracker()
+	               //backAction(boxLocation)
+	           });
+
+
+			   $('#gameover-btn').on('click', function (e) {
+				   console.log('here')
+				   console.log(passed)
+				   console.log(parent.intAttempt)
+                parent.exitChallenge();
+				if (passed && parent.intAttempt != 4) {
+					challengeComplete(thisClass(), thisChallengNumber, score, true);
+				} else if (parent.intAttempt != 4) {
+					challengeComplete(thisClass(), thisChallengNumber, score, false);
+				} else {
+					parent.navigateIframe("portal.html");
+				}
+				$('#gameover-btn').unbind("click");
+	        })
+
+	           var $video = $('video'),
+	               $window = $('#video-container');
+	           $footer = $('footer')
+
+	           $(window).resize(function () {
+	               var contentsActivity = $('#contents-activity');
+	               console.log(contentsActivity)
+	               var footerHeightStr = $('footer').css('height');
+	               var footerHeight = (footerHeightStr.substring(0, footerHeightStr.length - 2) - 1);
+	               $('.attempt-1, .attempt-2').css('bottom', footerHeight + "px");
+	               var height = $('#box6').height();
+	               //contentsActivity.css('height', height);
+	               var cWidth = contentsActivity.width(),
+	                   wWidth = $('#box6').width(),
+	                   minHeight = $('#box6').height(),
+	                   marginLeftAdjust = (wWidth - cWidth) / 2;
+	               contentsActivity.css({
+	                   'height': minHeight + "!important;",
+	                   'left': marginLeftAdjust,
+	                   'min-width': "950px; !important;",
+					   'min-height': "535px !important;"
+	               });
+	               console.log('continer height: ' + height)
+	               console.log('content height: ' + contentsActivity.height())
+	               //console.log(contentsActivity.offsetLeft)
+	           }).resize();
+
+	       })();
+
+	       function nextBox(box) {
+			var curLocation = boxLocation + 1;
+            var currentBox = $('#box' + curLocation)
+            $(currentBox).animate({
+                left: '-50%'
+            }, 500, function () {
+                $(currentBox).css('left', '150%');
+                $(currentBox).appendTo('#container');
+            });
+            $(currentBox).next().animate({
+                left: '50%'
+            }, 500);
+            boxLocation++;
+            //nextAction(curLocation);
+            updateProgressTracker()
+	           }
+
+	       function updateProgressTracker() {
+			hotSpotReset();
+	           var userPoints = 0
+	           for (var i = 0; i < points.length; i++) {
+	               userPoints += points[i]
+	           }
+	           score = (userPoints);
+	           $('.score').html(score + " POINTS")
+	           $('#score').html(score)
+	           $('#progress-bar .quest .q-points').each(function (i, obj) {
+	               $('#progress-bar .quest .q-points').eq(i).html(points[i])
+	           })
+	           console.log("HERE:" + boxLocation)
+	           switch (boxLocation) {
+	              
+                case 0:
+                    console.log("0")
+                    $('#progress-bar .pin').eq(boxLocation).addClass('intro')
+                    $('#progress-bar .pin').eq(boxLocation).removeClass('intro-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 1:
+                    console.log("1")
+                    $('#progress-bar .pin').eq(boxLocation - 1).addClass('intro-down')
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('intro');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+	               case 2:
+	                   $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+	                   $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+	                   $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+	                   break;
+	               case 3:
+	                   $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+	                   $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+	                   $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+	                   break;
+	               case 4:
+	                   $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+	                   $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+	                   $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+	                   break;
+	               case 5:
+	                   $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+	                   $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+	                   $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+					   break;
+					   case 6:
+	                   $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+	                   $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+	                   $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+					   break;
+					   case 7:
+	                   $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+	                   $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+	                   $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+					   break;
+					   
+	               case 8:
+	                   $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+	                   $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+	                   $('#progress-bar .pin').eq(boxLocation + 1).removeClass('conclusion-down');
+	                   break;
+	               case 9:
+	                   $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+	                   $('#progress-bar .pin').eq(boxLocation).addClass('conclusion-down');
+	                   break;
+	               default:
+	                   $('#progress-bar .pin').eq(0).removeClass('intro-down');
+	                   $('#progress-bar .pin').eq(1).removeClass('scene-down');
+	                   break;
+	           }
+	       };
+	       updateProgressTracker();
+	       RenderQuestion();
+	</script>
+</body>
+</html>

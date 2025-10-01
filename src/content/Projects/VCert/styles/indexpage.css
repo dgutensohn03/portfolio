@@ -1,0 +1,287 @@
+#intropage {
+  background-image: url("../images/1-Video Hero.png");
+  color: #FFFFFF;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 315px;
+}
+
+video {
+  position: relative !important;
+}
+
+#headerText {
+  display: block;
+  font-size: 96px;
+  font-family: Oswald;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+}
+
+#intropage_Body1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#intropage_Body3 {
+  margin: 0 auto 0 auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#intropage_Body4 {
+  background-color: lightgrey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 400px;
+}
+
+#intropage_Body5 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 600px;
+  padding: 0 5%;
+}
+
+#indicator1 {
+  background-image: url("../images/1-1_Graph.png");
+  position: relative;
+  width: 161px;
+  height: 170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#indicator2 {
+  background-image: url("../images/1-2_Graph.png");
+  position: relative;
+  width: 161px;
+  height: 170px;
+  background-repeat: no-repeat;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#indicator3 {
+  background-image: url("../images/1-3_Graph.png");
+  position: relative;
+  width: 170px;
+  height: 170px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.percentText {
+  position: relative;
+  top: 0px;
+  left: 0px;
+}
+
+.introTextRow {
+  margin-top: 100px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 5%;
+}
+
+.introTextRow div {
+  padding: 0px 25px;
+}
+
+.introText {
+  font-family: Roboto;
+  color: #6E6E6E;
+  font-size: 18px;
+  margin-top: 25px;
+}
+
+.numberText {
+  font-size: 56px;
+  font-family: Oswald;
+  color: #000;
+}
+
+.stepsNumber {
+  font-family: Oswald;
+  font-size: 90pt;
+  color: #E1261C;
+  font-weight: 500;
+  position: relative;
+  top: -100px;
+  text-align: center;
+  width: 100%;
+}
+
+.stepBlock {
+  background-image: url("../images/8-Course Box_Small.png");
+  height: 285px;
+  width: 261px;
+  position: relative;
+  margin: 40px 10px;
+  background-color: #F6F6F6;
+}
+
+#portalHeader4 {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  background-image: url("../images/1-2_Hero.png");
+  background-size: cover;
+  margin-top: 0px;
+  color: white;
+  font-size: 96px;
+  font-family: Oswald;
+  font-weight: 500;
+  padding-top: 130px;
+  margin-top: 100px;
+  text-align: center;
+}
+
+.headerBlue {
+  font-family: Roboto;
+  color: #0082CA;
+  font-size: 22pt;
+  font-weight: bold;
+}
+
+.emphasisBold {
+  font-weight: bold;
+  color: #000;
+}
+
+.emphasisRed {
+  color: #E1261C;
+  font-weight: 400;
+  font-family: Oswald;
+  font-size: 48px;
+}
+
+.card-text {
+  font-family: Roboto;
+  color: #000000;
+  font-size: 21pt;
+  font-weight: bold;
+  text-align: left;
+  padding: 0px 10px;
+  line-height: 110%;
+  position: relative;
+  top: -100px;
+}
+
+#adminLogin {
+  background-size: contain;
+  max-width: 204px;
+  max-height: 50px;
+  padding: 0px;
+  left: 33%;
+  position: relative;
+}
+
+#bigUserLogin {
+  font-size: 14pt;
+  background-image: url("../images/Large Bttn_UP.png");
+  height: 174px;
+  width: 629px;
+  position: relative;
+  text-align: left;
+  padding-top: 52px;
+  padding-left: 45px;
+  color: white;
+  cursor: pointer;
+  margin: 0 auto 0 auto;
+  font-family: Oswald;
+  font-size: 42px;
+}
+
+#bigUserLogin:hover {
+  background-image: url("../images/Large Bttn_DWN.png");
+  color: #E1261C;
+}
+
+@media only screen and (max-width: 991.98px) {
+  #bigUserLogin {
+    height: 87px;
+    width: 314px;
+    background-size: 100%;
+    padding-top: 20px;
+    padding-left: 23px;
+    font-size: 30px;
+  }
+}
+
+#headerTextRight {
+  font-size: 64px;
+}
+
+#introPage .Tooltip {
+  border: 1px solid #E1261C;
+  color: #E1261C;
+  border-radius: 25px;
+  height: 20px;
+  width: 20px;
+  position: relative;
+  text-align: center;
+  display: inline-block;
+  font-size: 9pt;
+  top: -60px;
+  left: calc(50% + 100px);
+  cursor: pointer;
+}
+
+#introPage .TooltipExpand {
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 100px;
+  width: 200px;
+  position: absolute;
+  text-align: left;
+  display: none;
+  font-size: 12pt;
+  top: 25px;
+  z-index: 100;
+  background-color: white;
+  left: 0px;
+  padding: 5px 10px 5px 10px;
+  color: #000000;
+  font-weight: 400;
+}
+
+@media only screen and (max-width: 767.98px) {
+  #intropage {
+    height: 150px;
+  }
+  #headerText {
+    font-size: 48px;
+  }
+  #portalHeader4 {
+    height: 150px;
+    padding-top: 38px;
+    font-size: 48px;
+  }
+}
+/*# sourceMappingURL=indexpage.css.map */

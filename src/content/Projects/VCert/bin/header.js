@@ -1,0 +1,38 @@
+"use strict";
+
+var css = "\n.navbar-nav {\n\tfloat:right !important;\n}\n.navbar {\n\tposition: relative;\n\tmin-height: 59px;\n\tbackground-color: #ffffff;\n\tz-index:1006;\n\tborder-radius: 0px;\n\tborder: none;\n}\n#challenge-btn:hover, #greeting:hover {\n\tcolor: black;\n\tcursor: auto;\n}\n.gray-line {\n\twidth: 100%;\n\tbackground-color: #EEE;\n\theight: 2px;\n\tmargin: 0;\n\tpadding: 0;\n\tposition: absolute;\n\ttop: 58px;\n}\n.navbar-header {\n\tz-index: 2;\n\tposition: absolute;\n}\n.float-right {\n\tfloat:right !important;\n}\n.navbar-toggle .icon-bar {\n\tdisplay: block;\n\twidth: 22px;\n\theight: 2px;\n\tborder-radius: 1px;\n\t/* color: red; */\n\tbackground-color: red;\n\tborder: 1px solid red;\n}\n.spacer {\n\theight: 59px;\n\tpointer-events:none;\n}\n.navbar-collapse {\n\tpadding-right: 0;\n\tpadding-left: 0;\n}\nnav {\n\tz-index: 2;\n}\n.nav-link {\n\tcursor: pointer;\n}\n.navbar-collapse {\n\tbackground-color: #ffffff;\n}\n\n\t.navbar-nav {\n\t\twidth: 100%;\n\t\tmargin: 0;\n\t}\n\t.navbar-nav .headerVerticalLine {\n\t\tmargin-top: 0;\n\t\twidth: 100%;\n\t\theight: 2px;\n\t}\n\t.navbar-header {\n\t\twidth: 100%;\n\t}\n\n.navbar ul>li>a {\n\tpadding: 18px 16px;\n}\n\nul.navbar-nav>li>a {\n\tpadding: 9px 16px 9px 25px;\n}\n\n.nav-item a {\n\ttext-transform: uppercase;\n}\n\n.nav>li>a:focus, .nav>li>a:hover {\n\tbackground-color: transparent !important;\n}\n#home {\n\tpadding: 8px 16px;\n\tdisplay: inline-block;\n\tcursor: pointer !important;\n}\n.nav-left li {\n\tfloat:left;\n\tdisplay:inline;\n}\n#header-image {\n\tbackground: url(\"./images/challenge_2/images/Challenge_Heading.png\") no-repeat;\n\tbackground-size: 100%;\n\tmax-width: 1649px;\n\tmax-height: 97px;\n\tmargin-left: 10%;\n\tmargin-right: 10%;\n\tbackground-position: center;\n\tposition: absolute;\n\tleft: 0;\n\twidth: 80%;\n\theight: 97px;\n\ttop:10px;\n\tdisplay:none;\n\tpointer-events: none;\n}\n\n    .navbar-header {\n        float: none;\n    }\n    .navbar-left,.navbar-right {\n        float: none !important;\n    }\n    .navbar-toggle {\n        display: block;\n    }\n    .navbar-collapse {\n        border-top: 1px solid transparent;\n        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);\n    }\n    .navbar-fixed-top {\n        top: 0;\n        border-width: 0 0 1px;\n    }\n    .navbar-collapse.collapse {\n\n    }\n    .navbar-nav {\n        float: none!important;\n        margin-top: 7.5px;\n    }\n    .navbar-nav>li {\n        float: none;\n    }\n    .navbar-nav>li>a {\n        padding-top: 10px;\n        padding-bottom: 10px;\n\t}\n\t.m-hide {\n\t\tdisplay: flex;\n\t}\n\t@media only screen and (max-width: 550px) {\n\n\t\t.m-hide {\n\t\t\tdisplay: none !important;\n\t\t}\n\t}\n    ",
+    head = document.head || document.getElementsByTagName('head')[0],
+    style = document.createElement('style');
+head.appendChild(style);
+style.type = 'text/css';
+
+if (style.styleSheet) {
+  // This is required for IE8 and below.
+  style.styleSheet.cssText = css;
+} else {
+  style.appendChild(document.createTextNode(css));
+}
+
+document.write("\n\t<nav class=\"navbar navbar-expand-md\">\n\t\t<div class=\"row\">\n\t\t\t<div class=\"navbar-header\">\n\t\t\t\t<button class=\"navbar-toggle\"><span class=\"icon-bar\"></span> <span class=\"icon-bar\"></span> <span class=\"icon-bar\"></span></button>\n\t\t\t\t<ul class=\"nav nav-left\">\n\t\t\t\t\t<li class=\"logo\"></li>\n\t\t\t\t\t<li class=\"nav-item\"  id=\"home\"><img onclick=\"navigateIframe('LandingPage.html')\" src=\"images/Header%20Logo.png\"></li>\n\t\t\t\t\t<li class=\"headerVerticalLine m-hide\"></li>\n\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t<a class=\"m-hide headerfont larger \" id=\"challenge-btn\"></a>\n\t\t\t\t\t</li>\n\t\t\t\t\t<li class=\"nav-item float-right\">\n\t\t\t\t\t<a class=\"nav-link headerfont m-hide hidden\" id=\"greeting\">Greeting</a>\n\t\t\t\t</li>\n\t\t\t\t\t<li class=\"nav-item float-right\">\n\t\t\t\t\t<a class=\"nav-link headerfont m-hide auth-function\" onclick=\"navigateIframe('LoginPage.html')\">USER LOGIN</a>\n\t\t\t\t</li>\n\t\t\t\t<!-- <li class=\"nav-item float-right\">\n\t\t\t\t <a class=\"nav-link headerfont auth-function\" onclick=\"navigateIframe('AdminLoginPage.html')\">ADMIN LOGIN</a> \n\t\t\t</li>-->\n\t\t\t\t</ul>\n\n\t\t\t\t\n\t\t\t</div>\n\t\t\t<div id=\"navbarContainer\">\n\t\t\t\t<div id=\"myNavbar\">\n\t\t\t\t\t<div id=\"navExit\"></div>\n\t\t\t\t\t<ul class=\"nav navbar-nav float-right\">\n\t\t\t\t\t\t<li class=\"spacer\"></li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t<a href=\"images/VCERT_Video.m4v\" class=\"nav-link headerfont html5lightbox\" data-width=\"980\" data-height=\"642\" title=\"\">WELCOME VIDEO</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t<a class=\"nav-link headerfont\" onclick=\"window.open('./resources/VCERT Performance+ Program Rules_2025.pdf','_blank');\">PROGRAM RULES</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t<a class=\"nav-link headerfont\" onclick=\"navigateIframe('tour.html')\">VCERT TOUR</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t\t<a class=\"nav-link headerfont hidden\" id=\"greeting\">Greeting</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t\t<a class=\"nav-link headerfont hidden\" id=\"start-challenge-btn\" onclick=\"navigateIframe('challenge_2.html')\">START CHALLENGE</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t\t<a class=\"nav-link headerfont hidden\" href=\"#\" id=\"my-challenges-btn\">MY CHALLENGES</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t\t<a class=\"nav-link headerfont hidden\" href=\"#\" id='history-btn'>COURSE HISTORY</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t\t<a class=\"nav-link headerfont hidden\" id='admin-home-btn' onclick=\"navigateIframe('AdminIntro.html')\">ADMIN HOME</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t\t<a class=\"nav-link headerfont hidden\" href=\"#\" id='settings-btn'>SETTINGS</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t\t<a class=\"nav-link headerfont hidden\" id=\"register-btn\" onclick=\"navigateIframe('Registration.html')\">REGISTER</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t<a class=\"nav-link headerfont auth-function\" onclick=\"navigateIframe('LoginPage.html')\">USER LOGIN</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t\t<a class=\"nav-link headerfont auth-function\" onclick=\"navigateIframe('AdminLoginPage.html')\">ADMIN LOGIN</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t\t<li class=\"nav-item\">\n\t\t\t\t\t\t\t<a class=\"nav-link headerfont hidden\" id=\"log-out\">LOG OUT</a>\n\t\t\t\t\t\t</li>\n\t\t\t\t\t</ul>\n\t\t\t\t</div>\n\t\t\t</div>\n\t\t</div>\n\t\t<div class=\"gray-line\"></div>\n\t\t<div class=\"row\" id=\"header-image\"></div>\n\t</nav>\n");
+var navExtended = false;
+$('.navbar-toggle').on('click', function () {
+  $('#navbarContainer').animate({
+    width: ['toggle', 'swing']
+  }, function () {
+    navExtended = true;
+  });
+});
+$('.navbar-nav>li, #navExit').on('click', function () {
+  navExtended = false;
+  $('#navbarContainer').animate({
+    width: ['toggle', 'swing']
+  });
+});
+$('#navbarContainer').on('mouseleave', function (e) {
+  if (navExtended) {
+    navExtended = false;
+    $('#navbarContainer').animate({
+      width: ['toggle', 'swing']
+    });
+  }
+});

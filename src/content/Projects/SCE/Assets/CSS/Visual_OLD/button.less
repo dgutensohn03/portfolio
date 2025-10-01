@@ -1,0 +1,19 @@
+.nav-button {
+    background-color: @accentColor;
+    color: @accentFont;
+    font-size: inherit;
+    font-weight: bold;
+}
+
+.nav-button:not(:disabled):hover {
+    background-color: lighten(@accentColor, 10%);
+}
+
+.nav-button:disabled {
+    background-color: darken(@accentColor, 30%);
+}
+
+.nav-button.blink {
+    background-color: @accentColor2;
+    color: @accent2Font;
+}

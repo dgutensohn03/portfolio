@@ -1,0 +1,1 @@
+﻿kendo.bind($('#slide-scrubber'), Shell);

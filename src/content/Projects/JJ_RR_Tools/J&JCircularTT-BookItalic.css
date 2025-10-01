@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'J&J CircularTT Book Italic';
+  src: url('Fonts/J&JCircularTT-BookItalic.eot');
+  src: url('Fonts/J&JCircularTT-BookItalic.eot?#iefix') format('embedded-opentype'),
+       url('Fonts/J&JCircularTT-BookItalic.svg#J&JCircularTT-BookItalic') format('svg'),
+       url('Fonts/J&JCircularTT-BookItalic.ttf') format('truetype'),
+       url('Fonts/J&JCircularTT-BookItalic.woff') format('woff'),
+       url('Fonts/J&JCircularTT-BookItalic.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

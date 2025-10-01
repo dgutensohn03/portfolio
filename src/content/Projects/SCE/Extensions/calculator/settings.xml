@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  <ID>calculator</ID>
+  <DisplayName>Calculator</DisplayName>
+
+  <Type>Window</Type>
+  <ButtonSize>hide</ButtonSize>
+  <ButtonTooltip></ButtonTooltip>
+</Settings>

@@ -1,0 +1,284 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Update in Assets/Course.js -->
+    <title data-bind="text: name"></title>
+
+    <script src="Source/XM/Polyfills.js"></script>
+    <script src="Source/JS/jQuery/jquery-1.11.1.min.js"></script>
+
+    <!-- IE Mobile viewport fix -->
+    <script>
+        if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+            var msViewportStyle = document.createElement("style");
+            msViewportStyle.appendChild(
+                document.createTextNode(
+                    "@-ms-viewport{width:auto!important}"
+                )
+            );
+            document.getElementsByTagName("head")[0].
+                appendChild(msViewportStyle);
+        }
+    </script>
+    <style>
+        #icon_1 {
+            background-image: url(Assets/Images/Shell/colectedItems_1.png);
+            right: 271px;
+            top: 25px;
+            position: absolute;
+            width: 52px;
+            height: 51px;
+            display: none;
+        }
+
+        #icon_2 {
+            background-image: url(Assets/Images/Shell/colectedItems_2.png);
+            right: 192px;
+            top: 34px;
+            position: absolute;
+            width: 52px;
+            height: 31px;
+            display: none;
+        }
+
+        #icon_3 {
+            background-image: url(Assets/Images/Shell/colectedItems_3.png);
+            right: 110px;
+            top: 30px;
+            position: absolute;
+            width: 56px;
+            height: 36px;
+            display: none;
+        }
+
+        #icon_4 {
+            background-image: url(Assets/Images/Shell/colectedItems_4.png);
+            right: 33px;
+            top: 23px;
+            position: absolute;
+            width: 53px;
+            height: 54px;
+            display: none;
+        }
+
+        #whiteOut {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 1280px;
+            height: 720px;
+            background-color: white;
+            opacity: .5;
+            display: none;
+        }
+
+        #grid-box {
+            background-image: url(Assets/Images/Shell/grid.png);
+            background-repeat: no-repeat;
+            width: 316px;
+            height: 76px;
+            position: absolute;
+            top: 10px;
+            right: 20px;
+        }
+    </style>
+    <!--[if IE 8]>
+        <script src="Source/JS/Sylvester/sylvester.js"></script>
+        <script src="Source/JS/Transformie/transformie.js"></script>
+        <script>Transformie.defaults.centerOrigin = false;</script>
+    <![endif]-->
+
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1, user-scalable=no">
+
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/KendoUI/web/kendo.common.core.css" />
+
+    <link href="Assets/CSS/FontAwesome/font-awesome.min.css" rel="stylesheet" />
+    <link href="Assets/CSS/shell-theme.min.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="Initialize()" onunload="Destroy()" onbeforeunload="Destroy()">
+    <div id="shell">
+        <div id="header">
+            <img src="Assets/Images/Shell/logo.png" alt="Logo" />
+            <img src="Assets/Images/Shell/course-logo.png" alt="Logo 2" style='position: relative; left: -490px;' />
+
+        </div>
+
+        <div id='grid-box'></div>
+
+        <div id='icon_1'></div>
+        <div id='icon_2'></div>
+        <div id='icon_3'></div>
+        <div id='icon_4'></div>
+        <!-- <div id="status-bar">
+            <span id="breadcrumbs" class="left"></span>
+            <span id="lesson-progress" class="right"></span>
+        </div> -->
+        <div id="content-container">
+            <div id="responsive-wrapper" style="width: 100%; height: 100%; position: relative;">
+                <!-- Slide Contents -->
+                <iframe id="contents" onblur="OnBlurIFrame();" onclick="OnBlurIFrame();"></iframe>
+            </div>
+            <!-- Loading Animation -->
+            <div class="loader">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+            <div id="whiteOut"></div>
+            <img id="content-box" src="" style="display: none; position: absolute; top: 0px; width: 1130px; height: 640px; margin: 40px 75px;"
+            />
+        </div>
+        <div id="footer">
+            <!--<div id="nav-bar">
+                <span id="navleft" class="left">
+
+                    <button id="cctext-button" class="nav-button wide" onclick="CCText.Toggle();" title="Display or hide subtitles.">CC Text</button>
+                </span>
+                <span id="navright" class="right">
+                    <button id="back-button" class="nav-button" onclick="Shell.PreviousSlide();" title="Go to the previous slide.">Back</button>
+                    <button id="replay-button" class="nav-button" onclick="Shell.UpdateSlide();" title="Restart the current slide.">Replay</button>
+                    <button id="pause-button" class="nav-button" onclick="Shell.TogglePause();" title="Pause the current slide.">Pause</button>
+                    <button id="next-button" class="nav-button" onclick="Shell.NextSlide();" title="Advance to the next slide.">Next</button>
+                </span>
+            </div>-->
+        </div>
+        <div id="tray">
+            <div id="cctext-container">
+            </div>
+        </div>
+    </div>
+
+    <div id="popup-container">
+    </div>
+
+    <script src="Source/JS/KendoUI/kendo.ui.core.min.js"></script>
+    <script src="Source/JS/FlashDetect/flash_detect_min.js"></script>
+    <script src="Source/JS/LZString/lz-string.min.js"></script>
+    <script src="Source/JS/Howler/howler.core.min.js"></script>
+    <script src="Source/XM/Helpers.js"></script>
+    <script src="Source/XM/Actions.js"></script>
+    <script src="Assets/AppSettings.js"></script>
+    <script src="Source/JS/Shake/shake.js"></script>
+    <script src="Source/XM/Responsiveness.js"></script>
+    <script src="Source/XM/Events/XMEvent.js"></script>
+    <script src="Source/XM/SlideStatus.js"></script>
+    <script src="Assets/Course.js"></script>
+    <script src="Source/XM/Data/CourseDataBase.js"></script>
+    <script src="Assets/Strings/ShellStrings.js"></script>
+    <script src="Source/XM/CCText.js"></script>
+
+    <script src="Source/XM/Extensions/Extensions.js"></script>
+
+    <script src="Source/XM/Shell.js"></script>
+    <script src="Source/XM/Core/ShellBase.js"></script>
+    <script src="Source/XM/LMS/LMSBase.js"></script>
+
+    <script>
+        function Initialize() {
+            if (AppSettings.enforceMinimumWindowSize && (window.innerWidth < $('#shell').outerWidth() || window.innerHeight < $('#shell').outerHeight())) {
+                window.resizeTo($('#shell').outerWidth() * 1.2, $('#shell').outerHeight() * 1.2);
+            }
+        }
+
+        function Destroy() {
+            if (AppSettings.LMS.enabled)
+                LMS.Finish();
+
+            Shell.Destroy();
+        }
+
+        function OnBlurIFrame() {
+            document.getElementById('contents').contentWindow.focus();
+        }
+
+
+
+        $('body').click(OnBlurIFrame);
+        OnBlurIFrame();
+
+        // Sounds
+
+        Shell.audio.bump = new Howl({
+            src: ['Assets/Sounds/bump.mp3'],
+            preload: true
+        });
+        Shell.audio.destroy = new Howl({
+            src: ['Assets/Sounds/destroy.mp3'],
+            preload: true
+        });
+        Shell.audio.hurt = new Howl({
+            src: ['Assets/Sounds/hurt.mp3'],
+            preload: true
+        });
+        Shell.audio.pipe = new Howl({
+            src: ['Assets/Sounds/pipe.mp3'],
+            preload: true
+        });
+        Shell.audio.contentBox_l1b1 = new Howl({
+            src: ['Assets/Sounds/contentBox_l1b1.mp3'],
+            preload: true
+        });
+        Shell.audio.contentBox_l1b2 = new Howl({
+            src: ['Assets/Sounds/contentBox_l1b2.mp3'],
+            preload: true
+        });
+        Shell.audio.contentBox_l1b3 = new Howl({
+            src: ['Assets/Sounds/contentBox_l1b3.mp3'],
+            preload: true
+        });
+        Shell.audio.contentBox_l1b4 = new Howl({
+            src: ['Assets/Sounds/contentBox_l1b4.mp3'],
+            preload: true
+        });
+        Shell.audio.contentBox_l1b5 = new Howl({
+            src: ['Assets/Sounds/contentBox_l1b5.mp3'],
+            preload: true
+        });
+        Shell.audio.contentBox_l1b6 = new Howl({
+            src: ['Assets/Sounds/contentBox_l1b6.mp3'],
+            preload: true
+        });
+
+        Shell.audio.contentBox_l2b1 = new Howl({
+            src: ['Assets/Sounds/contentBox_l2b1.mp3'],
+            preload: true
+        });
+        Shell.audio.contentBox_l2b2 = new Howl({
+            src: ['Assets/Sounds/contentBox_l2b2.mp3'],
+            preload: true
+        });
+        Shell.audio.contentBox_l2b3 = new Howl({
+            src: ['Assets/Sounds/contentBox_l2b3.mp3'],
+            preload: true
+        });
+        Shell.audio.contentBox_l2b4 = new Howl({
+            src: ['Assets/Sounds/contentBox_l2b4.mp3'],
+            preload: true
+        });
+        Shell.audio.contentBox_l2b5 = new Howl({
+            src: ['Assets/Sounds/contentBox_l2b5.mp3'],
+            preload: true
+        });
+        Shell.audio.contentBox_l2b6 = new Howl({
+            src: ['Assets/Sounds/contentBox_l2b6.mp3'],
+            preload: true
+        });
+
+        // Shell.audio.background = new Howl({
+        //     src: ['Assets/Sounds/background.mp3'],
+        //     preload: true
+        // });
+
+        var backgroundMusic = new Howl({ src: 'Assets/Sounds/background.mp3', preload: true, loop: true });
+
+        var backgroundMusicPlaying = false;
+    </script>
+</body>
+
+</html>

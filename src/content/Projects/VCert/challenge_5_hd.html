@@ -1,0 +1,1258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=yes" name="viewport"><!-- Bootstrap CSS -->
+	<link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="styles/style.css" rel="stylesheet">
+	<link href="styles/challenge.css" rel="stylesheet">
+	<script src="scripts/easeljs/easeljs-NEXT.js">
+	</script>
+	<style>
+		.box {
+			overflow-y: auto !important;
+			overflow-x: hidden;
+		}
+
+		.continue-btn {
+			bottom: 50px;
+		}
+
+        #loginheader {
+    font-size: 96px;
+    font-weight: 500;
+    font-family:Oswald;
+    position:relative;
+    top:-70px;
+}
+#popup-header-box {
+	font-size: 6rem;
+	font-weight: 500;
+	font-family: Oswald;
+	min-width: 220px;
+	color: #E1261D;
+	line-height: 20px;
+	width: auto;
+	top: 0px;
+	overflow: visible;
+	height: 0;
+	position: relative;
+	text-align: center;
+	z-index: 8;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.green-text {
+	color: #7AC943;
+}
+/* #video-popup-header>div {
+	background-color: #ffffff;
+	position: relative;
+	top: -11px
+} */
+/* .video-dialog {
+	margin: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	min-height: 100%;
+	overflow-y: initial !important
+} */
+.popup-content {
+	border: 20px solid #ffffff !important;
+	background-color: #ffffff;
+	border-radius: 0;
+}
+
+.video-border {
+	border: 2px solid #E1261D;
+    height: 100%;
+}
+
+.popup-body .header {
+	font-size: calc(32px + .5vw);
+	line-height: calc(32px + .5vw);
+	font-family: Roboto-Medium;
+	text-align: center;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+#popup-mask  {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+	z-index: 9;
+	height: calc(100vh - 98px);
+    display: flex;
+}
+.popup-body h1 {
+	text-align: center;
+	width: 100%;
+	font-size: calc(1.5rem + 1.1vw);
+    line-height: calc(2.5rem + 1.5vw);
+
+    text-align: center;
+	padding-left: 30px;
+    padding-right: 30px;
+
+}
+.popup-dialog {
+    width: 50%;
+    height: auto;
+    background-color: #ffffff;
+    margin:auto;
+	padding: 20px;
+	min-width: 270px;
+    /* min-width: 300px;
+    max-width: 700px;
+    min-height: 200px; */
+}
+.popup-dialog-border {
+    width: 100%;
+    height: 100%;
+
+    border: 2px solid #E1261D;
+}
+
+.red-dot {
+	height: 6px;
+	width: 6px;
+	background-color: #E1261C;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+#popup-header-box {
+    font-size: 5vw;
+	font-weight: 500;
+	font-family: Oswald;
+    min-width: 180px;
+    color: #E1261D;
+    line-height: 20px;
+    width: 50%;
+	top: 0px;
+	overflow: visible;
+	height: 0;
+	position: relative;
+	text-align: center;
+	z-index: 8;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+#popup-header-box > div {
+	background-color: #ffffff;
+	position: relative;
+    top: -11px;
+    margin: auto;
+    width: auto;
+}
+
+.popup-body {
+    width: 100%;
+    height: 100%;
+}
+
+.flex-img img {
+	max-width: 80%;
+}
+
+#popup-mask .exitButton {
+	background: url('./images/challenge/ExitBtn_UP.png') no-repeat;
+	width: 52px;
+	height: 52px;
+	border: 0;
+	background-position: center;
+	position:absolute;
+
+}
+#popup-mask .exitButton {
+	z-index: 10;
+}
+#popup-mask .exitButton:hover {
+	background: url('./images/challenge/ExitBtn_DWN.png') no-repeat;
+}
+.top-right {
+	justify-content: flex-end;
+	display: flex;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+#popup-mask .flex-middle {
+	min-width: 100%;
+}
+
+.popup-header-text {
+    font-size: calc(1.5rem + 1.1vw);
+    line-height: calc(1.5rem + 1.1vw);
+    font-family: Roboto-Medium;
+    text-align: center;
+    color: #000;
+}
+
+.flex-content {
+	display: flex;
+    justify-content: space-evenly;
+}
+
+.challenge-arrow {
+	margin-top: 0 !important;
+	margin-bottom: 50px !important;
+}
+@media only screen and (max-width: 937px) {
+	/* #popup-header {
+		font-size: 4.5rem;
+	} */
+
+	.popup-body h1 {
+
+    padding-top: 10px;
+
+}
+	#popup-header-box {
+	    font-size: 2.5rem;
+	}
+	#popup-mask .exitButton {
+		background: url('./images/challenge/ExitBtn_UP.png') center no-repeat;
+		background-size: 55%;
+		cursor: pointer;
+		width: 52px;
+		height: 52px;
+		border: 0;
+	}
+	#popup-mask .exitButton:hover {
+		background: url('./images/challenge/ExitBtn_DWN.png') center no-repeat;
+		background-size: 55%;
+	}
+
+	.top-right {
+		margin-top: 0;
+    	margin-right: 0;
+	}
+
+}
+
+
+
+	</style>
+	<title>Vcert Project</title>
+	<style>
+	</style>
+</head>
+
+<body class="">
+	<div class="container-fluid challenge-5">
+		<div id="container">
+			<div class="box " id="box1">
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText">
+						<div class='center-text-box'>
+							<h1>Zerex™ Approvals</h1>
+							<p>For over 70 years, the name ZEREX™ has stood for superior cooling system protection and
+								innovation. Today ZEREX™ leads the industry in several key categories. In this
+								challenge, we’ll explore those areas and learn why more manufacturers look to ZEREX™
+								more than any other coolant to keep their equipment running smoothly.</p>
+							<p>
+								<div class="headerBlue">SELECT START.</div>
+							</p>
+						</div>
+					</div>
+					<div class="col topCenterText m-margin-bottom">
+						<div>
+							<button class="next" id="start-btn" type="submit">START</button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- QUESTION 1 -->
+			<div class="box" id="box2">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle center-content full-box-height" id="content">
+					<div class='break'></div>
+					<div class="col m-continue-bl-bc flashCard-continue hidden">
+						<button class="next continue-btn fc-continue box2-continue"
+							style="display: inline-block;">CONTINUE</button>
+					</div>
+					<div class='break'></div>
+					<div class="col flashcard-container">
+						<div class="col-12 floating-header">
+							<h1 class="pageHeader">Meet vs. Approved vs. Recommended</h1>
+						</div>
+						<div class='center-text-box'>
+							<div class="col" style="padding: 0;">
+								<div class="flashCard flashCard-btn-1" id="" onclick="flashCard_1(this);">
+									<div class="flashCard-text">A Costly Mistake</div>
+									<div class="flashCard-btn-arrow"></div>
+								</div>
+							</div>
+							<div class="col" style="padding: 0;">
+								<div class="flashCard flashCard-btn-2" id="" onclick="flashCard_2(this);">
+									<div class="flashCard-text">The Primary Cause</div>
+									<div class="flashCard-btn-arrow"></div>
+								</div>
+							</div>
+							<div class="col" style="padding: 0;">
+								<div class="flashCard flashCard-btn-3" id="" onclick="flashCard_3(this);">
+									<div class="flashCard-text">Color vs. Compatibility</div>
+									<div class="flashCard-btn-arrow"></div>
+								</div>
+							</div>
+							<div class="col" style="padding: 0;">
+								<div class="flashCard flashCard-btn-3" id="" onclick="flashCard_4(this);">
+									<div class="flashCard-text">Application Keys</div>
+									<div class="flashCard-btn-arrow"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col btl-img-container">
+						<div class='bottle-img tab-btl-min-height'><img src='images/challenge_5/5_zerex.png'><div class="downArrow challenge-arrow d-hide" onclick="$('html, body').animate({scrollTop:$(this).position().top + 50}, 500, 'swing')"></div></div>
+						
+				
+					</div>
+					
+				</div>
+				<!-- 
+                <div id="contentB" class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-md-6 col-lg-6 col-xl-6 fullHeight">
+                        <div id="flashcardContainer">
+                            <div class="flashcardButton" id="flashcard1" onclick="int1Button(0);">A Costly Mistake</div>
+                            <div class="flashcardRevealed" id="flashcardR1">The regular and proper maintenance of an engine’s cooling system is usually considered to be of minor importance—potentially an extremely costly mistake.</div>
+                            <div class="flashcardButton" id="flashcard2" onclick="int1Button(1);">The Primary Cause</div>
+                            <div class="flashcardRevealed" id="flashcardR2">Research has shown that 40% of all engine problems in heavy duty engines are related, directly or indirectly, to improper cooling system maintenance.</div>
+                            <div class="flashcardButton" id="flashcard3" onclick="int1Button(2);">Color vs. Compatibility</div>
+                            <div class="flashcardRevealed" id="flashcardR3">Compatibility with the engine components and the coolant that exists in the engine is important to prevent corrosion and other issues. Colors are not an indicator of compatibility.</div>
+                            <div class="flashcardButton" id="flashcard4" onclick="int1Button(3);">Application Keys</div>
+                            <div class="flashcardRevealed" id="flashcardR4">Make sure the coolant you select meets or exceeds the requirements for that engine and contains correct additives.</div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 fullHeight">
+                        <img id="zerexPic" src="images/challenge_5/5_zerex.png" />
+                    </div>
+                    <div class="col-xl-1"></div>
+                    <button class="next continue-btn-center" id="continue-btn-1">CONTINUE</button>
+                </div> -->
+			</div>
+			<!--1.2 Product Overview-->
+			<div class="box" id="box3">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle center-content full-box-height" id="content">
+					<div class="col topRight instruction-reveal">
+						<div class='center-text-box white-txt'>
+							<div class="reveal-arrow-left text-white">
+								<h3>REVEAL INFO</h3>
+								<p>In order for your customer to be comfortable with a product that meets OEM
+									warranties, they will look for a product that is Approved by their manufacturer.</p>
+								<p>Select each area on the bottle to learn the difference between products that are
+									Approved, Recommended, and Meets.</p>
+
+							</div>
+						</div>
+					</div>
+					<div class='break-1290'></div>
+					<div class="col topCenter btl-plus-container">
+						<div class='bottle-img'>
+							<img id="" src="images/challenge_5/5_zerex.png" />
+						</div>
+						<div class='plus-1'>
+							<div class='content-box content-box-1 tl-content-box' id="hsp1">
+								<p>A = APPROVED</p>
+								<p>The fluid has undergone extensive manufacturer testing. This involves years of
+									testing that ensures the consumer is provided a genuine product that will perform.
+								</p>
+							</div>
+							<div class="clk-reveal-plus" class="hotspot" id="hs1" onclick="int2Hotspot(this);"></div>
+						</div>
+						<div class='plus-2'>
+							<div class='content-box content-box-2 tr-content-box' id="hsp2">
+								<p>M = MEETS</p>
+								<p>The fluid has undergone significant required testing to automaker’s fluid
+									specifications.</p>
+								<p>Valvoline holds itself to high standards. If we claim we meet an OEM spec, we have
+									tested the product and proved that it meets the ENTIRE spec. These specifications
+									are listed for a reason and the consumer needs to know that when we say we meet
+									them, it means all of them. Other products don’t provide the same assurance.</p>
+							</div>
+							<div class="clk-reveal-plus" class="hotspot" id="hs2" onclick="int2Hotspot(this);"></div>
+						</div>
+						<div class='plus-3'>
+							<div class='content-box content-box-3 tl-content-box' id="hsp3">
+								<p>R = RECOMMENDED</p>
+								<p>The fluid is recommended based on chemistry and industry standard data.</p>
+							</div>
+							<div class="clk-reveal-plus" class="hotspot" id="hs3" onclick="int2Hotspot(this);"></div>
+						</div>
+					</div>
+					<div class="col hotspot-continue hidden">
+						<button class="next continue-btn hs-continue box2-continue"
+							style="display: inline-block;">CONTINUE</button>
+					</div>
+				</div>
+				<!-- <div id="contentB" class="row">
+                    <div class="col-lg-1"></div>
+                    <div class="col-md-6 col-lg-6 col-xl-6 fullHeight">
+                        
+                    </div>
+                    <div class="col-md-4 fullHeight">
+                        <img id="zerexPic" src="images/challenge_5/5_zerex.png"/>
+                        <div class="hPopup" id="hsp1">A = APPROVED<br /><br />The fluid has undergone extensive manufacturer testing. This involves years of testing that ensures the consumer is provided a genuine product that will perform.</div>
+                        <div class="hPopup" id="hsp2">M = MEETS<br /><br />The fluid has undergone significant required testing to automaker’s fluid specifications.<br /><br />Valvoline holds itself to high standards. If we claim we meet an OEM spec, we have tested the product and proved that it meets the ENTIRE spec. These specifications are listed for a reason and the consumer needs to know that when we say we meet them, it means all of them. Other products don’t provide the same assurance.</div>
+                        <div class="hPopup" id="hsp3">R = RECOMMENDED<br /><br />The fluid is recommended based on chemistry and industry standard data.</div>
+                        <div class="hotspot" id="hs1" onclick="int2Hotspot(this);"></div>
+                        <div class="hotspot" id="hs2" onclick="int2Hotspot(this);"></div>
+                        <div class="hotspot" id="hs3" onclick="int2Hotspot(this);"></div>
+                    </div>
+                    <div class="col-xl-1"></div>
+                    <button class="next continue-btn-center" id="continue-btn-2">CONTINUE</button>
+                </div> -->
+			</div>
+			<!--1.3 Product Overview-->
+			<div class="box" id="box4">
+				<iframe id='contents-activity' style="background: transparent;" name="contents-activity"
+					src='scripts/activity/challenge_5/activity_1.html'></iframe>
+				<div class='back-btn'>
+					<img src="">BACK
+				</div><button class="next continue-btn activity-continue" id="">CONTINUE</button>
+				<div class="overlay" style="z-index:4;">
+					<div class="row align-middle" id="content">
+						<div class="col topCenterText m-LeftCol m-margin-top">
+							<div class='center-text-box'>
+								<h1>Can you match up some of the benefits of ZEREX™?</h1>
+								<p>These benefits are not in the chemistry of the products but their industry acceptance
+								and usage.</p>
+								In the left column is the first half of a benefit statement. Somewhere in the right
+								column is the second part of that statement.<br /><br />
+								Slide the two pieces on top of each other to form a correct statement and add it to your
+								benefits list.<br /><br />
+								You'll need to match everything correctly on the first attempt in order to mark this
+								challenge "Successfully Complete!"
+								<br /><br />
+								<div class="headerBlue">LET'S START.</div>
+							</div>
+						</div>
+						<div class="col topCenterText m-noPadding">
+							<button class="" id="start-btn"
+								onclick="$(this).parent().parent().parent().fadeOut();">START</button>
+						</div>
+					</div>
+				</div>
+
+				<div id='popup-mask' class="q1-popup hidden-important">
+					<div class="popup-dialog">
+						<div class="popup-dialog-border">
+						<div id="popup-header-box">
+							<div class="flex-c-sb green-text">
+								<div class="red-dot"></div>CORRECT<div class="red-dot"></div>
+							</div>
+						</div>
+						<div class="top-right"><button class="exitButton" data-backdrop="static" data-keyboard="false" data-target="#popup-mask" onclick="$(this).parent().parent().parent().parent().fadeOut();"></button></div>
+							<div class="row popup-body no-padding-bottom">
+								<div class="row flex-middle no-padding">
+									<h1>Answer highlight</h1>
+									<div><p>Across industries and markets, and in countries across the world, ZEREX™ is approved for use by more OEMs than any other manufacturer.
+									</p></div>
+							</div>
+							<div class="col flex-middle">
+								<div class="flex-img"><img src="images/challenge_5/5_pop_HDlogos_combined.jpg" /></div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id='popup-mask' class="q2-popup hidden-important">
+					<div class="popup-dialog">
+						<div class="popup-dialog-border">
+						<div id="popup-header-box">
+							<div class="flex-c-sb green-text">
+								<div class="red-dot"></div>CORRECT<div class="red-dot"></div>
+							</div>
+						</div>
+						<div class="top-right"><button class="exitButton" data-backdrop="static" data-keyboard="false" data-target="#popup-mask" onclick="$(this).parent().parent().parent().parent().fadeOut();"></button></div>
+							<div class="row popup-body no-padding-bottom">
+								<div class="row flex-middle no-padding">
+									<h1>Answer highlight</h1>
+									<div><div class="margin-bottom">ZEREX™ is the ONLY coolant that these OEMs trust as their factory first fill.</div>
+									
+									<div class="row no-padding margin-bottom"><div class="col"><img src='images/challenge_5/5_pop_FFdot.png'> = Factory Fill</div><div class="col"><img src='images/challenge_5/5_pop_OEMdot.png'> = OEM Approved</div></div>
+									</div>
+							</div>
+							<div class="col flex-middle">
+								<div class="flex-img margin-bottom-x2"><img src="images/challenge_5/5_pop_table.png" /></div>
+							</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--SUMMARY-->
+			<div class="box" id="box5">
+				<div class="mask-img" style="position:absolute; top:0; overflow: visible;"><img id="learn-screen-img"
+						src="images/challenge_1/Conclsn-Photo.jpg" style="justify-content: center;"></div>
+				<div class="row align-middle learn-box" id="content" style="height: 55% !important;">
+
+					<div class="col-md-12 col-xl-6" style="text-align: left">
+						<div>
+							<h1>What Did We Learn Today?</h1>
+							<div>
+								<p>We just learned that ZEREX™ has more OEM approvals than any other manufacturer in the
+									world. This gives you a strong competitive advantage when selling Valvoline™ ZEREX™
+									antifreeze.</p>
+								<p>Remember that 40% of all engine breakdowns in heavy duty engines are related to
+									improper cooling system maintenance. It's critical for an OEM to use an approved
+									fluid so they can keep their engine running smoothly and maintain their warranty.
+								</p>
+								<p>As an added testament to the position of ZEREX™ in the industry, it currently has
+									more factory first fills than any other brand in the market today.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-xl-6 learned-continue" style="min-height: 150px;">
+						<button class="next continue-btn-center" id="continue-btn-7">CONTINUE</button>
+					</div>
+				</div>
+			</div>
+			<!--CONCLUSION-->
+			<div class="box" id="box6">
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText">
+						<div class='center-text-box'>
+							<h1>Challenge Complete!</h1>
+							<div id='result-incorrect'>
+								<p>It was a good try, but to successfully complete a challenge, you need a score of 80% or higher on the challenge questions.</p>
+								<p>You earned 0 points this time.</p>
+								<p>You do have the opportunity to retake this challenge and earn some points!</p>
+								<p>Better luck next time!</p>
+							</div>
+							<div id='result-closed'>
+								<p>Looks like you still have some work to do with this topic. You did not earn a
+								passing score and no additional points will be added to your total.</p>
+								<p>While you wait for the next challenge to hit your inbox, you might want to return to your class materials and review some of the information around this specific topic.</p>
+								<p>This challenge will remain open so you can put that review to the test by taking the challenge again. (No points can be earned any longer for this challenge.)</p>
+								<p>A new challenge will be coming soon. Better luck next time!</p>
+							</div>
+							<div id='result-three'>
+								<p>You’ve completed this challenge review. If you would like to review this topic in
+									greater depth, you may want to return to your class materials and review some of the
+									information presented there.</p>
+								<p>As a reminder, no points will be earned for completing a challenge review.</p>
+							</div>
+							<div id='result-correct'>
+								<p>Great work!</p>
+								<p>You just earned yourself <span id="score">10</span> points.</p>
+								<p>Remember, you can’t earn any additional points from this challenge, but you can use
+									it as reference.</p>
+								<p>Look for your next challenge soon.</p>
+							</div>
+							<!-- <div>For more information on this topic, check out some additional resources <a
+									id="additional-resource" href="" target="_blank">here</a>.</div> -->
+						</div>
+					</div>
+					<div class="col topCenterText col-sm">
+						<div>
+							<button id="gameover-btn" type="submit">CONTINUE</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id='progress-bar'>
+			<div class='line'></div>
+			<div class='pin intro'></div>
+			<div class='pin quest'></div>
+			<div class='pin quest'></div>
+			<div class='pin quest'>
+				<div class='q-points'></div>
+			</div>
+			<div class='pin quest'></div>
+			<div class='pin conclusion'></div>
+			<div class='score'>
+				0
+			</div>
+		</div>
+		<footer>
+			<div>
+				CHALLENGE #5
+			</div>
+		</footer>
+		<script src="scripts/polyfill.min.js">
+		</script> <!-- Optional JavaScript -->
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+		<script src="scripts/jquery-3.4.1.js"></script>
+		<script src="scripts/popper.js/dist/umd/popper.min.js"></script>
+		<script src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+		</script> <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+		<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js">
+		</script>
+		<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js">
+		</script>
+		<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js">
+		</script>
+		<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js">
+		</script>
+		<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js">
+		</script>
+		<script defer src="bin/fb-auth.js">
+		</script>
+		<script src="bin/rules_popup_c5_hd.js">
+		</script>
+		<script src="https://code.createjs.com/1.0.0/easeljs.min.js">
+		</script>
+		<script>
+
+			var fcArray = [0, 0, 0, 0];
+			var fcString = '1,1,1,1';
+			var fccheckProg = function (num) {
+				fcArray[num] = 1;
+				if (fcArray.toString() == fcString) {
+					$('#box2 .flashCard-continue').removeClass("hidden").hide().fadeIn();
+				}
+			};
+
+			var hsArray = [0, 0, 0, 0];
+			var hsString = '1,1,1,1';
+			var hscheckProg = function (num) {
+				hsArray[num] = 1;
+				if (hsArray.toString() == hsString) {
+					$('.hs-continue').parent().removeClass("hidden").hide().fadeIn();
+				}
+			};
+
+			var fc2Array = [0, 0, 0];
+			var fc2String = '1,1,1';
+			var fc2checkProg = function (num) {
+				fc2Array[num] = 1;
+				if (fc2Array.toString() == fc2String) {
+					$('#box5 .flashCard-continue').removeClass("hidden").hide().fadeIn();
+				}
+			};
+
+			//    function flashCard_1(el) {
+			//        $(el).html('<div>Approved and endorsed for <font class="emphasisBold">Cummins™<\/font> natural gas engine oil specifications <font class="emphasisBold">CES 20085<\/font> and <font class="emphasisBold">CES 20092<\/font>. This allows nearly double the oil drain interval of products meeting only <font class="emphasisBold">CES 20085<\/font>.</div>').removeClass('flashCard-hover').addClass('flashCard-done').attr( "disabled", "disabled" );
+			//        fccheckProg(0);
+
+			//    }
+
+			//    function flashCard_2(el) {
+			// 	$(el).html('<div>Licensed and approved for API CK-4 diesel engine applications.</div>').removeClass('flashCard-hover').addClass('flashCard-done').attr( "disabled", "disabled" );
+			//        fccheckProg(1);
+			//    }
+
+			//    function flashCard_3(el) {
+			// 	$(el).html('<div>Licensed and approved for API SN gasoline engine applications.</div>').removeClass('flashCard-hover').addClass('flashCard-done').attr( "disabled", "disabled" );
+			//        fccheckProg(2);
+			//    }
+
+			function flashCard_1(el) {
+				$(el).html('<div>The regular maintenance of an engine’s cooling system is usually considered to be of minor importance—potentially an extremely costly mistake.</div>').removeClass('flashCard-hover').addClass('flashCard-done').attr("disabled", "disabled");
+				fccheckProg(0);
+			}
+
+			function flashCard_2(el) {
+				$(el).html('<div>Research has shown that 40% of all engine problems in heavy duty engines are related, directly or indirectly, to improper cooling system maintenance.</div>').removeClass('flashCard-hover').addClass('flashCard-done').attr("disabled", "disabled");
+				fccheckProg(1);
+			}
+
+			function flashCard_3(el) {
+				$(el).html('<div>Compatibility with the engine components and the coolant that exists in the engine is important to prevent corrosion and other issues. Colors are not an indicator of compatibility.</div>').removeClass('flashCard-hover').addClass('flashCard-done').attr("disabled", "disabled");
+				fccheckProg(2);
+			}
+			function flashCard_4(el) {
+				$(el).html('<div>Make sure the coolant you select meets or exceeds the requirements for that engine.</div>').removeClass('flashCard-hover').addClass('flashCard-done').attr("disabled", "disabled");
+				fccheckProg(3);
+			}
+
+
+			var revealPlus = function () {
+				if ($(this).css("opacity") == "1") {
+					var elIndex = $(this).parent().attr("class").trim().slice(-1);
+					$('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x').addClass('clk-reveal-complete-plus');
+					$('.clk-reveal-plus').css({ "opacity": ".5", "pointer-events": "none" });
+					$('.clk-reveal-complete-plus').css({ "opacity": ".5", "pointer-events": "none" });
+					$(this).css({ "opacity": "1", "pointer-events": "auto" });
+					$(this).addClass('clk-reveal-complete-x')
+					$('.clk-reveal-x').addClass('clk-reveal-plus');
+					$('.clk-reveal-x').removeClass('clk-reveal-x');
+					$(this).unbind();
+					$(this).bind('click', revealX);
+					$(this).removeClass('clk-reveal-plus');
+					$(this).addClass('clk-reveal-x');
+					$(this).parent().parent().find('.content-box').hide();
+					$('.clk-reveal-plus').unbind();
+					$('.clk-reveal-plus').bind('click', revealPlus);
+					$('.content-box-' + elIndex).fadeIn();
+					hscheckProg(elIndex - 1)
+				}
+			}
+
+			var revealX = function () {
+				$('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x');
+				$(this).addClass('clk-reveal-complete-plus');
+				$('.clk-reveal-plus').css({ "opacity": "1", "pointer-events": "auto" });
+				$('.clk-reveal-complete-plus').css({ "opacity": "1", "pointer-events": "auto" });
+				$('.clk-reveal-x').addClass('clk-reveal-plus');
+				$('.clk-reveal-x').removeClass('clk-reveal-x');
+				$(this).unbind();
+				$(this).bind('click', revealPlus);
+				$(this).removeClass('clk-reveal-x')
+				$(this).addClass('clk-reveal-plus');
+				$('.clk-reveal-plus').unbind();
+				$('.clk-reveal-plus').bind('click', revealPlus);
+				$('.content-box').hide();
+			}
+
+			$('#challenge-btn', window.parent.document).html('Zerex™ Approvals');
+			var thisChallengNumber = 5;
+			$('#additional-resource').attr('href', 'https://valvoline.widencollective.com/portals/nrnye1el/HDAntifreeze');
+			parent.setBookmarking("HD", thisChallengNumber, .2);
+			parent.retrieveAttempt(thisChallengNumber, "HD");
+
+			//QUIZ
+			var ifrm = window.frameElement; // reference to iframe element container
+			var doc = ifrm.ownerDocument; // reference to container's document
+			var thisClass = function () {
+				if (ifrm.src.includes("hd")) {
+					return "HD";
+				} else if (ifrm.src.includes("ld")) {
+					return "LD";
+				} else if (ifrm.src.includes("vps")) {
+					return "VPS";
+				}
+			}
+
+			//console.log(thisClass())
+			////////console.log(parent.activities)
+			// $(doc).find('header').css('border-bottom', 'none');
+			ifrm.style.top = '-118px';
+			ifrm.style.position = 'absolute';
+			ifrm.style.height = '100%';
+			ifrm.style.zIndex = '1005';
+
+			var quiz = [{
+				// Q1
+				question: '<p>Premium Blue One Solution™ can help an engine resist thermal breakdown.</p>',
+				type: 'MC',
+				answers: [
+					'True',
+					'False'
+				],
+				choices: [],
+				correct: 1,
+				correct_rem: '<p>That was a correct statement.</p><p>Premium Blue One Solution™ can help an engine resist thermal breakdown. And it answers the big question — Why use Premium Blue One Solution™?</p><p>OEMs are moving toward engines with a higher power density and higher combustion temperatures. With those higher temperatures, OEMs can achieve better efficiency in their engines.</p><p>And that’s where Premium Blue One Solution™ comes in as it provides excellent high temperature oxidation resistance to prevent thermal breakdown in an engine.</p>',
+				incorrect_rem: '<p>That’s not right.</p><p>That was a correct statement. Premium Blue One Solution™ can help an engine resist thermal breakdown. And it answers the big question — Why use Premium Blue One Solution™?</p><p>OEMs are moving toward engines with a higher power density and higher combustion temperatures. With those higher temperatures, OEMs can achieve better efficiency in their engines.</p><p>And that’s where Premium Blue One Solution™ comes in as it provides excellent high temperature oxidation resistance to prevent thermal breakdown in an engine.</p>',
+				fail_rem: '<p>That’s not right.</p><p>Premium Blue One Solution™ can help an engine resist thermal breakdown. And it answers the big question — Why use Premium Blue One Solution™?</p><p>OEMs are moving toward engines with a higher power density and higher combustion temperatures. With those higher temperatures, OEMs can achieve better efficiency in their engines.</p><p>And that’s where Premium Blue One Solution™ comes in as it provides excellent high temperature oxidation resistance to prevent thermal breakdown in an engine.</p>'
+			}]
+
+
+
+			var passed = true;
+			var questionPointsPossible = 20;
+			var points = [80]
+			var attemptsLeft;
+			var passPercent = 80;
+			var boxLocation = 0;
+			var attemptCount = 0;
+			var furthestLoc = 0;
+			var totalPoints = function () {
+				var sum = 0;
+				for (var i = 0; i < points.length; i++) {
+					sum += points[i]
+				}
+				return sum;
+
+			}();
+
+			//var attempts = [1, 1, 1, 1]
+
+			var q = function () {
+				return quiz[qIndex];
+			}
+
+			var currentAnswer;
+
+			function RenderQuestion() {
+				$('.clk-reveal-plus').bind('click', revealPlus);
+				for (var qIndex = 0; qIndex < quiz.length; qIndex++) {
+					$('.question-' + (qIndex + 1) + ' #question-num').html('Question ' + (qIndex + 1));
+					$('.question-' + (qIndex + 1) + ' .question-text').html(quiz[qIndex].question);
+
+					for (var i = 0; i < quiz[qIndex].answers.length; i++) {
+
+						quiz[qIndex].choices.push(i + 1)
+
+						var div = document.createElement('div')
+						$(div).append('<input id="button' + (i + 1) + '" type="radio" name="quiz" value="' + (i + 1) +
+							'" /><div id="answer' + (i + 1) + '"class="answer pointer"><\/div>');
+						$(div).append('<label for="button' + (i + 1) + '">' + quiz[qIndex].answers[i] + '<\/label>');
+						$('.question-' + (qIndex + 1) + ' .answer-container').append(div);
+					}
+				}
+				var radioCheck = function () {
+					$('.remediation-retry').unbind('click', runCheck);
+					$('.reveal-btn-m').unbind('click', runCheck);
+					$('.reveal-btn-m').bind('click', runCheck);
+					currentAnswer = $(this).attr('id').slice(-1);
+					currentQuestion = $(this).parent().parent().parent().attr('class').slice(-1);
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] != 0 && attemptsLeft[currentQuestion - 1] < 2) {
+						$('.remediation-retry').bind('click', runCheck);
+						$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+					} else {
+						$('.remediation-retry').unbind('click', runCheck);
+						$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+					}
+					if (attemptsLeft[currentQuestion - 1] != 0) {
+						$('.reveal-btn').unbind('click', runCheck);
+						$('.reveal-btn').bind('click', runCheck);
+					} else {
+						$('.reveal-btn').unbind('click', runCheck);
+					}
+
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+						$('.reveal-btn-m').bind('click', runCheck);
+					}
+
+					if (quiz[currentQuestion - 1].type == "MC") {
+						$('.answer-on').removeClass('answer-on').addClass('pointer');
+						$(this).addClass("answer-on").removeClass('pointer');
+					} else if (quiz[currentQuestion - 1].type == "MR") {
+						$('.answer-on').removeClass('answer-on').addClass('pointer');
+						$(this).addClass("answer-on").removeClass('pointer');
+					}
+				}
+
+				$('.answer').bind('click', radioCheck);
+				$('.remediation-retry').on('click', function () {
+					$('.remediation-retry').unbind('click', runCheck);
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+						if ($(window).width() < 999) {
+							$('.attempt-1').hide();
+							$('.attempt-2').hide();
+							$(this).parent().addClass("m-hide")
+							$(this).parent().parent().parent().parent().find('.attempt-container').addClass("m-hide");
+						} else {
+							$(this).parent().parent().parent().parent().find('.attempt-container').removeClass("m-hide")
+							$(this).parent().removeClass("m-hide");
+							$('.remediation-retry .warn-sel-ans').css('opacity', '1');
+						}
+					}
+				})
+
+
+
+				//Returns array of selected answers from a MR question
+				function getAnswers() {
+					var returnAnswers = [];
+					$(".answer").each(function () {
+						if ($(this).hasClass('answer-on')) {
+							returnAnswers.push(Number($(this).attr('id').slice(-1)));
+						}
+					});
+					return returnAnswers;
+				}
+
+				function arraysEqual(_arr1, _arr2) {
+					if (!Array.isArray(_arr1) || !Array.isArray(_arr2) || _arr1.length !== _arr2.length)
+						return false;
+					var arr1 = _arr1.concat().sort();
+					var arr2 = _arr2.concat().sort();
+					for (var i = 0; i < arr1.length; i++) {
+						if (arr1[i] !== arr2[i])
+							return false;
+					}
+					return true;
+				}
+
+				var runCheck = function () {
+					$('.remediation-retry').unbind('click', runCheck);
+					console.log(attemptsLeft[currentQuestion - 1])
+					if (attemptsLeft[currentQuestion - 1] != 0) {
+						var correctAnswer = quiz[currentQuestion - 1].correct;
+						var thisQuestionAttemptsLeft = attemptsLeft[currentQuestion - 1];
+
+						if (quiz[currentQuestion - 1].type == "MC") {
+							$('.reveal-btn').eq(0).unbind('click', runCheck);
+
+							quiz[currentQuestion - 1].choices[currentAnswer - 1] = 0;
+							for (var i = 0; i < quiz[currentQuestion - 1].choices.length; i++) {
+								if (quiz[currentQuestion - 1].correct == currentAnswer) {
+									//correct answer
+									$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+										"pointer");
+								} else if (attemptsLeft[currentQuestion - 1] == 0) {
+									//failed question
+									$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+										"pointer");
+								} else if (quiz[currentQuestion - 1].choices[i] == 0) {
+									//incorrect answer
+									$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+										"pointer answer");
+								} else {
+									//rebind answers
+									$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind();
+									$('.question-' + currentQuestion + ' #answer' + (i + 1)).bind('click', radioCheck).addClass("pointer");
+								}
+							}
+
+							var holder = 0;
+							if (quiz[currentQuestion - 1].correct == currentAnswer) {
+								$('.reveal-btn:eq(' + 0 + ')').hide();
+								$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-3');
+								$('.reveal-btn:eq(' + 0 + ')').hide();
+								$('.remediation:eq(' + 0 + ')').removeClass('m-hide')
+								$('.attempt-container:eq(' + 0 + ')').removeClass("m-hide")
+								$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-correct');
+								$('.remediation:eq(' + 0 + ')').show();
+								$('.remediation-retry:eq(' + 0 + ')').hide();
+								$('.remediation-continue:eq(' + 0 + ')').show();
+								$('.remediation-txt:eq(' + 0 + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].correct_rem);
+								$('.remediation-icon:eq(' + 0 + ')').css("background-image",
+									"url(images/challenge_2/images/Correct_Icon.png)");
+								$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+									"url(images/challenge_2/images/Correct.png)").addClass('remediation-reveal')
+									.removeClass("pointer answer");
+								$('.question-' + currentQuestion + ' .answer').css('cursor', 'auto');
+								$('.attempt-1').hide();
+								$('.attempt-2').hide();
+							} else {
+
+								console.log($('.reveal-btn:eq(' + 0 + ')'))
+								console.log($('.reveal-btn:eq(' + (currentQuestion) + ')'))
+								$('.answer-on').removeClass('answer-on');
+								//$('.reveal-btn:eq(' + 0 + ')').addClass('m-show')
+								$('.reveal-btn:eq(' + 0 + ')').hide();
+								$('.remediation-continue:eq(' + 0 + ')').hide();
+								$('.remediation-txt:eq(' + 0 + ')').addClass('white-txt').html(quiz[currentQuestion - 1].incorrect_rem);
+								$('.remediation-icon:eq(' + 0 + ')').css("background-image",
+									"url(images/challenge_2/images/Incorrect_Icon.png)");
+								$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+									"url(images/challenge_2/images/Incorrect.png)").addClass('remediation-reveal')
+									.removeClass("pointer answer");
+
+								$('.attempt-1').hide();
+								$('.attempt-2').hide();
+								$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-3');
+								$('.remediation:eq(' + 0 + ')').removeClass('m-hide')
+								$('.attempt-container:eq(' + 0 + ')').removeClass("m-hide")
+								$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-3');
+								$('.remediation:eq(' + 0 + ')').show();
+								$('.remediation-retry:eq(' + 0 + ')').hide();
+								$('.remediation-continue:eq(' + 0 + ')').show();
+								$('.remediation-txt:eq(' + 0 + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].fail_rem);
+								$('#progress-bar .quest').eq(currentQuestion - 1).addClass('quest-retry')
+								$('.question-' + currentQuestion + ' .answer-container div').each(function (index, elem) {
+									$('.question-' + currentQuestion + ' .answer').unbind().css('cursor', 'auto');
+								});
+
+								attemptsLeft[currentQuestion - 1]--;
+								updateProgressTracker();
+							}
+						}
+						// for (var i = 0; i < q().answers.length; i++) {
+						// if (correctAnswer == (i + 1)) {
+						//     $('#answer' +  (i + 1)).css("background-image","url(images/challenge_2/images/Correct.png)").addClass('remediation-reveal');
+						// } else {
+						//     $('#answer' +  (i + 1)).css("background-image","url(images/challenge_2/images/Incorrect.png)").addClass('remediation-reveal');
+						// }
+						// }
+					}
+
+
+				} // end of runCheck
+				$('.reveal-btn').bind('click', runCheck);
+
+			}
+function quizPopup1() {
+	$('.q1-popup').removeClass('hidden-important').css('display', 'flex').hide().fadeIn()
+}
+
+function quizPopup2() {
+	$('.q2-popup').removeClass('hidden-important').css('display', 'flex').hide().fadeIn()
+}
+			(function () {
+				
+				$('#header-image', window.parent.document).fadeIn();
+				$('.next').click(function (box) {
+					var curLocation = boxLocation + 1;
+					var nextLocation = boxLocation + 2;
+					var currentBox = $('#box' + curLocation)
+					var nextBox = $('#box' + nextLocation)
+					$(currentBox).animate({
+						left: '-50%'
+					}, 500, function () {
+						$(currentBox).css('left', '150%');
+						$(currentBox).appendTo('#container');
+					});
+					$(nextBox).animate({
+						left: '50%'
+					}, 500);
+					if (curLocation == 2) { $('#box2 #video-popup-1-mask').fadeOut(); }
+					boxLocation++;
+					//nextAction(curLocation);
+					updateProgressTracker()
+				});
+
+				$('.back-btn').click(function () {
+					var preLocation = boxLocation;
+					var curLocation = boxLocation + 1;
+					var currentBox = $('#box' + curLocation)
+					var prevBox = $('#box' + preLocation)
+					console.log(curLocation)
+					$(currentBox).animate({
+						left: '150%'
+					}, 500, function () {
+						$(prevBox).css('left', ' ');
+						$(prevBox).prependTo('#container');
+					});
+					$(prevBox).css('left', '-150%').animate({
+						left: '50%'
+					}, 500);
+					if (curLocation == 2) {
+						$('video').each(function () {
+							$(this).get(0).pause();
+							$('#box2 #video-container').hide()
+						});
+					}
+					boxLocation--;
+					updateProgressTracker()
+					//backAction(boxLocation)
+				});
+
+
+				$('#gameover-btn').on('click', function (e) {
+					parent.exitChallenge();
+					if (passed && parent.intAttempt != 4) {
+						challengeComplete(thisClass(), thisChallengNumber, score, true);
+					} else if (parent.intAttempt != 4) {
+						challengeComplete(thisClass(), thisChallengNumber, score, false);
+					} else {
+						parent.navigateIframe("portal.html");
+					}
+					$('#gameover-btn').unbind("click");
+				})
+
+				var $video = $('video'),
+					$window = $('#video-container');
+				$footer = $('footer')
+
+				$(window).resize(function () {
+					var contentsActivity = $('#contents-activity');
+					console.log(contentsActivity)
+					var footerHeightStr = $('footer').css('height');
+					var footerHeight = (footerHeightStr.substring(0, footerHeightStr.length - 2) - 1);
+					$('.attempt-1, .attempt-2').css('bottom', footerHeight + "px");
+					var height = $('#box6').height();
+					//contentsActivity.css('height', height);
+					var cWidth = contentsActivity.width(),
+						wWidth = $('#box6').width(),
+						minHeight = $('#box6').height(),
+						marginLeftAdjust = (wWidth - cWidth) / 2;
+					contentsActivity.css({
+						'height': minHeight + "!important;",
+						'left': marginLeftAdjust,
+						'min-width': "950px; !important;",
+						'min-height': "535px !important;"
+					});
+					console.log('continer height: ' + height)
+					console.log('content height: ' + contentsActivity.height())
+					//console.log(contentsActivity.offsetLeft)
+				}).resize();
+
+			})();
+
+			function nextBox(box) {
+				var curLocation = boxLocation + 1;
+				var nextLocation = boxLocation + 2;
+				var currentBox = $('#box' + curLocation)
+				var nextBox = $('#box' + nextLocation)
+				$(currentBox).animate({
+					left: '-50%'
+				}, 500, function () {
+					$(currentBox).css('left', '150%');
+					$(currentBox).appendTo('#container');
+				});
+				$(nextBox).animate({
+					left: '50%'
+				}, 500);
+
+				boxLocation++;
+				//nextAction(curLocation);
+				updateProgressTracker()
+			}
+
+			function playVideo_1() {
+				$('#box2 #video-container').fadeIn()
+				$('#box2 #video-popup-1-mask').fadeOut();
+				$('video')[0].play();
+			}
+			function activityCheck() {
+
+
+					var userPoints = 0;
+					for (var i = 0; i < points.length; i++) {
+						userPoints += points[i]
+					}
+
+					scorePercent = parseInt((userPoints / totalPoints) * 100);
+
+					var attempt = parent.intAttempt;
+					console.log('Check score: ' + scorePercent >= passPercent)
+						if (scorePercent >= passPercent && attempt < 4) {
+							$('#result-correct').show();
+							$('#gameover-btn').show();
+							$('#result-incorrect').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-retry').hide();
+							$('#retry-btn').hide();
+							console.log('Passed in first 3 attempts')
+						} else if (scorePercent < passPercent && attempt < 4) {
+							passed = false;
+							$('#result-incorrect').show();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Failed in one of the first 3 attempts')
+						} else if (attempt == 5) {
+							passed = false;
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').show();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Challenge Closed. Reviewing. No Points awarded.')
+						} else if (attempt == 4) {
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').show();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Just reviewing. Good Job!')
+						}
+
+
+
+				var curLocation = 4;
+				var nextLocation = 5;
+				var currentBox = $('#box' + curLocation)
+				var nextBox = $('#box' + nextLocation)
+				$(currentBox).animate({
+					left: '-50%'
+				}, 500, function () {
+					$(currentBox).css('left', '150%');
+					$(currentBox).appendTo('#container');
+				});
+				$(nextBox).animate({
+					left: '50%'
+				}, 500);
+
+				boxLocation++;
+				//nextAction(curLocation);
+				updateProgressTracker()
+
+			}
+
+			function updateProgressTracker() {
+				var userPoints = 0
+				for (var i = 0; i < points.length; i++) {
+					userPoints += points[i]
+				}
+				score = (userPoints);
+				$('.score').html(score + " POINTS")
+				$('#score').html(score)
+				$('#progress-bar .quest .q-points').each(function (i, obj) {
+					$('#progress-bar .quest .q-points').eq(i).html(points[i])
+				})
+				console.log("HERE:" + boxLocation)
+				switch (boxLocation) {
+
+					case 1:
+						$('#progress-bar .pin').eq(boxLocation - 1).addClass('intro-down');
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+						break;
+					case 2:
+
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+						break;
+					case 3:
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+						break;
+					case 4:
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('conclusion-down');
+						break;
+					case 5:
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+						$('#progress-bar .pin').eq(boxLocation).addClass('conclusion-down');
+						break;
+					default:
+						$('#progress-bar .pin').eq(0).removeClass('intro-down');
+						$('#progress-bar .pin').eq(1).removeClass('scene-down');
+						break;
+				}
+			};
+			updateProgressTracker();
+			RenderQuestion();
+
+
+			function int1Button(num) {
+				$("#flashcard" + (num + 1)).css('display', 'none');
+				$('#flashcardR' + (num + 1)).css('display', 'block');
+				int1[num] = 1;
+				if (int1[0] == 1 && int1[1] == 1 && int1[2] == 1 && int1[3] == 1) {
+					$('#continue-btn-1').css('display', 'block');
+				}
+			}
+var int2 = [0,0,0]
+			function int2Hotspot(el) {
+				if (!$(el).hasClass('exit')) {
+					$(".hotspot").removeClass('exit');
+					$(".hPopup").removeClass('active');
+					var whichOne = $(el).attr('id').slice(-1);
+					console.log($(el).attr('id'))
+					$(el).addClass('exit');
+					$("#hsp" + whichOne).addClass('active');
+					int2[Number(whichOne - 1)] = 1;
+					if (int2[0] == 1 && int2[1] == 1 && int2[2] == 1) {
+						$('.hs-continue').parent().removeClass("hidden").hide().fadeIn();
+				}
+				else {
+					$(".hotspot").removeClass('exit');
+					$(".hPopup").removeClass('active');
+				}
+			}
+		}
+		</script>
+</body>
+
+</html>

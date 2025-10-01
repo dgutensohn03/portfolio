@@ -1,0 +1,69 @@
+﻿#coursemap {
+	padding-left: 12px;
+	list-style-type: none;
+	font-weight: bold;
+}
+
+#coursemap > ul li {
+	cursor: pointer;
+	font-weight: normal;
+}
+
+#coursemap li:not(.group):hover {
+	background-color: lightgray;
+}
+
+/* locked item color */
+#coursemap li[data-progress="0"] {
+	cursor: not-allowed;
+	list-style: disc;
+	color: gray;
+}
+
+/* unlocked item bullet color */
+#coursemap li[data-progress="1"] {
+	list-style: disc;
+}
+
+/* viewed item bullet color */
+#coursemap li[data-progress="2"] {
+	list-style: disc;
+}
+
+/* complete item bullet color */
+#coursemap li[data-progress="3"] {
+	list-style-image: url('images/check.png');
+}
+
+/* Group Styles */
+#coursemap .group {
+	position: relative;
+	list-style: none;
+}
+
+#coursemap input {
+	position: absolute;
+	opacity: 0;
+}
+
+	#coursemap input + label + ul {
+		display: none;
+		padding-left: 20px;
+	}
+
+	#coursemap input:checked + label + ul {
+		display: block;
+	}
+
+#coursemap label::before {
+	font: normal normal normal 14px/1 FontAwesome;
+	position: absolute;
+	left: -16px;
+	margin-top: 0.25em;
+	content: "\f196";
+}
+
+#coursemap input:checked + label::before {
+	font-family: FontAwesome;
+	content: "\f147";
+}

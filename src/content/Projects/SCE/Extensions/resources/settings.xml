@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  <ID>resources</ID>
+  <DisplayName>Resources</DisplayName>
+  
+  <Type>Dialog</Type>
+  <ButtonSize>double-wide</ButtonSize>
+  <ButtonTooltip>Resources</ButtonTooltip>
+  <ShowTitleBar>true</ShowTitleBar>
+  <Width>100%</Width>
+
+  <Animation direction="up" />
+</Settings>

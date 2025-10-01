@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<title></title>
+	<style>
+		html, body {
+			overflow: hidden;
+			margin: 0px;
+			padding: 0px;
+		}
+
+        #soundFix {
+            background: url("../../Assets/Images/Shell/playbutton.png");
+            width: 1280px;
+            height: 720px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin: 0px;
+            padding: 0px;
+            display: none;
+            z-index: 100;
+        }
+
+        @font-face {
+			font-family: 'Source Sans Pro';
+			src: url('../../Assets/Fonts/SourceSansPro-Bold.eot');
+			src: url('../../Assets/Fonts/SourceSansPro-Bold.eot?iefix') format('eot'), url('../../Assets/Fonts/SourceSansPro-Bold.woff') format('woff'), url('../../Assets/Fonts/SourceSansPro-Bold.ttf') format('truetype'), url('../../Assets/Fonts/SourceSansPro-Bold.svg#webfont') format('svg');
+		}
+
+		@font-face {
+			font-family: 'Museo Slab 700';
+			src: url('../../Assets/Fonts/MuseoSlab-700.eot');
+			src: url('../../Assets/Fonts/MuseoSlab-700.eot?iefix') format('eot'), url('../../Assets/Fonts/MuseoSlab-700.woff') format('woff'), url('../../Assets/Fonts/MuseoSlab-700.ttf') format('truetype'), url('../../Assets/Fonts/MuseoSlab-700.svg#webfont') format('svg');
+		}
+
+        
+	</style>
+</head>
+<body onunload="Slide.Destroy()" onbeforeunload="Slide.Destroy()">
+    <canvas id="canvas" width="1280" height="720" style="background-color:#FFFFFF;"></canvas>
+    <div id="soundFix"></div>
+	<div id="domElementContainer"></div>
+
+	<script src="../../Source/JS/jQuery/jquery-1.11.1.min.js"></script>
+    <script src="../../Source/JS/CreateJS/easeljs-0.7.1.min.js"></script>
+    <script src="../../Source/JS/CreateJS/tweenjs-0.5.1.min.js"></script>
+    <script src="../../Source/JS/CreateJS/movieclip-0.7.1.min.js"></script>
+    <script src="../../Source/JS/CreateJS/preloadjs-0.4.1.min.js"></script>
+	<script src="../../Source/JS/Howler/howler.core.min.js"></script>
+    <script src="../../Source/XM/Events/XMEvent.js"></script>
+    <script src="../../Source/XM/Helpers.js"></script>
+	<script src="../../Source/XM/Core/TemplateBase.js"></script>
+    <script src="../../Source/XM/Slides/CreateJSSlide.js"></script>
+    <script>
+        $.getScript('../Lesson' + $.getUrlVar('lesson') + '/Slide' + $.getUrlVar('slide') + '.js', function () {
+            Slide.Initialize();
+        }).fail(function(data, status, error) {
+        	XMError('Error running slide script. ' + error);
+        });
+    </script>
+</body>
+</html>

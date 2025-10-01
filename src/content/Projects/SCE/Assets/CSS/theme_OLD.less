@@ -1,0 +1,48 @@
+/* UI Element Sizes */
+@headerHeight: 72px;
+
+@contentAreaWidth: 960px;
+@contentAreaHeight: 540px;
+
+@statusBarHeight: 22px;
+@navBarHeight: 43px;
+@trayHeight: 120px;
+
+@smallMargin: 3px;
+
+/* Global Styles */
+
+@backgroundColor: black;
+@primaryColor: #EBECEC;
+
+@accentColor: #fcd14d;
+@accentColor2: spin(@accentColor, 180);
+
+@fontColor: black;
+@accentFont: black;
+@accent2Font: white;
+
+@xlargeFont: 32px;
+@largeFont: 22px;
+@mediumFont: 15px;
+@smallFont: 12px;
+
+/* Fonts */
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../Fonts/OpenSans-Regular-webfont.eot'); 
+    src: url('../Fonts/OpenSans-Regular-webfont.eot?iefix') format('eot'), 
+         url('../Fonts/OpenSans-Regular-webfont.woff') format('woff'),
+         url('../Fonts/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('../Fonts/OpenSans-Regular-webfont.svg#webfont') format('svg');
+}
+
+@fontFamily: "OpenSans", "Arial", "Helvetica", "sans-serif";
+
+/* Dialogs */
+@dialogBackground: white;
+
+@import 'KendoUI/web/kendo.flat.xm.less';
+@import 'Structural/shell';
+@import 'Visual/shell';

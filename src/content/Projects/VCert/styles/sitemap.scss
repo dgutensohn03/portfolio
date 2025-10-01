@@ -1,0 +1,95 @@
+#mapContainer
+{
+    max-width:900px;
+    margin-bottom:60px;
+}
+
+.mapTop {
+    font-size: 96px;
+    font-weight: 500;
+    font-family:Oswald;
+    position:relative;
+    text-align:center;
+}
+
+.mapHeader
+{
+    font-size: 20pt;
+    font-weight:bold;
+    margin:60px 0px 30px 0px;
+    font-family: Roboto;
+}
+
+.mapEntry
+{
+    font-weight: bold;
+    width: 100%;
+    padding: 20px 0px 20px 60px;
+    font-size: 17pt;
+    border-bottom: 1px solid black;
+    background-image: url(../images/SM_bttn_UP.png);
+    background-repeat: no-repeat;
+    background-size: 35px 35px;
+    background-position: 0px 19px;
+    cursor:pointer;
+    color:black;
+    text-decoration:none;
+    font-family: Roboto;
+}
+
+.mapEntry:hover
+{
+    background-image: url(../images/SM_bttn_DWN.png);
+    color:black;
+}
+
+.mapLink:hover
+{
+    text-decoration: none;
+}
+
+.smBack {
+    background: url(../images/challenge/Back_bttn_UP.png) left center no-repeat;
+    color: #E1261C;
+    font-family: Oswald;
+    width: 140px;
+    font-size: 40px;
+    left: 41px;
+    z-index: 1;
+    cursor: pointer;
+    text-align: right;
+    position: relative;
+    top: 30px;
+}
+
+.smBack:hover {
+    background: url('../images/challenge/Back_bttn_DWN.png')left center no-repeat;
+}
+
+#adminLinks
+{
+    display:none;
+}
+
+@media only screen and (max-width:767.98px)
+{
+    .mapTop {
+        font-size: 64px;
+        margin-top:55px;
+    }
+
+    .smBack {
+        font-size: 28px;
+        left: 20px;
+        top: 30px;
+        height:50px;
+        width:120px;
+        padding-top:2px;
+    }
+
+    #mapContainer
+    {
+        margin-left:20px;
+        width:calc(100% - 40px);
+    }
+}

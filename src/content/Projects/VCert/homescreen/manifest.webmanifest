@@ -1,0 +1,20 @@
+{
+    "background_color": "gray",
+    "description": "",
+    "display": "fullscreen",
+    "icons": [
+      {
+        "src": "https://lhtclients.com/Projects/Valvoline/VCert/prod/homescreen/images/appIcons/android-icon-192x192.png",
+        "sizes": "192x192",
+        "type": "image/png"
+      },
+      {
+        "src": "https://lhtclients.com/Projects/Valvoline/VCert/prod/homescreen/images/appIcons/android-icon-512x512.png",
+        "sizes": "512x512",
+        "type": "image/png"
+       }
+    ],
+    "name": "VCert Performance Traning",
+    "short_name": "VCert",
+    "start_url": "index.html"
+  }

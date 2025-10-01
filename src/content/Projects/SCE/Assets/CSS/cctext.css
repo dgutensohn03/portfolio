@@ -1,0 +1,36 @@
+/* cc text background box size and color */
+#cctext-container {
+	display: none;
+    box-sizing: border-box;
+	clear:both;
+	background-color: #424142;
+	width: 100%;
+	height: 110px;
+	padding: 0px 3px 3px 3px;
+}
+
+/* cc text holding, scrolling, box */
+#cctext-container div {
+    box-sizing: border-box;
+
+	height: 100%;
+	background-color: white;
+	padding: 6px;
+	overflow-y: scroll;
+
+	font-family: calibri, arial, helvetica, sans-serif;
+	font-size: 17px; /* approx 13pt */
+}
+
+/* cc text title */
+#cctext-container div h4 {
+	margin: 3px 0px;
+	
+	font-family: calibri, arial, helvetica, sans-serif;
+	font-size: 17px; /* approx 13pt */
+}
+
+/* cc text text */
+#cctext-container div p {
+	margin: 0.5em 6px;
+}

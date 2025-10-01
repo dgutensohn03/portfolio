@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title></title>
+    <style>
+        html, body {
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+            background-color: black;
+        }
+
+        #player2, #player3, #player4, #player5 {
+            background-color: transparent;
+        }
+
+            #player1::-webkit-media-controls, #player2::-webkit-media-controls, #player3::-webkit-media-controls, #player4::-webkit-media-controls, #player5::-webkit-media-controls, #player6::-webkit-media-controls, #player7::-webkit-media-controls {
+                display: none !important;
+            }
+
+        #soundFix {
+            background: url("../../Assets/Images/Shell/playbutton.png");
+            width: 960px;
+            height: 420px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin: 0px;
+            padding: 0px;
+            display: none;
+            z-index: 100;
+        }
+
+        #btn-container {
+            z-index: 999;
+            visibility: hidden;
+        }
+
+        #btn1 {
+            background: url("../../Assets/Images/invisBtn.png");
+            width: 374px;
+            height: 183px;
+            position: absolute;
+            left: 284px;
+            top: 313px;
+            -webkit-tap-highlight-color: transparent;
+            /*background-color: green;*/
+            cursor: pointer;
+        }
+
+        #btn2 {
+            background: url("../../Assets/Images/invisBtn.png");
+            width: 222px;
+            height: 271px;
+            position: absolute;
+            left: 250px;
+            top: 38px;
+            -webkit-tap-highlight-color: transparent;
+            /*background-color: green;*/
+            cursor: pointer;
+        }
+
+        #btn3 {
+            background: url("../../Assets/Images/invisBtn.png");
+            width: 222px;
+            height: 309px;
+            position: absolute;
+            left: 503px;
+            top: 40px;
+            -webkit-tap-highlight-color: transparent;
+            /*background-color: green;*/
+            cursor: pointer;
+        }
+
+        .checkMark {
+            background-image: url('../../Assets/Images/check.png');
+            width: 41px;
+            height: 41px;
+        }
+
+        #check-1 {
+            position: absolute;
+            left: 328px;
+            top: 332px;
+            display: none;
+        }
+
+        #check-2 {
+            position: absolute;
+            left: 413px;
+            top: 82px;
+            display: none;
+        }
+
+        #check-3 {
+            position: absolute;
+            left: 611px;
+            top: 276px;
+            display: none;
+        }
+
+    </style>
+</head>
+<body onunload="Slide.Destroy()" onbeforeunload="Slide.Destroy()">
+
+    <video id="player1" controls onplay="$('video').removeAttr('controls');" onended='startPopcorn();' width="960" height="540">
+        <source src="Slide3.mp4">
+    </video>
+
+    <video id="player2" controls onplay="$(this).removeAttr('controls');" onended='videoEnd();' width="960" height="540">
+        <source src="Slide3a.mp4">
+    </video>
+
+    <video id="player3" controls onplay="$(this).removeAttr('controls');" onended='videoEnd();' width="960" height="540">
+        <source src="Slide3b.mp4">
+    </video>
+
+    <video id="player4" controls onplay="$(this).removeAttr('controls');" onended='videoEnd();' width="960" height="540">
+        <source src="Slide3c.mp4">
+    </video>
+
+    <div id="btn-container">
+        <div id="btn1" onclick="box1();"></div>
+        <div id="btn2" onclick="box2();"></div>
+        <div id="btn3" onclick="box3();"></div>
+    </div>
+
+    <div id="check-container">
+        <div id="check-1" class="checkMark"></div>
+        <div id="check-2" class="checkMark"></div>
+        <div id="check-3" class="checkMark"></div>
+    </div>
+
+    <script src="../../Source/JS/jQuery/jquery-1.11.1.js"></script>
+    <script src="../../Source/JS/Popcorn/popcorn.js"></script>
+    <script src="../../Source/XM/Events/XMEvent.js"></script>
+    <script src="../../Source/XM/Helpers.js"></script>
+    <script src="../../Source/XM/Core/TemplateBase.js"></script>
+    <script src="../../Source/XM/Slides/CustomSlide.js"></script>
+    <script>
+
+        Slide.Initialize();
+        Slide.Dispatch(XMEvent.Loaded);
+
+        //$('video').removeAttr('controls');
+
+        var videoIndex = 0;
+        var vid1 = false;
+        var vid2 = false;
+        var vid3 = false;
+        var vid4 = false;
+
+        if (!IsInMobileSafari())
+            $('video').get(0).play();
+
+        Slide.bind(XMEvent.Paused, function () {
+            $('video').eq(videoIndex)[0].pause();
+        });
+
+        Slide.bind(XMEvent.Resumed, function () {
+            var v = $('video').eq(videoIndex)[0];
+            if (v.currentTime != v.duration)
+                v.play();
+        });
+
+        Slide.bind(XMEvent.VolumeChanged, function () {
+            $('video').each(function () {
+                this.volume = Shell.volume / 100;
+            });
+        });
+
+        var popcorn1 = Popcorn('#player1');
+
+        $('#player2').hide();
+        $('#player3').hide();
+        $('#player4').hide();
+        $('#player5').hide();
+
+        function startPopcorn() {
+            popcorn1.pause();
+            $('#btn-container').css('visibility', 'visible');
+            XMLog('popcorn ran');
+        }
+
+        function ChangeCCText(newText) {
+            parent.$('#slide-text').html(newText);
+        }
+
+        function box1() {
+            //ChangeCCText('<p>' + '<p>' + '<p></p>' + '</p>');
+            $('#btn-container').css('visibility', 'hidden');
+            $('#posterIMG').css('visibility', 'hidden');
+            $('#check-container').fadeOut();
+            $('#player2').show();
+            $('#player4').hide();
+            $('#player3').hide();
+            $('#player1').hide();
+            $('#player5').hide();
+            $('video')[1].load();
+            setTimeout(function () { $('video')[1].play(); }, 500);
+            videoIndex = 1;
+            vid1 = true;
+            XMLog('btn1 clicked');
+        }
+
+        function box2() {
+            //ChangeCCText('<p>' + '<p>' + '<p></p>' + '</p>');
+            $('#btn-container').css('visibility', 'hidden');
+            $('#posterIMG').css('visibility', 'hidden');
+            $('#check-container').fadeOut();
+            $('#player3').show();
+            $('#player4').hide();
+            $('#player2').hide();
+            $('#player1').hide();
+            $('#player5').hide();
+            $('video')[2].load();
+            setTimeout(function () { $('video')[2].play(); }, 500);
+            videoIndex = 2;
+            vid2 = true;
+            XMLog('btn2 clicked');
+        }
+
+        function box3() {
+            //ChangeCCText('<p>' + '<p>' + '<p></p>' + '</p>');
+            $('#btn-container').css('visibility', 'hidden');
+            $('#posterIMG').css('visibility', 'hidden');
+            $('#check-container').fadeOut();
+            $('#player4').show();
+            $('#player3').hide();
+            $('#player2').hide();
+            $('#player1').hide();
+            $('#player5').hide();
+            $('video')[3].load();
+            setTimeout(function () { $('video')[3].play(); }, 500);
+            videoIndex = 3;
+            vid3 = true;
+            XMLog('btn3 clicked');
+        }
+
+        function videoEnd() {
+            XMLog('video end');
+            $('#check-container').fadeIn();
+
+            if (vid1)
+                $('#check-1').show();
+
+            if (vid2)
+                $('#check-2').show();
+
+            if (vid3)
+                $('#check-3').show();
+
+
+            if (vid1 == true && vid2 == true && vid3 == true) {
+                $('#player1').show();
+                $('#btn-container').css('visibility', 'visible');
+                Slide.Complete();
+
+            }
+            else {
+                $('#btn-container').css('visibility', 'visible');
+                videoIndex = 0;
+                XMLog('else ran');
+            }
+        }
+    </script>
+</body>
+</html>

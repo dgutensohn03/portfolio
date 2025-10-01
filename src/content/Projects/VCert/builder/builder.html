@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WYSIWYG Page Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div id="editor">
+        <div id="live-preview" class="fullscreen">
+            <div class="box" id="main-box" ondrop="handleDrop(event)" ondragover="allowDrop(event)">
+                <!-- Editable content goes here -->
+            </div>
+        </div>
+    </div>
+    
+    <div class="menu">
+        <button class="btn btn-primary" onclick="openTemplateSelection()">Templates</button>
+        <button class="btn btn-primary" onclick="openGlobalPropertiesPopup()">Global Properties</button>
+        <button class="btn btn-primary" onclick="openPropertiesPopup()">Current Box Properties</button>
+        <button class="btn btn-primary" onclick="save()">Save</button>
+    </div>
+
+    <div id="template-popup" class="popup">
+        <div class="popup-header">
+            <h2>Select Template</h2>
+            <button class="btn btn-close" onclick="closePopup()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="template-preview" id="template-preview"></div>
+        <button class="btn btn-success" onclick="insertTemplate()">Insert Template</button>
+        <div class="template-controls">
+            <button class="btn btn-secondary" onclick="addRowToPreview()">Add Row</button>
+            <button class="btn btn-secondary" onclick="addColumnToPreview()">Add Column</button>
+        </div>
+    </div>
+
+    <div id="global-properties-popup" class="popup">
+        <div class="popup-header">
+            <h2>Global Properties</h2>
+            <button class="btn btn-close" onclick="closePopup()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="popup-content">
+            <label for="padding">Padding:</label>
+            <input type="text" id="padding">
+        </div>
+        <button class="btn btn-success" onclick="applyGlobalProperties()">Apply</button>
+    </div>
+
+    <div id="properties-popup" class="popup">
+        <div class="popup-header">
+            <h2>Box Properties</h2>
+            <button class="btn btn-close" onclick="closePopup()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="popup-content">
+            <label for="box-width">Width:</label>
+            <input type="text" id="box-width">
+            <label for="box-height">Height:</label>
+            <input type="text" id="box-height">
+            <label for="box-bg-color">Background Color:</label>
+            <input type="color" id="box-bg-color">
+        </div>
+        <button class="btn btn-success" onclick="applyBoxProperties()">Apply</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

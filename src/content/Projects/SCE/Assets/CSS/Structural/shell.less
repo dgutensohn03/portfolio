@@ -1,0 +1,105 @@
+html, body {
+    height: 100%;
+    overflow: auto;
+    margin: 0px;
+    padding: 0px;
+}
+
+#shell {
+    /* Positioning */
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0px;
+    /* Default Size */
+    min-width: @contentAreaWidth;
+    min-height: @contentAreaHeight + @headerHeight + @statusBarHeight + @navBarHeight + @trayHeight;
+    width: @contentAreaWidth;
+    height: @contentAreaHeight + @headerHeight + @statusBarHeight + @navBarHeight + @trayHeight;
+    overflow: hidden;
+}
+
+#shadow {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 0px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    min-width: 960px;
+    min-height: 550px;
+    width: 960px;
+    height: 550px;
+}
+
+#header {
+    width: 100%;
+    height: @headerHeight;
+}
+
+#status-bar {
+    width: 100%;
+    height: @statusBarHeight;
+    line-height: 18px;
+    background-color: #cccccc !important;
+    position: absolute;
+    color: #666666;
+    font-weight: bold;
+    top: 80px;
+    font-family: "UniversLTStd","Arial","Helvetica","sans-serif";
+}
+
+#content-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: @contentAreaHeight;
+}
+
+#contents {
+    width: 100%;
+    height: 100%;
+    border: 0px;
+    z-index: -1;
+}
+
+#nav-bar {
+    width: 100%;
+    height: 30px;
+    white-space: nowrap;
+}
+
+#tray {
+    width: 100%;
+    height: @trayHeight;
+}
+
+#cctext-button {
+    border-left: 0px;
+}
+
+#left-bar {
+    background-color: #ffc121;
+    height: 80px;
+    width: 50%;
+    position: fixed;
+    display: inline;
+}
+
+#right-bar {
+    background-color: #ffe090;
+    height: 80px;
+    width: 50%;
+    position: fixed;
+    display: inline;
+    float: right;
+    right: 0px;
+}
+
+@import "helpers";
+@import "dialog";
+@import "button";

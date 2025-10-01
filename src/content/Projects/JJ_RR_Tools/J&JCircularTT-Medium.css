@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'J&J CircularTT Medium';
+  src: url('Fonts/J&JCircularTT-Medium.eot');
+  src: url('Fonts/J&JCircularTT-Medium.eot?#iefix') format('embedded-opentype'),
+       url('Fonts/J&JCircularTT-Medium.svg#J&JCircularTT-Medium') format('svg'),
+       url('Fonts/J&JCircularTT-Medium.ttf') format('truetype'),
+       url('Fonts/J&JCircularTT-Medium.woff') format('woff'),
+       url('Fonts/J&JCircularTT-Medium.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

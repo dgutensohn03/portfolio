@@ -1,0 +1,19 @@
+﻿#resource-table {
+	height: 360px;
+	width: 100%;
+}
+
+#resource-table td {
+	text-align: center;
+	width: 50%;
+}
+
+#resource-table .fa {
+	color: red;
+	margin-top: 0.5em;
+}
+
+#resource-table a {
+	text-decoration: none;
+	color: black;
+}

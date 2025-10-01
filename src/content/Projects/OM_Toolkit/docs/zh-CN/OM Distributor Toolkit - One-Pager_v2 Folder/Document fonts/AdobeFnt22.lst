@@ -1,0 +1,291 @@
+%!Adobe-FontList 1.22
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Barlow-Bold
+FamilyName:Barlow
+StyleName:Bold
+FullName:Barlow Bold
+MenuName:Barlow
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\zhCN\OM Distributor Toolkit - One-Pager_v2 Folder\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\Barlow-Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:60820
+FileModTime:1577353550
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Barlow Bold
+NameArray:0,Win,1,Barlow
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Barlow-Medium
+FamilyName:Barlow
+StyleName:Medium
+FullName:Barlow Medium
+MenuName:Barlow Medium
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\zhCN\OM Distributor Toolkit - One-Pager_v2 Folder\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\Barlow-Medium.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:97776
+FileModTime:1508968800
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Barlow Medium
+NameArray:0,Win,16,Barlow
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:Barlow-Regular
+FamilyName:Barlow
+StyleName:Regular
+FullName:Barlow Regular
+MenuName:Barlow
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\zhCN\OM Distributor Toolkit - One-Pager_v2 Folder\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\Barlow-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:60904
+FileModTime:1577353550
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Barlow Regular
+NameArray:0,Win,1,Barlow
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:DINPro
+FamilyName:DIN Pro
+StyleName:Regular
+FullName:DINPro
+MenuName:DINPro
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\zhCN\OM Distributor Toolkit - One-Pager_v2 Folder\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\DINPro.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:110156
+FileModTime:1339165074
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,DINPro
+NameArray:0,Win,1,DINPro
+NameArray:0,Win,16,DIN Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:DINPro-Bold
+FamilyName:DIN Pro
+StyleName:Bold
+FullName:DIN Pro Bold
+MenuName:DIN Pro
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\zhCN\OM Distributor Toolkit - One-Pager_v2 Folder\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\FontFont - DIN Pro Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:182796
+FileModTime:1564597775
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,DIN Pro Bold
+NameArray:0,Win,1,DIN Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:DINPro-Medium
+FamilyName:DIN Pro
+StyleName:Medium
+FullName:DIN Pro Medium
+MenuName:DIN Pro Medium
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\zhCN\OM Distributor Toolkit - One-Pager_v2 Folder\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\FontFont - DIN Pro Medium.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:179972
+FileModTime:1564597791
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,DIN Pro Medium
+NameArray:0,Win,1,DIN Pro Medium
+NameArray:0,Win,16,DIN Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:MinionPro-Regular
+FamilyName:Minion Pro
+StyleName:Regular
+FullName:Minion Pro
+MenuName:Minion Pro
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\zhCN\OM Distributor Toolkit - One-Pager_v2 Folder\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\MinionPro-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:218640
+FileModTime:1599224400
+WeightClass:400
+WidthClass:5
+AngleClass:0
+DesignSize:110
+NameArray:0,Mac,4,Minion Pro
+NameArray:0,Win,1,Minion Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:CID
+FontName:NotoSansCJKsc-Black
+FamilyName:Noto Sans CJK SC
+StyleName:Black
+FullName:Noto Sans CJK SC Black
+MenuName:Noto Sans CJK SC Black
+StyleBits:0
+FamilyNameNative:Noto Sans CJK SC
+StyleNameNative:Black
+FullNameNative:Noto Sans CJK SC Black
+WritingScript:SimplifiedChinese
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\zhCN\OM Distributor Toolkit - One-Pager_v2 Folder\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\NotoSansCJKsc-Black.otf
+DataFormat:sfntData
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:17318792
+FileModTime:1410527888
+WeightClass:900
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Noto Sans CJK SC Black
+NameArray:0,Win,1,Noto Sans CJK SC Black
+NameArray:0,Win,16,Noto Sans CJK SC
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:CID
+FontName:NotoSansCJKsc-Bold
+FamilyName:Noto Sans CJK SC
+StyleName:Bold
+FullName:Noto Sans CJK SC Bold
+MenuName:Noto Sans CJK SC Bold
+StyleBits:0
+FamilyNameNative:Noto Sans CJK SC
+StyleNameNative:Bold
+FullNameNative:Noto Sans CJK SC Bold
+WritingScript:SimplifiedChinese
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\zhCN\OM Distributor Toolkit - One-Pager_v2 Folder\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\NotoSansCJKsc-Bold.otf
+DataFormat:sfntData
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:16978460
+FileModTime:1410527888
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Noto Sans CJK SC Bold
+NameArray:0,Win,1,Noto Sans CJK SC Bold
+NameArray:0,Win,16,Noto Sans CJK SC
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:CID
+FontName:NotoSansCJKsc-Medium
+FamilyName:Noto Sans CJK SC
+StyleName:Medium
+FullName:Noto Sans CJK SC Medium
+MenuName:Noto Sans CJK SC Medium
+StyleBits:0
+FamilyNameNative:Noto Sans CJK SC
+StyleNameNative:Medium
+FullNameNative:Noto Sans CJK SC Medium
+WritingScript:SimplifiedChinese
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\zhCN\OM Distributor Toolkit - One-Pager_v2 Folder\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\NotoSansCJKsc-Medium.otf
+DataFormat:sfntData
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:16484284
+FileModTime:1410527888
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Noto Sans CJK SC Medium
+NameArray:0,Win,1,Noto Sans CJK SC Medium
+NameArray:0,Win,16,Noto Sans CJK SC
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:CID
+FontName:NotoSansCJKsc-Regular
+FamilyName:Noto Sans CJK SC
+StyleName:Regular
+FullName:Noto Sans CJK SC Regular
+MenuName:Noto Sans CJK SC Regular
+StyleBits:0
+FamilyNameNative:Noto Sans CJK SC
+StyleNameNative:Regular
+FullNameNative:Noto Sans CJK SC Regular
+WritingScript:SimplifiedChinese
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\zhCN\OM Distributor Toolkit - One-Pager_v2 Folder\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\NotoSansCJKsc-Regular.otf
+DataFormat:sfntData
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:16406852
+FileModTime:1410527888
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Noto Sans CJK SC Regular
+NameArray:0,Win,1,Noto Sans CJK SC Regular
+NameArray:0,Win,16,Noto Sans CJK SC
+%EndFont
+

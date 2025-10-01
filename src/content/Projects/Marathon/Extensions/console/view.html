@@ -1,0 +1,21 @@
+﻿<div id="xm-console">
+	<div class="xm-log"></div>
+
+	<!-- Navigation -->
+	<button id="console-back-button" class="nav-button">Back</button>
+	<div id="console-scrubber" style="margin-left: 10px; top: 6px;"
+		data-role="slider"
+		data-bind="value: playbackProgress, events: { change: OnSeek, slide: OnSeeking }"
+		data-max="100"
+		data-tick-placement="none"
+		data-show-buttons="false">
+	</div>
+	<button id="console-next-button" class="nav-button right">Next</button>
+
+	<!-- Settings and Status -->
+	<div style="margin-top:3px;">
+		<button id="console-switch-button" class="nav-button wide">HTML</button>
+		<button id="console-unlock-button" class="nav-button double-wide">Unlock</button>
+		<button id="console-complete-button" class="nav-button double-wide">Complete</button>
+	</div>
+</div>

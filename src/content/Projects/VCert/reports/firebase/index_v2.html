@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rise Sample - Database</title>
+  <style>
+    body {
+      background-image: url(assets/1-2_bg.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    .btn {
+      margin-top: 1.25rem;
+    }
+
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+<body id="registrationPage">
+
+  <!-- Button for downloading the CSV file -->
+  <button id="downloadBtn" disabled>Download CSV</button>
+
+  <!-- Button for another function -->
+  <button id="anotherBtn">Another Function</button>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="scripts/polyfill.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+
+  <script>
+    // Firebase initialization and data processing code goes here
+    $(function() {
+      // Your Firebase configuration
+      const firebaseConfig = {
+  apiKey: "AIzaSyBV7dN8jF3nggPnJuzzWmT5MsiMjWmuz88",
+  authDomain: "vcert-9568e.firebaseapp.com",
+  databaseURL: "https://vcert-9568e.firebaseio.com",
+  projectId: "vcert-9568e",
+  storageBucket: "vcert-9568e.appspot.com",
+  messagingSenderId: "701025120825",
+  appId: "1:701025120825:web:7bf1e3dfd38637652c93e8",
+  measurementId: "G-1N0PQ39K3P"
+};
+
+    // Initialize Firebase
+    const app = firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth();
+    const db = firebase.database();
+    var dataArray = [];
+
+    // Fetch data from Firebase
+    const userDataRef = firebase.database().ref("ProductionUserGroup").orderByKey();
+
+    userDataRef.once("value")
+        .then(function(snapshot) {
+            const promises = [];
+
+            snapshot.forEach(function(childSnapshot) {
+                const key = childSnapshot.key;
+                const childData = childSnapshot.val();
+
+                dataArray.push({ key: key, data: childData });
+                promises.push(Promise.resolve());
+            });
+
+            return Promise.all(promises);
+        })
+        .then(function() {
+            function convertJson(jsonData) {
+                const newArray = [];
+                jsonData.forEach(obj => {
+                    const data = obj.data;
+                    // Check if email is vcertadmin@thelhtgroup.com and skip processing if true
+                    if (data.Email === "vcertadmin@thelhtgroup.com") {
+                        return;
+                    }
+
+                    // Calculate number of challenges completed, attempted, and unfinished
+                    let challengesCompleted = 0;
+                    let challengesAttempted = 0;
+                    let challengesUnfinished = 0;
+                    ['HD', 'LD', 'VPS'].forEach(type => {
+                        Object.values(data[`c${type}`]).forEach(challenge => {
+                            if (challenge === 1) {
+                                challengesCompleted++;
+                            }
+                            if (challenge !== null) {
+                                challengesAttempted++;
+                            }
+                            if (challenge === 0) {
+                                challengesUnfinished++;
+                            }
+                        });
+                    });
+
+                    // Calculate point total
+                    const pointTotal = data.TotalPointsHD + data.TotalPointsLD + data.TotalPointsVPS;
+
+                    // Determine ranking based on point total (you may need to adjust this logic)
+                    let ranking = "Unknown";
+                    if (pointTotal >= 100) {
+                        ranking = "High";
+                    } else if (pointTotal >= 50) {
+                        ranking = "Medium";
+                    } else {
+                        ranking = "Low";
+                    }
+
+                    // Populate other fields as needed
+                    const newObj = {
+                        "First Name": data.FirstName || "",
+                        "Last Name": data.LastName || "",
+                        "Company": data.Company || "",
+                        "VCERT Class": data.VCERTClass || "",
+                        "Email Address": data.Email || "",
+                        "Region": data.Region || "",
+                        "Number of Challenges Completed": challengesCompleted,
+                        "Number of Challenges Attempted": challengesAttempted,
+                        "Number of Challenges Unfinished": challengesUnfinished,
+                        "Point Total": pointTotal,
+                        "Ranking": ranking,
+                        "Valvoline Role": data.ValvolineRole || "",
+                        "Sales Leader Contact": data.SalesLeaderContact || "",
+                        "Sales Leader Email": data.SalesLeaderEmail || ""
+                    };
+                    newArray.push(newObj);
+                });
+                return newArray;
+            }
+
+            // Convert data to desired format
+            const convertedData = convertJson(dataArray);
+
+            // Assign converted data to jsonData
+            jsonData = convertedData;
+
+            // Enable download button
+            var downloadBtn = document.getElementById("downloadBtn");
+            downloadBtn.disabled = false;
+
+            // Function to download CSV
+            function downloadCSV() {
+                const csvContent = "data:text/csv;charset=utf-8," +
+                    Object.keys(jsonData[0]).join(",") + "\n" + // Header row
+                    jsonData.map(entry => Object.values(entry).join(",")).join("\n");
+
+                // Create a temporary anchor element
+                const encodedUri = encodeURI(csvContent);
+                const link = document.createElement("a");
+                link.setAttribute("href", encodedUri);
+                link.setAttribute("download", "2_week_report_date.csv");
+
+                // Append anchor to the body and trigger download
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+
+            // Button click event for downloading CSV
+            downloadBtn.addEventListener('click', downloadCSV);
+
+            // Function for another action
+            function anotherFunction() {
+                // Logic for another function goes here
+                alert("Another function clicked!");
+            }
+
+            // Button click event for another function
+            var anotherBtn = document.getElementById("anotherBtn");
+            anotherBtn.addEventListener('click', anotherFunction);
+        })
+        .catch(function(error) {
+            console.error("Error:", error);
+            // Handle error here (e.g., display error message to the user)
+        });
+});
+
+  </script>
+</body>
+</html>

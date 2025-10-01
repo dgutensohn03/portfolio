@@ -1,0 +1,74 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "enemy2",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "e25f4411-6fa6-4072-99cb-7cce8b8392c3",
+    "info": {
+      "editorName": "enemy2",
+      "children": [{
+        "type": "spritesheet",
+        "id": "1a676bb8-09c9-460a-81bf-f728a67c24cf",
+        "asset": "0",
+        "info": {
+          "editorName": "enemy2_sprite",
+          "anchor.x": 0.5,
+          "animations": [{
+            "name": "default",
+            "frameRate": 2,
+            "loop": true,
+            "autoPlay": true,
+            "frames": [
+              "0",
+              "1"
+            ]
+          }],
+          "body": {
+            "type": "ARCADE_RECT",
+            "offsetX": 6,
+            "offsetY": 6,
+            "width": 32,
+            "height": 91
+          }
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "sprites",
+    "asset": "enemy2_sprite",
+    "sprite": "0"
+  }},
+  "prefab-table": {}
+}

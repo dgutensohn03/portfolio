@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title></title>
+	<style>
+		html, body, #content {
+			overflow: hidden;
+			margin: 0px;
+			padding: 0px;
+			width: 100%;
+			height: 100%;
+		}
+	</style>
+</head>
+<body>
+	<iframe id="content"></iframe>
+
+	<script src="../../Source/JS/jQuery/jquery-1.11.1.min.js"></script>
+	<script src="../../Source/XM/Events/XMEvent.js"></script>
+	<script src="../../Source/XM/Helpers.js"></script>
+	<script src="../../Source/XM/Core/TemplateBase.js"></script>
+	<script src="../../Source/XM/Slides/Slide.js"></script>
+	<script>
+		$('#content').attr('src', Shell.CurrentSlideData().url);
+	</script>
+</body>
+</html>

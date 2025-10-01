@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+	<style>
+		html, body {
+			overflow: hidden;
+			margin: 0px;
+			padding: 0px;
+		}
+	</style>
+</head>
+<body onunload="Slide.Destroy()" onbeforeunload="Slide.Destroy()">
+	<div id="container"></div>
+	<script src="../../Source/JS/jQuery/jquery-1.11.1.min.js"></script>
+    <script src="../../Source/XM/Events/XMEvent.js"></script>
+    <script src="../../Source/XM/Helpers.js"></script>
+	<script src="../../Source/XM/Core/TemplateBase.js"></script>
+    <script src="../../Source/XM/Slides/VideoSlide.js"></script>
+    <script>
+		$('#container').html(
+				'<video id="player" controls onended="Slide.Complete(); Shell.NextSlide();" width="960" height="540">' +
+					'<source src="../Lesson' + $.getUrlVar('lesson') + '/Slide' + $.getUrlVar('slide') + '.mp4">' +
+					'<source type="video/webm" src="../Lesson' + $.getUrlVar('lesson') + '/Slide' + $.getUrlVar('slide') + '.webm">' +
+				'</video>'
+        );
+
+        document.getElementById('player').addEventListener('playing', function () {
+            document.getElementById('player').removeAttribute('controls');
+        });
+
+		Slide.Initialize();
+    </script>
+    </body>
+</html>

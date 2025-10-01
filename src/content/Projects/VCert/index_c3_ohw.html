@@ -1,0 +1,89 @@
+﻿<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <!-- <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css"> -->
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+      <script src="scripts/jquery-3.4.1.js"></script>
+      <script src="Bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="styles/style.css">
+
+    <title>Vcert Project</title>
+
+    
+<script src="bin/header.js"></script>
+</head>
+
+<body id="introPage">
+
+    <iframe id='contents' src='challenge_3_ohw.html'></iframe>
+    
+    <script src="scripts/polyfill.min.js"></script>
+    <!--<script src="scripts/fetch.umd.js"></script>-->
+    
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <!-- <script src="./src/index.js"></script> -->
+    <script src="scripts/jquery-ui/jquery-ui.min.js"></script>
+    <!-- <script src="scripts/popper/dist/popper.min.js"></script> -->
+<!-- <script src="dist/main.js"></script> -->
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js"></script>
+    <!-- <script src="node_modules\firebase-admin\lib\index.js"></script> -->
+    <!-- <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script> -->
+    <!-- 
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script> -->
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script> -->
+    <!-- <script defer src="src/fb-core-js.js"></script> -->
+    
+   
+    <script defer src="bin/fb-auth.js"></script>
+    <script defer src="bin/portal.js"></script>
+    <script src="bin/pages.js"></script>
+    
+    <script>
+
+        // var activities = {challenge1: {firstTime: true},
+        // challenge2: {firstTime: true}}
+        // console.log('firstTime:' +activities.challenge1.firstTime)
+
+        $(".Tooltip").click(function () {
+            $(this).parent().children('.TooltipExpand').toggle("slow");
+        });
+
+        //Enter a challenge, hide the header and expand iframe to suit
+        function enterChallenge()
+        {
+            $("header").css('display', 'none');
+            $("#contents").css('top', '0px');
+            $("#contents").css('margin-top', '0px');
+            $("#contents").css('height', '100%');
+        }
+
+        function exitChallenge()
+        {
+            $("header").css('display', 'block');
+            $("#contents").css('top', '-59px');
+            $("#contents").css('margin-top', '118px');
+            $("#contents").css('height', 'calc(100% - 59px)');
+        }
+
+        var challengeClass = ""; //Holds the class for challenges.
+    </script>
+
+</body>
+
+</html>

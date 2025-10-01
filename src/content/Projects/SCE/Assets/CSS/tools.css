@@ -1,0 +1,323 @@
+#toolbar.horizontal {
+	width: 70%;
+	margin: 3px;
+	margin-left: 15%;
+	height: 65px;
+	border-radius: 10px;
+	background-color: #333333
+}
+
+#toolbar.bottom {
+	position: absolute;
+	bottom: 0px !important;
+}
+
+#toolbar.vertical {
+	box-sizing: border-box;
+	float: left;
+	height: 535px;
+	width: 65px;
+	border-radius: 10px;
+	background-color: #333333;
+	margin: 3px;
+	padding-top: 200px;
+}
+
+#toolbar.vertical + div {
+	float: right;
+}
+
+#toolbar.right {
+	float: right;
+}
+
+#toolbar.right + div {
+	float: none;
+}
+
+.tool-group > span {
+	overflow: visible;
+	
+	position: relative;
+	background-color: #999999;
+	
+	border: 0px;
+	border-radius: 10px;
+	
+	width: 45px;
+	height: 45px;
+	
+	margin-top: 10px;
+	margin-left: 5px;
+	
+	cursor: pointer;
+}
+
+#toolbar.vertical > .tool-group > span {
+	display: block;
+	margin-left: 10px;
+	margin-top: 5px;
+}
+
+#toolbar.horizontal > .tool-group > span {
+	float: left;
+}
+
+#toolbar.horizontal > .tool-group > span:first-child {
+	margin-left: 30px;
+}
+
+#toolbar.vertical > .tool-group > span:first-child {
+	margin-top: 30px;
+}
+
+#toolbar.moving {
+	position: absolute;
+}
+
+.tool-group {
+	margin: 0px;
+	font-size: 0px;
+}
+
+/* Popouts */
+.tool-group > span > .popout {
+	position: absolute;
+	display: none;
+	
+	width: 75px;
+	height: 75px;
+	
+	cursor: default;
+	
+	text-align: center;
+}
+
+.tool-group > span > .popout.large {
+	width: 141px;
+}
+
+.tool-group > span > .popout.long {
+	height: 108px;
+}
+
+.tool-group > span.active > .popout {
+	display: block;
+	
+	border-radius: 10px;
+	padding: 6px;
+	
+	background-color: #333;
+	color: white;
+}
+
+.vertical:not(.right) .popout {
+	top: 0px;
+	left: 60px;
+}
+
+.vertical.right .popout {
+	top: 0px;
+	right: 60px;
+}
+
+.horizontal:not(.bottom) .popout {
+	left: 0px;
+	top: 60px;
+}
+
+.horizontal.bottom .popout {
+	left: 0px;
+	bottom: 60px;
+}
+
+/* Drawing Surface */
+#drawing, #flash-canvas {
+	position: absolute;
+	display: block;
+	margin: 0px auto;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	width: 960px;
+	height: 540px;
+}
+
+/* Tool Buttons */
+.sub-button {
+	display: block;
+	float: left;
+	line-height: 30px;
+	cursor: pointer;
+	padding: 3px;
+	margin-right: 3px;
+	width: 30px;
+	height: 30px;
+	background-color: gray;
+}
+
+.sub-button.last, .swatch.last {
+	margin-right: 0px;
+}
+
+#cursor-button {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url('../Images/Shell/cursor-up.png');
+}
+
+#cursor-button:hover, #cursor-button.active {
+	background-image: url('../Images/Shell/cursor-over.png');
+}
+
+#home-button {
+	cursor: pointer;
+}
+
+#home-button:hover, #home-button.active {
+	background-image: url('../Images/Shell/home-over.png');
+}
+
+#timer-button {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url('../Images/Shell/timer-up.png');
+}
+
+#timer-button:hover, #timer-button.active {
+	background-image: url('../Images/Shell/timer-over.png');
+}
+
+#glossary-button {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url('../Images/Shell/glossary-up.png');
+}
+
+#glossary-button:hover, #glossary-button.active {
+	background-image: url('../Images/Shell/glossary-over.png');
+}
+
+#notepad-button {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url('../Images/Shell/notepad-up.png');
+}
+
+#notepad-button:hover, #notepad-button.active {
+	background-image: url('../Images/Shell/notepad-over.png');
+}
+
+#marker-button {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url('../Images/Shell/marker-up.png');
+}
+
+#marker-button:hover, #marker-button.active {
+	background-image: url('../Images/Shell/marker-over.png');
+}
+
+#highlighter-button {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url('../Images/Shell/highlighter-up.png');
+}
+
+#highlighter-button:hover, #highlighter-button.active {
+	background-image: url('../Images/Shell/highlighter-over.png');
+}
+
+#eraser-button {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url('../Images/Shell/eraser-up.png');
+}
+
+#eraser-button:hover, #eraser-button.active {
+	background-image: url('../Images/Shell/eraser-over.png');
+}
+
+#mouse-button {
+	background-repeat: no-repeat;
+	background-position: center;
+	background-image: url('../Images/Shell/mouse-on.png');
+}
+
+#mouse-button.off {
+	background-image: url('../Images/Shell/mouse-off.png');
+}
+
+/* Tool controls */
+#timer {
+	display: inline-block;
+	margin-top: 3px;
+}
+
+	#timer > span {
+		display: inline-block;
+		background-color: white;
+		padding-left: 4px;
+		padding-right: 4px;
+		color: black;
+		cursor: pointer;
+		width: .7em;
+
+		-moz-user-select: none;
+		-ms-user-select: none;
+		-webkit-user-select: none;
+		user-select: none;
+	}
+
+#connection-indicator {
+	cursor: pointer;
+}
+
+.swatch {
+	position: relative;
+	background-color: white;
+	color: black;
+
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	display: block;
+	cursor: pointer;
+	float: left;
+	margin-right: 3px;
+	margin-bottom: 3px;
+	width: 33px;
+	height: 33px;
+	line-height: 30px;
+}
+
+.swatch img {
+	display: none;
+	position: absolute;
+	bottom: 0px;
+}
+
+.swatch.active img {
+	display: block;
+}
+
+.k-slider .k-button, .k-grid .k-slider .k-button {
+	top: -3px;
+	padding-top: 3px;
+	width: 30px;
+	height: 30px;
+}
+
+.k-slider .k-button-decrease {
+	left: -12px;
+}
+
+.k-slider .k-button-increase {
+	right: -12px;
+}
+
+.k-slider-horizontal .k-draghandle {
+	width: 20px;
+	height: 20px;
+	top: -7px;
+}

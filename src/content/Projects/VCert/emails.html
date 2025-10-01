@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="font-style: italic;">These are ran from google cloud functions. They check the database against each user and runs at 9AM daily.</div>
+    <br /><br />
+    <!-- sendNewInt -->
+    <div>sendRegister - Email sent when a new user is registered.</div>
+    <div>subject: "Welcome to VCERT Performance+"</div>
+    <table style="width:701px">
+        <table style="width:701px">
+            <tr>
+            <td>
+            <img src='https://lhtclients.com/Projects/Valvoline/VCert/prod/images/Email/Email_Banner_General.jpg'/><br /><br /><br />
+            <b><font style="font-size:16pt;">The latest VCERT Performance+ challenge is available NOW!</font><br /><br />
+            Are you up to the challenge?<br /><br />
+            A new challenge has been opened up on the VCERT Performance+ site.<br /><br />
+            You have <b>two weeks</b> to complete this challenge to earn the full amount of available points.<br /><br />
+            Login today to get started and claim your place on the leaderboard.<br /><br />
+            <a href='https://lhtclients.com/Projects/Valvoline/VCert/prod/index.html'>Start the Challenge</a></b><br /><br />
+            </td>
+            </tr>
+            </table>
+
+            <br /><hr><br />
+
+            <!-- sendNotComplete -->
+            <div>sendNewInt - Email sent when a challenge is unlocked.</div>
+            <div>subject: `A new VCERT challenge is here - ${challengeName}`</div>
+            <table style="width:701px">
+                <tr>
+                <td>
+                <img src='https://lhtclients.com/Projects/Valvoline/VCert/prod/images/Email/Email_Banner_General.jpg'/><br /><br /><br />
+                <b><font style="font-size:16pt;">The latest VCERT Performance+ challenge is available NOW!</font><br /><br />
+                Are you up to the challenge?<br /><br />
+                A new challenge has been opened up on the VCERT Performance+ site.<br /><br />
+                You have <b>two weeks</b> to complete this challenge to earn the full amount of available points.<br /><br />
+                Login today to get started and claim your place on the leaderboard.<br /><br />
+                <a href='https://lhtclients.com/Projects/Valvoline/VCert/prod/index.html'>Start the Challenge</a></b><br /><br />
+                </td>
+                </tr>
+                </table>
+
+                <br /><hr><br />
+
+                <!-- sendNotComplete -->
+                <div>sendNotComplete - Email sent when the challenge has been open and unvisited for 7 days.</div>
+                <div>sendNotComplete - 4-20-24 changed to three days after a challenge has unlocked</div>
+                <div>subject: "Your VCERT challenge is waiting"</div>
+                <table style="width:701px"><tr><td>
+                    <img src='https://lhtclients.com/Projects/Valvoline/VCert/prod/images/Email/Email_Banner_General.jpg'/><br /><br /><br />
+                    <b><font style="font-size:16pt;">Don’t fall behind, complete your VCERT Performance+ challenge today.</font><br /><br />
+                    Hey, did you forget?<br /><br />
+                    You have an open challenge in the VCERT Performance+ learning experience.<br /><br />
+                    These challenges are designed to help you increase your knowledge, boost sales, build your share of the RevUp program, and get you on the Performance+ leaderboard where you can earn prizes, and more importantly, bragging rights over your entire VCERT class!<br /><br />
+                    So get in there. And good luck!<br /><br />
+                    <a href='https://lhtclients.com/Projects/Valvoline/VCert/prod/index.html'>Let’s Go</a></b><br /><br />
+                    </td></tr></table>
+
+                    <br /><hr><br />
+
+                    <!-- sendAlmostClosed -->
+                    <div>sendAlmostClosed - For almost closed interaction notification: In the last two days of interaction (currently open for 3 weeks or 21 days - 3 minus 21 is day 19 fo the challenge unlocking), if notification has not been sent yet.</div>
+                    <div>subject: `Did you forget about the ${challengeName} Performance+ challenge?`</div>
+                    <table style="width:701px"><tr><td>
+                        <img src='https://lhtclients.com/Projects/Valvoline/VCert/prod/images/Email/Email_Banner_General.jpg'/><br /><br /><br />
+                        <b><font style="font-size:16pt;">Act quickly - the ${challengeName} is almost closed!</font><br /><br />
+                        You’ve still got time. But not much!<br /><br />
+                        The ${challengeName} challenge is closing in two days. But don’t worry, you can still complete it and earn the full point total.<br /><br />
+                        Don’t let someone overtake you on the leaderboard. Get started on that challenge today!<br /><br />
+                        <a href='https://lhtclients.com/Projects/Valvoline/VCert/prod/index.html'>Start the Challenge</a></b><br /><br />
+                        </td></tr></table>
+
+                        <br /><hr><br />
+
+                                            <!-- sendChallengeComplete -->
+                    <div>sendChallengeComplete - Eamil sent as soon as a challenge has been completed.</div>
+                    <div>subject: "Don't slow down now!"</div>
+                    <table style="width:701px"><tr><td>
+                        <img src='https://lhtclients.com/Projects/Valvoline/VCert/prod/images/Email/Email_Banner_General.jpg'/><br /><br /><br />
+                        <b><font style="font-size:16pt;">There are more ways to succeed with VCERT Performance+</font><br /><br />
+                        What more do you want to know?<br /><br />
+                        You are all caught up with your challenges, but that doesn’t mean the learning should stop.<br /><br />
+                        These resources can help you gain a deeper knowledge on <a href="https://valvoline.widencollective.com/portals/tjwhya34/MyPortal572020">Heavy Duty Engine Oil</a>.<br /><br />
+                        Look them over now and refer to them often.<br /><br />
+                        And be ready, another VCERT Performance+ challenge will be coming soon.</b><br /><br />
+                        </td></tr></table>
+
+                        <br /><hr><br />
+
+                        <!-- sendLapsed -->
+                        <div>sendLapsed - I dont think this one is set up.</div>
+                        <div>subject: "Ready to get back in the game?"</div>
+                        <table style="width:701px"><tr><td><img src='https://lhtclients.com/Projects/Valvoline/VCert/prod/images/Email/Email_Banner_General.jpg'/><br /><br /><br /><b><font style="font-size:16pt;">There is still time to move up the VCERT Performance+ leaderboard</font><br /><br />
+                            We get it, you're busy. But...<br /><br />
+                            You haven’t been active in the VCERT Performance+ learning experience in a few months.<br /><br />
+                            Did you know that over time, you forget up to 70% of a topic you learned about.<br /><br />
+                            VCERT Performance+ was designed to help slow that memory loss while providing you with benefits for yourself and your business.<br /><br />
+                            You still have time to get into the game. Why not get restarted now?<br /><br />
+                            <a href='https://lhtclients.com/Projects/Valvoline/VCert/prod/index.html'>Login</a></b><br /><br />
+                            </td></tr></table>
+                            </td></tr></table>
+
+                         <br /><hr><br />
+
+                            <!-- sendThreePeat -->
+                            <div>sendThreePeat - Email sent after three challenges are completed before being timed out.</div>
+                            <div>subject: "You are crushing it!"</div>
+                            <table style="width:701px"><tr><td>
+                                <img src='https://lhtclients.com/Projects/Valvoline/VCert/prod/images/Email/Email_Banner_General.jpg'/><br /><br /><br />
+                                <b><font style="font-size:16pt;">You went long and earned the 3-Peat Bonus.</font><br /><br />
+                                Congratulations!<br /><br />
+                                You hit the 3-Peat Bonus or the successful completion of three VCERT Performance+ challenges in a row.<br /><br />
+                                You just earned some bonus points.<br /><br />Watch for the next challenge to continue your domination of the leaderboard.<br /><br />
+                                <a href='https://lhtclients.com/Projects/Valvoline/VCert/prod/index.html'>Check My Points</a></b><br /><br />
+                                </td></tr></table>
+
+                                <br /><hr><br />
+
+                                <!-- sendFailed -->
+                                <div>sendFailed</div>
+                                <div>subject: "The Challenge was unsuccessful, but the game is still on"</div>
+                                <table style="width:701px"><tr><td>
+                                    <img src='https://lhtclients.com/Projects/Valvoline/VCert/prod/images/Email/Email_Banner_General.jpg'/><br /><br /><br />
+                                    <b><font style="font-size:16pt;">More VCERT Performance+ opportunities are coming </font><br /><br />
+                                    That did not go as planned.<br /><br />
+                                    It happens right? You failed your attempt at the challenge.<br /><br />
+                                    In 7 days, this challenge will reopen and you can try it again.* While you wait, visit the site, check your standings, and see what other opportunities may be available.<br /><br />
+                                    Don’t worry, there will be opportunities coming up to collect bonus points.<br /><br />
+                                    <a href='https://lhtclients.com/Projects/Valvoline/VCert/prod/index.html'>Check In</a></b><br /><br />
+                                    *Second attempts for any challenge will be done for a reduced number of points.<br /><br />
+                                    </td></tr></table>
+</body>
+</html>

@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/adminintro.css">
+
+    <title>Vcert Project</title>
+</head>
+
+<body>
+
+    <div class="container-fluid">
+        <div id="userLoginPage_Body1" class="row">
+            <div class="col topCenterText" style="min-height:400px;">
+
+                <div style="width:600px;">
+                    <div class="headerBlack">Over time, the mind forgets up to <font class="emphasisRed">70%</font> of what it has learned.*</div>
+                    How does that knowledge affect you? Your business? Your team? Your bottom line?<br /><br />
+                    The <font class="emphasisBold">VCERT Performance+</font> learning experience is designed to keep teams focused by providing short, competitive learning opportunities to refresh product knowledge and critical selling concepts.<br /><br />
+                    Engaging a team with these learning challenges can help boost sales of Valvoline products and help team members earn rewards, while working their way to the top of the leaderboard.<br /><br />
+                    Is your team up for the challenge?<br /><br /><br />
+                </div>
+
+            </div>
+            <div class="col" style="min-height:400px;">
+                <a href="Registration.html"><div id="bigRegister">REGISTER USERS</div></a>
+            </div>
+        </div>
+        <div>
+            <div id="infoBox">
+                <div id="infoheader">INFO</div>
+                <div class="col topCenterText">
+                    <div class="centerText">
+                        <div class="adminIntroButton" onclick="window.location.href='TeamList.html'">View Team</div>
+                        <div class="adminIntroButton" onclick="window.location.href='TeamListEditable.html'">Edit Team</div>
+                        <div class="adminIntroButton">Reports</div>
+                        <div class="adminIntroButton">User Profiles</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="bin/footer.js"></script>
+    <script src="scripts/polyfill.min.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="scripts/jquery-3.4.1.js"></script>
+    <script src="scripts/popper.js/dist/umd/popper.min.js"></script>
+    <script src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script> -->
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script> -->
+<!-- <script defer src="src/fb-core-js.js"></script> -->
+<script defer src="bin/fb-auth.js"></script>
+
+    <!-- <script>
+        // Your web app's Firebase configuration
+        var firebaseConfig = {
+            apiKey: "AIzaSyBV7dN8jF3nggPnJuzzWmT5MsiMjWmuz88",
+            authDomain: "vcert-9568e.firebaseapp.com",
+            databaseURL: "https://vcert-9568e.firebaseio.com",
+            projectId: "vcert-9568e",
+            storageBucket: "vcert-9568e.appspot.com",
+            messagingSenderId: "701025120825",
+            appId: "1:701025120825:web:7bf1e3dfd38637652c93e8",
+            measurementId: "G-1N0PQ39K3P"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        const auth = firebase.auth();
+        const db = firebase.firestore(); 
+    </script>
+
+    <script>
+
+        function HeaderAdminClick() {
+            alert("You clicked admin");
+            auth.signOut().then(() => {
+
+            });
+        }
+        function HeaderUserClick() {
+            alert("You clicked user");
+            auth.signOut().then(() => {
+
+            });
+        }
+
+        function adminClick() {
+            const loginForm = document.getElementById('login');
+            const loginPassword = document.getElementById('password');
+
+            var em = loginForm.value;
+            var pas = loginPassword.value;
+
+            auth.onAuthStateChanged(user => {
+                if (user != null) {
+                    auth.signOut().then(() => {
+
+                    });
+                }
+            });
+
+            auth.signInWithEmailAndPassword(loginForm.value, loginPassword.value).then(cred => {
+
+            })
+
+        }
+        //-------------------------------------------------------------------------------------------------------------------------------
+
+        const setupTestData = (data) => {
+            data.forEach(doc => {
+                const guide = doc.data();
+                if (guide.admin == "true") {
+                    //do stuff here if this field exists i guess....
+                    alert("yes this is an admin");
+                }
+            })
+        }
+
+        //-------------------------------------------------------------------------------------------------------------------------------
+        db.collection('AdminUsers').get().then(snapshot => {
+            setupTestData(snapshot.docs);
+        })
+
+        auth.onAuthStateChanged(user => {
+            console.log(user);
+            if (user != null) {      //logged in
+                alert("you've logged in");
+                // window.location.href = "AdminIntro.html";
+                //change text to logout:
+                var adminLogin = document.getElementById('HeaderAdminLogin');
+                adminLogin.innerHTML = "Admin Logout";
+
+
+            } else { //not logged in
+                alert("you've not logged in");
+                var adminLogin = document.getElementById('HeaderAdminLogin');
+                adminLogin.innerHTML = "Admin Login";
+
+                window.location.href = "index.html";
+                //  auth.createUserWithEmailAndPassword(test1,test2).then(cred =>{
+                //  console.log(cred.user);
+                //  });  
+            }
+
+        });
+    </script> -->
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+
+	<meta charset="UTF-8" />
+	<meta name=viewport content="width=device-width, initial-scale=1">
+
+	<title>Level1</title>
+
+	<script src="lib/phaser.js"></script>
+	<script src="lib/phaser-virtual-joystick.min.js"></script>
+	<script src="js/Main.js"></script>
+	<script src="assets/canvas/map.js"></script>
+	<script src="assets/canvas/Level1.js"></script>
+	<script src="assets/canvas/Level2.js"></script>
+	<script src="assets/prefabs/mike.js"></script>
+	<script src="assets/prefabs/mike_map.js"></script>
+	<script src="assets/prefabs/windmill.js"></script>
+	<script src="assets/prefabs/windmill_small.js"></script>
+	<script src="assets/prefabs/bulldozer.js"></script>
+	<script src="assets/prefabs/nuclear.js"></script>
+	<script src="assets/prefabs/oilPump.js"></script>
+	<script src="assets/prefabs/coal.js"></script>
+	<script src="assets/prefabs/contentBox.js"></script>
+	<script src="assets/prefabs/enemy1.js"></script>
+	<script src="assets/prefabs/enemy2.js"></script>
+	<script src="../../../Source/JS/jQuery/jquery-1.11.1.min.js"></script>
+	<script src="../../../Source/XM/Helpers.js"></script>
+	<script src="lib/createjs-2015.11.26.min.js"></script>
+
+	<style>
+		body {
+			background: black;
+			margin: 0;
+			padding: 0;
+		}
+
+		body>* {
+			position: absolute;
+			top: 0;
+		}
+
+		#canvas {
+			display: none;
+		}
+		
+				@font-face {
+			font-family: 'Source Sans Pro';
+			src: url('../../../Assets/Fonts/SourceSansPro-Bold.eot.otf');
+			src: url('../../../Assets/Fonts/SourceSansPro-Bold.eot?iefix') format('eot'), url('../../../Assets/Fonts/SourceSansPro-Bold.woff') format('woff'), url('../../../Assets/Fonts/SourceSansPro-Bold.ttf') format('truetype'), url('../../../Assets/Fonts/SourceSansPro-Bold.svg#webfont') format('svg');
+		}
+
+		@font-face {
+			font-family: 'Museo Slab 700';
+			src: url('../../../Assets/Fonts/MuseoSlab-700.eot.otf');
+			src: url('../../../Assets/Fonts/MuseoSlab-700.eot?iefix') format('eot'), url('../../../Assets/Fonts/MuseoSlab-700.woff') format('woff'), url('../../../Assets/Fonts/MuseoSlab-700.ttf') format('truetype'), url('../../../Assets/Fonts/MuseoSlab-700.svg#webfont') format('svg');
+		}
+	</style>
+
+</head>
+
+<body onunload="Destroy()" onbeforeunload="Destroy()">
+	<div id="phaser"></div>
+	<canvas id="canvas" width="1280" height="720" />
+
+	<script>
+		var canvas, stage, root;
+
+		if (isInShell && 'bonus' in Shell.CurrentSlideData()) {
+			function InitializeCJS() {
+				canvas = document.getElementById("canvas");
+				images = images || {};
+
+				if ('manifest' in lib.properties && lib.properties.manifest.length > 0) {
+					var loader = new createjs.LoadQueue(false);
+					loader.installPlugin(createjs.Sound);
+					loader.addEventListener("fileload", OnCJSAssetLoad);
+					loader.addEventListener("complete", OnCJSLoadComplete);
+					loader.loadManifest(lib.properties.manifest);
+				} else {
+					this.LoadComplete(null);
+				}
+			}
+
+			function OnCJSAssetLoad(e) {
+				if (e.item.type == createjs.LoadQueue.IMAGE)
+					images[e.item.id] = e.result;
+				else if (e.item.type == createjs.LoadQueue.SOUND) {
+					Shell.audio[e.item.id] = new parent.Howl({
+						src: ['Content/Lesson1/Game/' + e.item.src],
+						preload: true
+					})
+				}
+			}
+
+			function OnCJSLoadComplete() {
+				root = new lib[Shell.CurrentSlideData().bonus]();
+
+				stage = new createjs.Stage(canvas);
+				stage.addChild(root);
+				stage.update();
+
+				createjs.Ticker.setFPS(lib.properties.fps);				
+				createjs.Ticker.addEventListener('tick', stage);
+			}
+
+			$.getScript(Shell.CurrentSlideData().bonus + '.js', function () {
+				InitializeCJS();
+			}).fail(function (data, status, error) {
+				XMError('Error running slide script. ' + error);
+			});
+		}
+
+		function Destroy() {
+			try {
+				createjs.Ticker.removeEventListener('tick', stage);
+			} catch(e) {}
+		}
+
+		function playSound(id, loop) {
+			return Shell.PlaySound(id, loop);
+		}
+
+		function playSoundThenResume(id, clip) {
+			clip = clip || root;
+			Shell.PlaySoundThen(id, function() {
+				clip.play();
+			});
+		}
+	</script>
+</body>
+
+</html>

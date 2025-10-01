@@ -1,0 +1,259 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+	
+	<!-- Update in Assets/Course.js -->
+	<title data-bind="text: name"></title>
+
+	<script src="Source/XM/Polyfills.js"></script>
+	<script src="Source/JS/jQuery/jquery-1.11.1.min.js"></script>
+	
+	<!-- IE Specific Tags -->
+	<script>
+		if (navigator.userAgent.match(/IEMobile\/10\.0/)) {
+			var msViewportStyle = document.createElement("style");
+			msViewportStyle.appendChild(
+				document.createTextNode(
+					"@-ms-viewport{width:auto!important}"
+				)
+			);
+			document.getElementsByTagName("head")[0].
+				appendChild(msViewportStyle);
+		}
+	</script>
+
+	<!--[if IE 8]>
+		<script src="Source/JS/Sylvester/sylvester.js"></script>
+		<script src="Source/JS/Transformie/transformie.js"></script>
+		<script>Transformie.defaults.centerOrigin = false;</script>
+	<![endif]-->
+
+	
+	<!-- iOS Specific Tags -->
+	<meta name="viewport" content="width=960, height=660, initial-scale=1, minimum-scale=0.8, maximum-scale=1, user-scalable=yes">
+
+	<link rel="stylesheet" type="text/css" href="Assets/CSS/KendoUI/web/kendo.common.core.css" />
+	
+    <link href="Assets/CSS/FontAwesome/font-awesome.min.css" rel="stylesheet" />
+    <link href="Assets/CSS/theme.min.css" rel="stylesheet" type="text/css" />
+	<link rel="stylesheet" type="text/css" href="Assets/CSS/cctext.css" />
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/custom.css" />
+    <link rel="stylesheet" type="text/css" href="Assets/CSS/tools.css" />
+    <link href="Assets/CSS/radial.css" type="text/css" rel="stylesheet" />
+</head>
+<body onload="Initialize()" onunload="Destroy()" onbeforeunload="Destroy()">
+    <div id='left-bar'></div>
+    <div id='right-bar'></div>
+    <div id="shell">
+        <div id="header">
+            <img src="Assets/Images/Shell/logo.png" style="" alt="Logo" />
+        </div>
+        <div id="status-bar">
+            <span id="breadcrumbs" class="left"></span>
+            <span id="lesson-progress" class="right"></span>
+        </div>
+        <div id="content-container">
+            <div id="responsive-wrapper" style="width: 100%; height: 100%; position: relative;">
+                <!-- Slide Contents -->
+                <iframe id="contents"></iframe>
+                <canvas id="drawing" width="960" height="540" style="pointer-events: none;"></canvas>
+            </div>
+            <!-- Loading Animation -->
+            <div class="loader">
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+                <div class="circle"></div>
+            </div>
+            <div id="toolbar" class="vertical"style="position:absolute; top:0px; display:none;" >
+                <span class="tool-group" >
+                    <span id="cursor-button" class="active"></span>
+
+                    <!--<span id="timer-button">
+                        <span class="popout large regular-font">
+                            <span id="timer-start" class="sub-button" style="width: 63px; background-color: green;">Start</span>
+                            <span id="timer-stop" class="sub-button last" style="width: 63px; background-color: crimson;">Reset</span>
+
+                            <span id="timer">
+                                <span class="title-font">0</span>
+                                <span class="title-font">0</span>
+                                <strong class="title-font">:</strong>
+                                <span class="title-font">0</span>
+                                <span class="title-font">0</span>
+                            </span>
+                        </span>
+                    </span>-->
+                </span>
+                <span class="tool-group">
+                    <span id="marker-button">
+                        <span class="long large popout regular-font">
+                            <span id="marker-sizes"></span>
+                            <span id="marker-colors"></span>
+                        </span>
+                    </span>
+                    <span id="highlighter-button">
+                        <span class="large popout regular-font">
+                            <span id="highlighter-sizes"></span>
+                            <span id="highlighter-colors"></span>
+                        </span>
+                    </span>
+                    <span id="eraser-button">
+                        <span class="large popout regular-font" style="height: 110px;">
+                            <span id="eraser-sizes"></span>
+                            <span id="erase-all-button" class="sub-button last" style="width: 135px; background-color: crimson;">Erase All</span>
+                            <span id="erase-display-button" class="sub-button last" style="width: 135px; margin-top: 3px; background-color: crimson;">Clear Entire Display</span>
+                        </span>
+                    </span>
+                </span>
+                <ul class="tool-group radial-menu">
+                    <li class="fa-stack">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-arrow-left fa-stack-1x"></i>
+                    </li>
+                    <li class="fa-stack">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-arrow-up fa-stack-1x"></i>
+                    </li>
+                    <li class="fa-stack">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-arrow-right fa-stack-1x"></i>
+                    </li>
+                    <li class="fa-stack">
+                        <i class="fa fa-circle fa-stack-2x"></i>
+                        <i class="fa fa-arrow-down fa-stack-1x"></i>
+                    </li>
+                </ul>
+            </div>
+    </div>
+    <div id="footer">
+        <div id="nav-bar">
+            <span id="navleft" class="left">
+                <button id="cctext-button" class="nav-button wide" onclick="CCText.Toggle();" title="Display or hide subtitles.">CC Text</button>
+            </span>
+            <span id="navright" class="right">
+                <button id="back-button" class="nav-button" onclick="Shell.PreviousSlide();" title="Go to the previous slide.">Back</button>
+                <button id="replay-button" class="nav-button" onclick="Shell.UpdateSlide();" title="Restart the current slide.">Replay</button>
+                <button id="pause-button" class="nav-button" onclick="Shell.TogglePause();" title="Pause the current slide.">Pause</button>
+                <button id="next-button" class="nav-button" onclick="Shell.NextSlide();" title="Advance to the next slide.">Next</button>
+            </span>
+
+            <!--<span style="float: right; margin-right: 18px; margin-top: 6px;">
+                <input id="zoom-slider" value="45" style="width: 200px;" />
+            </span>-->
+        </div>
+    </div>
+    <div id="tray">
+        <div id="cctext-container">
+
+        </div>
+    </div>
+    </div>
+
+    <div id="popup-container">
+
+    </div>
+
+    <script src="Source/JS/KendoUI/kendo.ui.core.min.js"></script>
+    <script src="Source/JS/FlashDetect/flash_detect_min.js"></script>
+    <script src="Source/JS/LZString/lz-string.min.js"></script>
+    <script src="Source/XM/Helpers.js"></script>
+    <script src="Source/XM/Actions.js"></script>
+    <script src="Assets/AppSettings.js"></script>
+    <script src="Source/JS/Shake/shake.js"></script>
+    <script src="Source/XM/Responsiveness.js"></script>
+    <script src="Source/XM/Events/XMEvent.js"></script>
+    <script src="Source/XM/SlideStatus.js"></script>
+    <script src="Assets/Course.js"></script>
+    <script src="Source/XM/Data/CourseDataBase.js"></script>
+    <script src="Assets/Strings/ShellStrings.js"></script>
+    <script src="Source/XM/CCText.js"></script>
+
+    <script src="Source/XM/Extensions/Extensions.js"></script>
+
+    <script src="Source/XM/Shell.js"></script>
+    <script src="Source/XM/Core/ShellBase.js"></script>
+    <script src="Source/XM/LMS/LMSBase.js"></script>
+
+    <script src="Source/Custom/Toolbar.js"></script>
+
+    <script>
+        function Initialize() {
+            if (AppSettings.enforceMinimumWindowSize && (window.innerWidth < $('#shell').outerWidth() || window.innerHeight < $('#shell').outerHeight())) {
+                window.resizeTo($('#shell').outerWidth() * 1.2, $('#shell').outerHeight() * 1.2);
+            }
+        }
+
+        function Destroy() {
+            if (AppSettings.LMS.enabled)
+                LMS.Finish();
+
+            Shell.Destroy();
+        }
+
+
+        //$('#zoom-slider').kendoSlider({
+        //    decreaseButtonTitle: 'Zoom Out',
+        //    increaseButtonTitle: 'Zoom In',
+        //    min: 45,
+        //    max: 300,
+        //    smallStep: 5,
+        //    largeStep: 50,
+        //    tickPlacement: 'none',
+        //    slide: function (e) {
+        //        OnScaleChanged(e);
+        //    },
+        //    change: function (e) {
+        //        OnScaleChanged(e);
+        //    }
+        //});
+
+        //var originalWidth = $('#contents').width();
+        //var originalHeight = $('#contents').height();
+        var context2d = $('#drawing').get(0).getContext('2d');
+        var drawingScale = 1;
+
+        function OnScaleChanged(e) {
+            XMLog('Scale Changed. ' + e.value);
+
+            drawingScale = e.value / 100;
+            var overflow = e.value != 45;
+
+            if (overflow) {
+                $('#content-float').css('overflow', 'auto');
+            } else {
+                $('#content-float').css('overflow', 'hidden');
+            }
+
+            var page = $('#contents').get(0).contentWindow.document.body;
+            $(page).css('transform', 'scale(' + drawingScale + ')');
+            $(page).css('transform-origin', '0 0');
+
+            $('#contents').width(originalWidth * drawingScale);
+            $('#contents').height(originalHeight * drawingScale);
+
+            $('#drawing').width(originalWidth * drawingScale);
+            $('#drawing').height(originalHeight * drawingScale);
+
+            if (drawingScale < 1) {
+                $('#content-float').scrollTop(0);
+            }
+        }
+
+        kendo.bind($('#header'), Shell);
+        kendo.bind($('#footer'), Shell);
+
+        //Shell.bind(XMEvent.SlideChanged, function () {
+        //    $('.flex-nav').removeClass('active');
+        //    $('.flex-nav[data-id="' + Shell.currentSlideNumber + '"]').addClass('active');
+
+        //    $('#zoom-slider').data('kendoSlider').value(45);
+        //});
+    </script>
+
+
+ 
+</body>
+
+</html>

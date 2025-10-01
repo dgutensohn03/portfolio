@@ -1,0 +1,446 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "Map",
+    "sceneWidth": 1280,
+    "sceneHeight": 720,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.State",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true,
+    "create_after": "this.createCustom();",
+    "state_init_after": "this.initCustom();"
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "7c699609-0ec7-4838-8568-528851c37c41",
+    "info": {
+      "editorName": "map",
+      "children": [
+        {
+          "type": "tileSprite",
+          "id": "28bfb0d5-e703-418c-9ba6-5b0e74aa529d",
+          "asset": "0",
+          "info": {
+            "editorName": "water_sprite",
+            "animations": [{
+              "name": "default",
+              "frameRate": 24,
+              "loop": true,
+              "autoPlay": true,
+              "frames": [
+                "0",
+                "1",
+                "2",
+                "3",
+                "4",
+                "5",
+                "6",
+                "7",
+                "8",
+                "9",
+                "10",
+                "11",
+                "12",
+                "13",
+                "14",
+                "15",
+                "16",
+                "17",
+                "18",
+                "19",
+                "20",
+                "21",
+                "22",
+                "23",
+                "24",
+                "25",
+                "26",
+                "27",
+                "28",
+                "29",
+                "30",
+                "31",
+                "32",
+                "33",
+                "34",
+                "35",
+                "36",
+                "37",
+                "38",
+                "39",
+                "40",
+                "41",
+                "42",
+                "43",
+                "44",
+                "45",
+                "46",
+                "47",
+                "48",
+                "49",
+                "50",
+                "51",
+                "52",
+                "53",
+                "54",
+                "55",
+                "56",
+                "57",
+                "58",
+                "59"
+              ]
+            }],
+            "width": 1280,
+            "height": 720
+          }
+        },
+        {
+          "type": "image",
+          "id": "a0b55d49-d929-4dfd-b90b-ef1a44f601da",
+          "asset": "1",
+          "info": {"editorName": "mapOverlay"}
+        },
+        {
+          "type": "image",
+          "id": "2e9dd39d-4932-4a06-b027-453b73758015",
+          "asset": "2",
+          "info": {
+            "editorName": "map_pipes",
+            "x": 179,
+            "y": -186
+          }
+        },
+        {
+          "type": "image",
+          "id": "797f4da6-aac2-4a6d-b4e1-31cde4c801ac",
+          "asset": "3",
+          "info": {
+            "editorName": "levels",
+            "x": 129,
+            "y": 103,
+            "alpha": 0
+          }
+        },
+        {
+          "type": "group",
+          "id": "5d2a3b71-0640-48c2-b64b-4127be75493a",
+          "info": {
+            "editorName": "props",
+            "children": [
+              {
+                "type": "prefab",
+                "prefab": "0",
+                "id": "f75c3fa9-2c50-4179-b978-eb5603092cc4",
+                "asset-ref": {
+                  "file": "WebContent/assets/pack.json",
+                  "section": "sprites",
+                  "asset": "bulldozer_sprite",
+                  "sprite": "0"
+                },
+                "info": {
+                  "editorName": "bulldozer_sprite",
+                  "x": 1023,
+                  "y": 154
+                }
+              },
+              {
+                "type": "prefab",
+                "prefab": "1",
+                "id": "92b141ae-03fe-4c90-8286-a17fa78372df",
+                "asset-ref": {
+                  "file": "WebContent/assets/pack.json",
+                  "section": "sprites",
+                  "asset": "oilPump_sprite",
+                  "sprite": "0"
+                },
+                "info": {
+                  "editorName": "oilPump_sprite",
+                  "x": 32,
+                  "y": 183
+                }
+              },
+              {
+                "type": "prefab",
+                "prefab": "2",
+                "id": "8c8f34ca-ca3b-40cf-8c8f-edd9b4615417",
+                "asset-ref": {
+                  "file": "WebContent/assets/pack.json",
+                  "section": "sprites",
+                  "asset": "windmill_sprite",
+                  "sprite": "0"
+                },
+                "info": {
+                  "editorName": "windmill_sprite",
+                  "x": 706,
+                  "y": 18
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "group",
+          "id": "cf2f1843-ccb6-4704-abb0-cb9d4d02a747",
+          "info": {
+            "editorName": "nodes",
+            "editorPublic": true,
+            "alpha": 0,
+            "children": [
+              {
+                "type": "spritesheet",
+                "id": "94cacb74-87d6-4bca-b082-ffaf4ea9735b",
+                "asset": "4",
+                "info": {
+                  "editorName": "collider",
+                  "name": "node1",
+                  "x": 624,
+                  "y": 170
+                }
+              },
+              {
+                "type": "spritesheet",
+                "id": "048a6720-01d6-4bd2-b2fc-a3a785d2c14c",
+                "asset": "4",
+                "info": {
+                  "editorName": "collider1",
+                  "x": 195,
+                  "y": 170
+                }
+              },
+              {
+                "type": "spritesheet",
+                "id": "9ea9b0a7-3a3a-45aa-8e84-16a9d18dc585",
+                "asset": "4",
+                "info": {
+                  "editorName": "collider2",
+                  "x": 195,
+                  "y": 539
+                }
+              },
+              {
+                "type": "spritesheet",
+                "id": "7a2df369-eeeb-4591-9005-2b463e668d27",
+                "asset": "4",
+                "info": {
+                  "editorName": "collider3",
+                  "x": 624,
+                  "y": 539
+                }
+              },
+              {
+                "type": "spritesheet",
+                "id": "9047d251-4f04-480d-a52f-8ea79689aefc",
+                "asset": "4",
+                "info": {
+                  "editorName": "collider4",
+                  "x": 624,
+                  "y": 360
+                }
+              },
+              {
+                "type": "spritesheet",
+                "id": "25a8ad6c-f921-499b-a0dc-16a8f8590c6e",
+                "asset": "4",
+                "info": {
+                  "editorName": "collider5",
+                  "x": 1134,
+                  "y": 360
+                }
+              }
+            ]
+          }
+        },
+        {
+          "type": "image",
+          "id": "65f186b8-5382-4d67-ac9a-fde5d3c09911",
+          "asset": "5",
+          "info": {
+            "editorName": "levelsBackground",
+            "x": 129,
+            "y": 103
+          }
+        },
+        {
+          "type": "image",
+          "id": "34566ded-4560-470f-b0c3-55c875bfa760",
+          "asset": "6",
+          "info": {
+            "editorName": "stop1",
+            "editorPublic": true,
+            "name": "stop1",
+            "x": 129,
+            "y": 103
+          }
+        },
+        {
+          "type": "image",
+          "id": "f1357d84-af02-45e2-9131-f51a5c7f51a8",
+          "asset": "7",
+          "info": {
+            "editorName": "stop2",
+            "editorPublic": true,
+            "name": "stop2",
+            "x": 129,
+            "y": 103
+          }
+        },
+        {
+          "type": "image",
+          "id": "3f59607b-de53-48a0-b4dc-6edd146a6953",
+          "asset": "8",
+          "info": {
+            "editorName": "stop3",
+            "editorPublic": true,
+            "name": "stop3",
+            "x": 129,
+            "y": 103
+          }
+        },
+        {
+          "type": "image",
+          "id": "36169cae-63b7-4d6b-8401-2012432d0ef9",
+          "asset": "9",
+          "info": {
+            "editorName": "stop4",
+            "editorPublic": true,
+            "name": "stop4",
+            "x": 129,
+            "y": 103
+          }
+        },
+        {
+          "type": "image",
+          "id": "d6a9e790-ccf4-4ebc-b57e-d13d77733b96",
+          "asset": "10",
+          "info": {
+            "editorName": "stop5",
+            "editorPublic": true,
+            "name": "stop5",
+            "x": 129,
+            "y": 103
+          }
+        },
+        {
+          "type": "prefab",
+          "prefab": "3",
+          "id": "e7ddbc01-bd66-4b02-b49f-1eb6163c40ed",
+          "asset-ref": {
+            "file": "WebContent/assets/pack.json",
+            "section": "sprites",
+            "asset": "mike",
+            "sprite": "0"
+          },
+          "info": {
+            "editorName": "mike",
+            "editorPublic": true,
+            "x": 624,
+            "y": 164
+          }
+        },
+        {
+          "type": "image",
+          "id": "886ccfc0-e67e-4467-95d0-adc05f51741f",
+          "asset": "11",
+          "info": {
+            "editorName": "map_instructions",
+            "x": 873,
+            "y": -1
+          }
+        }
+      ]
+    }
+  },
+  "type": "STATE",
+  "asset-table": {
+    "0": {
+      "file": "WebContent/assets/pack.json",
+      "section": "sprites",
+      "asset": "water_sprite",
+      "sprite": "0"
+    },
+    "1": {
+      "file": "WebContent/assets/pack.json",
+      "section": "maps",
+      "asset": "mapOverlay"
+    },
+    "2": {
+      "file": "WebContent/assets/pack.json",
+      "section": "maps",
+      "asset": "map_pipes"
+    },
+    "3": {
+      "file": "WebContent/assets/pack.json",
+      "section": "maps",
+      "asset": "levels"
+    },
+    "4": {
+      "file": "WebContent/assets/pack.json",
+      "section": "sprites",
+      "asset": "collider",
+      "sprite": "0"
+    },
+    "5": {
+      "file": "WebContent/assets/pack.json",
+      "section": "maps",
+      "asset": "levelsBackground"
+    },
+    "6": {
+      "file": "WebContent/assets/pack.json",
+      "section": "maps",
+      "asset": "stop1"
+    },
+    "7": {
+      "file": "WebContent/assets/pack.json",
+      "section": "maps",
+      "asset": "stop2"
+    },
+    "8": {
+      "file": "WebContent/assets/pack.json",
+      "section": "maps",
+      "asset": "stop3"
+    },
+    "9": {
+      "file": "WebContent/assets/pack.json",
+      "section": "maps",
+      "asset": "stop4"
+    },
+    "10": {
+      "file": "WebContent/assets/pack.json",
+      "section": "maps",
+      "asset": "stop5"
+    },
+    "11": {
+      "file": "WebContent/assets/pack.json",
+      "section": "maps",
+      "asset": "map_instructions"
+    }
+  },
+  "prefab-table": {
+    "0": "WebContent/assets/prefabs/bulldozer.canvas",
+    "1": "WebContent/assets/prefabs/oilPump.canvas",
+    "2": "WebContent/assets/prefabs/windmill_small.canvas",
+    "3": "WebContent/assets/prefabs/mike_map.canvas"
+  }
+}

@@ -1,0 +1,1151 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/portal.css">
+    <link rel="stylesheet" href="scripts/jquery-ui/jquery-ui.css">
+    <title>Vcert Project</title>
+</head>
+
+<body id="portalPage" style="display: none;">
+    <div class="container-fluid">
+        <div id="body1" class="row">
+            <div class="col-12">
+                <div class="row">
+                    <div class="portalHeader"><img class="welcomeVerticalLine"
+                            src="images/8-Header Divide Bar.png" />CHALLENGES.</div>
+                </div>
+                <div id="SectionBlockRow" class="row">
+                    <div id="HDBlock" class="sectionBlock">
+                        <div id="sectionBlockPicture1"></div>
+                        <div class="greenFlag"></div>
+                        <div class="readyToPlay">READY TO PLAY</div><br />
+                        <div class="sectionTitle">Valvoline Heavy Duty</div>
+                        <a><div class="learnMoreButton" onclick="$('#learnMoreMask').css('display', 'block');">Learn More</div></a>
+                    </div>
+                    <div id="LDBlock" class="sectionBlock">
+                        <div id="sectionBlockPicture2"></div>
+                        <div class="greenFlag"></div>
+                        <div class="readyToPlay">READY TO PLAY</div><br />
+                        <div class="sectionTitle">Valvoline Light Duty</div>
+                        <a><div class="learnMoreButton" onclick="$('#learnMoreMask').css('display', 'block');" coming-soon>Learn More</div></a>
+                    </div>
+                    <div id="VPSBlock" class="sectionBlock">
+                        <div id="sectionBlockPicture3"></div>
+                        <div class="greenFlag"></div>
+                        <div class="readyToPlay">READY TO PLAY</div><br />
+                        <div class="sectionTitle">VPS</div>
+                        <a><div class="learnMoreButton" onclick="$('#learnMoreMask').css('display', 'block');" coming-soon>Learn More</div></a>
+                    </div>
+                    <div id="ADBlock" class="sectionBlock">
+                        <div id="sectionBlockPicture4"></div>
+                        <div class="greenFlag"></div>
+                        <div class="readyToPlay">READY TO PLAY</div><br />
+                        <div class="sectionTitle">Valvoline Auto Dealer</div>
+                        <a><div class="learnMoreButton" onclick="$('#learnMoreMask').css('display', 'block');" coming-soon>Learn More</div></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="downArrow" onclick="$('html, body').animate({scrollTop:$(this).position().top + 50}, 500, 'swing')"></div>
+                </div>
+                <div class="row">
+                    <div class="portalHeader2">HISTORY.</div>
+                </div>
+
+                <div id="HDWidget" class="row">
+                    <div class="sectionWidget expanded">
+                        <div id="sectionHeaderPicture1"></div>
+                        <div class="sectionHeaderTitle">HEAVY DUTY</div>
+                        <div class="sectionDropArrow active" onclick="toggleSection(event)"></div>
+                        <div class="expandedSection">
+                            <div class="sectionHorizontalLine First"></div>
+                            <div class="sectionTask">
+                                <div class="sectionConvoIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 1 - 5,000 Mile Drain Extension</div>Explore how to talk to customers about the 5,000-to-10,000 mile extended drain interval that Premium Blue™ provides for some engines.
+                                    <br /><br /><span class="activityDate"></span>&nbsp;&nbsp;&nbsp;<div id="c1HD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.navigateIframe("challenge_1_hd.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c1HDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_1_hd.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c1HDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_1_hd.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask">
+                                <div class="sectionVidIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 2 - Value to the Customer</div>Learn more about the Cummins®/Valvoline™ partnership and see how it benefits both companies.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c2HD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="HD";parent.navigateIframe("challenge_2_hd.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c2HDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_2_hd.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c2HDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_2_hd.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask">
+                                <div class="sectionGameIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 3 - Protecting the Engine</div>Designed to provide performance and protection in modern, emissions treatment equipped diesel engines, Premium Blue™ has a number of advantages for fleet owners.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c3HD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="HD";parent.navigateIframe("challenge_3_hd.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c3HDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_3_hd.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c3HDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_3_hd.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask">
+                                <div class="sectionProductIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 4 - Meet One Solution™</div>Discover how gasoline, natural gas, and diesel engines can all benefit from Valvoline™ Premium Blue One Solution™.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c4HD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="HD";parent.navigateIframe("challenge_4_hd.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c4HDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_4_hd.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c4HDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_4_hd.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionProductIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 5 - ZEREX™ Approvals</div>Valvoline’s™ line of ZEREX™ coolants can take the heat. That’s why it’s the factory fill for many major OEMs.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c5HD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="HD";parent.navigateIframe("challenge_5_hd.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c5HDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_5_hd.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c5HDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_5_hd.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionConvoIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 6 - ZEREX™ Nitrite Free</div>Refresh your knowledge of the features and benefits of ZEREX™ coolants.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c6HD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="HD";parent.navigateIframe("challenge_6_hd.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c6HDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_6_hd.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c6HDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_6_hd.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionVidIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 7 - Cummins R&D</div>Valvoline™ and Cummins® research and development teams work closely to create products that meet today's needs while preparing Valvoline™ for what comes next.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c7HD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="HD";parent.navigateIframe("challenge_7_hd.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c7HDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_7_hd.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c7HDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_7_hd.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionGameIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 8 - Transmission Fluid and Gear Oil</div>Encounter the benefits that Valvoline™ transmission fluids bring to OEMs and examine the ways that Valvoline™ gear oils are designed to provide outstanding wear protection and excellent thermal stability.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c8HD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="HD";parent.navigateIframe("challenge_8_hd.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c8HDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_8_hd.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c8HDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_8_hd.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionVidIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 9 - Cobalt and Cerulean</div>Valvoline™ has a diverse line of grease products that will help engines achieve fewer failures and less downtime, while helping customers achieve reduce maintenance costs
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c9HD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="HD";parent.navigateIframe("challenge_9_hd.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c9HDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_9_hd.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c9HDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_9_hd.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionGameIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 10 - Why Valvoline™</div>Learn how with unique OEM partnerships, state-of-the-art labs, focused quality testing, and other innovations Valvoline™ has changed the industry.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c10HD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="HD";parent.navigateIframe("challenge_10_hd.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c10HDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_10_hd.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c10HDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_10_hd.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sectionHorizontalLineLast"></div>
+                    </div>
+                </div>
+                <div id="LDWidget" class="row">
+                    <div class="sectionWidget expanded">
+                        <div id="sectionHeaderPicture2"></div>
+                        <div class="sectionHeaderTitle">LIGHT DUTY</div>
+                        <div class="sectionDropArrow active" onclick="toggleSection(event)"></div>
+                        <div class="expandedSection">
+                            <div class="sectionHorizontalLine First"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionVidIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 1 - SPARK</div>Installers have seen a 22% increase in Valvoline™ lubricant and chemical services with SPARK. See how you can share, and share in, that increase.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c1LD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="LD";parent.navigateIframe("challenge_1_ld.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c1LDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_1_ld.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c1LDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_1_ld.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionProductIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 2 - Valvoline™ Premium Oils</div>Explore the Valvoline™ premium oil line and how it can bring significant benefits to a consumer as well as growth to an installer’s bottom line.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c2LD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="LD";parent.navigateIframe("challenge_2_ld.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c2LDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_2_ld.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c2LDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_2_ld.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionConvoIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 3 - ZEREX™</div>ZEREX™ enables businesses to consolidate their inventory while providing an excellent coolant solution for customers.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c3LD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="LD";parent.navigateIframe("challenge_3_ld.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c3LDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_3_ld.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c3LDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_3_ld.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionConvoIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 4 - The Valvoline™ Story</div>Valvoline™ is a leader in lubricants and fluids, always ready to meet the needs of today with an eye towards “what’s next.”
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c4LD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="LD";parent.navigateIframe("challenge_4_ld.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c4LDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_4_ld.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c4LDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_4_ld.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionVidIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 5 - VPERK$</div>Learn about the sales incentive program where everyone wins.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c5LD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="LD";parent.navigateIframe("challenge_5_ld.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c5LDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_5_ld.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c5LDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_5_ld.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionProductIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 6 - Multi-Vehicle ATF</div>Valvoline™ Multi-Vehicle ATF is the #1 ATF brand in the world. But that’s just the beginning.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c6LD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="LD";parent.navigateIframe("challenge_6_ld.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c6LDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_6_ld.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c6LDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_6_ld.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionConvoIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 7 - The Sales Process</div>Making a sale doesn’t just happen on its own. It comes as the result of a specific process.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c7LD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="LD";parent.navigateIframe("challenge_7_ld.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c7LDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_7_ld.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c7LDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_7_ld.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionGameIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 8 - Why Valvoline™</div>Our history is rooted in innovation.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c8LD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="LD";parent.navigateIframe("challenge_8_ld.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c8LDClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_8_ld.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c8LDFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_8_ld.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                        <div class="sectionHorizontalLineLast"></div>
+                    </div>
+                     </div>
+                </div>
+                <div id="VPSWidget" class="row">
+                    <div class="sectionWidget expanded">
+                        <div id="sectionHeaderPicture3"></div>
+                        <div class="sectionHeaderTitle">VPS</div>
+                        <div class="sectionDropArrow active" onclick="toggleSection(event)"></div>
+                        <div class="expandedSection">
+                            <div class="sectionHorizontalLine First"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionVidIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 1 - SPARK</div>Installers have seen a 22% increase in Valvoline™ lubricant and chemical services with SPARK. See how you can share, and share in, that increase.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c1VPS" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="VPS";parent.navigateIframe("challenge_1_vps.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c1VPSClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_1_vps.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c1VPSFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_1_vps.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionConvoIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 2 - VPS Guarantee</div>The VPS Limited Lifetime Guarantee brings protection to consumers and sales growth to their installers.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c2VPS" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="VPS";parent.navigateIframe("challenge_2_vps.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c2VPSClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_2_vps.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c2VPSFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_2_vps.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionGameIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 3 - Profit Potential in VPS</div>VPS services have the potential to significantly increase an installers bottom line. How do you help them understand this?
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c3VPS" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="VPS";parent.navigateIframe("challenge_3_vps.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c3VPSClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_3_vps.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c3VPSFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_3_vps.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionVidIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 4 - Valvoline™ All Engine Clean First Defense</div>As the business of vehicle care and maintenance shifts, Valvoline™ will be ready.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c4VPS" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="VPS";parent.navigateIframe("challenge_4_vps.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c4VPSClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_4_vps.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c4VPSFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_4_vps.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionConvoIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 5 - Valvoline™ Incentive Programs</div>Rev Up, Sticker Bucks, and VSpiff are designed to reward DSRs, Service Writers, and Installers to keep consumer vehicles running smoothly with Valvoline™ products.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c5VPS" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="VPS";parent.navigateIframe("challenge_5_vps.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c5VPSClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_5_vps.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c5VPSFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_5_vps.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionGameIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 6 - The Valvoline™ Brand</div>Valvoline™ is a leader in lubricants and fluids, always ready to meet the needs of today with an eye towards “what’s next.”
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c6VPS" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="VPS";parent.navigateIframe("challenge_6_vps.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c6VPSClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_6_vps.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c6VPSFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_6_vps.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionProductIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 7 - 15k Restoration Kit/Pop & Pours/Low Touch</div>Chemistry-based fluid solutions from Valvoline™ help keep vehicles on the road longer while also providing installers a low-touch way to increase their average ticket.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c7VPS" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="VPS";parent.navigateIframe("challenge_7_vps.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c7VPSClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_7_vps.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c7VPSFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_7_vps.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionGameIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 8 - The Valvoline Scorecard</div>Using the Valvoline Scorecard with an installer helps illustrate the benefits they can realize with Valvoline™ products.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c8VPS" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="VPS";parent.navigateIframe("challenge_8_vps.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c8VPSClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_8_vps.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c8VPSFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_8_vps.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionProductIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 9 - High Touch Service</div>With quality products, education, and established consumer trust, Valvoline™ can help dealerships maintain, and build, their consumer base.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c9VPS" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="VPS";parent.navigateIframe("challenge_9_vps.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c9VPSClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_9_vps.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c9VPSFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_9_vps.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionConvoIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 10 - The Sales Process</div>Valvoline™ sales and marketing tools help installers, service writers, dealerships, and DSRs increase tickets and boost the bottom line.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c10VPS" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="VPS";parent.navigateIframe("challenge_10_vps.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c10VPSClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_10_vps.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c10VPSFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_10_vps.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                        <div class="sectionHorizontalLineLast"></div>
+                    </div>
+                </div>
+                </div>
+                <div id="ADWidget" class="row">
+                    <div class="sectionWidget expanded">
+                        <div id="sectionHeaderPicture4"></div>
+                        <div class="sectionHeaderTitle">AUTO DEALER</div>
+                        <div class="sectionDropArrow active" onclick="toggleSection(event)"></div>
+                        <div class="expandedSection">
+                            <div class="sectionHorizontalLine First"></div>
+                            <div class="sectionTask">
+                                <div class="sectionGameIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 1 - What Dealerships Want</div>Discover the three key goals every auto dealership has.
+                                    <br /><br /><span class="activityDate"></span>&nbsp;&nbsp;&nbsp;<div id="c1AD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.navigateIframe("challenge_1_ad.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c1ADClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_1_ad.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c1ADFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_1_ad.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask">
+                                <div class="sectionProductIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 2 - Dealership Departments</div>When you understand an auto dealership from the inside out, you will be able to more accurately discuss how Valvoline™ services and programs can benefit them.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c2AD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="AD"; parent.navigateIframe("challenge_2_ad.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c2ADClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_2_ad.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c2ADFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_2_ad.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask">
+                                <div class="sectionConvoIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 3 - Auto Dealership Roles</div>Service Manager. Service Advisors. Technicians. Do you know what each role <em>really</em> is responsible for?
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c3AD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="AD";parent.navigateIframe("challenge_3_ad.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c3ADClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_3_ad.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c3ADFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_3_ad.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask">
+                                <div class="sectionConvoIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 4 - OEM Programs</div>See how Valvoline™ products and services can help dealerships experience even greater success than they find in OEM programs.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c4AD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="AD";parent.navigateIframe("challenge_4_ad.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c4ADClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_4_ad.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c4ADFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_4_ad.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionGameIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 5 - Auto Dealer Solutions</div>Explore the business solutions, technology, products, and partner programs Valvoline™ uses to help dealers achieve their goals.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c5AD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="AD";parent.navigateIframe("challenge_5_ad.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c5ADClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_5_ad.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c5ADFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_5_ad.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="sectionHorizontalLine"></div>
+                            <div class="sectionTask upcoming">
+                                <div class="sectionVidIcon"></div>
+                                <div class="activityText">
+                                    <div class="activityTitle">Challenge 6 - A Dealership Customer</div>Hear how one dealership customer benefits from a Valvoline™ partnership.
+                                    <br /><br /><font class="activityDate"></font>&nbsp;&nbsp;&nbsp;<div id="c6AD" class="progressBar"></div>
+                                </div>
+                                <div class="finishFlag"></div>
+                                <a onclick='parent.challengeClass="AD";parent.navigateIframe("challenge_6_ad.html")'>
+                                    <div class="startActivityButton">Start</div>
+                                    <div class="daysLeft">X days left</div>
+                                </a>
+                                <div id="c6ADClear" class="challengeCleared">
+                                    Complete!<br />
+                                    <a onclick='parent.navigateIframe("challenge_6_ad.html")'>
+                                        View
+                                    </a>
+                                    <div class="clearFlag"></div>
+                                </div>
+                                <div id="c6ADFail" class="challengeFailed">
+                                    <a onclick='parent.navigateIframe("challenge_6_ad.html")'>
+                                        Review
+                                    </a>
+                                </div>
+                            </div>
+                          
+                        <div class="sectionHorizontalLineLast"></div>
+                    </div>
+                </div>
+                </div>
+                <div class="row">
+                    <div class="downArrow" onclick="$('html, body').animate({scrollTop:$(this).position().top + 50}, 500, 'swing')"></div>
+                </div>
+                <div class="row">
+                    <div class="portalHeader3">LEADERBOARD.</div>
+                </div>
+
+                <div id="HDLeader" class="row">
+                    <div class="sectionWidget expanded">
+                        <div id="sectionHeaderPicture1"></div>
+                        <div class="sectionHeaderTitle">HEAVY DUTY</div>
+                        <div class="sectionDropArrow active" onclick="toggleSection(event)"></div>
+                        <div class="expandedSection">
+                            <!--Filled in via portal.js-->
+                        </div>
+                    </div>
+                </div>
+                <div id="LDLeader" class="row">
+                    <div class="sectionWidget expanded">
+                        <div id="sectionHeaderPicture2"></div>
+                        <div class="sectionHeaderTitle">LIGHT DUTY</div>
+                        <div class="sectionDropArrow active" onclick="toggleSection(event)"></div>
+                        <div class="expandedSection">
+                            <!--Filled in via portal.js-->
+                        </div>
+                    </div>
+                </div>
+                <div id="VPSLeader" class="row">
+                    <div class="sectionWidget expanded">
+                        <div id="sectionHeaderPicture3"></div>
+                        <div class="sectionHeaderTitle">VPS</div>
+                        <div class="sectionDropArrow active" onclick="toggleSection(event)"></div>
+                        <div class="expandedSection">
+                            <!--Filled in via portal.js-->
+                        </div>
+                    </div>
+                </div>
+                <div id="ADLeader" class="row">
+                    <div class="sectionWidget expanded">
+                        <div id="sectionHeaderPicture4"></div>
+                        <div class="sectionHeaderTitle">AUTO DEALER</div>
+                        <div class="sectionDropArrow active" onclick="toggleSection(event)"></div>
+                        <div class="expandedSection">
+                            <!--Filled in via portal.js-->
+                        </div>
+                    </div>
+                </div>
+                <div id="allRankings" class="row">
+                    <a href="Leaderboard.html"><div class="learnMoreButton">All Rankings</div></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="learnMoreMask" class="mask">
+        <div class="privacyBG" id="learnMoreBG">
+            <div class="privacyTitle">LEARN</div>
+            <div class="closeButton" onclick="$('#learnMoreMask').css('display', 'none');">Continue</div>
+            <div class="privacyText">
+                <b>Valvoline Channel Partner Sellers (DSRs)</b><br /><br />Valvoline invites you to participate in our ASE-Accredited VCERT training program. Only 45 companies carry the Automotive Service Excellence (ASE) Certification, and we are proud to be one of those organizations.<br /><br />Our VCERT training courses are held at our World Headquarters in Lexington, KY. The 2-day instructor-led courses provide hands-on training, improve your Valvoline product knowledge, and leverage Valvoline’s best practices and selling strategies. Sign up now to get VALVOLINE CERTIFIED!<br /><br />After successfully completing a VCERT course(s), you will earn a 50% VCERT Bonus for both dollars and Redline Performer points on all product SKUs associated with your product certification(s).<br /><br />Follow this link to learn more and reserve space in one of our scheduled events: <a href="https://valvolineperformancerewards.com" target="_blank">https://valvolineperformancerewards.com</a><br /><br /><b>Valvoline Sellers</b><br /><br />Valvoline invites you to participate in our ASE-Accredited VCERT training program. Only 45 companies carry the Automotive Service Excellence (ASE) Certification, and we are proud to be one of those organizations.<br /><br />Our VCERT training courses are held at our World Headquarters in Lexington, KY. The 2-day instructor-led courses provide hands-on training, improve your Valvoline product knowledge, and leverage Valvoline’s best practices and selling strategies. Sign up now to get VALVOLINE CERTIFIED!<br /><br />Follow this link to learn more and reserve space in one of our scheduled events: Sales Training Center<br /><br /><b>Cummins Sellers</b><br /><br />Valvoline invites you to participate in our ASE-Accredited VCERT training program. Only 45 companies carry the Automotive Service Excellence (ASE) Certification, and we are proud to be one of those organizations.<br /><br />Our VCERT training courses can be held at our World Headquarters in Lexington, KY or can be held in your regional locations. The 1-day instructor-led courses provide hands-on training, improve your Valvoline product knowledge, and leverage Valvoline’s best practices and selling strategies. Request to sign up now to get VALVOLINE CERTIFIED!<br /><br />Please send an email to <a href="mailto:VCERTHelpDesk@thelhtgroup.com" target="_blank">VCERTHelpDesk@thelhtgroup.com</a> to learn more and/or schedule an event.
+            </div>
+        </div>
+    </div>
+
+    <script src="bin/footer.js"></script>
+    <script src="scripts/polyfill.min.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="scripts/jquery-3.4.1.js"></script>
+    <script src="scripts/jquery-ui/jquery-ui.min.js"></script>
+    <!-- <script src="scripts/popper/dist/popper.min.js"></script> -->
+    <script src="Bootstrap/js/bootstrap.min.js"></script>
+    <script src="scripts/mousetrap.min.js"></script>
+
+    <!-- <script src="scripts/popper/dist/popper.min.js"></script> -->
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script> -->
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script> -->
+    <!-- <script defer src="src/fb-core-js.js"></script> -->
+    <script defer src="bin/fb-auth.js"></script>
+    <script src="bin/console.js"></script>
+
+
+    <script>
+//                 var comingSoon = document.querySelectorAll('[coming-soon]');
+
+// $(comingSoon).each(function (index, elem) {
+//     $(elem).addClass('coming-soon');
+//     $(elem).html('Coming Soon');
+// })
+
+</script>
+
+    <script defer>
+        var lockAnim = false; //Disable section expand/collapse animations until one finishes.
+        parent.exitChallenge();
+
+
+        //TODO: Calculate Monthly XP, Goal XP, and Total Points via the following three functions
+        function updateMonthlyXP(monthlyGoalXP) {
+            $("#monthXP").html(makeTwoDigit(monthlyGoalXP));
+        }
+
+        function updateGoalXP(goalXP) {
+            $("#goalXP").html(makeTwoDigit(goalXP));
+        }
+
+        function updateTotalPoints(totalPoints) {
+            $("#points").html(makeTwoDigit(totalPoints));
+        }
+
+        function makeTwoDigit(num) {
+            var tempText = num.toString();
+            while (tempText.length < 2) {
+                tempText = "0" + tempText;
+            }
+            return tempText;
+        }
+
+        function toggleSection(event) {
+            if (!lockAnim) {
+                if ($(event.target).hasClass('active')) {
+                    lockAnim = true;
+                    $(event.target).removeClass('active');
+                    $(event.target).siblings('.expandedSection').stop("false", "true").hide("slow", function () {
+                        $(event.target).parent().removeClass('expanded');
+                        lockAnim = false;
+                    });
+                } else {
+                    lockAnim = true;
+                    $(event.target).addClass('active');
+                    $(event.target).parent().addClass('expanded');
+                    $(event.target).siblings('.expandedSection').stop("false", "true").show("slow", function () {
+                        lockAnim = false;
+                    });
+                }
+            }
+        }
+
+        $(".Tooltip").click(function () {
+            $(this).children('.TooltipExpand').toggle(0);
+        });
+
+
+
+        parent.updateTrack();
+
+        Mousetrap.bind('ctrl+1', function(e) {
+            parent.navigateIframe("challenge_1_hd.html");
+            return false;
+        });
+        Mousetrap.bind('ctrl+2', function(e) {
+            parent.navigateIframe("challenge_2_hd.html");
+            return false;
+        });
+        Mousetrap.bind('ctrl+3', function(e) {
+            parent.navigateIframe("challenge_3_hd.html");
+            return false;
+        });
+        Mousetrap.bind('ctrl+4', function(e) {
+            parent.navigateIframe("challenge_4_hd.html");
+            return false;
+        });
+        Mousetrap.bind('ctrl+5', function(e) {
+            parent.navigateIframe("challenge_5_hd.html");
+            return false;
+        });
+        Mousetrap.bind('ctrl+6', function(e) {
+            parent.navigateIframe("challenge_6_hd.html");
+            return false;
+        });
+        Mousetrap.bind('ctrl+7', function(e) {
+            parent.navigateIframe("challenge_7_hd.html");
+            return false;
+        });
+        Mousetrap.bind('ctrl+8', function(e) {
+            parent.navigateIframe("challenge_8_hd.html");
+            return false;
+        });
+        Mousetrap.bind('ctrl+9', function(e) {
+            parent.navigateIframe("challenge_9_hd.html");
+            return false;
+        });
+        Mousetrap.bind('ctrl+0', function(e) {
+            parent.navigateIframe("challenge_10_hd.html");
+            return false;
+        });
+    </script>
+</body>
+
+</html>

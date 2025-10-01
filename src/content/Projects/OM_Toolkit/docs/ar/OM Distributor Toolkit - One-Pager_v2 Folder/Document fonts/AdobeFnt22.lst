@@ -1,0 +1,153 @@
+%!Adobe-FontList 1.22
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:DINPro
+FamilyName:DIN Pro
+StyleName:Regular
+FullName:DINPro
+MenuName:DINPro
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\arAE\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\DINPro.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:110156
+FileModTime:1339165074
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,DINPro
+NameArray:0,Win,1,DINPro
+NameArray:0,Win,16,DIN Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:DINPro-Bold
+FamilyName:DINPro
+StyleName:Bold
+FullName:DINPro-Bold
+MenuName:DINPro-Bold
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\arAE\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\FF_DIN_PRO_BOLD_ITALIC.OTF
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:90228
+FileModTime:1143643560
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,DINPro-Bold
+NameArray:0,Win,1,DINPro-Bold
+NameArray:0,Win,16,DINPro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:DINPro-Medium
+FamilyName:DINPro
+StyleName:Medium
+FullName:DINPro-Medium
+MenuName:DINPro-Medium
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\arAE\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\FF_DIN_PRO_MEDIUM_ITALIC.OTF
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:89060
+FileModTime:1143643560
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,DINPro-Medium
+NameArray:0,Win,1,DINPro-Medium
+NameArray:0,Win,16,DINPro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:MinionPro-Regular
+FamilyName:Minion Pro
+StyleName:Regular
+FullName:Minion Pro
+MenuName:Minion Pro
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\arAE\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\MinionPro-Regular.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:218640
+FileModTime:1576114631
+WeightClass:400
+WidthClass:5
+AngleClass:0
+DesignSize:110
+NameArray:0,Mac,4,Minion Pro
+NameArray:0,Win,1,Minion Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:ArialMT
+FamilyName:Arial
+StyleName:Regular
+FullName:Arial
+MenuName:Arial
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\arAE\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\arial.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:1036584
+FileModTime:1536992912
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Arial
+NameArray:0,Win,1,Arial
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Arial-BoldMT
+FamilyName:Arial
+StyleName:Bold
+FullName:Arial Bold
+MenuName:Arial
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\03_fORMATTED\arAE\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\arialbd.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:980756
+FileModTime:1536992912
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,Arial Bold
+NameArray:0,Win,1,Arial
+%EndFont
+

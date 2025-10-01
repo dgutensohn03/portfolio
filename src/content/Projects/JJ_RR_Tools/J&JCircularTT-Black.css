@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'J&J CircularTT Black';
+  src: url('Fonts/J&JCircularTT-Black.eot');
+  src: url('Fonts/J&JCircularTT-Black.eot?#iefix') format('embedded-opentype'),
+       url('Fonts/J&JCircularTT-Black.svg#J&JCircularTT-Black') format('svg'),
+       url('Fonts/J&JCircularTT-Black.ttf') format('truetype'),
+       url('Fonts/J&JCircularTT-Black.woff') format('woff'),
+       url('Fonts/J&JCircularTT-Black.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}

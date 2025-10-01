@@ -1,0 +1,2619 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=yes" name="viewport"><!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/challenge.css">
+	<title>Vcert Project</title>
+	<style>
+		.container-fluid {}
+
+		#bg-container {
+			top: 0;
+		}
+
+		.box {
+			overflow-y: auto !important;
+			overflow-x: hidden;
+		}
+
+		.remediation {
+			max-width: 500px;
+			min-width: 500px;
+		}
+
+		.carrot-tl {
+			background: url('images/challenge_1/SpeechBubbles/Spch-Bubble_TpRghtCarrot_w250.png') no-repeat;
+			height: 62px;
+
+		}
+
+		.word-bubble-btm-right .rev-text,
+		.word-bubble-btm-left .rev-text {
+			float: none;
+			max-width: 500px !important;
+			margin: auto;
+			min-width: 300px;
+
+		}
+
+		.carrot-tl {
+			bottom: -55px;
+			left: 30px;
+			transform: scale(-1);
+			position: absolute !important;
+			top: auto !important;
+			right: auto !important;
+			width: 100%;
+			background-position: center;
+			min-width: 300px;
+		}
+
+		/* #word-bubble-rev-5 > .rev-text {
+	max-width: 450px !important;
+} */
+
+		.word-bubble-btm-left {
+			width: 100vw !important;
+			margin: 0 auto !important;
+			left: 0;
+			position: absolute;
+			top: 75px !important;
+			min-width: 300px;
+		}
+
+		.bubble-left {
+			top: 150px !important;
+			left: auto !important;
+			height: auto !important;
+			min-height: 50px;
+			display: flex;
+			justify-content: center;
+		}
+
+		table {
+			border-collapse: collapse;
+			border-spacing: 0;
+			width: 100%;
+		}
+
+		table td {
+			padding: 10px 20px;
+		}
+
+		table .headerBlue {
+			font-size: 18px;
+			display: inline;
+			white-space: nowrap;
+		}
+
+		@media only screen and (max-width: 1290px) {
+			.col-lg-12-custom {
+				min-width: auto;
+				max-width: 612px;
+				margin: auto;
+			}
+
+			table .headerBlue,
+			table td {
+				font-size: calc(1.5vw + 5px);
+			}
+
+		}
+
+
+
+		.tab-container {
+			width: 100%;
+			justify-content: center;
+			position: absolute !important;
+			bottom: 50px !important;
+			-webkit-box-align: center;
+			align-items: center;
+			margin-top: 20px;
+			flex-wrap: wrap;
+		}
+
+		.tab-container div {
+			margin: 5px 5px;
+		}
+
+		#person-3,
+		#person-4,
+		#person-5,
+		#person-6,
+		#person-7,
+		#person-8 {
+			z-index: 0;
+			padding: 0px 0px;
+			background-origin: content-box;
+		}
+
+		.person-sized {
+			position: absolute;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			max-width: 285px;
+			width: 60vw;
+			height: 40vh;
+			min-height: auto;
+		}
+
+		#bg-1 {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+			width: 100%;
+			height: 100%;
+			display: flex;
+			-webkit-box-align: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			justify-content: center;
+			background: url('images/challenge_1/Characters/Chtr-BG.png') center center / contain no-repeat content-box;
+			padding: 175px 10vw;
+		}
+
+		.hidden {
+			display: none !important;
+		}
+
+		.bubble-left {
+			top: 50px !important;
+			right: 40px !important;
+			height: auto !important;
+			min-height: 50px;
+			display: flex;
+			justify-content: center;
+			font-size: 15px !important;
+			text-shadow: 0px 0px 15px #A7A9AC;
+			line-height: 15px !important;
+		}
+
+		.bubble-left div:first-child {
+			position: relative;
+			top: -25px;
+			right: 0%;
+			float: right;
+		}
+
+		.bubble-right {
+			top: -50px !important;
+			right: -40px !important;
+			height: auto !important;
+			min-height: 50px;
+			display: flex;
+			justify-content: center;
+			font-size: 15px !important;
+			text-shadow: 2px 2px #A7A9AC;
+			line-height: 15px !important;
+		}
+
+		.bubble-right div:first-child {
+			position: relative;
+			top: -25px;
+			left: 30%;
+			float: right;
+		}
+
+		.bubble-right-inside {
+			top: 50px !important;
+			left: 0px !important;
+			height: auto !important;
+			min-height: 50px;
+			display: flex;
+			justify-content: center;
+			font-size: 15px !important;
+			text-shadow: 0px 0px 15px #A7A9AC;
+			line-height: 15px !important;
+		}
+
+		.bubble-right-inside div:first-child {
+			position: relative;
+			top: -25px;
+			/* left: -30%; */
+			float: right;
+		}
+
+
+		.bubble-right-inside div:not(:first-child) {
+			transform: scaleX(1);
+		}
+
+		.bubble-left div:not(:first-child) {
+			transform: scaleX(-1);
+		}
+
+
+		.bubble-right-inside>.b0 {
+			background: url("images/challenge_1/Spch-btn_RghtCarrot_UP_4.png") no-repeat;
+			background-size: contain;
+		}
+
+		.bubble-right-inside>.b1 {
+			display: none;
+			background: url("images/challenge_1/Spch-btn_RghtCarrot_UP_1.png") no-repeat;
+			background-size: contain;
+		}
+
+		.bubble-right-inside>.b2 {
+			display: none;
+			background: url("images/challenge_1/Spch-btn_RghtCarrot_UP_2.png") no-repeat;
+			background-size: contain;
+		}
+
+		.bubble-right-inside>.b3 {
+			display: none;
+			background: url("images/challenge_1/Spch-btn_RghtCarrot_UP_3.png") no-repeat;
+			background-size: contain;
+		}
+
+		.carrot-tr {
+			bottom: -55px;
+			left: 0;
+			transform: scaleY(-1);
+			position: absolute !important;
+			top: auto !important;
+			right: auto !important;
+			width: 100%;
+			background-position: center;
+			min-width: 300px;
+			display: inline-block;
+		}
+
+		.carrot-tr {
+			background: url('images/challenge_1/SpeechBubbles/Spch-Bubble_TpRghtCarrot_w250.png') no-repeat center;
+			height: 62px;
+		}
+
+		.red-dot-bg {
+			position: absolute;
+			left: 0 !important;
+			top: 0 !important;
+			transform: none;
+			width: 100%;
+			height: 500px;
+			display: flex;
+			-webkit-box-align: center;
+			align-items: center;
+			-webkit-box-pack: center;
+			justify-content: center;
+			background: url('images/challenge_1/Characters/Chtr-BG.png') center center / contain no-repeat content-box;
+			padding: 225px 0 0 0;
+		}
+
+		.person-left {
+			position: absolute;
+			min-height: 295px;
+			/* top: 0 !important;
+						left: 0 !important;
+						right: 0 !important; */
+			transform: none;
+			background-position: left;
+			width: 500px;
+			height: 40vh;
+			min-height: 295px;
+
+		}
+
+		.person-right {
+			position: absolute;
+			/* top: 0 !important;
+						left: 0 !important;
+						right: 0 !important; */
+			transform: none;
+			background-position: right;
+			width: 430px;
+			height: 40vh;
+			min-height: 295px;
+
+		}
+
+		.person-center {
+			position: absolute;
+			/* top: 0 !important;
+						left: 0 !important;
+						right: 0 !important; */
+			transform: none;
+			background-position: center;
+			width: 430px;
+			height: 40vh;
+			min-height: 295px;
+			left: auto !important;
+
+		}
+
+		.bubble-left-inside {
+			top: -100px !important;
+			right: 60px !important;
+			position: relative;
+		}
+
+		.bubble-right-inside {
+			top: -100px !important;
+			left: 90px !important;
+			position: relative;
+		}
+
+		.rev-text {
+			line-height: 1.3;
+			min-height: 100px;
+		}
+
+		.word-bubble-btm-left {}
+
+		@media only screen and (max-width: 999px) {
+			.carrot-tr {
+				transform: scaleY(-1) !important;
+			}
+		}
+
+		@media only screen and (max-width: 480px) {
+			.person-right {
+				width: 350px;
+			}
+
+			.person-left {
+				width: 440px;
+
+			}
+
+			.bubble-right-inside {
+				left: 60px !important;
+			}
+
+			.bubble-left-inside {
+				right: 60px !important;
+			}
+		}
+
+		.exitButton { margin-top: 40px !important;}
+		@media only screen and (max-width: 424px) {
+		.carousel-item {font-size: calc(12px + 1vw);line-height: calc(12px + 1vw);} .exitButton { margin-top: 0 !important;}
+		}
+
+		.flip-bubble .bubble {
+			
+		}
+	</style>
+</head>
+
+<body>
+	<div class="container-fluid challenge-1">
+		<div id="container">
+			<div class="box" id="box1">
+				<div class="row" id="content">
+					<div class="col topCenterText ">
+						<div class='center-text-box'>
+							<h1>Shawn and His On-Highway Fleet</h1>
+							<p>A product of <font class="emphasisBold">VALVOLINE'S™</font> long-standing partnership
+								with
+								<font class="emphasisBold">CUMMINS®,</font>
+								<font class="emphasisBold">VALVOLINE™</font>
+								<font class="emphasisBold">Premium Blue™</font> Motor Oil provides benefits that can
+								lead to
+								lower maintenance and labor costs for ALL engines.
+							</p>
+							<p>
+								Do your customers understand the long-term cost savings Premium Blue™ can bring to them?
+							</p>
+							<p>
+								In this sales scenario, you’ll have a chance to help Paul make this connection with his
+								customer.
+							</p>
+							<p>
+								Ready to close a sale?
+							</p>
+							<p>
+								As you move through the following scenario, you’ll come across a series of questions
+								that will help guide the action.
+							</p>
+							<p>
+								If you answer all of the questions correctly on your first attempt, you’ll earn 80
+								points. If you miss a question, you’ll have a second opportunity to answer it but you’ll
+								earn a reduced number of points.
+							</p>
+							<p>
+								<div class="headerBlue">SELECT START.</div>
+							</p>
+						</div>
+					</div>
+					<div class="col-1"></div>
+					<div class="col topCenterText m-margin-bottom">
+						<div>
+							<button class="next" id="start-btn" type="submit">START</button>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="box" id="box2">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div id="bg-container">
+					<div class="red-dot-bg" style="position: absolute;
+					left: 0 !important;
+					top: 0 !important;
+					transform: none;
+					width: 100%;
+					height: 475px;
+					display: flex;
+					-webkit-box-align: center;
+					align-items: center;
+					-webkit-box-pack: center;
+					justify-content: center;
+					background: url(images/challenge_1/Characters/Chtr-BG.png) center center / contain no-repeat content-box;
+					padding: 200px 0 0 0;">
+						<!-- <div class="person person-sized person-3-tlk" id="person-3">
+								<div class='click-bubble bubble-left' id="clk-listen-1a">
+									<div>
+										Click to Read
+									</div>
+									<div class='bubble b0'></div>
+									<div class='bubble b1'></div>
+									<div class='bubble b2'></div>
+									<div class='bubble b3'></div>
+								</div>
+							</div>
+						 -->
+
+						<div class="person-center" id="person-1" style="width: 145px;">
+
+						</div>
+						<div class='click-bubble bubble-left'
+							style="top: -150px !important; left: -75px !important; margin-right: 2.5vw; position: relative;"
+							id="clk-listen-1a">
+							<div style="right: 30%;">
+								Click to Read
+							</div>
+							<div class='bubble b0' style="transform: scaleX(1);"></div>
+							<div class='bubble b1' style="transform: scaleX(1);"></div>
+							<div class='bubble b2' style="transform: scaleX(1);"></div>
+							<div class='bubble b3' style="transform: scaleX(1);"></div>
+						</div>
+
+
+						<div class='word-bubble-btm-left' id="word-bubble-rev-1a">
+							<div class="carrot-tl" style="    bottom: -55px;
+							left: -195px;
+							transform: scaleY(-1) !important;
+							position: absolute !important;
+							top: auto !important;
+							right: auto !important;
+							width: 100%;
+							background-position: center;
+							min-width: 300px;"></div>
+							<div class='rev-text'>
+								My name is Shawn. I manage a small fleet of on-highway trucks for ABC Freighters.
+								I’m looking to maximize up-time and minimize costs.
+							</div>
+						</div>
+
+					</div>
+					<div class="br-bc"><button id="continue-btn-3" class="next continue-btn continue-small-m"
+							id="">CONTINUE</button>
+					</div>
+				</div>
+
+			</div>
+
+
+			<div class="box" id="box3">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div id="bg-container">
+					<div class="red-dot-bg" style="position: absolute;
+					left: 0 !important;
+					top: 0 !important;
+					transform: none;
+					width: 100%;
+					height: 475px;
+					display: flex;
+					-webkit-box-align: center;
+					align-items: center;
+					-webkit-box-pack: center;
+					justify-content: center;
+					background: url(images/challenge_1/Characters/Chtr-BG.png) center center / contain no-repeat content-box;
+					padding: 200px 0 0 0;">
+						<!-- <div class="person person-sized person-3-tlk" id="person-3">
+								<div class='click-bubble bubble-left' id="clk-listen-1a">
+									<div>
+										Click to Read
+									</div>
+									<div class='bubble b0'></div>
+									<div class='bubble b1'></div>
+									<div class='bubble b2'></div>
+									<div class='bubble b3'></div>
+								</div>
+							</div>
+						 -->
+
+						<div class="person-center" id="person-2" style="width: 145px;">
+
+						</div>
+						<div class='click-bubble bubble-left flip-bubble'
+							style="top: -150px !important; right: -75px !important; left: auto; margin-left: 2.5vw; position: relative; "
+							id="clk-listen-2a">
+							<div style="left: 30%;">
+								Click to Read
+							</div>
+							<div class='bubble b0' style="transform: scaleX(-1);"></div>
+							<div class='bubble b1' style="transform: scaleX(-1);"></div>
+							<div class='bubble b2' style="transform: scaleX(-1);"></div>
+							<div class='bubble b3' style="transform: scaleX(-1);"></div>
+						</div>
+
+
+						<div class='word-bubble-btm-left' id="word-bubble-rev-2a">
+							<div class="carrot-tr" style="    bottom: -55px;
+    transform: scale(-1,-1) !important;
+    position: absolute !important;
+    top: auto !important;
+    right: -200px !important;
+    left: auto !important;
+							width: 100%;
+							background-position: center;
+							min-width: 300px;"></div>
+							<div class='rev-text'>
+								I’m Paul. As a Valvoline™ Sales Representative, I am your contact for motor oil and our full product line.
+							</div>
+
+						</div>
+						<!-- <div class="tab-container index-2a" style="bottom: -110px !important;">
+							<div class="left-arrow"></div>
+							<div class="right-arrow"></div>
+							<div class="tab-instructions" style="flex-basis: 100%;">Click to continue the conversation.
+							</div>
+						</div> -->
+
+					</div>
+					<div class="br-bc"><button id="continue-btn-4" class="next continue-btn continue-small-m"
+							id="">CONTINUE</button>
+					</div>
+				</div>
+
+			</div>
+
+
+
+
+
+			<div class="box" id="box4">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div id="bg-container">
+					<div class="red-dot-bg" style="">
+						<div class="person-3-tlk person-left" style=""> </div>
+						<div class="person-4-lst person-right" style=""></div>
+
+
+						<div class='word-bubble-btm-left' id="word-bubble-rev-3a">
+							<div class="carrot-tl"></div>
+							<div class='rev-text'>
+								Sounds like business has really taken off. Do you have any concerns about the work you
+								have lined up this year?
+							</div>
+							<div class='rev-text'>
+								Are there concerns with your current provider being able to support your work?
+							</div>
+							<div class='rev-text'>
+								What are your main challenges?
+							</div>
+							<div class='rev-text'>
+								Do you have specific pain points you currently experience with your fleet?
+							</div>
+						</div>
+
+						<div class='click-bubble bubble-left bubble-left-inside' id="clk-listen-3a">
+							<div style="left: 0;">
+								Click to Read
+							</div>
+							<div class='bubble b0'></div>
+							<div class='bubble b1'></div>
+							<div class='bubble b2'></div>
+							<div class='bubble b3'></div>
+						</div>
+
+
+					
+
+
+
+						<div class='word-bubble-btm-left' id="word-bubble-rev-4a">
+							<div class="carrot-tr"></div>
+							<div class='rev-text'>
+								Just that the equipment is up to it. You know I have a smaller fleet, so downtime is a concern.
+							</div>
+							<div class='rev-text'>
+								I would like to extend my service intervals so I can keep my trucks on the road longer and
+								have less downtime.
+							</div>
+						</div>
+						<div class='click-bubble bubble-right-inside hidden' id="clk-listen-4a">
+							<div style="right: 0;">
+								Click to Read
+							</div>
+							<div class='bubble b0'></div>
+							<div class='bubble b1'></div>
+							<div class='bubble b2'></div>
+							<div class='bubble b3'></div>
+						</div>
+
+
+						<div class="tab-container index-3a" style="bottom: -120px !important;">
+							<div class="left-arrow"></div>
+							<div class="right-arrow"></div>
+							<div class="tab-instructions" style="flex-basis: 100%;">Click to continue the conversation.
+							</div>
+						</div>
+						<div class="tab-container index-4a" style="bottom: -120px !important;">
+							<div class="left-arrow"></div>
+							<div class="right-arrow"></div>
+							<div class="tab-instructions" style="flex-basis: 100%;">Click to continue the conversation.
+							</div>
+						</div>
+					
+					</div>
+					<div class="br-bc"><button id="continue-btn-5" class="next continue-btn continue-small-m"
+							id="">CONTINUE</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Question 1 -->
+			<div class="box question-bg-box" id="box5">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+						<div class='center-text-box question-1'>
+							<h1 id="question-num"></h1>
+							<div class='question-text'></div>
+							<div class='answer-container'></div>
+						</div>
+					</div>
+					<div class="col topCenterText m-RightCol-question">
+						<div class="reveal-btn text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="reveal-btn-m text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="remediation">
+							<div class="remediation-icon"></div>
+							<div class="remediation-txt"></div>
+							<div class="remediation-continue next">
+								Continue
+							</div>
+							<div class="remediation-retry">
+								Try Again
+								<div class='warn-sel-ans'>
+									Choose an answer and select "Try Again."
+								</div>
+							</div>
+							<div class="attempt-container row">
+								<div class="attempt-1">
+									FIRST ATTEMPT
+								</div>
+								<div class="attempt-2">
+									SECOND ATTEMPT
+								</div>
+								<div class="attempt-3">
+									RETRY IN 7 DAYS
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			
+			<div class="box" id="box6">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div id="bg-container">
+					<div class="red-dot-bg" style="">
+						<div class="person-3-tlk person-left" style=""> </div>
+						<div class="person-4-lst person-right" style=""></div>
+
+
+						<div class='word-bubble-btm-left' id="word-bubble-rev-5a">
+							<div class="carrot-tl"></div>
+							<div class='rev-text'>
+								I understand, balancing service and downtime is important. Have I ever talked to you about Valvoline™ Premium Blue™ Motor Oil?
+							</div>
+							<div class='rev-text'>
+								It was developed in partnership with Cummins® but has benefits for all engines. 
+							</div>
+							<div class='rev-text'>
+								One of those, that I think would help you specifically, is that when maintenance schedules can’t be met,...
+							</div>
+							<div class='rev-text'>
+								...Premium Blue™ products help protect your engine out to the longest drain interval.
+							</div>
+						</div>
+
+						<div class='click-bubble bubble-left bubble-left-inside' id="clk-listen-5a">
+							<div style="left: 0;">
+								Click to Read
+							</div>
+							<div class='bubble b0'></div>
+							<div class='bubble b1'></div>
+							<div class='bubble b2'></div>
+							<div class='bubble b3'></div>
+						</div>
+
+						<div class='word-bubble-btm-left' id="word-bubble-rev-6a">
+							<div class="carrot-tr"></div>
+							<div class='rev-text'>
+								Sounds good, but if I remember our last conversation, it was more expensive than what I’m currently using.
+							</div>
+						</div>
+						<div class='click-bubble bubble-right-inside hidden' id="clk-listen-6a">
+							<div style="right: 0;">
+								Click to Read
+							</div>
+							<div class='bubble b0'></div>
+							<div class='bubble b1'></div>
+							<div class='bubble b2'></div>
+							<div class='bubble b3'></div>
+						</div>
+
+
+						<div class="tab-container index-5a" style="bottom: -120px !important;">
+							<div class="left-arrow"></div>
+							<div class="right-arrow"></div>
+							<div class="tab-instructions" style="flex-basis: 100%;">Click to continue the conversation.
+							</div>
+						</div>
+					
+					</div>
+					<div class="br-bc"><button id="continue-btn-6" class="next continue-btn continue-small-m"
+							id="">CONTINUE</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Question 2 -->
+			<div class="box question-bg-box" id="box7">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+						<div class='center-text-box question-2'>
+							<h1 id="question-num"></h1>
+							<div class='question-text'></div>
+							<div class='answer-container'></div>
+						</div>
+					</div>
+					<div class="col topCenterText m-RightCol-question">
+						<div class="reveal-btn text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="reveal-btn-m text-white">
+							<h3>REVEAL ANSWER</h3>
+						</div>
+						<div class="remediation">
+							<div class="remediation-icon"></div>
+							<div class="remediation-txt"></div>
+							<div class="remediation-continue next">
+								Continue
+							</div>
+							<div class="remediation-retry">
+								Try Again
+								<div class='warn-sel-ans'>
+									Choose an answer and select "Try Again."
+								</div>
+							</div>
+							<div class="attempt-container row">
+								<div class="attempt-1">
+									FIRST ATTEMPT
+								</div>
+								<div class="attempt-2">
+									SECOND ATTEMPT
+								</div>
+								<div class="attempt-3">
+									RETRY IN 7 DAYS
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="box" id="box8">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height " id="content" style="padding-top: 0 !important; padding-bottom: 0 !important;">
+					<div class="col-5 col-12-md topCenterText back-btn-padding m-margin-top-bottom min-wid-700">
+						<div class='center-text-box'>
+							<h1>Fact Sheet</h1><p>
+							<font class="emphasisBold">VALVOLINE™ Premium Blue™ Motor Oil</font> can provide extended
+							drain intervals for engines. Fewer oil changes means less downtime so your machinery can be
+							on the job longer.</p>
+						</div>
+					</div>
+					<div class="col-5 col-12-md topCenterText min-wid-700" style="">
+						<div class="col" style="padding: 0;">
+							<div class='chart-container'>
+								<div class='row'>
+									<div class="col flex-center m-padding-bottom">
+										<img src="images/challenge_1/FactSheet/Btn1-Cumns_DWN.png">
+									</div>
+									<div class="col-md-8">
+										<div class="emphasisBold">
+											Cummins® 2017
+										</div><br>
+										Cummins® engines, 2017 and newer, may benefit from a 5,000-mile drain extension.
+									</div>
+								</div>
+								<div class='row'>
+									<div class="col flex-center m-padding-bottom">
+										<img src="images/challenge_1/FactSheet/Btn1-Cumns_DWN.png">
+									</div>
+									<div class="col-md-8">
+										<div class="emphasisBold">
+											Cummins® Pre 2016
+										</div><br>
+											Cummins® engines, 2016 and older, may benefit from a 5,000-mile drain
+											extension.
+										</div>
+									</div>
+									<div class='row'>
+										<div class="col flex-center m-padding-bottom">
+										<img src="images/challenge_1/FactSheet/Btn3-OEM_DWN.png">
+									</div>
+									<div class="col-md-8">
+										<div class="emphasisBold">
+											Other Manufacturers
+										</div><br>
+											Using Valvoline™ Oil Analysis, drain intervals may be increased in engines
+											developed by other engine manufacturers.
+										</div>
+									</div>
+								</div>
+							</div>
+							
+						</div>
+					<div class="col money-btn-container">
+						<button  id="money-btn" class="next" style="display: inline-block;">SHOW ME THE MONEY</button>
+					</div></div>
+					
+					<!-- <div class="continue-br bottom-anchor" >
+								<button id="money-btn" class="next">SHOW ME THE MONEY</button>
+							</div> -->
+				</div>
+			<div class="box" id="box9">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div class="row align-middle full-box-height " id="content" style="">
+					<div class="col-lg-5 col-sm-12 back-btn-padding m-margin-top">
+						<div class='center-text-box'>
+							<h1>Show Me the Money</h1><p>
+							This is the Valvoline™ TCO Value Calculator. It can be used to help illustrate the long-term
+							cost savings a customer can achieve when using <font class="emphasisBold">VALVOLINE™ Premium
+								Blue™ Motor Oil.</font> Let’s dive back in and review how you can use this calculator
+							with a customer.</p>
+							<p  class="d-spacer"> 
+							Select a number to learn more about that section.
+						</p>
+							<!-- <img src="images/challenge_1/divider.png"> -->
+							
+							<div class="hot-spot-content"></div>
+						</div>
+					</div>
+					<div class="col-lg-5 col-sm-12">
+						<div class="col" style="padding: 0;">
+							<div class='calc-container'>
+								
+								<div class="hs-btn-container">
+								<div class='hs hs-1'>
+									1
+								</div>
+								<div class='hs hs-2'>
+									2
+								</div>
+								<div class='hs hs-3'>
+									3
+								</div>
+								<div class='hs hs-4'>
+									4
+								</div>
+								<div class='hs hs-5'>
+									5
+								</div></div><img src='images/challenge_1/Calculator2.jpg'>
+								<div class="hl-1"></div>
+								<div class="hl-2"></div>
+								<div class="hl-3"></div>
+								<div class="hl-4"></div>
+								<div class="hl-5"></div>
+							</div>
+							<div></div>
+						</div>
+					</div>
+					
+					<!-- <button class="next continue-btn" id="continue-btn-5">CONTINUE</button>
+					<div class="col-1 d-none"></div> -->
+					<div class="col bottom-anchor br-bc" style="min-width: 320px;">
+						<button class="next continue-btn" id="continue-btn-7">CONTINUE</button>
+					</div>
+				</div>
+				
+			</div>
+
+			<div class="box" id="box10">
+				<div class='back-btn'>
+					<img src="">BACK
+				</div>
+				<div id="bg-container">
+					<div class="red-dot-bg" style="">
+						<div class="person-3-tlk person-left" style=""> </div>
+						<div class="person-4-lst person-right" style=""></div>
+
+
+						<div class='word-bubble-btm-left' id="word-bubble-rev-7a">
+							<div class="carrot-tl"></div>
+							<div class='rev-text'>
+								You can manage your downtime in a way that works for your job and equipment needs.
+							</div>
+							<div class='rev-text'>
+								Plus, the Valvoline™ Premium™ Blue™ Motor Oil formulation leads to lower maintenance / labor costs.
+							</div>
+							<div class='rev-text'>
+								The bottom line is, if you want to extend out your drain intervals, or when maintenance schedules can’t be met,...
+							</div>
+							<div class='rev-text'>
+								...Cummins® endorses Premium Blue™ to help engines last up to 5,000-miles longer than all competitors.
+							</div>
+							 
+						</div>
+
+						<div class='click-bubble bubble-left bubble-left-inside' id="clk-listen-7a">
+							<div style="left: 0;">
+								Click to Read
+							</div>
+							<div class='bubble b0'></div>
+							<div class='bubble b1'></div>
+							<div class='bubble b2'></div>
+							<div class='bubble b3'></div>
+						</div>
+
+						<div class='word-bubble-btm-left' id="word-bubble-rev-8a">
+							<div class="carrot-tr"></div>
+							<div class='rev-text'>
+								Wow! Those numbers look good, and it sounds like my concerns over downtime can be helped
+								too?
+							</div>
+						</div>
+						<div class='click-bubble bubble-right-inside hidden' id="clk-listen-8a">
+							<div style="right: 0;">
+								Click to Read
+							</div>
+							<div class='bubble b0'></div>
+							<div class='bubble b1'></div>
+							<div class='bubble b2'></div>
+							<div class='bubble b3'></div>
+						</div>
+
+
+						<div class="tab-container index-7a" style="bottom: -120px !important;">
+							<div class="left-arrow"></div>
+							<div class="right-arrow"></div>
+							<div class="tab-instructions" style="flex-basis: 100%;">Click to continue the conversation.
+							</div>
+						</div>
+					
+					</div>
+					<div class="br-bc"><button id="continue-btn-8" class="next continue-btn continue-small-m"
+							id="">CONTINUE</button>
+					</div>
+				</div>
+			</div>
+
+			<div class="box" id="box11">
+				<div class="mask-img" style="position:absolute; top:0; overflow: visible;"><img id="learn-screen-img"
+						src="images/challenge_1/Conclsn-Photo.jpg" style="justify-content: center;"></div>
+				<div class="row align-middle learn-box" id="content" style="height: 55% !important;">
+					<div class="col-md-12 col-xl-6" style="text-align: left">
+						<div>
+							<h1>What Did We Learn Today?</h1>
+							<div>
+								<p><font class="emphasisBold">Valvoline™ Premium Blue™ Motor Oil</font> has benefits that all engines and owners can experience.</p>
+									<p>
+									While Cummins® engines specifically benefit from extended drain intervals, the Premium Blue™ formulation can lead to lower maintenance and labor costs for ALL engines.</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 col-xl-6 learned-continue" style="min-height: 150px;">
+						<button class="next continue-btn-center" id="continue-btn-7">CONTINUE</button>
+					</div>
+				</div>
+			</div>
+			<!--CONCLUSION-->
+			<div class="box" id="box12">
+				<div class="row align-middle full-box-height" id="content">
+					<div class="col topCenterText">
+						<div class='center-text-box'>
+							<h1>Challenge Complete!</h1>
+							<div id='result-incorrect'>
+								<p>It was a good try, but to successfully complete a challenge, you need a score of 80% or higher on the challenge questions.</p>
+								<p>You earned 0 points this time.</p>
+								<p>You do have the opportunity to retake this challenge and earn some points!</p>
+								<p>Better luck next time!</p>
+							</div>
+							<div id='result-closed'>
+								<p>Looks like you still have some work to do with this topic. You did not earn a
+								passing score and no additional points will be added to your total.</p>
+								<p>While you wait for the next challenge to hit your inbox, you might want to return to your class materials and review some of the information around this specific topic.</p>
+								<p>This challenge will remain open so you can put that review to the test by taking the challenge again. (No points can be earned any longer for this challenge.)</p>
+								<p>A new challenge will be coming soon. Better luck next time!</p>
+							</div>
+							<div id='result-three'>
+								<p>You’ve completed this challenge review. If you would like to review this topic in
+									greater depth, you may want to return to your class materials and review some of the
+									information presented there.</p>
+								<p>As a reminder, no points will be earned for completing a challenge review.</p>
+							</div>
+							<div id='result-correct'>
+								<p>Great work!</p>
+								<p>You just earned yourself <span id="score">10</span> points.</p>
+								<p>Remember, you can’t earn any additional points from this challenge, but you can use
+									it as reference.</p>
+								<p>Look for your next challenge soon.</p>
+							</div>
+							<!-- <div>For more information on this topic, check out some additional resources <a
+									id="additional-resource" href="" target="_blank">here</a>.</div> -->
+						</div>
+					</div>
+					<div class="col topCenterText col-sm">
+						<div>
+							<button id="gameover-btn" type="submit">CONTINUE</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id='progress-bar'>
+		<div class='line'></div>
+		<div class='pin intro'></div>
+		<div class='pin scene'></div>
+		<div class='pin scene'></div>
+		<div class='pin scene'></div>
+		<div class='pin quest'>
+			<div class='q-points'></div>
+		</div>
+		<div class='pin scene'></div>
+		<div class='pin quest'>
+			<div class='q-points'></div>
+		</div>
+		<div class='pin quest'></div>
+		<div class='pin quest'></div>
+		<div class='pin scene'></div>
+		<div class='pin quest'></div>
+		<div class='pin conclusion'></div>
+		<div class='score'>
+			0
+		</div>
+	</div>
+	<footer>
+		<div>CHALLENGE #</div>
+	</footer><!-- <script src="  bin/footerChallenge.js"></script> -->
+	<script src="scripts/polyfill.min.js">
+	</script> <!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+	<script src="scripts/jquery-3.4.1.js"></script>
+	<script src="scripts/popper.js/dist/umd/popper.min.js"></script>
+	<script src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+	
+	</script> <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+	<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js">
+	</script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js">
+	</script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js">
+
+	</script>
+	<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js"></script>
+	<!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script> -->
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+	<!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script> -->
+	<!-- <script defer src="src/fb-core-js.js"></script> -->
+
+	<script defer src="bin/fb-auth.js">
+	</script>
+	<script src="bin/rules_popup_c1_hd.js"></script>
+	<!-- <script src="src/challenge.js"></script> -->
+	<script>
+		var courseTitle = "5,000-MILE DRAIN EXTENSION";
+		$('#challenge-btn', window.parent.document).html(courseTitle);
+		var thisChallengNumber = 1;
+		$("footer > div").append(thisChallengNumber)
+		$(".c-title").text(courseTitle)
+        $('#additional-resource').attr('href', 'https://valvoline.widencollective.com/portals/tjwhya34/MyPortal572020');
+		parent.setBookmarking("HD", thisChallengNumber, .2);
+		parent.retrieveAttempt(thisChallengNumber, "HD");
+
+
+		//SCENARIO TRACKING
+		var tabsArray = [];
+
+		var tabContainerLength = $('.tab-container').length
+		var tabContainerArray = $('.tab-container')
+		var tabIndex;
+		$('.pin').on('click', function (e) {
+			$(this).addClass('pin-done')
+		})
+
+		for (var i = 0; i < tabContainerLength; i++) {
+			var dotArray = [];
+			var tabID = $('.tab-container').eq(i).attr('class').split(/[ ]+/).pop().slice(6);
+			console.log($('#word-bubble-rev-' + tabID + ' .rev-text').length)
+			for (var x = 0; x < $('#word-bubble-rev-' + tabID + ' .rev-text').length; x++) {
+				dotArray.push(0);
+				$('<div class="dot"><\/div>').insertAfter($('.tab-container .left-arrow').eq(i));
+			}
+			tabsArray.splice(i, 0, dotArray);
+		}
+
+
+		var clickBubble = $('.click-bubble');
+		var currentID;
+		$('#clk-listen-1a').on('click', function (e) {
+			currentID = $(this).attr('id').slice(11);
+			stopFade();
+			$(this).hide();
+			$('#word-bubble-rev-' + currentID).fadeIn();
+			$('#word-bubble-rev-' + currentID + ' .rev-text').show();
+			$('#word-bubble-rev-' + currentID + ' .rev-text:not(:first)').hide();
+			$('#word-bubble-btm-left').hide()
+			if (!$('#continue-btn-3').is(':visible'))
+						$('#continue-btn-3').fadeIn();
+						stopFade();
+
+		})
+
+		$('#clk-listen-2a').on('click', function (e) {
+			currentID = $(this).attr('id').slice(11);
+
+			$(this).hide();
+			$('#word-bubble-rev-' + currentID).fadeIn();
+			$('#word-bubble-rev-' + currentID + ' .rev-text').show();
+			$('#word-bubble-rev-' + currentID + ' .rev-text:not(:first)').hide();
+			$('#word-bubble-btm-left').hide()
+			if (!$('#continue-btn-4').is(':visible'))
+						$('#continue-btn-4').fadeIn();
+			stopFade();
+			//fadeFunction('clk-listen-3a', true);
+			//$('#continue-btn-1').fadeIn();
+		})
+		$('#clk-listen-3a').on('click', function (e) {
+			var currentID = $(this).attr('id').slice(11);
+			//fadeFunction('clk-listen-3c', true);
+			$(this).hide();
+			$('#word-bubble-rev-' + currentID).fadeIn();
+			$('#word-bubble-rev-' + currentID + ' .rev-text').show();
+			$('#word-bubble-rev-' + currentID + ' .rev-text:not(:first)').hide();
+			$('.index-' + currentID + ' .dot-on').removeClass('dot-on');
+			$('.index-' + currentID + ' .dot-on').removeClass('dot-on');
+			$('.index-' + currentID + ' .dot').first().addClass('dot-on');
+			$('.index-' + currentID).css("display", "flex").hide().fadeIn();
+			$('.index-' + currentID + ' .dot').first().bind('click', dotCheck)
+			$('.index-' + currentID + ' .dot').eq(1).bind('click', dotCheck).addClass('pointer');
+			$('.index-' + currentID + ' .right-arrow').addClass('pointer');
+			stopFade();
+			dotReset(0);
+			var currentDot = 0
+			var newDot = 1;
+			console.log(tabsArray)
+			tabsArray[0][0] = 1;
+			
+		})
+
+		$('#clk-listen-4a').on('click', function (e) {
+			$('.tab-container').hide();
+			$('#word-bubble-rev-3a').hide();
+			var currentID = $(this).attr('id').slice(11);
+			//fadeFunction('clk-listen-3c', true);
+			$(this).hide();
+			$('#word-bubble-rev-' + currentID).fadeIn();
+			$('#word-bubble-rev-' + currentID + ' .rev-text').show();
+			$('#word-bubble-rev-' + currentID + ' .rev-text:not(:first)').hide();
+			$('.index-' + currentID + ' .dot-on').removeClass('dot-on');
+			$('.index-' + currentID + ' .dot-on').removeClass('dot-on');
+			$('.index-' + currentID + ' .dot').first().addClass('dot-on');
+			$('.index-' + currentID).css("display", "flex").hide().fadeIn();
+			$('.index-' + currentID + ' .dot').first().bind('click', dotCheck)
+			$('.index-' + currentID + ' .dot').eq(1).bind('click', dotCheck).addClass('pointer');
+			$('.index-' + currentID + ' .right-arrow').addClass('pointer');
+			stopFade();
+			dotReset(1);
+			var currentDot = 0
+			var newDot = 1;
+			console.log(tabsArray)
+			tabsArray[1][0] = 1;
+			
+		})
+		$('#clk-listen-5a').on('click', function (e) {
+			var currentID = $(this).attr('id').slice(11);
+			//fadeFunction('clk-listen-3c', true);
+			$(this).hide();
+			$('#word-bubble-rev-' + currentID).fadeIn();
+			$('#word-bubble-rev-' + currentID + ' .rev-text').show();
+			$('#word-bubble-rev-' + currentID + ' .rev-text:not(:first)').hide();
+			$('.index-' + currentID + ' .dot-on').removeClass('dot-on');
+			$('.index-' + currentID + ' .dot-on').removeClass('dot-on');
+			$('.index-' + currentID + ' .dot').first().addClass('dot-on');
+			$('.index-' + currentID).css("display", "flex").hide().fadeIn();
+			$('.index-' + currentID + ' .dot').first().bind('click', dotCheck)
+			$('.index-' + currentID + ' .dot').eq(1).bind('click', dotCheck).addClass('pointer');
+			$('.index-' + currentID + ' .right-arrow').addClass('pointer');
+			stopFade();
+			dotReset(2);
+			var currentDot = 0
+			var newDot = 1;
+			console.log(tabsArray)
+			tabsArray[2][0] = 1;
+		})
+
+		$('#clk-listen-6a').on('click', function (e) {
+			$('.tab-container').hide();
+			$('#word-bubble-rev-5a').hide();
+			var currentID = $(this).attr('id').slice(11);
+			//fadeFunction('clk-listen-3c', true);
+			$(this).hide();
+			$('#word-bubble-rev-' + currentID).fadeIn();
+			$('#word-bubble-rev-' + currentID + ' .rev-text').show();
+			$('#word-bubble-rev-' + currentID + ' .rev-text:not(:first)').hide();
+			if (!$('#continue-btn-6').is(':visible'))
+						$('#continue-btn-6').fadeIn();
+
+		})
+
+
+		$('#clk-listen-7a').on('click', function (e) {
+			var currentID = $(this).attr('id').slice(11);
+			//fadeFunction('clk-listen-3c', true);
+			$(this).hide();
+			$('#word-bubble-rev-' + currentID).fadeIn();
+			$('#word-bubble-rev-' + currentID + ' .rev-text').show();
+			$('#word-bubble-rev-' + currentID + ' .rev-text:not(:first)').hide();
+			$('.index-' + currentID + ' .dot-on').removeClass('dot-on');
+			$('.index-' + currentID + ' .dot-on').removeClass('dot-on');
+			$('.index-' + currentID + ' .dot').first().addClass('dot-on');
+			$('.index-' + currentID).css("display", "flex").hide().fadeIn();
+			$('.index-' + currentID + ' .dot').first().bind('click', dotCheck)
+			$('.index-' + currentID + ' .dot').eq(1).bind('click', dotCheck).addClass('pointer');
+			$('.index-' + currentID + ' .right-arrow').addClass('pointer');
+			stopFade();
+			dotReset(3);
+			var currentDot = 0
+			var newDot = 1;
+			console.log(tabsArray)
+			tabsArray[3][0] = 1;
+		})
+
+		$('#clk-listen-8a').on('click', function (e) {
+			$('.tab-container').hide();
+			$('#word-bubble-rev-7a').hide();
+			var currentID = $(this).attr('id').slice(11);
+			//fadeFunction('clk-listen-3c', true);
+			$(this).hide();
+			$('#word-bubble-rev-' + currentID).fadeIn();
+			$('#word-bubble-rev-' + currentID + ' .rev-text').show();
+			$('#word-bubble-rev-' + currentID + ' .rev-text:not(:first)').hide();
+			if (!$('#continue-btn-8').is(':visible'))
+					$('#continue-btn-8').fadeIn();
+
+		})
+
+
+		$('#box6 .carouselShow, #box6 #carouselExampleIndicators .exitButton').on('click', function(e) {
+			if($('#box6 #carouselExampleIndicators').is(":hidden") ||$('#box6 #carouselExampleIndicators').hasClass("flip-out-hor-top") ){
+				$('#box6 .overlay').removeClass('hidden').hide().fadeIn();
+			$('#box6 #carouselExampleIndicators').removeClass('flip-in-hor-bottom').removeClass('flip-out-hor-top').removeClass('hidden').addClass('flip-in-hor-bottom');
+			} else {
+				$('#box6 #carouselExampleIndicators').removeClass('flip-in-hor-bottom').addClass('flip-out-hor-top').addClass('hidden');
+				$('#box6 .overlay').addClass('hidden');
+			}
+		});
+
+		$('#box7 .carouselShow, #box7 #carouselExampleIndicators .exitButton').on('click', function(e) {
+			if($('#box7 #carouselExampleIndicators').is(":hidden") ||$('#box7 #carouselExampleIndicators').hasClass("flip-out-hor-top") ){
+				$('#box7 .overlay').removeClass('hidden').hide().fadeIn();
+			$('#box7 #carouselExampleIndicators').removeClass('flip-in-hor-bottom').removeClass('flip-out-hor-top').removeClass('hidden').addClass('flip-in-hor-bottom');
+			} else {
+				$('#box7 #carouselExampleIndicators').removeClass('flip-in-hor-bottom').addClass('flip-out-hor-top').addClass('hidden');
+				$('#box7 .overlay').addClass('hidden');
+			}
+		});
+
+		var hsArray = [0, 0, 0, 0, 0];
+		var hsString = '1,1,1,1,1';
+		var checkProg = function (num) {
+			hsArray[num] = 1;
+			if (hsArray.toString() == hsString) {
+				nextAction("calcComplete");
+			}
+		};
+
+		$('.hs-1').on('click', function () {
+			$('p').removeClass('d-spacer');
+			$('.hl-1').hide();
+			$('.hl-2').hide();
+			$('.hl-3').hide();
+			$('.hl-4').hide();
+			$('.hl-5').hide();
+
+			$('.hl-1').fadeIn();
+			$('.hs-1').removeClass('hs-on');
+			$('.hs-2').removeClass('hs-on');
+			$('.hs-3').removeClass('hs-on');
+			$('.hs-4').removeClass('hs-on');
+			$('.hs-5').removeClass('hs-on');
+			$('.hs-1').addClass('hs-on');
+			$('.hot-spot-content').hide()
+			$('.hot-spot-content').html(
+				'Fleet Information - Complete this section with your customer to ensure that all of the specifics concerning their fleet are accurately captured.'
+			).fadeIn();
+			checkProg(0);
+		})
+
+		$('.hs-2').on('click', function () {
+			$('p').removeClass('d-spacer');
+			$('.hl-1').hide();
+			$('.hl-2').hide();
+			$('.hl-3').hide();
+			$('.hl-4').hide();
+			$('.hl-5').hide();
+
+			$('.hl-2').fadeIn();
+			$('.hs-1').removeClass('hs-on');
+			$('.hs-2').removeClass('hs-on');
+			$('.hs-3').removeClass('hs-on');
+			$('.hs-4').removeClass('hs-on');
+			$('.hs-5').removeClass('hs-on');
+			$('.hs-2').addClass('hs-on');
+			$('.hot-spot-content').hide()
+			$('.hot-spot-content').html(
+				'Competitor Oil - In this section you’ll put the customers’ current costs for oil as well as their current drain intervals. <br />Note that it can be difficult to get competing oil information from a customer but this step  is important to give them an accurate cost savings.'
+			).fadeIn();
+			checkProg(1);
+		})
+
+		$('.hs-3').on('click', function () {
+			$('p').removeClass('d-spacer');
+			$('.hl-1').hide();
+			$('.hl-2').hide();
+			$('.hl-3').hide();
+			$('.hl-4').hide();
+			$('.hl-5').hide();
+
+			$('.hl-3').fadeIn();
+			$('.hs-1').removeClass('hs-on');
+			$('.hs-2').removeClass('hs-on');
+			$('.hs-3').removeClass('hs-on');
+			$('.hs-4').removeClass('hs-on');
+			$('.hs-5').removeClass('hs-on');
+			$('.hs-3').addClass('hs-on');
+			$('.hot-spot-content').hide()
+			$('.hot-spot-content').html(
+				'Enter price for Valvoline™ Oil - Based on the customers’ fleet size and known oil needs. The Valvoline™ recommended drain interval will automatically populate but it can also be changed to meet your customers’ preferred maintenance schedules.'
+			).fadeIn();
+			checkProg(2);
+		})
+
+		$('.hs-4').on('click', function () {
+			$('p').removeClass('d-spacer');
+			$('.hl-1').hide();
+			$('.hl-2').hide();
+			$('.hl-3').hide();
+			$('.hl-4').hide();
+			$('.hl-5').hide();
+
+			$('.hl-4').fadeIn();
+			$('.hs-1').removeClass('hs-on');
+			
+			$('.hs-2').removeClass('hs-on');
+			$('.hs-3').removeClass('hs-on');
+			$('.hs-4').removeClass('hs-on');
+			$('.hs-5').removeClass('hs-on');
+			$('.hs-4').addClass('hs-on');
+			$('.hot-spot-content').hide()
+			$('.hot-spot-content').html(
+				'The cost savings your customer could experience are automatically calculated here.')
+				.fadeIn();
+			checkProg(3);
+		})
+
+		$('.hs-5').on('click', function () {
+			$('p').removeClass('d-spacer');
+			$('.hl-1').hide();
+			$('.hl-2').hide();
+			$('.hl-3').hide();
+			$('.hl-4').hide();
+			$('.hl-5').hide();
+
+			$('.hl-5').fadeIn();
+			$('.hs-1').removeClass('hs-on');
+			$('.hs-2').removeClass('hs-on');
+			$('.hs-3').removeClass('hs-on');
+			$('.hs-4').removeClass('hs-on');
+			$('.hs-5').removeClass('hs-on');
+			$('.hs-5').addClass('hs-on');
+			$('.hot-spot-content').hide()
+			$('.hot-spot-content').html(
+				'These tabs let you select the calculator that best speaks to your customers’ specific needs. These include natural gas and diesel drain extension savings as well as a fuel economy calculator.'
+			).fadeIn();
+			checkProg(4);
+		})
+
+
+
+		var dotCheck = function () {
+			console.log(this)
+			var oldDot = $(this).parent().find('.dot-on').addClass('pointer');
+			var thisTabID = $(this).parent().attr("class").split(/[ ]+/).pop().slice(6);
+			var parentTabGroup = $(this).parent().parent().find('#word-bubble-rev-' + thisTabID).find('.rev-text');
+			var parentDotGroup = $(this).parent().find('.dot');
+			var parentTab = $(this).parent();
+			var thisTabIndex;
+			$(parentTabGroup).hide();
+			$(parentDotGroup).removeClass('dot-on');
+			$(this).toggleClass('dot-on').removeClass('pointer');
+
+
+
+
+			var currentDotIndex = function () {
+				var thisTabClass = "index-" + thisTabID;
+			 console.log('-------------------' + thisTabID)
+				$(tabContainerArray).each(function (i, obj) {
+					if ($(this).hasClass(thisTabClass)) {
+						thisTabIndex = i;
+
+					}
+				});
+
+				$(parentDotGroup).each(function (i, obj) {
+					if ($(this).hasClass('dot-on')) {
+						if (i == 0) {
+							$(this).parent().find('.left-arrow').removeClass('pointer');
+							$(this).parent().find('.right-arrow').addClass('pointer');
+						}
+						if (i > 0 && i < $(parentDotGroup).length) {
+							$(this).parent().find('.left-arrow').addClass('pointer');
+							$(this).parent().find('.right-arrow').addClass('pointer');
+						}
+						if (i >= $(parentDotGroup).length - 1) {
+							$(this).parent().find('.right-arrow').removeClass('pointer')
+						}
+						tabsArray[thisTabIndex][i] = 1;
+						return currentDot = i;
+					}
+				});
+
+				console.log('parentTabGroup Dot: ' + parentTabGroup[currentDot])
+				$(parentTabGroup[currentDot]).css('display', 'block');
+				$('#word-bubble-rev-' + thisTabID + ' .rev-text').eq(currentDot).show();
+				$(parentDotGroup).eq(currentDot + 1).bind('click', dotCheck).addClass('pointer');
+				return currentDot;
+			}();
+
+			var newDot = 0;
+			var oldDot;
+
+			console.log('---------------------------thisTabIndex: ' + thisTabIndex)
+			if (currentDot >= 0 && currentDot < $(parentDotGroup).length) {
+				if ($(this).hasClass('left-arrow') && currentDot >= 0) {
+					oldDot = currentDot;
+					newDot = currentDot - 1;
+					tabsArray[thisTabIndex][newDot] = 1;
+					makeAdjustments(parentDotGroup, parentTabGroup, newDot, currentDot, item, oldDot, thisTabIndex, thisTabID)
+				} else if ($(this).hasClass('right-arrow') && currentDot <= ($(parentDotGroup).length - 1)) {
+					oldDot = currentDot;
+					newDot = currentDot + 1;
+					tabsArray[thisTabIndex][newDot] = 1;
+					makeAdjustments(parentDotGroup, parentTabGroup, newDot, currentDot, item, oldDot, thisTabIndex, thisTabID)
+				}
+			}
+
+
+			completionChecker(parentDotGroup, thisTabID, parentTabGroup)
+		}
+
+
+		var dotReset = function (index) {
+			for (var i = 0; i < tabsArray[index].length; i++) {
+				tabsArray[index][i] = 0;
+			}
+		}
+		var runOnce = false;
+		var arrowFunctions = function () {
+			var tIndex = 1;
+			if (!runOnce) {
+				console.log("Arrow Function")
+				console.log($(this).parent().find('.dot'))
+				console.log($(this).parent().attr("class").split(/[ ]+/).pop().slice(6));
+				var thisTabID = $(this).parent().attr("class").split(/[ ]+/).pop().slice(6);
+				var parentDotGroup = $(this).parent().find('.dot');
+				var parentTabIndex = $(this).parent().parent().find('.tab-container .dot');
+				var thisTabIndex;
+
+				var thisTabClass = "index-" + thisTabID;
+				$(tabContainerArray).each(function (i, obj) {
+					if ($(this).hasClass(thisTabClass)) {
+						thisTabIndex = i;
+
+					}
+				});
+
+				// $(parentDotGroup).each(function(i, obj) {
+				// if($(this).hasClass('dot-on')){
+				// 	currentDot = i;
+				// }
+				// });
+
+				var parentTabGroup = $(this).parent().parent().find('#word-bubble-rev-' + thisTabID).find('.rev-text');
+				console.log('parentDotGroup: ' + parentDotGroup)
+				console.log('parentTabIndex: ' + parentTabIndex)
+				console.log('thisTabIndex: ' + thisTabIndex)
+				console.log('parentTabGroup: ' + parentTabGroup)
+				var item = $(this);
+
+				var currentDot = function () {
+					$(parentDotGroup).each(function (i, obj) {
+						if ($(this).hasClass('dot-on')) {
+							return currentDot = i;
+						}
+					});
+					return currentDot;
+				}();
+				var newDot = 0;
+				var oldDot;
+				console.log("currentDot: + " + currentDot);
+				if (currentDot >= 0 && currentDot < $(parentDotGroup).length) {
+					if ($(this).hasClass('left-arrow') && currentDot >= 0) {
+						oldDot = currentDot;
+						newDot = currentDot - 1;
+						tabsArray[thisTabIndex][newDot] = 1;
+						makeAdjustments(parentDotGroup, parentTabGroup, newDot, currentDot, item, oldDot, thisTabIndex, thisTabID)
+					} else if ($(this).hasClass('right-arrow') && currentDot <= ($(parentDotGroup).length - 1)) {
+						oldDot = currentDot;
+						newDot = currentDot + 1;
+						tabsArray[thisTabIndex][newDot] = 1;
+						makeAdjustments(parentDotGroup, parentTabGroup, newDot, currentDot, item, oldDot, thisTabIndex, thisTabID)
+					}
+				}
+			}
+			runOnce = false;
+		}
+
+		function makeAdjustments(parentDotGroup, parentTabGroup, newDot, currentDot, item, oldDot, thisTabIndex, thisTabID) {
+			runOnce = true
+			if (parentDotGroup[newDot]) {
+				$(parentDotGroup[newDot - 1]).css('display', 'block');
+				$(parentTabGroup).hide();
+				$(parentTabGroup[newDot]).css('display', 'block');
+				$(parentDotGroup).find('.dot-on').removeClass('pointer');
+				$(parentDotGroup).removeClass('dot-on');
+				$(parentDotGroup[oldDot]).addClass('pointer');
+				$(parentDotGroup[newDot]).addClass('dot-on').removeClass('pointer');
+				$(parentDotGroup[newDot + 1]).bind('click', dotCheck).addClass('pointer');
+
+				if (newDot == 0) {
+					$(item).addClass('pointer')
+					$(item).parent().find('.left-arrow').removeClass('pointer');
+				}
+
+				if (newDot >= 1) {
+					$(item).parent().find('.left-arrow').addClass('pointer');
+				}
+
+				if (newDot <= $(parentDotGroup).length) {
+					$(item).parent().find('.right-arrow').addClass('pointer');
+				}
+
+				if (newDot >= $(parentDotGroup).length - 1) {
+					$(item).parent().find('.right-arrow').removeClass('pointer')
+					$(item).parent().find('.left-arrow').addClass('pointer')
+				}
+			}
+			completionChecker(parentDotGroup, thisTabID, parentTabGroup)
+		}
+
+		function completionChecker(parentDotGroup, thisTabID, parentTabGroup) {
+			//console.log('parentTabGroup: ' + parentTabGroup)
+			//console.log('tabContainerLength: ' + tabContainerLength)
+			//console.log(tabContainerArray)
+
+			//$(tabContainerArray).index(".index-" + thisTabID)
+
+
+
+			var groupComplete;
+			var doneCount = 0;
+			var tabGroup = parentTabGroup;
+			var groupIndex = 0
+			console.log(tabContainerArray)
+			//console.log(tabContainerArray.indexOf(parentTabGroup))
+			console.log(thisTabID)
+			var thisTab = "index-" + thisTabID;
+			$(tabContainerArray).each(function (i, obj) {
+				if ($(this).hasClass(thisTab)) {
+					groupIndex = i;
+					console.log('tab-container .length: ' + tabsArray[groupIndex].length)
+			for (var i = 0; i < tabsArray[groupIndex].length; i++) {
+
+				if (tabsArray[groupIndex][i] != 1) {
+					groupComplete = false;
+					break;
+				} else {
+					doneCount++;
+
+					if (doneCount == tabsArray[groupIndex].length) {
+						groupComplete = true;
+						console.log('tab complete')
+						console.log('Group index: ' + groupIndex)
+						tabAction(groupIndex)
+						break;
+					}
+				}
+			}
+				}
+			});
+			//console.log(groupIndex)
+
+
+			//console.log($(parentDotGroup).parent().index($(parentDotGroup).parent()))
+
+		
+			console.log(tabsArray)
+		}
+
+
+
+
+		function tabAction(groupIndex) {
+			console.log('tabAction switch: ' + groupIndex + " " + typeof (groupIndex))
+			stopFade();
+			switch (groupIndex) {
+				case 0:
+					// if (!$('#continue-btn-3').is(':visible'))
+					// 	$('#continue-btn-3').fadeIn();
+					$('#clk-listen-4a').show();
+					fadeFunction('clk-listen-4a', true);
+					break;
+				case 1:
+					if (!$('#continue-btn-5').is(':visible'))
+						$('#continue-btn-5').fadeIn();
+					//fadeFunction('clk-listen-3d', true);
+					break;
+				case 2:
+					$('#clk-listen-6a').show();
+					fadeFunction('clk-listen-6a', true);
+					break;
+				case 3:
+					 $('#clk-listen-8a').show();
+					 fadeFunction('clk-listen-8a', true);
+					break;
+
+				// case "0":
+				// 	fadeFunction('clk-listen-6', true);
+				// 	$('#clk-listen-6').show();
+				// 	break;
+				// case "1":
+				// 	$('#continue-btn-3').fadeIn();
+				// 	break;
+				// case "2":
+				// 	$('#clk-listen-6').fadeIn();
+				// 	fadeFunction('clk-listen-6', true);
+				// 	break;
+				// case "3":
+
+				// 	$('#clk-listen-8').fadeIn();
+				// 	fadeFunction('clk-listen-8', true);
+				// 	break;
+				// case 1:
+				// 	$('#clk-listen-1').show();
+				// 	fadeFunction('clk-listen-1', true);
+				// 	$('#word-bubble-rev-1').hide();
+				// 	break;
+				// case 2:
+				// 	$('#clk-listen-2').show();
+				// 	fadeFunction('clk-listen-2', true);
+
+				// 	$('#word-bubble-rev-2').hide();
+				// 	break;
+				// case 3:
+				// 	fadeFunction('clk-listen-3', true);
+				// 	dotReset(0, 1)
+				// 	$('.dot').removeClass('.dot-on');
+				// 	$('#person-4').removeClass('person-4-tlk').addClass('person-4-lst');
+				// 	$('#person-3').removeClass('person-3-lst');
+				// 	$('#word-bubble-rev-3').hide();
+				// 	$('#word-bubble-rev-4').hide();
+				// 	$('.tab-container').hide();
+				// 	$('#clk-listen-3').show();
+				// 	$('#clk-listen-4').hide();
+				// 	$('#clk-listen-4b').hide();
+				// 	$('#clk-listen-3b').hide();
+				// 	break;
+				// case "calcComplete":
+				// 	$('#continue-btn-5').fadeIn();
+				// 	break;
+				// case 5:
+				// 	fadeFunction('clk-listen-5', true);
+				// 	dotReset(0, 1)
+				// 	$('.dot').removeClass('.dot-on');
+				// 	$('#box6 #person-5').removeClass('person-5-lst').addClass('person-5-tlk');
+				// 	$('#box6 #person-6').removeClass('person-6-tlk').addClass('person-6-lst');
+				// 	$('#box6 #word-bubble-rev-5').hide();
+				// 	$('#box6 #word-bubble-rev-6').hide();
+				// 	$('#box6 .tab-container').hide();
+				// 	$('#box6 #clk-listen-5').show();
+				// 	$('#box6 #clk-listen-6').hide();
+				// 	break;
+				// case 6:
+				// 	fadeFunction('clk-listen-7', true);
+				// 	$('.dot').removeClass('.dot-on');
+				// 	$('#box7 #person-5').removeClass('person-5-lst').addClass('person-5-tlk');
+				// 	$('#box7 #person-6').removeClass('person-6-tlk').addClass('person-6-lst');
+				// 	$('#box7 #word-bubble-rev-5').hide();
+				// 	$('#box7 #word-bubble-rev-6').hide();
+				// 	$('#box7 .tab-container').hide();
+				// 	$('#box7 #clk-listen-7').show();
+				// 	$('#box7 #clk-listen-8').hide();
+				// 	break;
+				// case 8:
+				// 	fadeFunction('clk-listen-7b', true);
+				// 	$('.dot').removeClass('.dot-on');
+				// 	$('#box9 #clk-listen-7b').show();
+				// 	$('#box9 #person-5').removeClass('person-5-lst').addClass('person-5-tlk');
+				// 	//$('#box9 #person-6').removeClass('person-6-tlk').addClass('person-6-lst');
+				// 	$('#box9 #word-bubble-rev-7').hide();
+				// 	$('#box9 #clk-listen-9').hide();
+				// 	break;
+
+				// case 9:
+				// 	fadeFunction('clk-listen-10', true);
+				// 	$('.dot').removeClass('.dot-on');
+				// 	$('#box10 #person-7').removeClass('person-7-lst').addClass('person-7-tlk');
+				// 	$('#box10 #person-8').removeClass('person-8-tlk').addClass('person-8-lst');
+				// 	$('#box10 #word-bubble-rev-3').hide();
+				// 	$('#box10 #word-bubble-rev-4').hide();
+				// 	$('#box10 .tab-container').hide();
+				// 	$('#box10 #clk-listen-10').show();
+				// 	$('#box10 #clk-listen-11').hide();
+				// 	$('#box10 #clk-listen-10b').hide();
+				// 	$('#box10 #clk-listen-11b').hide();
+				// 	break;
+				default:
+					break;
+			}
+		}
+
+
+
+
+		function nextAction(groupIndex) {
+			$('.word-bubble-btm-left').hide()
+			$('.tab-container').hide()
+			$("[id^=clk-listen-]").hide();
+			console.log('next action switch: ' + groupIndex + " " + typeof (groupIndex))
+			stopFade();
+			switch (groupIndex) {
+				case "calcComplete":
+				if (!$('#continue-btn-7').is(':visible'))
+						$('#continue-btn-7').fadeIn();
+					break;
+				case 0:
+					//fadeFunction('clk-listen-3c', true);
+					break;
+				case 1:
+				fadeFunction('clk-listen-1a', true);
+					//$('#clk-listen-3d').show();
+					//fadeFunction('clk-listen-3d', true);
+					break;
+				case 2:
+					fadeFunction('clk-listen-2a', true);
+					break;
+				case 3:
+					fadeFunction('clk-listen-3a', true);
+					break;
+				case 4:
+
+					break;
+				case 5:
+					fadeFunction('clk-listen-5a', true);
+					break;
+				case 9:
+					fadeFunction('clk-listen-7a', true);
+					break;
+				// case "0":
+				// 	fadeFunction('clk-listen-6', true);
+				// 	$('#clk-listen-6').show();
+				// 	break;
+				// case "1":
+				// 	$('#continue-btn-3').fadeIn();
+				// 	break;
+				// case "2":
+				// 	$('#clk-listen-6').fadeIn();
+				// 	fadeFunction('clk-listen-6', true);
+				// 	break;
+				// case "3":
+
+				// 	$('#clk-listen-8').fadeIn();
+				// 	fadeFunction('clk-listen-8', true);
+				// 	break;
+				// case 1:
+				// 	$('#clk-listen-1').show();
+				// 	fadeFunction('clk-listen-1', true);
+				// 	$('#word-bubble-rev-1').hide();
+				// 	break;
+				// case 2:
+				// 	$('#clk-listen-2').show();
+				// 	fadeFunction('clk-listen-2', true);
+
+				// 	$('#word-bubble-rev-2').hide();
+				// 	break;
+				// case 3:
+				// 	fadeFunction('clk-listen-3', true);
+				// 	dotReset(0, 1)
+				// 	$('.dot').removeClass('.dot-on');
+				// 	$('#person-4').removeClass('person-4-tlk').addClass('person-4-lst');
+				// 	$('#person-3').removeClass('person-3-lst');
+				// 	$('#word-bubble-rev-3').hide();
+				// 	$('#word-bubble-rev-4').hide();
+				// 	$('.tab-container').hide();
+				// 	$('#clk-listen-3').show();
+				// 	$('#clk-listen-4').hide();
+				// 	$('#clk-listen-4b').hide();
+				// 	$('#clk-listen-3b').hide();
+				// 	break;
+				// case "calcComplete":
+				// 	$('#continue-btn-5').fadeIn();
+				// 	break;
+				// case 5:
+				// 	fadeFunction('clk-listen-5', true);
+				// 	dotReset(0, 1)
+				// 	$('.dot').removeClass('.dot-on');
+				// 	$('#box6 #person-5').removeClass('person-5-lst').addClass('person-5-tlk');
+				// 	$('#box6 #person-6').removeClass('person-6-tlk').addClass('person-6-lst');
+				// 	$('#box6 #word-bubble-rev-5').hide();
+				// 	$('#box6 #word-bubble-rev-6').hide();
+				// 	$('#box6 .tab-container').hide();
+				// 	$('#box6 #clk-listen-5').show();
+				// 	$('#box6 #clk-listen-6').hide();
+				// 	break;
+				// case 6:
+				// 	fadeFunction('clk-listen-7', true);
+				// 	$('.dot').removeClass('.dot-on');
+				// 	$('#box7 #person-5').removeClass('person-5-lst').addClass('person-5-tlk');
+				// 	$('#box7 #person-6').removeClass('person-6-tlk').addClass('person-6-lst');
+				// 	$('#box7 #word-bubble-rev-5').hide();
+				// 	$('#box7 #word-bubble-rev-6').hide();
+				// 	$('#box7 .tab-container').hide();
+				// 	$('#box7 #clk-listen-7').show();
+				// 	$('#box7 #clk-listen-8').hide();
+				// 	break;
+				// case 8:
+				// 	fadeFunction('clk-listen-7b', true);
+				// 	$('.dot').removeClass('.dot-on');
+				// 	$('#box9 #clk-listen-7b').show();
+				// 	$('#box9 #person-5').removeClass('person-5-lst').addClass('person-5-tlk');
+				// 	//$('#box9 #person-6').removeClass('person-6-tlk').addClass('person-6-lst');
+				// 	$('#box9 #word-bubble-rev-7').hide();
+				// 	$('#box9 #clk-listen-9').hide();
+				// 	break;
+
+				// case 9:
+				// 	fadeFunction('clk-listen-10', true);
+				// 	$('.dot').removeClass('.dot-on');
+				// 	$('#box10 #person-7').removeClass('person-7-lst').addClass('person-7-tlk');
+				// 	$('#box10 #person-8').removeClass('person-8-tlk').addClass('person-8-lst');
+				// 	$('#box10 #word-bubble-rev-3').hide();
+				// 	$('#box10 #word-bubble-rev-4').hide();
+				// 	$('#box10 .tab-container').hide();
+				// 	$('#box10 #clk-listen-10').show();
+				// 	$('#box10 #clk-listen-11').hide();
+				// 	$('#box10 #clk-listen-10b').hide();
+				// 	$('#box10 #clk-listen-11b').hide();
+				// 	break;
+				default:
+					break;
+			}
+		}
+
+		function backAction(groupIndex) {
+			console.log('back action switch: ' + groupIndex + " " + typeof (groupIndex))
+			$('.word-bubble-btm-left').hide()
+			$('.tab-container').hide()
+			$("[id^=clk-listen-]").hide();
+			console.log('next action switch: ' + groupIndex + " " + typeof (groupIndex))
+			stopFade();
+			switch (groupIndex) {
+				case "calcComplete":
+				if (!$('#continue-btn-7').is(':visible'))
+						$('#continue-btn-7').fadeIn();
+					break;
+				case 0:
+					//fadeFunction('clk-listen-3c', true);
+					break;
+				case 1:
+				fadeFunction('clk-listen-1a', true);
+					//$('#clk-listen-3d').show();
+					//fadeFunction('clk-listen-3d', true);
+					break;
+				case 2:
+					fadeFunction('clk-listen-2a', true);
+					break;
+				case 3:
+					fadeFunction('clk-listen-3a', true);
+					break;
+				case 4:
+
+					break;
+				case 5:
+					fadeFunction('clk-listen-5a', true);
+					break;
+				case 9:
+					fadeFunction('clk-listen-7a', true);
+					break;
+				// case "0":
+				// 	fadeFunction('clk-listen-6', true);
+				// 	$('#clk-listen-6').show();
+				// 	break;
+				// case "1":
+				// 	$('#continue-btn-3').fadeIn();
+				// 	break;
+				// case "2":
+				// 	$('#clk-listen-6').fadeIn();
+				// 	fadeFunction('clk-listen-6', true);
+				// 	break;
+				// case "3":
+
+				// 	$('#clk-listen-8').fadeIn();
+				// 	fadeFunction('clk-listen-8', true);
+				// 	break;
+				// case 1:
+				// 	$('#clk-listen-1').show();
+				// 	fadeFunction('clk-listen-1', true);
+				// 	$('#word-bubble-rev-1').hide();
+				// 	break;
+				// case 2:
+				// 	$('#clk-listen-2').show();
+				// 	fadeFunction('clk-listen-2', true);
+
+				// 	$('#word-bubble-rev-2').hide();
+				// 	break;
+				// case 3:
+				// 	fadeFunction('clk-listen-3', true);
+				// 	dotReset(0, 1)
+				// 	$('.dot').removeClass('.dot-on');
+				// 	$('#person-4').removeClass('person-4-tlk').addClass('person-4-lst');
+				// 	$('#person-3').removeClass('person-3-lst');
+				// 	$('#word-bubble-rev-3').hide();
+				// 	$('#word-bubble-rev-4').hide();
+				// 	$('.tab-container').hide();
+				// 	$('#clk-listen-3').show();
+				// 	$('#clk-listen-4').hide();
+				// 	$('#clk-listen-4b').hide();
+				// 	$('#clk-listen-3b').hide();
+				// 	break;
+				// case "calcComplete":
+				// 	$('#continue-btn-5').fadeIn();
+				// 	break;
+				// case 5:
+				// 	fadeFunction('clk-listen-5', true);
+				// 	dotReset(0, 1)
+				// 	$('.dot').removeClass('.dot-on');
+				// 	$('#box6 #person-5').removeClass('person-5-lst').addClass('person-5-tlk');
+				// 	$('#box6 #person-6').removeClass('person-6-tlk').addClass('person-6-lst');
+				// 	$('#box6 #word-bubble-rev-5').hide();
+				// 	$('#box6 #word-bubble-rev-6').hide();
+				// 	$('#box6 .tab-container').hide();
+				// 	$('#box6 #clk-listen-5').show();
+				// 	$('#box6 #clk-listen-6').hide();
+				// 	break;
+				// case 6:
+				// 	fadeFunction('clk-listen-7', true);
+				// 	$('.dot').removeClass('.dot-on');
+				// 	$('#box7 #person-5').removeClass('person-5-lst').addClass('person-5-tlk');
+				// 	$('#box7 #person-6').removeClass('person-6-tlk').addClass('person-6-lst');
+				// 	$('#box7 #word-bubble-rev-5').hide();
+				// 	$('#box7 #word-bubble-rev-6').hide();
+				// 	$('#box7 .tab-container').hide();
+				// 	$('#box7 #clk-listen-7').show();
+				// 	$('#box7 #clk-listen-8').hide();
+				// 	break;
+				// case 8:
+				// 	fadeFunction('clk-listen-7b', true);
+				// 	$('.dot').removeClass('.dot-on');
+				// 	$('#box9 #clk-listen-7b').show();
+				// 	$('#box9 #person-5').removeClass('person-5-lst').addClass('person-5-tlk');
+				// 	//$('#box9 #person-6').removeClass('person-6-tlk').addClass('person-6-lst');
+				// 	$('#box9 #word-bubble-rev-7').hide();
+				// 	$('#box9 #clk-listen-9').hide();
+				// 	break;
+
+				// case 9:
+				// 	fadeFunction('clk-listen-10', true);
+				// 	$('.dot').removeClass('.dot-on');
+				// 	$('#box10 #person-7').removeClass('person-7-lst').addClass('person-7-tlk');
+				// 	$('#box10 #person-8').removeClass('person-8-tlk').addClass('person-8-lst');
+				// 	$('#box10 #word-bubble-rev-3').hide();
+				// 	$('#box10 #word-bubble-rev-4').hide();
+				// 	$('#box10 .tab-container').hide();
+				// 	$('#box10 #clk-listen-10').show();
+				// 	$('#box10 #clk-listen-11').hide();
+				// 	$('#box10 #clk-listen-10b').hide();
+				// 	$('#box10 #clk-listen-11b').hide();
+				// 	break;
+				default:
+					break;
+			}
+		}
+
+		//QUIZ
+		var ifrm = window.frameElement; // reference to iframe element container
+		var doc = ifrm.ownerDocument; // reference to container's document
+		var thisClass = function () {
+			if (ifrm.src.includes("hd")) {
+				return "HD";
+			} else if (ifrm.src.includes("ld")) {
+				return "LD";
+			} else if (ifrm.src.includes("vps")) {
+				return "VPS";
+			}
+		}
+
+		//console.log(thisClass())
+		// $(doc).find('header').css('border-bottom', 'none');
+		ifrm.style.top = '-118px';
+		ifrm.style.position = 'absolute';
+		ifrm.style.height = '100%';
+		ifrm.style.zIndex = '1005';
+
+
+		var quiz = [{
+			// Q1
+			question: '<p>How should Paul address Shawn’s concern to help him extend their drain intervals?</p>',
+			type: 'MC',
+			answers: [
+				'Propose that he take on different work for his fleet.',
+				'Propose using Valvoline™ Premium Blue™ Motor Oil',
+				'Recommend resetting their maintenance schedules',
+				'Suggest hiring more maintenance techs'
+			],
+			choices: [],
+			correct: 2,
+			correct_rem: '<p>That’s it!</p><p>Premium Blue™ could help Shawn extend the drain intervals for his equipment. This would help to schedule maintenance intervals that are more convenient to his maintenance schedule. Let’s see how Paul shares the benefits of Valvoline™ Premium Blue™ Motor Oil.</p>',
+			incorrect_rem: '<p>That is not the correct response.</p><p>Try again and consider this customer’s specific situation - smaller fleet and concerns over unexpected downtime.</p>',
+			fail_rem: '<p>That’s not right.</p><p>The correct answer tells us that Premium Blue™ could help Shawn extend the drain intervals for his equipment. This would help to schedule maintenance intervals that are more convenient to his maintenance schedule.</p><p>You will not receive any points for this question.</p>'
+		},
+		{
+			// Q2
+			question: '<p>How should Paul respond to Shawn’s concern?</p>',
+			type: 'MC',
+			answers: [
+				'Explain how the long-term benefits offset the costs.',
+				'Propose a product at a different price point.',
+				'Thank him for his time and set up another visit where you’ll bring up Premium Blue™ again.',
+				'Help him see how much money he loses during downtime.'
+			],
+			choices: [],
+			correct: [1],
+			correct_rem: '<p>The benefits Premium Blue™ provides to an engine are long lasting and overtime can actually provide a cost savings to the business. Through extended drain intervals you will actually see a cost savings when partnering with Valvoline™.</p><p>Let’s see if Paul can confidently discuss this.</p>',
+			incorrect_rem: '<p>There’s a better answer.</p><p>Try again but this time look for a way to continue the conversation by showing Shawn how a change could directly affect his bottom line.</p>',
+			fail_rem: '<p>That’s not right.</p><p>The correct answer tells us that the benefits Premium Blue™ provides to an engine are long lasting and overtime can actually provide a cost savings to the business. Through extended drain intervals you will actually see a cost savings when partnering with Valvoline™.</p><p>You will not receive any points for this question.</p>'
+		}
+		]
+
+		var passed = true;
+		var questionPointsPossible = 80;
+		var points = [40, 40]
+		var attemptsLeft = [2, 2];
+		//var attempts = [1, 1]
+		var passPercent = 80;
+		var boxLocation = 0;
+		var attemptCount = 0;
+		var currentAnswer;
+		var totalPoints = function () {
+			var sum = 0;
+			for (var i = 0; i < points.length; i++) {
+				sum += points[i]
+			}
+			return sum;
+		}();
+
+		var q = function () {
+			return quiz[qIndex];
+		}
+
+		function RenderQuestion() {
+
+
+			$('.left-arrow').bind('click', arrowFunctions);
+			$('.right-arrow').bind('click', arrowFunctions);
+			for (var qIndex = 0; qIndex < quiz.length; qIndex++) {
+				$('.question-' + (qIndex + 1) + ' #question-num').html('Question ' + (qIndex + 1));
+				$('.question-' + (qIndex + 1) + ' .question-text').html(quiz[qIndex].question);
+				for (var i = 0; i < quiz[qIndex].answers.length; i++) {
+					quiz[qIndex].choices.push(i + 1)
+					var div = document.createElement('div')
+					$(div).append('<input id="button' + (i + 1) + '" type="radio" name="quiz" value="' + (i + 1) +
+						'" /><div id="answer' + (i + 1) + '"class="answer pointer"><\/div>');
+					$(div).append('<label for="button' + (i + 1) + '">' + quiz[qIndex].answers[i] + '<\/label>');
+					$('.question-' + (qIndex + 1) + ' .answer-container').append(div);
+				}
+			}
+			var radioCheck = function () {
+				$('.remediation-retry').unbind('click', runCheck);
+				$('.reveal-btn-m').unbind('click', runCheck);
+				$('.reveal-btn-m').bind('click', runCheck);
+				currentAnswer = $(this).attr('id').slice(-1);
+				currentQuestion = $(this).parent().parent().parent().attr('class').slice(-1);
+				console.log('currentQuestion:' + currentQuestion)
+				console.log(quiz[currentQuestion - 1].choices)
+				if (quiz[currentQuestion - 1].choices[currentAnswer - 1] != 0 && attemptsLeft[currentQuestion - 1] < 2) {
+					$('.remediation-retry').bind('click', runCheck);
+					$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+				} else {
+					$('.remediation-retry').unbind('click', runCheck);
+					$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+				}
+
+				if (attemptsLeft[currentQuestion - 1] == 0) {
+					$('.reveal-btn').unbind('click', runCheck);
+				} else {
+					$('.reveal-btn').unbind('click', runCheck);
+					$('.reveal-btn').bind('click', runCheck);
+				}
+
+				if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+					$('.reveal-btn-m').bind('click', runCheck);
+				}
+
+				if (quiz[currentQuestion - 1].type == "MC") {
+					$('.answer-on').removeClass('answer-on').addClass('pointer');
+					$(this).addClass("answer-on").removeClass('pointer');
+				} else if (quiz[currentQuestion - 1].type == "MR") {
+					$('.answer-on').removeClass('answer-on').addClass('pointer');
+					$(this).addClass("answer-on").removeClass('pointer');
+				}
+			}
+
+			$('.answer').bind('click', radioCheck);
+			$('.remediation-retry').on('click', function () {
+				console.log($(this))
+				$('.remediation-retry').unbind('click', runCheck);
+				if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+					if ($(window).width() < 999) {
+						$('.attempt-1').hide();
+						$('.attempt-2').hide();
+						$(this).parent().addClass("m-hide")
+						$(this).parent().parent().parent().parent().find('.attempt-container').addClass("m-hide");
+					} else {
+						$(this).parent().parent().parent().parent().find('.attempt-container').removeClass("m-hide")
+						$(this).parent().removeClass("m-hide");
+						$('.remediation-retry .warn-sel-ans').css('opacity', '1');
+					}
+				}
+			})
+
+			$('.remediation-continue').on('click', function () {
+				$('.reveal-btn').unbind('click', runCheck);
+				$('.reveal-btn-m').unbind('click', runCheck);
+				if (currentQuestion == quiz.length) {
+					var userPoints = 0;
+					for (var i = 0; i < points.length; i++) {
+						userPoints += points[i]
+					}
+
+					scorePercent = parseInt((userPoints / totalPoints) * 100);
+					var attempt = parent.intAttempt;
+
+					console.log('Check score: ' + scorePercent >= passPercent)
+					if (scorePercent >= passPercent && attempt < 4) {
+						$('#result-correct').show();
+						$('#gameover-btn').show();
+						$('#result-incorrect').hide();
+						$('#result-closed').hide();
+						$('#result-three').hide();
+						$('#result-retry').hide();
+						$('#retry-btn').hide();
+						console.log('Passed in first 3 attempts')
+					} else if (scorePercent < passPercent && attempt < 4) {
+						passed = false;
+						$('#result-incorrect').show();
+						$('#gameover-btn').show();
+						$('#result-retry').hide();
+						$('#result-closed').hide();
+						$('#result-three').hide();
+						$('#result-correct').hide();
+						$('#retry-btn').hide();
+						console.log('Failed in one of the first 3 attempts')
+					} else if (attempt == 5) {
+						passed = false;
+						$('#result-incorrect').hide();
+						$('#gameover-btn').show();
+						$('#result-retry').hide();
+						$('#result-closed').show();
+						$('#result-three').hide();
+						$('#result-correct').hide();
+						$('#retry-btn').hide();
+						console.log('Challenge Closed. Reviewing. No Points awarded.')
+					} else if (attempt == 4) {
+						$('#result-incorrect').hide();
+						$('#gameover-btn').show();
+						$('#result-retry').hide();
+						$('#result-closed').hide();
+						$('#result-three').show();
+						$('#result-correct').hide();
+						$('#retry-btn').hide();
+						console.log('Just reviewing. Good Job!')
+					}
+				}
+			})
+
+			//Returns array of selected answers from a MR question
+			function getAnswers() {
+				var returnAnswers = [];
+				$(".answer").each(function () {
+					if ($(this).hasClass('answer-on')) {
+						returnAnswers.push(Number($(this).attr('id').slice(-1)));
+					}
+				});
+				return returnAnswers;
+			}
+
+			function arraysEqual(_arr1, _arr2) {
+				if (!Array.isArray(_arr1) || !Array.isArray(_arr2) || _arr1.length !== _arr2.length)
+					return false;
+				var arr1 = _arr1.concat().sort();
+				var arr2 = _arr2.concat().sort();
+				for (var i = 0; i < arr1.length; i++) {
+					if (arr1[i] !== arr2[i])
+						return false;
+				}
+				return true;
+			}
+
+			var runCheck = function () {
+				$('.remediation-retry').unbind('click', runCheck);
+				console.log(attemptsLeft[currentQuestion - 1])
+				if (attemptsLeft[currentQuestion - 1] >= 0) {
+					var correctAnswer = quiz[currentQuestion - 1].correct;
+					var thisQuestionAttemptsLeft = attemptsLeft[currentQuestion - 1];
+
+					if (quiz[currentQuestion - 1].type == "MC") {
+						$('.reveal-btn').unbind('click', runCheck);
+
+						quiz[currentQuestion - 1].choices[currentAnswer - 1] = 0;
+						for (var i = 0; i < quiz[currentQuestion - 1].choices.length; i++) {
+							if (quiz[currentQuestion - 1].correct == currentAnswer) {
+								//correct answer
+								$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+									"pointer");
+							} else if (quiz[currentQuestion - 1].choices[i] == 0) {
+								//incorrect answer
+								$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+									"pointer answer");
+							} else if (attemptsLeft[currentQuestion - 1] == 0) {
+								//failed question
+								$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+									"pointer");
+							} else {
+								//rebind answers
+								$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind();
+								$('.question-' + currentQuestion + ' #answer' + (i + 1)).bind('click', radioCheck).addClass("pointer");
+							}
+						}
+
+						var holder = 0;
+						if (quiz[currentQuestion - 1].correct == currentAnswer) {
+							$('.reveal-btn:eq(' + 0 + ')').hide();
+							$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-3');
+							$('.reveal-btn:eq(' + 0 + ')').hide();
+							$('.remediation:eq(' + 0 + ')').removeClass('m-hide')
+							$('.attempt-container:eq(' + 0 + ')').removeClass("m-hide")
+							$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-correct');
+							$('.remediation:eq(' + 0 + ')').show();
+							$('.remediation-retry:eq(' + 0 + ')').hide();
+							$('.remediation-continue:eq(' + 0 + ')').show();
+							$('.remediation-txt:eq(' + 0 + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].correct_rem);
+							$('.remediation-icon:eq(' + 0 + ')').css("background-image",
+								"url(images/challenge_2/images/Correct_Icon.png)");
+							$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+								"url(images/challenge_2/images/Correct.png)").addClass('remediation-reveal')
+								.removeClass("pointer answer");
+							$('.question-' + currentQuestion + ' .answer').css('cursor', 'auto');
+
+							$('.attempt-1').hide();
+							$('.attempt-2').hide();
+						} else {
+							$('.answer-on').removeClass('answer-on');
+							$('.reveal-btn:eq(' + 0 + ')').hide();
+							$('.remediation-continue:eq(' + 0 + ')').hide();
+							$('.remediation-txt:eq(' + 0 + ')').addClass('white-txt').html(quiz[currentQuestion - 1].incorrect_rem);
+							$('.remediation-icon:eq(' + 0 + ')').css("background-image",
+								"url(images/challenge_2/images/Incorrect_Icon.png)");
+							$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+								"url(images/challenge_2/images/Incorrect.png)").addClass('remediation-reveal')
+								.removeClass("pointer answer");
+							if (attemptsLeft[currentQuestion - 1] >= 0 && points[currentQuestion - 1] > 0) {
+								//console.log("INCORRECT RESPONSE: " + attemptsLeft[currentQuestion - 1])
+								points[currentQuestion - 1] = points[currentQuestion - 1] - 5;
+							}
+							if (attemptsLeft[currentQuestion - 1] == 2) {
+								$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-1');
+								$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-1');
+								$('.remediation:eq(' + 0 + ')').show();
+								$('.attempt-1').css('display', 'flex');
+							} else if (attemptsLeft[currentQuestion - 1] == 1) {
+								$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-2');
+								$('.remediation:eq(' + 0 + ')').removeClass('m-hide')
+								$('.attempt-container:eq(' + 0 + ')').removeClass("m-hide")
+								$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-2');
+								$('.remediation:eq(' + 0 + ')').show();
+								$('.attempt-1').hide();
+								$('.attempt-2').css('display', 'flex');
+							} else if (attemptsLeft[currentQuestion - 1] == 0) {
+								$('.attempt-1').hide();
+								$('.attempt-2').hide();
+								$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-3');
+								$('.remediation:eq(' + 0 + ')').removeClass('m-hide')
+								$('.attempt-container:eq(' + 0 + ')').removeClass("m-hide")
+								$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-3');
+								$('.remediation:eq(' + 0 + ')').show();
+								$('.remediation-retry:eq(' + 0 + ')').hide();
+								$('.remediation-continue:eq(' + 0 + ')').show();
+								$('.remediation-txt:eq(' + 0 + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].fail_rem);
+								$('#progress-bar .quest').eq(currentQuestion - 1).addClass('quest-retry')
+								$('.question-' + currentQuestion + ' .answer-container div').each(function (index, elem) {
+									$('.question-' + currentQuestion + ' .answer').unbind().css('cursor', 'auto');
+								});
+							}
+							attemptsLeft[currentQuestion - 1]--;
+							updateProgressTracker();
+						}
+					}
+				}
+			} // end of runCheck
+			$('.reveal-btn').bind('click', runCheck);
+		}
+
+		function fadeFunction(name, loopMe) {
+			////console.log('step 1')
+			//console.log(loopMe)
+			console.log('fadeFunction: ' + name);
+			$('#' + name).removeClass('hidden');
+			$('#' + name).css({display:"block"})
+			var delay = 500;
+			if (loopMe) {
+				var timer = setTimeout(function () {
+					$('#' + name + ' .b1').fadeIn();
+					$('#' + name + ' .b3').fadeOut();
+					setTimeout(function () {
+						$('#' + name + ' .b2').fadeIn();
+						$('#' + name + ' .b1').fadeOut();
+						setTimeout(function () {
+							$('#' + name + ' .b3').fadeIn();
+							$('#' + name + ' .b2').fadeOut();
+							fadeFunction(name, loopMe);
+						}, delay, loopMe, name);
+					}, delay, loopMe, name);
+				}, delay, loopMe, name);
+			}
+		};
+
+		function stopFade() {
+			//console.log('STOP')
+			var id = window.setTimeout(function () { }, 0);
+			while (id--) {
+				window.clearTimeout(id); // will do nothing if no timeout with id is present
+			}
+		}
+
+		(function () {
+
+			$('#header-image', window.parent.document).fadeIn();
+			$('.next').click(function (box) {
+
+				var curLocation = boxLocation + 1;
+				var nextLocation = boxLocation + 2;
+				var currentBox = $('#box' + curLocation)
+				var nextBox = $('#box' + nextLocation)
+				$(currentBox).animate({
+					left: '-50%'
+				}, 500, function () {
+					$(currentBox).css('left', '150%');
+					$(currentBox).appendTo('#container');
+				});
+				$(nextBox).animate({
+					left: '50%'
+				}, 500);
+
+				if (curLocation == 2) { $('#box2 #video-popup-1-mask').fadeOut(); }
+				boxLocation++;
+				nextAction(curLocation);
+				updateProgressTracker()
+			});
+
+			$('.back-btn').click(function () {
+				var preLocation = boxLocation;
+				var curLocation = boxLocation + 1;
+				var currentBox = $('#box' + curLocation)
+				var prevBox = $('#box' + preLocation)
+				$(currentBox).animate({
+					left: '150%'
+				}, 500, function () {
+					$(prevBox).css('left', ' ');
+					$(prevBox).prependTo('#container');
+				});
+				$(prevBox).css('left', '-150%').animate({
+					left: '50%'
+				}, 500);
+				boxLocation--;
+				updateProgressTracker()
+				backAction(boxLocation)
+			});
+
+			$('#gameover-btn').on('click', function (e) {
+				parent.exitChallenge();
+				if (passed && parent.intAttempt != 4) {
+					challengeComplete(thisClass(), thisChallengNumber, score, true);
+				} else if (parent.intAttempt != 4) {
+					challengeComplete(thisClass(), thisChallengNumber, score, false);
+				} else {
+					parent.navigateIframe("portal.html");
+				}
+				$('#gameover-btn').unbind("click");
+			})
+
+			var $video = $('video'),
+				$window = $('#video-container');
+			$footer = $('footer')
+
+			$(window).resize(function () {
+
+				// var anchorToBottom = $(".bottom-anchor");
+				var footerHeightStr = $('footer').css('height');
+				var footerHeight = (footerHeightStr.substring(0, footerHeightStr.length - 2) - 1);
+
+
+				// anchorToBottom.forEach(function(item){
+				// 	$(item).parent().css('')
+				// });
+				//console.log(footerHeight)
+				//$('.attempt-1, .attempt-2').css('bottom', footerHeight + "px");
+				//console.log(footerHeight)
+				var height = $window.height();
+				$video.css('height', height);
+
+				var videoWidth = $video.width(),
+					windowWidth = $window.width(),
+					marginLeftAdjust = (windowWidth - videoWidth) / 2;
+
+				$video.css({
+					'height': height
+				});
+			}).resize();
+
+		})();
+
+		function nextBox(el) {
+			var curLocation = boxLocation + 1;
+			var currentBox = $('#box' + curLocation)
+			$(currentBox).animate({
+				left: '-50%'
+			}, 500, function () {
+				$(currentBox).css('left', '150%');
+				$(currentBox).appendTo('#container');
+			});
+			$(currentBox).next().animate({
+				left: '50%'
+			}, 500);
+			boxLocation++;
+			nextAction(curLocation);
+			updateProgressTracker()
+		}
+
+
+		function updateProgressTracker() {
+			var userPoints = 0
+			for (var i = 0; i < points.length; i++) {
+				userPoints += points[i]
+			}
+			score = (userPoints);
+			$('.score').html(score + " POINTS")
+			$('#score').html(score)
+			$('#progress-bar .quest .q-points').each(function (i, obj) {
+				$('#progress-bar .quest .q-points').eq(i).html(points[i])
+			})
+			console.log("boxLocation: " + boxLocation)
+			switch (boxLocation) {
+				case 1:
+					$('#progress-bar .pin').eq(boxLocation - 1).addClass('intro-down');
+					$('#progress-bar .pin').eq(boxLocation).addClass('scene-down');
+					$('#progress-bar .pin').eq(boxLocation + 1).removeClass('scene-down');
+					break;
+				case 2:
+
+					$('#progress-bar .pin').eq(boxLocation - 1).removeClass('scene-down');
+					$('#progress-bar .pin').eq(boxLocation).addClass('scene-down');
+					$('#progress-bar .pin').eq(boxLocation + 1).removeClass('scene-down');
+					break;
+				case 3:
+					$('#progress-bar .pin').eq(boxLocation - 1).removeClass('scene-down');
+					$('#progress-bar .pin').eq(boxLocation).addClass('scene-down');
+
+					$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+					break;
+				case 4:
+					$('#progress-bar .pin').eq(boxLocation - 1).removeClass('scene-down');
+					$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+					$('#progress-bar .pin').eq(boxLocation + 1).removeClass('scene-down');
+					break;
+				case 5:
+					$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+					$('#progress-bar .pin').eq(boxLocation).addClass('scene-down');
+					$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+					break;
+				case 6:
+					$('#progress-bar .pin').eq(boxLocation - 1).removeClass('scene-down');
+					$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+					$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+					break;
+				case 7:
+					$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+					$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+					$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+					break;
+				case 8:
+					$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+					$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+					$('#progress-bar .pin').eq(boxLocation + 1).removeClass('scene-down');
+					break;
+				case 9:
+					$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+					$('#progress-bar .pin').eq(boxLocation).addClass('scene-down');
+					$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+					break;
+				case 10:
+					$('#progress-bar .pin').eq(boxLocation - 1).removeClass('scene-down');
+					$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+					$('#progress-bar .pin').eq(boxLocation + 1).removeClass('conclusion-down');
+					break;
+				case 11:
+					$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+					$('#progress-bar .pin').eq(boxLocation).addClass('conclusion-down');
+					break;
+				default:
+					$('#progress-bar .pin').eq(0).removeClass('intro-down');
+					$('#progress-bar .pin').eq(1).removeClass('scene-down');
+					break;
+			}
+		};
+		updateProgressTracker();
+		RenderQuestion();
+	</script>
+</body>
+
+</html>

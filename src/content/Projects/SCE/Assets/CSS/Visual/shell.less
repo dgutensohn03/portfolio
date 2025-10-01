@@ -1,0 +1,97 @@
+/* Global Stuff */
+
+*:focus {
+    outline: none;
+}
+
+body {
+background-image: url('../../Images/Shell/stripe1.png');
+    background-position: center;
+    background-repeat: repeat;
+    background-size: auto;
+    font-family: "UniversLTStd","Arial","Helvetica","sans-serif";
+    font-size: 13px;
+    color: #000;
+}
+
+/* Branding */
+
+.primary-background {
+    background-color: @primaryColor;
+}
+
+.primary-color {
+    color: @primaryColor;
+}
+
+.accent-background {
+    background-color: @accentColor;
+    color: @accentFont;
+}
+
+.accent-color {
+    color: @accentColor;
+}
+
+.accent2-background {
+    background-color: @accentColor2;
+    color: @accent2Font;
+}
+
+.accent2-color {
+    color: @accentColor2;
+}
+
+/* Shell Sections */
+
+#header {
+    background-color: transparent;
+}
+
+#status-bar {
+    background-color: @accentColor;
+    font-size: @mediumFont;
+}
+
+#nav-bar {
+    background-color: #ffffff;
+}
+
+#content-container {
+    background-color: #000;
+}
+
+/* Text */
+
+.title-font {
+    font-size: @xlargeFont;
+}
+
+.heading-font {
+    font-size: @largeFont;
+}
+
+.regular-font {
+    font-size: @mediumFont;
+}
+
+.small-font {
+    font-size: @smallFont;
+}
+
+#status-bar .left {
+    float: left;
+    margin-top: 1px;
+    margin-left: 18px;
+}
+
+#status-bar .right {
+    float: right;
+    margin-top: 1px;
+    margin-right: 18px;
+}
+
+/* Other */
+@import 'dialog';
+@import 'button';
+@import 'loading-animation';

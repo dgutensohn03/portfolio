@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  <ID>wiki</ID>
+  <DisplayName>Wiki</DisplayName>
+
+  <Width>480px</Width>
+  <Height>360px</Height>
+
+  <Type>Window</Type>
+  <ButtonSize>hide</ButtonSize>
+  <ButtonTooltip></ButtonTooltip>
+</Settings>

@@ -1,0 +1,68 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "contentBox",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "a4802853-b060-4af5-a3b8-a95012656244",
+    "info": {
+      "editorName": "contentBox",
+      "children": [{
+        "type": "spritesheet",
+        "id": "bad3c98d-ea35-4851-abc2-b93b0bcf5330",
+        "asset": "0",
+        "info": {
+          "editorName": "contentbox_sprite",
+          "animations": [
+            {
+              "name": "complete",
+              "frameRate": 24,
+              "frames": ["1"]
+            },
+            {
+              "name": "incomplete",
+              "frameRate": 24,
+              "frames": ["0"]
+            }
+          ]
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "sprites",
+    "asset": "contentbox_sprite",
+    "sprite": "0"
+  }},
+  "prefab-table": {}
+}

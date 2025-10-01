@@ -1,0 +1,30 @@
+﻿<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title></title>
+	<script src="../../Source/JS/Phaser/phaser.min.js"></script>
+	<style>
+		body {
+			overflow: hidden;
+		}
+	</style>
+</head>
+<body>
+	<script src="../../Source/JS/jQuery/jquery-1.11.1.min.js"></script>
+	<script src="../../Source/XM/Events/XMEvent.js"></script>
+	<script src="../../Source/XM/Core/TemplateBase.js"></script>
+	<script src="../../Source/XM/Helpers.js"></script>
+	<script src="../../Source/XM/GameEngine.js"></script>
+	<script src="../../Source/XM/Slides/CustomSlide.js"></script>
+
+	<script type="text/javascript">
+		Slide.Initialize();
+
+		$.getScript('../Lesson' + $.getUrlVar('lesson') + '/Slide' + $.getUrlVar('slide') + '.js')
+			.fail(function (data, status, error) {
+				XMError('Error running game script. ' + error);
+			});
+	</script>
+</body>
+</html>

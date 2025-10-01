@@ -1,0 +1,70 @@
+{
+    "AD": {
+      "3": {
+        "challengeTitle": "Dealership Roles",
+        "minScore": 45,
+        "totalPoints": 60,
+        "passPercent": 80,
+        "rules": {
+          "info_1": "You have 1 week to complete this challenge for its maximum point value.",
+          "info_2": "To place on the leaderboard, you must earn at least 45 points. If you score less than 45 points, you automatically get 0 points. Don’t worry, you can always retake the challenge.",
+          "info_3": "To earn the highest points possible and be in the running for 1st place, you must answer each question correctly. You can try each question 2x, but every time you miss a question, you lose points.",
+          "info_4": "If you fail this challenge, don’t give up! You can still retake it to earn points and place on the leaderboard in the next round!"
+        },
+        "activity": [
+          {
+            "points": 20,
+            "chances": 2,
+            "question": "<p>When you walk into a dealership to sell Valvoline™ products, what role should you speak to? </p><p>Select the correct answer.</p>",
+            "type": "MC",
+            "answers": [
+              "Service Manager",
+              "Advisor",
+              "Technician",
+              "Parts Manager"
+            ],
+            "choices": [],
+            "correct": 1,
+            "correct_rem": "<p>That’s it!</p><p>The Service Manager will be your primary point of contact on your initial dealership sales calls.</p>",
+            "incorrect_rem": "<p>That is not the correct response.</p>",
+            "fail_rem": "<p>That’s not right.</p><p>The Service Manager will be your primary point of contact on your initial dealership sales calls.</p><p>You will not receive any points for this question.</p>"
+          },
+          {
+            "points": 20,
+            "chances": 2,
+            "question": "<p>Within a car dealership, which positions are most likely to require training?</p><p>Select the correct answer.</p>",
+            "type": "MC",
+            "answers": [
+              "Service Advisor and Counter Sales",
+              "Service Manager and Technician",
+              "Service Advisor and Technician",
+              "Sales Manager and Service Advisor"
+            ],
+            "choices": [],
+            "correct": 3,
+            "correct_rem": "<p>That’s it!</p><p>Anyone in a Service Advisor or Technician role in a dealership can benefit from product and service training.</p>",
+            "incorrect_rem": "<p>That is not the correct response.</p>",
+            "fail_rem": "<p>That’s not right.</p><p>Anyone in a Service Advisor and Technician role in a dealership can benefit from product and service training.</p><p>You will not receive any points for this question.</p>"
+          },
+          {
+            "points": 20,
+            "chances": 2,
+            "question": "<p>What position within a dealership is most likely to resist moving away from OEM programs?</p><p>Select the correct answer.</p>",
+            "type": "MC",
+            "answers": [
+              "Service Manager",
+              "Service Advisor",
+              "General Manager",
+              "Parts Manager"
+            ],
+            "choices": [],
+            "correct": 1,
+            "correct_rem": "<p>That’s it!</p><p>You will most likely receive the most resistance around OEM programs from the Parts Manager.</p>",
+            "incorrect_rem": "<p>That is not the correct response.</p>",
+            "fail_rem": "<p>That’s not right.</p><p>You will most likely receive the most resistance around OEM programs from the Parts Manager.</p><p>You will not receive any points for this question.</p>"
+          }
+        ]
+      }
+    }
+  }
+  

@@ -1,0 +1,28 @@
+@buttonWidth: 60px;
+
+.nav-button {
+    width: @buttonWidth;
+    height: @navBarHeight - @smallMargin;
+
+    border: 0px;
+    padding: 0px @smallMargin 0px @smallMargin;
+    margin: 0px;
+
+    cursor: pointer;
+}
+
+.nav-button.wide {
+    width: @buttonWidth * 1.5;
+}
+
+.nav-button.double-wide {
+    width: @buttonWidth * 2;
+}
+
+.nav-button.hide {
+    display: none;
+}
+
+.nav-button.disabled {
+    cursor:  not-allowed;
+}

@@ -1,0 +1,2233 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/challenge.css">
+    <style>
+
+
+        /* #box3 {
+            background: url('./images/challenge_8/Pg6_BG.png')no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            max-width: 1920px;
+            position: absolute;
+            overflow: hidden !important;
+        } */
+
+        #box4, #box9 {
+            background: url('./images/challenge_8/Pg7_BG.png')no-repeat top center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            max-width: 1920px;
+            position: absolute;
+            overflow: hidden !important;
+        }
+        /* #box7, #box8 {
+            background: url('./images/challenge_8/Pg14_BG.png')no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            max-width: 1920px;
+            position: absolute;
+            overflow: hidden !important;
+        } */
+
+        #box2 .plus-1 div:nth-child(2) {
+            left: 17%;
+            top: 5%;
+            z-index: 1;
+        }
+
+        #box2 .plus-2 div:nth-child(2) {
+            left: 67%;
+            top: 60%;
+            z-index: 1;
+        }
+
+        #box2 .plus-3 div:nth-child(2) {
+            left: 5%;
+            top: 31%;
+            z-index: 4;
+        }
+
+        #box2 .plus-4 div:nth-child(2) {
+            left: 67%;
+            top: 87%;
+            z-index: 4;
+        }
+
+        #box2 .plus-5 div:nth-child(2) {
+            left: 5%;
+            top: 86%;
+            z-index: 4;
+        }
+
+        .sm-h1 {
+        font-family: Roboto;
+    color: #000000;
+    font-size: 18pt;
+    font-weight: bold;
+    text-align: center;
+
+}
+        .challenge-9 #box2 .content-box-1 {
+            left: 30%;
+            top: 9%;
+            min-width: 460px;
+            z-index: 5;
+        }
+
+        .challenge-9 #box2 .content-box-2 {
+            right: 19%;
+            bottom: 35%;
+            min-width: 460px;
+            z-index: 5;
+        }
+
+        .challenge-9 #box2 .content-box-3 {
+            left: 19%;
+            top: 35%;
+            min-width: 460px;
+            z-index: 5;
+        }
+
+        .challenge-9 #box2 .content-box-4 {
+            right: 20%;
+            bottom: 9%;
+            min-width: 460px;
+            z-index: 5;
+        }
+
+        .challenge-9 #box2 .content-box-5 {
+            left: 16%;
+            bottom: 10%;
+            min-width: 460px;
+            z-index: 4;
+        }
+
+        .challenge-9 #box2 {
+            background: url('./images/challenge_4/Clck_to_Rvl_BG.png')no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            max-width: 1920px;
+            position: absolute;
+        }
+
+        .challenge-9 #box8 #content {
+            height: 70% !important;
+
+        }
+
+
+        #box2 .btl-plus-container>.bottle-img,
+        #box2 .btl-img-container>.bottle-img {
+            min-width: 200px;
+            max-height: 80vh;
+            min-height: auto;
+            max-width: 200px;
+            padding: 0 !important;
+        }
+
+        #box2 .btl-plus-container>.bottle-img>img,
+        #box2 .btl-img-container>.bottle-img>img {
+
+            padding: 0 !important;
+        }
+
+        .hotspot-continue {
+            z-index: 3 !important;
+        }
+
+        .break {
+            flex-basis: 100%;
+            height: 0;
+        }
+
+        .reveal-arrow-left {
+            max-width: 500px;
+            min-width: 450px;
+            height: 71px;
+            padding-left: 140px;
+            padding-right: 140px;
+            cursor: auto;
+            background: url(./images/challenge_2/images/Arrow_UP.png) no-repeat;
+        }
+
+        .flex-container {
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        .flex-container:after {
+            content: '';
+            min-height: inherit;
+            font-size: 0;
+        }
+
+        .continue-2 {
+
+            display: none;
+        }
+
+        .full-box-height {
+            padding: 9% 5% !important;
+        }
+
+
+        #loginheader {
+    font-size: 96px;
+    font-weight: 500;
+    font-family:Oswald;
+    position:relative;
+    top:-70px;
+}
+#popup-header-box {
+	font-size: 6rem;
+	font-weight: 500;
+	font-family: Oswald;
+	min-width: 220px;
+	color: #E1261D;
+	line-height: 20px;
+	width: auto;
+	top: 0px;
+	overflow: visible;
+	height: 0;
+	position: relative;
+	text-align: center;
+	z-index: 8;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.green-text {
+	color: #7AC943;
+}
+/* #video-popup-header>div {
+	background-color: #ffffff;
+	position: relative;
+	top: -11px
+} */
+/* .video-dialog {
+	margin: 30px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+	min-height: 100%;
+	overflow-y: initial !important
+} */
+.popup-content {
+	border: 20px solid #ffffff !important;
+	background-color: #ffffff;
+	border-radius: 0;
+}
+
+.video-border {
+	border: 2px solid #E1261D;
+    height: 100%;
+}
+
+.popup-body .header {
+	font-size: calc(32px + .5vw);
+	line-height: calc(32px + .5vw);
+	font-family: Roboto-Medium;
+	text-align: center;
+	margin-right: 30px;
+	margin-left: 30px;
+}
+
+#popup-mask  {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,.7);
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+	z-index: 9;
+	height: calc(100vh - 98px);
+    display: flex;
+}
+.popup-body h1 {
+	text-align: center;
+	width: 100%;
+	font-size: calc(1.5rem + 1.1vw);
+    line-height: calc(2.5rem + 1.5vw);
+
+    text-align: center;
+	padding-left: 30px;
+    padding-right: 30px;
+
+}
+.popup-dialog {
+    width: 50%;
+    height: auto;
+    background-color: #ffffff;
+    margin:auto;
+	padding: 20px;
+	min-width: 270px;
+    /* min-width: 300px;
+    max-width: 700px;
+    min-height: 200px; */
+}
+.popup-dialog-border {
+    width: 100%;
+    height: 100%;
+
+    border: 2px solid #E1261D;
+}
+
+.red-dot {
+	height: 6px;
+	width: 6px;
+	background-color: #E1261C;
+	border-radius: 50%;
+	display: inline-block;
+}
+
+#popup-header-box {
+    font-size: 5vw;
+	font-weight: 500;
+	font-family: Oswald;
+    min-width: 180px;
+    color: #E1261D;
+    line-height: 20px;
+    width: 50%;
+	top: 0px;
+	overflow: visible;
+	height: 0;
+	position: relative;
+	text-align: center;
+	z-index: 8;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
+#popup-header-box > div {
+	background-color: #ffffff;
+	position: relative;
+    top: -11px;
+    margin: auto;
+    width: auto;
+}
+
+.popup-body {
+    width: 100%;
+    height: 100%;
+}
+
+.flex-img img {
+	max-width: 80%;
+}
+
+#popup-mask .exitButton {
+	background: url('./images/challenge/ExitBtn_UP.png') no-repeat;
+	width: 52px;
+	height: 52px;
+	border: 0;
+	background-position: center;
+	position:absolute;
+
+}
+#popup-mask .exitButton {
+	z-index: 10;
+}
+#popup-mask .exitButton:hover {
+	background: url('./images/challenge/ExitBtn_DWN.png') no-repeat;
+}
+.top-right {
+	justify-content: flex-end;
+	display: flex;
+	margin-top: 20px;
+	margin-right: 20px;
+}
+
+#popup-mask .flex-middle {
+	min-width: 100%;
+}
+
+.popup-header-text {
+    font-size: calc(1.5rem + 1.1vw);
+    line-height: calc(1.5rem + 1.1vw);
+    font-family: Roboto-Medium;
+    text-align: center;
+    color: #000;
+}
+
+.flex-content {
+	display: flex;
+    justify-content: space-evenly;
+}
+
+.challenge-arrow {
+	margin-top: 0 !important;
+	margin-bottom: 50px !important;
+}
+
+
+@media only screen and (max-width: 937px) {
+	/* #popup-header {
+		font-size: 4.5rem;
+	} */
+
+	.popup-body h1 {
+
+    padding-top: 10px;
+
+}
+	#popup-header-box {
+	    font-size: 2.5rem;
+	}
+	#popup-mask .exitButton {
+		background: url('./images/challenge/ExitBtn_UP.png') center no-repeat;
+		background-size: 55%;
+		cursor: pointer;
+		width: 52px;
+		height: 52px;
+		border: 0;
+	}
+	#popup-mask .exitButton:hover {
+		background: url('./images/challenge/ExitBtn_DWN.png') center no-repeat;
+		background-size: 55%;
+	}
+
+	.top-right {
+		margin-top: 0;
+    	margin-right: 0;
+	}
+
+}
+
+        @media only screen and (max-width: 1290px) {
+            .reveal-arrow-left {
+                height: 71px;
+                color: #fff !important;
+                background: none;
+                padding-left: 140px !important;
+                padding-right: 140px !important;
+                max-width: 500px !important;
+                min-width: 450px !important;
+                background: url(../images/challenge_2/images/Arrow_UP.png) no-repeat;
+            }
+        }
+
+        @media only screen and (max-width: 999px) {
+
+            .hotspot-continue>button,
+            .flashCard-continue>button {
+                min-width: 230px !important;
+            }
+
+
+        }
+
+        @media only screen and (max-width: 1039px) {
+            .reveal-arrow-left {
+                height: auto;
+                color: black !important;
+                background: none;
+                min-width: 220px !important;
+            }
+
+            .challenge-9 #box2 {
+                background: none;
+            }
+
+            .back-padding {
+                padding-top: 75px !important;
+            }
+        }
+
+        @media only screen and (max-width: 550px) {
+            .top-text {
+                top: -80px;
+            }
+
+            .challenge-8 #box3 {
+                background-position: 40% 15vh !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 1790px) {
+            .hotspot-continue {
+                min-width: 750px;
+                -webkit-box-pack: center;
+                justify-content: center;
+                position: relative !important;
+            }
+        }
+        .challenge-8 #box9,
+        .challenge-8 #box8,
+        .challenge-8 #box7,
+        .challenge-8 #box4,
+        .challenge-8 #box3 {
+            overflow-y: hidden !important;
+        }
+
+        @media only screen and (max-height: 800px) {
+            .challenge-8 #box9,
+            .challenge-8 #box8,
+        .challenge-8 #box7,
+            .challenge-8 #box4,
+            .challenge-8 #box3 {
+                overflow-y: auto !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 1050px) {
+            .challenge-8 #box9,
+            .challenge-8 #box8,
+        .challenge-8 #box7,
+            .challenge-8 #box4,
+            .challenge-8 #box3 {
+                overflow-y: auto !important;
+            }
+
+        }
+    </style>
+    <title>Vcert Project</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="container-fluid challenge-8">
+        <div class="box " id="box1">
+            <div class="row align-middle full-box-height" id="content">
+                <div class="col topCenterText ">
+                    <div class='center-text-box'>
+                        <h1>Transmission Fluid and Gear Oil</h1>
+                        <p>
+                            The purpose of transmission fluids and gear oils is to protect gears as they transmit a load. Changing technologies and OEM requirements have brought an increased focus to transmission fluids and gear oils as fleet owners need to find the best way to keep their machines running, keep the fleet in warranty compliance, and manage the complexity of multiple lubricant products that may not be compatible with components from various manufacturers.
+                        </p>
+                        <p>
+                            In this challenge, you will explore these products, why they are important, and how the offerings from Valvoline™ can meet the needs of fleet owners and OEMs.
+                        </p>
+                        <p>
+                            Let’s learn more.
+
+                        </p>
+                        <p>
+                        <div class="headerBlue">SELECT START.</div>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col topCenterText m-margin-bottom">
+                    <div>
+                        <button class="next" id="start-btn" type="submit">START</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="box2" class="box">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div id="video-container">
+                <video id="player1" style="pointer-events: none;" onplay="" onended="$('.continue-2').fadeIn();">
+                    <source src="images/challenge_10/videos/card_shuffle_video.mp4">
+                </video>
+            </div>
+            <div class="br-bc hidden continue-2">
+                <button class="next continue-btn-center continue-small-m" id="continue-btn-2">CONTINUE</button>
+            </div>
+            <div id='popup-mask' class="q2-popup">
+                <div class="popup-dialog">
+                    <div class="popup-dialog-border">
+                    <div id="popup-header-box">
+                        <div class="flex-c-sb ">
+                            <div class="red-dot"></div>READY?<div class="red-dot"></div>
+                        </div>
+                    </div>
+                    <div class="top-right"><button class="exitButton" data-backdrop="static" data-keyboard="false" data-target="#popup-mask" onclick="$(this).parent().parent().parent().parent().fadeOut(); $('#player1').get(0).play();"></button></div>
+                        <div class="row popup-body no-padding-bottom">
+                            <div class="row flex-middle no-padding">
+                                <h1></h1>
+                                <div><div class="margin-bottom" style="text-align:left;">
+                                    <!-- <div class="sm-h1">Ready to win points now and the chance to win more later?</div>
+                                    <p><font class="emphasisBold">Step 1:</font> Review the content for each section.</p>
+                                    <p><font class="emphasisBold">Step 2:</font> Answer each question correctly.</p>
+                                    <p><font class="emphasisBold">Step 3:</font> Earn points for each correct answer.</p>
+                                    <p><font class="emphasisBold">Step 4:</font> Answer a question correctly on the first attempt and win a card, which is playable in the bonus round.</p>
+                                    <p> Good luck!</p> -->
+
+
+
+                                    <table>
+                                        <thead>
+                                       
+                                            Ready to win points now and the chance to win more later?
+                                         
+                                        </thead>
+                                        <tbody>
+                                          <tr valign="top">
+                                            <td  style="width: 60px;"><font class="emphasisBold">Step 1:</font></td>
+                                            <td>Review the content for each section.</td>
+                                          </tr>
+                                          <tr valign="top">
+                                            <td style="width: 60px;"><font class="emphasisBold">Step 2:</font></td>
+                                            <td>Answer each question correctly.</td>
+                                          </tr>
+                                          <tr valign="top">
+                                            <td style="width: 60px;"><font class="emphasisBold">Step 3:</font></td>
+                                            <td>Earn points for each correct answer.</td>
+                                          </tr>
+                                          <tr valign="top">
+                                            <td style="width: 60px;"><font class="emphasisBold">Step 4:</font></td>
+                                            <td>Answer a question correctly on the first attempt and win a card, which is playable in the bonus round.</td>
+                                          </tr>
+                                          
+                                        </tbody>
+                                        </table><p>Good luck!</p>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col flex-middle">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--3-->
+        <div class="box" id="box3">
+            <div style="width: 100%; height: 100px;">
+                <div class='back-btn'>
+                    <img src="">BACK
+                </div>
+            </div>
+            <div class="row align-middle center-content full-box-height flex-container " id="content"
+                style="align-items: center !important; height: calc(100% - 100px) !important;  text-align: left; padding: 0 !important;">
+                <div class='row mobile-padding'
+                    style='width: 100%; padding-top: 0 !important; padding-bottom: 0 !important; display: flex; align-items: center;'>
+                    <div class="col-xl-5 col-lg-12 " style="padding: 0;">
+                        <h1>Transmission Fluids</h1>
+                    
+                        <p>Transmission fluids protect the transmission gears as they transmit their loads.</p>
+                        <p>There are three types of Heavy Duty Transmissions:
+                        <ul>
+                            <li>Manual transmissions</li>
+                            <li>Automatic transmissions</li>
+                            <li>Automated Manual transmissions</li>
+                        </ul>
+                        <p>
+                            <font class="emphasisBold">NOTE: </font>Each transmission type requires its own specific
+                            transmission fluid formulation.
+                        </p>
+                    </div>
+                    <div class="col-xl-1 col-lg-12 col-sm-12" style="">
+                    </div>
+                    <div class="col-xl-6 col-lg-12 col-lg-12-custom " style="padding: 0; margin: auto; display: flex; justify-content: center;">
+                        <!--Right Column-->
+                        <img style="max-width:100%; max-height:100%;"
+                        src="images/challenge_8/HD_GearOil.png">
+
+
+                    </div>
+                </div>
+
+                <div class="col float-box">
+                    <button class="next continue-btn hs-continue box2-continue continue-small-m"
+                        style="display: inline-block;">CONTINUE</button>
+                </div>
+            </div>
+        </div>
+
+        <!--4-->
+        <div class="box" id="box4">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="row full-box-height back-padding" id="content">
+                <div class="col-lg-7 col-md-6 col-sm-6 col-xs-10" style="text-align: left;">
+                    <h1>Gear Oils</h1>
+                    <div class="row" style="padding:0;">
+                        <div class="col-xl-6 col-lg-12" style="padding-left:0;">
+
+                            <p>There are a number of things to consider when discussing transmission fluids with a
+                                customer.</p>
+
+                            <font class="emphasisBold">Fuel Efficiency</font>
+                            <p>Many technology changes in transmissions are being driven by the need for increased fuel
+                                efficiency.</p>
+
+                            <font class="emphasisBold">Proprietary Technologies</font>
+                            <p>Truck manufacturers, along with engine and transmission builders, are designing
+                                proprietary engine-drivetrain configurations. This means that fleets with mixed vehicle
+                                specifications will need to inventory a number of different transmission fluids and gear
+                                lubricants.</p>
+                        </div>
+                        <div class="col-xl-6 col-lg-12" style="padding-right:0;">
+                            <font class="emphasisBold">Warranty Worries</font>
+                            <p>Concerns with warranty compliance (i.e., voiding of warranty coverage in addition to
+                                general performance issues) are on the minds of fleet managers.</p>
+
+                            <font class="emphasisBold">Fluid Viscosity</font>
+                            <p>There is a focused shift towards lower viscosity drivetrain fluids and synthetics. Low
+                                viscosity transmission fluid can help improve fuel economy by reducing fluidic friction,
+                                or drag within the fluid, so that energy is not lost unnecessarily.</p>
+
+                            <font class="emphasisBold">OEM Spotlight</font>
+                            <p>Eaton is the biggest transmission OEM.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-2" style="text-align: left;">
+                </div>
+                <div class="row continue-anchor" style="padding: 0;">
+                    <div class="desktop-br mobile-center">
+                        <button class="next continue-btn continue-small-m"
+                            style="display: inline-block;">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- QUESTION 1 -->
+        <div id="box5" class="box question-bg-box">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="row align-middle full-box-height" id="content">
+                <div class="col topCenterText m-LeftCol-question back-btn-padding">
+                    <div class='center-text-box question-1'>
+                        <h1 id="question-num"></h1>
+                        <div class='question-text'></div>
+                        <div class='answer-container'></div>
+                    </div>
+                </div>
+                <div class="col topCenterText m-RightCol-question">
+                    <div class="reveal-btn text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+                    <div class="reveal-btn-m text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+
+                    <div class="remediation">
+                        <div class="remediation-icon"></div>
+                        <div class="remediation-txt"></div>
+                        <div class="remediation-continue next">
+                            Continue
+                        </div>
+                        <div class="remediation-retry">
+                            Try Again
+                            <div class='warn-sel-ans'>
+                                Choose an answer and select "Try Again."
+                            </div>
+                        </div>
+                        <div class="attempt-container row">
+                            <div class="attempt-1">
+                                FIRST ATTEMPT
+                            </div>
+                            <div class="attempt-2">
+                                SECOND ATTEMPT
+                            </div>
+                            <div class="attempt-3">
+                                RETRY IN 7 DAYS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- QUESTION 2 -->
+        <div id="box6" class="box question-bg-box">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="row align-middle full-box-height" id="content">
+                <div class="col topCenterText m-LeftCol-question back-btn-padding">
+                    <div class='center-text-box question-2'>
+                        <h1 id="question-num"></h1>
+                        <div class='question-text'></div>
+                        <div class='answer-container'></div>
+                    </div>
+                </div>
+                <div class="col topCenterText m-RightCol-question">
+                    <div class="reveal-btn text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+                    <div class="reveal-btn-m text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+
+                    <div class="remediation">
+                        <div class="remediation-icon"></div>
+                        <div class="remediation-txt"></div>
+                        <div class="remediation-continue next">
+                            Continue
+                        </div>
+                        <div class="remediation-retry">
+                            Try Again
+                            <div class='warn-sel-ans'>
+                                Choose an answer and select "Try Again."
+                            </div>
+                        </div>
+                        <div class="attempt-container row">
+                            <div class="attempt-1">
+                                FIRST ATTEMPT
+                            </div>
+                            <div class="attempt-2">
+                                SECOND ATTEMPT
+                            </div>
+                            <div class="attempt-3">
+                                RETRY IN 7 DAYS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--5-->
+        <div class="box" id="box7">
+            <div style="width: 100%; height: 100px;">
+                <div class='back-btn'>
+                    <img src="">BACK
+                </div>
+            </div>
+            <div class="row align-middle center-content full-box-height flex-container " id="content"
+                style="align-items: center !important; height: calc(100% - 100px) !important;  text-align: left; padding: 0 !important;">
+                <div class='row mobile-padding'
+                    style='width: 100%; padding-top: 0 !important; padding-bottom: 0 !important; display: flex; align-items: center;'>
+                    <div class="col-xl-5 col-lg-12 " style="padding: 0;">
+                        <h1>The Basics</h1>
+                        <div>
+                            <p>The proper gear oil can:</p>
+                            
+                            <p><font class="emphasisBold">Prevent rust and corrosion. </font>This is important because many of the components found in the drivetrain consist of ferrous material.</p>
+                            
+                            <p><font class="emphasisBold">Quiet gears and dissipate shock loading. </font>The intricate components that make up gear sets found in the drivetrain can be noisy and may be subjected to shock loading.</p>
+                            
+                            <p><font class="emphasisBold">Protect gears from sliding and contact wear. </font>The rotating motion of gear sets tends to churn the lubricant, resulting in foaming. If a gear lube foams, the load carrying capacity is significantly reduced because the air suspended within the oil is compressible. Gear oil must have the ability to dissipate entrapped air, insuring a sufficient lubricating film exists to protect the gears from contact wear.</p>
+                            <br>
+                            <p>Fast Fact: There are up to 18 gears from the engine to the tires.</p>
+                        </div>
+                    </div>
+                    <div class="col-xl-1 col-lg-12 col-sm-12" style="">
+                    </div>
+                    <div class="col-xl-6 col-lg-12 col-lg-12-custom " style="padding: 0; margin: auto; display: flex; justify-content: center;">
+                        <!--Right Column-->
+                        <img style="max-width:100%; max-height:100%;"
+                        src="images/challenge_8/HD_GearOil.png">
+
+
+                    </div>
+                </div>
+
+                <div class="col float-box">
+                    <button class="next continue-btn hs-continue box2-continue continue-small-m"
+                        style="display: inline-block;">CONTINUE</button>
+                </div>
+            </div>
+        </div>
+<!-- 
+        <div class="box" id="box7">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="row full-box-height back-padding" id="content">
+                <div class="col-lg-5 col-md-6 col-sm-6 col-xs-10" style="text-align: left;">
+                    <h1>The Basics</h1>
+                    <div>
+                        <p>The proper gear oil can:</p>
+                        
+                        <p><font class="emphasisBold">Prevent rust and corrosion. </font>This is important because many of the components found in the drivetrain consist of ferrous material.</p>
+                        
+                        <p><font class="emphasisBold">Quiet gears and dissipate shock loading. </font>The intricate components that make up gear sets found in the drivetrain can be noisy and may be subjected to shock loading.</p>
+                        
+                        <p><font class="emphasisBold">Protect gears from sliding and contact wear. </font>The rotating motion of gear sets tends to churn the lubricant, resulting in foaming. If a gear lube foams, the load carrying capacity is significantly reduced because the air suspended within the oil is compressible. Gear oil must have the ability to dissipate entrapped air, insuring a sufficient lubricating film exists to protect the gears from contact wear.</p>
+                        <br>
+                        <p>Fast Fact: There are up to 18 gears from the engine to the tires.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-6 col-sm-6 col-xs-2" style="text-align: left;">
+                </div>
+                <div class="row continue-anchor" style="padding: 0;">
+                    <div class="desktop-br mobile-center">
+                        <button class="next continue-btn continue-small-m"
+                            style="display: inline-block;">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!--8-->
+        <div class="box" id="box8">
+            <div style="width: 100%; height: 100px;">
+                <div class='back-btn'>
+                    <img src="">BACK
+                </div>
+            </div>
+            <div class="row align-middle center-content full-box-height flex-container " id="content"
+                style="align-items: center !important; height: calc(100% - 100px) !important;  text-align: left; padding: 0 !important;">
+                <div class='row mobile-padding'
+                    style='width: 100%; padding-top: 0 !important; padding-bottom: 0 !important; display: flex; align-items: center;'>
+                    <div class="col-xl-5 col-lg-12 " style="padding: 0;">
+                        <h1>Industry Overview</h1>
+                   
+                        <p>The proper gear oil can:</p>
+                        <font class="emphasisBold">Warranty Worries</font>
+                        <p>Concerns with warranty compliance (i.e., voiding of warranty coverage in addition to general performance issues) are on the minds of fleet managers. They want to ensure that the gear oil they use matches up to the OEM specs.</p>
+                        <font class="emphasisBold">Fluid Viscosity</font>
+                        <p>There is a focused shift towards using lower viscosity drivetrain fluids and synthetics.</p>
+                        <font class="emphasisBold">Drain Intervals</font>
+                        <p>Gear oil drain intervals are much less frequent than engine oil drain intervals but no less important.</p>
+                        <font class="emphasisBold">Maintenance Strategies</font>
+                        <p>The customer often has options of choosing a short or longer life product for their differential/OEM specification.</p>
+                    </div>
+                    <div class="col-xl-1 col-lg-12 col-sm-12" style="">
+                    </div>
+                    <div class="col-xl-6 col-lg-12 col-lg-12-custom " style="padding: 0; margin: auto; display: flex; justify-content: center;">
+                        <!--Right Column-->
+                        <img style="max-width:100%; max-height:100%;"
+                        src="images/challenge_8/HD_GearOil.png">
+
+
+                    </div>
+                </div>
+
+                <div class="col float-box">
+                    <button class="next continue-btn hs-continue box2-continue continue-small-m"
+                        style="display: inline-block;">CONTINUE</button>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="box" id="box8">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="row full-box-height back-padding" id="content">
+                <div class="col-lg-5 col-md-6 col-sm-6 col-xs-10" style="text-align: left;">
+                    <h1>Industry Overview</h1>
+                    <div>
+                        <p>The proper gear oil can:</p>
+                        <font class="emphasisBold">Warranty Worries</font>
+                        <p>Concerns with warranty compliance (i.e., voiding of warranty coverage in addition to general performance issues) are on the minds of fleet managers. They want to ensure that the gear oil they use matches up to the OEM specs.</p>
+                        <font class="emphasisBold">Fluid Viscosity</font>
+                        <p>There is a focused shift towards using lower viscosity drivetrain fluids and synthetics.</p>
+                        <font class="emphasisBold">Drain Intervals</font>
+                        <p>Gear oil drain intervals are much less frequent than engine oil drain intervals but no less important.</p>
+                        <font class="emphasisBold">Maintenance Strategies</font>
+                        <p>The customer often has options of choosing a short or longer life product for their differential/OEM specification.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7 col-md-6 col-sm-6 col-xs-2" style="text-align: left;">
+                </div>
+                <div class="row continue-anchor" style="padding: 0;">
+                    <div class="desktop-br mobile-center">
+                        <button class="next continue-btn continue-small-m"
+                            style="display: inline-block;">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!--6-->
+        <div class="box" id="box9">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="row full-box-height back-padding" id="content">
+                <div class="col-lg-7 col-md-6 col-sm-6 col-xs-10" style="text-align: left;">
+                    <h1>Industry Overview</h1>
+                    <div class="row" style="padding:0;">
+                        <div class="col-xl-6 col-lg-12" style="padding-left:0;">
+
+                            <p>Valvoline™ has engineered a variety of gear oils designed to provide outstanding wear protection and excellent thermal stability. Heavy Duty gear oil makes up the majority of the gear oil market share because HD vehicles have larger fill volumes and demanding duty cycles requiring adherence to maintenance schedules. The Valvoline™ HD product line includes:
+                                <ul>
+                                    <li>Valvoline™ Heavy Duty Synthetic Gear Oil</li>
+                                    <li>Valvoline™ SYN GARD™ Gear Oil</li>
+                                    <li>Valvoline™ Heavy Duty Gear Oil</li>
+                                </ul>
+                            <p>
+
+                            <p>Valvoline™ Heavy Duty Gear Oils are fully approved and meet the following specifications: 
+                                <ul>
+                                    <li>API GL-5</li>
+                                    <li>API MT-1</li>
+                                    <li>Mack GO-J</li>
+                                    <li>Meritor 076-A (85W-140)</li>
+                                    <li>Meritor 076-D (80W-90)</li>
+                                    <li>SAE J2360 (MIL-PRF-2105E)</li>
+                                </ul>
+                            <p>
+
+
+                        </div>
+                        <div class="col-xl-6 col-lg-12" style="padding-right:0;">
+                            <p>Valvoline™ also offers the following options where longer intervals are achievable. Valvoline™ SYN GARD™ Gear Oils are Fully Approved and Valvoline™ Heavy Duty Synthetic Gear Oils are recommended and backed by Valvoline™ Performance Guarantee. Both products meet the following specifications:
+                                <ul>
+                                    <li>API GL-5</li>
+                                    <li>API MT-1</li>
+                                    <li>API PG-2</li>
+                                    <li>Meritor 076-B, E, N</li>
+                                    <li>SAE J2360 (MIL-PRF-2105E)</li>
+                                    <li>Eaton Axle Div. PS-037/163/109</li>
+                                    <li>International TMS 6816</li>
+                                    <li>Eaton Axle Div. PS-037/163/109</li>
+                                    <li>Mack GO-J (80W-140)</li>
+                                    <li>Mack GO-J Plus (75W-90)</li>
+                                    <li>Dana Shaes 256 Rev C(75W-90)</li>
+                                    <li>Dana Shaes 429 Rev A (80W-140)</li>
+                                </ul>
+                            <p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-2" style="text-align: left;">
+                </div>
+                <div class="row continue-anchor" style="padding: 0;">
+                    <div class="desktop-br mobile-center">
+                        <button class="next continue-btn continue-small-m"
+                            style="display: inline-block;">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- QUESTION 3 -->
+        <div id="box10" class="box question-bg-box">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="row align-middle full-box-height" id="content">
+                <div class="col topCenterText m-LeftCol-question back-btn-padding">
+                    <div class='center-text-box question-3'>
+                        <h1 id="question-num"></h1>
+                        <div class='question-text'></div>
+                        <div class='answer-container'></div>
+                    </div>
+                </div>
+                <div class="col topCenterText m-RightCol-question">
+                    <div class="reveal-btn text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+                    <div class="reveal-btn-m text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+
+                    <div class="remediation">
+                        <div class="remediation-icon"></div>
+                        <div class="remediation-txt"></div>
+                        <div class="remediation-continue next">
+                            Continue
+                        </div>
+                        <div class="remediation-retry">
+                            Try Again
+                            <div class='warn-sel-ans'>
+                                Choose an answer and select "Try Again."
+                            </div>
+                        </div>
+                        <div class="attempt-container row">
+                            <div class="attempt-1">
+                                FIRST ATTEMPT
+                            </div>
+                            <div class="attempt-2">
+                                SECOND ATTEMPT
+                            </div>
+                            <div class="attempt-3">
+                                RETRY IN 7 DAYS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- QUESTION 4 -->
+        <div id="box11" class="box question-bg-box">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="row align-middle full-box-height" id="content">
+                <div class="col topCenterText m-LeftCol-question back-btn-padding">
+                    <div class='center-text-box question-4'>
+                        <h1 id="question-num"></h1>
+                        <div class='question-text'></div>
+                        <div class='answer-container'></div>
+                    </div>
+                </div>
+                <div class="col topCenterText m-RightCol-question">
+                    <div class="reveal-btn text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+                    <div class="reveal-btn-m text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+
+                    <div class="remediation">
+                        <div class="remediation-icon"></div>
+                        <div class="remediation-txt"></div>
+                        <div class="remediation-continue next">
+                            Continue
+                        </div>
+                        <div class="remediation-retry">
+                            Try Again
+                            <div class='warn-sel-ans'>
+                                Choose an answer and select "Try Again."
+                            </div>
+                        </div>
+                        <div class="attempt-container row">
+                            <div class="attempt-1">
+                                FIRST ATTEMPT
+                            </div>
+                            <div class="attempt-2">
+                                SECOND ATTEMPT
+                            </div>
+                            <div class="attempt-3">
+                                RETRY IN 7 DAYS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="box" id="box12">
+            <iframe id='contents-activity' name="contents-activity"
+                src='scripts/activity/challenge_8/activity_1.html'></iframe>
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="overlay" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Let’s play Five Card Stud.</h1>
+                            <p>Play your cards right and you can earn bonus points.</p>
+                            <p>You’ll see the house’s hand and then have a chance to play your own cards and answer one additional question to earn, and play, your final card.</p>
+                            <p>Get the better hand and win some bonus points. </p>
+                            <p>If you aren’t holding a winning hand, don’t despair. There will be other bonus opportunities in future challenges.</p>
+                            <p>Good luck!</p>
+                            <p>
+                                <div class="headerBlue">SELECT START.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="" id="start-btn" onclick="$(this).parent().parent().parent().fadeOut(); document.getElementById('contents-activity').contentWindow.exportRoot.play();">START</button>
+                    </div>
+                </div>
+            </div>
+            <!--DID NOT EARN ENOUGH POINTS TO PLAY-->
+            <div class="overlay no-bonus" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Bonus</h1>
+                            <p>It was close, but you didn’t answer enough questions correctly to play the bonus
+                                round.</p>
+                            <p>You did still earn points for completing this challenge.</p>
+                            <p>
+                                <div class="headerBlue">SELECT CONTINUE.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="next" id="start-btn" onclick="">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <!--BONUS QUESTION-->
+            <div class="box bonus-question-container question-bg-box hidden">
+                <div class="row align-middle full-box-height " id="content">
+                    <div class="col topCenterText m-LeftCol-question back-btn-padding">
+                        <div class='center-text-box question-5'>
+                            <h1 id="question-num"></h1>
+                            <div class='question-text'></div>
+                            <div class='answer-container'></div>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-RightCol-question">
+                        <div class="reveal-btn text-white">
+                            <h3>REVEAL ANSWER</h3>
+                        </div>
+                        <div class="reveal-btn-m text-white">
+                            <h3>REVEAL ANSWER</h3>
+                        </div>
+                        <div class="remediation">
+                            <div class="remediation-icon"></div>
+                            <div class="remediation-txt"></div>
+                            <div class="remediation-continue next">
+                                Continue
+                            </div>
+                            <div class="remediation-retry">
+                                Try Again
+                                <div class='warn-sel-ans'>
+                                    Choose an answer and select "Try Again."
+                                </div>
+                            </div>
+                            <div class="attempt-container row">
+                                <div class="attempt-1">
+                                    FIRST ATTEMPT
+                                </div>
+                                <div class="attempt-2">
+                                    SECOND ATTEMPT
+                                </div>
+                                <div class="attempt-3">
+                                    RETRY IN 7 DAYS
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="overlay earn-point hidden" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Unlock Your Bonus Card</h1>
+                            <p>This is a close hand. If you get the right card, you’ll win. Before you can play that card, you’ll have to unlock it by answering this bonus question correctly.</p>
+                            <p>You’ll only get one chance to answer it. No points are on the line, but you need to answer it to unlock your last card.</p>
+                            <p>Good luck!</p>
+                            <p>
+                                <div class="headerBlue">SELECT START.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="" id="start-btn"
+                            onclick="$('.bonus-question-container').show(); $(this).parent().parent().parent().fadeOut(); ">START</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overlay miss-bonus-question hidden" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Incorrect</h1>
+                            <!-- <p>It was close, but you didn’t pick up any bonus points. You did still earn points for completing this challenge.</p> -->
+                            <p>Sorry, but that’s not a winning hand. Luck of the draw, right?</p>
+                            <p>
+                                <div class="headerBlue">SELECT CONTINUE.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="" id="start-btn" onclick="$(this).parent().parent().parent().fadeOut(); ">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="overlay win-activity hidden" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Correct</h1>
+                            <p>Congratulations! Three of a kind beats a pair. You just picked up 10 bonus points. These will be added to your total VCERT Performance+ score.</p>
+                            <p>
+                                <div class="headerBlue">SELECT CONTINUE.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="next" id="start-btn" onclick="">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay fail-activity hidden" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Incorrect</h1>
+                            <p>It was close, but you didn’t pick up any bonus points. You did still earn points for
+                                completing this challenge.</p>
+                            <p>
+                                <div class="headerBlue">SELECT CONTINUE.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="next" id="start-btn" onclick="">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+            <button class="next continue-btn activity-continue" id="">CONTINUE</button>
+        </div>
+        <!--WDYL-->
+        <div id="box13" class="box">
+            <div class="mask-img" style="position:absolute; top:0; overflow: visible;"><img id="learn-screen-img"
+                    src="images/challenge_1/Conclsn-Photo.jpg" style="justify-content: center;"></div>
+            <div class="row align-middle learn-box" id="content" style="height: 55% !important;">
+                <div class="col-md-12 col-xl-6" style="text-align: left">
+                    <div>
+                        <h1>What Did We Learn Today?</h1>
+                        <div>
+                            <p>Valvoline™ transmission fluids and gear oils help fleet owners keep their machines running and in warranty compliance. Valvoline™ not only offers customers a superior product formulation but also a fully approved product backed by a Valvoline™ Performance Guarantee.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xl-6 learned-continue" style="min-height: 150px;">
+                    <button class="next continue-btn-center" id="continue-btn-7">CONTINUE</button>
+                </div>
+            </div>
+        </div>
+        <!--CONCLUSION-->
+        <div id="box14" class="box">
+            <div class="row align-middle full-box-height" id="content">
+                <div class="col topCenterText">
+                    <div class='center-text-box'>
+                        <h1>Challenge Complete!</h1>
+                        <div id='result-incorrect'>
+                            <p>It was a good try, but to successfully complete a challenge, you need a score of 80% or higher on the challenge questions.</p>
+                            <p>You earned 0 points this time.</p>
+                            <p>You do have the opportunity to retake this challenge and earn some points!</p>
+                            <p>Better luck next time!</p>
+                        </div>
+                        <div id='result-closed'>
+                            <p>Looks like you still have some work to do with this topic. You did not earn a
+                            passing score and no additional points will be added to your total.</p>
+                            <p>While you wait for the next challenge to hit your inbox, you might want to return to your class materials and review some of the information around this specific topic.</p>
+                            <p>This challenge will remain open so you can put that review to the test by taking the challenge again. (No points can be earned any longer for this challenge.)</p>
+                            <p>A new challenge will be coming soon. Better luck next time!</p>
+                        </div>
+                        <div id='result-three'>
+                            <p>You’ve completed this challenge review. If you would like to review this topic in
+                                greater depth, you may want to return to your class materials and review some of the
+                                information presented there.</p>
+                            <p>As a reminder, no points will be earned for completing a challenge review.</p>
+                        </div>
+                        <div id='result-correct'>
+                            <p>Great work!</p>
+                            <p>You just earned yourself <span id="score">10</span> points.</p>
+                            <p>Remember, you can’t earn any additional points from this challenge, but you can use
+                                it as reference.</p>
+                            <p>Look for your next challenge soon.</p>
+                        </div>
+                        <!-- <div>For more information on this topic, check out some additional resources <a
+                                id="additional-resource" href="" target="_blank">here</a>.</div> -->
+                    </div>
+                </div>
+                <div class="col topCenterText col-sm">
+                    <div>
+                        <button id="gameover-btn" type="submit">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id='progress-bar'>
+        <div class='line'></div>
+        <div class='pin intro'></div>
+        <div class='pin quest'></div>
+        <div class='pin quest'></div>
+        <div class='pin quest'></div>
+        <div class='pin quest'>
+            <div class='q-points'></div>
+        </div>
+        <div class='pin quest'>
+            <div class='q-points'></div>
+        </div>
+        <div class='pin quest'></div>
+        <div class='pin quest'></div>
+        <div class='pin quest'></div>
+        <div class='pin quest'>
+            <div class='q-points'></div>
+        </div>
+        <div class='pin quest'>
+            <div class='q-points'></div>
+        </div>
+        <div class='pin quest'>
+            <div class='q-points'></div>
+        </div>
+        <div class='pin quest'></div>
+        <div class='pin conclusion'></div>
+        <div class='score'>0</div>
+    </div>
+
+    <footer>
+        <div>CHALLENGE #8</div>
+    </footer>
+    <!-- <script src="../../bin/footerChallenge.js"></script> -->
+    <script src="scripts/polyfill.min.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="scripts/jquery-3.4.1.js"></script>
+    <script src="scripts/popper.js/dist/umd/popper.min.js"></script>
+    <script src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script> -->
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script> -->
+    <!-- <script defer src="src/fb-core-js.js"></script> -->
+    <script defer src="bin/fb-auth.js"></script>
+    <script src="bin/rules_popup_c8_hd.js"></script>
+    <script>
+
+        $('#challenge-btn', window.parent.document).html('TRANSMISSION FLUID AND GEAR OIL');
+        var thisChallengNumber = 8;
+        $('#additional-resource').attr('href', 'https://valvoline.widencollective.com/portals/qiq91brk/MyPortal572020');
+        parent.setBookmarking("HD", thisChallengNumber, .2);
+        parent.retrieveAttempt(thisChallengNumber, "HD");
+        //QUIZ
+        var ifrm = window.frameElement; // reference to iframe element container
+        var doc = ifrm.ownerDocument; // reference to container's document
+        var thisClass = function () {
+            if (ifrm.src.includes("hd")) {
+                return "HD";
+            } else if (ifrm.src.includes("ld")) {
+                return "LD";
+            } else if (ifrm.src.includes("vps")) {
+                return "VPS";
+            }
+        }
+
+        var hsArray = [0, 0, 0, 0, 0];
+        var hsString = '1,1,1,1,1';
+        var hscheckProg = function (num) {
+            hsArray[num] = 1;
+            if (hsArray.toString() == hsString) {
+                $('.hs-continue').parent().removeClass("hidden").hide().fadeIn();
+            }
+        };
+        var revealPlus = function () {
+            if ($(this).css("opacity") == "1") {
+                var elIndex = $(this).parent().attr("class").trim().slice(-1);
+                $('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x').addClass('clk-reveal-complete-plus');
+                $('.clk-reveal-plus').css({ "opacity": ".5", "pointer-events": "none" });
+                $('.clk-reveal-complete-plus').css({ "opacity": ".5", "pointer-events": "none" });
+                $(this).css({ "opacity": "1", "pointer-events": "auto" });
+                $(this).addClass('clk-reveal-complete-x')
+                $('.clk-reveal-x').addClass('clk-reveal-plus');
+                $('.clk-reveal-x').removeClass('clk-reveal-x');
+                $(this).unbind();
+                $(this).bind('click', revealX);
+                $(this).removeClass('clk-reveal-plus');
+                $(this).addClass('clk-reveal-x');
+                $(this).parent().parent().find('.content-box').hide();
+                $('.clk-reveal-plus').unbind();
+                $('.clk-reveal-plus').bind('click', revealPlus);
+                $('.content-box-' + elIndex).fadeIn();
+                hscheckProg(elIndex - 1)
+            }
+        }
+
+        var revealX = function () {
+            $('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x');
+            $(this).addClass('clk-reveal-complete-plus');
+            $('.clk-reveal-plus').css({ "opacity": "1", "pointer-events": "auto" });
+            $('.clk-reveal-complete-plus').css({ "opacity": "1", "pointer-events": "auto" });
+            $('.clk-reveal-x').addClass('clk-reveal-plus');
+            $('.clk-reveal-x').removeClass('clk-reveal-x');
+            $(this).unbind();
+            $(this).bind('click', revealPlus);
+            $(this).removeClass('clk-reveal-x')
+            $(this).addClass('clk-reveal-plus');
+            $('.clk-reveal-plus').unbind();
+            $('.clk-reveal-plus').bind('click', revealPlus);
+            $('.content-box').hide();
+        }
+        //console.log(thisClass())
+        ////////console.log(parent.activities)
+        // $(doc).find('header').css('border-bottom', 'none');
+        ifrm.style.top = '-118px';
+        ifrm.style.position = 'absolute';
+        ifrm.style.height = '100%';
+        ifrm.style.zIndex = '1005';
+
+        var quiz = [{
+            // Q1
+            question: '<p>How can low viscosity transmission fluid help improve fuel economy?</p>',
+            type: 'MC',
+            answers: [
+                'Actually, it can’t.',
+                'By reducing fluidic friction, or drag within the fluid, so that energy is not lost unnecessarily as heat.',
+                'With a 5% to 10% increase in fuel economy.',
+                'By transferring energy through fluidic friction within the fluid.'
+            ],
+            choices: [],
+            correct: 2,
+            correct_rem: '<p>That’s right! By reducing fluidic friction, or drag within the fluid, so that energy is not lost unnecessarily as heat, low viscosity transmission fluid helps improve fuel economy.</p>',
+            incorrect_rem: '<p>That’s not the best answer. Try again.</p>',
+            fail_rem: '<p>That’s not correct. By reducing fluidic friction, or drag within the fluid, so that energy is not lost unnecessarily as heat, low viscosity transmission fluid helps improve fuel economy.</p><p>You will not receive any points for this question.</p>'
+        }, {
+            // Q2
+            question: '<p>Many technology changes in transmissions are being driven by the need for __________________.</p>',
+            type: 'MC',
+            answers: [
+                'increased fuel efficiency',
+                'increased fleet ownership',
+                'improved technical understandings by a fleet mechanic',
+                'fuel dumps'
+            ],
+            choices: [],
+            correct: 1,
+            correct_rem: '<p>That’s right! There are three types of Heavy Duty Transmissions: <ul><li>Manual transmissions</li> <li>Automatic transmissions</li> <li>Automated Manual transmissions</li></ul></p>',
+            incorrect_rem: '<p>That’s not the best answer. Try again.</p>',
+            fail_rem: '<p>That’s not correct. Each transmission type requires a fluid designed for the specific needs of that transmission.</p><p>You will not receive any points for this question.</p>'
+        }, {
+            // Q3
+            question: '<p>Heavy Duty gear oil makes up the majority of the gear oil market share because HD vehicles have larger fill volumes and demanding duty cycles requiring _____________________.</p>',
+            type: 'MC',
+            answers: [
+                'adherence to maintenance schedules',
+                'flexibility in maintenance schedules',
+                'elastomer and friction material compatibility',
+                'frequent equipment purchases'
+            ],
+            choices: [],
+            correct: 1,
+            correct_rem: '<p>That’s right! Heavy Duty gear oil makes up the majority of the gear oil market share because HD vehicles have larger fill volumes and demanding duty cycles requiring adherence to maintenance schedules.</p>',
+            incorrect_rem: '<p>That’s not the best answer. Try again.</p>',
+            fail_rem: '<p>That’s not correct. Heavy Duty gear oil makes up the majority of the gear oil market share because HD vehicles have larger fill volumes and demanding duty cycles requiring adherence to maintenance schedules.</p><p>You will not receive any points for this question.</p>'
+        }, {
+            // Q4
+            question: '<p>Gear oil is a lubricant made specifically to do all of the following EXCEPT __________________________________.</p>',
+            type: 'MC',
+            answers: [
+                'prevent rust and corrosion',
+                'protect gears from sliding and wear',
+                'quiet gears and dissipate shock loading',
+                'disperse combustion byproducts'
+            ],
+            choices: [],
+            correct: 4,
+            correct_rem: '<p>That’s right! Using the proper gear oil can prevent rust and corrosion, quiet gears and dissipate shock loading, and protect gears from sliding and contact wear.</p>',
+            incorrect_rem: '<p>That’s not the best answer. Try again.</p>',
+            fail_rem: '<p>That’s not correct. Using the proper gear oil can prevent rust and corrosion, quiet gears and dissipate shock loading, and protect gears from sliding and contact wear.</p>'
+        }, {
+            // Q5 BONUS
+            question: '<p>If a gear lube _____________, the load carrying capacity is significantly reduced because the air suspended within the oil is compressible.</p>',
+            type: 'MC',
+            answers: [
+                'thickens',
+                'thins',
+                'dissipates',
+                'foams'
+            ],
+            choices: [],
+            correct: 4,
+            correct_rem: '<p>You’re right! If a gear lube foams, the load carrying capacity is significantly reduced because the air suspended within the oil is compressible.</p>',
+            incorrect_rem: '<p>That’s not the best answer. Try again.</p>',
+            fail_rem: '<p>Sorry, that’s not correct. If a gear lube foams, the load carrying capacity is significantly reduced because the air suspended within the oil is compressible.</p>'
+        }
+
+            // , {
+            //     // Q5
+            //     question: 'While the Cummins® and Valvoline™ relationship is strong, it is confined to diesel engines only.',
+            //     type: 'MC',
+            //     answers: [
+            //         'True',
+            //         'False'
+            //     ],
+            //     choices: [],
+            //     correct: 2,
+            //     correct_rem: 'That’s right. From diesel to alternative fuels and beyond, the two companies are working to make sure they can continue to build a strong relationship, even in a changing machine-based landscape.',
+            //     incorrect_rem: 'That’s not the right answer. From diesel to alternative fuels and beyond, the two companies are working to make sure they can continue to build a strong relationship, even in a changing machine-based landscape.'
+            // }, {
+            //     // Q5
+            //     question: 'In this case study, only Cummins® engines benefitted from Valvoline™ products.',
+            //     type: 'MC',
+            //     answers: [
+            //         'True',
+            //         'False'
+            //     ],
+            //     correct: 2,
+            //     choices: [],
+            //     correct_rem: 'Correct! The customer reported improvements to their full fleet, a third of which were not Cummins® engines. Did you know: ⅓ of the market is not using Cummins® engines in their fleet. Those fleet owners can still see the benefits of Valvoline™ HD engine oils such as the potential extended drainage intervals, performance efficiencies and a reduction in the overall total cost of ownership.',
+            //     incorrect_rem: 'So close, but still wrong. Remember, the customer reported improvements to their full fleet, a third of which were not Cummins® engines. Did you know: ⅓ of the market is not using Cummins® engines in their fleet. Those engine owners can still see benefits to their engines such as the potential extended drainage intervals, performance efficiencies, and a reduction in the overall total cost of ownership.'
+            // }, {
+            //     // Q6
+            //     question: 'In the Dayton Freight video, the customer commented on the “cleanliness” they now see in their engines since switching to Premium Blue™. This result could be in part because of:',
+            //     type: 'MC',
+            //     answers: [
+            //         'Since the switch, technicians at the site are checking the engine and oil more frequently.',
+            //         'Advanced soot control and the excellent deposit protection of Premium Blue™',
+            //         'The combined effect of using multiple Valvoline products.',
+            //         'Changing oil grades.'
+            //     ],
+            //     choices: [],
+            //     correct: 2,
+            //     correct_rem: 'You nailed it!<br /><br />Valvoline™ Premium Blue™ motor oil features:<ul><li>Enhanced protection against oil oxidation</li><li>Improved fuel economy potential over conventional 15W-40 oils</li><li>Excellent deposit protection</li><li>Exceptional TBN retention</li><li>Enhanced fuel economy potential (vs. conventional oils)</li><li>Advanced soot control</li></ul>Among other benefits',
+            //     incorrect_rem: 'That’s not correct. To find the right answer, consider the explicit benefits of Valvoline™ Premium Blue™ motor oil brings to the engine.'
+            // }
+
+        ]
+
+        var passed = true;
+        var questionPointsPossible = 80;
+        var points = [20, 20, 20, 20, 0 ]
+        var attemptsLeft = [2, 2, 2, 2, 1];
+        var passPercent = 80;
+        var boxLocation = 0;
+        var attemptCount = 0;
+
+        var cardCount = 0;
+			var bonusCard = 0;
+
+        var totalPoints = function () {
+            var sum = 0;
+            for (var i = 0; i < points.length; i++) {
+                sum += points[i]
+            }
+            return sum;
+
+        }();
+
+        var q = function () {
+            return quiz[qIndex];
+        }
+
+        var currentAnswer;
+
+        function RenderQuestion() {
+				$('.clk-reveal-plus').bind('click', revealPlus);
+				for (var qIndex = 0; qIndex < quiz.length; qIndex++) {
+					$('.question-' + (qIndex + 1) + ' #question-num').html('Question ' + (qIndex + 1));
+					$('.question-' + (qIndex + 1) + ' .question-text').html(quiz[qIndex].question);
+					for (var i = 0; i < quiz[qIndex].answers.length; i++) {
+						quiz[qIndex].choices.push(i + 1)
+						var div = document.createElement('div')
+						$(div).append('<input id="button' + (i + 1) + '" type="radio" name="quiz" value="' + (i + 1) +
+							'" /><div id="answer' + (i + 1) + '"class="answer pointer"><\/div>');
+						$(div).append('<label for="button' + (i + 1) + '">' + quiz[qIndex].answers[i] + '<\/label>');
+						$('.question-' + (qIndex + 1) + ' .answer-container').append(div);
+					}
+				}
+				var radioCheck = function () {
+					$('.remediation-retry').unbind('click', runCheck);
+					$('.reveal-btn-m').unbind('click', runCheck);
+					$('.reveal-btn-m').bind('click', runCheck);
+					currentAnswer = $(this).attr('id').slice(-1);
+					currentQuestion = $(this).parent().parent().parent().attr('class').slice(-1);
+					console.log('currentQuestion:' + currentQuestion)
+					console.log(quiz[currentQuestion - 1].choices)
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] != 0 && attemptsLeft[currentQuestion - 1] < 2) {
+						$('.remediation-retry').bind('click', runCheck);
+						$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+					} else {
+						$('.remediation-retry').unbind('click', runCheck);
+						$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+					}
+					
+					if (attemptsLeft[currentQuestion - 1] == 0) {
+						$('.reveal-btn').unbind('click', runCheck);
+					} else {
+						$('.reveal-btn').unbind('click', runCheck);
+						$('.reveal-btn').bind('click', runCheck);
+					}
+
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+						$('.reveal-btn-m').bind('click', runCheck);
+					}
+
+					if (quiz[currentQuestion - 1].type == "MC") {
+						$('.answer-on').removeClass('answer-on').addClass('pointer');
+						$(this).addClass("answer-on").removeClass('pointer');
+					} else if (quiz[currentQuestion - 1].type == "MR") {
+						$('.answer-on').removeClass('answer-on').addClass('pointer');
+						$(this).addClass("answer-on").removeClass('pointer');
+					}
+				}
+
+				$('.answer').bind('click', radioCheck);
+				$('.remediation-retry').on('click', function () {
+					console.log($(this))
+					$('.remediation-retry').unbind('click', runCheck);
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+						if ($(window).width() < 999) {
+							$('.attempt-1').hide();
+							$('.attempt-2').hide();
+							$(this).parent().addClass("m-hide")
+							$(this).parent().parent().parent().parent().find('.attempt-container').addClass("m-hide");
+						} else {
+							$(this).parent().parent().parent().parent().find('.attempt-container').removeClass("m-hide")
+							$(this).parent().removeClass("m-hide");
+							$('.remediation-retry .warn-sel-ans').css('opacity', '1');
+						}
+					}
+				})
+
+				$('.remediation-continue').on('click', function () {
+					$('.reveal-btn').unbind('click', runCheck);
+					$('.reveal-btn-m').unbind('click', runCheck);
+					// if (currentQuestion == quiz.length - 1) {
+					// 	document.getElementById('contents-activity').contentWindow.exportRoot.dealDeck();
+					// }
+					if (currentQuestion >= quiz.length - 1) {
+						var userPoints = 0;
+						for (var i = 0; i < points.length; i++) {
+							userPoints += points[i]
+						}
+						scorePercent = parseInt((userPoints / totalPoints) * 100);
+						var attempt = parent.intAttempt;
+						console.log('Check score: ' + scorePercent >= passPercent)
+						if (scorePercent >= passPercent && attempt < 4) {
+							$('#result-correct').show();
+							$('#gameover-btn').show();
+							$('#result-incorrect').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-retry').hide();
+							$('#retry-btn').hide();
+							console.log('Passed in first 3 attempts')
+						} else if (scorePercent < passPercent && attempt < 4) {
+							passed = false;
+							$('#result-incorrect').show();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Failed in one of the first 3 attempts')
+						} else if (attempt == 5) {
+							passed = false;
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').show();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Challenge Closed. Reviewing. No Points awarded.')
+						} else if (attempt == 4) {
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').show();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Just reviewing. Good Job!')
+						}
+                    }
+				})
+
+				//Returns array of selected answers from a MR question
+				function getAnswers() {
+					var returnAnswers = [];
+					$(".answer").each(function () {
+						if ($(this).hasClass('answer-on')) {
+							returnAnswers.push(Number($(this).attr('id').slice(-1)));
+						}
+					});
+					return returnAnswers;
+				}
+
+				function arraysEqual(_arr1, _arr2) {
+					if (!Array.isArray(_arr1) || !Array.isArray(_arr2) || _arr1.length !== _arr2.length)
+						return false;
+					var arr1 = _arr1.concat().sort();
+					var arr2 = _arr2.concat().sort();
+					for (var i = 0; i < arr1.length; i++) {
+						if (arr1[i] !== arr2[i])
+							return false;
+					}
+					return true;
+				}
+
+				var runCheck = function () {
+					console.log("run check")
+					if (currentQuestion != undefined) {
+						$('.remediation-retry').unbind('click', runCheck);
+						if (currentQuestion == 5) {
+							console.log('BONUS QUESTION')
+							if (attemptsLeft[currentQuestion - 1] >= 0) {
+								$('.reveal-btn').eq(0).unbind('click', runCheck);
+								quiz[currentQuestion - 1].choices[currentAnswer - 1] = 0;
+								for (var i = 0; i < quiz[currentQuestion - 1].choices.length; i++) {
+									if (quiz[currentQuestion - 1].correct == currentAnswer) {
+										//correct answer
+										$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+											"pointer");
+									} else if (quiz[currentQuestion - 1].choices[i] == 0) {
+										//incorrect answer
+										$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+											"pointer answer");
+									} else if (attemptsLeft[currentQuestion - 1] == 0) {
+										//failed question
+										$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+											"pointer");
+									} else {
+										//rebind answers
+										$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind();
+										$('.question-' + currentQuestion + ' #answer' + (i + 1)).bind('click', radioCheck).addClass("pointer");
+									}
+								}
+								var holder = 0;
+								if (quiz[currentQuestion - 1].correct == currentAnswer) {
+									//bonusCard++;
+									console.log("bonusCard:" + bonusCard);
+									$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+									$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3')
+									$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+									$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+									$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+									$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').unbind();
+									$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').on('click', function () {
+										$('.bonus-question-container').fadeOut();
+									})
+									$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].correct_rem);
+									$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+										"url(images/challenge_2/images/Correct_Icon.png)");
+									$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+										"url(images/challenge_2/images/Correct.png)").addClass('remediation-reveal')
+										.removeClass("pointer answer");
+									$('.question-' + currentQuestion + ' .answer').css('cursor', 'auto');
+									$('.attempt-1').hide();
+									$('.attempt-2').hide();
+                                    document.getElementById('contents-activity').contentWindow.exportRoot.unlockCard();
+									//document.getElementById('contents-activity').contentWindow.exportRoot.bonusCard();
+								} else {
+
+									$('.answer-on').removeClass('answer-on');
+									$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+									$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-1');
+									$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+									$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').hide();
+									$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').addClass('white-txt').html(quiz[currentQuestion - 1].incorrect_rem);
+									$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+										"url(images/challenge_2/images/Incorrect_Icon.png)");
+									$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+										"url(images/challenge_2/images/Incorrect.png)").addClass('remediation-reveal')
+										.removeClass("pointer answer");
+									$('.attempt-1').hide();
+									$('.attempt-2').hide();
+									$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3');
+									$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+                                    $('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+                                    $('.remediation-continue:eq(' + (currentQuestion - 1) + ')').unbind();
+									$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').on('click', function () {
+										$('.bonus-question-container').fadeOut();
+									})
+									$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].fail_rem);
+									$('#progress-bar .quest .q-points').eq(currentQuestion-1).parent().addClass('quest-retry')
+									$('.question-' + currentQuestion + ' .answer-container div').each(function (index, elem) {
+										$('.question-' + currentQuestion + ' .answer').unbind().css('cursor', 'auto');
+                                    });
+                                    document.getElementById('contents-activity').contentWindow.exportRoot.gameOver();
+								}
+								attemptsLeft[currentQuestion - 1]--;
+								updateProgressTracker();
+							}
+							//END BONUS CHECK
+						} else {
+							if (attemptsLeft[currentQuestion - 1] >= 0) {
+								var correctAnswer = quiz[currentQuestion - 1].correct;
+								var thisQuestionAttemptsLeft = attemptsLeft[currentQuestion - 1];
+								if (quiz[currentQuestion - 1].type == "MC") {
+									$('.reveal-btn').unbind('click', runCheck);
+									quiz[currentQuestion - 1].choices[currentAnswer - 1] = 0;
+									for (var i = 0; i < quiz[currentQuestion - 1].choices.length; i++) {
+										if (quiz[currentQuestion - 1].correct == currentAnswer) {
+											//correct answer
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+												"pointer");
+										} else if (quiz[currentQuestion - 1].choices[i] == 0) {
+											//incorrect answer
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+												"pointer answer");
+										} else if (attemptsLeft[currentQuestion - 1] == 0) {
+											//failed question
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+												"pointer");
+										} else {
+											//rebind answers
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind();
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).bind('click', radioCheck).addClass("pointer");
+										}
+									}
+
+									if (quiz[currentQuestion - 1].correct == currentAnswer) {
+										cardCount++;
+										if (cardCount >= 4) {
+											$(".no-bonus").hide();
+										}
+										console.log("cardCount:" + cardCount);
+										$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3');
+										$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation:eq(' + (currentQuestion - 1) + ')').removeClass('m-hide')
+										$('.attempt-container:eq(' + (currentQuestion - 1) + ')').removeClass("m-hide")
+										$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-correct');
+										$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+										$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+										$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].correct_rem);
+										$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+											"url(images/challenge_2/images/Correct_Icon.png)");
+										$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+											"url(images/challenge_2/images/Correct.png)").addClass('remediation-reveal')
+											.removeClass("pointer answer");
+										$('.question-' + currentQuestion + ' .answer').css('cursor', 'auto');
+
+										$('.attempt-1').hide();
+										$('.attempt-2').hide();
+									} else {
+										$('.answer-on').removeClass('answer-on');
+										$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').addClass('white-txt').html(quiz[currentQuestion - 1].incorrect_rem);
+										$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+											"url(images/challenge_2/images/Incorrect_Icon.png)");
+										$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+											"url(images/challenge_2/images/Incorrect.png)").addClass('remediation-reveal')
+											.removeClass("pointer answer");
+                                            if (attemptsLeft[currentQuestion - 1] >= 0 && points[currentQuestion - 1] > 0) {
+											//console.log("INCORRECT RESPONSE: " + attemptsLeft[currentQuestion - 1])
+											points[currentQuestion - 1] = points[currentQuestion - 1] - 5;
+										}
+										if (attemptsLeft[currentQuestion - 1] == 2) {
+											$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-1');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-1');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+											$('.attempt-1').css('display', 'flex');
+										} else if (attemptsLeft[currentQuestion - 1] == 1) {
+											$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-2');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').removeClass('m-hide')
+											$('.attempt-container:eq(' + (currentQuestion - 1) + ')').removeClass("m-hide")
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-2');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+											$('.attempt-1').hide();
+											$('.attempt-2').css('display', 'flex');
+										} else if (attemptsLeft[currentQuestion - 1] == 0) {
+											$('.attempt-1').hide();
+											$('.attempt-2').hide();
+											$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').removeClass('m-hide')
+											$('.attempt-container:eq(' + (currentQuestion - 1) + ')').removeClass("m-hide")
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-3');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+											$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+											$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+											$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].fail_rem);
+											$('#progress-bar .quest .q-points').eq(currentQuestion-1).parent().addClass('quest-retry')
+											$('.question-' + currentQuestion + ' .answer-container div').each(function (index, elem) {
+												$('.question-' + currentQuestion + ' .answer').unbind().css('cursor', 'auto');
+											});
+										}
+										attemptsLeft[currentQuestion - 1]--;
+										updateProgressTracker();
+									}
+								}
+							} // end of runCheck
+						}
+					}
+					$('.reveal-btn').bind('click', runCheck);
+					$('.reveal-btn-m').bind('click', runCheck);
+				}
+			}
+        (function () {
+            $('#header-image', window.parent.document).fadeIn();
+            $('.next').click(function (box) {
+
+                var curLocation = boxLocation + 1;
+                var nextLocation = boxLocation + 2;
+                var currentBox = $('#box' + curLocation)
+                var nextBox = $('#box' + nextLocation)
+                if (curLocation == 1) { $('#box2 #video-container').css('display', 'block'); 
+                //$('#player1').get(0).play(); 
+                }
+                $(currentBox).animate({
+                    left: '-50%'
+                }, 500, function () {
+                    $(currentBox).css('left', '150%');
+                    $(currentBox).appendTo('#container');
+                });
+                $(nextBox).animate({
+                    left: '50%'
+                }, 500);
+
+                $('video').each(function () {
+                        $(this).get(0).pause();
+                    });
+
+                boxLocation++;
+                nextAction(curLocation);
+                updateProgressTracker()
+            });
+
+            $('.back-btn').click(function () {
+                var preLocation = boxLocation;
+                var curLocation = boxLocation + 1;
+                var currentBox = $('#box' + curLocation)
+                var prevBox = $('#box' + preLocation)
+                console.log(curLocation)
+                $(currentBox).animate({
+                    left: '150%'
+                }, 500, function () {
+                    $(prevBox).css('left', ' ');
+                    $(prevBox).prependTo('#container');
+                });
+                $(prevBox).css('left', '-150%').animate({
+                    left: '50%'
+                }, 500);
+
+
+                    $('video').each(function () {
+                        $(this).get(0).pause();
+                    });
+
+                
+                boxLocation--;
+                updateProgressTracker()
+                backAction(boxLocation)
+            });
+
+
+            $('#gameover-btn').on('click', function (e) {
+				   console.log('here')
+				   console.log(passed)
+				   console.log(parent.intAttempt)
+                parent.exitChallenge();
+				if (passed && parent.intAttempt != 4) {
+					challengeComplete(thisClass(), thisChallengNumber, score, true);
+				} else if (parent.intAttempt != 4) {
+					challengeComplete(thisClass(), thisChallengNumber, score, false);
+				} else {
+					parent.navigateIframe("portal.html");
+				}
+				$('#gameover-btn').unbind("click");
+	        })
+
+            var $video = $('video'),
+                $window = $('#video-container');
+            $footer = $('footer')
+
+            $(window).resize(function () {
+                var footerHeightStr = $('footer').css('height');
+                var footerHeight = (footerHeightStr.substring(0, footerHeightStr.length - 2) - 1);
+                var height = $window.height();
+                $video.css('height', height);
+                var videoWidth = $video.width(),
+                    windowWidth = $window.width(),
+                    marginLeftAdjust = (windowWidth - videoWidth) / 2;
+                $video.css({
+                    'height': height
+                });
+            }).resize();
+
+        })();
+
+        function nextBox(el) {
+            $('#box5 #video-popup-1-mask').fadeOut();
+            var curLocation = boxLocation + 1;
+            var currentBox = $('#box' + curLocation)
+            $(currentBox).animate({
+                left: '-50%'
+            }, 500, function () {
+                $(currentBox).css('left', '150%');
+                $(currentBox).appendTo('#container');
+            });
+            $(currentBox).next().animate({
+                left: '50%'
+            }, 500);
+            boxLocation++;
+            nextAction(curLocation);
+            updateProgressTracker()
+        }
+
+        function playVideo_1() {
+            $('#box5 #video-container').fadeIn();
+
+            $('#box5 #video-popup-1-mask').fadeOut();
+            $('#box5 video')[0].play();
+        }
+
+        function nextAction(groupIndex) {
+            console.log('next action switch: ' + groupIndex + " " + typeof (groupIndex))
+            switch (groupIndex) {
+                case "0":
+
+                    break;
+                case "1":
+
+                    break;
+                case "2":
+
+                    break;
+                case "3":
+
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case "calcComplete":
+
+                    break;
+                case 5:
+
+                    break;
+                case 9:
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function backAction(groupIndex) {
+            //console.log('back action switch: ' + groupIndex + " " + typeof (groupIndex))
+            switch (groupIndex) {
+                case "0":
+
+                    break;
+                case "1":
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 5:
+
+                    break;
+                case "4":
+
+                    break;
+                case 9:
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
+        function updateProgressTracker() {
+            var userPoints = 0
+            for (var i = 0; i < points.length; i++) {
+                userPoints += points[i]
+            }
+            score = (userPoints);
+            $('.score').html(score + " POINTS")
+            $('#score').html(score)
+            $('#progress-bar .quest .q-points').each(function (i, obj) {
+                $('#progress-bar .quest .q-points').eq(i).html(points[i])
+            })
+            console.log(boxLocation)
+            switch (boxLocation) {
+
+                case 0:
+                    console.log("0")
+                    $('#progress-bar .pin').eq(boxLocation).addClass('intro')
+                    $('#progress-bar .pin').eq(boxLocation).removeClass('intro-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 1:
+                    console.log("1")
+                    $('#progress-bar .pin').eq(boxLocation - 1).addClass('intro-down')
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('intro');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 2:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 3:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 4:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 5:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 6:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 7:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 8:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 9:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 10:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 11:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 12:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 13:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('conclusion-down');
+                    break;
+                case 14:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('conclusion-down');
+                    break;
+                default:
+                    // $('#progress-bar .pin').eq(0).removeClass('intro-down');
+                    //$('#progress-bar .pin').eq(1).removeClass('scene-down');
+                    break;
+            }
+        };
+        updateProgressTracker();
+        RenderQuestion();
+    </script>
+</body>
+
+</html>

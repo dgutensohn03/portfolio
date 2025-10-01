@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  <ID>main-menu</ID>
+  <DisplayName>Main Menu</DisplayName>
+  
+  <Type>Dialog</Type>
+  <ButtonSize>double-wide</ButtonSize>
+  <ButtonTooltip>Table of Contents</ButtonTooltip>
+  <ShowTitleBar>false</ShowTitleBar>
+  <Width>100%</Width>
+
+  <Animation type="fade" direction="in" />
+</Settings>

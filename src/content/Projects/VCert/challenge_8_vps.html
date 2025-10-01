@@ -1,0 +1,2213 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/challenge.css">
+    <style>
+
+
+        /* #box3, #box4 {
+            background: url('./images/challenge_8_VPS/VPS_8_Pg2 BG.png');
+            background-repeat: no-repeat;
+            background-position-x: right;
+            background-position-y: center;
+            background-size: contain;
+            position: absolute;
+            overflow: hidden !important;
+        } */
+
+        /* #box5 {
+            background: url('./images/challenge_10/7.png')no-repeat center center;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            max-width: 1920px;
+            position: absolute;
+            overflow: hidden !important;
+        } */
+
+        .sm-h1 {
+            font-family: Roboto;
+            color: #000000;
+            font-size: 18pt;
+            font-weight: bold;
+            text-align: center;
+        }
+       
+        .break {
+            flex-basis: 100%;
+            height: 0;
+        }
+
+        .reveal-arrow-left {
+            max-width: 500px;
+            min-width: 450px;
+            height: 71px;
+            padding-left: 140px;
+            padding-right: 140px;
+            cursor: auto;
+            background: url(./images/challenge_2/images/Arrow_UP.png) no-repeat;
+        }
+
+        .flex-container {
+            min-height: 100px;
+            display: flex;
+            align-items: center;
+        }
+
+        .flex-container:after {
+            content: '';
+            min-height: inherit;
+            font-size: 0;
+        }
+
+        .plus-1 > .content-box-1, .plus-2 > .content-box-2, .plus-3 > .content-box-3, .plus-4 > .content-box-4 {
+            position: unset;
+            min-width: unset;
+            display: block;
+        }
+        .hidden {
+            display: none;
+        }
+        .plus-1 > .hidden, .plus-2 > .hidden, .plus-3 > .hidden, .plus-4 > .hidden {
+            display: none !important;
+        }
+
+        .continue-2, .continue-5 {
+
+            display: none;
+        }
+
+        .full-box-height {
+            padding: 9% 5% !important;
+        }
+
+        .lr {
+            margin-left: unset;
+        }
+
+
+        #loginheader {
+            font-size: 96px;
+            font-weight: 500;
+            font-family:Oswald;
+            position:relative;
+            top:-70px;
+        }
+        #popup-header-box {
+            font-size: 6rem;
+            font-weight: 500;
+            font-family: Oswald;
+            min-width: 220px;
+            color: #E1261D;
+            line-height: 20px;
+            width: auto;
+            top: 0px;
+            overflow: visible;
+            height: 0;
+            position: relative;
+            text-align: center;
+            z-index: 8;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .blue-text {
+            color: #0099D5;
+        }
+
+        .green-text {
+            color: #7AC943;
+        }
+        /* #video-popup-header>div {
+            background-color: #ffffff;
+            position: relative;
+            top: -11px
+        } */
+        /* .video-dialog {
+            margin: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            min-height: 100%;
+            overflow-y: initial !important
+        } */
+
+        #pg5-imgs {
+            display: inline-flex;
+        }
+        #pg5-imgs img {
+            margin: auto;
+            margin-right: 10%;
+        }
+
+
+        .popup-content {
+            border: 20px solid #ffffff !important;
+            background-color: #ffffff;
+            border-radius: 0;
+        }
+
+        .video-border {
+            border: 2px solid #E1261D;
+            height: 100%;
+        }
+
+        .popup-body .header {
+            font-size: calc(32px + .5vw);
+            line-height: calc(32px + .5vw);
+            font-family: Roboto-Medium;
+            text-align: center;
+            margin-right: 30px;
+            margin-left: 30px;
+        }
+
+        #popup-mask  {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,.7);
+            position:absolute;
+            top:0;
+            bottom:0;
+            left:0;
+            right:0;
+            z-index: 9;
+            height: calc(100vh - 98px);
+            display: flex;
+        }
+        .popup-body h1 {
+            text-align: center;
+            width: 100%;
+            font-size: calc(1.5rem + 1.1vw);
+            line-height: calc(2.5rem + 1.5vw);
+
+            text-align: center;
+            padding-left: 30px;
+            padding-right: 30px;
+
+        }
+        .popup-dialog {
+            width: 50%;
+            height: auto;
+            background-color: #ffffff;
+            margin:auto;
+            padding: 20px;
+            min-width: 270px;
+            /* min-width: 300px;
+            max-width: 700px;
+            min-height: 200px; */
+        }
+        .popup-dialog-border {
+            width: 100%;
+            height: 100%;
+
+            border: 2px solid #E1261D;
+        }
+
+        .red-dot {
+            height: 6px;
+            width: 6px;
+            background-color: #E1261C;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        #popup-header-box {
+            font-size: 5vw;
+            font-weight: 500;
+            font-family: Oswald;
+            min-width: 180px;
+            color: #E1261D;
+            line-height: 20px;
+            width: 50%;
+            top: 0px;
+            overflow: visible;
+            height: 0;
+            position: relative;
+            text-align: center;
+            z-index: 8;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        #popup-header-box > div {
+            background-color: #ffffff;
+            position: relative;
+            top: -11px;
+            margin: auto;
+            width: auto;
+        }
+
+        .popup-body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .flex-img img {
+            max-width: 80%;
+        }
+
+        #popup-mask .exitButton {
+            background: url('./images/challenge/ExitBtn_UP.png') no-repeat;
+            width: 52px;
+            height: 52px;
+            border: 0;
+            background-position: center;
+            position:absolute;
+
+        }
+        #popup-mask .exitButton {
+            z-index: 10;
+        }
+        #popup-mask .exitButton:hover {
+            background: url('./images/challenge/ExitBtn_DWN.png') no-repeat;
+        }
+        .top-right {
+            justify-content: flex-end;
+            display: flex;
+            margin-top: 20px;
+            margin-right: 20px;
+        }
+
+        #popup-mask .flex-middle {
+            min-width: 100%;
+        }
+
+        .popup-header-text {
+            font-size: calc(1.5rem + 1.1vw);
+            line-height: calc(1.5rem + 1.1vw);
+            font-family: Roboto-Medium;
+            text-align: center;
+            color: #000;
+        }
+
+        .flex-content {
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .challenge-arrow {
+            margin-top: 0 !important;
+            margin-bottom: 50px !important;
+        }
+
+        #box5 > #content {
+            height: unset !important;
+        }
+
+        #box5-text {
+            margin-top: 5%;
+            margin-bottom: auto;
+        }
+
+        #box5-text > .continue-5 {
+            position: unset;
+        }
+
+        .w3-bar {
+            margin-bottom: -2px;
+        }
+
+        .w3-bar-item {
+            background-color: #E3E3E3;            
+            border-radius: 15px 15px 0 0;
+            border: 2px solid #E3E3E3;
+            font-family: Oswald;
+            color: #929292;
+            padding: 2%;
+            font-size: 10pt;
+        }
+
+        /* .w3-border {
+            border: 10px solid #E3E3E3;
+        } */
+
+        .city {
+            overflow-x: scroll;
+        }
+
+        /* #photo-tabs {
+            padding-left: 10%;
+        } */
+
+        .w3-red {
+            background-color: #DC261B;
+            color: #ffffff;
+            border:2px solid #B01912;
+        }
+
+        @media only screen and (max-width: 937px) {
+            #pg5-imgs {
+                display: unset;
+            }
+
+            #pg5-imgs img {
+                margin-top: 10%;;
+            }
+
+            /* #popup-header {
+                font-size: 4.5rem;
+            } */
+
+            .popup-body h1 {
+
+                padding-top: 10px;
+
+            }
+            #popup-header-box {
+                font-size: 2.5rem;
+            }
+            #popup-mask .exitButton {
+                background: url('./images/challenge/ExitBtn_UP.png') center no-repeat;
+                background-size: 55%;
+                cursor: pointer;
+                width: 52px;
+                height: 52px;
+                border: 0;
+            }
+            #popup-mask .exitButton:hover {
+                background: url('./images/challenge/ExitBtn_DWN.png') center no-repeat;
+                background-size: 55%;
+            }
+
+            .top-right {
+                margin-top: 0;
+                margin-right: 0;
+            }
+
+        }
+
+        @media only screen and (max-width: 1290px) {
+            .reveal-arrow-left {
+                height: 71px;
+                color: #fff !important;
+                background: none;
+                padding-left: 140px !important;
+                padding-right: 140px !important;
+                max-width: 500px !important;
+                min-width: 450px !important;
+                background: url(../images/challenge_2/images/Arrow_UP.png) no-repeat;
+            }
+        }
+
+        @media only screen and (max-width: 999px) {
+
+            .hotspot-continue>button,
+            .flashCard-continue>button {
+                min-width: 230px !important;
+            }
+
+
+        }
+
+        @media only screen and (max-width: 1039px) {
+            .reveal-arrow-left {
+                height: auto;
+                color: black !important;
+                background: none;
+                min-width: 220px !important;
+            }
+
+            .back-padding {
+                padding-top: 75px !important;
+            }
+        }
+
+        @media only screen and (max-width: 550px) {
+            .top-text {
+                top: -80px;
+            }
+
+            .challenge-8 #box3 {
+                background-position: 40% 15vh !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 1790px) {
+            .hotspot-continue {
+                min-width: 750px;
+                -webkit-box-pack: center;
+                justify-content: center;
+                position: relative !important;
+            }
+        }
+        .challenge-8-vps #box9,
+        .challenge-8-vps #box8,
+        .challenge-8-vps #box7,
+        .challenge-8-vps #box4,
+        .challenge-8-vps #box3 {
+            overflow-y: hidden !important;
+        }
+
+        @media only screen and (max-height: 800px) {
+            .challenge-8-vps #box9,
+            .challenge-8-vps #box8,
+        .challenge-8-vps #box7,
+            .challenge-8-vps #box4,
+            .challenge-8-vps #box3 {
+                overflow-y: auto !important;
+            }
+
+        }
+
+        @media only screen and (max-width: 1050px) {
+            .challenge-8-vps #box9,
+            .challenge-8-vps #box8,
+        .challenge-8-vps #box7,
+            .challenge-8-vps #box4,
+            .challenge-8-vps #box3 {
+                overflow-y: auto !important;
+            }
+
+        }
+
+        .blueText {
+    font-size: 18px;
+    font-family: Roboto;
+    color: #0082CA;
+    font-weight: bold;
+}
+
+#pg5-imgs {
+  display: flex;
+  flex-direction: row;
+}
+
+#pg5-imgs img {
+  margin-right: auto;
+}
+
+
+/* Responsive layout - makes a one column layout instead of a two-column layout */
+@media (max-width: 800px) {
+  #pg5-imgs {
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 800px){
+#box5 .continue-anchor {
+    padding: 0px;
+    position: static !important;
+    bottom: auto !important;
+    right: auto !important;
+}
+}
+    </style>
+    <title>Vcert Project</title>
+</head>
+<style>
+
+</style>
+
+<body>
+    <div class="container-fluid challenge-8-vps">
+        <div class="box " id="box1">
+            <div class="row align-middle full-box-height" id="content">
+                <div class="col topCenterText ">
+                    <div class='center-text-box'>
+                        <h1>Valvoline Scorecard</h1>
+                        <p>
+                            When it comes to <font class="emphasisBold">VALVOLINE™ PROFESSIONAL SERIES (VPS)</font>, the benefits to an installer are so strong that they may have to be seen to be believed.
+                        </p>
+                        <p>
+                            In this <font class="emphasisBold">PERFORMANCE+ CHALLENGE</font>, we’ll look at the tools you can use to help prospective installers see how they, and their customers, can benefit from <font class="emphasisBold">VPS</font>.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+                <div class="col topCenterText m-margin-bottom">
+                    <div>
+                        <button class="next" id="start-btn" type="submit">START</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="box2" class="box">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div id="video-container">
+                <video id="player1" style="pointer-events: none;" onplay="" onended="$('.continue-2').fadeIn();">
+                    <source src="images/challenge_10/videos/card_shuffle_video.mp4">
+                </video>
+            </div>
+            <div class="br-bc hidden continue-2">
+                <button class="next continue-btn-center continue-small-m" id="continue-btn-2">CONTINUE</button>
+            </div>
+            <div id='popup-mask' class="q2-popup">
+                <div class="popup-dialog">
+                    <div class="popup-dialog-border">
+                    <div id="popup-header-box">
+                        <div class="flex-c-sb ">
+                            <div class="red-dot"></div>READY?<div class="red-dot"></div>
+                        </div>
+                    </div>
+                    <div class="top-right"><button class="exitButton" data-backdrop="static" data-keyboard="false" data-target="#popup-mask" onclick="$(this).parent().parent().parent().parent().fadeOut(); $('#player1').get(0).play();"></button></div>
+                        <div class="row popup-body no-padding-bottom">
+                            <div class="row flex-middle no-padding">
+                                <h1></h1>
+                                <div><div class="margin-bottom" style="text-align:left;">
+                                    <table>
+                                        <thead>
+                                       
+                                            Ready to win points now and the chance to win more later?
+                                         
+                                        </thead>
+                                        <tbody>
+                                          <tr valign="top">
+                                            <td  style="width: 60px;"><font class="emphasisBold">Step 1:</font></td>
+                                            <td>Review the content for each section.</td>
+                                          </tr>
+                                          <tr valign="top">
+                                            <td style="width: 60px;"><font class="emphasisBold">Step 2:</font></td>
+                                            <td>Answer each question correctly.</td>
+                                          </tr>
+                                          <tr valign="top">
+                                            <td style="width: 60px;"><font class="emphasisBold">Step 3:</font></td>
+                                            <td>Earn points for each correct answer.</td>
+                                          </tr>
+                                          <tr valign="top">
+                                            <td style="width: 60px;"><font class="emphasisBold">Step 4:</font></td>
+                                            <td>Answer a question correctly on the first attempt and win a card, which is playable in the bonus round.</td>
+                                          </tr>
+                                          
+                                        </tbody>
+                                        </table><p>Good luck!</p>
+                                    </div>
+                                </div>
+                        </div>
+                        <div class="col flex-middle">
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--3-->
+        <div class="box" id="box3">
+
+            <div style="width: 100%; height: 100px;">
+                <div class='back-btn'>
+                    <img src="">BACK
+                </div>
+            </div>
+            <div class="row align-middle center-content flex-container" id="content"
+                style="align-items: flex-start !important; height: calc(100% - 100px) !important;  text-align: left; ">
+                <div class='row m-bottom-padding' style='width: 100%; padding: 0;'>
+                    <div class="col-xl-5 col-lg-12 m-bottom-padding" style="padding: 5% 0 0 0;">
+                        <div>
+                            <h1>Valvoline Scorecard</h1>
+                            <p>
+                                With the <font class="emphasisBold">VPS</font> services, promotions, and Limited Lifetime Guarantee, 
+                                installers can sell more chemical services than ever before. You 
+                                can illustrate this growth potential to them by using the VPS Scorecard.
+                            </p>
+                            <p>
+                                It’s important that you work with the installer to populate the Valvoline Scorecard. This makes the installer a part of the process so they become more invested in, and accepting of, the results.
+                            <p>
+                            <p class="blueText">
+                                Some of the information you will have to get from your prospective customer includes:
+                            <p>
+                            <ul>
+                                <li>Working Days Per Month</li>
+                                <li>Average Monthly Repair Orders</li>
+                                <li>Current Number of Services per Month per Service</li>
+                                <li>Customer Pay Service Orders</li>
+                                <li>Chemical Services Sold</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xl-1 col-lg-12 col-sm-12" style="">
+                    </div>
+                    <div class="col-xl-6 col-lg-12 col-lg-12-custom " style="padding: 0; margin: auto;">
+                        <!-- <img style="max-width:100%; max-height:100%;"
+                        src="images/challenge_8_vps/VPS_8_Chart.png">-->
+
+                        <img style="max-width:100%; max-height:100%;"
+                        src="images/challenge_10_ld/LD_10_Pg4_BG_1.png">
+                    </div>
+                </div>
+
+                <div class='row m-bottom-padding' style='width: 100%; padding: 0;'>
+                    <div class="col-xl-5 col-lg-12" style="padding: 0;">
+                       <!-- <h1>Service Provider Profile</h1> -->
+                    </div>
+                    <div class="col-xl-1 col-lg-12 col-sm-12"
+                        style="flex-grow: 1; display: flex;align-items: center; justify-content: center;">
+                    </div>
+                    <div class="col-xl-5 col-lg-12" style="padding: 0;">
+
+                    </div>
+                </div>
+                <div class="col float-box">
+                    <button class="next continue-btn hs-continue box2-continue continue-small-m"
+                        style="display: inline-block;">CONTINUE</button>
+                </div>
+            </div>
+        </div>
+        <!--4-->
+        <div class="box" id="box4">
+
+            <div style="width: 100%; height: 100px;">
+                <div class='back-btn'>
+                    <img src="">BACK
+                </div>
+            </div>
+            <div class="row align-middle center-content flex-container" id="content"
+                style="align-items: flex-start !important; height: calc(100% - 100px) !important;  text-align: left; ">
+                <div class='row m-bottom-padding' style='width: 100%; padding: 0;'>
+                    <div class="col-xl-5 col-lg-12 m-bottom-padding" style="padding: 5% 0 0 0;">
+                        <div>
+                            <h1>A Plan of Action</h1>
+                            <p>
+                                Each section of the Valvoline Scorecard focuses on a specific area of business. The more information you can add, the easier it will be for an installer to see the potential profit increase they may achieve.
+
+                            </p>
+                            <p>
+                                This means you’ll want to complete a detailed profile on the Service Provider (the Start Here - Inputs tab) as this information will inform the Business Impact that VPS Services can have as well as provide insight into an installer’s Profit Potential.
+                                
+
+                            <p>
+                            <p>
+                                More than just forecasting, the Valvoline Scorecard can be used to create a Plan of Action for both you and the installer.
+                            <p>
+                           
+                        </div>
+                    </div>
+                    <div class="col-xl-1 col-lg-12 col-sm-12" style="">
+                    </div>
+                    <div class="col-xl-6 col-lg-12 col-lg-12-custom " style="padding: 0; margin: auto;">
+                        <!-- <img style="max-width:100%; max-height:100%;"
+                        src="images/challenge_8_vps/VPS_8_Chart.png">-->
+
+                        <img style="max-width:100%; max-height:100%;"
+                        src="images/challenge_8_vps/VPS_8_PG4.png">
+                    </div>
+                </div>
+
+                <div class='row m-bottom-padding' style='width: 100%; padding: 0;'>
+                    <div class="col-xl-5 col-lg-12" style="padding: 0;">
+                       <!-- <h1>Service Provider Profile</h1> -->
+                    </div>
+                    <div class="col-xl-1 col-lg-12 col-sm-12"
+                        style="flex-grow: 1; display: flex;align-items: center; justify-content: center;">
+                    </div>
+                    <div class="col-xl-5 col-lg-12" style="padding: 0;">
+
+                    </div>
+                </div>
+                <div class="col float-box">
+                    <button class="next continue-btn hs-continue box2-continue continue-small-m"
+                        style="display: inline-block;">CONTINUE</button>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="box" id="box4">
+            <div style="width: 100%; height: 100px;">
+                <div class='back-btn'>
+                    <img src="">BACK
+                </div>
+            </div>
+            <div class="row align-middle center-content full-box-height flex-container" id="content"
+                style="align-items: flex-start !important; height: calc(100% - 100px) !important;  text-align: left; ">
+                <div class='row m-bottom-padding' style='width: 100%; padding: 0;'>
+                    <div class="col-xl-5 col-lg-12 m-bottom-padding" style="padding: 0;">
+                        <h1>Benefits of the VPS Scorecard</h1>
+                        <p class="blueText">
+                            When working on the Scorecard, you will work with your prospective 
+                            installer to populate specific details. Doing this has several benefits:
+                        </p>
+                        <ol>
+                            <li>You are ensuring the information being entered is accurate.</li>
+                            <li>
+                                You are making the installer a part of the process. This makes them 
+                                more invested in, and accepting of, the results.
+                            </li>
+                            <li>
+                                You are setting up the installer to see the value that Valvoline™ brings 
+                                with its products and support.
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="col-xl-1 col-lg-12 col-sm-12" style="">
+                    </div>
+                    <div class="col-xl-6 col-lg-12 col-lg-12-custom " style="padding: 0; margin: auto;">
+                        <img style="max-width:100%; max-height:100%;"
+                        src="images/challenge_8_vps/VPS_8_Chart.png">
+                    </div>
+                </div>
+
+                <div class='row m-bottom-padding' style='width: 100%; padding: 0;'>
+                    <div class="col-xl-5 col-lg-12" style="padding: 0;">
+
+                    </div>
+                    <div class="col-xl-1 col-lg-12 col-sm-12"
+                        style="flex-grow: 1; display: flex;align-items: center; justify-content: center;">
+                    </div>
+                    <div class="col-xl-5 col-lg-12" style="padding: 0;">
+
+                    </div>
+                </div>
+                <div class="col float-box">
+                    <button class="next continue-btn hs-continue box2-continue continue-small-m"
+                        style="display: inline-block;">CONTINUE</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="box" id="box5">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="row back-padding" id="content">
+                <div id="box5-text" class="col-lg-5 col-md-6 col-sm-6 col-xs-10" style="text-align: left;">
+                    <div>
+                        <h1>Support Programs</h1>
+                        <p>
+                            The biggest benefit the <font class="emphasisBold">VALVOLINE PROFESSIONAL SERIES PROGRAM</font> 
+                            can bring to an installer is a boost to the bottom line. 
+                            Position the profit potential an installer could see with 
+                            <font class="emphasisBold">VPS</font> using the <font class="emphasisBold">VPS Scorecard</font> to drive the conversation.
+                        <p>
+                        <p class="headerBlue">
+                            SELECT A SECTION TO SEE WHAT TYPE OF INFORMATION CAN GO INTO THE SCORECARD.
+                        </p>
+                        <div class='plus-1'>
+                            <div class='content-box content-box-1 content-box-top-left'
+                                style="padding:30px;">
+                                <p>
+                                    The <font class="emphasisBold">Service Provider Profile</font> is used 
+                                    to capture installer data and recommended VPS services. This is where 
+                                    you would talk to your customer about growing their chemical business.
+                                </p>
+                                <p>
+                                    Before using the Scorecard, make sure to Clear it. And when you do 
+                                    enter information, select Populate to save that detail across the 
+                                    Scorecard.
+                                </p>
+                            </div>
+                        </div>
+                        <div class='plus-2'>
+                            <div class='content-box content-box-2 content-box-top-left hidden'
+                                style="padding:30px;">
+                                <p>
+                                    The <font class="emphasisBold">Business Impact</font> sheet is used 
+                                    to estimate the incremental gross profit an installer could achieve 
+                                    through VPS. This will help installers gain a better understanding 
+                                    of how VPS products and services can drive their business.
+                                </p>
+                                <p>
+                                    On this sheet, the Annual Gross Profit Impact will be automatically 
+                                    generated once the <font class="emphasisBold">Service Provider Profile</font> 
+                                    has been completed.
+                                </p>
+                            </div>
+                        </div>
+                        <div class='plus-3'>
+                            <div class='content-box content-box-3 content-box-top-left hidden'
+                                style="padding:30px;">
+                                <p>
+                                    The <font class="emphasisBold">Profit Tracker</font> tab is used 
+                                    to comprehend core components of revenue and profitability and 
+                                    gain insights into VPS maintenance penetration and installer 
+                                    performance over time.
+                                </p>
+                            </div>
+                        </div>
+                        <div class='plus-4'>
+                            <div class='content-box content-box-4 content-box-top-left hidden'
+                                style="padding:30px;">
+                                <p>
+                                    The <font class="emphasisBold">Plan of Action</font> tab is used to 
+                                    develop action plans that will help installers achieve desired goals.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="br-bc hidden continue-5">
+                        <button class="next continue-btn-center continue-small-m" id="continue-btn-5">CONTINUE</button>
+                    </div>
+                </div>
+                <div id="photo-tabs" class="col-lg-7 col-md-6 col-sm-6 col-xs-2" style="text-align: left;">
+                    <div class="w3-container">
+                      
+                        <div class="w3-bar w3-black">
+                          <button class="w3-bar-item w3-button tablink w3-red" onclick="openCity(event,'spp')">SERVICE PROVIDER PROFILE</button>
+                          <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'bi')">BUSINESS IMPACT</button>
+                          <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'pt')">PROFIT TRACKER</button>
+                          <button class="w3-bar-item w3-button tablink" onclick="openCity(event,'poa')">PLAN OF ACTION</button>
+                        </div>
+                        
+                        <div id="spp" class="w3-container w3-border city">
+                            <img width="948" height="776" src="images/challenge_8_vps/VPS_8_Pg4 BG_1.png">
+                        </div>
+                      
+                        <div id="bi" class="w3-container w3-border city" style="display:none">
+                            <img width="948" height="776" src="images/challenge_8_vps/VPS_8_Pg4 BG_2.png">
+                        </div>
+                      
+                        <div id="pt" class="w3-container w3-border city" style="display:none">
+                            <img width="948" height="776" src="images/challenge_8_vps/VPS_8_Pg4 BG_3.png">
+                        </div>
+                      
+                        <div id="poa" class="w3-container w3-border city" style="display:none">
+                            <img width="948" height="776" src="images/challenge_8_vps/VPS_8_Pg4 BG_4.png">
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div> -->
+        <!--6-->
+        <div class="box" id="box5">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="row full-box-height back-padding" id="content">
+                <div class="row flex-box lr">
+                    <div class="col-lg-10 col-md-10 col-sm-12 col-xs-12" style="text-align: left;">
+                        <div>
+                            <h1>Identifying Value</h1>
+                            <p>
+                                It is important that you emphasize that, along with the actual <font class="emphasisBold">VPS</font> services, <font class="emphasisBold">VALVOLINE™</font> services, Valvoline™ can bring additional value with sales tools, marketing materials, product support, and training opportunities to help every installer reach the profit potential indicated in the <font class="emphasisBold">Valvoline Scorecard.</font>
+                            </p>
+                        </div>
+                        <div id="pg5-imgs">
+                            <!-- <img width="251" height="44" src="images/challenge_8_vps/VPS_8_Pg5 RevUp.png">
+                            <img width="147" height="141" src="images/challenge_8_vps/VPS_8_Pg5 Sricker Buck.png">
+                            <img width="214" height="88" src="images/challenge_8_vps/VPS_8_Pg5 VSpiff.png"> -->
+                            <img width="154" height="141" src="images/challenge_8_vps/VPS_8_Pg5 Sricker Buck.png">
+                            <img width="147" height="141" src="images/challenge_8_vps/VPS_8_Pg5 Sricker BuckOLD.png">
+                            <img width="214" height="88" src="images/challenge_8_vps/VPS_8_Pg5 VSpiff.png">
+                            <img width="154" height="55" src="images/challenge_8_vps/Valv_Univ.png">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row continue-anchor" style="padding: 0;">
+                    <div class="desktop-br mobile-center">
+                        <button class="next continue-btn continue-small-m"
+                            style="display: inline-block;">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- QUESTION 1 -->
+        <div id="box6" class="box question-bg-box">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="row align-middle full-box-height" id="content">
+                <div class="col topCenterText m-LeftCol-question back-btn-padding">
+                    <div class='center-text-box question-1'>
+                        <h1 id="question-num"></h1>
+                        <div class='question-text'></div>
+                        <div class='answer-container'></div>
+                    </div>
+                </div>
+                <div class="col topCenterText m-RightCol-question">
+                    <div class="reveal-btn text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+                    <div class="reveal-btn-m text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+
+                    <div class="remediation">
+                        <div class="remediation-icon"></div>
+                        <div class="remediation-txt"></div>
+                        <div class="remediation-continue next">
+                            Continue
+                        </div>
+                        <div class="remediation-retry">
+                            Try Again
+                            <div class='warn-sel-ans'>
+                                Choose an answer and select "Try Again."
+                            </div>
+                        </div>
+                        <div class="attempt-container row">
+                            <div class="attempt-1">
+                                FIRST ATTEMPT
+                            </div>
+                            <div class="attempt-2">
+                                SECOND ATTEMPT
+                            </div>
+                            <div class="attempt-3">
+                                RETRY IN 7 DAYS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- QUESTION 2 -->
+        <div id="box7" class="box question-bg-box">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="row align-middle full-box-height" id="content">
+                <div class="col topCenterText m-LeftCol-question back-btn-padding">
+                    <div class='center-text-box question-2'>
+                        <h1 id="question-num"></h1>
+                        <div class='question-text'></div>
+                        <div class='answer-container'></div>
+                    </div>
+                </div>
+                <div class="col topCenterText m-RightCol-question">
+                    <div class="reveal-btn text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+                    <div class="reveal-btn-m text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+
+                    <div class="remediation">
+                        <div class="remediation-icon"></div>
+                        <div class="remediation-txt"></div>
+                        <div class="remediation-continue next">
+                            Continue
+                        </div>
+                        <div class="remediation-retry">
+                            Try Again
+                            <div class='warn-sel-ans'>
+                                Choose an answer and select "Try Again."
+                            </div>
+                        </div>
+                        <div class="attempt-container row">
+                            <div class="attempt-1">
+                                FIRST ATTEMPT
+                            </div>
+                            <div class="attempt-2">
+                                SECOND ATTEMPT
+                            </div>
+                            <div class="attempt-3">
+                                RETRY IN 7 DAYS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- QUESTION 3 -->
+        <div id="box8" class="box question-bg-box">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="row align-middle full-box-height" id="content">
+                <div class="col topCenterText m-LeftCol-question back-btn-padding">
+                    <div class='center-text-box question-3'>
+                        <h1 id="question-num"></h1>
+                        <div class='question-text'></div>
+                        <div class='answer-container'></div>
+                    </div>
+                </div>
+                <div class="col topCenterText m-RightCol-question">
+                    <div class="reveal-btn text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+                    <div class="reveal-btn-m text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+
+                    <div class="remediation">
+                        <div class="remediation-icon"></div>
+                        <div class="remediation-txt"></div>
+                        <div class="remediation-continue next">
+                            Continue
+                        </div>
+                        <div class="remediation-retry">
+                            Try Again
+                            <div class='warn-sel-ans'>
+                                Choose an answer and select "Try Again."
+                            </div>
+                        </div>
+                        <div class="attempt-container row">
+                            <div class="attempt-1">
+                                FIRST ATTEMPT
+                            </div>
+                            <div class="attempt-2">
+                                SECOND ATTEMPT
+                            </div>
+                            <div class="attempt-3">
+                                RETRY IN 7 DAYS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+                <!-- QUESTION 4 -->
+        <div id="box9" class="box question-bg-box">
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="row align-middle full-box-height" id="content">
+                <div class="col topCenterText m-LeftCol-question back-btn-padding">
+                    <div class='center-text-box question-4'>
+                        <h1 id="question-num"></h1>
+                        <div class='question-text'></div>
+                        <div class='answer-container'></div>
+                    </div>
+                </div>
+                <div class="col topCenterText m-RightCol-question">
+                    <div class="reveal-btn text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+                    <div class="reveal-btn-m text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+
+                    <div class="remediation">
+                        <div class="remediation-icon"></div>
+                        <div class="remediation-txt"></div>
+                        <div class="remediation-continue next">
+                            Continue
+                        </div>
+                        <div class="remediation-retry">
+                            Try Again
+                            <div class='warn-sel-ans'>
+                                Choose an answer and select "Try Again."
+                            </div>
+                        </div>
+                        <div class="attempt-container row">
+                            <div class="attempt-1">
+                                FIRST ATTEMPT
+                            </div>
+                            <div class="attempt-2">
+                                SECOND ATTEMPT
+                            </div>
+                            <div class="attempt-3">
+                                RETRY IN 7 DAYS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div class="box" id="box10">
+            <iframe id='contents-activity' name="contents-activity"
+                src='scripts/activity/challenge_8_vps/activity_1.html'></iframe>
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <div class="overlay" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top" style="background-color: #ffffff;">
+                        <div class='center-text-box'>
+                            <h1>Let’s Play Five Card Stud.</h1>
+                            <p>Play your cards right, and you might earn some bonus points.</p>
+                            <p>First, you’ll see the house’s hand. Then, you’ll have a chance to play your own cards and answer one additional question to earn (and play) your final card.</p>
+                            <p>Get the better hand and win some bonus points. </p>
+                            <p>If you aren’t holding a winning hand, don’t despair. There will be other bonus opportunities in future challenges.</p>
+                            <p>Good luck!</p>
+                            <p>
+                                <div class="headerBlue">SELECT START.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="" id="start-btn" onclick="$(this).parent().parent().parent().fadeOut(); document.getElementById('contents-activity').contentWindow.exportRoot.play();">START</button>
+                    </div>
+                </div>
+            </div>
+            <!--DID NOT EARN ENOUGH POINTS TO PLAY-->
+            <div class="overlay no-bonus" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top" style="background-color: #ffffff;">
+                        <div class='center-text-box'>
+                            <h1>Bonus</h1>
+                            <p>It was close, but you didn’t answer enough questions correctly to play the bonus
+                                round.</p>
+                            <p>You did still earn points for completing this challenge.</p>
+                            <p>
+                                <div class="headerBlue">SELECT CONTINUE.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="next" id="start-btn" onclick="">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+            <div class='back-btn'>
+                <img src="">BACK
+            </div>
+            <!--BONUS QUESTION-->
+            <div class="box bonus-question-container question-bg-box hidden">
+                <div class="row align-middle full-box-height " id="content">
+                    <div class="col topCenterText m-LeftCol-question back-btn-padding">
+                        <div class='center-text-box question-5'>
+                            <h1 id="question-num"></h1>
+                            <div class='question-text'></div>
+                            <div class='answer-container'></div>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-RightCol-question">
+                        <div class="reveal-btn text-white">
+                            <h3>REVEAL ANSWER</h3>
+                        </div>
+                        <div class="reveal-btn-m text-white">
+                            <h3>REVEAL ANSWER</h3>
+                        </div>
+                        <div class="remediation">
+                            <div class="remediation-icon"></div>
+                            <div class="remediation-txt"></div>
+                            <div class="remediation-continue next">
+                                Continue
+                            </div>
+                            <div class="remediation-retry">
+                                Try Again
+                                <div class='warn-sel-ans'>
+                                    Choose an answer and select "Try Again."
+                                </div>
+                            </div>
+                            <div class="attempt-container row">
+                                <div class="attempt-1">
+                                    FIRST ATTEMPT
+                                </div>
+                                <div class="attempt-2">
+                                    SECOND ATTEMPT
+                                </div>
+                                <div class="attempt-3">
+                                    RETRY IN 7 DAYS
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="overlay earn-point hidden" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Unlock Your Bonus Card</h1>
+                            <p>This is a close hand. If you get the right card, you’ll win. Before you can play that card, you’ll have to unlock it by answering this bonus question correctly.</p>
+                            <p>You’ll only get one chance to answer it. No points are on the line, but you need to answer it to unlock your last card.</p>
+                            <p>Good luck!</p>
+                            <p>
+                                <div class="headerBlue">SELECT START.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="" id="start-btn"
+                            onclick="$('.bonus-question-container').show(); $(this).parent().parent().parent().fadeOut(); ">START</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="overlay miss-bonus-question hidden" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Incorrect</h1>
+                            <!-- <p>It was close, but you didn’t pick up any bonus points. You did still earn points for completing this challenge.</p> -->
+                            <p>Sorry, but that’s not a winning hand. Luck of the draw, right?</p>
+                            <p>
+                                <div class="headerBlue">SELECT CONTINUE.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="next" id="start-btn" onclick="">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="overlay win-activity hidden" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Correct</h1>
+                            <p>Congratulations! Three of a kind beats a pair. You just picked up 10 bonus points. These will be added to your total VCERT Performance+ score.</p>
+                            <p>
+                                <div class="headerBlue">SELECT CONTINUE.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="next" id="start-btn" onclick="">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+            <div class="overlay fail-activity hidden" style="z-index:4;">
+                <div class="row align-middle" id="content">
+                    <div class="col topCenterText m-LeftCol m-margin-top">
+                        <div class='center-text-box'>
+                            <h1>Incorrect</h1>
+                            <p>It was close, but you didn’t pick up any bonus points. You did still earn points for
+                                completing this challenge.</p>
+                            <p>
+                                <div class="headerBlue">SELECT CONTINUE.</div>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col topCenterText m-noPadding">
+                        <button class="next" id="start-btn" onclick="">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+            <button class="next continue-btn activity-continue" id="">CONTINUE</button>
+        </div>
+        <!--WDYL-->
+        <div id="box11" class="box">
+            <div class="mask-img" style="position:absolute; top:0; overflow: visible;"><img id="learn-screen-img"
+                    src="images/Conclsn-Photo_VPS.jpg" style="justify-content: center;"></div>
+            <div class="row align-middle learn-box" id="content" style="height: 55% !important;">
+                <div class="col-md-12 col-xl-6" style="text-align: left">
+                    <div>
+                        <h1>What Did We Learn Today?</h1>
+                        <div>
+                            <p>The VPS program is an exciting one for installers and their consumers. In order to help installers understand the program’s potential, you can use the Valvoline Scorecard. This tool takes current sales information and uses it to make accurate projections regarding the profit potential that the Valvoline Professional Series program can bring to an installer.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-xl-6 learned-continue" style="min-height: 150px;">
+                    <button class="next continue-btn-center" id="continue-btn-7">CONTINUE</button>
+                </div>
+            </div>
+        </div>
+        <!--CONCLUSION-->
+        <div id="box12" class="box">
+            <div class="row align-middle full-box-height" id="content">
+                <div class="col topCenterText">
+                    <div class='center-text-box'>
+                        <h1>Challenge Complete!</h1>
+                        <div id='result-incorrect'>
+                            <p>It was a good try, but to successfully complete a challenge, you need a score of 80% or higher on the challenge questions.</p>
+                            <p>You earned 0 points this time.</p>
+                            <p>You do have the opportunity to retake this challenge and earn some points!</p>
+                            <p>Better luck next time!</p>
+                        </div>
+                        <div id='result-closed'>
+                            <p>Looks like you still have some work to do with this topic. You did not earn a
+                            passing score and no additional points will be added to your total.</p>
+                            <p>While you wait for the next challenge to hit your inbox, you might want to return to your class materials and review some of the information around this specific topic.</p>
+                            <p>This challenge will remain open so you can put that review to the test by taking the challenge again. (No points can be earned any longer for this challenge.)</p>
+                            <p>A new challenge will be coming soon. Better luck next time!</p>
+                        </div>
+                        <div id='result-three'>
+                            <p>You’ve completed this challenge review. If you would like to review this topic in
+                                greater depth, you may want to return to your class materials and review some of the
+                                information presented there.</p>
+                            <p>As a reminder, no points will be earned for completing a challenge review.</p>
+                        </div>
+                        <div id='result-correct'>
+                            <p>Great work!</p>
+                            <p>You just earned yourself <span id="score">10</span> points.</p>
+                            <p>Remember, you can’t earn any additional points from this challenge, but you can use
+                                it as reference.</p>
+                            <p>Look for your next challenge soon.</p>
+                        </div>
+                        <!-- <div>For more information on this topic, check out some additional resources <a
+                                id="additional-resource" href="" target="_blank">here</a>.</div> -->
+                    </div>
+                </div>
+                <div class="col topCenterText col-sm">
+                    <div>
+                        <button id="gameover-btn" type="submit">CONTINUE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id='progress-bar'>
+        <div class='line'></div>
+        <div class='pin intro'></div>
+        <div class='pin quest'></div>
+        <div class='pin quest'></div>
+        <div class='pin quest'></div>
+        <div class='pin quest'></div>
+        <div class='pin quest'>
+            <div class='q-points'></div>
+        </div>
+        <div class='pin quest'>
+            <div class='q-points'></div>
+        </div>
+                <div class='pin quest'>
+            <div class='q-points'></div>
+        </div>
+                <div class='pin quest'>
+            <div class='q-points'></div>
+        </div>
+        <div class='pin quest'>
+            <div class='q-points'></div>
+        </div>
+        <div class='pin quest'></div>
+        <div class='pin conclusion'></div>
+        <div class='score'>0</div>
+    </div>
+
+    <footer>
+        <div>CHALLENGE #8</div>
+    </footer>
+    <!-- <script src="../../bin/footerChallenge.js"></script> -->
+    <script src="scripts/polyfill.min.js"></script>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="scripts/jquery-3.4.1.js"></script>
+    <script src="scripts/popper.js/dist/umd/popper.min.js"></script>
+    <script src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+    <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js"></script>
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script> -->
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script> -->
+    <!-- <script defer src="src/fb-core-js.js"></script> -->
+    <script defer src="bin/fb-auth.js"></script>
+    <script src="bin/rules_popup_c8_vps.js"></script>
+    <script>
+
+        $('#challenge-btn', window.parent.document).html('Valvoline Scorecard');
+        var thisChallengNumber = 8;
+        //$('#additional-resource').attr('href', 'https://valvoline.widencollective.com/portals/tjwhya34/MyPortal572020');
+        parent.setBookmarking("VPS", thisChallengNumber, .2);
+        parent.retrieveAttempt(thisChallengNumber, "VPS");
+        //QUIZ
+        var ifrm = window.frameElement; // reference to iframe element container
+        var doc = ifrm.ownerDocument; // reference to container's document
+        var thisClass = function () {
+            if (ifrm.src.includes("hd")) {
+                return "HD";
+            } else if (ifrm.src.includes("ld")) {
+                return "LD";
+            } else if (ifrm.src.includes("vps")) {
+                return "VPS";
+            }
+        }
+
+        var tabsOpened = new Set(["spp"]); 
+        function openCity(evt, cityName) {
+            var i, x, tablinks;
+            x = document.getElementsByClassName("city");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < x.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" w3-red", "");
+            }
+            document.getElementById(cityName).style.display = "block";
+            evt.currentTarget.className += " w3-red";
+            $('.content-box').addClass("hidden");
+            switch (cityName) {
+                case "spp": 
+                    $('.content-box-1').removeClass("hidden").hide().fadeIn();
+                    break;
+                case "bi": 
+                    $('.content-box-2').removeClass("hidden").hide().fadeIn();
+                    break;
+                case "pt": 
+                    $('.content-box-3').removeClass("hidden").hide().fadeIn();
+                    break;
+                case "poa": 
+                    $('.content-box-4').removeClass("hidden").hide().fadeIn();
+                    break;
+                
+            }
+            tabsOpened.add(cityName);
+            if (tabsOpened.size === 4) {
+                $('.continue-5').removeClass("hidden").hide().fadeIn();
+            }
+        }
+
+        var hsArray = [0, 0, 0, 0];
+        var hsString = '1,1,1,1';
+        var hscheckProg = function (num) {
+            hsArray[num] = 1;
+            if (hsArray.toString() == hsString) {
+                $('.continue-5').parent().removeClass("hidden").hide().fadeIn();
+            }
+        };
+        var revealPlus = function () {
+            if ($(this).css("opacity") == "1") {
+                var elIndex = $(this).parent().attr("class").trim().slice(-1);
+                $('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x').addClass('clk-reveal-complete-plus');
+                $('.clk-reveal-plus').css({ "opacity": ".5", "pointer-events": "none" });
+                $('.clk-reveal-complete-plus').css({ "opacity": ".5", "pointer-events": "none" });
+                $(this).css({ "opacity": "1", "pointer-events": "auto" });
+                $(this).addClass('clk-reveal-complete-x')
+                $('.clk-reveal-x').addClass('clk-reveal-plus');
+                $('.clk-reveal-x').removeClass('clk-reveal-x');
+                $(this).unbind();
+                $(this).bind('click', revealX);
+                $(this).removeClass('clk-reveal-plus');
+                $(this).addClass('clk-reveal-x');
+                $(this).parent().parent().find('.content-box').hide();
+                $('.clk-reveal-plus').unbind();
+                $('.clk-reveal-plus').bind('click', revealPlus);
+                $('.content-box-' + elIndex).fadeIn();
+                hscheckProg(elIndex - 1)
+            }
+        }
+
+        var revealX = function () {
+            $('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x');
+            $(this).addClass('clk-reveal-complete-plus');
+            $('.clk-reveal-plus').css({ "opacity": "1", "pointer-events": "auto" });
+            $('.clk-reveal-complete-plus').css({ "opacity": "1", "pointer-events": "auto" });
+            $('.clk-reveal-x').addClass('clk-reveal-plus');
+            $('.clk-reveal-x').removeClass('clk-reveal-x');
+            $(this).unbind();
+            $(this).bind('click', revealPlus);
+            $(this).removeClass('clk-reveal-x')
+            $(this).addClass('clk-reveal-plus');
+            $('.clk-reveal-plus').unbind();
+            $('.clk-reveal-plus').bind('click', revealPlus);
+            $('.content-box').hide();
+        }
+        //console.log(thisClass())
+        ////////console.log(parent.activities)
+        // $(doc).find('header').css('border-bottom', 'none');
+        ifrm.style.top = '-118px';
+        ifrm.style.position = 'absolute';
+        ifrm.style.height = '100%';
+        ifrm.style.zIndex = '1005';
+
+        var quiz = [{
+            // Q1
+            question: '<p>One of the pieces of baseline data that you will enter into the Valvoline Scorecard is the number of working days in a month.</p>',
+            type: 'MC',
+            answers: [
+                'True',
+                'False'
+            ],
+            choices: [],
+            correct: 1,
+            correct_rem: '<p>That’s right! Some of the information you will have to get from your prospective customer and enter into the Valvoline Scorecard includes: Working Days Per Month, Average Monthly Repair Orders, Current Number of Services per Month per Service, Customer Pay Service Orders, and the Chemical Services Sold.</p>',
+            incorrect_rem: '<p>That’s not the answer. Try again.</p>',
+            fail_rem: '<p>That’s not correct. Some of the information you will have to get from your prospective customer and enter into the Valvoline Scorecard includes: Working Days Per Month, Average Monthly Repair Orders, Current Number of Services per Month per Service, Customer Pay Service Orders, and the Chemical Services Sold.</p><p>You will not receive any points for this question.</p>'
+        }, {
+            // Q2
+            question: '<p>On the Valvoline Scorecard, the _____________ tab is used to capture Installer data and is where you will talk about growing your prospective installer’s business with VPS.</p>',
+            type: 'MC',
+            answers: [
+                'Profit Tracker',
+                'Inputs',
+                'Business Impact',
+                'Profitability Report'
+            ],
+            choices: [],
+            correct: 2,
+            correct_rem: '<p>That’s right! Capture installer data in the fields found on the Inputs tab. This will help you to have a balanced conversation about their business.</p>',
+            incorrect_rem: '<p>That’s not the answer. Try again.</p>',
+            fail_rem: '<p>That’s not correct. Capture installer data in the fields found on the Inputs tab. This will help you to have a balanced conversation about their business.</p>'
+        }, {
+            // Q3
+            question: '<p>What is a key benefit of using the Valvoline Scorecard with a prospective customer?</p>',
+            type: 'MC',
+            answers: [
+                'Showing the value that Valvoline™ can bring',
+                'Discovering the hours the shop is open',
+                'Acquiring potential customer phone numbers',
+                'Having a competitive assessment'
+            ],
+            choices: [],
+            correct: 1,
+            correct_rem: '<p>That’s right! The biggest benefit the Valvoline Professional Series program can bring to an installer is a boost to the bottom line. Position the profit potential an installer could see with VPS using the Valvoline Scorecard to drive the conversation.</p>',
+            incorrect_rem: '<p>That’s not the answer. Try again.</p>',
+            fail_rem: '<p>That’s not correct. The biggest benefit the Valvoline Professional Series program can bring to an installer is a boost to the bottom line. Position the profit potential an installer could see with VPS using the Valvoline Scorecard to drive the conversation.</p><p>You will not receive any points for this question.</p>'
+        }, {
+            // Q4
+            question: '<p>The Valvoline Scorecard will show you both ______________ and Annual Gross Profit numbers.</p>',
+            type: 'MC',
+            answers: [
+                'monthly gross profit',
+                'daily projected profit',
+                'quarterly gross profit',
+                'competitor costs'
+            ],
+            choices: [],
+            correct: 1,
+            correct_rem: '<p>That’s right! When the Valvoline Scorecard has been completed, you’ll be able to review the current Monthly and Annual Gross Profit numbers.</p>',
+            incorrect_rem: '<p>That’s not the answer. Try again.</p>',
+            fail_rem: '<p>That’s not correct. When the Valvoline Scorecard has been completed, you’ll be able to review the current Monthly and Annual Gross Profit numbers.</p><p>You will not receive any points for this question.</p>'
+        }, {
+            // Q5 BONUS
+            question: '<p>Along with the actual VPS services, Valvoline™ can bring additional value with sales tools, marketing materials, product support, and training opportunities to help every installer reach the profit potential indicated in the Valvoline Scorecard.</p>',
+            type: 'MC',
+            answers: [
+                'True',
+                'False'
+            ],
+            choices: [],
+            correct: 1,
+            correct_rem: '<p>That’s right! With the VPS services, promotions, and Limited Lifetime Guarantee, installers can sell more chemical services than ever before.</p>',
+            incorrect_rem: '<p>That’s not the best answer. Try again.</p>',
+            fail_rem: '<p>Sorry, that’s not correct. With the VPS services, promotions, and Limited Lifetime Guarantee, installers can sell more chemical services than ever before.</p>'
+        }
+
+            // , {
+            //     // Q5
+            //     question: 'While the Cummins® and Valvoline™ relationship is strong, it is confined to diesel engines only.',
+            //     type: 'MC',
+            //     answers: [
+            //         'True',
+            //         'False'
+            //     ],
+            //     choices: [],
+            //     correct: 2,
+            //     correct_rem: 'That’s right. From diesel to alternative fuels and beyond, the two companies are working to make sure they can continue to build a strong relationship, even in a changing machine-based landscape.',
+            //     incorrect_rem: 'That’s not the right answer. From diesel to alternative fuels and beyond, the two companies are working to make sure they can continue to build a strong relationship, even in a changing machine-based landscape.'
+            // }, {
+            //     // Q5
+            //     question: 'In this case study, only Cummins® engines benefitted from Valvoline™ products.',
+            //     type: 'MC',
+            //     answers: [
+            //         'True',
+            //         'False'
+            //     ],
+            //     correct: 2,
+            //     choices: [],
+            //     correct_rem: 'Correct! The customer reported improvements to their full fleet, a third of which were not Cummins® engines. Did you know: ⅓ of the market is not using Cummins® engines in their fleet. Those fleet owners can still see the benefits of Valvoline™ HD engine oils such as the potential extended drainage intervals, performance efficiencies and a reduction in the overall total cost of ownership.',
+            //     incorrect_rem: 'So close, but still wrong. Remember, the customer reported improvements to their full fleet, a third of which were not Cummins® engines. Did you know: ⅓ of the market is not using Cummins® engines in their fleet. Those engine owners can still see benefits to their engines such as the potential extended drainage intervals, performance efficiencies, and a reduction in the overall total cost of ownership.'
+            // }, {
+            //     // Q6
+            //     question: 'In the Dayton Freight video, the customer commented on the “cleanliness” they now see in their engines since switching to Premium Blue™. This result could be in part because of:',
+            //     type: 'MC',
+            //     answers: [
+            //         'Since the switch, technicians at the site are checking the engine and oil more frequently.',
+            //         'Advanced soot control and the excellent deposit protection of Premium Blue™',
+            //         'The combined effect of using multiple Valvoline products.',
+            //         'Changing oil grades.'
+            //     ],
+            //     choices: [],
+            //     correct: 2,
+            //     correct_rem: 'You nailed it!<br /><br />Valvoline™ Premium Blue™ motor oil features:<ul><li>Enhanced protection against oil oxidation</li><li>Improved fuel economy potential over conventional 15W-40 oils</li><li>Excellent deposit protection</li><li>Exceptional TBN retention</li><li>Enhanced fuel economy potential (vs. conventional oils)</li><li>Advanced soot control</li></ul>Among other benefits',
+            //     incorrect_rem: 'That’s not correct. To find the right answer, consider the explicit benefits of Valvoline™ Premium Blue™ motor oil brings to the engine.'
+            // }
+
+        ]
+
+        var passed = true;
+        var questionPointsPossible = 80;
+        var points = [20, 20, 20, 20, 0 ]
+        var attemptsLeft = [2, 2, 2, 2, 1];
+        var passPercent = 80;
+        var boxLocation = 0;
+        var attemptCount = 0;
+
+        var cardCount = 0;
+			var bonusCard = 0;
+
+        var totalPoints = function () {
+            var sum = 0;
+            for (var i = 0; i < points.length; i++) {
+                sum += points[i]
+            }
+            return sum;
+
+        }();
+
+        var q = function () {
+            return quiz[qIndex];
+        }
+
+        var currentAnswer;
+
+        function RenderQuestion() {
+				$('.clk-reveal-plus').bind('click', revealPlus);
+				for (var qIndex = 0; qIndex < quiz.length; qIndex++) {
+                    $('.question-' + (qIndex + 1) + ' #question-num').html('Question ' + (qIndex + 1));
+                    if(qIndex + 1 == 5) {
+                        $('.question-' + (qIndex + 1) + ' #question-num').html('Bonus Question');
+                    }
+					$('.question-' + (qIndex + 1) + ' .question-text').html(quiz[qIndex].question);
+					for (var i = 0; i < quiz[qIndex].answers.length; i++) {
+						quiz[qIndex].choices.push(i + 1)
+						var div = document.createElement('div')
+						$(div).append('<input id="button' + (i + 1) + '" type="radio" name="quiz" value="' + (i + 1) +
+							'" /><div id="answer' + (i + 1) + '"class="answer pointer"><\/div>');
+						$(div).append('<label for="button' + (i + 1) + '">' + quiz[qIndex].answers[i] + '<\/label>');
+						$('.question-' + (qIndex + 1) + ' .answer-container').append(div);
+					}
+				}
+				var radioCheck = function () {
+					$('.remediation-retry').unbind('click', runCheck);
+					$('.reveal-btn-m').unbind('click', runCheck);
+					$('.reveal-btn-m').bind('click', runCheck);
+					currentAnswer = $(this).attr('id').slice(-1);
+					currentQuestion = $(this).parent().parent().parent().attr('class').slice(-1);
+					console.log('currentQuestion:' + currentQuestion)
+					console.log(quiz[currentQuestion - 1].choices)
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] != 0 && attemptsLeft[currentQuestion - 1] < 2) {
+						$('.remediation-retry').bind('click', runCheck);
+						$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+					} else {
+						$('.remediation-retry').unbind('click', runCheck);
+						$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+					}
+					
+					if (attemptsLeft[currentQuestion - 1] == 0) {
+						$('.reveal-btn').unbind('click', runCheck);
+					} else {
+						$('.reveal-btn').unbind('click', runCheck);
+						$('.reveal-btn').bind('click', runCheck);
+					}
+
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+						$('.reveal-btn-m').bind('click', runCheck);
+					}
+
+					if (quiz[currentQuestion - 1].type == "MC") {
+						$('.answer-on').removeClass('answer-on').addClass('pointer');
+						$(this).addClass("answer-on").removeClass('pointer');
+					} else if (quiz[currentQuestion - 1].type == "MR") {
+						$('.answer-on').removeClass('answer-on').addClass('pointer');
+						$(this).addClass("answer-on").removeClass('pointer');
+					}
+				}
+
+				$('.answer').bind('click', radioCheck);
+				$('.remediation-retry').on('click', function () {
+					console.log($(this))
+					$('.remediation-retry').unbind('click', runCheck);
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+						if ($(window).width() < 999) {
+							$('.attempt-1').hide();
+							$('.attempt-2').hide();
+							$(this).parent().addClass("m-hide")
+							$(this).parent().parent().parent().parent().find('.attempt-container').addClass("m-hide");
+						} else {
+							$(this).parent().parent().parent().parent().find('.attempt-container').removeClass("m-hide")
+							$(this).parent().removeClass("m-hide");
+							$('.remediation-retry .warn-sel-ans').css('opacity', '1');
+						}
+					}
+				})
+
+				$('.remediation-continue').on('click', function () {
+					$('.reveal-btn').unbind('click', runCheck);
+					$('.reveal-btn-m').unbind('click', runCheck);
+					// if (currentQuestion == quiz.length - 1) {
+					// 	document.getElementById('contents-activity').contentWindow.exportRoot.dealDeck();
+					// }
+					if (currentQuestion >= quiz.length - 1) {
+						var userPoints = 0;
+						for (var i = 0; i < points.length; i++) {
+							userPoints += points[i]
+						}
+						scorePercent = parseInt((userPoints / totalPoints) * 100);
+						var attempt = parent.intAttempt;
+                        console.log('Check score: ' + scorePercent >= passPercent)
+						if (scorePercent >= passPercent && attempt < 4) {
+							$('#result-correct').show();
+							$('#gameover-btn').show();
+							$('#result-incorrect').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-retry').hide();
+							$('#retry-btn').hide();
+							console.log('Passed in first 3 attempts')
+						} else if (scorePercent < passPercent && attempt < 4) {
+							passed = false;
+							$('#result-incorrect').show();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Failed in one of the first 3 attempts')
+						} else if (attempt == 5) {
+							passed = false;
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').show();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Challenge Closed. Reviewing. No Points awarded.')
+						} else if (attempt == 4) {
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').show();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Just reviewing. Good Job!')
+						}
+					}
+				})
+
+				//Returns array of selected answers from a MR question
+				function getAnswers() {
+					var returnAnswers = [];
+					$(".answer").each(function () {
+						if ($(this).hasClass('answer-on')) {
+							returnAnswers.push(Number($(this).attr('id').slice(-1)));
+						}
+					});
+					return returnAnswers;
+				}
+
+				function arraysEqual(_arr1, _arr2) {
+					if (!Array.isArray(_arr1) || !Array.isArray(_arr2) || _arr1.length !== _arr2.length)
+						return false;
+					var arr1 = _arr1.concat().sort();
+					var arr2 = _arr2.concat().sort();
+					for (var i = 0; i < arr1.length; i++) {
+						if (arr1[i] !== arr2[i])
+							return false;
+					}
+					return true;
+				}
+
+				var runCheck = function () {
+					console.log("run check")
+					if (currentQuestion != undefined) {
+						$('.remediation-retry').unbind('click', runCheck);
+						if (currentQuestion == 5) {
+							console.log('BONUS QUESTION')
+							if (attemptsLeft[currentQuestion - 1] >= 0) {
+								$('.reveal-btn').eq(0).unbind('click', runCheck);
+								quiz[currentQuestion - 1].choices[currentAnswer - 1] = 0;
+								for (var i = 0; i < quiz[currentQuestion - 1].choices.length; i++) {
+									if (quiz[currentQuestion - 1].correct == currentAnswer) {
+										//correct answer
+										$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+											"pointer");
+									} else if (quiz[currentQuestion - 1].choices[i] == 0) {
+										//incorrect answer
+										$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+											"pointer answer");
+									} else if (attemptsLeft[currentQuestion - 1] == 0) {
+										//failed question
+										$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+											"pointer");
+									} else {
+										//rebind answers
+										$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind();
+										$('.question-' + currentQuestion + ' #answer' + (i + 1)).bind('click', radioCheck).addClass("pointer");
+									}
+								}
+								var holder = 0;
+								if (quiz[currentQuestion - 1].correct == currentAnswer) {
+									//bonusCard++;
+									console.log("bonusCard:" + bonusCard);
+									$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+									$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3')
+									$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+									$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+									$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+									$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').unbind();
+									$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').on('click', function () {
+										$('.bonus-question-container').fadeOut();
+									})
+									$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].correct_rem);
+									$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+										"url(images/challenge_2/images/Correct_Icon.png)");
+									$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+										"url(images/challenge_2/images/Correct.png)").addClass('remediation-reveal')
+										.removeClass("pointer answer");
+									$('.question-' + currentQuestion + ' .answer').css('cursor', 'auto');
+									$('.attempt-1').hide();
+									$('.attempt-2').hide();
+                                    document.getElementById('contents-activity').contentWindow.exportRoot.unlockCard();
+									//document.getElementById('contents-activity').contentWindow.exportRoot.bonusCard();
+								} else {
+
+									$('.answer-on').removeClass('answer-on');
+									$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+									$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-1');
+									$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+									$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').hide();
+									$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').addClass('white-txt').html(quiz[currentQuestion - 1].incorrect_rem);
+									$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+										"url(images/challenge_2/images/Incorrect_Icon.png)");
+									$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+										"url(images/challenge_2/images/Incorrect.png)").addClass('remediation-reveal')
+										.removeClass("pointer answer");
+									$('.attempt-1').hide();
+									$('.attempt-2').hide();
+									$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3');
+									$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+                                    $('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+                                    $('.remediation-continue:eq(' + (currentQuestion - 1) + ')').unbind();
+									$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').on('click', function () {
+										$('.bonus-question-container').fadeOut();
+									})
+									$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].fail_rem);
+									$('#progress-bar .quest .q-points').eq(currentQuestion-1).parent().addClass('quest-retry')
+									$('.question-' + currentQuestion + ' .answer-container div').each(function (index, elem) {
+										$('.question-' + currentQuestion + ' .answer').unbind().css('cursor', 'auto');
+                                    });
+                                    document.getElementById('contents-activity').contentWindow.exportRoot.gameOver();
+								}
+								attemptsLeft[currentQuestion - 1]--;
+								updateProgressTracker();
+							}
+							//END BONUS CHECK
+						} else {
+							if (attemptsLeft[currentQuestion - 1] >= 0) {
+								var correctAnswer = quiz[currentQuestion - 1].correct;
+								var thisQuestionAttemptsLeft = attemptsLeft[currentQuestion - 1];
+								if (quiz[currentQuestion - 1].type == "MC") {
+									$('.reveal-btn').unbind('click', runCheck);
+									quiz[currentQuestion - 1].choices[currentAnswer - 1] = 0;
+									for (var i = 0; i < quiz[currentQuestion - 1].choices.length; i++) {
+										if (quiz[currentQuestion - 1].correct == currentAnswer) {
+											//correct answer
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+												"pointer");
+										} else if (quiz[currentQuestion - 1].choices[i] == 0) {
+											//incorrect answer
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+												"pointer answer");
+										} else if (attemptsLeft[currentQuestion - 1] == 0) {
+											//failed question
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+												"pointer");
+										} else {
+											//rebind answers
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind();
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).bind('click', radioCheck).addClass("pointer");
+										}
+									}
+
+									if (quiz[currentQuestion - 1].correct == currentAnswer) {
+										cardCount++;
+										if (cardCount >= 4) {
+											$(".no-bonus").hide();
+										}
+										console.log("cardCount:" + cardCount);
+										$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3');
+										$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation:eq(' + (currentQuestion - 1) + ')').removeClass('m-hide')
+										$('.attempt-container:eq(' + (currentQuestion - 1) + ')').removeClass("m-hide")
+										$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-correct');
+										$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+										$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+										$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].correct_rem);
+										$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+											"url(images/challenge_2/images/Correct_Icon.png)");
+										$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+											"url(images/challenge_2/images/Correct.png)").addClass('remediation-reveal')
+											.removeClass("pointer answer");
+										$('.question-' + currentQuestion + ' .answer').css('cursor', 'auto');
+
+										$('.attempt-1').hide();
+										$('.attempt-2').hide();
+									} else {
+										$('.answer-on').removeClass('answer-on');
+										$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').addClass('white-txt').html(quiz[currentQuestion - 1].incorrect_rem);
+										$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+											"url(images/challenge_2/images/Incorrect_Icon.png)");
+										$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+											"url(images/challenge_2/images/Incorrect.png)").addClass('remediation-reveal')
+											.removeClass("pointer answer");
+                                      if (attemptsLeft[currentQuestion - 1] >= 0 && points[currentQuestion - 1] > 0) {
+											//console.log("INCORRECT RESPONSE: " + attemptsLeft[currentQuestion - 1])
+											points[currentQuestion - 1] = points[currentQuestion - 1] - 5;
+										}
+										if (attemptsLeft[currentQuestion - 1] == 2) {
+											$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-1');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-1');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+											$('.attempt-1').css('display', 'flex');
+										} else if (attemptsLeft[currentQuestion - 1] == 1) {
+											$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-2');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').removeClass('m-hide')
+											$('.attempt-container:eq(' + (currentQuestion - 1) + ')').removeClass("m-hide")
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-2');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+											$('.attempt-1').hide();
+											$('.attempt-2').css('display', 'flex');
+										} else if (attemptsLeft[currentQuestion - 1] == 0) {
+											$('.attempt-1').hide();
+											$('.attempt-2').hide();
+											$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').removeClass('m-hide')
+											$('.attempt-container:eq(' + (currentQuestion - 1) + ')').removeClass("m-hide")
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-3');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+											$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+											$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+											$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].fail_rem);
+											$('#progress-bar .quest .q-points').eq(currentQuestion-1).parent().addClass('quest-retry')
+											$('.question-' + currentQuestion + ' .answer-container div').each(function (index, elem) {
+												$('.question-' + currentQuestion + ' .answer').unbind().css('cursor', 'auto');
+											});
+										}
+										attemptsLeft[currentQuestion - 1]--;
+										updateProgressTracker();
+									}
+								}
+							} // end of runCheck
+						}
+					}
+					$('.reveal-btn').bind('click', runCheck);
+					$('.reveal-btn-m').bind('click', runCheck);
+				}
+			}
+        (function () {
+            $('#header-image', window.parent.document).fadeIn();
+            $('.next').click(function (box) {
+
+                var curLocation = boxLocation + 1;
+                var nextLocation = boxLocation + 2;
+                var currentBox = $('#box' + curLocation)
+                var nextBox = $('#box' + nextLocation)
+                if (curLocation == 1) { $('#box2 #video-container').css('display', 'block'); 
+                //$('#player1').get(0).play(); 
+                }
+                $(currentBox).animate({
+                    left: '-50%'
+                }, 500, function () {
+                    $(currentBox).css('left', '150%');
+                    $(currentBox).appendTo('#container');
+                });
+                $(nextBox).animate({
+                    left: '50%'
+                }, 500);
+
+                $('video').each(function () {
+                        $(this).get(0).pause();
+                    });
+
+                boxLocation++;
+                nextAction(curLocation);
+                updateProgressTracker()
+            });
+
+            $('.back-btn').click(function () {
+                var preLocation = boxLocation;
+                var curLocation = boxLocation + 1;
+                var currentBox = $('#box' + curLocation)
+                var prevBox = $('#box' + preLocation)
+                console.log(curLocation)
+                $(currentBox).animate({
+                    left: '150%'
+                }, 500, function () {
+                    $(prevBox).css('left', ' ');
+                    $(prevBox).prependTo('#container');
+                });
+                $(prevBox).css('left', '-150%').animate({
+                    left: '50%'
+                }, 500);
+
+
+                    $('video').each(function () {
+                        $(this).get(0).pause();
+                    });
+
+                
+                boxLocation--;
+                updateProgressTracker()
+                backAction(boxLocation)
+            });
+
+
+            $('#gameover-btn').on('click', function (e) {
+                parent.exitChallenge();
+                if (passed && parent.intAttempt != 4) {
+                    challengeComplete(thisClass(), thisChallengNumber, score, true);
+                } else if (parent.intAttempt != 4) {
+                    challengeComplete(thisClass(), thisChallengNumber, score, false);
+                } else {
+                    parent.navigateIframe("portal.html");
+                }
+                $('#gameover-btn').unbind("click");
+            })
+
+            var $video = $('video'),
+                $window = $('#video-container');
+            $footer = $('footer')
+
+            $(window).resize(function () {
+                var footerHeightStr = $('footer').css('height');
+                var footerHeight = (footerHeightStr.substring(0, footerHeightStr.length - 2) - 1);
+                var height = $window.height();
+                $video.css('height', height);
+                var videoWidth = $video.width(),
+                    windowWidth = $window.width(),
+                    marginLeftAdjust = (windowWidth - videoWidth) / 2;
+                $video.css({
+                    'height': height
+                });
+            }).resize();
+
+        })();
+
+        function nextBox(el) {
+            $('#box5 #video-popup-1-mask').fadeOut();
+            var curLocation = boxLocation + 1;
+            var currentBox = $('#box' + curLocation)
+            $(currentBox).animate({
+                left: '-50%'
+            }, 500, function () {
+                $(currentBox).css('left', '150%');
+                $(currentBox).appendTo('#container');
+            });
+            $(currentBox).next().animate({
+                left: '50%'
+            }, 500);
+            boxLocation++;
+            nextAction(curLocation);
+            updateProgressTracker()
+        }
+
+        function playVideo_1() {
+            $('#box5 #video-container').fadeIn();
+            $('#box5 #video-popup-1-mask').fadeOut();
+            $('#box5 video')[0].play();
+        }
+
+        function nextAction(groupIndex) {
+            console.log('next action switch: ' + groupIndex + " " + typeof (groupIndex))
+            switch (groupIndex) {
+                case "0":
+
+                    break;
+                case "1":
+
+                    break;
+                case "2":
+
+                    break;
+                case "3":
+
+                    break;
+                case 1:
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case "calcComplete":
+
+                    break;
+                case 5:
+
+                    break;
+                case 9:
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        function backAction(groupIndex) {
+            //console.log('back action switch: ' + groupIndex + " " + typeof (groupIndex))
+            switch (groupIndex) {
+                case "0":
+
+                    break;
+                case "1":
+
+                    break;
+                case 2:
+
+                    break;
+                case 3:
+
+                    break;
+                case 5:
+
+                    break;
+                case "4":
+
+                    break;
+                case 9:
+
+                    break;
+                default:
+                    break;
+            }
+        }
+
+
+        function updateProgressTracker() {
+            var userPoints = 0
+            for (var i = 0; i < points.length; i++) {
+                userPoints += points[i]
+            }
+            score = (userPoints);
+            $('.score').html(score + " POINTS")
+            $('#score').html(score)
+            $('#progress-bar .quest .q-points').each(function (i, obj) {
+                $('#progress-bar .quest .q-points').eq(i).html(points[i])
+            })
+            console.log(boxLocation)
+            switch (boxLocation) {
+
+                case 0:
+                    console.log("0")
+                    $('#progress-bar .pin').eq(boxLocation).addClass('intro')
+                    $('#progress-bar .pin').eq(boxLocation).removeClass('intro-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 1:
+                    console.log("1")
+                    $('#progress-bar .pin').eq(boxLocation - 1).addClass('intro-down')
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('intro');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 2:
+                case 3:
+                case 4:
+                case 5:
+                case 6:
+                case 7:
+                case 8:
+                case 9:
+                case 10:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+                    break;
+                case 11:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation + 1).removeClass('conclusion-down');
+                    break;
+                case 12:
+                    $('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+                    $('#progress-bar .pin').eq(boxLocation).addClass('conclusion-down');
+                    break;
+                default:
+                    // $('#progress-bar .pin').eq(0).removeClass('intro-down');
+                    //$('#progress-bar .pin').eq(1).removeClass('scene-down');
+                    break;
+            }
+        };
+        updateProgressTracker();
+        RenderQuestion();
+    </script>
+</body>
+
+</html>

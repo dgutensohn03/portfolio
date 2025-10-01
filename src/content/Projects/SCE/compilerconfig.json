@@ -1,0 +1,30 @@
+﻿[
+  {
+    "outputFile": "Assets/CSS/theme.css",
+    "inputFile": "Assets/CSS/theme.less"
+  },
+  {
+    "outputFile": "Assets/CSS/Visual/shell.css",
+    "inputFile": "Assets/CSS/Visual/shell.less"
+  },
+  {
+    "outputFile": "Assets/CSS/Visual/button.css",
+    "inputFile": "Assets/CSS/Visual/button.less"
+  },
+  {
+    "outputFile": "Assets/CSS/Visual/dialog.css",
+    "inputFile": "Assets/CSS/Visual/dialog.less"
+  },
+  {
+    "outputFile": "Assets/CSS/Visual/loading-animation.css",
+    "inputFile": "Assets/CSS/Visual/loading-animation.less"
+  },
+  {
+    "outputFile": "Assets/CSS/Structural/button.css",
+    "inputFile": "Assets/CSS/Structural/button.less"
+  },
+  {
+    "outputFile": "Assets/CSS/Structural/shell.css",
+    "inputFile": "Assets/CSS/Structural/shell.less"
+  }
+]

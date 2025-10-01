@@ -1,0 +1,70 @@
+html, body {
+    height: 100%;
+    overflow: auto;
+	margin: 0px;
+	padding: 0px;
+}
+
+#shell {
+	/* Positioning */
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+	top: 12px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	
+	/* Default Size */
+	min-width: @contentAreaWidth;
+	min-height: @contentAreaHeight + @headerHeight + @statusBarHeight + @navBarHeight + @trayHeight;
+
+    width: @contentAreaWidth;
+	height: @contentAreaHeight + @headerHeight + @statusBarHeight + @navBarHeight + @trayHeight;
+
+    overflow: hidden;
+}
+
+#header {
+	width: 100%;
+	height: @headerHeight;
+}
+
+#status-bar {
+	width: 100%;
+	height: @statusBarHeight;
+	line-height: 22px;
+}
+
+#content-container {
+	position: relative;
+	overflow: hidden;
+
+	width: 100%;
+	height: @contentAreaHeight;
+}
+
+#contents {
+	width: 100%;
+	height: 100%;
+
+	border: 0px;
+    z-index: -1;
+}
+
+#nav-bar {
+	width: 100%;
+	height: @navBarHeight;
+	
+	padding-top: @smallMargin;
+	white-space: nowrap;
+}
+
+#tray {
+	width: 100%;
+	height: @trayHeight;
+}
+
+@import "helpers";
+@import "dialog";
+@import "button";

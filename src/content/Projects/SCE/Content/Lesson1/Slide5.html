@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <title></title>
+    <style>
+        html, body {
+            overflow: hidden;
+            margin: 0px;
+            padding: 0px;
+            background-color: white;
+        }
+
+        /*#player2, #player3, #player4 {
+            background-color: transparent;
+        }*/
+
+            /*#player2::-webkit-media-controls, #player3::-webkit-media-controls, #player4::-webkit-media-controls {
+                display: none !important;
+            }*/
+
+        #soundFix {
+            background: url("../../Assets/Images/Shell/playbutton.png");
+            width: 960px;
+            height: 420px;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            margin: 0px;
+            padding: 0px;
+            display: none;
+            z-index: 100;
+        }
+
+        #btn-container, #img-container, #check-container {
+            z-index: 9999;
+            
+        }
+
+        #btn-container {
+            display: none;
+        }
+
+        #btn1 {
+            background: url("../../Assets/Images/invisBtn.png");
+            width: 436.35px;
+            height: 65px;
+            position: absolute;
+            left: 460px;
+            top: 385px;
+            z-index: 10000;
+            -webkit-tap-highlight-color: transparent;
+            /*background-color: #2da32d;*/
+            cursor: pointer;
+        }
+
+        #btn2 {
+            background: url("../../Assets/Images/invisBtn.png");
+            width: 349.35px;
+            height: 65px;
+            position: absolute;
+            left: 503px;
+            top: 308px;
+            z-index: 10000;
+            -webkit-tap-highlight-color: transparent;
+            /*background-color: #2da32d;*/
+            cursor: pointer;
+        }
+        #btn3 {
+            background: url("../../Assets/Images/invisBtn.png");
+            width: 261.35px;
+            height: 65px;
+            position: absolute;
+            left: 548px;
+            top: 231px;
+            z-index: 10000;
+            -webkit-tap-highlight-color: transparent;
+            /*background-color: #2da32d;*/
+            cursor: pointer;
+        }
+        #btn4 {
+            background: url("../../Assets/Images/invisBtn.png");
+            width: 171.35px;
+            height: 65px;
+            position: absolute;
+            left: 593px;
+            top: 154px;
+            z-index: 10000;
+            -webkit-tap-highlight-color: transparent;
+            /*background-color: #2da32d;*/
+            cursor: pointer;
+        }
+        #btn5 {
+            background: url("../../Assets/Images/invisBtn.png");
+            width: 83.35px;
+            height: 65px;
+            position: absolute;
+            left: 637px;
+            top: 78px;
+            z-index: 10000;
+            -webkit-tap-highlight-color: transparent;
+            /*background-color: #2da32d;*/
+            cursor: pointer;
+        }
+
+
+
+        #posterIMG {
+            background-image: url('Slide5/Slide5.jpg');
+            background-repeat: no-repeat;
+            background-size: 960px 540px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 960px;
+            height: 540px;
+            z-index: 10;
+            display: none;
+        }
+
+        #img_1 {
+            background-image: url('Slide5/Slide5_1.png');
+            background-repeat: no-repeat;
+            background-size: 960px 540px;
+            width: 960px;
+            height: 540px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: 999;
+            display: none;
+        }
+
+        #img_2 {
+            background-image: url('Slide5/Slide5_2.png');
+            background-repeat: no-repeat;
+            background-size: 960px 540px;
+            width: 960px;
+            height: 540px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: 999;
+            display: none;
+        }
+
+        #img_3 {
+            background-image: url('Slide5/Slide5_3.png');
+            background-repeat: no-repeat;
+            background-size: 960px 540px;
+            width: 960px;
+            height: 540px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: 999;
+            display: none;
+        }
+
+
+        #img_4 {
+            background-image: url('Slide5/Slide5_4.png');
+            background-repeat: no-repeat;
+            background-size: 960px 540px;
+            width: 960px;
+            height: 540px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: 999;
+            display: none;
+        }
+
+
+        #img_5 {
+            background-image: url('Slide5/Slide5_5.png');
+            background-repeat: no-repeat;
+            background-size: 960px 540px;
+            width: 960px;
+            height: 540px;
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            z-index: 999;
+            display: none;
+        }
+
+
+
+        #check5 {
+            background-image: url('../../Assets/Images/check.png');
+            background-repeat: no-repeat;
+            background-size: 41px 41px;
+            width: 41px;
+            height: 41px;
+            position: absolute;
+            left: 658px;
+            top: 97px;
+            z-index: 999;
+            display: none;
+        }
+
+        #check4 {
+            background-image: url('../../Assets/Images/check.png');
+            background-repeat: no-repeat;
+            background-size: 41px 41px;
+            width: 41px;
+            height: 41px;
+            position: absolute;
+            left: 658px;
+            top: 167px;
+            z-index: 999;
+            display: none;
+        }
+
+        #check3 {
+            background-image: url('../../Assets/Images/check.png');
+            background-repeat: no-repeat;
+            background-size: 41px 41px;
+            width: 41px;
+            height: 41px;
+            position: absolute;
+            left: 658px;
+            top: 244.5px;
+            z-index: 999;
+            display: none;
+        }
+
+        #check2 {
+            background-image: url('../../Assets/Images/check.png');
+            background-repeat: no-repeat;
+            background-size: 41px 41px;
+            width: 41px;
+            height: 41px;
+            position: absolute;
+            left: 658px;
+            top: 321.5px;
+            z-index: 999;
+            display: none;
+        }
+
+        #check1 {
+            background-image: url('../../Assets/Images/check.png');
+            background-repeat: no-repeat;
+            background-size: 41px 41px;
+            width: 41px;
+            height: 41px;
+            position: absolute;
+            left: 658px;
+            top: 396px;
+            z-index: 999;
+            display: none;
+        }
+        /*#whiteout {
+            width: 480px;
+            height: 33px;
+            display: none;
+            background-image: url('../../Assets/Images/L2/Slide3/s3_selectTxt.png');
+            background-repeat: no-repeat;
+            transform: scale(.7);
+            bottom: 10px;
+            left: 254px;
+            position: absolute;
+        }*/
+    </style>
+</head>
+<body onunload="Slide.Destroy()" onbeforeunload="Slide.Destroy()">
+
+    <div id="posterIMG"></div>
+
+    <video id="player1" autoplay controls onplay="" onended="turnOn();" width="960" height="540">
+        <source src="Slide5.mp4">
+    </video>
+
+    <div id="img-container">
+        <div id="img_1"></div>
+        <div id="img_2"></div>
+        <div id="img_3"></div>
+        <div id="img_4"></div>
+        <div id="img_5"></div>
+    </div>
+   
+
+
+    <div id="check-container">
+        <div id="check1"></div>
+        <div id="check2"></div>
+        <div id="check3"></div>
+        <div id="check4"></div>
+        <div id="check5"></div>
+    </div>
+
+    <div id="btn-container">
+        <div id="btn1" onclick="box1();"></div>
+        <div id="btn2" onclick="box2();"></div>
+        <div id="btn3" onclick="box3();"></div>
+        <div id="btn4" onclick="box4();"></div>
+        <div id="btn5" onclick="box5();"></div>
+    </div>
+
+    <!--<div id="whiteout"></div>-->
+
+    <script src="../../Source/JS/jQuery/jquery-1.11.1.js"></script>
+    <script src="../../Source/JS/Popcorn/popcorn.js"></script>
+    <script src="../../Source/XM/Events/XMEvent.js"></script>
+    <script src="../../Source/XM/Helpers.js"></script>
+    <script src="../../Source/XM/Core/TemplateBase.js"></script>
+    <script src="../../Source/XM/Slides/CustomSlide.js"></script>
+    <script>
+        //$('#player1').removeAttr('controls');
+        Slide.Initialize();
+        Slide.Dispatch(XMEvent.Loaded);
+
+        var videoIndex = 0;
+
+        var done_1 = false;
+        var done_2 = false;
+        var done_3 = false;
+        var done_4 = false;
+        var done_5 = false;
+
+
+        if (!IsInMobileSafari())
+            $('video').get(0).play();
+
+        Slide.bind(XMEvent.Paused, function () {
+            $('video').eq(videoIndex)[0].pause();
+        });
+
+        Slide.bind(XMEvent.Resumed, function () {
+            var v = $('video').eq(videoIndex)[0];
+            if (v.currentTime != v.duration)
+                v.play();
+        });
+
+        Slide.bind(XMEvent.VolumeChanged, function () {
+            $('video').each(function () {
+                this.volume = Shell.volume / 100;
+            });
+        });
+
+        document.getElementById('player1').addEventListener('playing', function () {
+            document.getElementById('player1').removeAttribute('controls');
+        });
+
+        var popcorn1 = Popcorn('#player1');
+
+        function turnOn() {
+            $('#btn-container').show();
+            $('#posterIMG').show();
+            
+        }
+
+        function box1() {
+            $('#img_1').fadeIn();
+            $('#check1').fadeIn();
+            done_1 = true;
+            clickMe();
+            
+        }
+
+        function box2() {
+            $('#img_2').fadeIn();
+            $('#check2').fadeIn();
+            done_2 = true;
+            clickMe();
+        }
+
+        function box3() {
+            $('#img_3').fadeIn();
+            $('#check3').fadeIn();
+            done_3 = true;
+            clickMe();
+        }
+
+        function box4() {
+            $('#img_4').fadeIn();
+            $('#check4').fadeIn();
+            done_4 = true;
+            clickMe();
+        }
+
+        function box5() {
+            $('#img_5').fadeIn();
+            $('#check5').fadeIn();
+            done_5 = true;
+            clickMe();
+        }
+
+        this.clickMe = function() {
+            if (done_1 && done_2 && done_3 && done_4 && done_5) {
+                Slide.Complete();
+            } else {
+                XMLog('keep clicking')
+            }
+        }
+
+        //$('#player2').hide();
+        //$('#player3').hide();
+        //$('#player4').hide();
+
+        ////popcorn1.currentTime(20);
+
+        //popcorn1.cue(15.4, function () {
+        //    $('#whiteout').fadeIn();
+        //});
+        //popcorn1.cue(20.5, function () {
+        //    popcorn1.pause();
+
+        //    $('#btn-container').css('visibility', 'visible');
+        //    $('#posterIMG').css('visibility', 'visible');
+        //    XMLog('popcorn ran');
+        //});
+
+        //function box1() {
+        //    $('#btn-container').css('visibility', 'hidden');
+        //    $('#player2').show();
+        //    $('#player4').hide();
+        //    $('#player3').hide();
+        //    $('#check1').fadeOut();
+        //    $('#check2').fadeOut();
+        //    $('#check3').fadeOut();
+        //    $('#player1').hide();
+        //    $('#whiteout').fadeOut();
+
+        //    $('video')[1].load();
+        //    setTimeout(function () { $('video')[1].play(); }, 500);
+        //    videoIndex = 1;
+        //    vid1 = true;
+        //    XMLog('btn1 clicked');
+        //}
+
+        //function box2() {
+        //    $('#btn-container').css('visibility', 'hidden');
+        //    $('#player3').show();
+        //    $('#player4').hide();
+        //    $('#player2').hide();
+        //    $('#whiteout').fadeOut();
+        //    $('#check1').fadeOut();
+        //    $('#check2').fadeOut();
+        //    $('#check3').fadeOut();
+        //    $('#player1').hide();
+        //    $('video')[2].load();
+        //    setTimeout(function () { $('video')[2].play(); }, 500);
+        //    videoIndex = 2;
+        //    vid2 = true;
+        //    XMLog('btn1 clicked');
+        //}
+
+        //function box3() {
+        //    $('#btn-container').css('visibility', 'hidden');
+        //    $('#player4').show();
+        //    $('#player3').hide();
+        //    $('#player2').hide();
+        //    $('#whiteout').fadeOut();
+        //    $('#check1').fadeOut();
+        //    $('#check2').fadeOut();
+        //    $('#check3').fadeOut();
+        //    $('#player1').hide();
+        //    $('video')[3].load();
+        //    setTimeout(function () { $('video')[3].play(); }, 500);
+        //    videoIndex = 3;
+        //    vid3 = true;
+        //    XMLog('btn1 clicked');
+        //}
+
+        //function videoEnd() {
+        //    $('#btn-container').css('visibility', 'visible');
+        //    XMLog('video end');
+
+        //    if (vid1 == true) {
+        //        $('#check1').show();
+        //    }
+        //    if (vid2 == true) {
+        //        $('#check2').show();
+        //    }
+        //    if (vid3 == true) {
+        //        $('#check3').show();
+        //    }
+
+        //    if (vid1 == true && vid2 == true && vid3 == true) {
+        //        //$('#player1').show();
+        //        //setTimeout(function () { popcorn1.play() }, 500);
+        //        $('#whiteout').fadeOut();
+        //        Slide.Complete();
+        //    }
+        //    else {
+        //        $('#btn-container').css('visibility', 'visible');
+        //        videoIndex = 0;
+        //        $('#whiteout').fadeIn();
+        //        XMLog('else ran');
+        //    }
+        //}
+    </script>
+</body>
+</html>

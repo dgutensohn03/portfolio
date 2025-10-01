@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  <ID>toolbox</ID>
+  <DisplayName>Toolbox</DisplayName>
+
+
+  <Type>Window</Type>
+  <ButtonSize>wide</ButtonSize>
+  <ButtonTooltip></ButtonTooltip>
+</Settings>

@@ -1,0 +1,28 @@
+﻿.nav-button {
+  width: 97px;
+  height: 30px;
+  box-sizing: border-box;
+  border-width: 1px;
+  border-color: #d0d0d0;
+  border-bottom: 0px;
+  border-top: 0px;
+  border-right: 0px;
+  padding: 0 3px 0 3px;
+  margin: 0;
+  display: block;
+  float: left;
+  margin-right: -1px;
+  cursor: pointer;
+}
+.nav-button.wide {
+  width: 109px;
+}
+.nav-button.double-wide {
+  width: 125px;
+}
+.nav-button.hide {
+  display: none;
+}
+.nav-button.disabled {
+  cursor: not-allowed;
+}

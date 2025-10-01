@@ -1,0 +1,32 @@
+.color-overlay {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	opacity: 0.7;
+}
+
+.elementary .color-overlay {
+	background: #0089cf;
+	background: linear-gradient(to right, #0089cf 0%,#4cb7ff 50%,#0089cf 100%);
+}
+
+.secondary .color-overlay {
+	background: #9ACF0A;
+	background: linear-gradient(to right, #9ACF0A 0%,#A6CE39 50%,#9ACF0A 100%);
+}
+
+/*@media all and (max-width: 1000px), (max-height: 750px) {
+	#shell {
+		transform-origin: 50% 0px;
+		-ms-transform-origin: 50% 0px;
+		-webkit-transform-origin: 50% 0px;
+		-moz-transform-origin: 50% 0px;
+		
+		margin-top: 0px;
+	
+		transform: scale(0.8);
+		-ms-transform: scale(0.8);
+		-webkit-transform: scale(0.8);
+		-moz-transform: scale(0.8);
+	}
+}*/

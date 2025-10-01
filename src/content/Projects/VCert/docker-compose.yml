@@ -1,0 +1,12 @@
+services:
+  app:
+    container_name: vcert_ct
+    image: vcert:staging
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:8080:80
+    networks:
+      - vcert-net
+networks:
+  vcert-net:
+    name: vcert-net

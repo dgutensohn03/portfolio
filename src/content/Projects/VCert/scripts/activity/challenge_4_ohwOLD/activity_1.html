@@ -1,0 +1,845 @@
+<!DOCTYPE html>
+<!--
+	NOTES:
+	1. All tokens are represented by '$' sign in the template.
+	2. You can write your code only wherever mentioned.
+	3. All occurrences of existing tokens will be replaced by their appropriate values.
+	4. Blank lines will be removed automatically.
+	5. Remove unnecessary comments before creating your template.
+-->
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="authoring-tool" content="Adobe_Animate_CC">
+<title>activity_1</title>
+<!-- write your code here -->
+<style>
+	@font-face {
+  font-family: "Oswald";
+  src: url("../../../styles/font/Oswald-Regular.eot");
+  src: url("../../../styles/font/Oswald-Regular.eot?#iefix") format("embedded-opentype"), url("../../../styles/font/Oswald-Regular.svg#Oswald-Regular") format("svg"), url("../../../styles/font/Oswald-Regular.ttf") format("truetype"), url("../../../styles/font/Oswald-Regular.woff") format("woff"), url("../../../styles/font/Oswald-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+</style>
+<style>
+  #animation_container, #_preload_div_ {
+	position:absolute;
+	margin:auto;
+	left:0;right:0;
+	top:0;bottom:0;
+  }
+</style>
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+<script src="activity_1.js"></script>
+<script>
+// Global Scripts
+	var root;
+var activityData;
+var questionNum = 1;
+var attempt;
+var dragId;
+var dragName;
+var lastDroppedOn = [];
+var reDrop;
+var secondChanceArray = [];
+var secondAttempt;
+var randomQuestionArray = [];
+var randomArrayLength;
+var nextRandomQuestion;
+var dragId;
+var currDragXpos;
+var currDragYpos;
+var currDropTarget;
+function DnDActivity(stageInstance, randomArray) {
+    ////console.log(randomArray)
+	randomQuestionArray = randomArray
+    root = stageInstance;
+    //var root = stage;
+    var that = this;
+    this.type = DnDType.OneToMany;
+    this.answerKey = [];
+    this.finishCondition = DnDCondition.Manual;
+    this.acceptMultipleDraggables = false;
+    /// Can items can be dropped on overlapping targets and count for both.
+    this.drill = false;
+    //-- Events that can occur during this activity:
+    this.dropRightAction = DnDAction.Snap;
+    this.dropWrongAction = DnDAction.Snap;
+    this.dropOutsideAction = DnDAction.Reset;
+	this.dropActionReturnStart = DnDAction.ResetToStart;
+		this.dropActionReturnToContainer = DnDAction.ResetToContainer;
+    this.finishRightAction = DnDAction.Continue;
+    this.finishWrongAction = DnDAction.Continue;
+    this.checkAttempt = DnDAction.WhichAttempt;
+    //-- Remediations that can play during this activity:
+    this.dropRightRemediation = undefined;
+    this.dropWrongRemediation = undefined;
+    this.finishRightRemediation = undefined;
+    this.finishWrongRemediation = undefined;
+    //-- Items:
+    this.draggables = [];
+    this.targets = [];
+    this.right = [];
+    this.wrong = [];
+    //-- Mouse variables.
+    var offsetX = 0;
+    var offsetY = 0;
+    /**
+     *  Find all of the draggable objects and their targets and start the
+     *  activity.
+     */
+    var whichMatch;
+    this.Start = function () {
+        createjs.Touch.enable(stage, true);
+        ////console.log("Start ...");
+        var i = 1;
+        // Get all draggables.
+        while (true) {
+            //////console.log("draggers")			
+            if (root['drag' + i] != null) {
+                //////console.log("draggers" + i)	
+                // CreateJS does not infer instance names into the name propery.
+                root['drag' + i].name = 'drag' + i;
+                root['drag' + i].id = i;
+                // Add the event listener in a closure to maintain proper scope.
+                (function (draggable) {
+                    that.draggables.push(draggable);
+                    draggable.startX = draggable.x;
+                    draggable.startY = draggable.y;
+                    draggable.cursor = "pointer";
+                    draggable.isConsumed = false;
+                    draggable.removeAllEventListeners('mousedown');
+                    draggable.addEventListener('mousedown', function (event) {
+                        stageInstance.setChildIndex(root['drag' + this.name.slice(-1)], stageInstance.getNumChildren() - 1);
+                        $(".dragText-" + this.name.slice(-1)).css('z-index', "999")
+						$(".dragId-" + this.name.slice(-1)).css('z-index', "1002")
+                        if (!this.isConsumed) {
+                            that.selectedItem = this;
+                            this.whichMatch = this.name;
+                            var idString = this.name.slice(-1)
+                            offsetX = (event.stageX / stage.scaleX) - event.currentTarget.x;
+                            offsetY = (event.stageY / stage.scaleY) - event.currentTarget.y;
+                        } else if (root[this.name].currentLabel != "correct" || root[this.name].currentLabel != "incorrect") {
+                            that.selectedItem = this;
+                            this.whichMatch = this.name;
+                            ////console.log('this.whichMatch: ');
+                            ////console.log(this.whichMatch);
+                            //////console.log('Picked up ' + this.name + '.');
+                            //e.currentTarget.offsetX = (event.stageX / stage.scaleX) - event.currentTarget.x;
+                            // Stick the clicked position to the mouse.
+                            offsetX = (event.stageX / stage.scaleX) - event.currentTarget.x;
+                            offsetY = (event.stageY / stage.scaleY) - event.currentTarget.y;
+                            //root["drop" + this.name.slice(-1)].gotoAndStop('start')
+                            //////console.log(this.name + ' has been consumed and may no longer be picked up!')
+                        }
+						//console.log('Is this Consumed? ' + this.isConsumed)
+                        currDragXpos = event.currentTarget.x
+                        currDragYpos = event.currentTarget.y
+                        ////console.log('picked up x position: ' + currDragXpos)
+                        ////console.log('picked up y position: ' + currDragYpos)
+                        //console.log('thisDrag isConsumed? ' + that.selectedItem.isConsumed)
+                    }.bind(draggable));
+                })(root['drag' + i]);
+            } else
+                break;
+            i++;
+        }
+        i = 1;
+        // Get all targets
+        while (true) {
+            if (root['target' + i] != null) {
+                root['target' + i].name = 'target' + i;
+                root['target' + i].draggables = [];
+                this.targets.push(root['target' + i]);
+            } else if (root['drop' + i] != null) {
+                root['drop' + i].name = 'target' + i;
+                root['drop' + i].draggables = [];
+                this.targets.push(root['drop' + i]);
+            } else
+                break;
+            i++;
+        }
+        if (IsInMobileSafari()) {
+            $("#canvas").bind('touchmove', this.Move.bind(this));
+        } else {
+            stage.addEventListener('stagemousemove', this.Move.bind(this));
+        }
+        stage.addEventListener('stagemouseup', this.Drop.bind(this));
+    };
+    function IsInMobileSafari() {
+        var isIOS = navigator.userAgent.match(/iPhone|iPad|iPod/i);
+        if (isIOS == null) {
+            isIOS = false;
+        }
+        return isIOS;
+    }
+    this.FixOrigins = function () {
+        var i = 1;
+        while (true) {
+            if (root['drag' + i] != null) {
+                root['drag' + i].startX = root['drag' + i].x;
+                root['drag' + i].startY = root['drag' + i].y;
+                //////console.log('drag' + i + '.y new origin: ' + root['drag' + i].y);
+            } else
+                break;
+            i++;
+        }
+        // Stage won't redraw for some dumb reason.
+        DnDAction.ResetAll.bind(this)();
+    };
+    this.Move = function (event) {
+        if (this.selectedItem != undefined && this.selectedItem.currentLabel != "correct" && this.selectedItem.currentLabel != "incorrect" ) {
+			//console.log(this.selectedItem.currentLabel)
+            this.selectedItem.x = (event.stageX / stage.scaleX) - offsetX;
+            this.selectedItem.y = (event.stageY / stage.scaleY) - offsetY;
+			//console.log(this.selectedItem)
+				dragId = Number(this.selectedItem.name[this.selectedItem.name.length - 1]);
+			//console.log(dragId)
+            dragName = this.selectedItem.name;
+			this.selectedItem.gotoAndStop('hover')
+            //check if dropped before
+            //if (root[this.selectedItem.name].currentLabel == "dropped") {
+            if (this.selectedItem.isConsumed) {
+                ////console.log('this.selectedItem.isConsumed: ' + this.selectedItem.isConsumed)
+				//if (currDropTarget != undefined){
+				currDropTarget = this.selectedItem.container;
+                //console.log('currDropTarget: ' + currDropTarget)
+				var popTargetId = currDropTarget.name.slice(-1);
+				this.targets[popTargetId-1].draggables = [];
+				this.selectedItem.wasConsumedBy = currDropTarget;
+				currDropTarget.gotoAndStop('up')
+				//}
+                ///console.log('this.targets[popTargetId-1].draggables: ' + this.targets[popTargetId-1].draggables)
+                ///console.log(this.targets[popTargetId-1].draggables)
+                //root[dragName].gotoAndStop("hover");
+                reDrop = this.selectedItem;
+				//this.selectedItem.isConsumed = false;
+                //for (var i in this.targets) {
+                //    //Look at drops and see if last drag is in drop target 
+				//	console.log(this.targets[i].draggables)
+				//	console.log(this.targets[i].draggables == this.selectedItem)
+                //    if (this.targets[i].draggables == this.selectedItem) {
+				//		 
+				//	console.log('TIMES I RAN')
+                //        //var thisIndex = Number(i) + 1
+                //        //stageInstance['drop' + thisIndex].gotoAndStop("up");
+                //        ////console.log(this.targets[i]draggables.indexOf(this.selectedItem));
+                //        //this.selectedItem.isConsumed = false;
+                //        this.targets[i].draggables.pop();
+                //        //reDrop = this.selectedItem;
+                //        ////console.log('Item was picked up after dropped')
+                //        return false;
+                //    }
+                //}
+            } else {
+				currDropTarget = undefined
+                reDrop = undefined
+                ////console.log('NEW drag moving')
+            }
+            //root[dragName].gotoAndStop('hover');
+            $('.on-top').css({
+                'position': 'absolute',
+                'z-index': '1001'
+            })
+        }
+    };
+    this.Drop = function () {
+        var isCorrect;
+console.log("this.Drop Starting ...")
+		console.log(stageInstance.drag1.currentLabel)
+		console.log(stageInstance.drag2.currentLabel)
+		console.log(stageInstance.drag3.currentLabel)
+		console.log(stageInstance.drag4.currentLabel)
+        if (this.selectedItem != undefined  && this.selectedItem.currentLabel != "correct" && this.selectedItem.currentLabel != "incorrect" ) {
+            ////console.log('is dropped item consumed already?: ' + this.selectedItem.isConsumed)
+            var hit = false;
+						$(".dragId-" + this.selectedItem.name.slice(-1)).css('z-index', "999")
+            			/*for (var i in this.targets) {
+            				console.log(this.targets[i].draggables)
+							console.log(this.targets[i].draggables.length != 0)
+            			}*/
+            for (var i in this.targets) {
+                if (!this.acceptMultipleDraggables && this.targets[i].draggables.length != 0)
+                    continue;
+                var localPoint = this.targets[i].globalToLocal(stage.mouseX, stage.mouseY);
+                //////console.log(localPoint)
+                var bounds = this.targets[i].getBounds();
+                //console.log('this.targets[i].name: ' + this.targets[i].name)
+                //console.log('this.targets[i].draggables.length: ' + this.targets[i].draggables.length)
+                //console.log('this.targets[i].draggables[0]: ' + this.targets[i].draggables[0])
+                //if (this.targets[i].draggables.length == 0) {
+                    // Vectors do not have bounds, use bitmaps for your drop areas!
+                    if (localPoint.x > bounds.x && localPoint.x < bounds.x + bounds.width &&
+                        localPoint.y > bounds.y && localPoint.y < bounds.y + bounds.height && this.targets[i].draggables == 0) {
+                        hit = true;
+                        //console.log("i: " + i)
+//console.log('this.targets[i].draggables: ' + this.targets[i].draggables)
+                        //if (this.targets[i].draggables.length != 1) {
+                            // Dropped on a target...
+                            switch (this.type) {
+                                case DnDType.OneToOne: // drag1 -> drop1, no remainder.
+                                case DnDType.OneToMany: // drag 1 -> drop 1 only.
+                                    isCorrect = i == this.draggables.indexOf(this.selectedItem);
+                                    break;
+                                case DnDType.ManyToOne:
+                                    // answerKey Format: [1, 2, 4...]
+                                    isCorrect = this.answerKey.indexOf(parseInt(this.selectedItem.name.substr(4))) != -1;
+                                    break;
+                                case DnDType.ManyToFew:
+                                    //isCorrect = this.targets[i].name.slice(-1) == this.selectedItem.name.slice(-1);
+                                    isCorrect = this.answerKey[i].indexOf(parseInt(this.selectedItem.name.substr(4))) != -1;
+                                    break;
+                            }
+                            ////console.log('this.selectedItem: ' + this.selectedItem)
+                            ////console.log('this.targets[i]: ')
+                            ////console.log(this.targets[i])
+                            if (this.right.indexOf(this.selectedItem) != -1) {
+                                var rightIndex = Number(this.right.indexOf(this.selectedItem))
+                                ////console.log('rightIndex: ' + rightIndex)
+                                this.right.splice(rightIndex, 1);
+                                this.targets[i].draggables = [];
+                                //this.targets[i].draggables.pop();
+                            }
+                            if (this.wrong.indexOf(this.selectedItem) != -1) {
+                                var wrongIndex = Number(this.wrong.indexOf(this.selectedItem))
+                                ////console.log('wrongIndex: ' + wrongIndex)
+                                this.wrong.splice(wrongIndex, 1);
+                                this.targets[i].draggables = [];
+                                //this.targets[i].draggables.pop();
+                            }
+									//console.log('BEFORE this.targets[i].draggables: ' + this.targets[i].draggables) 
+                            if (isCorrect) {
+                                ////console.log("Correct!");
+                                // Add to the list of correct answers.
+                                if (this.dropRightAction(this.selectedItem, this.targets[i])) {
+									this.right.push(this.selectedItem);
+                                    this.selectedItem.isConsumed = true;
+									this.selectedItem.gotoAndStop('dropped');
+                                    this.selectedItem.container = this.targets[i];
+									this.selectedItem.container.gotoAndStop('dropped');
+                                    this.targets[i].draggables.push(this.selectedItem);
+                                    ////console.log(lastDroppedOn) 
+									//console.log('this.targets[i].draggables: ' + this.targets[i].draggables) 
+                                }
+                                // Do we have a remediation?
+                                //if (this.dropRightRemediation) {
+                                //	this.dropRightRemediation.play();
+                                //}
+                            } else {
+                                ////console.log("Wrong!");
+                                // Only add the item to the list of wrong answers if it was consumed.
+                                if (this.dropWrongAction(this.selectedItem, this.targets[i])) {
+                                    this.wrong.push(this.selectedItem);
+                                    this.selectedItem.isConsumed = true;
+									this.selectedItem.gotoAndStop('dropped');
+                                    this.selectedItem.container = this.targets[i];
+									this.selectedItem.container.gotoAndStop('dropped');
+                                    this.targets[i].draggables.push(this.selectedItem);
+                                    //console.log('this.targets[i].draggables: ' + this.targets[i].draggables) 
+                                }
+                                // Do we have a remediation?
+                                //if (this.dropWrongRemediation) {
+                                //	this.dropWrongRemediation.play();
+                                //}
+                            }
+                            //console.log('this.selectedItem.container: ' + this.selectedItem.container)
+                            ////console.log('this.right: ' + this.right)
+                            ////console.log('this.wrong: ' + this.wrong)
+                            var allDropped;
+                            //console.log('this.draggables: ' + this.draggables)
+                            $.each(this.draggables, function (index, value) {
+                                //console.log("index:" + index + "is it comsumed?" + value.isConsumed);
+                                if (value.isConsumed == false) {
+                                    allDropped = false;
+                                    return false;
+                                }
+                                allDropped = true;
+                                //if (value.isConsumed)
+                            });
+                            if (allDropped) {
+                                root.submitBtn.gotoAndStop("up");
+                                //reDrop = undefined
+                            } else {
+                                root.submitBtn.gotoAndStop("disabled");
+								console.log('reDrop: ' + reDrop)
+							if (reDrop == undefined) {
+                                randomArrayLength = Number(randomQuestionArray.length)
+                                console.log('randomArrayLength: ' + randomArrayLength)
+                                if (randomArrayLength >= 0) {
+                                    nextRandomQuestion = randomQuestionArray[0]
+                                    //nextRandomQuestion = Number(randomQuestionArray.pop())
+                                    console.log('nextRandomQuestion: ' + nextRandomQuestion)
+                                    if (nextRandomQuestion != undefined) {
+                                        ////console.log('nextRandomQuestion: ' + nextRandomQuestion)
+                                        //root['drag' + (dragId + 1)].y = 223
+                                        console.log('randomQuestionArray')
+                                        console.log(randomQuestionArray)
+console.log('drag' + nextRandomQuestion)
+                                        root['drag' + nextRandomQuestion].visible = true;
+                                        root['drag' + nextRandomQuestion].gotoAndStop('start')
+                                        root['drag' + nextRandomQuestion].gotoAndPlay('upPlay');
+										randomQuestionArray.shift();
+                                        //root.submitBtn.gotoAndStop("disabled");
+                                        //console.log('PLAYING UP FOR DRAG: ' + nextRandomQuestion)
+                                    }
+                                }
+                            }
+                            }
+                            //if (this.targets[i].draggables.length != 0) {
+                            //    this.targets[i].gotoAndStop('dropped');
+                            //    ////console.log(lastDroppedOn)
+                            //    //reDrop = undefined;
+                            //} else {
+                            //    this.targets[i].gotoAndStop('up');
+                            //}
+                            //////console.log(this.targets[i])
+                            //////console.log(this.targets[questionNum-1].draggables.name)
+                            // Are there multiple correct answers?
+                            if (!this.drill)
+                                break;
+                        //root[this.selectedItem.name].gotoAndStop('dropped');
+                }
+                //console.log('this.targets[i].draggables.length: ' + this.targets[i].draggables.length);
+                //console.log(this.targets[i].draggables.indexOf(this.selectedItem))
+            }
+            if (!hit && !this.selectedItem.isConsumed) {
+                this.dropActionReturnStart(this.selectedItem);
+                console.log('dropped outside dropzone')
+                ////console.log(this.selectedItem.isConsumed)
+                //root.submitBtn.gotoAndStop("disabled");
+                //redrop = undefined;
+            } else if (!hit) {
+				 this.dropActionReturnToContainer(this.selectedItem, currDropTarget);
+			}
+            /*				if (allDropped) {
+            				root.submitBtn.gotoAndStop("up");
+            			} else {
+            				root.submitBtn.gotoAndStop("disabled");
+            			}*/
+			//console.log('reDrop: ' + reDrop)
+reDrop = undefined
+            this.selectedItem = undefined;
+            //if (this.Finished())
+            //this.Submit();
+/*				console.log(this.targets[0])
+			console.log(this.targets[0].draggables.length)
+				console.log(this.targets[1])
+			console.log(this.targets[1].draggables.length)
+				console.log(this.targets[2])
+			console.log(this.targets[2].draggables.length)
+				console.log(this.targets[3])
+			console.log(this.targets[3].draggables.length)*/
+        }
+        //console.log('dropped finished')
+    };
+    this.Finished = function () {
+        ////console.log('Finished DnD...');
+        switch (this.finishCondition) {
+            case DnDCondition.DroppedAlldraggables:
+                if (this.right.length + this.wrong.length == this.draggables.length)
+                    return true;
+                break;
+            case DnDCondition.AnswersMatched:
+                switch (this.type) {
+                    case DnDType.OneToOne:
+                    case DnDType.OneToMany:
+                        if (this.right.length + this.wrong.length == this.draggables.length)
+                            return true;
+                        break;
+                    case DnDType.ManyToOne:
+                        if (this.right.length + this.wrong.length == this.answerKey.length)
+                            return true;
+                        break;
+                    case DnDType.ManyToFew:
+                        var length = 0;
+                        $(this.answerKey).each(function () {
+                            length += this.length;
+                        });
+                        if (this.right.length + this.wrong.length == length)
+                            return true;
+                        break;
+                    default:
+                        break;
+                }
+                break;
+            default:
+                break;
+        }
+        return false;
+    };
+    this.Submit = function () {
+        ////console.log('Submiting DnD...');
+        root.submitBtn.gotoAndStop("disabled");
+        randomQuestionArray = [];
+        if (this.Validate()) {
+            root.submitBtn.gotoAndStop("disabled");
+            for (var i in this.right) {
+                this.right[i].gotoAndStop('correct')
+                this.right[i].cursor = "auto";
+            }
+							root.continueBtn.visible = true;
+				root.continueBtn.gotoAndStop("up")
+				root.blocker.visible = true;
+            //////console.log("finishRightAction")
+            //this.finishRightAction.bind(this)();
+        } else {
+            //////console.log('WRONG')
+            //this.wrong[questionNum-1].gotoAndStop('incorrect');
+            //this.selectedItem.gotoAndStop('incorrect');
+            //////console.log("finishWrongAction")
+            //if (this.finishWrongRemediation != undefined)
+            //	this.finishWrongRemediation.play();	
+//$('.activity-continue', window.parent.document).fadeIn();
+			var passScore = window.parent.passPercent;
+            ////console.log('this.wrong: ' + this.wrong)
+				window.parent.points[0] =  window.parent.points - 10;
+				window.parent.updateProgressTracker();
+			if (secondAttempt == undefined){
+            for (var i in this.wrong) {
+                var dropId = this.wrong[i].name
+                dropId = Number(dropId[dropId.length - 1]);
+				console.log('this.wrong.length: ' + this.wrong.length)
+                if (i == 0) {
+                    root[this.wrong[i].name].gotoAndPlay('upPlay');
+                    this.wrong[i].isConsumed = false
+                    DnDAction.Reset(this.wrong[i]);
+                } else {
+                    this.wrong[i].isConsumed = false
+                    DnDAction.Hide(this.wrong[i]);
+                    DnDAction.CheckForWrongAndReset(this.wrong[i]);
+                    //root[this.wrong[i].name].y = -328;
+                    root[this.wrong[i].name].gotoAndStop("start");
+                    stage.update()
+                }
+                //if (this.targets[dropId].draggables != 0) {
+                //var thisDropString = Number(i)+1;
+                //
+                //}
+                //this.wrong[i].container.gotoAndStop("up");
+                root["drop" + dropId].gotoAndStop("up");
+                ////console.log(				this.targets.draggables.indexOf(this.wrong[i]))
+                this.targets[dropId - 1].draggables = []
+            }
+            ////console.log(this.wrong.length)
+            for (var i = this.wrong.length; i > 0; i--) {
+                var wrongName = this.wrong[i-1].name.slice(-1);
+                //console.log(wrongName)
+                randomQuestionArray[i-1] = wrongName
+                console.log(randomQuestionArray)
+            }
+			randomQuestionArray.shift();
+			} else {
+			for (var i in this.wrong) {
+                var dropId = this.wrong[i].name
+                dropId = Number(dropId[dropId.length - 1]);
+                    root[this.wrong[i].name].gotoAndPlay('incorrect');
+                    this.wrong[i].isConsumed = true
+				this.wrong[i].cursor = "auto";
+                    //DnDAction.Reset(this.wrong[i]);
+			}
+		}
+            for (var i in this.right) {
+                root[this.right[i].name].gotoAndStop('correct')
+				this.right[i].container.gotoAndStop('dropped')
+                this.right[i].cursor = "auto";
+            }
+			if (secondAttempt == true) {
+				//this.finishWrongAction.bind(this)();
+				root.continueBtn.visible = true;
+				root.continueBtn.gotoAndStop("up")
+				root.blocker.visible = true;
+			}
+            secondAttempt = true;
+            ////console.log(randomQuestionArray)
+            this.wrong = []
+            ////console.log(this.targets)
+        }
+		console.log("this.Drop Finished ...")
+    };
+    this.Validate = function () {
+        var complete = true;
+        switch (this.type) {
+            case DnDType.OneToOne:
+            case DnDType.OneToMany:
+                ////console.log('this.right.length:' + this.right.length)
+                if (this.right.length < this.draggables.length)
+                    complete = false;
+                break;
+            case DnDType.ManyToOne:
+                // answerKey Format: [right1, right2...]
+                for (var i in this.answerKey) {
+                    if (this.right.indexOf(root['drag' + this.answerKey[i]]) == -1) {
+                        //if (this.right.indexOf(this.answerKey[i]) == -1) {
+                        complete = false;
+                        break;
+                    }
+                }
+                if (complete && this.wrong.length > 0)
+                    complete = false;
+                break;
+            case DnDType.ManyToFew:
+                var length = 0;
+                $(this.answerKey).each(function () {
+                    length += this.length;
+                });
+                if (this.right.length != length)
+                    complete = false;
+                break;
+            default:
+                break;
+        }
+        //////console.log('Validation result: ' + complete);
+        return complete;
+    };
+};
+//-- Drag n' Drop Enumerated Settings
+/**
+ * Enumerates the possible types of drag and drop activities you can have.
+ */
+var DnDType = new function () {
+    /// One draggable object per drop zone.
+    this.OneToOne = 1;
+    /// One draggable object with multiple drop zones.
+    this.OneToMany = 2;
+    /// Many draggable objects with one drop zone.
+    this.ManyToOne = 3;
+    /// Many draggable objects with less drop zones.
+    this.ManyToFew = 4;
+};
+var DnDCondition = new function () {
+    /// Never fullfilled so the conditional code can only be called on demand.
+    this.Manual = 1;
+    /// There are no more items to drag.
+    this.DroppedAlldraggables = 2;
+    /// The correct number of answers have been chosen.
+    this.AnswersMatched = 3;
+};
+/**
+ * Enumerates some default actions that can occur during this drag and drop
+ * activity.
+ */
+var DnDAction = new function () {
+    this.WhichAttempt = function () {
+        attempt++;
+    }
+    //-- Single Item Actions:
+    //		Accepts the item as an arguement.
+    //		Returns true if the item is consumed, false if it is not.
+    this.Stick = function (item) {
+        return true;
+    };
+    this.Snap = function (drag, drop) {
+        drag.x = drop.x;
+        drag.y = drop.y;
+        return true;
+    };
+    this.StackY = function (item, target) {
+        if (!target.stackPosition) {
+            //////console.log('Initializing stackPosition for ' + target.name + '.');
+            target.stackPosition = 0;
+        }
+        var maxStack = Math.ceil(this.draggables.length / this.answerKey.length);
+        if (target.draggables.length >= maxStack) {
+            return DnDAction.Reset.bind(this)(item);
+        }
+        //////console.log('Target stack position is ' + target.stackPosition + '.');
+        item.x = target.x;
+        item.y = (target.y - target.getBounds().height / 2) + target.stackPosition - item.getBounds().height / 2;
+        target.stackPosition += item.getBounds().height + 6;
+        return true;
+    };
+    this.ShowMatch = function (item) {
+        item.alpha = 0;
+        root[item.name + 'Match'].visible = true;
+        return true;
+    };
+    this.Hide = function (item) {
+        item.visible = false;
+        item.x = item.startX;
+        item.y = item.startY;
+        return true;
+    };
+    this.Reset = function (item, currDropTarget) {
+		console.log('item.id: ' + item.id)
+        item.visible = true;
+        item.alpha = 1;
+		console.log("randomQuestionArray: " + randomQuestionArray)
+		if (randomArrayLength <= 1 ) {
+				if (item.container != null){
+                item.container.gotoAndStop("up")
+				}
+                var target = item.container;
+                target.draggables.splice(target.draggables.indexOf(item), 1);
+            item.container = null;
+            item.isConsumed = false;
+            item.gotoAndPlay("upPlay")
+            for (var i in this.targets) {
+                //this.targets[i].gotoAndStop("up");
+            }
+            createjs.Tween.get(item).to({
+                x: item.startX,
+                y: item.startY
+            }, 250);
+		} else {
+        if (currDropTarget) {
+            //var target = item.container;
+            //target.draggables.splice(target.draggables.indexOf(item), 1);
+            item.isConsumed = true;
+            item.gotoAndStop("dropped")
+            currDropTarget.gotoAndStop('dropped')
+			currDropTarget.draggables.push(item)
+            createjs.Tween.get(item).to({
+                x: currDragXpos,
+                y: currDragYpos
+            }, 250);
+        } else {
+            if (item.container) {
+                item.container.gotoAndStop("up")
+                var target = item.container;
+                target.draggables.splice(target.draggables.indexOf(item), 1);
+            }
+            item.container = null;
+            item.isConsumed = false;
+            item.gotoAndPlay("upPlay")
+            for (var i in this.targets) {
+                //this.targets[i].gotoAndStop("up");
+            }
+            createjs.Tween.get(item).to({
+                x: item.startX,
+                y: item.startY
+            }, 250);
+        }
+	}
+        return false;
+    };
+	    this.ResetToStart = function (item) {
+console.log('item.id: ' + item.id)
+        item.visible = true;
+        item.alpha = 1;
+                //currDropTarget.gotoAndStop("up")
+                //var target = currDropTarget;
+                //target.draggables.splice(target.draggables.indexOf(item), 1);
+            item.container = null;
+            item.isConsumed = false;
+            item.gotoAndPlay("upPlay")
+            createjs.Tween.get(item).to({
+                x: item.startX,
+                y: item.startY
+            }, 250);
+        return false;
+    };
+	  this.ResetToContainer = function (item, currDropTarget) {
+        item.visible = true;
+        item.alpha = 1;
+		console.log("randomQuestionArray: " + randomQuestionArray)
+            //var target = item.container;
+            //target.draggables.splice(target.draggables.indexOf(item), 1);
+            item.isConsumed = true;
+            item.gotoAndStop("dropped")
+            currDropTarget.gotoAndStop('dropped')
+			currDropTarget.draggables.push(item)
+            createjs.Tween.get(item).to({
+                x: currDragXpos,
+                y: currDragYpos
+            }, 250);
+        return false;
+    };
+    this.CheckForWrongAndReset = function (item) {
+        item.visible = true;
+        item.alpha = 1;
+        item.container.gotoAndStop("up")
+        item.container = null;
+        item.isConsumed = false;
+        //item.gotoAndPlay("upPlay")
+        for (var i in this.targets) {
+            //this.targets[i].gotoAndStop("up");
+        }
+        createjs.Tween.get(item).to({
+            x: item.startX,
+            y: item.startY
+        }, 250);
+        return false;
+    };
+    //-- All Item Actions are bound to the context of the activity.
+    this.ResetWrong = function () {
+        //console.log('Reset Wrong: ' + this.wrong.length);
+        $(this.wrong).each(function () {
+            //////console.log(this.name);
+            DnDAction.Reset(this);
+        });
+        this.wrong = [];
+    };
+    this.ResetAll = function () {
+        ////console.log('resetAll')
+        $(this.draggables).each(function () {
+            DnDAction.Reset(this);
+        });
+        this.right = [];
+        this.wrong = [];
+    };
+    //-- Slide Actions
+    this.Continue = function () {
+        //////console.log(parent.root)
+        root.play();
+    };
+};</script>
+<script type='text/javascript' src='./libs/jquery-3.4.1.js'></script>
+<script>
+var canvas, stage, exportRoot, anim_container, dom_overlay_container, fnStartAnimation;
+function init() {
+	canvas = document.getElementById("canvas");
+	anim_container = document.getElementById("animation_container");
+	dom_overlay_container = document.getElementById("dom_overlay_container");
+	var comp=AdobeAn.getComposition("93AC54736F13AA4F8979954A51D003E0");
+	var lib=comp.getLibrary();
+	var loader = new createjs.LoadQueue(false);
+	loader.installPlugin(createjs.Sound);
+	loader.addEventListener("fileload", function(evt){handleFileLoad(evt,comp)});
+	loader.addEventListener("complete", function(evt){handleComplete(evt,comp)});
+	var lib=comp.getLibrary();
+	loader.loadManifest(lib.properties.manifest);
+}
+function handleFileLoad(evt, comp) {
+	var images=comp.getImages();	
+	if (evt && (evt.item.type == "image")) { images[evt.item.id] = evt.result; }	
+}
+function handleComplete(evt,comp) {
+	//This function is always called, irrespective of the content. You can use the variable "stage" after it is created in token create_stage.
+	var lib=comp.getLibrary();
+	var ss=comp.getSpriteSheet();
+	var queue = evt.target;
+	var ssMetadata = lib.ssMetadata;
+	for(i=0; i<ssMetadata.length; i++) {
+		ss[ssMetadata[i].name] = new createjs.SpriteSheet( {"images": [queue.getResult(ssMetadata[i].name)], "frames": ssMetadata[i].frames} )
+	}
+	var preloaderDiv = document.getElementById("_preload_div_");
+	preloaderDiv.style.display = 'none';
+	canvas.style.display = 'block';
+	exportRoot = new lib.CardFlipActivity_C8();
+	stage = new lib.Stage(canvas);	
+	//Registers the "tick" event listener.
+	fnStartAnimation = function() {
+		stage.addChild(exportRoot);
+		createjs.Ticker.framerate = lib.properties.fps;
+		createjs.Ticker.addEventListener("tick", stage);
+	}	    
+	//Code to support hidpi screens and responsive scaling.
+	AdobeAn.makeResponsive(true,'both',true,1,[canvas,preloaderDiv,anim_container,dom_overlay_container]);	
+	AdobeAn.compositionLoaded(lib.properties.id);
+	fnStartAnimation();
+}
+function playSound(id, loop) {
+	return createjs.Sound.play(id, {'interrupt':createjs.Sound.INTERRUPT_EARLY, 'loop': loop});}
+</script>
+<!-- write your code here -->
+</head>
+<body onload="init();" style="margin:0px;">
+	<div id="animation_container" style="background-color:rgba(255, 255, 255, 0.00); width:1920px; height:812px">
+		<canvas id="canvas" width="1920" height="812" style="position: absolute; display: none; background-color:rgba(255, 255, 255, 0.00);"></canvas>
+		<div id="dom_overlay_container" style="pointer-events:none; overflow:hidden; width:1920px; height:812px; position: absolute; left: 0px; top: 0px; display: none;">
+		</div>
+	</div>
+    <div id='_preload_div_' style='position:absolute; top:0; left:0; display: inline-block; height:812px; width: 1920px; text-align: center;'>	<span style='display: inline-block; height: 100%; vertical-align: middle;'></span>	<img src=./images/_preloader.gif style='vertical-align: middle; max-height: 100%'/></div>
+</body>
+</html>

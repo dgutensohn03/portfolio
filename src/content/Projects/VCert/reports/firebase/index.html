@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rise Sample - Database</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    body {
+      background-image: url(assets/1-2_bg.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    #database {
+      width: 80%;
+      margin: 5em;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      -webkit-box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 10%);
+      box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 10%);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .key-label {
+      font-weight: bold;
+      display: inline;
+    }
+
+    .btn {
+      margin-top: 1.25rem;
+    }
+
+    .hide {
+      display: none;
+    }
+
+    #popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+    }
+
+    .expand-btn {
+      cursor: pointer;
+      text-decoration: underline;
+      color: blue;
+    }
+
+    .expand-btn:hover {
+      text-decoration: none;
+    }
+
+    .data-table {
+      display: none;
+      margin-top: 10px;
+    }
+
+    .expanded .data-table {
+      display: table;
+    }
+    .collapse > table {
+        display: none;
+    }
+    .collapse.show > table {
+        display: table;
+    }
+    .modal-content {
+      background-color: #ffffff;
+      border-radius: 10px;
+    }
+
+    .arrow {
+      float: right;
+    }
+  </style>
+</head>
+
+<body id="registrationPage">
+
+  <button id="downloadBtn" class="btn btn-primary"  >Download 2 Week Summary</button>
+  <button id="downloadBtn-2" class="btn btn-primary" >View Class Summary</button>
+
+  <div id="accordion">
+    <!-- Class data will be dynamically added here -->
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+<script src="scripts/polyfill.min.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx-populate/4.3.0/xlsx-populate.min.js"></script>
+
+  <script>
+   $(function() {
+      // Your Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyBV7dN8jF3nggPnJuzzWmT5MsiMjWmuz88",
+        authDomain: "vcert-9568e.firebaseapp.com",
+        databaseURL: "https://vcert-9568e.firebaseio.com",
+        projectId: "vcert-9568e",
+        storageBucket: "vcert-9568e.appspot.com",
+        messagingSenderId: "701025120825",
+        appId: "1:701025120825:web:7bf1e3dfd38637652c93e8",
+        measurementId: "G-1N0PQ39K3P"
+      };
+
+      // Initialize Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+      const db = firebase.database();
+      var dataArray = [];
+
+      const userDataRef = firebase.database().ref("ProductionUserGroup").orderByKey();
+      userDataRef.once("value").then(function(snapshot) {
+        snapshot.forEach(function(childSnapshot) {
+          const key = childSnapshot.key;
+          const childData = childSnapshot.val();
+          dataArray.push({ key: key, data: childData });
+        });
+        console.log("Data fetched:", dataArray);
+
+        // Enable download buttons
+        var downloadBtn = document.getElementById("downloadBtn");
+        downloadBtn.disabled = false;
+        var downloadBtn2 = document.getElementById("downloadBtn-2");
+        downloadBtn2.disabled = false;
+
+        // Function to convert JSON data to new format
+        function convertJson(jsonData) {
+          const newArray = [];
+          jsonData.forEach(obj => {
+            const data = obj.data;
+            const classes = [];
+            if (data.ClassHD) {
+              classes.push({ type: "HD", date: data.ClassCompletionHD });
+            }
+            if (data.ClassLD) {
+              classes.push({ type: "LD", date: data.ClassCompletionLD });
+            }
+            if (data.ClassVPS) {
+              classes.push({ type: "VPS", date: data.ClassCompletionVPS });
+            }
+
+            classes.forEach(classData => {
+              const totalChallengesCompleted = Object.keys(data[`c${classData.type}`])
+                .filter(key => key.startsWith('c') && data[`c${classData.type}`][key] === 1)
+                .length;
+
+              const newObj = {
+                "First Name": data.FirstName || "",
+                "Last Name": data.LastName || "",
+                "Company": data.Company || "",
+                "VCERT Class": data.VCERTClass || "",
+                "Email Address": data.Email || "",
+                "Region": data.Region || "", // New field
+                "Number of Challenges Completed": totalChallengesCompleted || 0,
+                "Number of Challenges Attempted": data[`TotalAttempts${classData.type}`] || 0, // New field
+                "Number of Challenges Unfinished": data[`TotalUnfinished${classData.type}`] !== 1 ? "Yes" : "No", // New field
+                "Point Total": data[`TotalPoints${classData.type}`] || 0,
+                "Ranking": "", // Placeholder for ranking
+                "Class Type": `Class ${classData.type} - ${classData.date}`
+              };
+              newArray.push(newObj);
+            });
+          });
+
+          // Calculate ranking based on total points
+          newArray.sort((a, b) => b["Point Total"] - a["Point Total"]); // Sort by total points
+          newArray.forEach((entry, index) => {
+            entry["Ranking"] = index + 1; // Assign ranking based on sorted order
+          });
+
+          return newArray;
+        }
+
+        // Event listener for downloadBtn-2
+        downloadBtn2.addEventListener('click', async () => {
+          // Convert JSON data to new format
+          const convertedData = JSON.stringify(convertJson(dataArray)); // Convert to JSON string
+console.log("Converted data:", convertedData);
+
+// Parse the convertedData as JSON to ensure it's an array of objects
+const parsedConvertedData = JSON.parse(convertedData);
+
+// Group data by class type
+const groupedData = [];
+parsedConvertedData.forEach(entry => {
+    const classType = entry["Class Type"];
+    //console.log("Class Type:", classType);
+    if (!groupedData[classType]) {
+        groupedData[classType] = [];
+    }
+    groupedData[classType].push(entry);
+});
+
+console.log('')
+
+
+          // Generate HTML content for the accordion
+          let accordionContent = '';
+          Object.keys(groupedData).forEach((classType, index) => {
+            console.log("index")
+            console.log(index)
+            console.log("classType")
+            console.log(classType)
+            console.log("${JSON.stringify(groupedData[classType])}")
+            console.log(groupedData[classType])
+
+            accordionContent += `<div class="card">`;
+            accordionContent += `<div class="card-header" id="heading-${index}">`;
+            accordionContent += `<h5 class="mb-0">`;
+            accordionContent += `<button class="btn btn-link" data-toggle="collapse" data-target="#collapse-${index}" aria-expanded="true" aria-controls="collapse-${index}">${classType}</button>`;
+            accordionContent += `</h5>`;
+            accordionContent += `</div>`;
+            accordionContent += `<div id="collapse-${index}" class="collapse" aria-labelledby="heading-${index}" data-parent="#accordion">`;
+            accordionContent += `<div class="card-body">`;
+            accordionContent += '<table class="table">';
+            // Header row
+            accordionContent += '<thead>';
+            accordionContent += '<tr>';
+            Object.keys(groupedData[classType][0]).forEach(column => {
+              accordionContent += `<th scope="col">${column}</th>`;
+            });
+            accordionContent += '</tr>';
+            accordionContent += '</thead>';
+            // Data rows
+            accordionContent += '<tbody>';
+            groupedData[classType].forEach(entry => {
+              accordionContent += '<tr>';
+              Object.values(entry).forEach(value => {
+                accordionContent += `<td>${value}</td>`;
+              });
+              accordionContent += '</tr>';
+            });
+            accordionContent += '</tbody>';
+            accordionContent += '</table>';
+            var gd = JSON.stringify(groupedData[classType]);
+            console.log('gd')
+            console.log(gd)
+
+accordionContent += `<button class="btn btn-primary download-btn" onclick="window.downloadCsv('${classType}', [${groupedData[classType]}]);">Download CSV</button>`;
+
+
+
+
+            accordionContent += `</div>`;
+            accordionContent += `</div>`;
+            accordionContent += `</div>`;
+          });
+          console.log('donwloadCsv')
+          console.log(window.downloadCsv)
+          $('#accordion').html(accordionContent);
+        });
+
+        window.downloadCsv = function(fileName, data) {
+    console.log("downloadCsv started...");
+    console.log("File Name:", fileName);
+    console.log("Data:", data);
+
+    // Parse the data as JSON
+    const parsedData = JSON.parse(data);
+        console.log("parsedData:", parsedData);
+console.log("groupedData[classType]:", groupedData[classType]);
+    // Check if parsedData is an array before calling map
+    if (!Array.isArray(parsedData)) {
+        console.error("Data is not an array:", parsedData);
+        return;
+    }
+
+    const csvContent = "data:text/csv;charset=utf-8," +
+        Object.keys(parsedData[0]).join(",") + "\n" + // Header row
+        parsedData.map(entry => Object.values(entry).join(",")).join("\n");
+
+
+    console.log("CSV Content:", csvContent);
+
+    const encodedUri = encodeURI(csvContent);
+
+    const link = document.createElement("a");
+    link.setAttribute("href", encodedUri);
+    link.setAttribute("download", `${fileName}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+
+      }).catch(function(error) {
+        console.error("Error:", error);
+      });
+
+      // Event listener for "2 Week Summary" button
+      $('#downloadBtn').click(function() {
+        // Placeholder for 2-week summary functionality
+        console.log("2 Week Summary button clicked!");
+      });
+    });
+  </script>
+  
+</body>
+
+</html>

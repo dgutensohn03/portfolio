@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<!-- saved from url=(0095)http://www.thelhtgroup.com/LHTClients/Valvoline/VCert/Valv-Vcert-Web/Brian-a1/Registration.html -->
+<html class="gr__thelhtgroup_com" lang="en">
+
+<head>
+  <meta content="text/html; charset=utf-8" http-equiv="Content-Type"><!-- Required meta tags -->
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"><!-- Bootstrap CSS -->
+  <link href="scripts/Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="./styles/style.css"> -->
+  <link href="scripts/jquery-ui/jquery-ui.css" rel="stylesheet"><!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+  <script src="scripts/jquery-3.4.1.js">
+  </script>
+  <script src="scripts/Bootstrap/js/bootstrap.min.js">
+  </script><!-- jQuery UI for datepicker -->
+
+  <script src="scripts/jquery-ui/jquery-ui.js">
+  </script>
+  <title>Rise Sample - Database</title>
+  <style>
+    body {
+      background-image: url(assets/1-2_bg.png);
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    #database {
+      width: 80%;
+      margin: 5em;
+      background-color: #ffffff;
+      padding: 30px;
+      border-radius: 15px;
+      -webkit-box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 10%);
+      box-shadow: 5px 5px 15px 5px rgb(0 0 0 / 10%);
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .key-label {
+      font-weight: bold;
+      display: inline;
+    }
+
+    .btn {
+      margin-top: 1.25rem;
+    }
+
+    .hide {
+      display: none;
+    }
+  </style>
+</head>
+
+<body data-gr-c-s-loaded="true" id="registrationPage">
+
+  <div id="database" class="hide"><button type="button" class="btn btn-secondary float-right" onclick="refresh();"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+    <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+  </svg></button></div>
+
+  <script src="scripts/polyfill.min.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js">
+  </script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js">
+  </script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js">
+  </script>
+  <script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js">
+  </script>
+  <!--<script defer src="src/fb-init.js">
+    </script>-->
+  <script>
+    var refresh = function(){
+  location.reload();}
+    $(function () {
+      //nfda firebase database
+      const firebaseConfig = {
+  apiKey: "AIzaSyBV7dN8jF3nggPnJuzzWmT5MsiMjWmuz88",
+  authDomain: "vcert-9568e.firebaseapp.com",
+  databaseURL: "https://vcert-9568e.firebaseio.com",
+  projectId: "vcert-9568e",
+  storageBucket: "vcert-9568e.appspot.com",
+  messagingSenderId: "701025120825",
+  appId: "1:701025120825:web:7bf1e3dfd38637652c93e8",
+  measurementId: "G-1N0PQ39K3P"
+};
+
+      //rise database test account
+      // const firebaseConfig = {
+      //   apiKey: "AIzaSyADMYOI2zkknnxLRT5CFKbiHLHBLttDZ-g",
+      //   authDomain: "rise-database-1fd6c.firebaseapp.com",
+      //   databaseURL: "https://rise-database-1fd6c-default-rtdb.firebaseio.com",
+      //   projectId: "rise-database-1fd6c",
+      //   storageBucket: "rise-database-1fd6c.appspot.com",
+      //   messagingSenderId: "525458912117",
+      //   appId: "1:525458912117:web:74442fbb56073c94a1993c",
+      //   measurementId: "G-38K2DB6TXL"
+      // };
+
+
+
+      const formatTime = milliseconds => {
+        const seconds = Math.floor((milliseconds / 1000) % 60);
+        const minutes = Math.floor((milliseconds / 1000 / 60) % 60);
+        const hours = Math.floor((milliseconds / 1000 / 60 / 60) % 24);
+
+        return [
+          hours.toString().padStart(2, "0"),
+          minutes.toString().padStart(2, "0"),
+          seconds.toString().padStart(2, "0")
+        ].join(":");
+      }
+
+      // Initialize Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+      const auth = firebase.auth();
+      const db = firebase.database();
+      var dataArray = [];
+
+      const userDataRef = firebase.database().ref("ProductionUserGroup").orderByKey();
+
+
+userDataRef.once("value")
+  .then(function(snapshot) {
+    const promises = [];
+
+    snapshot.forEach(function(childSnapshot) {
+      const key = childSnapshot.key;
+      const childData = childSnapshot.val();
+      
+      var thisTitle = String(key);
+      console.log(thisTitle);
+
+      dataArray.push({ key: key, data: childData });
+      promises.push(Promise.resolve()); // You can push other promises if needed
+    });
+
+    // Wait for all promises to resolve
+    return Promise.all(promises);
+  })
+  .then(function() {
+    // This code will execute after the forEach loop finishes
+    console.log("forEach loop finished");
+    console.log(dataArray); // Process your dataArray here or call a function
+    // Get the download button element by its ID
+var downloadBtn = document.getElementById("downloadBtn");
+
+// Remove the disabled property
+downloadBtn.disabled = false;
+  })
+  .catch(function(error) {
+    console.error("Error:", error);
+  });
+
+  // Convert moduleArray to JSON
+  const jsonData = JSON.stringify(dataArray);
+  
+  // Now you can use jsonData as your JSON data
+  console.log(jsonData);
+
+      });
+  </script>
+  <div class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" id="ui-datepicker-div"></div>
+  <button id="downloadBtn" onclick="downloadCsv(jsonData);" disabled>Download CSV</button>
+
+  <script>
+      function downloadCsv() {
+
+console.log('clicked');
+  // Convert JSON to CSV
+  const csvContent = "data:text/csv;charset=utf-8,"
+    + Object.keys(jsonData[0]).join(",") + "\n" // Header row
+    + jsonData.map(entry => Object.values(entry).join(",")).join("\n");
+
+  // Create a temporary anchor element
+  const encodedUri = encodeURI(csvContent);
+  const link = document.createElement("a");
+  link.setAttribute("href", encodedUri);
+  link.setAttribute("download", "data.csv");
+
+  // Append anchor to the body and trigger download
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+};
+</script>
+  </script>
+</body>
+
+</html>

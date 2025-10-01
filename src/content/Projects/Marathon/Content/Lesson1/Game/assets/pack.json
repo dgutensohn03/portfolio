@@ -1,0 +1,529 @@
+{
+  "sprites": [
+    {
+      "type": "spritesheet",
+      "key": "bulldozer_sprite",
+      "url": "assets/textures/bulldozer.png",
+      "frameWidth": 252,
+      "frameHeight": 115,
+      "frameMax": 90,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "coal_sprite",
+      "url": "assets/textures/coal.png",
+      "frameWidth": 240,
+      "frameHeight": 130,
+      "frameMax": 51,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "nuclear_sprite",
+      "url": "assets/textures/nuclear.png",
+      "frameWidth": 375,
+      "frameHeight": 210,
+      "frameMax": 45,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "oilPump_sprite",
+      "url": "assets/textures/oil-pump.png",
+      "frameWidth": 70,
+      "frameHeight": 70,
+      "frameMax": 52,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "windmill_sprite",
+      "url": "assets/textures/windmill.png",
+      "frameWidth": 160,
+      "frameHeight": 250,
+      "frameMax": 22,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "water_sprite",
+      "url": "assets/textures/water.png",
+      "frameWidth": 100,
+      "frameHeight": 100,
+      "frameMax": 60,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "collider",
+      "url": "assets/textures/collider.png",
+      "frameWidth": 10,
+      "frameHeight": 10,
+      "frameMax": 1,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "contentbox_sprite",
+      "url": "assets/textures/content-box.png",
+      "frameWidth": 100,
+      "frameHeight": 101,
+      "frameMax": 2,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "enemy1_sprite",
+      "url": "assets/textures/enemy1.png",
+      "frameWidth": 151,
+      "frameHeight": 161,
+      "frameMax": 2,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "enemy2_sprite",
+      "url": "assets/textures/enemy2.png",
+      "frameWidth": 46,
+      "frameHeight": 101,
+      "frameMax": 2,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "mike",
+      "url": "assets/textures/mike.png",
+      "frameWidth": 190,
+      "frameHeight": 270,
+      "frameMax": 48,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "prop_Bulldozer_new",
+      "url": "assets/textures/prop_Bulldozer.png",
+      "frameWidth": 252,
+      "frameHeight": 115,
+      "frameMax": 120,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "prop_Bulldozer_oscillate",
+      "url": "assets/textures/prop_Bulldozer_oscillate.png",
+      "frameWidth": 252,
+      "frameHeight": 115,
+      "frameMax": 45,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "prop_BarnDoors",
+      "url": "assets/textures/prop_BarnDoors_cropped.png",
+      "frameWidth": 110,
+      "frameHeight": 110,
+      "frameMax": 150,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "prop_BulldozerLargeShovel",
+      "url": "assets/textures/prop_BulldozerLargeShovel.png",
+      "frameWidth": 250,
+      "frameHeight": 160,
+      "frameMax": 90,
+      "margin": 0,
+      "spacing": 0
+    },
+    {
+      "type": "spritesheet",
+      "key": "prop_townClock",
+      "url": "assets/textures/prop_townClock.png",
+      "frameWidth": 100,
+      "frameHeight": 100,
+      "frameMax": 120,
+      "margin": 0,
+      "spacing": 0
+    }
+  ],
+  "maps": [
+    {
+      "type": "image",
+      "key": "level1-1",
+      "url": "assets/textures/level1-1.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level1-2",
+      "url": "assets/textures/level1-2.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level1-3",
+      "url": "assets/textures/level1-3.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level1-4",
+      "url": "assets/textures/level1-4.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level1-5",
+      "url": "assets/textures/level1-5.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level1-6",
+      "url": "assets/textures/level1-6.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "mapOverlay",
+      "url": "assets/textures/mapOverlay.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "map_pipes",
+      "url": "assets/textures/map_pipes.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "levels",
+      "url": "assets/textures/levels.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2-1",
+      "url": "assets/textures/level2-1.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2-2",
+      "url": "assets/textures/level2-2.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2-3",
+      "url": "assets/textures/level2-3.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2-4",
+      "url": "assets/textures/level2-4.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2-5",
+      "url": "assets/textures/level2-5.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2-6",
+      "url": "assets/textures/level2-6.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2_collision1",
+      "url": "assets/textures/level2_collision1.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2_collision2",
+      "url": "assets/textures/level2_collision2.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2_collision3",
+      "url": "assets/textures/level2_collision3.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2_collision4",
+      "url": "assets/textures/level2_collision4.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2_collision5",
+      "url": "assets/textures/level2_collision5.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2_collision6",
+      "url": "assets/textures/level2_collision6.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2_obsticles1",
+      "url": "assets/textures/level2_obsticles1.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2_obsticles2",
+      "url": "assets/textures/level2_obsticles2.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2_obsticles3",
+      "url": "assets/textures/level2_obsticles3.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2_obsticles4",
+      "url": "assets/textures/level2_obsticles4.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2_obsticles5",
+      "url": "assets/textures/level2_obsticles5.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level2_obsticles6",
+      "url": "assets/textures/level2_obsticles6.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "mike-jump",
+      "url": "assets/textures/mike-jump.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "mike-walk",
+      "url": "assets/textures/mike-walk.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "vehicle1",
+      "url": "assets/textures/vehicle1.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "vehicle2",
+      "url": "assets/textures/vehicle2.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "vehicle3",
+      "url": "assets/textures/vehicle3.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "vehicle4",
+      "url": "assets/textures/vehicle4.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "stop1",
+      "url": "assets/textures/levels_stop1.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "stop2",
+      "url": "assets/textures/levels_stop2.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "stop3",
+      "url": "assets/textures/levels_stop3.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "stop4",
+      "url": "assets/textures/levels_stop4.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "stop5",
+      "url": "assets/textures/levels_stop5.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "levelsBackground",
+      "url": "assets/textures/levelsBG - Copy.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "map_instructions",
+      "url": "assets/textures/map_Instructions.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "level_instructions",
+      "url": "assets/textures/levelEnd_instructions.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "left_arrow",
+      "url": "assets/textures/tablet_arrowLeftButton.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "right_arrow",
+      "url": "assets/textures/tablet_arrowRightButton.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "jump_button",
+      "url": "assets/textures/tablet_jumpButton.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "left_arrow-up",
+      "url": "assets/textures/tablet_arrowLeftButton.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "left_arrow-down",
+      "url": "assets/textures/tablet_arrowLeftButton.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "right_arrow-down",
+      "url": "assets/textures/tablet_arrowRightButton.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "right_arrow-up",
+      "url": "assets/textures/tablet_arrowRightButton.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "jump_button-up",
+      "url": "assets/textures/tablet_jumpButton.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "jump_button-down",
+      "url": "assets/textures/tablet_jumpButton.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "down_arrow",
+      "url": "assets/textures/down.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "up_arrow",
+      "url": "assets/textures/up.png",
+      "overwrite": false
+    }
+  ],
+  "popUp": [
+    {
+      "type": "image",
+      "key": "contentBox_l1b2",
+      "url": "assets/textures/contentBox_l1b2.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "contentBox_l1b3",
+      "url": "assets/textures/contentBox_l1b3.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "contentBox_l1b4",
+      "url": "assets/textures/contentBox_l1b4.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "contentBox_l1b5",
+      "url": "assets/textures/contentBox_l1b5.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "contentBox_l1b6",
+      "url": "assets/textures/contentBox_l1b6.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "pipeUnlocked",
+      "url": "assets/textures/pipeUnlocked.png",
+      "overwrite": false
+    },
+    {
+      "type": "image",
+      "key": "pipeUn",
+      "url": "assets/textures/pipeUnlocked_.png",
+      "overwrite": false
+    }
+  ],
+  "meta": {
+    "generated": "1503695772982",
+    "app": "Phaser Editor",
+    "url": "http://phasereditor.boniatillo.com",
+    "version": "1.0",
+    "copyright": "Arian Fornaris (c) 2015,2016"
+  }
+}

@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  <ID>main-menu</ID>
+  
+  <DisplayName>Main Menu</DisplayName>
+
+  <Type>NavBar</Type>
+  <ButtonSize>double-wide</ButtonSize>
+  <ButtonTooltip>Main Menu</ButtonTooltip>
+  
+ 
+  
+  
+</Settings>

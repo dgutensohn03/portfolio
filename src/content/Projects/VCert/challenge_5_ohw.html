@@ -1,0 +1,3737 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+	<!-- Required meta tags -->
+
+	<meta charset="utf-8">
+
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=yes" name="viewport"><!-- Bootstrap CSS -->
+
+	<link href="Bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	<link href="styles/style.css" rel="stylesheet">
+
+	<link href="styles/challenge.css" rel="stylesheet">
+
+	<script src="scripts/easeljs/easeljs-NEXT.js">
+
+	</script>
+
+	<style>
+		/* NEW (for challenge_5_ohw) */
+		.wrap-tr-on-mobile {
+			@media (max-width:764px) {
+				display: grid;
+			}
+		}
+
+		.padding-th-on-mobile {
+			@media (max-width:764px) {
+				padding: 20px;
+			}
+		}
+
+		.box > .row > .hotspot-continue {
+			@media only screen and (max-width: 720px) {
+				min-width: 300px;
+			}
+		}
+		.box > .row > .hotspot-continue > button {
+			@media only screen and (max-width: 720px) {
+				width: revert-layer;
+				min-width: 270px !important;
+			}
+		}
+
+		/* NEW (from challenge_2_ad) */
+		.hotspot-continue {
+			width: auto;
+		}
+		.newRowOnMobile {
+
+			@media (max-width:1080px) {
+
+				min-width: revert;
+
+			}
+
+		}
+
+
+
+		.content-box {
+
+			@media (max-width:1080px) {
+
+				left: 0 !important;
+
+				right: 0 !important;
+
+			}
+
+		}
+
+
+
+		#box3_plus4_img {
+
+			@media (max-width:1366px) {
+
+				max-width: 60vw;
+
+			}
+
+		}
+
+
+
+		/* EXISTING BELOW */
+
+
+
+		.box {
+
+			overflow-y: auto !important;
+
+			overflow-x: hidden;
+
+		}
+
+
+		.plus-1 .content-box {
+
+			z-index: 10;
+
+		}
+
+
+
+		.plus-2 .content-box {
+
+			z-index: 10;
+
+		}
+
+
+
+		.plus-3 .content-box {
+
+			z-index: 10;
+
+		}
+
+
+
+		.plus-4 .content-box {
+
+			z-index: 10;
+
+		}
+
+
+
+		.challenge-9_vps #box3 {
+
+			background: url("") no-repeat center center;
+
+			background-size: cover;
+
+			max-width: 1920px;
+
+			position: absolute;
+
+		}
+
+
+
+		/* .challenge-9_vps #box3 .content-box-1 {
+
+			left: 1%;
+
+			top: 61%;
+
+			right: 32%;
+
+			min-width: 460px;
+
+		}
+
+
+
+		.challenge-9_vps #box3 .content-box-2 {
+
+			left: 22%;
+
+			top: 5%;
+
+			min-width: 460px;
+
+		}
+
+
+
+		.challenge-9_vps #box3 .content-box-3 {
+
+			right: 31%;
+
+			left: 14%;
+
+			bottom: 54%;
+
+			min-width: 460px;
+
+		}
+
+
+
+		.challenge-9_vps #box3 .content-box-4 {			
+
+			left: 16%;
+
+			bottom: 3%;
+
+			min-width: 460px;
+
+		} */
+
+
+
+		/* #box3 .plus-1 div:nth-child(2) {
+
+			left: -2%;
+
+			top: 57%;
+
+			z-index: 1;
+
+		}
+
+
+
+		#box3 .plus-2 div:nth-child(2) {
+
+			left: 19%;
+
+			top: 1%;
+
+			z-index: 1;
+
+		}
+
+
+
+		#box3 .plus-3 div:nth-child(2) {
+
+			left: 76%;
+
+			top: 1%;
+
+			z-index: 5;
+
+		}
+
+
+
+		#box3 .plus-4 div:nth-child(2) {
+
+			left: 96%;
+
+			top: 56%;
+
+			z-index: 5;
+
+		} */
+
+
+
+
+
+		.challenge-9_vps #box4 {
+
+			background: url("") no-repeat center center;
+
+			background-size: cover;
+
+			max-width: 1920px;
+
+			position: absolute;
+
+		}
+
+
+
+		/* .challenge-9_vps #box4 .content-box-1 {
+
+			left: 1%;
+
+			top: 61%;
+
+			right: 32%;
+
+			min-width: 460px;
+
+		}
+
+
+
+		.challenge-9_vps #box4 .content-box-2 {
+
+			left: 22%;
+
+			top: 5%;
+
+			min-width: 460px;
+
+		}
+
+
+
+		.challenge-9_vps #box4 .content-box-3 {
+
+			right: 31%;
+
+			left: 14%;
+
+			bottom: 54%;
+
+			min-width: 460px;
+
+		}
+
+
+
+		.challenge-9_vps #box4 .content-box-4 {			
+
+			left: 16%;
+
+			bottom: 3%;
+
+			min-width: 460px;
+
+		} */
+
+
+
+		#box4 .plus-1 div:nth-child(2) {
+
+			left: 25%;
+
+			top: 35%;
+
+			z-index: 1;
+
+		}
+
+
+
+		#box4 .plus-2 div:nth-child(2) {
+
+			left: 75%;
+
+			top: 35%;
+
+			z-index: 1;
+
+		}
+
+
+
+		#box4 .plus-3 div:nth-child(2) {
+
+			left: 76%;
+
+			top: 1%;
+
+			z-index: 5;
+
+		}
+
+
+
+		#box4 .plus-4 div:nth-child(2) {
+
+			left: 96%;
+
+			top: 56%;
+
+			z-index: 5;
+
+		}
+
+
+
+		#box5 .btl-plus-container>.bottle-img,
+
+		#box5 .btl-img-container>.bottle-img {
+
+			min-width: 200px;
+
+			max-height: 80vh;
+
+			min-height: auto;
+
+			max-width: 200px;
+
+			padding: 0 !important;
+
+		}
+
+
+
+		#box5 .btl-plus-container>.bottle-img>img,
+
+		#box5 .btl-img-container>.bottle-img>img {
+
+			padding: 0 !important;
+
+		}
+
+
+
+		.challenge-9_vps #box5 .content-box-1,
+
+		.challenge-9_vps #box5 .content-box-2,
+
+		.challenge-9_vps #box5 .content-box-3 {
+
+			top: 20px;
+
+			z-index: 5;
+
+			min-width: 170%;
+
+		}
+
+
+
+
+
+		.break {
+
+			flex-basis: 100%;
+
+			height: 0;
+
+		}
+
+
+
+		.reveal-arrow-left {
+
+			max-width: 500px;
+
+			min-width: 450px;
+
+			height: 71px;
+
+			padding-left: 140px;
+
+			padding-right: 140px;
+
+			cursor: auto;
+
+			background: url(./images/challenge_2/images/Arrow_UP.png) no-repeat;
+
+		}
+
+
+
+		.flex-container {
+
+			min-height: 100px;
+
+			display: flex;
+
+			align-items: center;
+
+		}
+
+
+
+		.flex-container:after {
+
+			content: '';
+
+			min-height: inherit;
+
+			font-size: 0;
+
+		}
+
+
+
+		.flex-box {
+
+			display: flex;
+
+			justify-content: space-between;
+
+
+
+		}
+
+
+
+		.bottle-img {
+
+			width: 290px;
+
+		}
+
+
+
+		.flex-box .spacer {
+
+			width: 50px;
+
+			background-color: pink;
+
+		}
+
+
+
+		.clk-reveal-plus {
+
+
+
+			top: 0;
+
+		}
+
+
+
+		.clk-reveal-plus:hover {
+
+
+
+			top: 0;
+
+		}
+
+
+
+		.divider-line {
+
+			width: 3px;
+
+			height: 150px;
+
+			background-color: #ffffff;
+
+		}
+
+
+
+		.col-lg-12-custom {}
+
+
+
+		.float-box {
+
+			display: flex;
+
+			-webkit-box-pack: end;
+
+			justify-content: flex-end;
+
+			z-index: 9;
+
+			position: absolute;
+
+			bottom: 10px;
+
+			right: 0px;
+
+		}
+
+
+
+		.m-bottom-padding {
+
+			padding: 0;
+
+		}
+
+
+
+		.plus-1,
+
+		.plus-2,
+
+		.plus-3,
+
+		.plus-4 {
+
+			width: auto;
+
+			top: 0;
+
+			display: flex;
+
+			justify-content: center;
+
+		}
+
+
+
+		.plus-1 div:nth-child(2) {
+
+			z-index: 1;
+
+			top: 0;
+
+		}
+
+
+
+		.plus-2 div:nth-child(2) {
+
+			z-index: 1;
+
+			top: 0;
+
+		}
+
+
+
+		.plus-3 div:nth-child(2) {
+
+			z-index: 1;
+
+			top: 0;
+
+		}
+
+
+
+		.plus-4 div:nth-child(2) {
+
+			z-index: 1;
+
+			top: 0;
+
+		}
+
+
+
+		.btl-plus-container {
+
+			padding: 0px;
+
+			-webkit-box-pack: start;
+
+			justify-content: flex-start;
+
+			max-height: 80vh;
+
+			min-height: auto;
+
+			max-width: 80vw;
+
+			width: auto;
+
+			height: auto;
+
+			-webkit-box-flex: 0;
+
+			flex-grow: 0;
+
+			flex: 0 !important;
+
+		}
+
+
+
+		.top-left-side {
+
+			left: 0px;
+
+			top: 25px;
+
+		}
+
+
+
+		.top-right-side {
+
+			left: auto;
+
+			right: 0px;
+
+			top: 25px;
+
+		}
+
+
+
+		.btm-right-side {
+
+			right: 0px;
+
+			bottom: -25px;
+
+		}
+
+
+
+
+
+		.btm-left-side {
+
+			left: 25px;
+
+			bottom: -25px;
+
+		}
+
+
+
+		.responsive-continue-container {
+
+			width: 100vw;
+
+			height: 175px;
+
+			position: absolute;
+
+			bottom: 0;
+
+			left: 0;
+
+			right: 0;
+
+		}
+
+
+
+		.responsive-continue {
+
+
+
+			display: flex;
+
+			-webkit-box-pack: end;
+
+			justify-content: flex-end;
+
+			z-index: 9;
+
+			position: absolute;
+
+			bottom: 10px;
+
+			right: 10px;
+
+			width: 437px;
+
+			height: 175px;
+
+			background-size: 100%;
+
+			font-size: 40px;
+
+			/* padding: 56.5px 45px; */
+
+			padding: 67.5px 45px;
+
+			line-height: 0px;
+
+			background: url(./images/challenge_1/Cont-btn_UP.png) center center / contain no-repeat;
+
+			text-transform: uppercase;
+
+			color: white;
+
+			font-family: Oswald;
+
+			border: none;
+
+			outline: none;
+
+			text-align: left;
+
+		}
+
+
+
+		@media only screen and (max-width: 990px) {
+
+			.responsive-continue-container {
+
+				width: 100vw;
+
+				height: 175px;
+
+				position: relative;
+
+				bottom: 0;
+
+				left: 0;
+
+				right: 0;
+
+			}
+
+
+
+			.responsive-continue {
+
+				display: inline-block;
+
+				max-width: 180px !important;
+
+				min-width: 180px !important;
+
+				margin-top: 50px;
+
+				margin-bottom: 50px;
+
+				background-color: rgb(225, 38, 28);
+
+				height: 40px;
+
+				width: 180px;
+
+				left: 0;
+
+				max-width: 180px;
+
+				text-align: center;
+
+				border-radius: 7px;
+
+				color: white;
+
+				font-weight: bold;
+
+				cursor: pointer;
+
+				transform: scale(1);
+
+				transition: transform 0.4s ease 0s, -webkit-transform 0.4s ease 0s;
+
+				font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+
+				font-size: 1rem;
+
+				line-height: 1.5;
+
+				margin-bottom: 50px;
+
+				background-image: none !important;
+
+				padding: 0px !important;
+
+				width: 180px;
+
+				position: relative;
+
+			}
+
+
+
+		}
+
+
+
+
+
+
+
+		@media only screen and (max-width: 400px) {
+
+			.content-box {
+
+				min-width: 195px !important;
+
+			}
+
+		}
+
+
+
+		@media only screen and (max-width: 550px) {
+
+
+
+			.plus-1,
+
+			.plus-2,
+
+			.plus-3,
+
+			.plus-4 {
+
+				font-size: 3vw;
+
+			}
+
+
+
+			.content-box-2,
+
+			.content-box-3 {
+
+				min-width: 195px !important;
+
+			}
+
+
+
+			.clk-reveal-plus,
+
+			.clk-reveal-plus:hover,
+
+			.clk-reveal-x,
+
+			.clk-reveal-x:hover,
+
+			.clk-reveal-complete-plus,
+
+			.clk-reveal-complete-plus:hover,
+
+			.clk-reveal-complete-x,
+
+			.clk-reveal-complete-x:hover {
+
+				background-size: 10vw;
+
+			}
+
+		}
+
+
+
+		@media only screen and (max-width: 1199px) {
+
+
+
+			.m-bottom-padding {
+
+				padding-bottom: 50px !important;
+
+			}
+
+
+
+			.float-box {
+
+				min-width: 750px;
+
+				-webkit-box-pack: center;
+
+				justify-content: center;
+
+				position: relative !important;
+
+			}
+
+		}
+
+
+
+
+
+		@media only screen and (max-width: 1790px) {
+
+			.hotspot-continue {
+
+				min-width: 750px;
+
+				-webkit-box-pack: center;
+
+				justify-content: center;
+
+				position: relative !important;
+
+			}
+
+
+
+			#box5 {
+
+				/* overflow-y: hidden !important; */
+
+			}
+
+		}
+
+
+
+		@media only screen and (max-height: 800px) {
+
+			#box5 {
+
+				/* overflow-y: auto !important; */
+
+			}
+
+
+
+		}
+
+
+
+		@media only screen and (max-width: 990px) {
+
+			.no-mobile-bg {
+
+				background: none !important;
+
+			}
+
+
+
+		}
+
+
+
+		@media only screen and (max-width: 550px) {
+
+
+
+			.hotspot-continue>button,
+
+			.flashCard-continue>button {
+
+				max-width: 180px !important;
+
+				min-width: 180px !important;
+
+			}
+
+
+
+			.continue-small-m {
+
+				margin-top: 50px;
+
+				margin-bottom: 50px;
+
+			}
+
+		}
+
+
+
+		.content-box {
+
+			max-height: 65vh;
+
+			overflow: auto;
+
+		}
+
+		.full-box-height {
+    min-height: 100%;
+    max-height: 100%;
+    height: 100% !important;
+    /* padding: 10% 5%; */
+    padding: 3% 5% !important;
+    position: absolute;
+}
+	</style>
+
+	<title>Vcert Project</title>
+
+	<style>
+
+	</style>
+
+</head>
+
+
+
+<body class="">
+
+	<div class="container-fluid challenge-3_ld">
+
+		<div id="container">
+
+			<!-- Intro -->
+			<div class="box " id="box1">
+
+				<div class="row align-middle full-box-height" id="content">
+
+					<div class="col-xl-6 col-lg-12 topCenterText">
+
+						<div class='center-text-box'>
+
+							<h1>A Construction Site Tour</h1>
+
+							<p>
+								Off-highway lubricants are <font class="emphasisBold">big</font> business. How big? The revenue generated by Caterpillar alone is larger than the entire economy of Costa Rica. And the industry is predicted to grow.
+							</p>
+
+							<p>
+								In this challenge we’ll look at how Valvoline’s™ heavy duty off-highway products can help you capture some of that growth.
+							</p>
+
+							<p>
+								<div class="headerBlue">SELECT START.</div>
+							</p>
+
+						</div>
+
+					</div>
+
+					<div class="col-xl-6 col-lg-12 topCenterText m-margin-bottom">
+
+						<div>
+
+							<button class="next" id="start-btn" type="submit">START</button>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- slide 2 -->
+			<div class="box" id="box2">
+
+				<div class='back-btn'>
+
+					<img src="">BACK
+
+				</div>
+
+				<div class="row full-box-height back-padding" id="content">
+
+					<div class="col-lg-5 col-md-6 col-sm-6 col-xs-10" style="text-align: left;">
+
+						<div>
+
+							<h1>Background</h1>
+
+							<p>
+								An off-highway worksite is a unique work environment. On any given day, work can take place in extreme weather and/or dusty and dirty conditions. Because of this, equipment owners find themselves challenged to maintain their equipment and not lose a day to downtime.
+							</p>
+
+							<p>
+								In this challenge, we will look at some of the most common pieces of equipment and the product offerings Valvoline™ has developed to keep this equipment moving.
+							</p>
+
+						</div>
+
+					</div>
+
+					<div class="col-sm newRowOnMobile" style="">
+
+						<div class='car-img'>
+							<img style="max-width: 55vw;" src="images/challenge_5_ohw/C5-1.0.2-img.png">
+						</div>
+
+					</div>
+
+					<div class="col hotspot-continue">
+
+						<button class="next continue-btn hs-continue box2-continue"
+							style="display: inline-block;">CONTINUE</button>
+
+					</div>
+
+				</div>
+
+
+
+			</div>
+
+			<!-- Excavator -->
+			<div class="box" id="box3">
+
+				<div class='back-btn'>
+
+					<img src="">BACK
+
+				</div>
+
+				<div class="row full-box-height back-padding" id="content" style="margin-right: 0; padding-right: 0 !important;">
+
+					<div class="col-md-5" style="text-align: left;">
+
+						<h1>Excavator</h1>
+
+						<div>
+
+							<p>
+                                <font class="emphasisBold">What it is</font>
+                            </p>
+
+							<p>
+								An excavator is used for digging through earth and rocks. The bucket on an excavator sits on the end of a boom arm. It can be used to transfer material from a jobsite to a dump truck.
+							</p>
+
+							<ul>
+								<li><b>Average weight:</b> 19–24 tons</li>
+								<li><b>Average HP:</b> 170</li>
+								<li><b>Price:</b> $80–500K</li>
+							</ul>
+
+							<p>
+                                <font class="emphasisBold">Failure points</font>
+                            </p>
+
+							<p>
+								These machines can accumulate a high amount of on-site hours under a severe duty cycle. The environmental contamination from dirt and dust on-site can significantly increase the wear on an excavator.
+							</p>
+
+							<p>Select each<img src="images/challenge_4/Clck_to_Rvl_Bttn_UP.png" style="transform: scale(.5);">to learn more.</p>
+
+						</div>
+
+					</div>
+
+					<div class="col-md-6" style="">
+
+						<div class='car-img'>
+
+							<img style="max-width: 100%;" src="images/challenge_5_ohw/C5-1.1-img.png">
+
+							<div class='plus-1'>
+
+								<div class='content-box content-box-1' style="top: 30%; padding: 0; max-width: 90%;">
+									<table>
+										<tr class="wrap-tr-on-mobile">
+											<th style="padding: 0;">
+												<img width="141" height="201" src="images/challenge_5_ohw/C5-1.1-hotspot-bx1.png">
+											</th>
+											<th class="padding-th-on-mobile" style="padding-left: 30px; padding-right: 30px;">
+												<p style="margin-bottom: 0;">
+													Valvoline™ All-Terrain decreases component wear, leading to longer life. It also reduces frictional losses, which can increase fuel economy.
+												</p>
+											</th>
+										</tr>
+									</table>
+								</div>
+
+								<div class="clk-reveal-plus" style="top: 26%; left: 33%;"></div>
+
+							</div>
+
+							<div class='plus-2'>
+
+								<div class='content-box content-box-2' style="top: 43%; padding: 0; max-width: 90%;">
+									<table>
+										<tr class="wrap-tr-on-mobile">
+											<th style="padding: 0;">
+												<img width="201" height="226" src="images/challenge_5_ohw/C5-1.1-hotspot-bx2.png">
+											</th>
+											<th class="padding-th-on-mobile" style="padding-left: 30px; padding-right: 30px;">
+												<p style="margin-bottom: 0;">
+													Valvoline™ offers customers Used Oil Analysis. Analyzing used oil provides an evaluation of the lubricant and the equipment. Knowing the conditions of the oil and equipment gives insight into opportunities or threats.
+												</p>
+											</th>
+										</tr>
+									</table>
+								</div>
+
+								<div class="clk-reveal-plus" style="top: 39%; right: 31%; left: unset;"></div>
+							</div>
+
+							<div class='plus-3'>
+
+								<div class='content-box content-box-3' style="top: 52%; padding: 0; max-width: 90%;">
+									<table>
+										<tr class="wrap-tr-on-mobile">
+											<th style="padding: 0;">
+												<img width="140" height="202" src="images/challenge_5_ohw/C5-1.1-hotspot-bx3.png">
+											</th>
+											<th class="padding-th-on-mobile" style="padding-left: 30px; padding-right: 30px;">
+												<p style="margin-bottom: 0;">
+													Because many of Valvoline’s™ products have multiple OEM approvals and/or recommendations, they can be used to consolidate inventories.
+												</p>
+											</th>
+										</tr>
+									</table>
+								</div>
+
+								<div class="clk-reveal-plus" style="top: 49%; right: 41%; left: unset;"></div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="col hotspot-continue hidden">
+						<button class="next continue-btn hs-continue box4-continue"
+							style="display: inline-block;">CONTINUE</button>
+					</div>
+
+				</div>
+
+			</div>
+			
+			<!-- Digger -->
+			<div class="box" id="box4">
+
+				<div class='back-btn'>
+
+					<img src="">BACK
+
+				</div>
+
+				<div class="row full-box-height back-padding" id="content" style="margin-right: 0; padding-right: 0 !important;">
+
+					<div class="col-md-5" style="text-align: left;">
+
+						<h1>Digger</h1>
+
+						<div>
+
+							<p>
+                                <font class="emphasisBold">What it is</font>
+                            </p>
+
+							<p>
+								This machine can push materials, dig up earth and rocks, or lift and move construction debris. Because of its versatility, it is often considered the workhorse of a construction site.
+							</p>
+
+							<p>
+                                <font class="emphasisBold">Failure points</font>
+                            </p>
+
+							<p>
+								Because it can perform so many different tasks, it can also be open to a number of different failure points. Heavy loads can strain the system while hydraulic pumps can lose performance because of fluid cleanliness issues.
+							</p>
+
+							<p>Select each<img src="images/challenge_4/Clck_to_Rvl_Bttn_UP.png" style="transform: scale(.5);">to learn more.</p>
+
+						</div>
+
+					</div>
+
+					<div class="col-md-6" style="">
+
+						<div class='car-img'>
+
+							<img style="max-width: 100%;" src="images/challenge_5_ohw/C5-1.2-img.png">
+
+							<div class='plus-1'>
+
+								<div class='content-box content-box-1' style="top: 35%; padding: 0; max-width: 90%;">
+									<table>
+										<tr class="wrap-tr-on-mobile">
+											<th style="padding: 0;">
+												<img width="161" height="241" src="images/challenge_5_ohw/C5-1.2-hotspot-bx1.png">
+											</th>
+											<th class="padding-th-on-mobile" style="padding-left: 30px; padding-right: 30px;">
+												<p style="margin-bottom: 0;">
+													Pressure hydraulics require hydraulic oil like Valvoline™ Rust and Oxidation (R&O) oils. They contain a top-tier ashless rust and oxidation inhibition chemistry that is highly suitable for use in hydraulic systems where oils are used for long periods of time.
+												</p>
+											</th>
+										</tr>
+									</table>
+								</div>
+
+								<div class="clk-reveal-plus" style="top: 31%; left: 19%;"></div>
+
+							</div>
+
+							<div class='plus-2'>
+
+								<div class='content-box content-box-2' style="top: 43%; padding: 0; max-width: 90%;">
+									<table>
+										<tr class="wrap-tr-on-mobile">
+											<th style="padding: 0;">
+												<img width="161" height="251" src="images/challenge_5_ohw/C5-1.2-hotspot-bx2.png">
+											</th>
+											<th class="padding-th-on-mobile" style="padding-left: 30px; padding-right: 30px;">
+												<p style="margin-bottom: 0;">
+													Pinned joints require a grease that lubricates the pivots under heavy loads. Valvoline™ offers a full line of greases that meet OEM specifications. For equipment that experiences severe loads, Cobalt grease is a great option.
+												</p>
+											</th>
+										</tr>
+									</table>
+								</div>
+
+								<div class="clk-reveal-plus" style="top: 39%; right: 31%; left: unset;"></div>
+							</div>
+
+							<div class='plus-3'>
+
+								<div class='content-box content-box-3' style="top: 53%; padding: 0; max-width: 90%;">
+									<table>
+										<tr class="wrap-tr-on-mobile">
+											<th style="padding: 0;">
+												<img width="202" height="196" src="images/challenge_5_ohw/C5-1.2-hotspot-bx3.png">
+											</th>
+											<th class="padding-th-on-mobile" style="padding-left: 30px; padding-right: 30px;">
+												<p style="margin-bottom: 0;">
+													Valvoline™ has a complete Technical Support Team to help customers manage fluid and equipment issues.
+												</p>
+											</th>
+										</tr>
+									</table>
+								</div>
+
+								<div class="clk-reveal-plus" style="top: 49%; right: 41%; left: unset;"></div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="col hotspot-continue hidden">
+						<button class="next continue-btn hs-continue box4-continue"
+							style="display: inline-block;">CONTINUE</button>
+					</div>
+
+				</div>
+
+			</div>
+			
+			<!-- Bulldozer -->
+			<div class="box" id="box5">
+
+				<div class='back-btn'>
+
+					<img src="">BACK
+
+				</div>
+
+				<div class="row full-box-height back-padding" id="content" style="margin-right: 0; padding-right: 0 !important;">
+
+					<div class="col-md-5" style="text-align: left;">
+
+						<h1>Bulldozer</h1>
+
+						<div>
+
+							<p>
+                                <font class="emphasisBold">What it is</font>
+                            </p>
+
+							<p>
+								A bulldozer (sometimes called a loader) is a powerful machine used for pushing earth or rocks. You will often see them being used in the building of roads, farm projects, construction, and demolition.
+							</p>
+
+							<ul>
+								<li><b>Average weight:</b> 43.5 tons</li>
+								<li><b>Average HP:</b> 317</li>
+								<li><b>Price:</b> $250–550K</li>
+							</ul>
+
+							<p>
+                                <font class="emphasisBold">Failure points</font>
+                            </p>
+
+							<p>
+								Bulldozers rely on their two tracks to maneuver through a construction site. Additionally, the engine is exposed to high amounts of dirt and dust due to the constant push forward of the bulldozer.
+							</p>
+
+							<p>Select each<img src="images/challenge_4/Clck_to_Rvl_Bttn_UP.png" style="transform: scale(.5);">to learn more.</p>
+
+						</div>
+
+					</div>
+
+					<div class="col-md-6" style="">
+
+						<div class='car-img'>
+
+							<img style="max-width: 100%;" src="images/challenge_5_ohw/C5-1.3-img.png">
+
+							<div class='plus-1'>
+
+								<div class='content-box content-box-1' style="top: 35%; padding: 0; max-width: 90%;">
+									<table>
+										<tr class="wrap-tr-on-mobile">
+											<th style="padding: 0;">
+												<img width="230" height="246" src="images/challenge_5_ohw/C5-1.3-hotspot-bx1.png">
+											</th>
+											<th class="padding-th-on-mobile" style="padding-left: 30px; padding-right: 30px;">
+												<p style="margin-bottom: 0;">
+													ZEREX coolant is specifically formulated to meet the demands of heavy duty cooling systems operating in severe service applications.
+													<br/>
+													<br>
+													ZEREX protects all cooling system metals while providing excellent high-temperature aluminum protection.
+												</p>
+											</th>
+										</tr>
+									</table>
+								</div>
+
+								<div class="clk-reveal-plus" style="top: 31%; left: 19%;"></div>
+
+							</div>
+
+							<div class='plus-2'>
+
+								<div class='content-box content-box-2' style="top: 53%; padding: 0; max-width: 90%;">
+									<table>
+										<tr class="wrap-tr-on-mobile">
+											<th style="padding: 0;">
+												<img width="180" height="226" src="images/challenge_5_ohw/C5-1.3-hotspot-bx2.png">
+											</th>
+											<th class="padding-th-on-mobile" style="padding-left: 30px; padding-right: 30px;">
+												<p style="margin-bottom: 0;">
+													Valvoline™ Heavy Duty Synthetic Transmission Fluid SAE 50 is selectively engineered for heavy duty manual transmissions operating in severe service applications (temperature extremes, extended drain intervals, critical units, etc.). It is approved against Eaton PS-164 revision 7. 
+												</p>
+											</th>
+										</tr>
+									</table>
+								</div>
+
+								<div class="clk-reveal-plus" style="top: 39%; right: 31%; left: unset;"></div>
+							</div>
+
+							<div class='plus-3'>
+
+								<div class='content-box content-box-3' style="top: 53%; padding: 0; max-width: 90%;">
+									<table>
+										<tr class="wrap-tr-on-mobile">
+											<th style="padding: 0;">
+												<img width="108" height="236" src="images/challenge_5_ohw/C5-1.3-hotspot-bx3.png">
+											</th>
+											<th class="padding-th-on-mobile" style="padding-left: 30px; padding-right: 30px;">
+												<p style="margin-bottom: 0;">
+													Valvoline™ Palladium™ Moly Grease provides excellent protection against extreme pressures and shock loads by employing high-purity molybdenum disulfide solid lubricant in an alkalinity-balanced thickener system. This grease will meet the Moly requirements of Caterpillar.
+												</p>
+											</th>
+										</tr>
+									</table>
+								</div>
+
+								<div class="clk-reveal-plus" style="top: 49%; right: 41%; left: unset;"></div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="col hotspot-continue hidden">
+						<button class="next continue-btn hs-continue box6-continue"
+							style="display: inline-block;">CONTINUE</button>
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Dump Truck -->
+			<div class="box" id="box6">
+
+				<div class='back-btn'>
+
+					<img src="">BACK
+
+				</div>
+
+				<div class="row full-box-height back-padding" id="content" style="margin-right: 0; padding-right: 0 !important;">
+
+					<div class="col-md-5" style="text-align: left;">
+
+						<h1>Dump Truck</h1>
+
+						<div>
+
+							<p>
+                                <font class="emphasisBold">What it is</font>
+                            </p>
+
+							<p>
+								On nearly every construction site, no matter the size of the project, you will find a dump truck. This is used for removing raw materials from a site and delivering sand, rock, gravel, and dirt back to the site.
+							</p>
+
+							<p>
+								While there are many different sizes of dump trucks, they all contain the same basic parts. There is a driver’s cabin at the front of the machine and a bed behind it. Using hydraulic lifts, the bed can be tilted so the materials inside slide out.
+							</p>
+
+							<p>
+                                <font class="emphasisBold">Failure points</font>
+                            </p>
+
+							<p>
+								Dump trucks are constantly moving through a construction site. The engines are running constantly, and they often have to contend with particulate matter from the site.
+							</p>
+
+							<p>
+								The hydraulic system relies on careful maintenance and use. Things like overloading the bed can put a severe strain on the system.
+							</p>
+
+							<p>Select each<img src="images/challenge_4/Clck_to_Rvl_Bttn_UP.png" style="transform: scale(.5);">to learn more.</p>
+
+						</div>
+
+					</div>
+
+					<div class="col-md-6" style="">
+
+						<div class='car-img'>
+
+							<img style="max-width: 100%;" src="images/challenge_5_ohw/C5-1.4-img.png">
+
+							<div class='plus-1'>
+
+								<div class='content-box content-box-1' style="top: 35%; padding: 0; max-width: 90%;">
+									<table>
+										<tr class="wrap-tr-on-mobile">
+											<th style="padding: 0;">
+												<img width="230" height="236" src="images/challenge_5_ohw/C5-1.4-hotspot-bx1.png">
+											</th>
+											<th class="padding-th-on-mobile" style="padding-left: 30px; padding-right: 30px;">
+												<p style="margin-bottom: 0;">
+													Off-highway equipment relies on the right grease to reduce friction and decrease wear and tear on parts. Valvoline has grease options that can do just that.
+												</p>
+											</th>
+										</tr>
+									</table>
+								</div>
+
+								<div class="clk-reveal-plus" style="top: 31%; left: 19%;"></div>
+
+							</div>
+
+							<div class='plus-2'>
+
+								<div class='content-box content-box-2' style="top: 43%; padding: 0; max-width: 90%;">
+									<table>
+										<tr class="wrap-tr-on-mobile">
+											<th style="padding: 0;">
+												<img width="214" height="377" src="images/challenge_5_ohw/C5-1.4-hotspot-bx2.png">
+											</th>
+											<th class="padding-th-on-mobile" style="padding-left: 30px; padding-right: 30px;">
+												<p style="margin-bottom: 0; margin-top: 30px;">
+													ZEREX™ Nitrite Free Extended Life Antifreeze/Coolant has a patented formula that utilizes special inhibitors to protect diesel engines from liner pitting and hard water scale deposits for longer engine life. ZEREX Nitrite Free Extended Life Antifreeze/Coolant uses a patented hybrid organic acid corrosion inhibitor package to protect cylinder liners from cavitation, liner pitting, and rust and corrosion in your engine.
+													<br>
+													<br>
+													It meets CAT EC-1 and Cummins 3666286 specifications.
+												</p>
+											</th>
+										</tr>
+									</table>
+								</div>
+
+								<div class="clk-reveal-plus" style="top: 39%; right: 31%; left: unset;"></div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="col hotspot-continue hidden">
+						<button class="next continue-btn hs-continue box6-continue"
+							style="display: inline-block;">CONTINUE</button>
+					</div>
+
+				</div>
+
+			</div>
+			
+			<!-- Concrete Mixer -->
+			<div class="box" id="box7">
+
+				<div class='back-btn'>
+
+					<img src="">BACK
+
+				</div>
+
+				<div class="row full-box-height back-padding" id="content" style="margin-right: 0; padding-right: 0 !important;">
+
+					<div class="col-md-5" style="text-align: left;">
+
+						<h1>Concrete Mixer</h1>
+
+						<div>
+
+							<p>
+                                <font class="emphasisBold">What it is</font>
+                            </p>
+
+							<p>
+								A concrete mixer combines aggregate, cement, sand, or gravel with water to form concrete. It does this with the use of a revolving drum. The mixing can occur during transport or concrete can be loaded from a plant, maintaining a liquid state while turning the drum.
+							</p>
+
+							<p>
+                                <font class="emphasisBold">Failure points</font>
+                            </p>
+
+							<p>
+								When these machines are under-greased, over-greased, or using the wrong grease for the application, their parts can wear faster, undergo seizures, or cause the equipment to experience a mid-job breakdown.
+							</p>
+
+							<p>Select each<img src="images/challenge_4/Clck_to_Rvl_Bttn_UP.png" style="transform: scale(.5);">to learn more.</p>
+
+						</div>
+
+					</div>
+
+					<div class="col-md-6" style="">
+
+						<div class='car-img'>
+
+							<img style="max-width: 100%;" src="images/challenge_5_ohw/C5-1.5-img.png">
+
+							<div class='plus-1'>
+
+								<div class='content-box content-box-1' style="top: 35%; padding: 0; max-width: 90%;">
+									<table>
+										<tr class="wrap-tr-on-mobile">
+											<th style="padding: 0;">
+												<img width="231" height="226" src="images/challenge_5_ohw/C5-1.5-hotspot-bx.png">
+											</th>
+											<th class="padding-th-on-mobile" style="padding-left: 30px; padding-right: 30px;">
+												<p style="margin-bottom: 0;">
+													Using the right grease reduces downtime in off-highway equipment. Since off-highway equipment owners don’t have spare machines on-site, they need their equipment to be working at all times.
+												</p>
+											</th>
+										</tr>
+									</table>
+								</div>
+
+								<div class="clk-reveal-plus" style="top: 31%; left: 19%;"></div>
+
+							</div>
+
+							<div class='plus-2'>
+
+								<div class='content-box content-box-2' style="top: 43%; padding: 0; max-width: 90%;">
+									<table>
+										<tr class="wrap-tr-on-mobile">
+											<th style="padding: 0;">
+												<img width="231" height="226" src="images/challenge_5_ohw/C5-1.5-hotspot-bx.png">
+											</th>
+											<th class="padding-th-on-mobile" style="padding-left: 30px; padding-right: 30px;">
+												<p style="margin-bottom: 0;">
+													Grease is needed for maximum performance and reduced maintenance.
+												</p>
+											</th>
+										</tr>
+									</table>
+								</div>
+
+								<div class="clk-reveal-plus" style="top: 39%; right: 31%; left: unset;"></div>
+							</div>
+
+							<div class='plus-3'>
+
+								<div class='content-box content-box-3' style="top: 53%; padding: 0; max-width: 70%;">
+									<table>
+										<tr class="wrap-tr-on-mobile">
+											<th style="padding: 0;">
+												<img width="161" height="251" src="images/challenge_5_ohw/C5-1.2-hotspot-bx2.png">
+											</th>
+											<th class="padding-th-on-mobile" style="padding-left: 30px; padding-right: 30px;">
+												<p style="margin-bottom: 0;">
+													Concrete mixers often will experience failed tub rollers. Using Cobalt grease will reduce these failures, minimizing downtime and repair costs for your customers.
+												</p>
+											</th>
+										</tr>
+									</table>
+								</div>
+
+								<div class="clk-reveal-plus" style="top: 49%; right: 41%; left: unset;"></div>
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="col hotspot-continue hidden">
+						<button class="next continue-btn hs-continue box7-continue"
+							style="display: inline-block;">CONTINUE</button>
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Text before test -->
+			<div class="box" id="box8">
+				<div style="width: 100%; height: 100px;">
+					<div class='back-btn'>
+						<img src="">BACK
+					</div>
+				</div>
+				<div class="row align-middle center-content full-box-height flex-container " id="content"
+					style="align-items: center !important; height: calc(100% - 100px) !important;  text-align: left; padding: 0 !important;">
+					<div class="row mobile-padding"
+						style="width: 100%; padding-top: 0 !important; padding-bottom: 0 !important; display: flex; align-items: center;">
+						<div class="col-xl-5 col-lg-12 " style="padding: 0;">
+							<h1>Assessment</h1>
+							<p>
+								Answer each question correctly, the first time, to achieve the maximum amount of points.
+							</p>
+						</div>
+						<div class="col-xl-1 col-lg-12 col-sm-12" style="">
+						</div>
+						<div class="col-xl-6 col-lg-12 col-lg-12-custom "
+							style="padding: 0; margin: auto; display: flex; justify-content: center;">
+							<!--Right Column-->
+							<img style="max-width:100%; max-height:100%;" src="images/challenge_2_ad/C2-1_5-img.png">
+						</div>
+					</div>
+					<div class="col float-box">
+						<button class="next continue-btn hs-continue box2-continue continue-small-m"
+							style="display: inline-block;">CONTINUE</button>
+					</div>
+				</div>
+			</div>
+
+			<!-- Question 1 -->
+			<div class="box question-bg-box" id="box9">
+
+				<div class='back-btn'>
+
+					<img src="">BACK
+
+				</div>
+
+				<div class="row align-middle full-box-height" id="content">
+
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+
+						<div class='center-text-box question-1'>
+
+							<h1 id="question-num"></h1>
+
+							<div class='question-text'></div>
+
+							<div class='answer-container'></div>
+
+						</div>
+
+					</div>
+
+					<div class="col topCenterText m-RightCol-question">
+
+						<div class="reveal-btn text-white">
+
+							<h3>REVEAL ANSWER</h3>
+
+						</div>
+
+						<div class="reveal-btn-m text-white">
+
+							<h3>REVEAL ANSWER</h3>
+
+						</div>
+
+						<div class="remediation">
+
+							<div class="remediation-icon"></div>
+
+							<div class="remediation-txt"></div>
+
+							<div class="remediation-continue next">
+
+								Continue
+
+							</div>
+
+							<div class="remediation-retry">
+
+								Try Again
+
+								<div class='warn-sel-ans'>
+
+									Choose an answer and select "Try Again."
+
+								</div>
+
+							</div>
+
+							<div class="attempt-container row">
+
+								<div class="attempt-1">
+
+									FIRST ATTEMPT
+
+								</div>
+
+								<div class="attempt-2">
+
+									SECOND ATTEMPT
+
+								</div>
+
+								<div class="attempt-3">
+
+									RETRY IN 7 DAYS
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Question 2 -->
+			<div class="box question-bg-box" id="box10">
+
+				<div class='back-btn'>
+
+					<img src="">BACK
+
+				</div>
+
+				<div class="row align-middle full-box-height" id="content">
+
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+
+						<div class='center-text-box question-2'>
+
+							<h1 id="question-num"></h1>
+
+							<div class='question-text'></div>
+
+							<div class='answer-container'></div>
+
+						</div>
+
+					</div>
+
+					<div class="col topCenterText m-RightCol-question">
+
+						<div class="reveal-btn text-white">
+
+							<h3>REVEAL ANSWER</h3>
+
+						</div>
+
+						<div class="reveal-btn-m text-white">
+
+							<h3>REVEAL ANSWER</h3>
+
+						</div>
+
+						<div class="remediation">
+
+							<div class="remediation-icon"></div>
+
+							<div class="remediation-txt"></div>
+
+							<div class="remediation-continue next">
+
+								Continue
+
+							</div>
+
+							<div class="remediation-retry">
+
+								Try Again
+
+								<div class='warn-sel-ans'>
+
+									Choose an answer and select "Try Again."
+
+								</div>
+
+							</div>
+
+							<div class="attempt-container row">
+
+								<div class="attempt-1">
+
+									FIRST ATTEMPT
+
+								</div>
+
+								<div class="attempt-2">
+
+									SECOND ATTEMPT
+
+								</div>
+
+								<div class="attempt-3">
+
+									RETRY IN 7 DAYS
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Question 3 -->
+			<div class="box question-bg-box" id="box11">
+
+				<div class='back-btn'>
+
+					<img src="">BACK
+
+				</div>
+
+				<div class="row align-middle full-box-height" id="content">
+
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+
+						<div class='center-text-box question-3'>
+
+							<h1 id="question-num"></h1>
+
+							<div class='question-text'></div>
+
+							<div class='answer-container'></div>
+
+						</div>
+
+					</div>
+
+					<div class="col topCenterText m-RightCol-question">
+
+						<div class="reveal-btn text-white">
+
+							<h3>REVEAL ANSWER</h3>
+
+						</div>
+
+						<div class="reveal-btn-m text-white">
+
+							<h3>REVEAL ANSWER</h3>
+
+						</div>
+
+						<div class="remediation">
+
+							<div class="remediation-icon"></div>
+
+							<div class="remediation-txt"></div>
+
+							<div class="remediation-continue next">
+
+								Continue
+
+							</div>
+
+							<div class="remediation-retry">
+
+								Try Again
+
+								<div class='warn-sel-ans'>
+
+									Choose an answer and select "Try Again."
+
+								</div>
+
+							</div>
+
+							<div class="attempt-container row">
+
+								<div class="attempt-1">
+
+									FIRST ATTEMPT
+
+								</div>
+
+								<div class="attempt-2">
+
+									SECOND ATTEMPT
+
+								</div>
+
+								<div class="attempt-3">
+
+									RETRY IN 7 DAYS
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<!-- Question 4 -->
+			<div class="box question-bg-box" id="box12">
+
+				<div class='back-btn'>
+
+					<img src="">BACK
+
+				</div>
+
+				<div class="row align-middle full-box-height" id="content">
+
+					<div class="col topCenterText m-LeftCol-question back-btn-padding">
+
+						<div class='center-text-box question-4'>
+
+							<h1 id="question-num"></h1>
+
+							<div class='question-text'></div>
+
+							<div class='answer-container'></div>
+
+						</div>
+
+					</div>
+
+					<div class="col topCenterText m-RightCol-question">
+
+						<div class="reveal-btn text-white">
+
+							<h3>REVEAL ANSWER</h3>
+
+						</div>
+
+						<div class="reveal-btn-m text-white">
+
+							<h3>REVEAL ANSWER</h3>
+
+						</div>
+
+						<div class="remediation">
+
+							<div class="remediation-icon"></div>
+
+							<div class="remediation-txt"></div>
+
+							<div class="remediation-continue next">
+
+								Continue
+
+							</div>
+
+							<div class="remediation-retry">
+
+								Try Again
+
+								<div class='warn-sel-ans'>
+
+									Choose an answer and select "Try Again."
+
+								</div>
+
+							</div>
+
+							<div class="attempt-container row">
+
+								<div class="attempt-1">
+
+									FIRST ATTEMPT
+
+								</div>
+
+								<div class="attempt-2">
+
+									SECOND ATTEMPT
+
+								</div>
+
+								<div class="attempt-3">
+
+									RETRY IN 7 DAYS
+
+								</div>
+
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<!--SUMMARY-->
+			<div class="box" id="box13">
+
+				<div class="mask-img" style="position:absolute; top:0; overflow: visible;"><img id="learn-screen-img"
+						src="images/challenge_5_ohw/C5-1.7-header-img.png" style="justify-content: center; top: 0;">
+				</div>
+
+				<div class="row align-middle learn-box" id="content" style="height: 55% !important;">
+
+
+
+					<div class="col-md-12 col-xl-6" style="text-align: left">
+
+						<div>
+
+							<h1>What Did We Learn Today?</h1>
+
+							<div>
+
+								<p>
+									There are several key drivers that heavy duty off-highway equipment owners are looking to achieve, including:
+								</p>
+
+								<ul>
+									<li>Fuel efficiency</li>
+									<li>Emissions standards</li>
+									<li>Operator comfort</li>
+									<li>Safety</li>
+									<li>Productivity</li>
+									<li>Equipment reliability</li>
+									<li>Lower total cost of ownership</li>
+								</ul>
+
+								<p>
+									Valvoline™ has a complete line of products to help those owners achieve these goals and more.
+								</p>
+
+							</div>
+
+						</div>
+
+					</div>
+
+					<div class="col-md-12 col-xl-6 learned-continue" style="min-height: 150px;">
+
+						<button class="next continue-btn-center" id="continue-btn-7">CONTINUE</button>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<!--CONCLUSION-->
+			<div class="box" id="box14">
+
+				<div class="row align-middle full-box-height" id="content">
+
+					<div class="col topCenterText">
+
+						<div class='center-text-box'>
+							<h1>Challenge Complete!</h1>
+							<div id='result-incorrect'>
+								<p>You completed the challenge, but it wasn’t a success. If you would like to review this topic in greater depth, you may want to return to your class materials and review some of the information presented there.</p>
+								<p>You can return to this challenge at any time and try again to earn points to move you up the leaderboard.</p>
+							</div>
+							<div id='result-closed'>
+								<p>Looks like you still have some work to do with this topic. You did not earn a
+								passing score and no additional points will be added to your total.</p>
+								<p>While you wait for the next challenge to hit your inbox, you might want to return to your class materials and review some of the information around this specific topic.</p>
+								<p>This challenge will remain open so you can put that review to the test by taking the challenge again. (No points can be earned any longer for this challenge.)</p>
+								<p>A new challenge will be coming soon. Better luck next time!</p>
+							</div>
+							<div id='result-three'>
+								<p>You’ve completed this challenge review. If you would like to review this topic in
+									greater depth, you may want to return to your class materials and review some of the
+									information presented there.</p>
+								<p>As a reminder, no points will be earned for completing a challenge review.</p>
+							</div>
+							<div id='result-correct'>
+								<p>You’ve completed this challenge successfully. Your point total has been added to the leaderboard.</p>
+								<p>If you would like to review this topic in greater depth, you may want to return to your class materials and review some of the information presented there.</p>
+							</div>
+							<!-- <div>For more information on this topic, check out some additional resources <a
+									id="additional-resource" href="" target="_blank">here</a>.</div> -->
+						</div>
+					</div>
+					<div class="col topCenterText col-sm">
+						<div>
+							<button id="gameover-btn" type="submit">CONTINUE</button>
+
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div id='progress-bar'>
+
+			<div class='line'></div>
+
+			<div class='pin intro'></div>
+
+			<div class='pin quest'></div>
+
+			<div class='pin quest'></div>
+
+			<div class='pin quest'></div>
+
+			<div class='pin quest'></div>
+			
+			<div class='pin quest'></div>
+
+			<div class='pin quest'></div>
+
+			<div class='pin quest'></div>
+
+			<div class='pin quest'>
+
+				<div class='q-points'></div>
+
+			</div>
+
+			<div class='pin quest'>
+
+				<div class='q-points'></div>
+
+			</div>
+
+			<div class='pin quest'>
+
+				<div class='q-points'></div>
+
+			</div>
+
+			<div class='pin quest'>
+
+				<div class='q-points'></div>
+
+			</div>
+
+			<div class='pin quest'>
+
+				<div class='q-points'></div>
+
+			</div>
+
+			<div class='pin conclusion'></div>
+
+			<div class='score'>
+
+				0
+
+			</div>
+
+		</div>
+
+		<footer>
+
+			<div>CHALLENGE #</div>
+
+		</footer>
+
+		<script src="scripts/polyfill.min.js">
+
+		</script> <!-- Optional JavaScript -->
+
+		<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+
+
+		<script src="scripts/jquery-3.4.1.js"></script>
+
+		<script src="scripts/popper.js/dist/umd/popper.min.js"></script>
+
+		<script src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+
+		</script> <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+
+
+		<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js">
+
+		</script>
+
+		<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js">
+
+		</script>
+
+		<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js">
+
+		</script>
+
+		<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js">
+
+		</script>
+
+		<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js">
+
+		</script>
+
+		<script defer src="bin/fb-auth.js">
+
+		</script>
+
+		<script src="bin/pages.js"></script>
+
+		<script src="bin/rules_popup_c5_ad.js">
+
+		</script>
+
+		<script src="https://code.createjs.com/1.0.0/easeljs.min.js">
+
+		</script>
+
+		<script>
+ var ifrm = window.frameElement; // reference to iframe element container
+        var doc = ifrm.ownerDocument; // reference to container's document
+
+        var thisClass = function () {
+            if (ifrm.src.includes("hd")) {
+                return "HD";
+            } else if (ifrm.src.includes("ld")) {
+                return "LD";
+            } else if (ifrm.src.includes("vps")) {
+                return "VPS";
+            } else if (ifrm.src.includes("ad")) {
+                return "AD";
+            }
+        }
+        $('#challenge-btn', window.parent.document).html('A CONSTRUCTION SITE TOUR');
+        var thisChallengNumber = 5;
+        $("footer > div").append(thisChallengNumber)
+        //$('#additional-resource').attr('href', 'https://valvoline.widencollective.com/portals/r0anzrk6/MyPortal572020');
+        parent.setBookmarking(thisClass(), thisChallengNumber, .2);
+        parent.retrieveAttempt(thisChallengNumber, "OHW");
+
+
+
+			//console.log(thisClass())
+
+			////////console.log(parent.activities)
+
+			// $(doc).find('header').css('border-bottom', 'none');
+
+			ifrm.style.top = '-118px';
+
+			ifrm.style.position = 'absolute';
+
+			ifrm.style.height = '100%';
+
+			ifrm.style.zIndex = '1005';
+
+
+
+
+
+
+			// DEV NOTE: change here to adjust how many boxes needed for completion for a slide. 
+
+			var hsArrayBox3 = [0, 0, 0];
+			var hsStringBox3 = '1,1,1';
+
+			var hsArrayBox4 = [0, 0, 0];
+			var hsStringBox4 = '1,1,1';
+
+			var hsArrayBox5 = [0, 0, 0];
+			var hsStringBox5 = '1,1,1';
+
+			var hsArrayBox6 = [0, 0];
+			var hsStringBox6 = '1,1';
+			
+			var hsArrayBox7 = [0, 0, 0];
+			var hsStringBox7 = '1,1,1';
+
+
+			//    var fcArray = [0, 0, 0];
+
+			//    var fcString = '1,1,1';
+
+			//    var fccheckProg = function (num) {
+
+			//        fcArray[num] = 1;
+
+			//        if (fcArray.toString() == fcString) {
+
+			//            $('#box3 .flashCard-continue').removeClass("hidden").hide().fadeIn();
+
+			//        }
+
+			//    };
+
+
+
+			//    var hsArray = [0, 0, 0, 0];
+
+			//    var hsString = '1,1,1,1';
+
+			//    var hscheckProg = function (num) {
+
+			//        hsArray[num] = 1;
+
+			//        if (hsArray.toString() == hsString) {
+
+			//            $('.hs-continue').parent().removeClass("hidden").hide().fadeIn();
+
+			//        }
+
+			//    };
+
+
+
+			//    var fc2Array = [0, 0, 0];
+
+			//    var fc2String = '1,1,1';
+
+			//    var fc2checkProg = function (num) {
+
+			//        fc2Array[num] = 1;
+
+			//        if (fc2Array.toString() == fc2String) {
+
+			// 		$('#box5 .flashCard-continue').removeClass("hidden").hide().fadeIn();
+
+			//        }
+
+			//    };
+
+			var hscheckProg = function (box, num) {
+
+				if (this['hsArrayBox' + box].toString() != this['hsStringBox' + box].toString()) {
+
+					this['hsArrayBox' + box][num] = 1;
+
+					// console.log(this['hsArrayBox' + box])
+
+					// console.log(this['hsArrayBox' + box].toString())
+
+					// console.log(this['hsStringBox' + box].toString())
+
+					// console.log($('#box' + box + ' .hs-continue'))
+
+
+
+					if (this['hsArrayBox' + box].toString() == this['hsStringBox' + box].toString()) {
+
+						$('#box' + box + ' .hs-continue').parent().removeClass("hidden").hide().fadeIn();
+
+					}
+
+				}
+
+			};
+
+
+
+			var revealPlus = function () {
+
+				if ($(this).css("opacity") == "1") {
+
+					console.log(this)
+
+					var box = $(this).parent().parent().parent().parent().parent();
+
+					var id = box.attr('id').slice(-1);
+
+					var elIndex = $(this).parent().attr("class").trim().slice(-1);
+
+					$('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x').addClass('clk-reveal-complete-plus');
+
+					$('.clk-reveal-plus').css({
+						"opacity": ".5",
+						"pointer-events": "none"
+					});
+
+					$('.clk-reveal-complete-plus').css({
+						"opacity": ".5",
+						"pointer-events": "none"
+					});
+
+					$(this).css({
+						"opacity": "1",
+						"pointer-events": "auto"
+					});
+
+					$(this).addClass('clk-reveal-complete-x')
+
+					$('.clk-reveal-x').addClass('clk-reveal-plus');
+
+					$('.clk-reveal-x').removeClass('clk-reveal-x');
+
+					$(this).unbind();
+
+					$(this).bind('click', revealX);
+
+					$(this).removeClass('clk-reveal-plus');
+
+					$(this).addClass('clk-reveal-x');
+
+					$(this).parent().parent().find('.content-box').hide();
+
+					$('.clk-reveal-plus').unbind();
+
+					$('.clk-reveal-plus').bind('click', revealPlus);
+
+					$(this).parent().parent().find('.content-box-' + elIndex).fadeIn();
+
+					console.log(id)
+
+					hscheckProg(id, elIndex - 1)
+
+
+
+
+
+					console.log(elIndex)
+
+					console.log($('.content-box-' + elIndex))
+
+				}
+
+			}
+
+
+
+			var revealX = function () {
+
+				$('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x');
+
+				$(this).addClass('clk-reveal-complete-plus');
+
+				$('.clk-reveal-plus').css({
+					"opacity": "1",
+					"pointer-events": "auto"
+				});
+
+				$('.clk-reveal-complete-plus').css({
+					"opacity": "1",
+					"pointer-events": "auto"
+				});
+
+				$('.clk-reveal-x').addClass('clk-reveal-plus');
+
+				$('.clk-reveal-x').removeClass('clk-reveal-x');
+
+				$(this).unbind();
+
+				$(this).bind('click', revealPlus);
+
+				$(this).removeClass('clk-reveal-x')
+
+				$(this).addClass('clk-reveal-plus');
+
+				$('.clk-reveal-plus').unbind();
+
+				$('.clk-reveal-plus').bind('click', revealPlus);
+
+				$('.content-box').hide();
+
+			}
+
+
+
+
+
+			var hotSpotReset = function () {
+
+				$('.content-box').hide();
+
+				$('.clk-reveal-plus').css({
+					"opacity": "1",
+					"pointer-events": "auto"
+				});
+
+				$('.clk-reveal-complete-plus').css({
+					"opacity": "1",
+					"pointer-events": "auto"
+				});
+
+				$('.clk-reveal-x').addClass('clk-reveal-plus');
+
+				$('.clk-reveal-x').removeClass('clk-reveal-x');
+
+				$('.clk-reveal-complete-x').addClass('clk-reveal-complete-plus');
+
+				$('.clk-reveal-complete-x').removeClass('clk-reveal-complete-x');
+
+				$('.clk-reveal-plus').unbind();
+
+				$('.clk-reveal-plus').bind('click', revealPlus);
+
+			}
+
+
+
+
+
+
+
+
+			var quiz = [{
+
+					// Q1
+
+					question: '<p>A ______________ is a powerful machine used for pushing earth or rocks.</p>',
+
+					type: 'MC',
+
+					answers: [
+						'dump truck',
+						'excavator',
+						'digger',
+						'bulldozer'
+					],
+
+					choices: [],
+
+					correct: 4,
+
+					correct_rem: '<p>That’s right!</p><p>A bulldozer (sometimes called a loader) is a powerful machine used for pushing earth or rocks.</p>',
+
+					incorrect_rem: '<p>That’s not it. Try again.</p>',
+
+					fail_rem: '<p>That’s not right.</p><p>A bulldozer (sometimes called a loader) is a powerful machine used for pushing earth or rocks.</p><p>You will not receive any points for this question.</p>'
+
+				}, {
+
+					// Q2
+
+					question: '<p>__________ decreases component wear, leading to longer life. It also reduces frictional losses, which can increase fuel economy.</p>',
+
+					type: 'MC',
+
+					answers: [
+						'Valvoline™ Rust and Oxidation (R&O) oil',
+						'Valvoline™ All-Terrain',
+						'Used Oil Analysis',
+						'An OEM'
+					],
+
+					choices: [],
+
+					correct: 2,
+
+					correct_rem: '<p>That’s right!</p><p>Valvoline™ All-Terrain decreases component wear, leading to longer life. It also reduces frictional losses, which can increase fuel economy.</p>',
+
+					incorrect_rem: '<p>There’s a better answer. Try again.</p>',
+
+					fail_rem: '<p>That’s not right.</p><p>Valvoline™ All-Terrain decreases component wear, leading to longer life. It also reduces frictional losses, which can increase fuel economy.</p><p>You will not receive any points for this question.</p>'
+
+				}, {
+
+					// Q3
+
+					question: '<p>___________ can reduce tub roller failures in concrete mixers, minimizing downtime and repair costs for your customers.</p>',
+
+					type: 'MC',
+
+					answers: [
+
+						'All-Terrain',
+
+						'Cobalt',
+
+						'ZEREX',
+
+						'Valvoline™ Rust and Oxidation (R&O) oils'
+
+					],
+
+					choices: [],
+
+					correct: 2,
+
+					correct_rem: '<p>You are correct!</p><p>Cobalt grease can reduce tub roller failures in concrete mixers, minimizing downtime and repair costs for your customers.</p>',
+
+					incorrect_rem: '<p>That’s not correct. Try again.</p>',
+
+					fail_rem: '<p>That’s not correct.</p><p>Cobalt grease can reduce tub roller failures in concrete mixers, minimizing downtime and repair costs for your customers.</p><p>You will not receive any points for this question.</p>'
+
+				}, {
+
+					// Q4
+
+					question: '<p>_______________________ has a patented formula that utilizes special inhibitors to protect diesel engines from liner pitting and hard water scale deposits for longer engine life.</p>',
+
+					type: 'MC',
+
+					answers: [
+						'ZEREX™ Nitrite Free Extended Life Antifreeze/Coolant',
+						'Valvoline™ Rust and Oxidation (R&O) oils',
+						'Valvoline™ Palladium™ 3% Moly Grease',
+						'Cobalt'
+					],
+
+					choices: [],
+
+					correct: 1,
+
+					correct_rem: '<p>You’ve got it!</p><p>ZEREX™ Nitrite Free Extended Life Antifreeze/Coolant has a patented formula that utilizes special inhibitors to protect diesel engines from liner pitting and hard water scale deposits for longer engine life.</p>',
+
+					incorrect_rem: '<p>That’s not correct. Try again.</p>',
+
+					fail_rem: '<p>That’s not right.</p><p>ZEREX™ Nitrite Free Extended Life Antifreeze/Coolant has a patented formula that utilizes special inhibitors to protect diesel engines from liner pitting and hard water scale deposits for longer engine life.</p><p>You will not receive any points for this question.</p>'
+
+				}
+
+			]
+
+
+
+
+
+
+
+			var passed = true;
+
+			var questionPointsPossible = 80;
+
+			var points = [20, 20, 20, 20]
+
+			var attemptsLeft = [2, 2, 2, 2];
+
+			var passPercent = 80;
+
+			var boxLocation = 0;
+
+			var attemptCount = 0;
+
+			var totalPoints = function () {
+
+				var sum = 0;
+
+				for (var i = 0; i < points.length; i++) {
+
+					sum += points[i]
+
+				}
+
+				return sum;
+
+
+
+			}();
+
+
+
+			var q = function () {
+
+				return quiz[qIndex];
+
+			}
+
+
+
+			var currentAnswer;
+
+
+
+			function RenderQuestion() {
+
+				$('.clk-reveal-plus').bind('click', revealPlus);
+
+				for (var qIndex = 0; qIndex < quiz.length; qIndex++) {
+
+					$('.question-' + (qIndex + 1) + ' #question-num').html('Question ' + (qIndex + 1));
+
+					$('.question-' + (qIndex + 1) + ' .question-text').html(quiz[qIndex].question);
+
+					for (var i = 0; i < quiz[qIndex].answers.length; i++) {
+
+						quiz[qIndex].choices.push(i + 1)
+
+						var div = document.createElement('div')
+
+						$(div).append('<input id="button' + (i + 1) + '" type="radio" name="quiz" value="' + (i + 1) +
+
+							'" /><div id="answer' + (i + 1) + '"class="answer pointer"><\/div>');
+
+						$(div).append('<label for="button' + (i + 1) + '">' + quiz[qIndex].answers[i] + '<\/label>');
+
+						$('.question-' + (qIndex + 1) + ' .answer-container').append(div);
+
+					}
+
+				}
+
+				var radioCheck = function () {
+
+					$('.remediation-retry').unbind('click', runCheck);
+
+					$('.reveal-btn-m').unbind('click', runCheck);
+
+					$('.reveal-btn-m').bind('click', runCheck);
+
+					currentAnswer = $(this).attr('id').slice(-1);
+
+					currentQuestion = $(this).parent().parent().parent().attr('class').slice(-1);
+
+					console.log('currentQuestion:' + currentQuestion)
+
+					console.log(quiz[currentQuestion - 1].choices)
+
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] != 0 && attemptsLeft[currentQuestion - 1] < 2) {
+
+						$('.remediation-retry').bind('click', runCheck);
+
+						$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+
+					} else {
+
+						$('.remediation-retry').unbind('click', runCheck);
+
+						$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+
+					}
+
+
+
+					if (attemptsLeft[currentQuestion - 1] == 0) {
+
+						$('.reveal-btn').unbind('click', runCheck);
+
+					} else {
+
+						$('.reveal-btn').unbind('click', runCheck);
+
+						$('.reveal-btn').bind('click', runCheck);
+
+					}
+
+
+
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+
+						$('.reveal-btn-m').bind('click', runCheck);
+
+					}
+
+
+
+					if (quiz[currentQuestion - 1].type == "MC") {
+
+						$('.answer-on').removeClass('answer-on').addClass('pointer');
+
+						$(this).addClass("answer-on").removeClass('pointer');
+
+					} else if (quiz[currentQuestion - 1].type == "MR") {
+
+						$('.answer-on').removeClass('answer-on').addClass('pointer');
+
+						$(this).addClass("answer-on").removeClass('pointer');
+
+					}
+
+				}
+
+
+
+				$('.answer').bind('click', radioCheck);
+
+				$('.remediation-retry').on('click', function () {
+
+					//console.log($(this))
+
+					$('.remediation-retry').unbind('click', runCheck);
+
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+
+						if ($(window).width() < 999) {
+
+							$('.attempt-1').hide();
+
+							$('.attempt-2').hide();
+
+							$(this).parent().addClass("m-hide")
+
+							$(this).parent().parent().parent().parent().find('.attempt-container').addClass("m-hide");
+
+						} else {
+
+							$(this).parent().parent().parent().parent().find('.attempt-container').removeClass("m-hide")
+
+							$(this).parent().removeClass("m-hide");
+
+							$('.remediation-retry .warn-sel-ans').css('opacity', '1');
+
+						}
+
+					}
+
+				})
+
+
+
+				$('.remediation-continue').on('click', function () {
+
+					$('.reveal-btn').unbind('click', runCheck);
+
+					$('.reveal-btn-m').unbind('click', runCheck);
+
+
+
+					if (currentQuestion >= quiz.length - 1) {
+
+						var userPoints = 0;
+
+						for (var i = 0; i < points.length; i++) {
+
+							userPoints += points[i]
+
+						}
+
+						scorePercent = parseInt((userPoints / totalPoints) * 100);
+
+						var attempt = parent.intAttempt;
+
+						console.log('Check score: ' + scorePercent >= passPercent)
+
+						if (scorePercent >= passPercent && attempt < 4) {
+
+							$('#result-correct').show();
+
+							$('#gameover-btn').show();
+
+							$('#result-incorrect').hide();
+
+							$('#result-closed').hide();
+
+							$('#result-three').hide();
+
+							$('#result-retry').hide();
+
+							$('#retry-btn').hide();
+
+							console.log('Passed in first 3 attempts')
+
+						} else if (scorePercent < passPercent && attempt < 4) {
+
+							passed = false;
+
+							$('#result-incorrect').show();
+
+							$('#gameover-btn').show();
+
+							$('#result-retry').hide();
+
+							$('#result-closed').hide();
+
+							$('#result-three').hide();
+
+							$('#result-correct').hide();
+
+							$('#retry-btn').hide();
+
+							console.log('Failed in one of the first 3 attempts')
+
+						} else if (attempt == 5) {
+
+							passed = false;
+
+							$('#result-incorrect').hide();
+
+							$('#gameover-btn').show();
+
+							$('#result-retry').hide();
+
+							$('#result-closed').show();
+
+							$('#result-three').hide();
+
+							$('#result-correct').hide();
+
+							$('#retry-btn').hide();
+
+							console.log('Challenge Closed. Reviewing. No Points awarded.')
+
+						} else if (attempt == 4) {
+
+							$('#result-incorrect').hide();
+
+							$('#gameover-btn').show();
+
+							$('#result-retry').hide();
+
+							$('#result-closed').hide();
+
+							$('#result-three').show();
+
+							$('#result-correct').hide();
+
+							$('#retry-btn').hide();
+
+							console.log('Just reviewing. Good Job!')
+
+						}
+
+					}
+
+				})
+
+
+
+				//Returns array of selected answers from a MR question
+
+				function getAnswers() {
+
+					var returnAnswers = [];
+
+					$(".answer").each(function () {
+
+						if ($(this).hasClass('answer-on')) {
+
+							returnAnswers.push(Number($(this).attr('id').slice(-1)));
+
+						}
+
+					});
+
+					return returnAnswers;
+
+				}
+
+
+
+				function arraysEqual(_arr1, _arr2) {
+
+					if (!Array.isArray(_arr1) || !Array.isArray(_arr2) || _arr1.length !== _arr2.length)
+
+						return false;
+
+					var arr1 = _arr1.concat().sort();
+
+					var arr2 = _arr2.concat().sort();
+
+					for (var i = 0; i < arr1.length; i++) {
+
+						if (arr1[i] !== arr2[i])
+
+							return false;
+
+					}
+
+					return true;
+
+				}
+
+
+
+				var runCheck = function () {
+
+					$('.remediation-retry').unbind('click', runCheck);
+
+					console.log(attemptsLeft[currentQuestion - 1])
+
+					if (attemptsLeft[currentQuestion - 1] >= 0) {
+
+						var correctAnswer = quiz[currentQuestion - 1].correct;
+
+						var thisQuestionAttemptsLeft = attemptsLeft[currentQuestion - 1];
+
+
+
+						if (quiz[currentQuestion - 1].type == "MC") {
+
+							$('.reveal-btn').unbind('click', runCheck);
+
+
+
+							quiz[currentQuestion - 1].choices[currentAnswer - 1] = 0;
+
+							for (var i = 0; i < quiz[currentQuestion - 1].choices.length; i++) {
+
+								if (quiz[currentQuestion - 1].correct == currentAnswer) {
+
+									//correct answer
+
+									$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+
+										"pointer");
+
+								} else if (quiz[currentQuestion - 1].choices[i] == 0) {
+
+									//incorrect answer
+
+									$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+
+										"pointer answer");
+
+								} else if (attemptsLeft[currentQuestion - 1] == 0) {
+
+									//failed question
+
+									$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+
+										"pointer");
+
+								} else {
+
+									//rebind answers
+
+									$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind();
+
+									$('.question-' + currentQuestion + ' #answer' + (i + 1)).bind('click', radioCheck)
+										.addClass("pointer");
+
+								}
+
+							}
+
+
+
+							var holder = 0;
+
+							if (quiz[currentQuestion - 1].correct == currentAnswer) {
+
+								$('.reveal-btn:eq(' + 0 + ')').hide();
+
+								$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-3');
+
+								$('.reveal-btn:eq(' + 0 + ')').hide();
+
+								$('.remediation:eq(' + 0 + ')').removeClass('m-hide')
+
+								$('.attempt-container:eq(' + 0 + ')').removeClass("m-hide")
+
+								$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-correct');
+
+								$('.remediation:eq(' + 0 + ')').show();
+
+								$('.remediation-retry:eq(' + 0 + ')').hide();
+
+								$('.remediation-continue:eq(' + 0 + ')').show();
+
+								$('.remediation-txt:eq(' + 0 + ')').removeClass('white-txt').html(quiz[currentQuestion - 1]
+									.correct_rem);
+
+								$('.remediation-icon:eq(' + 0 + ')').css("background-image",
+
+									"url(images/challenge_2/images/Correct_Icon.png)");
+
+								$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+
+										"url(images/challenge_2/images/Correct.png)").addClass('remediation-reveal')
+
+									.removeClass("pointer answer");
+
+								$('.question-' + currentQuestion + ' .answer').css('cursor', 'auto');
+
+
+
+								$('.attempt-1').hide();
+
+								$('.attempt-2').hide();
+
+							} else {
+
+								$('.answer-on').removeClass('answer-on');
+
+								$('.reveal-btn:eq(' + 0 + ')').hide();
+
+								$('.remediation-continue:eq(' + 0 + ')').hide();
+
+								$('.remediation-txt:eq(' + 0 + ')').addClass('white-txt').html(quiz[currentQuestion - 1]
+									.incorrect_rem);
+
+								$('.remediation-icon:eq(' + 0 + ')').css("background-image",
+
+									"url(images/challenge_2/images/Incorrect_Icon.png)");
+
+								$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+
+										"url(images/challenge_2/images/Incorrect.png)").addClass('remediation-reveal')
+
+									.removeClass("pointer answer");
+
+								if (attemptsLeft[currentQuestion - 1] >= 0 && points[currentQuestion - 1] > 0) {
+
+									//console.log("INCORRECT RESPONSE: " + attemptsLeft[currentQuestion - 1])
+
+									points[currentQuestion - 1] = points[currentQuestion - 1] - 5;
+
+								}
+
+								if (attemptsLeft[currentQuestion - 1] == 2) {
+
+									$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-1');
+
+									$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-1');
+
+									$('.remediation:eq(' + 0 + ')').show();
+
+									$('.attempt-1').css('display', 'flex');
+
+								} else if (attemptsLeft[currentQuestion - 1] == 1) {
+
+									$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-2');
+
+									$('.remediation:eq(' + 0 + ')').removeClass('m-hide')
+
+									$('.attempt-container:eq(' + 0 + ')').removeClass("m-hide")
+
+									$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-2');
+
+									$('.remediation:eq(' + 0 + ')').show();
+
+									$('.attempt-1').hide();
+
+									$('.attempt-2').css('display', 'flex');
+
+								} else if (attemptsLeft[currentQuestion - 1] == 0) {
+
+									$('.attempt-1').hide();
+
+									$('.attempt-2').hide();
+
+									$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-3');
+
+									$('.remediation:eq(' + 0 + ')').removeClass('m-hide')
+
+									$('.attempt-container:eq(' + 0 + ')').removeClass("m-hide")
+
+									$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-3');
+
+									$('.remediation:eq(' + 0 + ')').show();
+
+									$('.remediation-retry:eq(' + 0 + ')').hide();
+
+									$('.remediation-continue:eq(' + 0 + ')').show();
+
+									$('.remediation-txt:eq(' + 0 + ')').removeClass('white-txt').html(quiz[currentQuestion -
+										1].fail_rem);
+
+									$('#progress-bar .quest .q-points').eq(currentQuestion - 1).parent().addClass(
+										'quest-retry');
+
+									$('.question-' + currentQuestion + ' .answer-container div').each(function (index,
+									elem) {
+
+										$('.question-' + currentQuestion + ' .answer').unbind().css('cursor',
+										'auto');
+
+									});
+
+								}
+
+								attemptsLeft[currentQuestion - 1]--;
+
+								updateProgressTracker();
+
+							}
+
+						}
+
+					}
+
+				} // end of runCheck
+
+				$('.reveal-btn').bind('click', runCheck);
+
+			}
+
+
+
+			(function () {
+
+				$('#header-image', window.parent.document).fadeIn();
+
+				$('.next').click(function (box) {
+
+					var curLocation = boxLocation + 1;
+
+					var nextLocation = boxLocation + 2;
+
+					var currentBox = $('#box' + curLocation)
+
+					var nextBox = $('#box' + nextLocation)
+
+					$(currentBox).animate({
+
+						left: '-50%'
+
+					}, 500, function () {
+
+						$(currentBox).css('left', '150%');
+
+						$(currentBox).appendTo('#container');
+
+					});
+
+					$(nextBox).animate({
+
+						left: '50%'
+
+					}, 500);
+
+					if (curLocation == 2) {
+						$('#box2 #video-popup-1-mask').fadeOut();
+					}
+
+					boxLocation++;
+
+					//nextAction(curLocation);
+
+					updateProgressTracker()
+
+				});
+
+
+
+				$('.back-btn').click(function () {
+
+					var preLocation = boxLocation;
+
+					var curLocation = boxLocation + 1;
+
+					var currentBox = $('#box' + curLocation)
+
+					var prevBox = $('#box' + preLocation)
+
+					console.log(curLocation)
+
+					$(currentBox).animate({
+
+						left: '150%'
+
+					}, 500, function () {
+
+						$(prevBox).css('left', ' ');
+
+						$(prevBox).prependTo('#container');
+
+					});
+
+					$(prevBox).css('left', '-150%').animate({
+
+						left: '50%'
+
+					}, 500);
+
+					if (curLocation == 2) {
+
+						$('video').each(function () {
+
+							$(this).get(0).pause();
+
+							$('#box2 #video-container').hide()
+
+						});
+
+					}
+
+					boxLocation--;
+
+					updateProgressTracker()
+
+					//backAction(boxLocation)
+
+				});
+
+
+
+
+
+				$('#gameover-btn').on('click', function (e) {
+
+					console.log('here')
+
+					console.log(passed)
+
+					console.log(parent.intAttempt)
+
+					parent.exitChallenge();
+
+					if (passed && parent.intAttempt != 4) {
+
+						challengeComplete(thisClass(), thisChallengNumber, score, true);
+
+					} else if (parent.intAttempt != 4) {
+
+						challengeComplete(thisClass(), thisChallengNumber, score, false);
+
+					} else {
+
+						parent.navigateIframe("portal.html");
+
+					}
+
+					$('#gameover-btn').unbind("click");
+
+				})
+
+
+
+				var $video = $('video'),
+
+					$window = $('#video-container');
+
+				$footer = $('footer')
+
+
+
+				$(window).resize(function () {
+
+					var contentsActivity = $('#contents-activity');
+
+					console.log(contentsActivity)
+
+					var footerHeightStr = $('footer').css('height');
+
+					var footerHeight = (footerHeightStr.substring(0, footerHeightStr.length - 2) - 1);
+
+					$('.attempt-1, .attempt-2').css('bottom', footerHeight + "px");
+
+					var height = $('#box6').height();
+
+					//contentsActivity.css('height', height);
+
+					var cWidth = contentsActivity.width(),
+
+						wWidth = $('#box6').width(),
+
+						minHeight = $('#box6').height(),
+
+						marginLeftAdjust = (wWidth - cWidth) / 2;
+
+					contentsActivity.css({
+
+						'height': minHeight + "!important;",
+
+						'left': marginLeftAdjust,
+
+						'min-width': "950px; !important;",
+
+						'min-height': "535px !important;"
+
+					});
+
+					console.log('continer height: ' + height)
+
+					console.log('content height: ' + contentsActivity.height())
+
+					//console.log(contentsActivity.offsetLeft)
+
+				}).resize();
+
+
+
+			})();
+
+
+
+			function nextBox(box) {
+
+				var curLocation = boxLocation + 1;
+
+				var currentBox = $('#box' + curLocation)
+
+				$(currentBox).animate({
+
+					left: '-50%'
+
+				}, 500, function () {
+
+					$(currentBox).css('left', '150%');
+
+					$(currentBox).appendTo('#container');
+
+				});
+
+				$(currentBox).next().animate({
+
+					left: '50%'
+
+				}, 500);
+
+				boxLocation++;
+
+				//nextAction(curLocation);
+
+				updateProgressTracker()
+
+			}
+
+
+
+			function updateProgressTracker() {
+
+				hotSpotReset();
+
+				var userPoints = 0
+
+				for (var i = 0; i < points.length; i++) {
+
+					userPoints += points[i]
+
+				}
+
+				score = (userPoints);
+
+				$('.score').html(score + " POINTS")
+
+				$('#score').html(score)
+
+				$('#progress-bar .quest .q-points').each(function (i, obj) {
+
+					$('#progress-bar .quest .q-points').eq(i).html(points[i])
+
+				})
+
+				console.log("HERE:" + boxLocation)
+
+				switch (boxLocation) {
+
+
+
+					case 0:
+
+						console.log("0")
+
+						$('#progress-bar .pin').eq(boxLocation).addClass('intro')
+
+						$('#progress-bar .pin').eq(boxLocation).removeClass('intro-down');
+
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+
+						break;
+
+					case 1:
+
+						console.log("1")
+
+						$('#progress-bar .pin').eq(boxLocation - 1).addClass('intro-down')
+
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('intro');
+
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+
+						break;
+
+					case 2:
+
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+
+						break;
+
+					case 3:
+
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+
+						break;
+
+					case 4:
+
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+
+						break;
+
+					case 5:
+
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+
+						break;
+
+					case 6:
+
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+
+						break;
+
+					case 7:
+
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+
+						break;
+
+					case 8:
+
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+
+						break;
+
+					case 9:
+
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+
+						break;
+
+					case 10:
+
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+
+						break;
+
+					case 11:
+
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('quest-down');
+
+						break;
+
+					case 12:
+
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation).addClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation + 1).removeClass('conclusion-down');
+
+						break;
+
+					case 13:
+
+						$('#progress-bar .pin').eq(boxLocation - 1).removeClass('quest-down');
+
+						$('#progress-bar .pin').eq(boxLocation).addClass('conclusion-down');
+
+						break;
+
+					default:
+
+						$('#progress-bar .pin').eq(0).removeClass('intro-down');
+
+						$('#progress-bar .pin').eq(1).removeClass('scene-down');
+
+						break;
+
+				}
+
+			};
+
+			updateProgressTracker();
+
+			RenderQuestion();
+		</script>
+
+</body>
+
+
+
+</html>

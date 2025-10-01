@@ -1,0 +1,68 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "right-arrow",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "02bc2284-9cda-43d5-b760-0527db8069c3",
+    "info": {
+      "editorName": "root",
+      "prefabOverride": ["position"],
+      "children": [{
+        "type": "image",
+        "id": "0f57afef-b04e-429e-8693-9cbae1e8f784",
+        "asset-ref": {
+          "file": "WebContent/assets/pack.json",
+          "section": "maps",
+          "asset": "right_arrow"
+        },
+        "info": {
+          "editorName": "right_arrow",
+          "prefabOverride": ["position"],
+          "animations": [
+            {
+              "name": "right-arrow_down",
+              "frameRate": 60,
+              "frames": ["right_arrow"]
+            },
+            {
+              "name": "right-arrow_up",
+              "frameRate": 60,
+              "frames": ["right_arrow"]
+            }
+          ]
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {},
+  "prefab-table": {}
+}

@@ -1,0 +1,73 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "right_arrow",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "2f889ebb-fea3-4d09-b0d6-238ebd126a12",
+    "info": {
+      "editorName": "root",
+      "children": [{
+        "type": "image",
+        "id": "8c410de3-31d9-497e-b561-b3ab2df65b19",
+        "asset": "0",
+        "info": {
+          "editorName": "right_arrow",
+          "editorPublic": true,
+          "animations": [
+            {
+              "name": "right_arrow-down",
+              "frameRate": 60,
+              "frames": ["right_arrow"]
+            },
+            {
+              "name": "right_arrow-up",
+              "frameRate": 60,
+              "frames": ["right_arrow"]
+            },
+            {
+              "name": "right_arrow",
+              "frameRate": 60,
+              "frames": ["right_arrow"]
+            }
+          ]
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "maps",
+    "asset": "right_arrow"
+  }},
+  "prefab-table": {}
+}

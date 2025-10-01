@@ -1,0 +1,124 @@
+%!Adobe-FontList 1.22
+%Locale:0x409
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:DINPro
+FamilyName:DIN Pro
+StyleName:Regular
+FullName:DINPro
+MenuName:DINPro
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\04formatted\thTH\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\DINPro.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:110156
+FileModTime:1339165074
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,DINPro
+NameArray:0,Win,1,DINPro
+NameArray:0,Win,16,DIN Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:DINPro-Bold
+FamilyName:DIN Pro
+StyleName:Bold
+FullName:DIN Pro Bold
+MenuName:DIN Pro
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\04formatted\thTH\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\FontFont - DIN Pro Bold.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:182796
+FileModTime:1564597775
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,DIN Pro Bold
+NameArray:0,Win,1,DIN Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:Type1
+FontName:DINPro-Medium
+FamilyName:DIN Pro
+StyleName:Medium
+FullName:DIN Pro Medium
+MenuName:DIN Pro Medium
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\04formatted\thTH\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\FontFont - DIN Pro Medium.otf
+DataFormat:sfntData
+UsesStandardEncoding:yes
+isCFF:yes
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:179972
+FileModTime:1564597791
+WeightClass:500
+WidthClass:5
+AngleClass:0
+NameArray:0,Mac,4,DIN Pro Medium
+NameArray:0,Win,1,DIN Pro Medium
+NameArray:0,Win,16,DIN Pro
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Tahoma
+FamilyName:Tahoma
+StyleName:Regular
+FullName:Tahoma
+MenuName:Tahoma
+StyleBits:0
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\04formatted\thTH\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\tahoma.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:939280
+FileModTime:1536992918
+WeightClass:400
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Tahoma
+%EndFont
+
+%BeginFont
+Handler:DirectoryHandler
+FontType:TrueType
+FontName:Tahoma-Bold
+FamilyName:Tahoma
+StyleName:Bold
+FullName:Tahoma Bold
+MenuName:Tahoma
+StyleBits:2
+WritingScript:Roman
+OutlineFileName:C:\Users\vpavlovic\Desktop\poslovi\The LHT Group\04formatted\thTH\OM Distributor Toolkit - One-Pager_v2 Folder\Document fonts\tahomabd.ttf
+DataFormat:sfntData
+hasSVG:no
+VariableFontType:NonVariableFont
+FileLength:867988
+FileModTime:1536992918
+WeightClass:700
+WidthClass:5
+AngleClass:0
+NameArray:0,Win,1,Tahoma
+%EndFont
+

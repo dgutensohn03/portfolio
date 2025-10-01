@@ -1,0 +1,73 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "jump_button",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "preloadSpriteId": "",
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "68542bbe-9b43-494a-9d49-d6ab34a35879",
+    "info": {
+      "editorName": "root",
+      "children": [{
+        "type": "image",
+        "id": "af7e2c1b-9829-452e-b006-af86782daa74",
+        "asset": "0",
+        "info": {
+          "editorName": "jump_button",
+          "editorPublic": true,
+          "animations": [
+            {
+              "name": "jump_button",
+              "frameRate": 60,
+              "frames": ["jump_button"]
+            },
+            {
+              "name": "jump_button-left",
+              "frameRate": 60,
+              "frames": ["jump_button"]
+            },
+            {
+              "name": "jump_button-right",
+              "frameRate": 60,
+              "frames": ["jump_button"]
+            }
+          ]
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {"0": {
+    "file": "WebContent/assets/pack.json",
+    "section": "maps",
+    "asset": "jump_button"
+  }},
+  "prefab-table": {}
+}

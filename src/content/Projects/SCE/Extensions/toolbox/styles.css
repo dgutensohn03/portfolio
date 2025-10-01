@@ -1,0 +1,7 @@
+﻿.toolbox-item {
+	display: block;
+}
+
+.toolbox-item:not(:last-child) {
+	margin-bottom: 6px;
+}

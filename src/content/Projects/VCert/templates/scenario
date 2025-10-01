@@ -1,0 +1,42 @@
+			<!------------------------------- NEW SECTION -------------------------------->
+						<div class='word-bubble-btm-left' id="word-bubble-rev-6a">
+							<div class="carrot-tl"></div>
+							<div class='rev-text'>
+								That’s great.
+							</div>
+							<div class='rev-text'>
+								 I suppose Seth spends a lot of time staying current with various vehicles, products, services…just anything a customer might need or benefit from.
+							</div>
+						</div>
+						<div class='click-bubble bubble-left bubble-left-inside' id="clk-listen-6a">
+							<div style="left: 0;">
+								Click to Read
+							</div>
+							<div class='bubble b0'></div>
+							<div class='bubble b1'></div>
+							<div class='bubble b2'></div>
+							<div class='bubble b3'></div>
+						</div>
+						<div class="tab-container index-6a" style="bottom: -100px !important;">
+							<div class="left-arrow"></div>
+							<div class="right-arrow"></div>
+							<div class="tab-instructions" style="flex-basis: 100%;">Click to continue the conversation.
+							</div>
+						</div>
+			<!------------------------------- NEW SECTION -------------------------------->
+						<div class='word-bubble-btm-left' id="word-bubble-rev-6b">
+							<div class="carrot-tr"></div>
+							<div class='rev-text'>
+								He tries, but that’s a job all by itself.
+							</div>
+						</div>
+						<div class='click-bubble bubble-left bubble-left-inside hidden' id="clk-listen-6b">
+							<div style="right: 0;">
+								Click to Read
+							</div>
+							<div class='bubble b0'></div>
+							<div class='bubble b1'></div>
+							<div class='bubble b2'></div>
+							<div class='bubble b3'></div>
+						</div>
+			<!------------------------------- NEW SECTION -------------------------------->

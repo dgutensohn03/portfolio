@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+        <script src="https://apis.google.com/js/api.js"></script>
+
+        <script> 
+            // Load the Google Sheets API
+gapi.load('client', initClient);
+
+function initClient() {
+    // Initialize the API client library
+    gapi.client.init({
+        apiKey: 'YOUR_API_KEY',
+        discoveryDocs: ['https://docs.google.com/spreadsheets/d/1mIo4jMxZ2bhXZngvsOui3fTiCobV_4yA_tY_i7VUeBY/edit#gid=0'],
+    }).then(function () {
+        // Call the function to get the cell value
+        getCellValue('YOUR_SHEET_ID', 'YOUR_RANGE', function(cellValue) {
+            console.log('Cell value:', cellValue);
+            // You can use the cell value here
+        });
+    }).catch(function (error) {
+        console.log('Error initializing API client: ', error);
+    });
+}
+
+function getCellValue(spreadsheetId, range, callback) {
+    // Make an API request to get the cell value
+    gapi.client.sheets.spreadsheets.values.get({
+        spreadsheetId: spreadsheetId,
+        range: range,
+    }).then(function (response) {
+        var values = response.result.values;
+        if (values && values.length > 0) {
+            var cellValue = values[0][0]; // Assuming you're fetching a single cell
+            callback(cellValue);
+        } else {
+            callback(null); // Return null if no data found
+        }
+    }).catch(function (error) {
+        console.log('Error getting cell value: ', error);
+        callback(null); // Return null in case of error
+    });
+}
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,73 @@
+{
+  "canvas-version": 2,
+  "settings": {
+    "className": "left_arrow",
+    "sceneWidth": 640,
+    "sceneHeight": 360,
+    "generateOnSave": true,
+    "enableStepping": false,
+    "lang": "JAVA_SCRIPT",
+    "baseClass": "Phaser.Sprite",
+    "backgroundColor": [
+      180,
+      180,
+      180
+    ],
+    "gridColor": [
+      200,
+      200,
+      200
+    ],
+    "showGrid": true
+  },
+  "stateSettings": {
+    "stageBackgroundColor": [
+      0,
+      0,
+      0
+    ],
+    "preloadSprite_direction": 0,
+    "load.pack": []
+  },
+  "world": {
+    "type": "group",
+    "id": "5ca4c6bd-2191-4791-a878-fa43ae58ddcb",
+    "info": {
+      "editorName": "root",
+      "prefabOverride": ["position"],
+      "children": [{
+        "type": "image",
+        "id": "49487df0-ddcf-4641-b174-5232b436f006",
+        "asset-ref": {
+          "file": "WebContent/assets/pack.json",
+          "section": "maps",
+          "asset": "left_arrow"
+        },
+        "info": {
+          "editorName": "left_arrow",
+          "prefabOverride": ["position"],
+          "animations": [
+            {
+              "name": "left_arrow-up",
+              "frameRate": 60,
+              "frames": ["left_arrow"]
+            },
+            {
+              "name": "left_arrow-down",
+              "frameRate": 60,
+              "frames": ["left_arrow"]
+            },
+            {
+              "name": "left_arrow",
+              "frameRate": 60,
+              "frames": ["left_arrow"]
+            }
+          ]
+        }
+      }]
+    }
+  },
+  "type": "SPRITE",
+  "asset-table": {},
+  "prefab-table": {}
+}

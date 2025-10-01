@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            body {
+                height: 100vh;
+                width: 100vw;
+                margin: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: lightcoral;
+            }
+
+            .box {
+                margin: 50px;
+                width: 980px;
+                height: 642px;
+            }
+            .answer-container > div{
+                display: flex;
+            }
+            .question-box {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+            }
+            .question-box > div{
+                padding: 50px;
+
+            }
+            [type=radio] {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+            .answer {
+  background: url("../images/challenge_2/images/Question_bttn_UP.png") no-repeat;
+  height: 20px;
+  float: left;
+  width: 20px;
+  /* padding: 20px; */
+  margin-top: 2px;
+  margin-right: 20px;
+  cursor: pointer;
+
+}
+
+.answer-on {
+  background: url("../images/challenge_2/images/Question_bttn_DWN.png") no-repeat;
+  height: 20px;
+  float: left;
+  width: 20px;
+  /* padding: 20px; */
+  margin-top: 2px;
+  margin-right: 20px;
+  cursor: auto;
+}
+
+.answer span, .answer-on span {
+  padding-left: 40px;
+  position: relative;
+  top: -3px;
+}
+            .attempt-1 {
+  /* color: #E1261C; */
+  color: #ffffff;
+  font-family: Oswald;
+  height: 63px;
+  width: 162px;
+  font-size: 15px;
+  display: none;
+}
+
+.attempt-2 {
+  /* color: #E1261C; */
+  color: #ffffff;
+  font-family: Oswald;
+  height: 63px;
+  width: 162px;
+  font-size: 15px;
+  position: absolute;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+
+.attempt-3 {
+  /* color: #E1261C; */
+  color: #ffffff;
+  font-family: Oswald;
+  height: 63px;
+  width: 162px;
+  font-size: 15px;
+  position: absolute;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+}
+.attempt-container {
+
+  }
+
+  .remediation {
+  display: none;
+
+}
+
+.remediation-continue {
+  width: 206px;
+  height: 52px;
+  cursor: pointer;
+  font-family: Oswald;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: normal;
+  color: #FFFFFF;
+  padding-top: 15px;
+  cursor: pointer;
+}
+
+.remediation-retry {
+  width: 206px;
+  height: 52px;
+  cursor: pointer;
+  font-family: Oswald;
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: normal;
+  color: #FFFFFF;
+  padding-top: 15px;
+  cursor: pointer;
+}
+
+.remediation-retry div {
+  font-family: Oswald;
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: normal;
+  color: #FFFFFF;
+  padding-top: 25px;
+  white-space: nowrap;
+}
+
+.remediation-retry:hover, .remediation-continue:hover {
+  color: #E1261C;
+}
+
+.remediation-txt {
+  padding: 40px 0;
+  text-align: left;
+}
+
+.remediation-icon {
+  width: 129px;
+  height: 100px;
+  background-repeat: no-repeat;
+}
+
+.remediation-reveal {
+  width: 50px;
+  height: 29px;
+  margin-left: -27px;
+  margin-top: -3px;
+  margin-right: 17px;
+  position: aboslute;
+  float: left;
+}
+
+
+        </style>
+    </head>
+    <body>
+
+        <div class="box question-bg-box" id="box1">
+            <div class="question-box" id="content">
+                <div class="col topCenterText m-LeftCol-question back-btn-padding">
+                    <div class='center-text-box question-1'>
+                        <h1 id="question-num"></h1>
+                        <div class='question-text'></div>
+                        <div class='answer-container'></div>
+                    </div>
+                </div>
+                <div class="col topCenterText m-RightCol-question">
+                    <div class="reveal-btn text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+
+
+                    <div class="remediation">
+                        <div class="remediation-icon"></div>
+                        <div class="remediation-txt"></div>
+                        <div class="remediation-continue next">
+                            Continue
+                        </div>
+                        <div class="remediation-retry">
+                            Try Again
+                            <div class='warn-sel-ans'>
+                                Choose an answer and select "Try Again."
+                            </div>
+                        </div>
+                        <div class="attempt-container row">
+                            <div class="attempt-1">
+                                FIRST ATTEMPT
+                            </div>
+                            <div class="attempt-2">
+                                SECOND ATTEMPT
+                            </div>
+                            <div class="attempt-3">
+                                RETRY IN 7 DAYS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class='back-btn'>
+                <img src="">BACK
+            </div> -->
+            <!-- <div class="question-box" id="content">
+                <div class="col topCenterText m-LeftCol-question back-btn-padding">
+                    <div class='center-text-box question-1'>
+                        <h1 id="question-num"></h1>
+                        <div class='question-text'></div>
+                        <div class='answer-container'></div>
+                    </div>
+                </div>
+                <div class="col topCenterText m-RightCol-question">
+                    <div class="reveal-btn text-white">
+                        <h3>REVEAL ANSWER</h3>
+                    </div>
+                    <div class="remediation">
+                        <div class="remediation-icon"></div>
+                        <div class="remediation-txt"></div>
+                        <div class="remediation-continue next">
+                            Continue
+                        </div>
+                        <div class="remediation-retry">
+                            Try Again
+                            <div class='warn-sel-ans'>
+                                Choose an answer and select "Try Again."
+                            </div>
+                        </div>
+                        <div class="attempt-container row">
+                            <div class="attempt-1">
+                                FIRST ATTEMPT
+                            </div>
+                            <div class="attempt-2">
+                                SECOND ATTEMPT
+                            </div>
+                            <div class="attempt-3">
+                                RETRY IN 7 DAYS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+        </div>
+
+        <script src="scripts/jquery-3.4.1.js"></script>
+        <script src="scripts/popper.js/dist/umd/popper.min.js"></script>
+        <script src="scripts/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script>
+
+            (function(){
+
+            var interactions = [{
+			// Q1
+			question: '<p>How should Paul address Shawn’s concern to help him extend their drain intervals?</p>',
+			type: 'MC',
+			answers: [
+				'Propose that he take on different work for his fleet.',
+				'Propose using Valvoline™ Premium Blue™ Motor Oil',
+				'Recommend resetting their maintenance schedules',
+				'Suggest hiring more maintenance techs'
+			],
+			choices: [],
+			correct: 2,
+			correct_rem: '<p>That’s it!</p><p>Premium Blue™ could help Shawn extend the drain intervals for his equipment. This would help to schedule maintenance intervals that are more convenient to his maintenance schedule. Let’s see how Paul shares the benefits of Valvoline™ Premium Blue™ Motor Oil.</p>',
+			incorrect_rem: '<p>That is not the correct response.</p><p>Try again and consider this customer’s specific situation - smaller fleet and concerns over unexpected downtime.</p>',
+			fail_rem: '<p>That’s not right.</p><p>The correct answer tells us that Premium Blue™ could help Shawn extend the drain intervals for his equipment. This would help to schedule maintenance intervals that are more convenient to his maintenance schedule.</p><p>You will not receive any points for this question.</p>',
+            points: 20,
+            attemptCount: 2
+		}
+    ]
+
+        var passed = true;
+        var questionPointsPossible = 40;
+        var points = [20, 20]
+        var attemptsLeft = [2, 2];
+        var passPercent = 40;
+        //var boxLocation = 0;
+        //var attemptCount = 0;
+        var currentQuestion = 1;
+        var currentAnswer;
+        var totalPoints = function () {
+            var sum = 0;
+            for (var i = 0; i < points.length; i++) {
+                sum += points[i]
+            }
+            return sum;
+
+        }();
+
+        var q = function () {
+            return quiz[qIndex];
+        }
+
+
+        function radioCheck(evt) {
+console.log(evt)
+console.log('radioCheck Function')
+$('.remediation-retry').unbind('click', runCheck);
+$('.reveal-btn').unbind('click', runCheck);
+$('.reveal-btn').bind('click', runCheck);
+currentAnswer = $(this).attr('id').slice(-1);
+currentQuestion = $(this).parent().parent().parent().attr('class').slice(-1);
+console.log('currentQuestion:' + currentQuestion)
+console.log(quiz[currentQuestion - 1].choices)
+if (quiz[currentQuestion - 1].choices[currentAnswer - 1] != 0 && attemptsLeft[currentQuestion - 1] < 2) {
+    $('.remediation-retry').bind('click', runCheck);
+    $('.remediation-retry .warn-sel-ans').css('opacity', '0');
+} else {
+    $('.remediation-retry').unbind('click', runCheck);
+    $('.remediation-retry .warn-sel-ans').css('opacity', '0');
+}
+
+if (attemptsLeft[currentQuestion - 1] == 0) {
+    $('.reveal-btn').unbind('click', runCheck);
+} else {
+    $('.reveal-btn').unbind('click', runCheck);
+    $('.reveal-btn').bind('click', runCheck);
+}
+
+if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+    $('.reveal-btn').bind('click', runCheck);
+}
+
+if (quiz[currentQuestion - 1].type == "MC") {
+    $('.answer-on').removeClass('answer-on').addClass('pointer');
+    $(this).addClass("answer-on").removeClass('pointer');
+} else if (quiz[currentQuestion - 1].type == "MR") {
+    $('.answer-on').removeClass('answer-on').addClass('pointer');
+    $(this).addClass("answer-on").removeClass('pointer');
+}
+}
+        var RenderQuestion = function() {
+            console.log('RenderQuestion Function')
+            //$('.clk-reveal-plus').bind('click', revealPlus);
+				for (var qIndex = 0; qIndex < quiz.length; qIndex++) {
+					$('.question-' + (qIndex + 1) + ' #question-num').html('Question ' + (qIndex + 1));
+					$('.question-' + (qIndex + 1) + ' .question-text').html(quiz[qIndex].question);
+					for (var i = 0; i < quiz[qIndex].answers.length; i++) {
+						quiz[qIndex].choices.push(i + 1)
+						var div = document.createElement('div')
+						$(div).append('<input id="button' + (i + 1) + '" type="radio" name="quiz" value="' + (i + 1) +
+							'" /><div id="answer' + (i + 1) + '"class="answer pointer"><\/div>');
+						$(div).append('<label for="button' + (i + 1) + '">' + quiz[qIndex].answers[i] + '<\/label>');
+						$('.question-' + (qIndex + 1) + ' .answer-container').append(div);
+					}
+                    console.log(qIndex)
+                    console.log(quiz.length-1)
+                    if (qIndex == (quiz.length-1)) {
+                        console.log($('.answer'))
+                        var ans = document.getElementsByClassName('answer');
+                        console.log('ans length: ' +ans.length)
+for (var i = 0; i < ans.length; i++) {
+    console.log('adding ')
+
+    ans[i].onclick = radioCheck;
+    console.log(ans[i]);
+}
+
+                    }
+                
+                }
+
+            }
+
+RenderQuestion();
+$('.answer').bind('click', radioCheck);
+				$('.remediation-retry').on('click', function () {
+					//console.log($(this))
+					$('.remediation-retry').unbind('click', runCheck);
+					if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+						if ($(window).width() < 999) {
+							$('.attempt-1').hide();
+							$('.attempt-2').hide();
+							$(this).parent().addClass("m-hide")
+							$(this).parent().parent().parent().parent().find('.attempt-container').addClass("m-hide");
+						} else {
+							$(this).parent().parent().parent().parent().find('.attempt-container').removeClass("m-hide")
+							$(this).parent().removeClass("m-hide");
+							$('.remediation-retry .warn-sel-ans').css('opacity', '1');
+						}
+					}
+				})
+
+				
+				
+                
+				var runCheck = function () {
+                    console.log("run check")
+                    console.log(currentQuestion)
+					if (currentQuestion != undefined) {
+						$('.remediation-retry').unbind('click', runCheck);
+                        console.log(attemptsLeft)
+							if (attemptsLeft[currentQuestion - 1] >= 0) {
+								var correctAnswer = quiz[currentQuestion - 1].correct;
+                                console.log('correctAnswer: ' + correctAnswer);
+								var thisQuestionAttemptsLeft = attemptsLeft[currentQuestion - 1];
+                                console.log('thisQuestionAttemptsLeft: ' + thisQuestionAttemptsLeft);
+								if (quiz[currentQuestion - 1].type == "MC") {
+									$('.reveal-btn').unbind('click', runCheck);
+									quiz[currentQuestion - 1].choices[currentAnswer - 1] = 0;
+									for (var i = 0; i < quiz[currentQuestion - 1].choices.length; i++) {
+										if (quiz[currentQuestion - 1].correct == currentAnswer) {
+											//correct answer
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass("pointer");
+										} else if (quiz[currentQuestion - 1].choices[i] == 0) {
+											//incorrect answer
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass("pointer answer");
+										} else if (attemptsLeft[currentQuestion - 1] == 0) {
+											//failed question
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass("pointer");
+										} else {
+											//rebind answers
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind();
+											$('.question-' + currentQuestion + ' #answer' + (i + 1)).bind('click', radioCheck).addClass("pointer");
+										}
+									}
+
+									if (quiz[currentQuestion - 1].correct == currentAnswer) {
+										$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3');
+										$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation:eq(' + (currentQuestion - 1) + ')').removeClass('m-hide')
+										$('.attempt-container:eq(' + (currentQuestion - 1) + ')').removeClass("m-hide")
+										$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-correct');
+										$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+										$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+										$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].correct_rem);
+										$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+											"url(images/challenge_2/images/Correct_Icon.png)");
+										$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+											"url(images/challenge_2/images/Correct.png)").addClass('remediation-reveal')
+											.removeClass("pointer answer");
+										$('.question-' + currentQuestion + ' .answer').css('cursor', 'auto');
+
+										$('.attempt-1').hide();
+										$('.attempt-2').hide();
+									} else {
+										$('.answer-on').removeClass('answer-on');
+										$('.reveal-btn:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').hide();
+										$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').addClass('white-txt').html(quiz[currentQuestion - 1].incorrect_rem);
+										$('.remediation-icon:eq(' + (currentQuestion - 1) + ')').css("background-image",
+											"url(images/challenge_2/images/Incorrect_Icon.png)");
+										$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+											"url(images/challenge_2/images/Incorrect.png)").addClass('remediation-reveal')
+											.removeClass("pointer answer");
+                                            if (attemptsLeft[currentQuestion - 1] >= 0 && points[currentQuestion - 1] > 0) {
+											//console.log("INCORRECT RESPONSE: " + attemptsLeft[currentQuestion - 1])
+											points[currentQuestion - 1] = points[currentQuestion - 1] - 5;
+										}
+										if (attemptsLeft[currentQuestion - 1] == 2) {
+											$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-1');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-1');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+											$('.attempt-1').css('display', 'flex');
+										} else if (attemptsLeft[currentQuestion - 1] == 1) {
+											$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-2');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').removeClass('m-hide')
+											$('.attempt-container:eq(' + (currentQuestion - 1) + ')').removeClass("m-hide")
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-2');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+											$('.attempt-1').hide();
+											$('.attempt-2').css('display', 'flex');
+										} else if (attemptsLeft[currentQuestion - 1] == 0) {
+											$('.attempt-1').hide();
+											$('.attempt-2').hide();
+											$('.question-bg-box:eq(' + (currentQuestion - 1) + ')').addClass('qbg-attempt-3');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').removeClass('m-hide')
+											$('.attempt-container:eq(' + (currentQuestion - 1) + ')').removeClass("m-hide")
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').addClass('remediation-attempt-3');
+											$('.remediation:eq(' + (currentQuestion - 1) + ')').show();
+											$('.remediation-retry:eq(' + (currentQuestion - 1) + ')').hide();
+											$('.remediation-continue:eq(' + (currentQuestion - 1) + ')').show();
+											$('.remediation-txt:eq(' + (currentQuestion - 1) + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].fail_rem);
+											$('#progress-bar .quest .q-points').eq(currentQuestion - 1).parent().addClass('quest-retry');
+											$('.question-' + currentQuestion + ' .answer-container div').each(function (index, elem) {
+												$('.question-' + currentQuestion + ' .answer').unbind().css('cursor', 'auto');
+											});
+										}
+										attemptsLeft[currentQuestion - 1]--;
+									}
+								}
+							} // end of runCheck
+					}
+                    $('.answer').bind('click', radioCheck);
+				}
+                $('.reveal-btn').bind('click', runCheck);
+
+
+
+
+                $('.remediation-continue').on('click', function () {
+					$('.reveal-btn').unbind('click', runCheck);
+
+					if (currentQuestion >= quiz.length - 1) {
+						var userPoints = 0;
+						for (var i = 0; i < points.length; i++) {
+							userPoints += points[i]
+						}
+						scorePercent = parseInt((userPoints / totalPoints) * 100);
+						var attempt = parent.intAttempt;
+                        console.log('Check score: ' + scorePercent >= passPercent)
+						if (scorePercent >= passPercent && attempt < 4) {
+							$('#result-correct').show();
+							$('#gameover-btn').show();
+							$('#result-incorrect').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-retry').hide();
+							$('#retry-btn').hide();
+							console.log('Passed in first 3 attempts')
+						} else if (scorePercent < passPercent && attempt < 4) {
+							passed = false;
+							$('#result-incorrect').show();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Failed in one of the first 3 attempts')
+						} else if (attempt == 5) {
+							passed = false;
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').show();
+							$('#result-three').hide();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Challenge Closed. Reviewing. No Points awarded.')
+						} else if (attempt == 4) {
+							$('#result-incorrect').hide();
+							$('#gameover-btn').show();
+							$('#result-retry').hide();
+							$('#result-closed').hide();
+							$('#result-three').show();
+							$('#result-correct').hide();
+							$('#retry-btn').hide();
+							console.log('Just reviewing. Good Job!')
+						}
+					}
+				})
+
+
+
+
+            })();
+//     var points = [40, 40];
+//     var attemptsLeft = [2, 2];
+//     var attempts = [1, 1];
+// 		var totalPoints = function () {
+// 			var sum = 0;
+// 			for (var i = 0; i < points.length; i++) {
+// 				sum += points[i]
+// 			}
+// 			return sum;
+// 		}();
+
+// 		var q = function () {
+// 			return quiz[qIndex];
+// 		}
+
+// 		function RenderQuestion() {
+            
+		
+//         var attemptsLeft = [2, 2];
+// 		var passPercent = 80;
+// 		var boxLocation = 0;
+// 		var attemptCount = 0;
+// 		var currentAnswer;
+//         var currentQuestion = 1;
+// //looping through items in quiz object to build question 
+// 			for (var qIndex = 0; qIndex < quiz.length; qIndex++) {
+//                 //set question number
+// 				$('.question-' + (qIndex + 1) + ' #question-num').html('Question ' + (qIndex + 1));
+//                 //set question text 
+// 				$('.question-' + (qIndex + 1) + ' .question-text').html(quiz[qIndex].question);
+//                 //loop through question answers and create radio inputs for each
+// 				for (var i = 0; i < quiz[qIndex].answers.length; i++) {
+// 					quiz[qIndex].choices.push(i + 1)
+// 					var div = document.createElement('div')
+// 					$(div).append('<input id="button' + (i + 1) + '" type="radio" name="quiz" value="' + (i + 1) +
+// 						'" /><div id="answer' + (i + 1) + '"class="answer pointer"><\/div>');
+// 					$(div).append('<label for="button' + (i + 1) + '">' + quiz[qIndex].answers[i] + '<\/label>');
+// 					$('.question-' + (qIndex + 1) + ' .answer-container').append(div);
+// 				}
+// 			}
+
+// 			var radioCheck = function () {
+//                 console.log('radioCheck function')
+// 				$('.remediation-retry').unbind('click', runCheck);
+// 				$('.reveal-btn-m').unbind('click', runCheck);
+// 				$('.reveal-btn-m').bind('click', runCheck);
+//                 console.log($(this))
+// 				currentAnswer = $(this).attr('id').slice(-1);
+//                 currentQuestion = $(this).parent().parent().parent().attr('class').slice(-1);
+
+// 				console.log('currentQuestion:' + currentQuestion)
+// 				console.log(quiz[currentQuestion - 1].choices)
+// 				if (quiz[currentQuestion - 1].choices[currentAnswer - 1] != 0 && attemptsLeft[currentQuestion - 1] < 2) {
+// 					$('.remediation-retry').bind('click', runCheck);
+// 					$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+// 				} else {
+// 					$('.remediation-retry').unbind('click', runCheck);
+// 					$('.remediation-retry .warn-sel-ans').css('opacity', '0');
+// 				}
+
+// 				if (attemptsLeft[currentQuestion - 1] == 0) {
+// 					$('.reveal-btn').unbind('click', runCheck);
+// 				} else {
+// 					$('.reveal-btn').unbind('click', runCheck);
+// 					$('.reveal-btn').bind('click', runCheck);
+// 				}
+
+// 				if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+// 					$('.reveal-btn-m').bind('click', runCheck);
+// 				}
+
+// 				if (quiz[currentQuestion - 1].type == "MC") {
+// 					$('.answer-on').removeClass('answer-on').addClass('pointer');
+// 					$(this).addClass("answer-on").removeClass('pointer');
+// 				} else if (quiz[currentQuestion - 1].type == "MR") {
+// 					$('.answer-on').removeClass('answer-on').addClass('pointer');
+// 					$(this).addClass("answer-on").removeClass('pointer');
+// 				}
+// 			}
+
+// 			$('.answer').bind('click', radioCheck);
+// 			$('.remediation-retry').on('click', function () {
+// 				console.log($(this))
+// 				$('.remediation-retry').unbind('click', runCheck);
+// 				if (quiz[currentQuestion - 1].choices[currentAnswer - 1] == 0) {
+// 					if ($(window).width() < 999) {
+// 						$('.attempt-1').hide();
+// 						$('.attempt-2').hide();
+// 						$(this).parent().addClass("m-hide")
+// 						$(this).parent().parent().parent().parent().find('.attempt-container').addClass("m-hide");
+// 					} else {
+// 						$(this).parent().parent().parent().parent().find('.attempt-container').removeClass("m-hide")
+// 						$(this).parent().removeClass("m-hide");
+// 						$('.remediation-retry .warn-sel-ans').css('opacity', '1');
+// 					}
+// 				}
+// 			})
+
+// 			$('.remediation-continue').on('click', function () {
+// 				$('.reveal-btn').unbind('click', runCheck);
+// 				$('.reveal-btn-m').unbind('click', runCheck);
+// 				if (currentQuestion == quiz.length) {
+// 					var userPoints = 0;
+// 					for (var i = 0; i < points.length; i++) {
+// 						userPoints += points[i]
+// 					}
+
+// 					scorePercent = parseInt((userPoints / totalPoints) * 100);
+// 					var attempt = parent.intAttempt;
+
+// 					console.log('Check score: ' + scorePercent >= passPercent)
+// 					if (scorePercent >= passPercent && attempt < 4) {
+// 						$('#result-correct').show();
+// 						$('#gameover-btn').show();
+// 						$('#result-incorrect').hide();
+// 						$('#result-closed').hide();
+// 						$('#result-three').hide();
+// 						$('#result-retry').hide();
+// 						$('#retry-btn').hide();
+// 						console.log('Passed in first 3 attempts')
+// 					} else if (scorePercent < passPercent && attempt < 4) {
+// 						passed = false;
+// 						$('#result-incorrect').show();
+// 						$('#gameover-btn').show();
+// 						$('#result-retry').hide();
+// 						$('#result-closed').hide();
+// 						$('#result-three').hide();
+// 						$('#result-correct').hide();
+// 						$('#retry-btn').hide();
+// 						console.log('Failed in one of the first 3 attempts')
+// 					} else if (attempt == 5) {
+// 						passed = false;
+// 						$('#result-incorrect').hide();
+// 						$('#gameover-btn').show();
+// 						$('#result-retry').hide();
+// 						$('#result-closed').show();
+// 						$('#result-three').hide();
+// 						$('#result-correct').hide();
+// 						$('#retry-btn').hide();
+// 						console.log('Challenge Closed. Reviewing. No Points awarded.')
+// 					} else if (attempt == 4) {
+// 						$('#result-incorrect').hide();
+// 						$('#gameover-btn').show();
+// 						$('#result-retry').hide();
+// 						$('#result-closed').hide();
+// 						$('#result-three').show();
+// 						$('#result-correct').hide();
+// 						$('#retry-btn').hide();
+// 						console.log('Just reviewing. Good Job!')
+// 					}
+// 				}
+// 			})
+
+// 			//Returns array of selected answers from a MR question
+// 			function getAnswers() {
+// 				var returnAnswers = [];
+// 				$(".answer").each(function () {
+// 					if ($(this).hasClass('answer-on')) {
+// 						returnAnswers.push(Number($(this).attr('id').slice(-1)));
+// 					}
+// 				});
+// 				return returnAnswers;
+// 			}
+
+// 			function arraysEqual(_arr1, _arr2) {
+// 				if (!Array.isArray(_arr1) || !Array.isArray(_arr2) || _arr1.length !== _arr2.length)
+// 					return false;
+// 				var arr1 = _arr1.concat().sort();
+// 				var arr2 = _arr2.concat().sort();
+// 				for (var i = 0; i < arr1.length; i++) {
+// 					if (arr1[i] !== arr2[i])
+// 						return false;
+// 				}
+// 				return true;
+// 			}
+
+// 			var runCheck = function () {
+//                 console.log('run check')
+//                 console.log(currentQuestion)
+//                 console.log(attemptsLeft)
+// 				$('.remediation-retry').unbind('click', runCheck);
+// 				console.log(attemptsLeft[currentQuestion - 1])
+// 				if (attemptsLeft[currentQuestion - 1] >= 0) {
+// 					var correctAnswer = quiz[currentQuestion - 1].correct;
+// 					var thisQuestionAttemptsLeft = attemptsLeft[currentQuestion - 1];
+
+// 					if (quiz[currentQuestion - 1].type == "MC") {
+// 						$('.reveal-btn').unbind('click', runCheck);
+
+// 						quiz[currentQuestion - 1].choices[currentAnswer - 1] = 0;
+// 						for (var i = 0; i < quiz[currentQuestion - 1].choices.length; i++) {
+// 							if (quiz[currentQuestion - 1].correct == currentAnswer) {
+// 								//correct answer
+// 								$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+// 									"pointer");
+// 							} else if (quiz[currentQuestion - 1].choices[i] == 0) {
+// 								//incorrect answer
+// 								$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+// 									"pointer answer");
+// 							} else if (attemptsLeft[currentQuestion - 1] == 0) {
+// 								//failed question
+// 								$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind().removeClass(
+// 									"pointer");
+// 							} else {
+// 								//rebind answers
+// 								$('.question-' + currentQuestion + ' #answer' + (i + 1)).unbind();
+// 								$('.question-' + currentQuestion + ' #answer' + (i + 1)).bind('click', radioCheck).addClass("pointer");
+// 							}
+// 						}
+
+// 						var holder = 0;
+// 						if (quiz[currentQuestion - 1].correct == currentAnswer) {
+// 							$('.reveal-btn:eq(' + 0 + ')').hide();
+// 							$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-3');
+// 							$('.reveal-btn:eq(' + 0 + ')').hide();
+// 							$('.remediation:eq(' + 0 + ')').removeClass('m-hide')
+// 							$('.attempt-container:eq(' + 0 + ')').removeClass("m-hide")
+// 							$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-correct');
+// 							$('.remediation:eq(' + 0 + ')').show();
+// 							$('.remediation-retry:eq(' + 0 + ')').hide();
+// 							$('.remediation-continue:eq(' + 0 + ')').show();
+// 							$('.remediation-txt:eq(' + 0 + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].correct_rem);
+// 							$('.remediation-icon:eq(' + 0 + ')').css("background-image",
+// 								"url(images/challenge_2/images/Correct_Icon.png)");
+// 							$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+// 								"url(images/challenge_2/images/Correct.png)").addClass('remediation-reveal')
+// 								.removeClass("pointer answer");
+// 							$('.question-' + currentQuestion + ' .answer').css('cursor', 'auto');
+
+// 							$('.attempt-1').hide();
+// 							$('.attempt-2').hide();
+// 						} else {
+// 							$('.answer-on').removeClass('answer-on');
+// 							$('.reveal-btn:eq(' + 0 + ')').hide();
+// 							$('.remediation-continue:eq(' + 0 + ')').hide();
+// 							$('.remediation-txt:eq(' + 0 + ')').addClass('white-txt').html(quiz[currentQuestion - 1].incorrect_rem);
+// 							$('.remediation-icon:eq(' + 0 + ')').css("background-image",
+// 								"url(images/challenge_2/images/Incorrect_Icon.png)");
+// 							$('.question-' + currentQuestion + ' #answer' + currentAnswer).css("background-image",
+// 								"url(images/challenge_2/images/Incorrect.png)").addClass('remediation-reveal')
+// 								.removeClass("pointer answer");
+// 							if (attemptsLeft[currentQuestion - 1] >= 0 && points[currentQuestion - 1] > 0) {
+// 								//console.log("INCORRECT RESPONSE: " + attemptsLeft[currentQuestion - 1])
+// 								points[currentQuestion - 1] = points[currentQuestion - 1] - 5;
+// 							}
+// 							if (attemptsLeft[currentQuestion - 1] == 2) {
+// 								$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-1');
+// 								$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-1');
+// 								$('.remediation:eq(' + 0 + ')').show();
+// 								$('.attempt-1').css('display', 'flex');
+// 							} else if (attemptsLeft[currentQuestion - 1] == 1) {
+// 								$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-2');
+// 								$('.remediation:eq(' + 0 + ')').removeClass('m-hide')
+// 								$('.attempt-container:eq(' + 0 + ')').removeClass("m-hide")
+// 								$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-2');
+// 								$('.remediation:eq(' + 0 + ')').show();
+// 								$('.attempt-1').hide();
+// 								$('.attempt-2').css('display', 'flex');
+// 							} else if (attemptsLeft[currentQuestion - 1] == 0) {
+// 								$('.attempt-1').hide();
+// 								$('.attempt-2').hide();
+// 								$('.question-bg-box:eq(' + 0 + ')').addClass('qbg-attempt-3');
+// 								$('.remediation:eq(' + 0 + ')').removeClass('m-hide')
+// 								$('.attempt-container:eq(' + 0 + ')').removeClass("m-hide")
+// 								$('.remediation:eq(' + 0 + ')').addClass('remediation-attempt-3');
+// 								$('.remediation:eq(' + 0 + ')').show();
+// 								$('.remediation-retry:eq(' + 0 + ')').hide();
+// 								$('.remediation-continue:eq(' + 0 + ')').show();
+// 								$('.remediation-txt:eq(' + 0 + ')').removeClass('white-txt').html(quiz[currentQuestion - 1].fail_rem);
+// 								$('#progress-bar .quest').eq(currentQuestion - 1).addClass('quest-retry')
+// 								$('.question-' + currentQuestion + ' .answer-container div').each(function (index, elem) {
+// 									$('.question-' + currentQuestion + ' .answer').unbind().css('cursor', 'auto');
+// 								});
+// 							}
+// 							attemptsLeft[currentQuestion - 1]--;
+// 							//updateProgressTracker();
+// 						}
+// 					}
+// 				}
+// 			} // end of runCheck
+// 			$('.reveal-btn').bind('click', runCheck);
+// 		}
+//         RenderQuestion();
+
+        </script>
+    </body>
+</html>

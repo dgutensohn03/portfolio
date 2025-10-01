@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealership Roles Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .challenge {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .challenge h2 {
+            margin-top: 0;
+        }
+        .activity {
+            margin-bottom: 20px;
+        }
+        .activity p {
+            margin: 10px 0;
+        }
+        .answers {
+            list-style-type: none;
+            padding: 0;
+        }
+        .answers li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dealership Roles Challenge</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        .edit-input {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <table id="challenges-table">
+        <thead>
+            <tr>
+                <th>Track</th>
+                <th>Challenge ID</th>
+                <th>Challenge Title</th>
+                <th>Minimum Score</th>
+                <th>Total Points</th>
+                <th>Pass Percent</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Table rows will be dynamically populated -->
+        </tbody>
+    </table>
+    <button onclick="saveChanges()">Save Changes</button>
+
+    <script src="bin/challenge.js"></script>
+    <script src="bin/appJS.js"></script>
+
+    <!-- <script>
+document.addEventListener('DOMContentLoaded', (event) => {
+    loadChallenges();
+});
+
+function loadChallenges() {
+    const container = document.getElementById('challenges-container');
+    container.innerHTML = '';
+
+    for (const country in vcertData) {
+        for (const challengeId in vcertData[country]) {
+            const challenge = vcertData[country][challengeId];
+            const challengeDiv = document.createElement('div');
+            challengeDiv.classList.add('challenge');
+
+            const challengeTitle = document.createElement('h2');
+            challengeTitle.textContent = `Challenge Title: ${challenge.challengeTitle}`;
+            challengeDiv.appendChild(challengeTitle);
+
+            const minScore = document.createElement('p');
+            minScore.innerHTML = `<strong>Minimum Score:</strong> <input type="number" value="${challenge.minScore}" onchange="updateChallenge('${country}', ${challengeId}, 'minScore', this.value)">`;
+            challengeDiv.appendChild(minScore);
+
+            const totalPoints = document.createElement('p');
+            totalPoints.innerHTML = `<strong>Total Points:</strong> <input type="number" value="${challenge.totalPoints}" onchange="updateChallenge('${country}', ${challengeId}, 'totalPoints', this.value)">`;
+            challengeDiv.appendChild(totalPoints);
+
+            const passPercent = document.createElement('p');
+            passPercent.innerHTML = `<strong>Pass Percent:</strong> <input type="number" value="${challenge.passPercent}" onchange="updateChallenge('${country}', ${challengeId}, 'passPercent', this.value)">`;
+            challengeDiv.appendChild(passPercent);
+
+            const rulesTitle = document.createElement('h3');
+            rulesTitle.textContent = 'Rules:';
+            challengeDiv.appendChild(rulesTitle);
+
+            const rulesList = document.createElement('ul');
+            for (const rule in challenge.rules) {
+                const ruleItem = document.createElement('li');
+                ruleItem.innerHTML = `<input type="text" value="${challenge.rules[rule]}" onchange="updateChallengeRule('${country}', ${challengeId}, '${rule}', this.value)">`;
+                rulesList.appendChild(ruleItem);
+            }
+            challengeDiv.appendChild(rulesList);
+
+            challenge.activity.forEach((activity, index) => {
+                const activityDiv = document.createElement('div');
+                activityDiv.classList.add('activity');
+
+                const activityTitle = document.createElement('h3');
+                activityTitle.textContent = `Activity ${index + 1}`;
+                activityDiv.appendChild(activityTitle);
+
+                const question = document.createElement('p');
+                question.innerHTML = `<textarea onchange="updateActivity('${country}', ${challengeId}, ${index}, 'question', this.value)">${activity.question}</textarea>`;
+                activityDiv.appendChild(question);
+
+                const answersList = document.createElement('ul');
+                answersList.classList.add('answers');
+                activity.answers.forEach((answer, aIndex) => {
+                    const answerItem = document.createElement('li');
+                    answerItem.innerHTML = `<input type="text" value="${answer}" onchange="updateActivityAnswer('${country}', ${challengeId}, ${index}, ${aIndex}, this.value)">`;
+                    answersList.appendChild(answerItem);
+                });
+                activityDiv.appendChild(answersList);
+
+                challengeDiv.appendChild(activityDiv);
+            });
+
+            container.appendChild(challengeDiv);
+        }
+    }
+}
+
+function updateChallenge(country, challengeId, field, value) {
+    vcertData[country][challengeId][field] = value;
+}
+
+function updateChallengeRule(country, challengeId, rule, value) {
+    vcertData[country][challengeId].rules[rule] = value;
+}
+
+function updateActivity(country, challengeId, activityIndex, field, value) {
+    vcertData[country][challengeId].activity[activityIndex][field] = value;
+}
+
+function updateActivityAnswer(country, challengeId, activityIndex, answerIndex, value) {
+    vcertData[country][challengeId].activity[activityIndex].answers[answerIndex] = value;
+}
+
+function saveChanges() {
+    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(vcertData, null, 2));
+    const downloadAnchorNode = document.createElement('a');
+    downloadAnchorNode.setAttribute("href", dataStr);
+   
+
+
+    </script> -->
+</body>
+</html>

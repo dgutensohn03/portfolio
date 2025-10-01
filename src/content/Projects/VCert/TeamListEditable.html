@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"><!-- Bootstrap CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="./styles/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="./styles/style.css" rel="stylesheet">
+	<link href="./styles/teamlist.css" rel="stylesheet">
+	<link href="./Bootstrap/css/datepicker.css" rel="stylesheet">
+	<link href="./styles/datepicker/build/build_standalone.less" rel="stylesheet">
+	<link href="./styles/datepicker/less/datepicker.less" rel="stylesheet">
+	<title>Vcert Project</title>
+	<style>
+
+		
+.flex {
+	display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+table {
+	border-spacing: 20px;
+	border-spacing: separate;
+	table-layout: fixed;
+	margin-bottom: 150px;
+}
+.table_LG {
+	background-color: #F0F5F8;
+}
+.table {
+	margin-bottom: 0 !important;
+}
+thead, th {
+	border-spacing: 0;
+	padding: 0 !important;
+	height: auto !important;
+}
+.table td, .table th {
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.table .edit-box {
+    vertical-align: middle;
+}
+.table td {
+	padding: .2rem 20px !important;
+}
+tbody {
+	padding-top: 0px !important;
+}
+.table th {
+	padding: 20px 20px 0 20px !important;
+}
+.table td div {
+	border: 1px solid lightgray;
+	overflow: hidden;
+	vertical-align: top;
+	white-space: nowrap;
+	padding: .2rem !important;
+}
+
+.table td {
+	padding: 0;
+}
+.table .ClassList {
+	padding: 0 20px 20px 20px !important;
+}
+.searchInputField {
+	text-align: left !important;
+	border: 0px;
+	border-radius: 0;
+	border-bottom: 5px solid red;
+	font-weight: bold;
+	font-size: 24pt;
+	max-width: 425px;
+}
+.ClassList div {
+	border: none !important;
+}
+.search-sm {
+	font-size: 14pt;
+	background-color: #E1261C;
+	height: 40px;
+	width: 40px;
+	min-width: 40px;
+	margin-left: 20px;
+	text-align: center;
+	border-radius: 7px;
+	color: white;
+	font-weight: bold;
+	cursor: pointer;
+	border: 0;
+	padding: 0;
+	display: none;
+}
+.search-sm i {
+	padding: 0;
+	position: relative;
+	top: -1px;
+}
+
+.control-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    display:none;
+    border: none !important;
+    max-height: 40px;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.edit-box, .save-box,.cancel-box {
+    border: none !important;
+}
+.edit-btn {
+    background-color: transparent;
+    border: none;
+    color: #E1261C;
+    font-weight: 700;
+    text-decoration: underline;
+    
+}
+.save-btn {
+    font-size: 14pt;
+    background-color: #E1261C;
+    height: 40px;
+    width: 180px;
+    text-align: center;
+    border-radius: 7px;
+    padding-top: 5px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+
+    border: 0;
+    margin-top: -20px;
+    margin-bottom: 10px;
+    
+}
+.cancel-btn {
+    background-color: transparent;
+    border: none;
+    color: #E1261C;
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.colspan {
+    display: block;
+}
+
+.break {
+    width: 100%;
+}
+.adminIntroButton {
+    background-color: #E1261C;
+    height: 40px;
+    width: 180px;
+    position: relative;
+    text-align: center;
+    border-radius: 7px;
+    padding-top: 7px;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transform: scale(1);
+    transition: transform 0.4s;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+
+.double-wide {
+	width: 250px !important;
+}
+
+.adminIntroButton:hover {
+    background-color: #940f0A;
+}
+.panel-title {
+width:100%;
+margin-bottom: 0;
+}
+
+.panel-title a {
+	color: #ffffff;
+	text-decoration: none;
+	width: 100%;
+
+}
+
+
+.panel-title:hover {
+    background-color: #940f0A;
+	color: white;
+}
+
+.panel-heading {
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	cursor: pointer;
+	background-color: #E1261C;
+	color: white;
+	padding: 5px;
+	border-radius: 7px;
+    margin-bottom: 10px;
+}
+
+#editClassDates .panel-collapse .panel-body {
+	padding: 5px;
+	display: flex;
+	justify-content: space-between;
+	height: 36px;
+}
+
+.edit-date {
+	background-color: transparent;
+    border: none;
+    color: #E1261C;
+    font-weight: 700;
+	text-decoration: underline;
+	margin: 0 5px;
+}
+
+#editClassDates .panel-collapse .panel-body .edit-date {
+    float: right;
+	cursor: pointer;
+}
+
+.cancel-date-btn, .save-date-btn {
+	background-color: transparent;
+    border: none;
+    color: #E1261C;
+    font-weight: 700;
+    text-decoration: underline;
+}
+.panel-collapse {
+	padding-bottom: 20px;
+}
+
+.date-item {
+	flex-grow: 3;
+	border: 1px solid lightgray;
+    overflow: hidden;
+    vertical-align: top;
+    white-space: nowrap;
+}
+
+.delete-btn {
+    background-image: url(../images/delete_btn.png);
+    background-position: center;
+    width: 30px;
+    height: 26px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.disabled-btn {
+	pointer-events: none;
+	opacity: .4;
+}
+
+
+@media only screen and (max-width: 1100px), (min-device-width: 1100px) and (max-device-width: 1100px) {
+	table, thead, th, tr, td, tbody {
+		display: block;
+		width: 100%
+	}
+	.adminIntroButton {
+		display: none;
+	}
+	.search-sm {
+		display: block;
+	}
+	.table {
+		padding: 20px;
+		margin-bottom: 0 !important;
+	}
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	tr {
+		padding: 0 !important;
+	}
+	table td {
+		border: none;
+		padding: 0 !important;
+		white-space: nowrap;
+	}
+	.table td {
+		padding: 0 !important;
+		padding-bottom: 20px !important;
+	}
+	.table .ClassList {
+		padding: 0 0 20px 0 !important;
+	}
+	td:before {
+		font-weight: 700;
+		white-space: nowrap;
+	}
+
+	tbody:nth-of-type(1) td:nth-of-type(1):before {
+		content: "First Name";
+	}
+	tbody:nth-of-type(1) td:nth-of-type(2):before {
+		content: "Last Name";
+	}
+	tbody:nth-of-type(1) td:nth-of-type(3):before {
+		content: "Email";
+	}
+	tbody:nth-of-type(1) td:nth-of-type(4):before {
+		content: "Address";
+	}
+	tbody:nth-of-type(1) td:nth-of-type(5):before {
+		content: "City";
+	}
+	tbody:nth-of-type(1) td:nth-of-type(6):before {
+		content: "State";
+	}
+	tbody:nth-of-type(1) td:nth-of-type(7):before {
+		content: "Zip";
+	}
+	tbody:nth-of-type(2) td:nth-of-type(1):before {
+		content: "Region/Province";
+	}
+	tbody:nth-of-type(2) td:nth-of-type(2):before {
+		content: "Country";
+	}
+	tbody:nth-of-type(2) td:nth-of-type(3):before {
+		content: "VCERT Class";
+	}
+	tbody:nth-of-type(2) td:nth-of-type(4):before {
+		content: "Valvoline Role";
+	}
+	tbody:nth-of-type(2) td:nth-of-type(5):before {
+		content: "Sales Contact";
+	}
+	tbody:nth-of-type(2) td:nth-of-type(6):before {
+		content: "Sales Email";
+	}
+}
+
+.inner-content {
+	min-height:calc(100% - 188px);
+}
+.adminIntroButton:hover {
+color: #ffffff;
+}
+.add-new-btn, .add-new-btn-hd, .add-new-btn-ld, .add-new-btn-vps {
+    background-image: url(../images/add-new-btn.png);
+    background-position: center;
+    width: 50px;
+	height: 26px;
+    background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+.add-new-row {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	height: 40px;
+}
+/* .adminIntroButton:focus {
+	box-shadow: 0 0 0 0.2rem rgba(225,38,28,.25);
+} */
+@media only screen and (max-width: 768px) {
+	.inner-content {
+	min-height:calc(100% - 94px);
+}
+
+}
+	</style>
+</head>
+<body>
+	<div class="container-fluid inner-content" >
+		<div class="container-fluid" style="padding:25px">
+			<div class="row" id="teamList_Header1">
+				<div id="teamListheader">
+					TEAM LIST
+				</div>
+			</div>
+			<div id="searchInputRow" class="flex">
+				<input class="searchInputField form-control" id="searchVal" name="searchVal" placeholder="Last Name" type="text">
+				<div class="searchButton adminIntroButton">
+					Search
+				</div><button class="searchButton search-sm"><i class="fa fa-search"></i></button>
+				<!-- Button trigger modal -->
+<button type="button" class="btn adminIntroButton double-wide" id="datePopup" >
+	Edit/Add Class Dates
+  </button>
+  <!-- <div class="input-group date">
+    <input type="text" class="form-control" value="12-02-2012">
+    <div class="input-group-addon">
+        <span class="glyphicon glyphicon-th"></span>
+    </div>
+</div> -->
+
+
+
+
+
+<!-- <div class="input-append date" class="datepicker" data-date="" data-date-format="dd-mm-yyyy">
+    <input type="text" value="" readonly>
+    <span class="add-on"><i class="icon-th"></i></span>
+</div> -->
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="editClassDates" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered" role="document">
+	  <div class="modal-content">
+		<div class="modal-header">
+		  <h5 class="modal-title" id="exampleModalLongTitle">Edit Class Dates</h5>
+		  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+		    <div class="panel-group">
+				<div class="panel panel-default">
+				  <div class="panel-heading" data-toggle="collapse" href="#HDDates">
+					<h4 class="panel-title" >
+					  <a>HD</a>
+					</h4>
+				  </div>
+				  <div id="HDDates" class="panel-collapse collapse hd-panel">
+					
+				  </div>
+				  
+				</div>
+			  </div>
+			  <div class="panel-group">
+				<div class="panel panel-default">
+				  <div class="panel-heading" data-toggle="collapse" href="#LDDates">
+					<h4 class="panel-title">
+					  <a>LD</a>
+					</h4>
+				  </div>
+				  <div id="LDDates" class="panel-collapse collapse ld-panel">
+
+				  </div>
+				</div>
+			  </div>
+			  <div class="panel-group">
+				<div class="panel panel-default">
+				  <div class="panel-heading"  data-toggle="collapse" href="#VPSDates">
+					<h4 class="panel-title">
+					  <a>VPS</a>
+					</h4>
+				  </div>
+				  <div id="VPSDates" class="panel-collapse collapse vps-panel">
+
+				  </div>
+				</div>
+			  </div>
+		</div>
+		<div class="modal-footer">
+		  <!-- <button type="button" class="btn adminIntroButton" data-dismiss="modal">Close</button> -->
+		  <button type="button" class="btn adminIntroButton">Save changes</button>
+		</div>
+	  </div>
+	</div>
+  </div>
+
+
+
+
+
+			</div>
+			<div class="row" id="teamList_Body1">
+				<!-- Original code is in TeamListTableEditable.js -->
+				<!-- Currently uses javascript to fill in table. -->
+			</div>
+		</div>
+	</div>
+	<script src="bin/footer.js">
+	</script> 
+	<script src="scripts/polyfill.min.js">
+	</script> <!-- Optional JavaScript -->
+	 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	 
+	<script src="scripts/jquery-3.4.1.js">
+	</script> 
+	<script src="scripts/popper.js/dist/umd/popper.min.js">
+	</script> 
+	<script src="scripts/bootstrap/dist/js/bootstrap.min.js">
+	</script> <!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-app.js">
+	</script> 
+	<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-auth.js">
+	</script> 
+	<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-database.js">
+	</script> 
+	<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-storage.js">
+	</script> 
+	<script defer src="https://www.gstatic.com/firebasejs/7.5.0/firebase-functions.js">
+	</script> <!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-firestore.js"></script> -->
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+	<!-- <script src="https://www.gstatic.com/firebasejs/7.5.0/firebase-analytics.js"></script> -->
+	<!-- <script defer src="src/fb-core-js.js"></script> -->
+	<script defer src="bin/fb-auth.js">
+	</script> 
+	<script defer src="bin/TeamListTableEditable.js">
+	</script>
+	<script src="Bootstrap/js/bootstrap-datepicker.js">
+
+	</script>
+	<script>
+
+
+
+
+$(document).ready(function() {
+
+	
+});
+
+
+</script>
+</body>
+</html>
